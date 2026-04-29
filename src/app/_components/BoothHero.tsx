@@ -98,15 +98,17 @@ export function BoothHero({ program }: Props) {
               {program.name}
             </h1>
 
-            {/* キャッチコピー（themeColor 蛍光下線）*/}
+            {/* キャッチコピー（themeColor 蛍光下線、各行に対応）*/}
             <p className="mt-6 text-lg font-bold leading-relaxed text-neutral-800 sm:text-xl md:text-2xl">
-              <span className="relative inline">
-                <span className="relative z-10">{program.fanGuide.catchphrase}</span>
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-0 bottom-0 -z-0 h-2 sm:h-2.5"
-                  style={{ backgroundColor: highlightUnderline }}
-                />
+              <span
+                className="box-decoration-clone"
+                style={{
+                  // 全行に蛍光ペン下線が入るよう linear-gradient で各行 60-90% の帯を描画
+                  backgroundImage: `linear-gradient(180deg, transparent 60%, ${highlightUnderline} 60%, ${highlightUnderline} 90%, transparent 90%)`,
+                  paddingInline: '0.1em',
+                }}
+              >
+                {program.fanGuide.catchphrase}
               </span>
             </p>
 

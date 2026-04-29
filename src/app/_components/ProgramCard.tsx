@@ -128,14 +128,16 @@ function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
         </Link>
 
         <p className="text-sm leading-relaxed text-neutral-700">
-          <span className="relative inline">
-            <span className="relative z-10">
-              {highlightText(program.fanGuide.catchphrase, highlightQuery)}
-            </span>
-            <span
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-2 bg-amber-200/60"
-            />
+          <span
+            className="box-decoration-clone"
+            style={{
+              // 各行に蛍光下線が入る方式（折り返しても破綻しない）
+              backgroundImage:
+                'linear-gradient(180deg, transparent 65%, rgba(252, 211, 77, 0.6) 65%, rgba(252, 211, 77, 0.6) 95%, transparent 95%)',
+              paddingInline: '0.1em',
+            }}
+          >
+            {highlightText(program.fanGuide.catchphrase, highlightQuery)}
           </span>
         </p>
 
