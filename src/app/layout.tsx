@@ -1,10 +1,56 @@
 import type { Metadata, Viewport } from 'next';
+import {
+  Klee_One,
+  Noto_Serif_JP,
+  RocknRoll_One,
+  DotGothic16,
+  Shippori_Mincho,
+  Zen_Kaku_Gothic_New,
+} from 'next/font/google';
 import './globals.css';
 import { Header } from './_components/Header';
 import { Footer } from './_components/Footer';
 import { BottomNav } from './_components/BottomNav';
 import { RegisterServiceWorker } from './_components/RegisterServiceWorker';
 import { SITE } from '@/lib/constants';
+
+// 番組らしさを演出するフォント群（CSS 変数で切り替え）
+const kleeOne = Klee_One({
+  subsets: ['latin'],
+  weight: '600',
+  display: 'swap',
+  variable: '--font-klee-one',
+});
+const notoSerifJp = Noto_Serif_JP({
+  subsets: ['latin'],
+  weight: '700',
+  display: 'swap',
+  variable: '--font-noto-serif-jp',
+});
+const rocknRollOne = RocknRoll_One({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-rocknroll-one',
+});
+const dotGothic16 = DotGothic16({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-dot-gothic-16',
+});
+const shipporiMincho = Shippori_Mincho({
+  subsets: ['latin'],
+  weight: '600',
+  display: 'swap',
+  variable: '--font-shippori-mincho',
+});
+const zenKaku = Zen_Kaku_Gothic_New({
+  subsets: ['latin'],
+  weight: '700',
+  display: 'swap',
+  variable: '--font-zen-kaku',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -59,8 +105,17 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const fontVariables = [
+    kleeOne.variable,
+    notoSerifJp.variable,
+    rocknRollOne.variable,
+    dotGothic16.variable,
+    shipporiMincho.variable,
+    zenKaku.variable,
+  ].join(' ');
+
   return (
-    <html lang="ja">
+    <html lang="ja" className={fontVariables}>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1 pb-16 lg:pb-0">{children}</main>

@@ -31,7 +31,9 @@
         "genre": "カルチャー",
         "tags": ["熱量高い", "考えさせる", "ニッチ", "夜向き"],
         "targetListener": "クリエイターとして「自分はそう思わない」を抱えながら作っている人。創作の納得感を一緒に分解したい人。",
-        "vibe": "earnest"
+        "vibe": "earnest",
+        "themeColor": "#2D3748",
+        "themeFont": "noto-serif-jp"
       }
     },
     {
@@ -60,7 +62,9 @@
         "genre": "文芸・読書",
         "tags": ["内省的", "じっくり", "寝る前", "癒し"],
         "targetListener": "読書を消費じゃなく対話として味わいたい人。SNS のスピードに少し疲れている人。",
-        "vibe": "contemplative"
+        "vibe": "contemplative",
+        "themeColor": "#7C9070",
+        "themeFont": "klee-one"
       }
     },
     {
@@ -89,7 +93,9 @@
         "genre": "コメディ",
         "tags": ["熱量高い", "笑える", "通勤", "二人以上の掛け合い"],
         "targetListener": "「これ語りたい」が止まらない深夜ラジオ世代。カルチャー好きで雑談を聴きたい人。",
-        "vibe": "energetic"
+        "vibe": "energetic",
+        "themeColor": "#94B447",
+        "themeFont": "rocknroll-one"
       }
     },
     {
@@ -120,7 +126,9 @@
         "genre": "恋愛・ジェンダー",
         "tags": ["笑える", "共感", "マイノリティ", "寄り添う"],
         "targetListener": "失敗エピソードを笑いと共感で消化したい人。マイノリティ視点の本音話を聴きたい人。",
-        "vibe": "conversational"
+        "vibe": "conversational",
+        "themeColor": "#E879A6",
+        "themeFont": "zen-kaku"
       }
     },
     {
@@ -149,7 +157,9 @@
         "genre": "ニュース・社会",
         "tags": ["知的", "学べる", "朝向き", "通勤"],
         "targetListener": "ニュースを「読む」だけじゃ足りない人。記者の本音や現場感を求める人。",
-        "vibe": "intellectual"
+        "vibe": "intellectual",
+        "themeColor": "#C8001E",
+        "themeFont": "noto-serif-jp"
       }
     }
   ]

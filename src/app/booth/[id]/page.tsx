@@ -1,16 +1,11 @@
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllPrograms, getProgramById } from '@/lib/data';
 import { dayLabel } from '@/lib/format';
-import { BlobFrame, type BlobColor } from '@/app/_components/BlobFrame';
-import { Highlight } from '@/app/_components/Highlight';
+import { BoothHero } from '@/app/_components/BoothHero';
 import { WaveDivider } from '@/app/_components/WaveDivider';
 import { FadeInOnScroll } from '@/app/_components/FadeInOnScroll';
-import { FavoriteButton } from '@/app/_components/FavoriteButton';
-import { LinksRow } from '@/app/_components/LinksRow';
 import { ProgramCard } from '@/app/_components/ProgramCard';
-import { ShareOnX } from '@/app/_components/ShareOnX';
 import { safeJsonLd } from '@/lib/safe-json-ld';
 import { SITE } from '@/lib/constants';
 
@@ -104,69 +99,7 @@ export default async function BoothPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
       />
 
-      {/* Hero（Podmate Hero 風、vibe で背景グラデを切替）*/}
-      <section className={heroGradientClass(program.fanGuide.vibe)}>
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
-          <Link
-            href="/"
-            className="inline-flex text-sm font-bold text-neutral-600 transition-colors hover:text-primary-600"
-          >
-            ← 一覧へ戻る
-          </Link>
-
-          <div className="mt-8 grid gap-8 lg:grid-cols-[280px_1fr] lg:items-center lg:gap-12">
-            <div className="flex justify-center lg:justify-start">
-              <BlobFrame
-                src={program.thumbnail}
-                alt={`${program.name} のロゴ画像`}
-                blobColor={vibeBlobColor(program.fanGuide.vibe)}
-                size={280}
-                priority
-              />
-            </div>
-
-            <div>
-              <div className="flex flex-wrap items-center gap-2 text-xs">
-                <span className="rounded-full bg-primary-50 px-3 py-1 font-bold text-primary-700">
-                  {program.fanGuide.genre}
-                </span>
-                <span className="rounded-full bg-neutral-100 px-3 py-1 font-bold text-neutral-700">
-                  {dayLabel(program.exhibition.days)}
-                </span>
-                <span className="rounded-full bg-neutral-100 px-3 py-1 font-bold text-neutral-700">
-                  ブース {program.exhibition.boothNumber}
-                </span>
-                <span className="ml-auto">
-                  <FavoriteButton programId={program.id} size="md" />
-                </span>
-              </div>
-
-              <h1 className="mt-4 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl md:text-4xl">
-                {program.name}
-              </h1>
-
-              <p className="mt-6 text-lg font-bold leading-relaxed text-neutral-800 sm:text-xl">
-                <Highlight>{program.fanGuide.catchphrase}</Highlight>
-              </p>
-
-              <p className="mt-3 text-sm text-neutral-600 sm:text-base">
-                {program.fanGuide.subCatch}
-              </p>
-
-              <div className="mt-6">
-                <LinksRow links={program.links} />
-              </div>
-
-              <div className="mt-6">
-                <ShareOnX
-                  text={`${program.shortName ?? program.name}\n${program.fanGuide.catchphrase}`}
-                  url={`${SITE.url}/booth/${program.id}`}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BoothHero program={program} />
 
       <WaveDivider fillClass="fill-amber-50" />
 
@@ -268,40 +201,3 @@ export default async function BoothPage({ params }: Props) {
   );
 }
 
-/** Vibe 別のブロブカラー（BlobColor リテラルを返す）*/
-function vibeBlobColor(vibe: import('@/lib/types').Vibe): BlobColor {
-  switch (vibe) {
-    case 'earnest':
-      return 'primary';
-    case 'intellectual':
-      return 'sky';
-    case 'energetic':
-    case 'humorous':
-      return 'amber';
-    case 'conversational':
-      return 'emerald';
-    case 'contemplative':
-    case 'laid-back':
-    default:
-      return 'neutral';
-  }
-}
-
-/** Vibe 別の Hero 背景クラス（Tailwind JIT 検出のため完全なクラス文字列を返す）*/
-function heroGradientClass(vibe: import('@/lib/types').Vibe): string {
-  switch (vibe) {
-    case 'earnest':
-      return 'bg-gradient-to-b from-primary-50 to-white';
-    case 'intellectual':
-      return 'bg-gradient-to-b from-sky-50 to-white';
-    case 'energetic':
-    case 'humorous':
-      return 'bg-gradient-to-b from-amber-50 to-white';
-    case 'conversational':
-      return 'bg-gradient-to-b from-emerald-50 to-white';
-    case 'contemplative':
-    case 'laid-back':
-    default:
-      return 'bg-gradient-to-b from-neutral-50 to-white';
-  }
-}

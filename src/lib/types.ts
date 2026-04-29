@@ -19,6 +19,17 @@ export type Day = z.infer<typeof DaySchema>;
 export const AreaSchema = z.enum(['free', 'paid']);
 export type Area = z.infer<typeof AreaSchema>;
 
+/** 番組らしさを演出するフォント（Google Fonts）*/
+export const ThemeFontSchema = z.enum([
+  'klee-one',          // 手書き温かみ
+  'noto-serif-jp',     // 知的・落ち着き
+  'rocknroll-one',     // 印象的・太字
+  'dot-gothic-16',     // レトロ・遊び心
+  'shippori-mincho',   // 上品・和
+  'zen-kaku',          // ニュートラル現代
+]);
+export type ThemeFont = z.infer<typeof ThemeFontSchema>;
+
 /** 番組の雰囲気（UI アクセントに使用）*/
 export const VibeSchema = z.enum([
   'earnest',        // 誠実、論考型（俺思）
@@ -107,6 +118,10 @@ export const FanGuideSchema = z.object({
     .min(20, 'ターゲットリスナーは 20 字以上')
     .max(120, 'ターゲットリスナーは 120 字以内（推奨 50-80 字）'),
   vibe: VibeSchema,
+  /** 番組のテーマカラー（hex）。未指定なら vibe デフォルトを使用 */
+  themeColor: z.string().regex(/^#[0-9a-fA-F]{6}$/, 'themeColor は #RRGGBB 形式').optional(),
+  /** 番組のテーマフォント。未指定なら vibe デフォルトを使用 */
+  themeFont: ThemeFontSchema.optional(),
 });
 export type FanGuide = z.infer<typeof FanGuideSchema>;
 
