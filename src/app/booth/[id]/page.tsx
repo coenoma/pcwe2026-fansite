@@ -11,6 +11,7 @@ import { FavoriteButton } from '@/app/_components/FavoriteButton';
 import { LinksRow } from '@/app/_components/LinksRow';
 import { ProgramCard } from '@/app/_components/ProgramCard';
 import { ShareOnX } from '@/app/_components/ShareOnX';
+import { safeJsonLd } from '@/lib/safe-json-ld';
 import { SITE } from '@/lib/constants';
 
 interface Props {
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: { canonical: `/booth/${program.id}` },
     openGraph: {
       title,
       description,
@@ -59,8 +61,8 @@ export default async function BoothPage({ params }: Props) {
     .filter((p) => p.fanGuide.genre === program.fanGuide.genre && p.id !== program.id)
     .slice(0, 3);
 
-  // JSON-LD 構造化データ
-  const jsonLd = {
+  // JSON-LD 構造化データ（PodcastSeries + BreadcrumbList）
+  const podcastJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'PodcastSeries',
     name: program.name,
@@ -71,12 +73,35 @@ export default async function BoothPage({ params }: Props) {
       (v): v is string => typeof v === 'string'
     ),
   };
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム', item: SITE.url },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: program.fanGuide.genre,
+        item: `${SITE.url}/genre/${encodeURIComponent(program.fanGuide.genre)}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: program.shortName ?? program.name,
+        item: `${SITE.url}/booth/${program.id}`,
+      },
+    ],
+  };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(podcastJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
       />
 
       {/* Hero（Podmate Hero 風、vibe で背景グラデを切替）*/}

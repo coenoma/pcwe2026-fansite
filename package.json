@@ -4,8 +4,10 @@
   "private": true,
   "description": "PODCAST EXPO 2026 非公式ファンガイドサイト",
   "scripts": {
-    "dev": "next dev -p ${PORT:-3015}",
+    "dev": "tsx scripts/build-sw.ts && next dev -p ${PORT:-3015}",
+    "prebuild": "tsx scripts/build-sw.ts",
     "build": "next build",
+    "build-sw": "tsx scripts/build-sw.ts",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",

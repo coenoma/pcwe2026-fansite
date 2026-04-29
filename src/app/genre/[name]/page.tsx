@@ -26,7 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${parsed.data}（${programs.length} 番組）`;
   const description = `「${parsed.data}」ジャンルの出展番組 ${programs.length} 件。PCWE2026 ファンガイド。`;
 
-  return { title, description };
+  return {
+    title,
+    description,
+    alternates: { canonical: `/genre/${encodeURIComponent(parsed.data)}` },
+  };
 }
 
 export default async function GenrePage({ params }: Props) {

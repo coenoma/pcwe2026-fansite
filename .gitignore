@@ -47,3 +47,6 @@ next-env.d.ts
 
 # 番組サムネイル（DL 後に置く、git 管理しない方針なら有効化）
 # /public/thumbnails/*.jpeg
+
+# ビルド時に sw.template.js から生成される（git 管理外）
+/public/sw.js

@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { CREATOR, EVENT, FORM_FIX_URL, FORM_TAKEDOWN_URL, SITE } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'このサイトについて',
   description: '非公式スタンス、削除依頼方法、情報修正依頼の受付。',
+  alternates: { canonical: '/about' },
 };
 
 export const dynamic = 'force-static';
@@ -61,6 +63,17 @@ export default function AboutPage() {
             <h2 className="text-xl font-extrabold text-neutral-900">その他のご質問・ご感想</h2>
             <p className="mt-3">
               X DM（<a href={CREATOR.twitterUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 hover:opacity-70">{CREATOR.twitterHandle}</a>）までお気軽にどうぞ。
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-extrabold text-neutral-900">プライバシーと取り扱い</h2>
+            <p className="mt-3">
+              個人情報を扱わない旨、localStorage の使用、番組情報の出典、削除依頼の流れを{' '}
+              <Link href="/privacy" className="font-bold text-primary-600 hover:opacity-70">
+                プライバシーページ
+              </Link>
+              にまとめています。
             </p>
           </section>
 

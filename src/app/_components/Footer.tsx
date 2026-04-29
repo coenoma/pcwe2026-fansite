@@ -26,6 +26,11 @@ export function Footer() {
                   気になるリスト
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy" className="hover:text-primary-600">
+                  プライバシーと取り扱い
+                </Link>
+              </li>
             </ul>
           </div>
 

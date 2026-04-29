@@ -5,6 +5,8 @@ import { PlanClient } from './_PlanClient';
 export const metadata: Metadata = {
   title: '気になるリスト',
   description: '気になる番組をまとめて、当日効率よく回るためのプラン。',
+  alternates: { canonical: '/plan' },
+  robots: { index: false, follow: false },
 };
 
 export const dynamic = 'force-static';

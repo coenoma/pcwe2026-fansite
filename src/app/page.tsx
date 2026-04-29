@@ -2,7 +2,8 @@ import { getAllPrograms } from '@/lib/data';
 import { ProgramListClient } from './_components/ProgramListClient';
 import { CountdownBadge } from './_components/CountdownBadge';
 import { RandomGachaButton } from './_components/RandomGachaButton';
-import { EVENT } from '@/lib/constants';
+import { safeJsonLd } from '@/lib/safe-json-ld';
+import { EVENT, SITE } from '@/lib/constants';
 
 export const dynamic = 'force-static';
 
@@ -15,8 +16,32 @@ export const dynamic = 'force-static';
 export default function HomePage() {
   const programs = getAllPrograms();
 
+  // Event 構造化データ（PCWE2026 自体）
+  const eventJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: EVENT.name,
+    startDate: `${EVENT.startDate}T10:30:00+09:00`,
+    endDate: `${EVENT.endDate}T19:00:00+09:00`,
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: {
+      '@type': 'Place',
+      name: EVENT.venue,
+      address: { '@type': 'PostalAddress', streetAddress: EVENT.venueAddress, addressCountry: 'JP' },
+    },
+    url: EVENT.officialUrl,
+    description: SITE.description,
+    isAccessibleForFree: true,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(eventJsonLd) }}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-b from-sky-50 to-white">
         <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-24">
