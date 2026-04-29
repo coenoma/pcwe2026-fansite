@@ -68,9 +68,11 @@ export default function HomePage() {
 
         <div className="relative mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-24">
           {/* バッジ */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white/80 px-4 py-1.5 text-xs font-bold text-primary-700 shadow-sm backdrop-blur">
+          <div className="inline-flex max-w-full items-center gap-2 whitespace-nowrap rounded-full border border-primary-200 bg-white/80 px-3 py-1.5 text-[11px] font-bold text-primary-700 shadow-sm backdrop-blur sm:px-4 sm:text-xs">
             <span aria-hidden="true">🎙️</span>
-            {EVENT.shortName} を 120% 楽しむ、非公式ファンガイド
+            <span className="truncate">
+              {EVENT.shortName} を 120% 楽しむ、非公式ファンガイド
+            </span>
           </div>
 
           {/* メインコピー */}

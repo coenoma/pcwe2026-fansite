@@ -37,7 +37,7 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-neutral-700">制作</h3>
             <ul className="mt-2 space-y-1 text-neutral-600">
-              <li>{CREATOR.representativeLabel}（{CREATOR.company}）</li>
+              <li>{CREATOR.representativeLabel}</li>
               <li>
                 <a
                   href={CREATOR.serviceUrl}

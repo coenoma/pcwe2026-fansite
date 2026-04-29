@@ -66,7 +66,7 @@ export function FavoriteButton({ programId, size = 'sm' }: Props) {
       onClick={handleClick}
       aria-pressed={isFavorite}
       aria-label={tooltipText}
-      title={`${tooltipText}（気になるリスト /plan で当日の動線をまとめられます）`}
+      title={tooltipText}
       className={`group/fav relative flex ${buttonSize} items-center justify-center rounded-full transition-all duration-150 active:scale-90 ${
         isFavorite
           ? 'bg-primary-50 text-primary-600 hover:bg-primary-100'

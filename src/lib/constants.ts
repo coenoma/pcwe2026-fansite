@@ -58,7 +58,7 @@ export const CREATOR = {
   /** 個人名（敬称・肩書きなし）*/
   representative: 'ゆと',
   /** 肩書き付きの自己紹介（フッター・About 等で使用）*/
-  representativeLabel: 'Podmate を運営するコエノマ代表のゆと',
+  representativeLabel: 'コエノマ代表 / Podmate 運営: ゆと',
   twitterHandle: '@yuto_podmate',
   twitterUrl: 'https://x.com/yuto_podmate',
   serviceName: 'Podmate',
