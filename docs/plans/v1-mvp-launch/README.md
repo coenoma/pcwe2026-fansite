@@ -11,28 +11,41 @@
 
 | # | タスク | 担当 | 状態 | 期限 |
 |---|---|---|---|---|
-| 1 | プロジェクト初期化（Next.js / Tailwind / TS）| Claude | ⬜ | 4/29 |
-| 2 | 型定義 + zod スキーマ（`lib/types.ts`）| Claude | ⬜ | 4/29 |
-| 3 | ジャンル定義（`data/genres.json`）| Claude | ⬜ | 4/29 |
-| 4 | サンプル 5 番組の `programs.json` 構造書き出し | Claude | ⬜ | 4/29 |
-| 5 | Podmate ブランディング流用コンポーネント実装（`WaveDivider` / `BlobFrame` / `Highlight` / `SectionHeading` / `FadeInOnScroll`）| Claude | ⬜ | 4/30 |
-| 6 | `ProgramCard` 実装（一覧用）| Claude | ⬜ | 4/30 |
-| 7 | `ProgramHero` 実装（詳細用、Podmate Hero 風）| Claude | ⬜ | 4/30 |
-| 8 | トップページ（一覧 + 検索 + フィルタ）| Claude | ⬜ | 5/1 |
-| 9 | 番組詳細ページ `/booth/[id]` | Claude | ⬜ | 5/1 |
-| 10 | ジャンル別ページ `/genre/[name]` | Claude | ⬜ | 5/2 |
-| 11 | 気になるリスト `/plan` + localStorage | Claude | ⬜ | 5/2 |
-| 12 | About ページ + 非公式表記 + 2 種フォームリンク導線 | Claude | ⬜ | 5/2 |
+| 1 | プロジェクト初期化（Next.js / Tailwind / TS）| Claude | ✅ | 4/29 |
+| 2 | 型定義 + zod スキーマ（`lib/types.ts`）| Claude | ✅ | 4/29 |
+| 3 | ジャンル定義（`data/genres.json`）| Claude | ✅ | 4/29 |
+| 4 | サンプル 5 番組の `programs.json` 構造書き出し | Claude | ✅ | 4/29 |
+| 5 | Podmate ブランディング流用コンポーネント（`WaveDivider` / `BlobFrame` / `Highlight` / `SectionHeading` / `FadeInOnScroll`）| Claude | ✅ | 4/29 |
+| 6 | `ProgramCard` 実装（一覧用）| Claude | ✅ | 4/29 |
+| 7 | `ProgramHero` 実装（詳細用、Podmate Hero 風）| Claude | ✅ | 4/29 |
+| 8 | トップページ（一覧 + 検索 + フィルタ）| Claude | ✅ | 4/29 |
+| 9 | 番組詳細ページ `/booth/[id]` | Claude | ✅ | 4/29 |
+| 10 | ジャンル別ページ `/genre/[name]` | Claude | ✅ | 4/29 |
+| 11 | 気になるリスト `/plan` + localStorage | Claude | ✅ | 4/29 |
+| 12 | About ページ + 非公式表記 + 2 種フォームリンク導線 | Claude | ✅ | 4/29 |
 | 12.1 | Google フォーム A（掲載取り下げ）作成・公開 | ゆと | ⬜ | 5/8 |
 | 12.2 | Google フォーム B（情報修正・追加）作成・公開 | ゆと | ⬜ | 5/8 |
 | 12.3 | フォーム URL を環境変数 / 定数に設定 | Claude / ゆと | ⬜ | 5/8 |
-| 13 | OGP 設定 + sitemap.xml + favicon | Claude | ⬜ | 5/3 |
+| 13 | OGP 設定 + sitemap.xml + favicon | Claude | ✅ | 4/29 |
+| 13.1 | PWA: manifest.webmanifest + アイコン（SVG/PNG）| Claude | ✅ | 4/29 |
+| 13.2 | PWA: Service Worker（自前 / オフライン対応）| Claude | ✅ | 4/29 |
+| 13.3 | PWA: スマホ用ボトムナビ + safe-area 対応 | Claude | ✅ | 4/29 |
 | 14 | 残り 139 番組のブースページ Fetch + JSON 化 | Claude | ⬜ | 5/4-5/5 |
 | 15 | 全 144 番組の `fanGuide` ライティング | Claude / ゆと | ⬜ | 5/5-5/7 |
 | 16 | サムネイル画像 144 枚ダウンロード | Claude | ⬜ | 5/7 |
-| 17 | E2E 動作確認（Vercel Preview）| Claude / ゆと | ⬜ | 5/8 |
-| 18 | 本番デプロイ + ドメイン設定 | ゆと | ⬜ | 5/8 |
-| 19 | 公開告知（X 投稿）| ゆと | ⬜ | 5/9 |
+| 17 | Jest 単体テスト（lib/ 純粋関数）| Claude | ⬜ | 5/4-5/8 |
+| 18 | Lighthouse / E2E 動作確認（Vercel Preview）| Claude / ゆと | ⬜ | 5/8 |
+| 19 | 本番デプロイ + ドメイン設定 | ゆと | ⬜ | 5/8 |
+| 20 | 公開告知（X 投稿）| ゆと | ⬜ | 5/9 |
+
+### MVP 内（5/9 朝公開時）の状態
+
+- **基盤**: ✅ 完了（4/29 中）— Next.js 15.5 + Tailwind v4 + TS + zod + Fuse.js + PWA
+- **ページ**: ✅ 5 種類実装済（トップ / 番組詳細 / ジャンル別 / 気になるリスト / About）
+- **データ**: 🟡 サンプル 5 番組のみ（5/4-5/7 で 144 件に拡充予定）
+- **PWA**: ✅ manifest + SW + ボトムナビ + safe-area
+- **SEO**: ✅ OGP + JSON-LD + sitemap + robots
+- **テスト**: ⏸️ MVP 後に Jest 単体テスト追加（5 番組規模ではビルド + 型 + zod 検証で十分）
 
 凡例: ⬜ 未着手 / 🟡 進行中 / ✅ 完了 / ⏸️ 保留
 
@@ -357,6 +370,76 @@ export function saveFavorites(ids: string[]): boolean {
   }
 }
 ```
+
+---
+
+## 📱 PWA 対応（ホーム画面起動 + オフライン）
+
+会場（HOME/WORK VILLAGE 池尻大橋）での通信は不安定な可能性があるため、**ホーム画面に追加してオフラインでも基本機能が動く** PWA として実装する。
+
+### PWA 要件
+
+| 要件 | 実装 |
+|---|---|
+| **インストール可能** | `manifest.webmanifest` + アイコン 192/512 + maskable |
+| **スタンドアロン表示** | `display: standalone`、URL バー非表示 |
+| **オフライン基本動作** | Service Worker（自前実装）でキャッシュ |
+| **iOS Safari 対応** | `apple-touch-icon` 180×180 + `apple-mobile-web-app-capable` |
+| **テーマカラー** | `#dc725a`（Podmate primary）|
+| **ショートカット** | manifest.shortcuts で「気になるリスト」を直アクセス可能に |
+
+### Service Worker のキャッシュ戦略
+
+`public/sw.js`（自前、Workbox 等の依存追加なし）:
+
+| リソース | 戦略 | 理由 |
+|---|---|---|
+| HTML（navigate）| Network First | 最新を優先、オフライン時はキャッシュ |
+| 画像（/thumbnails/, /icons/）| Cache First | 番組サムネイルは変わらない |
+| JS/CSS/JSON | Stale While Revalidate | 速度優先、バックグラウンドで更新 |
+| クロスオリジン | キャッシュしない | Spotify/X 等の外部 |
+
+プリキャッシュ: トップ / `/plan` / `/about` / manifest（ホーム画面起動時の即表示）。
+
+### ホーム画面起動時の UX
+
+| デバイス | 想定ユーザー動線 |
+|---|---|
+| iOS Safari | 共有メニュー → 「ホーム画面に追加」→ アイコンから起動 → スタンドアロン表示 |
+| Android Chrome | 「アプリをインストール」バナー → ホーム画面に追加 → 起動 |
+| デスクトップ | URL バー右の「インストール」ボタンで PWA 化（任意）|
+
+### スタンドアロンモード専用 UI
+
+ヘッダーに加え、スマホでは **ボトムナビゲーション** を常時表示:
+
+| タブ | アイコン | 遷移先 |
+|---|---|---|
+| 番組一覧 | Home | `/` |
+| 気になる | Heart | `/plan` |
+| このサイト | Info | `/about` |
+
+`pb-16 lg:pb-0` で main コンテンツがボトムナビに被らないよう調整。
+`safe-area-inset-bottom` で iOS のホームバー対応。
+
+### アイコン生成
+
+ImageMagick で `public/icons/icon.svg` から PNG 派生:
+- `icon-192.png` (Android Chrome 用)
+- `icon-512.png` (高解像度・スプラッシュ用)
+- `apple-touch-icon.png` (180×180、iOS Safari 用)
+- `favicon.ico` (32×32)
+
+将来的には正式デザインに差し替え。MVP はプレースホルダー（"PCWE2026 FANGUIDE"）。
+
+### 受け入れ基準（PWA）
+
+- [ ] Chrome / Safari でホーム画面追加できる
+- [ ] スタンドアロンモードで URL バーが出ない
+- [ ] オフライン時にトップ + `/plan` + `/about` が表示できる
+- [ ] 気になる番組を localStorage 経由で見られる（オフライン）
+- [ ] スマホでボトムナビが表示される
+- [ ] iOS の safe-area-inset 対応で被らない
 
 ---
 

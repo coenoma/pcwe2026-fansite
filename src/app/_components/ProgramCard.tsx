@@ -35,9 +35,12 @@ export function ProgramCard({ program }: Props) {
 
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex flex-wrap items-center gap-2 text-xs">
-          <span className="rounded-full bg-primary-50 px-2 py-0.5 font-bold text-primary-700">
+          <Link
+            href={`/genre/${encodeURIComponent(program.fanGuide.genre)}`}
+            className="rounded-full bg-primary-50 px-2 py-0.5 font-bold text-primary-700 hover:bg-primary-100"
+          >
             {program.fanGuide.genre}
-          </span>
+          </Link>
           <span className="rounded-full bg-neutral-100 px-2 py-0.5 font-bold text-neutral-700">
             {dayLabel(program.exhibition.days)}
           </span>
