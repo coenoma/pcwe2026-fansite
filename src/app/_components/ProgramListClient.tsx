@@ -1,6 +1,6 @@
 'use client';
 
-import { useDeferredValue, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import type { Program, Genre, Day } from '@/lib/types';
 import { searchPrograms } from '@/lib/search';
 import { filterPrograms, extractAllTags } from '@/lib/filter';
@@ -26,6 +26,35 @@ export function ProgramListClient({ programs }: Props) {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const allTags = useMemo(() => extractAllTags(programs), [programs]);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // キーボードショートカット: '/' で検索にフォーカス、Esc でクリア
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      const isInputting =
+        target?.tagName === 'INPUT' ||
+        target?.tagName === 'TEXTAREA' ||
+        target?.isContentEditable === true;
+
+      if (e.key === '/' && !isInputting) {
+        e.preventDefault();
+        inputRef.current?.focus();
+        return;
+      }
+
+      if (e.key === 'Escape' && document.activeElement === inputRef.current) {
+        setQuery('');
+        inputRef.current?.blur();
+      }
+    };
+
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      window.removeEventListener('keydown', handleKey);
+    };
+  }, []);
 
   const visiblePrograms = useMemo(() => {
     const filtered = filterPrograms(programs, {
@@ -56,14 +85,20 @@ export function ProgramListClient({ programs }: Props) {
     <div>
       {/* スティッキー検索 + フィルタ */}
       <div className="sticky top-[64px] z-30 -mx-4 mb-8 space-y-3 bg-white/95 px-4 py-4 backdrop-blur sm:-mx-6 sm:px-6">
-        <input
-          type="search"
-          placeholder="番組名・キーワード・タグで検索"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          aria-label="番組を検索"
-          className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base shadow-sm focus:border-primary-500 focus:outline-none"
-        />
+        <div className="relative">
+          <input
+            ref={inputRef}
+            type="search"
+            placeholder="番組名・キーワード・タグで検索（/ キーでフォーカス）"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            aria-label="番組を検索"
+            className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 pr-12 text-base shadow-sm focus:border-primary-500 focus:outline-none"
+          />
+          <kbd className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded border border-neutral-300 bg-neutral-50 px-1.5 py-0.5 text-xs font-bold text-neutral-500 sm:block">
+            /
+          </kbd>
+        </div>
 
         <div className="flex flex-wrap gap-2">
           <DayPill active={day === ''} onClick={() => setDay('')}>
@@ -128,7 +163,7 @@ export function ProgramListClient({ programs }: Props) {
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {visiblePrograms.map((p) => (
-            <ProgramCard key={p.id} program={p} />
+            <ProgramCard key={p.id} program={p} highlightQuery={deferredQuery} />
           ))}
         </div>
       )}

@@ -10,6 +10,7 @@ import { FadeInOnScroll } from '@/app/_components/FadeInOnScroll';
 import { FavoriteButton } from '@/app/_components/FavoriteButton';
 import { LinksRow } from '@/app/_components/LinksRow';
 import { ProgramCard } from '@/app/_components/ProgramCard';
+import { ShareOnX } from '@/app/_components/ShareOnX';
 import { SITE } from '@/lib/constants';
 
 interface Props {
@@ -78,8 +79,8 @@ export default async function BoothPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero（Podmate Hero 風）*/}
-      <section className="bg-gradient-to-b from-sky-50 to-white">
+      {/* Hero（Podmate Hero 風、vibe で背景グラデを切替）*/}
+      <section className={heroGradientClass(program.fanGuide.vibe)}>
         <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
           <Link
             href="/"
@@ -129,6 +130,13 @@ export default async function BoothPage({ params }: Props) {
 
               <div className="mt-6">
                 <LinksRow links={program.links} />
+              </div>
+
+              <div className="mt-6">
+                <ShareOnX
+                  text={`${program.shortName ?? program.name}\n${program.fanGuide.catchphrase}`}
+                  url={`${SITE.url}/booth/${program.id}`}
+                />
               </div>
             </div>
           </div>
@@ -235,9 +243,7 @@ export default async function BoothPage({ params }: Props) {
   );
 }
 
-/**
- * Vibe 別のブロブカラーを返す（earnest = primary, intellectual = sky 等）
- */
+/** Vibe 別のブロブカラー */
 function vibeBlobColor(vibe: import('@/lib/types').Vibe): string {
   switch (vibe) {
     case 'earnest':
@@ -253,5 +259,24 @@ function vibeBlobColor(vibe: import('@/lib/types').Vibe): string {
     case 'laid-back':
     default:
       return 'neutral-200';
+  }
+}
+
+/** Vibe 別の Hero 背景クラス（Tailwind JIT 検出のため完全なクラス文字列を返す）*/
+function heroGradientClass(vibe: import('@/lib/types').Vibe): string {
+  switch (vibe) {
+    case 'earnest':
+      return 'bg-gradient-to-b from-primary-50 to-white';
+    case 'intellectual':
+      return 'bg-gradient-to-b from-sky-50 to-white';
+    case 'energetic':
+    case 'humorous':
+      return 'bg-gradient-to-b from-amber-50 to-white';
+    case 'conversational':
+      return 'bg-gradient-to-b from-emerald-50 to-white';
+    case 'contemplative':
+    case 'laid-back':
+    default:
+      return 'bg-gradient-to-b from-neutral-50 to-white';
   }
 }

@@ -8,11 +8,14 @@ import { dayLabel } from '@/lib/format';
 import { vibeStyle } from '@/lib/vibe-style';
 import { tagAxis, tagAxisClass } from '@/lib/tag-axis';
 import { getGenresMap } from '@/lib/data';
+import { highlightText } from '@/lib/highlight-text';
 import { FavoriteButton } from './FavoriteButton';
 import { GenreIcon } from './GenreIcon';
 
 interface Props {
   program: Program;
+  /** 検索クエリ（マッチ箇所をハイライト表示）*/
+  highlightQuery?: string;
 }
 
 const GENRES_MAP = getGenresMap();
@@ -25,7 +28,7 @@ const GENRES_MAP = getGenresMap();
  * - PC ホバーで浮上 + Spotify ボタン出現
  * - React.memo で再レンダリング抑制
  */
-function ProgramCardImpl({ program }: Props) {
+function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const vibe = vibeStyle(program.fanGuide.vibe);
   const genreMeta = GENRES_MAP[program.fanGuide.genre];
@@ -102,13 +105,15 @@ function ProgramCardImpl({ program }: Props) {
 
         <Link href={`/booth/${program.id}`} className="block">
           <h2 className="text-base font-extrabold leading-snug tracking-tight text-neutral-900 hover:text-primary-700">
-            {program.shortName ?? program.name}
+            {highlightText(program.shortName ?? program.name, highlightQuery)}
           </h2>
         </Link>
 
         <p className="text-sm leading-relaxed text-neutral-700">
           <span className="relative inline">
-            <span className="relative z-10">{program.fanGuide.catchphrase}</span>
+            <span className="relative z-10">
+              {highlightText(program.fanGuide.catchphrase, highlightQuery)}
+            </span>
             <span
               aria-hidden="true"
               className="absolute inset-x-0 bottom-0 h-2 bg-amber-200/60"
