@@ -83,3 +83,31 @@ body {
     opacity: 0;
   }
 }
+
+/* ====== ガチャ結果のふわんふわんアニメーション ====== */
+@keyframes float-in {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.92);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-float-in {
+  animation: float-in 700ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* dialog の open 時に背景フェードイン */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 200ms ease;
+}
+dialog[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}

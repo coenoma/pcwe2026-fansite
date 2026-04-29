@@ -137,7 +137,7 @@ export default function HomePage() {
 
           {/* ガチャ CTA */}
           <div className="mt-10 flex justify-center">
-            <RandomGachaButton programIds={programs.map((p) => p.id)} />
+            <RandomGachaButton programs={programs} />
           </div>
         </div>
       </section>
