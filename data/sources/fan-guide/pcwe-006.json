@@ -1,0 +1,18 @@
+{
+  "id": "pcwe-006",
+  "fanGuide": {
+    "catchphrase": "本の感想じゃなくて、本がくれた静けさを語る番組。",
+    "subCatch": "1 冊の本を、1 杯のお茶とともに。",
+    "genre": "文芸・読書",
+    "tags": [
+      "内省的",
+      "じっくり",
+      "寝る前",
+      "癒し"
+    ],
+    "targetListener": "読書を消費じゃなく対話として味わいたい人。SNS のスピードに少し疲れている人。",
+    "vibe": "contemplative",
+    "themeColor": "#7C9070",
+    "themeFont": "klee-one"
+  }
+}

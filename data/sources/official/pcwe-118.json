@@ -1,0 +1,23 @@
+{
+  "id": "pcwe-118",
+  "name": "朝日新聞ポッドキャスト",
+  "thumbnail": "/thumbnails/118.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-118/",
+  "fetchedAt": "2026-04-29T12:15:19.081Z",
+  "official": {
+    "description": "愛称は「朝ポキ」。従来のニュースを縛っていた枠を超え、ファクトに迫ります。\n取材や記事から見えてきた物事を語り尽くし、あなたを毎日異なる現場にいざないます。\n「ニュースの現場から」「報談」「MEDIA TALK」「新聞1面じゃなくても大事なこと -SDGsを話そう-」「ニュースの学校」\nいろんなプレイリストがあります。あなた好みの番組を探してみてください。\n            \n\n      PODCAST\n  \n  \n      X"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "118"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/392h0MYfvMTndEVzf2cOvC",
+    "x": "https://x.com/AsahiPodcast"
+  }
+}

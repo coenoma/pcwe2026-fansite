@@ -108,8 +108,11 @@ export default async function BoothPage({ params }: Props) {
         <section className="bg-amber-50">
           <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
             <h2 className="text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
-              📻 こんな人に刺さる
+              📊 こんな人に、刺さるかも？
             </h2>
+            <p className="mt-1 text-xs text-neutral-500">
+              ぼくの独断と偏見で「想定リスナー」を書いてみました（半分ジョーク、半分本気）
+            </p>
             <p className="mt-4 text-base leading-relaxed text-neutral-800 sm:text-lg">
               {program.fanGuide.targetListener}
             </p>

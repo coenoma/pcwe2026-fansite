@@ -25,7 +25,7 @@ export default function AboutPage() {
               このサイトは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">{EVENT.name}（{EVENT.shortName}）</a> の出展番組を、ファンの視点でまとめた <strong>非公式</strong> のガイドサイトです。公式とは無関係に、{CREATOR.company} の代表（{CREATOR.representative}）がファン活動として制作しました。
             </p>
             <p className="mt-3">
-              番組情報・画像は各番組制作者と公式に帰属します。本サイトのキャッチコピー・タグ・ジャンル分類は、ファンとしてのキュレーションです（公式情報の引用ではなく、独自に書き起こしています）。
+              番組情報・画像は各番組制作者と公式に帰属します。本サイトのキャッチコピー・タグ・ジャンル分類は、ぼくが AI と一緒に「**独断と偏見で書いてみた**」ファンキュレーションです（公式の引用ではありません）。違うじゃん！って思ったら、お気軽にご連絡ください。
             </p>
           </section>
 

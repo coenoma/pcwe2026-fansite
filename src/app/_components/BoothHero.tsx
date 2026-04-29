@@ -160,20 +160,22 @@ export function BoothHero({ program }: Props) {
           </div>
         </div>
 
-        {/* 番組らしさバッジ */}
+        {/* 番組らしさバッジ（遊び心: AI 分析っぽく）*/}
         <div className="mt-10 flex justify-center">
           <p
-            className="inline-flex items-center gap-2 rounded-full border bg-white/80 px-4 py-1.5 text-xs text-neutral-600 backdrop-blur"
+            className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border bg-white/80 px-4 py-1.5 text-xs text-neutral-600 backdrop-blur"
             style={{ borderColor: border }}
           >
             <span aria-hidden="true">🎨</span>
-            ぼくは「{vibe.personalityLabel}」と捉えました。違ったら
+            <span>分析結果: <strong style={{ color: themeColor }}>{vibe.personalityLabel}</strong></span>
+            <span className="text-neutral-400">·</span>
+            <span className="text-neutral-500">独断と偏見につき、</span>
             <Link
               href="/about"
-              className="font-bold underline decoration-transparent transition-colors"
+              className="font-bold underline decoration-transparent transition-colors hover:opacity-80"
               style={{ color: themeColor }}
             >
-              教えてください
+              違ったら教えてね
             </Link>
           </p>
         </div>

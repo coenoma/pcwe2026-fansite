@@ -70,7 +70,8 @@ export type Genre = z.infer<typeof GenreSchema>;
 
 /** 公式ブースから抽出した情報 */
 export const OfficialInfoSchema = z.object({
-  description: z.string().min(1, '公式説明文は必須'),
+  // 自動取得時に空になる場合があるため min 制約は外す。表示側でフォールバック表示。
+  description: z.string(),
   hosts: z.array(z.string()).optional(),
   merchandise: z.array(z.string()).optional(),
 });

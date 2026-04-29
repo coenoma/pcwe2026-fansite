@@ -150,15 +150,14 @@ export function ProgramListClient({ programs }: Props) {
         >
           {visiblePrograms.length}
         </span>{' '}
-        番組
-        {hasFilter ? '（絞り込み中）' : ''}
+        番組{hasFilter ? '、ピックアップ中' : 'を、ぼくのセンスで並べてます'}
       </p>
 
       {/* 結果カード */}
       {visiblePrograms.length === 0 ? (
         <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-12 text-center">
-          <p className="text-base font-bold text-neutral-700">条件に合う番組が見つかりませんでした。</p>
-          <p className="mt-2 text-sm text-neutral-500">タグや出展日を見直してみてください。</p>
+          <p className="text-base font-bold text-neutral-700">あれ、条件にハマる番組が見当たらない…</p>
+          <p className="mt-2 text-sm text-neutral-500">タグや出展日をゆるめてみると、出会えるかもしれません。</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

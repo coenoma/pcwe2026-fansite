@@ -1,0 +1,18 @@
+{
+  "id": "pcwe-118",
+  "fanGuide": {
+    "catchphrase": "新聞の \"尺\" に収まらなかった話を、ここで聴ける。",
+    "subCatch": "朝日新聞記者による、取材現場と解説。",
+    "genre": "ニュース・社会",
+    "tags": [
+      "知的",
+      "学べる",
+      "朝向き",
+      "通勤"
+    ],
+    "targetListener": "ニュースを「読む」だけじゃ足りない人。記者の本音や現場感を求める人。",
+    "vibe": "intellectual",
+    "themeColor": "#C8001E",
+    "themeFont": "noto-serif-jp"
+  }
+}

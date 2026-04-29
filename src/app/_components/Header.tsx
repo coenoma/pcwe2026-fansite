@@ -34,10 +34,13 @@ export function Header() {
 
           {/* ロゴテキスト + サブ */}
           <span className="flex flex-col leading-none">
-            <span className="text-lg font-extrabold tracking-tight text-neutral-900">
+            <span
+              className="text-xl font-extrabold tracking-tight text-neutral-900"
+              style={{ fontFamily: 'var(--font-noto-serif-jp)' }}
+            >
               PCWE<span className="text-primary-600">2026</span>
             </span>
-            <span className="mt-0.5 text-[10px] font-bold uppercase tracking-widest text-neutral-500">
+            <span className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500">
               FAN GUIDE
             </span>
           </span>

@@ -75,8 +75,11 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* メインコピー */}
-          <h1 className="mt-6 text-3xl font-extrabold leading-relaxed tracking-tight text-neutral-900 sm:text-4xl md:text-5xl lg:text-6xl">
+          {/* メインコピー（明朝体でロゴ感 + 親しみ）*/}
+          <h1
+            className="mt-6 text-3xl font-extrabold leading-relaxed tracking-tight text-neutral-900 sm:text-4xl md:text-5xl lg:text-6xl"
+            style={{ fontFamily: 'var(--font-noto-serif-jp)' }}
+          >
             <span className="block">{programs.length} 番組のなかから、</span>
             <span className="mt-2 block">
               <span className="relative inline-block">

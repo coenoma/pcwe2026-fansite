@@ -50,3 +50,6 @@ next-env.d.ts
 
 # ビルド時に sw.template.js から生成される（git 管理外）
 /public/sw.js
+
+# data/sources/official + fan-guide からビルド時に生成される
+/data/programs.json
