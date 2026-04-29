@@ -32,7 +32,7 @@ export function RandomGachaButton({ programs }: Props) {
           知らない番組と、運命の出会い
         </button>
         <p className="text-xs text-neutral-500">
-          ジャンル違いの 3 本を、ふわっとお届け
+          ぼくのおすすめ 3 本を、ふわっとお届け
         </p>
       </div>
 
