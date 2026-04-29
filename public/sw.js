@@ -10,7 +10,7 @@
  */
 
 // CACHE_VERSION はビルド時に scripts/build-sw.ts で git commit hash に置換される
-const CACHE_VERSION = '1d32c3c7683a';
+const CACHE_VERSION = '700b762f8c21';
 const STATIC_CACHE = `pcwe2026-static-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `pcwe2026-runtime-${CACHE_VERSION}`;
 const IMAGE_CACHE = `pcwe2026-images-${CACHE_VERSION}`;

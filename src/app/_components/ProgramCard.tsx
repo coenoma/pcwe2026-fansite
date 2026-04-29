@@ -131,9 +131,9 @@ function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
           <span
             className="box-decoration-clone"
             style={{
-              // 各行に蛍光下線が入る方式（折り返しても破綻しない）
+              // 各行のテキスト下部にだけ蛍光ペン下線（amber 25%、可読性最優先）
               backgroundImage:
-                'linear-gradient(180deg, transparent 65%, rgba(252, 211, 77, 0.6) 65%, rgba(252, 211, 77, 0.6) 95%, transparent 95%)',
+                'linear-gradient(180deg, transparent 78%, rgba(252, 211, 77, 0.4) 78%, rgba(252, 211, 77, 0.4) 94%, transparent 94%)',
               paddingInline: '0.1em',
             }}
           >

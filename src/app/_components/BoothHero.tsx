@@ -30,7 +30,8 @@ export function BoothHero({ program }: Props) {
   const bg = `${themeColor}0d`; // 5%
   const border = `${themeColor}40`; // 25%
   const decoration = `${themeColor}20`; // 12%
-  const highlightUnderline = `${themeColor}aa`; // 67%
+  // 蛍光ペン風の下線: 25% 透明度に抑え、暗い themeColor でもテキストが埋もれないように
+  const highlightUnderline = `${themeColor}40`;
 
   const tweetText = `${program.shortName ?? program.name}\n${program.fanGuide.catchphrase}`;
   const detailUrl = `${SITE.url}/booth/${program.id}`;
@@ -103,8 +104,9 @@ export function BoothHero({ program }: Props) {
               <span
                 className="box-decoration-clone"
                 style={{
-                  // 全行に蛍光ペン下線が入るよう linear-gradient で各行 60-90% の帯を描画
-                  backgroundImage: `linear-gradient(180deg, transparent 60%, ${highlightUnderline} 60%, ${highlightUnderline} 90%, transparent 90%)`,
+                  // 各行のテキスト下部（78-94%）にだけ蛍光ペン下線を描画。
+                  // テキスト本体に色がかぶらず、中央への侵食がないので可読性を確保。
+                  backgroundImage: `linear-gradient(180deg, transparent 78%, ${highlightUnderline} 78%, ${highlightUnderline} 94%, transparent 94%)`,
                   paddingInline: '0.1em',
                 }}
               >
