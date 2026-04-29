@@ -1,0 +1,23 @@
+{
+  "id": "pcwe-123",
+  "name": "読んでみてはラジオ",
+  "thumbnail": "/thumbnails/123.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-123/",
+  "fetchedAt": "2026-04-29T13:49:34.520Z",
+  "official": {
+    "description": "「読書は人生を豊かにする」と言う仮説を持つ幼なじみ2名が、本の内容を血肉化し、活用していくために、お互いに読んだ本を紹介し、ゆるく雑談をしてインサイトを得るラジオ番組です。\nパーソナリティを務めるのは、株式会社Right Design代表の小川貴之と、株式会社SmartHR代表の芹澤雅人です。\n日曜日の17:00に新エピソードを配信します。\n            \n\n      PODCAST\n  \n  \n      X"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "123"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/0Vv5Gs0DVYZsvAb4w4CthT",
+    "x": "https://x.com/yondemiteha"
+  }
+}

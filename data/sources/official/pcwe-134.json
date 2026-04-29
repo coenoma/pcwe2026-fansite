@@ -1,0 +1,24 @@
+{
+  "id": "pcwe-134",
+  "name": "カイブツラジオ",
+  "thumbnail": "/thumbnails/134.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-134/",
+  "fetchedAt": "2026-04-29T13:49:53.364Z",
+  "official": {
+    "description": "「カイブツになろう！」をキャッチコピーに、自分の“好き“に夢中で向き合う人たちの価値観や生き方を掘り下げる番組です。\nカイブツとは、他人の評価に流されず、好きなことを夢中で追い続ける人のこと。\n番組では、自己中心的に見えるほど夢中になることが、結果として誰かの役に立ち、社会をやさしくするという可能性を探ります。\n            \n\n      PODCAST\n  \n  \n      X\n  \n      IG"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "134"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/3QC7R1GU2U0mVoGGJ8sUF9",
+    "x": "https://x.com/LLCSquad152636",
+    "instagram": "https://www.instagram.com/kaibutsu_squad/"
+  }
+}

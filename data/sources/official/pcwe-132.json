@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-132",
+  "name": "高揚館",
+  "thumbnail": "/thumbnails/132.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-132/",
+  "fetchedAt": "2026-04-29T13:49:49.643Z",
+  "official": {
+    "description": "高揚館（こうようかん）は、40代の男・父親・働く大人たちの「本音」と「モヤモヤ」を、雑談と人生相談でほどいていくトークチャンネルです。\n子育て、夫婦関係、仕事の悩み、生きづらさ、自己肯定感、スピリチュアルな考え方まで、答えを出さずに、一緒に考えることを大切にしています。\n深夜ラジオのような空気感で「ちゃんと生きなきゃ」から少し離れて、自分を許し、自由に生きるヒントを届けます。\n✔ 人生相談・本音トーク\n✔ 40代の生き方・男の悩み\n✔ 父親・子育て・家族\n✔ スピリチュアル思考・哲学的雑談\n心がちょっと軽くなる場所。\nそれが、高揚館です。\n            \n\n      PODCAST"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "132"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/3aRbIg3jlFuB99VqOLgvd5"
+  }
+}

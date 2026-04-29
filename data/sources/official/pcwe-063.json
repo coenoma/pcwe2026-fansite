@@ -1,0 +1,23 @@
+{
+  "id": "pcwe-063",
+  "name": "しゃべり足りない部",
+  "thumbnail": "/thumbnails/063.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-063/",
+  "fetchedAt": "2026-04-29T13:47:43.582Z",
+  "official": {
+    "description": "卑屈なのに人が大好きな30代会社員・まいこうが配信する、ゆる雑談ポッドキャストです。大体毎週木曜18時に更新したりしなかったりしています。番組名のとおり日々しゃべり足りないことだらけで、そのときどきに話したいことを雑多に雑談したり、自分の卑屈さをエピソードに昇華したり、時にはゲストを招いてまいこうを断罪してもらったりもしています。\n年数回不定期で『雑談系ポッドキャストの日』（番組ジャンル問わず参加可能な雑談エピソード配信企画）を主催しています。次回は夏ごろの開催予定です！\n            \n\n      PODCAST\n  \n  \n      X"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "063"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/76YLu4NfmscBT9X0FGLfEG",
+    "x": "https://x.com/ShaberiTarinaiB"
+  }
+}

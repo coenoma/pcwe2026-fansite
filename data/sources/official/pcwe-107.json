@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-107",
+  "name": "ラジオただいま発酵中",
+  "thumbnail": "/thumbnails/107.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-107/",
+  "fetchedAt": "2026-04-29T13:49:09.998Z",
+  "official": {
+    "description": "発酵デザイナー・小倉ヒラクが、Backpackers’ Japanの石崎嵩人とお送りするPodcast。発酵をテーマに、食はもちろん、カルチャーや人類学、サイエンスまであれこれ突っ込んで語りまくる、発酵ビギナーから上級者まで楽しい発酵ラジオ。毎週水曜日更新。\n            \n\n      PODCAST"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "107"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/1ESl3Yo10irse8ChAN3U1I"
+  }
+}

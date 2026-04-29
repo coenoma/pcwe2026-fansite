@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-083",
+  "name": "ハコとくら",
+  "thumbnail": "/thumbnails/083.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-083/",
+  "fetchedAt": "2026-04-29T13:48:28.625Z",
+  "official": {
+    "description": "作家のとくらじゅんと漫画家のニシハラハコがゆるっと喋るラジオ。毎週ベスト3を決めていきます。入眠にぴったりの声です。眠れない夜にぜひ。\n            \n\n      PODCAST"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "083"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/6rLMEpDAUbmvrLeb4rBx5b"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "pcwe-056",
+  "name": "ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！！〜",
+  "thumbnail": "/thumbnails/056.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-056/",
+  "fetchedAt": "2026-04-29T13:47:32.255Z",
+  "official": {
+    "description": "ライターやクリエイターとして活動する、ゆりしー＆さほほが、いま興味のあるガールズ・カルチャーについておしゃべりしつつ、社会や歴史の話もできたらいいな〜と思いながら不定期更新でお届けしているポッドキャストです。\n            \n\n      PODCAST\n  \n  \n      X"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "056"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/3IAGVOYBkBFJ61jMuavbzS",
+    "x": "https://x.com/gcrc_divedeep"
+  }
+}

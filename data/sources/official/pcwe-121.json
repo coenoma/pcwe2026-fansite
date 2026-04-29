@@ -1,0 +1,23 @@
+{
+  "id": "pcwe-121",
+  "name": "ぜったい大丈夫だよラジオ",
+  "thumbnail": "/thumbnails/121.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-121/",
+  "fetchedAt": "2026-04-29T13:49:30.980Z",
+  "official": {
+    "description": "「ぜったい大丈夫だよラジオ」は、クリエイティブ業界に身を置き日々をサバイブする2人が、漫画やアニメをはじめ自分たちを「大丈夫」にしてくれるものについて愛を込めて話すポッドキャスト番組です🌕🗼作品の感想だけでなく、仕事や健康、社会のもやもやについてもゆるりと楽しく、時々しんみりお話ししています💭だいたい毎週金曜に更新中！\n            \n\n      PODCAST\n  \n  \n      X"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "121"
+  },
+  "links": {
+    "applePodcasts": "https://podcasts.apple.com/jp/podcast/124-%E3%83%8F%E3%82%A4%E3%82%AD%E3%83%A5%E3%83%BC-%E3%83%90%E3%83%AC%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%AB%E8%B6%85%E3%81%88%E3%81%A6%E4%BA%BA%E7%94%9F%E3%81%AE%E6%95%99%E7%A7%91%E6%9B%B8%E3%81%AB%E5%B0%8A%E3%81%95%E7%88%86%E7%99%BA%E3%81%AE%E7%A7%81%E3%81%9F%E3%81%A1/id1547061619?i=1000649300665",
+    "x": "https://x.com/daijobu_radio"
+  }
+}

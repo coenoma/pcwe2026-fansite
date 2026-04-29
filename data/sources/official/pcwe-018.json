@@ -1,0 +1,23 @@
+{
+  "id": "pcwe-018",
+  "name": "こうきとたかやのラジオもどき",
+  "thumbnail": "/thumbnails/018.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-018/",
+  "fetchedAt": "2026-04-29T13:46:32.523Z",
+  "official": {
+    "description": "「わっしょい☆田中」という芸名でお笑い芸人として活動する”こうき”と一般人”たかや”がポッドキャストを使って非生産的なトークを世の中にお届けするラジオ番組となっております。予測不能なボケと、なんとか成立させようとするツッコミ未満のリアクションでお送りしています。\nイベント当日も非生産的なブースを展開させていただく予定なのでお楽しみに！\n            \n\n      PODCAST\n  \n  \n      X"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "018"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/0XiKZ9Vzg24wFqeBYXPvmT",
+    "x": "https://x.com/radiomodoki2021"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "pcwe-099",
+  "name": "本の虫のススメ",
+  "thumbnail": "/thumbnails/099.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-099/",
+  "fetchedAt": "2026-04-29T13:48:55.709Z",
+  "official": {
+    "description": "本を偏愛する生物学者の椿と書店員のさとう（のりこ）が毎週金曜日にお届けする、読書にまつわるあれやこれやを縦横無尽にしゃべりまくるインターネットラジオ。本好きが高じて2026年3月に横浜・反町に『夜逃げ書房』開業🎵\n読書好きな方もそうじゃない方も、本好き幼馴染二人のゆるいトークをお楽しみください。\n            \n\n      PODCAST\n  \n  \n      X"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "099"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/6uLZw1dszYDTdYgjxnbGGn",
+    "x": "https://x.com/honnomushi_ssm"
+  }
+}

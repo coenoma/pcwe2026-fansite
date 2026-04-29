@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-005",
+  "name": "日々の句読点。by SEKISUI HOUSE",
+  "thumbnail": "/thumbnails/005.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-005/",
+  "fetchedAt": "2026-04-29T13:46:15.563Z",
+  "official": {
+    "description": "「日々の句読点。」は、思わず “ただいま” と帰ってきたくなるような気持ちが前向きになる場所を、みんなで一緒につくっていくポッドキャストプログラムです。\n素の自分に戻ったり、まっさらな気持ちになったり。途切れなく続く日常の中、ふと立ち止まることで生まれる、句読点のような時間。それはこころが帰る、わたしらしいひとときなのかもしれません。\n◾︎配信日時：二十四節気（にじゅうしせっき）のころ、夕暮れどき\n◾︎パーソナリティ：前田エマ（モデル）、伊藤紺（歌人）\n#家に帰れば積水ハウス #日々の句読点\n            \n\n      PODCAST"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "005"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/5haWUVbvU6DoX3Mjb61I6N"
+  }
+}

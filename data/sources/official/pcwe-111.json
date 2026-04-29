@@ -1,0 +1,23 @@
+{
+  "id": "pcwe-111",
+  "name": "ワイングラスからこぼれ話。",
+  "thumbnail": "/thumbnails/111.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-111/",
+  "fetchedAt": "2026-04-29T13:49:16.521Z",
+  "official": {
+    "description": "地方のワイナリー勤務で、ワイン好きの子持ちワインエキスパートのjellyが、雑談を交えながらワイングラスからこぼれる程度の話をしていく番組です。\nワインをもっと知ってほしい！布教したい！がモットーで、わかりやすさ重視のワインのお話をメインに配信中。\n            \n\n      PODCAST\n  \n  \n      X"
+  },
+  "exhibition": {
+    "days": [
+      "sat",
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "111"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/1I4SVQ8dsk1yxart7ODNGU",
+    "x": "https://x.com/jellysPodcast"
+  }
+}
