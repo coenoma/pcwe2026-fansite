@@ -84,11 +84,15 @@ body {
   }
 }
 
-/* ====== ガチャ結果のふわんふわんアニメーション ====== */
+/* ====== ガチャ結果のふわんふわんアニメーション ======
+ * モーダルサイズが揺れないよう、scale は控えめ（0.96→1）+ translateY 中心。
+ * transform だけならレイアウト計算が走らないため、親コンテナの高さは安定する。
+ * ただし grid コンテナ側に min-height を固定しておくのが完全な保険。
+ */
 @keyframes float-in {
   0% {
     opacity: 0;
-    transform: translateY(24px) scale(0.92);
+    transform: translateY(20px) scale(0.96);
   }
   60% {
     opacity: 1;
@@ -99,7 +103,9 @@ body {
   }
 }
 .animate-float-in {
-  animation: float-in 700ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  animation: float-in 650ms cubic-bezier(0.34, 1.4, 0.64, 1) backwards;
+  /* transform / opacity のみアニメ → レイアウトに影響を与えない */
+  will-change: transform, opacity;
 }
 
 /* dialog の open 時に背景フェードイン */

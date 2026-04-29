@@ -94,9 +94,10 @@ export function GachaModal({ programs, isOpen, onClose }: Props) {
 
         {/* スクロール領域 */}
         <div className="flex-1 overflow-y-auto px-4 py-5 sm:px-6 sm:py-7">
+          {/* grid コンテナに min-height を固定して、reroll / アニメ中の揺れを防ぐ */}
           <div
             key={rerollKey}
-            className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5"
+            className="grid min-h-[1080px] grid-cols-1 gap-4 sm:min-h-[400px] sm:grid-cols-3 sm:gap-5"
           >
             {picks.map((program, index) => (
               <GachaPick key={program.id} program={program} delay={index * 180} />
@@ -136,7 +137,7 @@ function GachaPick({ program, delay }: GachaPickProps) {
   return (
     <Link
       href={`/booth/${program.id}`}
-      className="animate-float-in group block overflow-hidden rounded-xl border-2 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]"
+      className="animate-float-in group flex h-full min-h-[340px] flex-col overflow-hidden rounded-xl border-2 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]"
       style={{
         borderColor: `${themeColor}40`,
         animationDelay: `${delay}ms`,
@@ -157,7 +158,7 @@ function GachaPick({ program, delay }: GachaPickProps) {
           style={{ backgroundColor: themeColor }}
         />
       </div>
-      <div className="space-y-2 p-3 sm:p-4">
+      <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
         <div className="flex flex-wrap gap-1.5 text-[10px]">
           <span
             className="rounded-full px-2 py-0.5 font-bold"
