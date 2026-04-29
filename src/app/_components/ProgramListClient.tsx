@@ -89,7 +89,7 @@ export function ProgramListClient({ programs }: Props) {
           <input
             ref={inputRef}
             type="search"
-            placeholder="番組名・キーワード・タグで検索（/ キーでフォーカス）"
+            placeholder="「これ刺さる」を探す（番組名・キーワード・タグ）"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             aria-label="番組を検索"

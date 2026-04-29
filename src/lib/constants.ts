@@ -55,7 +55,10 @@ export const FORM_FIX_URL = process.env.NEXT_PUBLIC_FORM_FIX_URL ?? '';
 
 export const CREATOR = {
   company: '合同会社コエノマ',
-  founder: 'ゆと',
+  /** 個人名（敬称・肩書きなし）*/
+  representative: 'ゆと',
+  /** 肩書き付きの自己紹介（フッター・About 等で使用）*/
+  representativeLabel: 'Podmate を運営するコエノマ代表のゆと',
   twitterHandle: '@yuto_podmate',
   twitterUrl: 'https://x.com/yuto_podmate',
   serviceName: 'Podmate',

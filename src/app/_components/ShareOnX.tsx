@@ -17,7 +17,12 @@ interface Props {
  *
  * 「教えてあげる」のニュアンスでボタン文言を統一（押し売り禁止）。
  */
-export function ShareOnX({ text, url, hashtags = ['PCWE2026'], className }: Props) {
+export function ShareOnX({
+  text,
+  url,
+  hashtags = ['PCWE2026', 'ポッドキャストウィークエンド'],
+  className,
+}: Props) {
   const [copied, setCopied] = useState(false);
 
   const buildIntentUrl = () => {

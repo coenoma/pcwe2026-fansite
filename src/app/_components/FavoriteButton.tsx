@@ -58,13 +58,16 @@ export function FavoriteButton({ programId, size = 'sm' }: Props) {
   const iconSize = size === 'lg' ? 24 : size === 'md' ? 20 : 16;
   const buttonSize = size === 'lg' ? 'h-10 w-10' : size === 'md' ? 'h-9 w-9' : 'h-7 w-7';
 
+  const tooltipText = isFavorite ? '気になるから外す' : '気になるに追加';
+
   return (
     <button
       type="button"
       onClick={handleClick}
       aria-pressed={isFavorite}
-      aria-label={isFavorite ? '気になるから外す' : '気になるに追加'}
-      className={`flex ${buttonSize} items-center justify-center rounded-full transition-all duration-150 active:scale-90 ${
+      aria-label={tooltipText}
+      title={`${tooltipText}（気になるリスト /plan で当日の動線をまとめられます）`}
+      className={`group/fav relative flex ${buttonSize} items-center justify-center rounded-full transition-all duration-150 active:scale-90 ${
         isFavorite
           ? 'bg-primary-50 text-primary-600 hover:bg-primary-100'
           : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200 hover:text-primary-600'
@@ -77,6 +80,11 @@ export function FavoriteButton({ programId, size = 'sm' }: Props) {
         } ${isFavorite ? 'fill-primary-600' : ''}`}
         aria-hidden="true"
       />
+
+      {/* ホバー時のラベル（PC のみ）*/}
+      <span className="pointer-events-none absolute -top-9 left-1/2 hidden -translate-x-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs font-bold text-white opacity-0 transition-opacity group-hover/fav:opacity-100 lg:block">
+        {tooltipText}
+      </span>
       {!mounted && <span className="sr-only">読み込み中</span>}
     </button>
   );

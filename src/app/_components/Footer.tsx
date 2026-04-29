@@ -37,9 +37,7 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-neutral-700">制作</h3>
             <ul className="mt-2 space-y-1 text-neutral-600">
-              <li>
-                {CREATOR.company}（ファウンダー: {CREATOR.founder}）
-              </li>
+              <li>{CREATOR.representativeLabel}（{CREATOR.company}）</li>
               <li>
                 <a
                   href={CREATOR.serviceUrl}
@@ -64,9 +62,13 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="mt-8 text-xs text-neutral-400">
-          © {new Date().getFullYear()} {CREATOR.company}. 番組情報・画像は各番組制作者・PODCAST EXPO 2026 公式に帰属します。
-        </p>
+        <div className="mt-8 space-y-2 text-xs text-neutral-500">
+          <p>
+            このサイトは <strong>非公式</strong> のファンガイドです。番組のロゴ・概要などは、各番組さんと PODCAST EXPO 2026 公式の情報を引用しています。
+          </p>
+          <p>掲載取り下げや内容の修正は、上の「このサイトについて」からご連絡ください。</p>
+          <p className="pt-2 text-neutral-400">© {new Date().getFullYear()} {CREATOR.company}</p>
+        </div>
       </div>
     </footer>
   );

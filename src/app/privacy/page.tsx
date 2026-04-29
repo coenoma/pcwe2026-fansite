@@ -62,7 +62,7 @@ export default function PrivacyPage() {
             </p>
             <p className="mt-3">
               本サイト独自に書き起こしている <strong>キャッチコピー / サブキャッチ / タグ / ジャンル分類 / ターゲットリスナー</strong> は、
-              {CREATOR.company}（{CREATOR.founder}）によるファンとしてのキュレーションであり、公式情報の引用ではありません。
+              {CREATOR.company}（{CREATOR.representative}）によるファンとしてのキュレーションであり、公式情報の引用ではありません。
             </p>
           </section>
 
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-extrabold text-neutral-900">7. このサイトについて</h2>
             <p className="mt-3">
               本サイトは <strong>非公式</strong> のファンガイドであり、PCWE2026 公式とは無関係に
-              {CREATOR.company} のファウンダー（{CREATOR.founder}）がファン活動として制作・運営しています。
+              {CREATOR.company} の代表（{CREATOR.representative}）がファン活動として制作・運営しています。
             </p>
           </section>
 

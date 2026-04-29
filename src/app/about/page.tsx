@@ -22,7 +22,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-xl font-extrabold text-neutral-900">非公式ファンガイドです</h2>
             <p className="mt-3">
-              このサイトは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">{EVENT.name}（{EVENT.shortName}）</a> の出展番組を、ファンの視点でまとめた <strong>非公式</strong> のガイドサイトです。公式とは無関係に、{CREATOR.company} のファウンダー（{CREATOR.founder}）がファン活動として制作しました。
+              このサイトは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">{EVENT.name}（{EVENT.shortName}）</a> の出展番組を、ファンの視点でまとめた <strong>非公式</strong> のガイドサイトです。公式とは無関係に、{CREATOR.company} の代表（{CREATOR.representative}）がファン活動として制作しました。
             </p>
             <p className="mt-3">
               番組情報・画像は各番組制作者と公式に帰属します。本サイトのキャッチコピー・タグ・ジャンル分類は、ファンとしてのキュレーションです（公式情報の引用ではなく、独自に書き起こしています）。
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <section className="rounded-xl bg-neutral-50 p-6 text-sm text-neutral-600">
             <p className="font-bold text-neutral-700">制作</p>
             <p className="mt-2">
-              {CREATOR.company} ファウンダー: {CREATOR.founder}
+              {CREATOR.company} 代表: {CREATOR.representative}
               <br />
               <a href={CREATOR.serviceUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600">
                 Podmate.fm — ポッドキャスト運営の、おとも。
