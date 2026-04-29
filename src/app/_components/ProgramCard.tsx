@@ -1,35 +1,85 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { memo, useState } from 'react';
 import type { Program } from '@/lib/types';
 import { dayLabel } from '@/lib/format';
+import { vibeStyle } from '@/lib/vibe-style';
+import { tagAxis, tagAxisClass } from '@/lib/tag-axis';
+import { getGenresMap } from '@/lib/data';
 import { FavoriteButton } from './FavoriteButton';
+import { GenreIcon } from './GenreIcon';
 
 interface Props {
   program: Program;
 }
 
+const GENRES_MAP = getGenresMap();
+
 /**
- * 一覧用カード（コンパクト）
+ * 一覧用カード（Podmate ブランディング）
  *
- * Podmate ブランディング: ハイライト下線でキャッチコピーを強調。
+ * - vibe 別のトップアクセントラインで番組らしさを出す
+ * - 画像はスケルトン → フェードインで「止まった？」を回避
+ * - PC ホバーで浮上 + Spotify ボタン出現
+ * - React.memo で再レンダリング抑制
  */
-export function ProgramCard({ program }: Props) {
+function ProgramCardImpl({ program }: Props) {
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const vibe = vibeStyle(program.fanGuide.vibe);
+  const genreMeta = GENRES_MAP[program.fanGuide.genre];
+
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition hover:border-primary-300 hover:shadow-lg">
+    <article
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl"
+    >
+      {/* vibe トップアクセントライン */}
+      <span
+        aria-hidden="true"
+        className={`absolute inset-x-0 top-0 h-1 ${vibe.topAccent}`}
+      />
+
       <Link
         href={`/booth/${program.id}`}
         className="block focus-visible:outline-none"
         aria-label={`${program.name} の詳細を見る`}
       >
         <div className="relative aspect-square w-full overflow-hidden bg-neutral-100">
+          {/* スケルトン */}
+          {!imgLoaded && (
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 animate-pulse bg-gradient-to-br from-neutral-100 to-neutral-200"
+            />
+          )}
+
           <Image
             src={program.thumbnail}
             alt={`${program.name} のロゴ画像`}
             fill
-            className="object-cover transition group-hover:scale-105"
+            className={`object-cover transition-opacity duration-500 group-hover:scale-105 ${
+              imgLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            priority={false}
+            onLoad={() => setImgLoaded(true)}
+            loading="lazy"
+            decoding="async"
           />
+
+          {/* PC ホバー時の Spotify ボタン */}
+          {program.links.spotify !== undefined && (
+            <a
+              href={program.links.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              aria-label={`${program.name} を Spotify で聴く`}
+              className="absolute right-3 top-3 hidden h-10 w-10 items-center justify-center rounded-full bg-white/95 text-neutral-700 opacity-0 shadow-lg transition-opacity duration-300 hover:bg-white hover:text-primary-700 group-hover:opacity-100 lg:flex"
+            >
+              <span aria-hidden="true">🎧</span>
+            </a>
+          )}
         </div>
       </Link>
 
@@ -37,8 +87,9 @@ export function ProgramCard({ program }: Props) {
         <div className="flex flex-wrap items-center gap-2 text-xs">
           <Link
             href={`/genre/${encodeURIComponent(program.fanGuide.genre)}`}
-            className="rounded-full bg-primary-50 px-2 py-0.5 font-bold text-primary-700 hover:bg-primary-100"
+            className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2 py-0.5 font-bold text-primary-700 hover:bg-primary-100"
           >
+            <GenreIcon name={genreMeta?.icon ?? 'Circle'} size={12} />
             {program.fanGuide.genre}
           </Link>
           <span className="rounded-full bg-neutral-100 px-2 py-0.5 font-bold text-neutral-700">
@@ -69,7 +120,7 @@ export function ProgramCard({ program }: Props) {
           {program.fanGuide.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-neutral-200 px-2 py-0.5 text-xs text-neutral-600"
+              className={`rounded-full border px-2 py-0.5 text-xs font-bold ${tagAxisClass(tagAxis(tag))}`}
             >
               {tag}
             </span>
@@ -79,3 +130,5 @@ export function ProgramCard({ program }: Props) {
     </article>
   );
 }
+
+export const ProgramCard = memo(ProgramCardImpl);

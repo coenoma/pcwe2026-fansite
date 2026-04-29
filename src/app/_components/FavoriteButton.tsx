@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Heart } from 'lucide-react';
 import { loadFavorites, saveFavorites, toggleFavorite } from '@/lib/favorites';
 
@@ -10,25 +10,49 @@ interface Props {
 }
 
 /**
- * 「気になる」トグルボタン（Client Component）
+ * 「気になる」トグルボタン
  *
- * localStorage に保存。SSR 中は常に未お気に入り状態でレンダリングされる。
+ * - クリック時にハートが pulse（scale: 1 → 1.4 → 1）
+ * - localStorage に保存
+ * - SSR 中は常に未お気に入り状態
+ * - 「気になる N 件」を window event で他コンポーネントに通知（Header バッジ用）
  */
 export function FavoriteButton({ programId, size = 'sm' }: Props) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [pulse, setPulse] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const pulseTimer = useRef<number | null>(null);
 
   useEffect(() => {
     setMounted(true);
     setIsFavorite(loadFavorites().includes(programId));
   }, [programId]);
 
+  useEffect(() => {
+    return () => {
+      if (pulseTimer.current !== null) {
+        window.clearTimeout(pulseTimer.current);
+      }
+    };
+  }, []);
+
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     const next = toggleFavorite(loadFavorites(), programId);
     saveFavorites(next);
-    setIsFavorite(next.includes(programId));
+    const nextIsFav = next.includes(programId);
+    setIsFavorite(nextIsFav);
+
+    // 追加時のみパルスアニメーション
+    if (nextIsFav) {
+      setPulse(true);
+      if (pulseTimer.current !== null) window.clearTimeout(pulseTimer.current);
+      pulseTimer.current = window.setTimeout(() => setPulse(false), 400);
+    }
+
+    // 他コンポーネントに通知（Header の件数バッジ用）
+    window.dispatchEvent(new CustomEvent('pcwe-favorites-changed', { detail: { count: next.length } }));
   };
 
   const iconSize = size === 'lg' ? 24 : size === 'md' ? 20 : 16;
@@ -40,7 +64,7 @@ export function FavoriteButton({ programId, size = 'sm' }: Props) {
       onClick={handleClick}
       aria-pressed={isFavorite}
       aria-label={isFavorite ? '気になるから外す' : '気になるに追加'}
-      className={`flex ${buttonSize} items-center justify-center rounded-full transition ${
+      className={`flex ${buttonSize} items-center justify-center rounded-full transition-colors ${
         isFavorite
           ? 'bg-primary-50 text-primary-600 hover:bg-primary-100'
           : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'
@@ -48,7 +72,9 @@ export function FavoriteButton({ programId, size = 'sm' }: Props) {
     >
       <Heart
         size={iconSize}
-        className={isFavorite ? 'fill-primary-600' : ''}
+        className={`transition-transform duration-200 ${
+          pulse ? 'scale-150' : 'scale-100'
+        } ${isFavorite ? 'fill-primary-600' : ''}`}
         aria-hidden="true"
       />
       {!mounted && <span className="sr-only">読み込み中</span>}

@@ -1,5 +1,7 @@
 import { getAllPrograms } from '@/lib/data';
 import { ProgramListClient } from './_components/ProgramListClient';
+import { CountdownBadge } from './_components/CountdownBadge';
+import { RandomGachaButton } from './_components/RandomGachaButton';
 import { EVENT } from '@/lib/constants';
 
 export const dynamic = 'force-static';
@@ -8,7 +10,7 @@ export const dynamic = 'force-static';
  * トップページ
  *
  * - サーバー側で全番組を読み込む（SSG）
- * - 検索・フィルタ・気になるは Client Component に渡す
+ * - 検索・フィルタ・気になる・カウントダウン・ガチャは Client Component
  */
 export default function HomePage() {
   const programs = getAllPrograms();
@@ -40,10 +42,16 @@ export default function HomePage() {
             <span className="hidden sm:inline"> ／ </span>
             {EVENT.venue}（{EVENT.venueAccess}）
           </p>
+
+          <CountdownBadge />
+
+          <div className="mt-8 flex justify-center">
+            <RandomGachaButton programIds={programs.map((p) => p.id)} />
+          </div>
         </div>
       </section>
 
-      {/* 番組一覧（Client Component で検索・フィルタ）*/}
+      {/* 番組一覧 */}
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
           <ProgramListClient programs={programs} />
