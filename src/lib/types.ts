@@ -105,6 +105,18 @@ export const FanGuideSchema = z.object({
     .string()
     .min(15, 'キャッチコピーは 15 字以上')
     .max(60, 'キャッチコピーは 60 字以内（推奨 30-50 字）'),
+  /**
+   * Hero 表示用の明示改行（任意）。
+   * - catchphrase の意味の切れ目で改行したい時に行配列で指定
+   * - 各行を <span className="block"> でレンダーして、蛍光ペン下線を行ごとに当てる
+   * - 未指定なら catchphrase を 1 行で表示（カード表示は常に 1 行）
+   * - lines を join したものが catchphrase と意味的に一致する前提
+   */
+  catchphraseLines: z
+    .array(z.string().min(1, '空行は不可'))
+    .min(2, '改行指定は最低 2 行から')
+    .max(4, '改行指定は最大 4 行まで（モバイル可読性のため）')
+    .optional(),
   subCatch: z
     .string()
     .min(10, 'サブキャッチは 10 字以上')
@@ -164,3 +176,41 @@ export type GenreMeta = z.infer<typeof GenreMetaSchema>;
 
 export const GenresMapSchema = z.record(GenreSchema, GenreMetaSchema);
 export type GenresMap = z.infer<typeof GenresMapSchema>;
+
+// ====================
+// キュレーション（手動レーン）
+// ====================
+
+/** 手動キュレーションされた番組レーン */
+export const CurationSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  subtitle: z.string().min(1),
+  themeColor: z.string().regex(/^#[0-9a-fA-F]{6}$/),
+  programIds: z.array(z.string().regex(/^pcwe-\d{3}$/)).min(2),
+});
+export type Curation = z.infer<typeof CurationSchema>;
+
+export const CurationsDataSchema = z.object({
+  curations: z.array(CurationSchema).min(1),
+});
+export type CurationsData = z.infer<typeof CurationsDataSchema>;
+
+// ====================
+// 気分・シーン入口
+// ====================
+
+export const MoodSchema = z.object({
+  slug: z.string().regex(/^[a-z0-9-]+$/, 'slug は kebab-case の英小文字'),
+  label: z.string().min(1),
+  description: z.string().min(1),
+  emoji: z.string().min(1),
+  themeColor: z.string().regex(/^#[0-9a-fA-F]{6}$/),
+  matchTags: z.array(z.string()).min(1),
+});
+export type Mood = z.infer<typeof MoodSchema>;
+
+export const MoodsDataSchema = z.object({
+  moods: z.array(MoodSchema).min(1),
+});
+export type MoodsData = z.infer<typeof MoodsDataSchema>;

@@ -71,10 +71,31 @@ console.log('✅ 番組データを読み込みました');
 console.error('❌ 番組サムネイル画像の取得に失敗しました');
 ```
 
-### 7. AI API の呼び出し禁止
+### 7. LLM API キーでの直接呼び出し禁止 / AI エージェント運用は OK（v1.6 改訂）
 
-このプロジェクトでは Anthropic / OpenAI 等の AI API を**使用しない**（コスト発生のため）。
-キャッチコピー等のライティングはコエノマが手動で書き、JSON に保存する。
+**禁止**:
+- ❌ スクリプト・サイト本体から OpenAI / Anthropic 等の **LLM API キーを使った直接呼び出し**
+  （API 課金発生・自動運用リスクのため）
+- ❌ ユーザーアクセス時に LLM API を叩くサイト機能の追加
+- ❌ 「AI が一発生成 → そのまま提出」の自動生成パイプライン構築
+
+**OK**:
+- ✅ Claude Code / ChatGPT 等の **AI エージェントが、ユーザー（コエノマ）の操作下で動き、
+  fan-guide ライティングを支援する**こと（既に契約済みの定額枠で動く）
+- ✅ エージェントが fetch / Chrome / `scripts/fetch-booth-info.ts` 等で情報収集し、
+  [docs/writing-guide/fan-guide-writing-guide.md](./docs/writing-guide/fan-guide-writing-guide.md)
+  に従って手書き品質のテキストを作ること
+
+**運用の必須条件**:
+- ライティングガイドの「自己レビューチェックリスト」を必ず通す
+- 人間（コエノマ）が最終確認・必要に応じ手直し
+- About ページに「AI エージェントの支援を受けつつ、人間が最終校正」スタンスを明記
+- 番組制作者の意図に反する深読み・脚色は禁止
+- 公式情報（番組概要・ホスト名・出展情報）の捏造は禁止
+
+要するに：**LLM を「API で自動的に叩く」のは NG、「人間が指示して手元で動かす」のは OK**。
+
+詳細はライティングガイド §11 参照。
 
 ### 8. 公式画像のホットリンク禁止
 
@@ -409,8 +430,12 @@ About ページに 2 種類のフォームへの導線を置く。詳細フロ�
 ## 関連ドキュメント
 
 - [README.md](./README.md): プロジェクト概要
+- [docs/writing-guide/fan-guide-writing-guide.md](./docs/writing-guide/fan-guide-writing-guide.md): **fan-guide 執筆ガイド（並列 AI 想定）**
+- [docs/writing-guide/agent-runbook.md](./docs/writing-guide/agent-runbook.md): **並列エージェント運用手順（割り当て・進捗・キックオフテンプレ）**
 - [docs/plans/v1-mvp-launch/README.md](./docs/plans/v1-mvp-launch/README.md): 初回公開の設計書
+- [docs/plans/v1.6-fan-guide-scaling/README.md](./docs/plans/v1.6-fan-guide-scaling/README.md): 144 番組展開の設計書
 - [Podmate Branding Guideline](../../podmate-next/docs/DESIGN_GUIDELINE_BRANDING.md): 流用元
+- [Podmate CLI guide_cmd](../../podmate-cli/src/podmate_cli/guide_cmd.py): ライティングガイドの流用元コンセプト
 - [Podmate AGENTS.md](../../podmate-next/AGENTS.md): 流用元の作法
 
 ---

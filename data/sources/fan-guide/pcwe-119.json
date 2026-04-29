@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-119",
+  "fanGuide": {
+    "catchphrase": "DJ ならぬ Gyoza Jockey が、毎週火曜、焼き餃子を回す。",
+    "catchphraseLines": [
+      "DJ ならぬ Gyoza Jockey が、",
+      "毎週火曜、焼き餃子を回す。"
+    ],
+    "subCatch": "焼き餃子協会・代表理事による、ニッチ全振り音声番組。",
+    "genre": "食",
+    "tags": [
+      "熱量高い",
+      "夜向き",
+      "ニッチ",
+      "一人語り"
+    ],
+    "targetListener": "焼き餃子に「文化」を感じる人。ニッチに本気で振り切るホストが好きな人。火曜の夜に、餃子の音を聴きたい人。",
+    "vibe": "humorous",
+    "themeColor": "#B86F4A",
+    "themeFont": "dot-gothic-16"
+  }
+}

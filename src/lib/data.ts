@@ -7,8 +7,15 @@
 
 import programsJson from '../../data/programs.json';
 import genresJson from '../../data/genres.json';
-import { ProgramsDataSchema, GenresMapSchema } from './types';
-import type { Program, Genre, GenresMap } from './types';
+import curationsJson from '../../data/curations.json';
+import moodsJson from '../../data/moods.json';
+import {
+  ProgramsDataSchema,
+  GenresMapSchema,
+  CurationsDataSchema,
+  MoodsDataSchema,
+} from './types';
+import type { Program, Genre, GenresMap, Curation, Mood } from './types';
 
 /** すべての番組を取得（検証済み）*/
 export function getAllPrograms(): Program[] {
@@ -52,4 +59,48 @@ export function getGenreCounts(): { genre: Genre; count: number }[] {
       count: programs.filter((p) => p.fanGuide.genre === genre).length,
     }))
     .filter((g) => g.count > 0);
+}
+
+/** 手動キュレーションのレーン一覧（存在する番組のみ含めて返す）*/
+export function getCurations(): { curation: Curation; programs: Program[] }[] {
+  const parsed = CurationsDataSchema.safeParse(curationsJson);
+  if (!parsed.success) {
+    console.error('❌ curations.json の検証に失敗しました');
+    console.error(parsed.error.format());
+    throw new Error('curations.json validation failed');
+  }
+  const programs = getAllPrograms();
+  const byId = new Map(programs.map((p) => [p.id, p]));
+  return parsed.data.curations
+    .map((curation) => ({
+      curation,
+      programs: curation.programIds
+        .map((id) => byId.get(id))
+        .filter((p): p is Program => p !== undefined),
+    }))
+    .filter((c) => c.programs.length >= 2);
+}
+
+/** 気分入口の定義一覧 */
+export function getMoods(): Mood[] {
+  const parsed = MoodsDataSchema.safeParse(moodsJson);
+  if (!parsed.success) {
+    console.error('❌ moods.json の検証に失敗しました');
+    console.error(parsed.error.format());
+    throw new Error('moods.json validation failed');
+  }
+  return parsed.data.moods;
+}
+
+/** slug から気分入口を取得 */
+export function getMoodBySlug(slug: string): Mood | undefined {
+  return getMoods().find((m) => m.slug === slug);
+}
+
+/** 気分入口にマッチする番組を返す（matchTags のいずれかを持つ番組）*/
+export function getProgramsByMood(mood: Mood): Program[] {
+  const programs = getAllPrograms();
+  return programs.filter((p) =>
+    p.fanGuide.tags.some((tag) => mood.matchTags.includes(tag)),
+  );
 }

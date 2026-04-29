@@ -1,7 +1,10 @@
-import { getAllPrograms } from '@/lib/data';
+import { getAllPrograms, getCurations, getMoods, getProgramsByMood } from '@/lib/data';
 import { ProgramListClient } from './_components/ProgramListClient';
 import { CountdownBadge } from './_components/CountdownBadge';
 import { RandomGachaButton } from './_components/RandomGachaButton';
+import { QuizCta } from './_components/QuizCta';
+import { CurationLanes } from './_components/CurationLanes';
+import { MoodLanes } from './_components/MoodLanes';
 import { safeJsonLd } from '@/lib/safe-json-ld';
 import { EVENT, SITE } from '@/lib/constants';
 import { CalendarDays, MapPin } from 'lucide-react';
@@ -16,6 +19,11 @@ export const dynamic = 'force-static';
  */
 export default function HomePage() {
   const programs = getAllPrograms();
+  const curations = getCurations();
+  const moods = getMoods();
+  const moodCounts = Object.fromEntries(
+    moods.map((m) => [m.slug, getProgramsByMood(m).length]),
+  );
 
   // Event 構造化データ（PCWE2026 自体）
   const eventJsonLd = {
@@ -133,16 +141,66 @@ export default function HomePage() {
             <CountdownBadge />
           </div>
 
-          {/* ガチャ CTA */}
+          {/* メイン CTA: 番組診断（最も訴求力高い）*/}
           <div className="mt-10 flex justify-center">
+            <QuizCta programs={programs} />
+          </div>
+
+          {/* サブ CTA: ガチャ（軽い気持ちで触りたい人向け）*/}
+          <div className="mt-6 flex justify-center">
             <RandomGachaButton programs={programs} />
           </div>
         </div>
       </section>
 
+      {/* 気分・シーン入口 */}
+      <section className="border-t border-neutral-200 bg-gradient-to-b from-white via-amber-50/20 to-white">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <div className="mb-6 sm:mb-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
+              MOOD
+            </p>
+            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+              いまの気分から、出会いにいく。
+            </h2>
+            <p className="mt-2 text-sm text-neutral-600 sm:text-base">
+              「朝、シャキッとしたい」「夜、ひとりで沈みたい」——
+              直感で選んでも、ちゃんとハマるはず。
+            </p>
+          </div>
+          <MoodLanes moods={moods} countsBySlug={moodCounts} />
+        </div>
+      </section>
+
+      {/* ぼくのキュレーション 3 セクション */}
+      <section className="border-t border-neutral-200 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <div className="mb-8 sm:mb-10">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
+              CURATION
+            </p>
+            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+              ぼくが、あえて選ぶならこの 3 本。
+            </h2>
+            <p className="mt-2 text-sm text-neutral-600 sm:text-base">
+              テーマごとの、ぼくのキュレーションです。
+            </p>
+          </div>
+          <CurationLanes lanes={curations} />
+        </div>
+      </section>
+
       {/* 番組一覧 */}
-      <section className="bg-white">
+      <section className="border-t border-neutral-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <div className="mb-6 sm:mb-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
+              ALL PROGRAMS
+            </p>
+            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+              全番組から、自分で探す。
+            </h2>
+          </div>
           <ProgramListClient programs={programs} />
         </div>
       </section>

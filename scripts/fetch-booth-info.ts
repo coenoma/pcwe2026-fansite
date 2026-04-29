@@ -3,7 +3,9 @@
  *
  * 使い方:
  *   npm run fetch:official -- pcwe-040 pcwe-006 pcwe-013
- *   npm run fetch:official -- --all                # data/sources/official/ 配下すべて再取得
+ *   npm run fetch:official -- --all              # data/sources/official/ 配下すべて再取得
+ *   npm run fetch:official -- --from-list        # data/booth-ids.json の全 ID を取得（推奨）
+ *   npm run fetch:official -- --from-list --skip-existing  # 既に official/ にある ID はスキップ
  *
  * 出力: data/sources/official/{id}.json
  *
@@ -25,6 +27,55 @@ import { OfficialSourceSchema, type OfficialSource } from '../src/lib/sources';
 
 const BASE_URL = 'https://podcastexpo.jp/booth';
 const OUTPUT_DIR = join(process.cwd(), 'data/sources/official');
+const BOOTH_IDS_PATH = join(process.cwd(), 'data/booth-ids.json');
+const FAILED_PATH = join(process.cwd(), 'data/fetch-failed.json');
+
+/**
+ * 公式サーバーへの負荷配慮:
+ *   - デフォルト 1500ms 間隔（前回 500ms から増量、人間操作の体感速度に近づける）
+ *   - 加えて ±400ms の jitter を入れて完全等間隔リクエストに見えないようにする
+ *   - --interval N（ms）で上書き可能
+ */
+const DEFAULT_INTERVAL_MS = 1500;
+const JITTER_MS = 400;
+
+interface BoothIdsFile {
+  fetchedAt: string;
+  source: string;
+  count: number;
+  ids: string[];
+}
+
+interface FetchFailure {
+  id: string;
+  reason: string;
+  attemptedAt: string;
+}
+
+interface FetchFailedFile {
+  lastRunAt: string;
+  count: number;
+  failures: FetchFailure[];
+}
+
+function parseIntervalArg(args: string[]): number {
+  const idx = args.findIndex((a) => a === '--interval');
+  if (idx === -1 || args[idx + 1] === undefined) return DEFAULT_INTERVAL_MS;
+  const ms = parseInt(args[idx + 1], 10);
+  if (!Number.isFinite(ms) || ms < 0) {
+    console.warn(
+      `⚠️  --interval の値が不正です: ${args[idx + 1]} → ${DEFAULT_INTERVAL_MS}ms にフォールバック`,
+    );
+    return DEFAULT_INTERVAL_MS;
+  }
+  return ms;
+}
+
+function jitteredWait(baseMs: number): Promise<void> {
+  const jitter = Math.floor((Math.random() * 2 - 1) * JITTER_MS);
+  const ms = Math.max(0, baseMs + jitter);
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 interface ParsedBoothInfo {
   name: string;
@@ -238,34 +289,100 @@ async function main(): Promise<void> {
   if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true });
 
   const args = process.argv.slice(2);
+  const skipExisting = args.includes('--skip-existing');
+
   let ids: string[];
-  if (args.includes('--all')) {
+  if (args.includes('--from-list')) {
+    if (!existsSync(BOOTH_IDS_PATH)) {
+      console.error(
+        `❌ ${BOOTH_IDS_PATH} が見つかりません。先に \`npm run list-booths\` を実行してください`,
+      );
+      process.exit(1);
+    }
+    const data = JSON.parse(readFileSync(BOOTH_IDS_PATH, 'utf-8')) as BoothIdsFile;
+    ids = data.ids;
+    console.log(`📋 booth-ids.json から ${ids.length} 件読み込みました`);
+  } else if (args.includes('--all')) {
     ids = readdirSync(OUTPUT_DIR)
       .filter((f) => /^pcwe-\d{3}\.json$/.test(f))
       .map((f) => f.replace('.json', ''));
     if (ids.length === 0) {
-      console.error('❌ --all を指定したが data/sources/official/ が空です。番組 ID を引数で指定してください');
+      console.error('❌ --all を指定したが data/sources/official/ が空です。--from-list か個別 ID を指定してください');
       process.exit(1);
     }
-  } else if (args.length === 0) {
-    console.error('使い方: npm run fetch:official -- pcwe-040 pcwe-006 ...');
-    console.error('       npm run fetch:official -- --all');
+  } else if (args.filter((arg) => /^pcwe-\d{3}$/.test(arg)).length === 0) {
+    console.error('使い方:');
+    console.error('  npm run fetch:official -- pcwe-040 pcwe-006 ...');
+    console.error('  npm run fetch:official -- --all                       # official/ にある ID を再取得');
+    console.error('  npm run fetch:official -- --from-list                 # booth-ids.json の全 ID');
+    console.error('  npm run fetch:official -- --from-list --skip-existing # 未取得 ID のみ');
+    console.error('  npm run fetch:official -- --from-list --interval 2500 # リクエスト間隔を 2.5 秒に');
+    console.error('');
+    console.error('失敗した ID は data/fetch-failed.json に記録されます。');
     process.exit(1);
   } else {
     ids = args.filter((arg) => /^pcwe-\d{3}$/.test(arg));
   }
 
-  for (const id of ids) {
+  // skip-existing: 既に official/{id}.json がある ID を除外
+  if (skipExisting) {
+    const before = ids.length;
+    ids = ids.filter((id) => !existsSync(join(OUTPUT_DIR, `${id}.json`)));
+    console.log(`⏭️  既存 ${before - ids.length} 件をスキップ。残り ${ids.length} 件を取得します`);
+  }
+
+  if (ids.length === 0) {
+    console.log('✅ 取得対象なし。すべて完了済みです');
+    return;
+  }
+
+  const intervalMs = parseIntervalArg(args);
+  console.log(
+    `⏱️  リクエスト間隔: ${intervalMs}ms ± ${JITTER_MS}ms（公式サーバー負荷配慮）`,
+  );
+  console.log('');
+
+  let successCount = 0;
+  const failures: FetchFailure[] = [];
+
+  for (let i = 0; i < ids.length; i++) {
+    const id = ids[i];
+    console.log(`  [${i + 1}/${ids.length}] ${id}`);
     try {
       await processOne(id);
-      // 公式サーバーへの負荷軽減: 1 件ごとに 500ms 待機
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      successCount++;
     } catch (error) {
-      console.error(`❌ ${id} の取得失敗`, error);
+      const reason = error instanceof Error ? error.message : String(error);
+      failures.push({
+        id,
+        reason,
+        attemptedAt: new Date().toISOString(),
+      });
+      console.error(`❌ ${id} の取得失敗: ${reason}`);
+    }
+
+    // 最終件は待たない
+    if (i < ids.length - 1) {
+      await jitteredWait(intervalMs);
     }
   }
 
-  console.log(`✅ ${ids.length} 件処理完了`);
+  // 失敗リストを永続化（次回 retry に使える）
+  if (failures.length > 0) {
+    const failedFile: FetchFailedFile = {
+      lastRunAt: new Date().toISOString(),
+      count: failures.length,
+      failures,
+    };
+    writeFileSync(FAILED_PATH, JSON.stringify(failedFile, null, 2) + '\n', 'utf-8');
+    console.log('');
+    console.log(`📝 失敗 ${failures.length} 件を ${FAILED_PATH} に記録しました`);
+    console.log('   リトライ: npm run fetch:official -- $(jq -r \'.failures[].id\' data/fetch-failed.json | tr "\\n" " ")');
+  }
+
+  console.log('');
+  console.log(`✅ 成功: ${successCount} 件`);
+  if (failures.length > 0) console.log(`❌ 失敗: ${failures.length} 件`);
 }
 
 void main();

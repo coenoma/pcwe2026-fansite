@@ -1,0 +1,25 @@
+{
+  "curations": [
+    {
+      "id": "for-first-timers",
+      "title": "ポッドキャスト初心者に、まずこの 3 本",
+      "subtitle": "1 本聴くと、世界が広がる入口",
+      "themeColor": "#DC725A",
+      "programIds": ["pcwe-072", "pcwe-013", "pcwe-006"]
+    },
+    {
+      "id": "late-night",
+      "title": "夜ふかしに沈む、深い 3 本",
+      "subtitle": "考えごとと一緒に、ゆっくり聴ける夜",
+      "themeColor": "#7C9070",
+      "programIds": ["pcwe-006", "pcwe-040", "pcwe-072"]
+    },
+    {
+      "id": "morning-commute",
+      "title": "朝の通勤に効く、頭が冴える 3 本",
+      "subtitle": "知性とテンポで、一日のスイッチが入る",
+      "themeColor": "#3B82F6",
+      "programIds": ["pcwe-118", "pcwe-013", "pcwe-072"]
+    }
+  ]
+}

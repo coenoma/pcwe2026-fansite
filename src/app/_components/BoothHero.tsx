@@ -99,19 +99,38 @@ export function BoothHero({ program }: Props) {
               {program.name}
             </h1>
 
-            {/* キャッチコピー（themeColor 蛍光下線、各行に対応）*/}
+            {/*
+              キャッチコピー（themeColor 蛍光下線）
+              - catchphraseLines（任意）が指定されていれば、その配列を意味の切れ目で改行
+              - 各行を block span で出すことで、行ごとに蛍光下線が独立して引かれる
+              - 未指定なら catchphrase 1 行を従来どおり表示（box-decoration-clone で複数行
+                自動折り返しにも対応）
+            */}
             <p className="mt-6 text-lg font-bold leading-relaxed text-neutral-800 sm:text-xl md:text-2xl">
-              <span
-                className="box-decoration-clone"
-                style={{
-                  // 各行のテキスト下部（78-94%）にだけ蛍光ペン下線を描画。
-                  // テキスト本体に色がかぶらず、中央への侵食がないので可読性を確保。
-                  backgroundImage: `linear-gradient(180deg, transparent 78%, ${highlightUnderline} 78%, ${highlightUnderline} 94%, transparent 94%)`,
-                  paddingInline: '0.1em',
-                }}
-              >
-                {program.fanGuide.catchphrase}
-              </span>
+              {program.fanGuide.catchphraseLines !== undefined ? (
+                program.fanGuide.catchphraseLines.map((line, i) => (
+                  <span
+                    key={i}
+                    className="block box-decoration-clone"
+                    style={{
+                      backgroundImage: `linear-gradient(180deg, transparent 78%, ${highlightUnderline} 78%, ${highlightUnderline} 94%, transparent 94%)`,
+                      paddingInline: '0.1em',
+                    }}
+                  >
+                    {line}
+                  </span>
+                ))
+              ) : (
+                <span
+                  className="box-decoration-clone"
+                  style={{
+                    backgroundImage: `linear-gradient(180deg, transparent 78%, ${highlightUnderline} 78%, ${highlightUnderline} 94%, transparent 94%)`,
+                    paddingInline: '0.1em',
+                  }}
+                >
+                  {program.fanGuide.catchphrase}
+                </span>
+              )}
             </p>
 
             {/* サブキャッチ */}

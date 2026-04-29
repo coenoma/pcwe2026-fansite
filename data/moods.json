@@ -1,0 +1,44 @@
+{
+  "moods": [
+    {
+      "slug": "morning",
+      "label": "朝、シャキッとしたい",
+      "description": "通勤や支度のお供に。テンポよく、頭が冴える番組を集めました。",
+      "emoji": "☀️",
+      "themeColor": "#F5B962",
+      "matchTags": ["朝向き", "通勤", "軽快", "学べる", "知的"]
+    },
+    {
+      "slug": "late-night",
+      "label": "夜、ひとりで沈みたい",
+      "description": "考えごとと一緒に。じっくり、内省的に聴ける番組。",
+      "emoji": "🌙",
+      "themeColor": "#7C9070",
+      "matchTags": ["寝る前", "夜向き", "内省的", "じっくり", "癒し"]
+    },
+    {
+      "slug": "laugh",
+      "label": "気軽に、笑いたい",
+      "description": "肩の力を抜いて。聴いてるだけで元気になる番組。",
+      "emoji": "🤣",
+      "themeColor": "#E879A6",
+      "matchTags": ["笑える", "二人以上の掛け合い", "熱量高い", "元気が出る"]
+    },
+    {
+      "slug": "deep-dive",
+      "label": "じっくり、深く考えたい",
+      "description": "簡単に答えを出さない番組。思考を一緒に分解する時間。",
+      "emoji": "🧠",
+      "themeColor": "#2D3748",
+      "matchTags": ["考えさせる", "ニッチ", "知的", "じっくり"]
+    },
+    {
+      "slug": "empathy",
+      "label": "今日の自分に、寄り添ってほしい",
+      "description": "失敗も悩みも、ここでは肯定される。共感系の番組。",
+      "emoji": "🫶",
+      "themeColor": "#F472B6",
+      "matchTags": ["共感", "寄り添う", "マイノリティ", "癒し"]
+    }
+  ]
+}
