@@ -1,0 +1,19 @@
+{
+  "カルチャー": { "icon": "Sparkles", "accent": "primary" },
+  "文芸・読書": { "icon": "BookOpen", "accent": "neutral" },
+  "食": { "icon": "UtensilsCrossed", "accent": "amber" },
+  "映画": { "icon": "Film", "accent": "primary" },
+  "音楽": { "icon": "Music", "accent": "sky" },
+  "旅": { "icon": "Plane", "accent": "sky" },
+  "暮らし": { "icon": "Home", "accent": "emerald" },
+  "恋愛・ジェンダー": { "icon": "Heart", "accent": "primary" },
+  "ビジネス": { "icon": "Briefcase", "accent": "neutral" },
+  "AI・テック": { "icon": "Cpu", "accent": "sky" },
+  "子育て・教育": { "icon": "GraduationCap", "accent": "amber" },
+  "ニュース・社会": { "icon": "Newspaper", "accent": "sky" },
+  "歴史": { "icon": "Scroll", "accent": "amber" },
+  "科学・学問": { "icon": "Atom", "accent": "emerald" },
+  "スポーツ": { "icon": "Trophy", "accent": "amber" },
+  "コメディ": { "icon": "Laugh", "accent": "amber" },
+  "その他": { "icon": "Circle", "accent": "neutral" }
+}
