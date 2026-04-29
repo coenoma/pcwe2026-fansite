@@ -17,17 +17,17 @@ export function Footer() {
             <h3 className="font-bold text-neutral-700">サイトについて</h3>
             <ul className="mt-2 space-y-1 text-neutral-600">
               <li>
-                <Link href="/about" className="hover:text-primary-600">
+                <Link href="/about" className="transition-colors hover:text-primary-600">
                   非公式スタンス・削除依頼
                 </Link>
               </li>
               <li>
-                <Link href="/plan" className="hover:text-primary-600">
+                <Link href="/plan" className="transition-colors hover:text-primary-600">
                   気になるリスト
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-primary-600">
+                <Link href="/privacy" className="transition-colors hover:text-primary-600">
                   プライバシーと取り扱い
                 </Link>
               </li>
@@ -45,7 +45,7 @@ export function Footer() {
                   href={CREATOR.serviceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary-600"
+                  className="transition-colors hover:text-primary-600"
                 >
                   {CREATOR.serviceName}.fm — ポッドキャスト運営の、おとも。
                 </a>
@@ -55,7 +55,7 @@ export function Footer() {
                   href={CREATOR.twitterUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary-600"
+                  className="transition-colors hover:text-primary-600"
                 >
                   X: {CREATOR.twitterHandle}
                 </a>

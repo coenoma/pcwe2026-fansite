@@ -36,13 +36,13 @@ export default function ErrorBoundary({ error, reset }: Props) {
           <button
             type="button"
             onClick={reset}
-            className="inline-flex rounded-xl bg-primary-600 px-5 py-3 text-sm font-bold text-white hover:bg-primary-700"
+            className="inline-flex rounded-xl bg-primary-600 px-5 py-3 text-sm font-bold text-white transition-all active:scale-95 hover:bg-primary-700 hover:shadow-md"
           >
             再読み込み
           </button>
           <Link
             href="/"
-            className="inline-flex rounded-xl border border-neutral-300 bg-white px-5 py-3 text-sm font-bold text-neutral-700 hover:border-primary-400"
+            className="inline-flex rounded-xl border border-neutral-300 bg-white px-5 py-3 text-sm font-bold text-neutral-700 transition-all active:scale-95 hover:border-primary-400 hover:text-primary-700"
           >
             トップへ戻る
           </Link>

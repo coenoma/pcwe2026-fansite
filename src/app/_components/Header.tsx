@@ -22,14 +22,14 @@ export function Header() {
         <nav aria-label="メインナビゲーション" className="flex items-center gap-4 text-sm">
           <Link
             href="/plan"
-            className="hidden items-center font-bold text-neutral-700 hover:text-primary-600 sm:inline-flex"
+            className="hidden items-center font-bold text-neutral-700 transition-colors hover:text-primary-600 sm:inline-flex"
           >
             気になる
             <FavoriteCountBadge />
           </Link>
           <Link
             href="/about"
-            className="hidden font-bold text-neutral-700 hover:text-primary-600 sm:inline-block"
+            className="hidden font-bold text-neutral-700 transition-colors hover:text-primary-600 sm:inline-block"
           >
             このサイトについて
           </Link>

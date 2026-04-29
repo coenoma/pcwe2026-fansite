@@ -45,7 +45,7 @@ export function ShareOnX({ text, url, hashtags = ['PCWE2026'], className }: Prop
         href={buildIntentUrl()}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-4 py-2 text-sm font-bold text-white transition hover:bg-neutral-700"
+        className="inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-4 py-2 text-sm font-bold text-white transition-all active:scale-95 hover:bg-neutral-700 hover:shadow-md"
       >
         <span aria-hidden="true">𝕏</span>
         この番組を教えてあげる
@@ -54,7 +54,7 @@ export function ShareOnX({ text, url, hashtags = ['PCWE2026'], className }: Prop
       <button
         type="button"
         onClick={handleCopy}
-        className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-bold text-neutral-700 transition hover:border-primary-400 hover:text-primary-700"
+        className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-bold text-neutral-700 transition-all active:scale-95 hover:border-primary-400 hover:text-primary-700"
       >
         {copied ? '✓ コピーしました' : 'リンクをコピー'}
       </button>

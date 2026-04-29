@@ -108,7 +108,7 @@ function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
         <div className="flex flex-wrap items-center gap-2 text-xs">
           <Link
             href={`/genre/${encodeURIComponent(program.fanGuide.genre)}`}
-            className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2 py-0.5 font-bold text-primary-700 hover:bg-primary-100"
+            className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2 py-0.5 font-bold text-primary-700 transition-colors hover:bg-primary-100"
           >
             <GenreIcon name={GENRE_ICON[program.fanGuide.genre]} size={12} />
             {program.fanGuide.genre}
@@ -122,7 +122,7 @@ function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
         </div>
 
         <Link href={detailHref} className="block">
-          <h2 className="text-base font-extrabold leading-snug tracking-tight text-neutral-900 hover:text-primary-700">
+          <h2 className="text-base font-extrabold leading-snug tracking-tight text-neutral-900 transition-colors hover:text-primary-700">
             {highlightText(program.shortName ?? program.name, highlightQuery)}
           </h2>
         </Link>

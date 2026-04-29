@@ -109,7 +109,7 @@ export default async function BoothPage({ params }: Props) {
         <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
           <Link
             href="/"
-            className="inline-flex text-sm font-bold text-neutral-600 hover:text-primary-600"
+            className="inline-flex text-sm font-bold text-neutral-600 transition-colors hover:text-primary-600"
           >
             ← 一覧へ戻る
           </Link>
@@ -238,7 +238,7 @@ export default async function BoothPage({ params }: Props) {
                 href={program.boothUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-primary-600 hover:opacity-70"
+                className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600"
               >
                 公式ブースページを見る ↗
               </a>

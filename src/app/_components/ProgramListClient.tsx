@@ -121,8 +121,8 @@ export function ProgramListClient({ programs }: Props) {
               aria-pressed={selectedTags.includes(tag)}
               className={
                 selectedTags.includes(tag)
-                  ? 'rounded-full bg-primary-600 px-3 py-1 text-sm font-bold text-white transition'
-                  : 'rounded-full border border-neutral-300 bg-white px-3 py-1 text-sm font-bold text-neutral-700 transition hover:border-primary-400'
+                  ? 'rounded-full bg-primary-600 px-3 py-1 text-sm font-bold text-white transition-all active:scale-95 hover:bg-primary-700'
+                  : 'rounded-full border border-neutral-300 bg-white px-3 py-1 text-sm font-bold text-neutral-700 transition-all active:scale-95 hover:border-primary-400 hover:text-primary-700'
               }
             >
               {tag}
@@ -134,7 +134,7 @@ export function ProgramListClient({ programs }: Props) {
           <button
             type="button"
             onClick={reset}
-            className="text-sm font-bold text-primary-600 hover:opacity-70"
+            className="text-sm font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600 active:opacity-70"
           >
             条件をリセット →
           </button>
@@ -187,8 +187,8 @@ function DayPill({
       aria-pressed={active}
       className={
         active
-          ? 'rounded-full bg-primary-600 px-4 py-1.5 text-sm font-bold text-white transition'
-          : 'rounded-full border border-neutral-300 bg-white px-4 py-1.5 text-sm font-bold text-neutral-700 transition hover:border-primary-400'
+          ? 'rounded-full bg-primary-600 px-4 py-1.5 text-sm font-bold text-white transition-all active:scale-95 hover:bg-primary-700'
+          : 'rounded-full border border-neutral-300 bg-white px-4 py-1.5 text-sm font-bold text-neutral-700 transition-all active:scale-95 hover:border-primary-400 hover:text-primary-700'
       }
     >
       {children}

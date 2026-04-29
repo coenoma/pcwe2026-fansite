@@ -81,7 +81,7 @@ export function PlanClient({ programs }: Props) {
         <p className="text-neutral-700">まだ「気になる」に追加した番組がありません。</p>
         <Link
           href="/"
-          className="mt-4 inline-flex font-bold text-primary-600 hover:opacity-70"
+          className="mt-4 inline-flex font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600"
         >
           番組を探しに行く →
         </Link>
@@ -113,13 +113,13 @@ export function PlanClient({ programs }: Props) {
           <button
             type="button"
             onClick={handleCopyShare}
-            className="inline-flex items-center gap-1.5 rounded-full bg-primary-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-primary-700"
+            className="inline-flex items-center gap-1.5 rounded-full bg-primary-600 px-4 py-2 text-sm font-bold text-white transition-all active:scale-95 hover:bg-primary-700 hover:shadow-md"
           >
             {copied ? '✓ リンクをコピーしました' : 'このリストをシェア'}
           </button>
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-bold text-neutral-700 transition hover:border-primary-400"
+            className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-bold text-neutral-700 transition-all active:scale-95 hover:border-primary-400 hover:text-primary-700"
           >
             番組をもっと探す →
           </Link>

@@ -55,7 +55,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-extrabold text-neutral-900">4. 番組情報の出典</h2>
             <p className="mt-3">
               番組名・概要・ロゴ画像・配信プラットフォームへのリンクは、
-              <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 hover:opacity-70">
+              <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">
                 {EVENT.name}（{EVENT.shortName}）公式サイト
               </a>
               および各番組の公開情報から引用しています。著作権は各番組制作者・公式に帰属します。
@@ -78,7 +78,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-extrabold text-neutral-900">6. 掲載取り下げ・修正のご依頼</h2>
             <p className="mt-3">
               番組制作者の方からの掲載取り下げ依頼、誤情報の修正依頼は、
-              <Link href="/about" className="font-bold text-primary-600 hover:opacity-70">
+              <Link href="/about" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">
                 このサイトについて
               </Link>
               ページのフォーム経由でお受けしています。24 時間以内（取り下げ）または 1 週間以内（修正）に対応します。
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
             <p className="font-bold text-neutral-700">お問い合わせ</p>
             <p className="mt-2">
               本ページに関するお問い合わせは、X DM（
-              <a href={CREATOR.twitterUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600">
+              <a href={CREATOR.twitterUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-transparent transition-colors hover:text-primary-600 hover:decoration-primary-600">
                 {CREATOR.twitterHandle}
               </a>
               ）までお願いします。

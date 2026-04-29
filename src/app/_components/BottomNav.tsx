@@ -34,7 +34,7 @@ export function BottomNav() {
             <li key={tab.href} className="flex-1">
               <Link
                 href={tab.href}
-                className={`flex flex-col items-center gap-1 py-2.5 text-xs font-bold transition ${
+                className={`flex flex-col items-center gap-1 py-2.5 text-xs font-bold transition-colors active:bg-neutral-50 ${
                   isActive ? 'text-primary-600' : 'text-neutral-500 hover:text-neutral-800'
                 }`}
                 aria-current={isActive ? 'page' : undefined}

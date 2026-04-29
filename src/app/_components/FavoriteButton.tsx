@@ -64,10 +64,10 @@ export function FavoriteButton({ programId, size = 'sm' }: Props) {
       onClick={handleClick}
       aria-pressed={isFavorite}
       aria-label={isFavorite ? '気になるから外す' : '気になるに追加'}
-      className={`flex ${buttonSize} items-center justify-center rounded-full transition-colors ${
+      className={`flex ${buttonSize} items-center justify-center rounded-full transition-all duration-150 active:scale-90 ${
         isFavorite
           ? 'bg-primary-50 text-primary-600 hover:bg-primary-100'
-          : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'
+          : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200 hover:text-primary-600'
       }`}
     >
       <Heart

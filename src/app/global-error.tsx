@@ -53,6 +53,16 @@ export default function GlobalError({ error, reset }: Props) {
             border: 'none',
             borderRadius: '0.75rem',
             cursor: 'pointer',
+            transition: 'transform 150ms, box-shadow 150ms',
+          }}
+          onMouseDown={(e) => {
+            e.currentTarget.style.transform = 'scale(0.95)';
+          }}
+          onMouseUp={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
           }}
         >
           再読み込み

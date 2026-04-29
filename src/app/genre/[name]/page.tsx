@@ -46,7 +46,7 @@ export default async function GenrePage({ params }: Props) {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        <Link href="/" className="text-sm font-bold text-neutral-600 hover:text-primary-600">
+        <Link href="/" className="text-sm font-bold text-neutral-600 transition-colors hover:text-primary-600">
           ← 一覧へ戻る
         </Link>
 

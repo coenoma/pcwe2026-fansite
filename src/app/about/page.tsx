@@ -22,7 +22,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-xl font-extrabold text-neutral-900">非公式ファンガイドです</h2>
             <p className="mt-3">
-              このサイトは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 hover:opacity-70">{EVENT.name}（{EVENT.shortName}）</a> の出展番組を、ファンの視点でまとめた <strong>非公式</strong> のガイドサイトです。公式とは無関係に、{CREATOR.company} のファウンダー（{CREATOR.founder}）がファン活動として制作しました。
+              このサイトは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">{EVENT.name}（{EVENT.shortName}）</a> の出展番組を、ファンの視点でまとめた <strong>非公式</strong> のガイドサイトです。公式とは無関係に、{CREATOR.company} のファウンダー（{CREATOR.founder}）がファン活動として制作しました。
             </p>
             <p className="mt-3">
               番組情報・画像は各番組制作者と公式に帰属します。本サイトのキャッチコピー・タグ・ジャンル分類は、ファンとしてのキュレーションです（公式情報の引用ではなく、独自に書き起こしています）。
@@ -62,7 +62,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-xl font-extrabold text-neutral-900">その他のご質問・ご感想</h2>
             <p className="mt-3">
-              X DM（<a href={CREATOR.twitterUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 hover:opacity-70">{CREATOR.twitterHandle}</a>）までお気軽にどうぞ。
+              X DM（<a href={CREATOR.twitterUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">{CREATOR.twitterHandle}</a>）までお気軽にどうぞ。
             </p>
           </section>
 
@@ -70,7 +70,7 @@ export default function AboutPage() {
             <h2 className="text-xl font-extrabold text-neutral-900">プライバシーと取り扱い</h2>
             <p className="mt-3">
               個人情報を扱わない旨、localStorage の使用、番組情報の出典、削除依頼の流れを{' '}
-              <Link href="/privacy" className="font-bold text-primary-600 hover:opacity-70">
+              <Link href="/privacy" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">
                 プライバシーページ
               </Link>
               にまとめています。
@@ -107,7 +107,7 @@ function FormButton({ url, label }: { url: string; label: string }) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="mt-4 inline-flex rounded-xl bg-primary-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-primary-700"
+      className="mt-4 inline-flex rounded-xl bg-primary-600 px-5 py-3 text-sm font-bold text-white transition-all active:scale-95 hover:bg-primary-700 hover:shadow-md"
     >
       {label} →
     </a>

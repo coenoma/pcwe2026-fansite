@@ -34,7 +34,7 @@ export function RandomGachaButton({ programIds }: Props) {
       type="button"
       onClick={handleClick}
       aria-label="ランダムに 1 番組を表示"
-      className="inline-flex items-center gap-2 rounded-full border-2 border-primary-600 bg-white px-5 py-2.5 text-sm font-bold text-primary-700 transition hover:bg-primary-50"
+      className="inline-flex items-center gap-2 rounded-full border-2 border-primary-600 bg-white px-5 py-2.5 text-sm font-bold text-primary-700 transition-all active:scale-95 hover:bg-primary-50 hover:shadow-md"
     >
       <Dices
         size={20}

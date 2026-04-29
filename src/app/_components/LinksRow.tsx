@@ -32,7 +32,7 @@ export function LinksRow({ links }: Props) {
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-sm font-bold text-neutral-700 transition hover:border-primary-400 hover:text-primary-700"
+          className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-sm font-bold text-neutral-700 transition-all active:scale-95 hover:border-primary-400 hover:text-primary-700 hover:shadow-sm"
         >
           <span aria-hidden="true">{item.emoji}</span>
           {item.label}
