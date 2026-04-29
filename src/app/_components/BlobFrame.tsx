@@ -3,16 +3,28 @@
  *
  * Podmate ブランディング DNA2 流用。
  * 画像の背後に有機的な形状のカラー背景 + ドットパターン。
+ *
+ * Tailwind v4 JIT で動的クラス名は検出されないため、blobColor は
+ * リテラル型に限定し、完全クラス文字列をマップで解決する。
  */
 
 import Image from 'next/image';
 
+export type BlobColor = 'primary' | 'amber' | 'sky' | 'emerald' | 'neutral';
+
+const BLOB_BG_CLASS: Record<BlobColor, string> = {
+  primary: 'bg-primary-200/30',
+  amber: 'bg-amber-200/30',
+  sky: 'bg-sky-200/30',
+  emerald: 'bg-emerald-200/30',
+  neutral: 'bg-neutral-200/30',
+};
+
 interface Props {
   src: string;
   alt: string;
-  /** Tailwind 任意のカラー（例: 'amber-200' / 'sky-200'）*/
-  blobColor?: string;
-  /** 画像サイズ（正方形）*/
+  blobColor?: BlobColor;
+  /** 画像サイズ（正方形、px）*/
   size?: number;
   priority?: boolean;
 }
@@ -20,7 +32,7 @@ interface Props {
 export function BlobFrame({
   src,
   alt,
-  blobColor = 'amber-200',
+  blobColor = 'amber',
   size = 280,
   priority = false,
 }: Props) {
@@ -29,7 +41,7 @@ export function BlobFrame({
       {/* 有機形状の背景 */}
       <div
         aria-hidden="true"
-        className={`absolute -inset-4 sm:-inset-6 bg-${blobColor}/20`}
+        className={`absolute -inset-4 sm:-inset-6 ${BLOB_BG_CLASS[blobColor]}`}
         style={{
           borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%',
           backgroundImage:

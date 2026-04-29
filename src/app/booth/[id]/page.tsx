@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllPrograms, getProgramById } from '@/lib/data';
 import { dayLabel } from '@/lib/format';
-import { BlobFrame } from '@/app/_components/BlobFrame';
+import { BlobFrame, type BlobColor } from '@/app/_components/BlobFrame';
 import { Highlight } from '@/app/_components/Highlight';
 import { WaveDivider } from '@/app/_components/WaveDivider';
 import { FadeInOnScroll } from '@/app/_components/FadeInOnScroll';
@@ -243,22 +243,22 @@ export default async function BoothPage({ params }: Props) {
   );
 }
 
-/** Vibe 別のブロブカラー */
-function vibeBlobColor(vibe: import('@/lib/types').Vibe): string {
+/** Vibe 別のブロブカラー（BlobColor リテラルを返す）*/
+function vibeBlobColor(vibe: import('@/lib/types').Vibe): BlobColor {
   switch (vibe) {
     case 'earnest':
-      return 'primary-200';
+      return 'primary';
     case 'intellectual':
-      return 'sky-200';
+      return 'sky';
     case 'energetic':
     case 'humorous':
-      return 'amber-200';
+      return 'amber';
     case 'conversational':
-      return 'emerald-200';
+      return 'emerald';
     case 'contemplative':
     case 'laid-back':
     default:
-      return 'neutral-200';
+      return 'neutral';
   }
 }
 
