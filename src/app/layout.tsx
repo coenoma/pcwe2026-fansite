@@ -11,6 +11,7 @@ import './globals.css';
 import { Header } from './_components/Header';
 import { Footer } from './_components/Footer';
 import { BottomNav } from './_components/BottomNav';
+import { PoweredByPodmate } from './_components/PoweredByPodmate';
 import { RegisterServiceWorker } from './_components/RegisterServiceWorker';
 import { SITE } from '@/lib/constants';
 
@@ -121,6 +122,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1 pb-16 lg:pb-0">{children}</main>
         <Footer />
         <BottomNav />
+        <PoweredByPodmate />
         <RegisterServiceWorker />
       </body>
     </html>

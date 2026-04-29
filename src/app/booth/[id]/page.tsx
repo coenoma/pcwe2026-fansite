@@ -111,7 +111,7 @@ export default async function BoothPage({ params }: Props) {
               📊 こんな人に、刺さるかも？
             </h2>
             <p className="mt-1 text-xs text-neutral-500">
-              ぼくの独断と偏見で「想定リスナー」を書いてみました（半分ジョーク、半分本気）
+              ぼくの独断と偏見で「想定リスナー」を書いてみました！
             </p>
             <p className="mt-4 text-base leading-relaxed text-neutral-800 sm:text-lg">
               {program.fanGuide.targetListener}
