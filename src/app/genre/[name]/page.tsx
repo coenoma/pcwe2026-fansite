@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getGenreCounts, getProgramsByGenre } from '@/lib/data';
-import { ProgramCard } from '@/app/_components/ProgramCard';
+import { ProgramListClient } from '@/app/_components/ProgramListClient';
 import { GenreSchema, type Genre } from '@/lib/types';
 
 interface Props {
@@ -40,28 +40,42 @@ export default async function GenrePage({ params }: Props) {
   if (!parsed.success) notFound();
 
   const genre: Genre = parsed.data;
+  // 該当ジャンルの番組を絞り込んで ProgramListClient に渡し、
+  // ジャンル内でさらに検索・タグ・出展日で深掘りできる UX に
   const programs = getProgramsByGenre(genre);
   if (programs.length === 0) notFound();
 
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        <Link href="/" className="text-sm font-bold text-neutral-600 transition-colors hover:text-primary-600">
-          ← 一覧へ戻る
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+        <Link
+          href="/"
+          className="text-sm font-bold text-neutral-600 transition-colors hover:text-primary-600"
+        >
+          ← トップへ戻る
         </Link>
 
-        <h1 className="mt-6 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-          {genre}
-        </h1>
-        <p className="mt-2 text-base text-neutral-600">
-          {programs.length} 番組がこのジャンルで出展しています。
-        </p>
-
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {programs.map((p) => (
-            <ProgramCard key={p.id} program={p} />
-          ))}
+        <div className="mt-5 mb-6 sm:mb-8">
+          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
+            GENRE
+          </p>
+          <h1 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+            {genre}
+          </h1>
+          <p className="mt-2 text-sm text-neutral-600 sm:text-base">
+            <span className="font-bold text-neutral-900">{programs.length}</span> 番組が
+            このジャンルで出展中。
+            <span className="ml-1 text-neutral-500">検索 / タグ / 出展日でさらに絞り込めます。</span>
+          </p>
         </div>
+
+        <ProgramListClient
+          programs={programs}
+          resultLabel={{
+            withFilter: `が「${genre}」のなかでヒット`,
+            withoutFilter: `が「${genre}」で出展中`,
+          }}
+        />
       </div>
     </section>
   );

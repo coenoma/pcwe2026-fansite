@@ -1,8 +1,7 @@
 import { getAllPrograms, getCurations, getMoods, getProgramsByMood } from '@/lib/data';
 import { ProgramListClient } from './_components/ProgramListClient';
 import { CountdownBadge } from './_components/CountdownBadge';
-import { RandomGachaButton } from './_components/RandomGachaButton';
-import { QuizCta } from './_components/QuizCta';
+import { DiscoverHub } from './_components/DiscoverHub';
 import { CurationLanes } from './_components/CurationLanes';
 import { MoodLanes } from './_components/MoodLanes';
 import { RecommendFromProgram } from './_components/RecommendFromProgram';
@@ -141,21 +140,35 @@ export default function HomePage() {
           <div className="mt-8">
             <CountdownBadge />
           </div>
-
-          {/* メイン CTA: 番組診断（最も訴求力高い）*/}
-          <div className="mt-10 flex justify-center">
-            <QuizCta programs={programs} />
-          </div>
-
-          {/* サブ CTA: ガチャ（軽い気持ちで触りたい人向け）*/}
-          <div className="mt-6 flex justify-center">
-            <RandomGachaButton programs={programs} />
-          </div>
         </div>
       </section>
 
-      {/* 番組ベースレコメンド（v1.7 新機能、最初の能動的探索の入口）*/}
-      <section className="border-t border-neutral-200 bg-gradient-to-b from-white via-purple-50/30 to-white">
+      {/* 探し方ハブ: AI レコメンドの 3 機能を横並びで提示 */}
+      <section
+        id="discover"
+        className="border-t border-neutral-200 bg-gradient-to-b from-white to-neutral-50/40"
+      >
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+          <div className="mb-6 text-center sm:mb-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
+              DISCOVER
+            </p>
+            <h2 className="mt-1 text-xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-2xl">
+              3 つの探し方から、いまの気分のひとつを。
+            </h2>
+            <p className="mt-2 text-xs text-neutral-600 sm:text-sm">
+              AI が、あなたに刺さる 3 本を毎回違う切り口で連れてきます。
+            </p>
+          </div>
+          <DiscoverHub programs={programs} />
+        </div>
+      </section>
+
+      {/* 番組ベースレコメンド（v1.7 新機能、ハブの「FROM A PROGRAM」から飛ぶ先）*/}
+      <section
+        id="from-a-program"
+        className="border-t border-neutral-200 bg-gradient-to-b from-white via-purple-50/30 to-white scroll-mt-4"
+      >
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           <div className="mb-6 sm:mb-8">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
@@ -185,8 +198,8 @@ export default function HomePage() {
               いまの気分から、出会いにいく。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-              「朝、シャキッとしたい」「夜、ひとりで沈みたい」——
-              直感で選んでも、ちゃんとハマるはず。
+              「朝、シャキッとしたい」「夜、ひとりで沈みたい」 ——
+              気分から始めて、検索 / タグ / 出展日でさらに絞り込めます。
             </p>
           </div>
           <MoodLanes moods={moods} countsBySlug={moodCounts} />

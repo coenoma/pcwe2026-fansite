@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getAllPrograms, getProgramById } from '@/lib/data';
@@ -187,15 +188,26 @@ export default async function BoothPage({ params }: Props) {
         </section>
       </FadeInOnScroll>
 
-      {/* 関連番組 */}
+      {/* 関連番組（同じジャンル）*/}
       {related.length > 0 && (
         <FadeInOnScroll>
           <section className="bg-neutral-50">
             <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-              <h2 className="text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
-                同じジャンルの番組
-              </h2>
-              <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h2 className="text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
+                  「{program.fanGuide.genre}」の他の番組
+                </h2>
+                <Link
+                  href={`/genre/${encodeURIComponent(program.fanGuide.genre)}`}
+                  className="text-xs font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600 sm:text-sm"
+                >
+                  「{program.fanGuide.genre}」をもっと見る →
+                </Link>
+              </div>
+              <p className="text-xs text-neutral-500 sm:text-sm">
+                同じジャンルだから、テイストが地続きで続けて聴けるかも。
+              </p>
+              <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((p) => (
                   <ProgramCard key={p.id} program={p} />
                 ))}

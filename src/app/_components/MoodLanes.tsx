@@ -44,16 +44,19 @@ export function MoodLanes({ moods, countsBySlug }: Props) {
               >
                 {mood.label}
               </p>
-              <p className="relative mt-auto pt-2 text-[10px] font-bold text-neutral-500 sm:text-xs">
+              <p className="relative mt-auto flex flex-col gap-1 pt-2 text-[10px] font-bold text-neutral-500 sm:text-xs">
                 <span
-                  className="inline-flex items-center gap-1 rounded-full px-2 py-0.5"
+                  className="inline-flex items-center gap-1 self-start rounded-full px-2 py-0.5"
                   style={{
                     backgroundColor: `${mood.themeColor}1a`,
                     color: mood.themeColor,
                   }}
                 >
-                  {count} 番組
+                  {count} 番組から絞り込む
                   <ArrowRight size={10} aria-hidden="true" />
+                </span>
+                <span className="text-[10px] text-neutral-400 sm:text-[11px]">
+                  検索 / タグ / 出展日でさらに
                 </span>
               </p>
             </Link>
