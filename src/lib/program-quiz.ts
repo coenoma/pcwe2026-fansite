@@ -18,28 +18,49 @@ import type { Program, Genre, Vibe } from './types';
 // 派生計算（既存 Program から「裏側情報」を推定）
 // ============================================================
 
-/** 話し方の構成（ホスト人数から推定）*/
+/** 話し方の構成（ホスト人数 + fanGuide.tags から推定）*/
 export type HostStyle = 'solo' | 'duo' | 'group';
 
-export function inferHostStyle(program: Program): HostStyle {
+/**
+ * 話し方の推定。
+ * - fanGuide.tags（手書きの確定情報）を最優先
+ * - hosts 配列（自動取得、ラベルが無いと空のことがある）はフォールバック
+ * - 判定不能なら null（scoring でマッチさせない）
+ */
+export function inferHostStyle(program: Program): HostStyle | null {
+  const tags = new Set(program.fanGuide.tags);
+  // タグの明示指定を最優先（fan-guide で確定情報として書かれた値を信頼）
+  if (tags.has('一人語り')) return 'solo';
+  if (tags.has('二人以上の掛け合い')) {
+    const n = program.official.hosts?.length ?? 0;
+    if (n === 2) return 'duo';
+    if (n >= 3) return 'group';
+    // タグはあるがホスト数が取れない場合は duo として扱う（一人ではない確信あり）
+    return 'duo';
+  }
+  // タグでの指定が無ければ hosts 配列から推定
   const n = program.official.hosts?.length ?? 0;
-  if (n <= 1) return 'solo';
+  if (n === 1) return 'solo';
   if (n === 2) return 'duo';
-  return 'group';
+  if (n >= 3) return 'group';
+  // hosts も空 → 判定不能
+  return null;
 }
 
-/** 密度・テンポ（タグから推定）*/
-export type Density = 'light' | 'deep' | 'commute' | 'unknown';
+/**
+ * 密度・テンポの推定。
+ * 1 番組が複数 density を持ちうる（例: 軽快 + 通勤 = light + commute）ため、
+ * Set で **複数返す**。scoring 時はマッチした全 density を加点する。
+ */
+export type Density = 'light' | 'deep' | 'commute';
 
-export function inferDensity(program: Program): Density {
+export function inferDensities(program: Program): Set<Density> {
+  const densities = new Set<Density>();
   const tags = new Set(program.fanGuide.tags);
-  // 軽快タグがあれば light
-  if (tags.has('軽快') || tags.has('笑える')) return 'light';
-  // じっくり / 寝る前 / 内省的なら deep
-  if (tags.has('じっくり') || tags.has('内省的') || tags.has('寝る前')) return 'deep';
-  // 朝向き / 通勤 / 作業 BGM なら commute
-  if (tags.has('朝向き') || tags.has('通勤') || tags.has('作業 BGM')) return 'commute';
-  return 'unknown';
+  if (tags.has('軽快') || tags.has('笑える')) densities.add('light');
+  if (tags.has('じっくり') || tags.has('内省的') || tags.has('寝る前')) densities.add('deep');
+  if (tags.has('朝向き') || tags.has('通勤') || tags.has('作業 BGM')) densities.add('commute');
+  return densities;
 }
 
 // ============================================================
@@ -412,7 +433,6 @@ const DENSITY_LABEL: Record<Density, string> = {
   light: '軽快テンポ',
   deep: 'じっくり腰を据えて',
   commute: '隙間時間で聴ける',
-  unknown: '',
 };
 
 /** 1 番組のスコア + マッチ理由を計算 */
@@ -464,56 +484,69 @@ function scoreProgramWithReasons(
     });
   }
 
-  // hostStyle
+  // hostStyle（推定不能 = null は加点しない）
   const hostStyle = inferHostStyle(program);
-  const hostScore = weights.hostStyles[hostStyle] ?? 0;
-  if (hostScore > 0) {
-    score += hostScore;
-    reasons.push({
-      axis: 'host',
-      label: `話し方「${HOST_STYLE_LABEL[hostStyle]}」`,
-      weight: hostScore,
-    });
-  }
-
-  // density
-  const density = inferDensity(program);
-  if (density !== 'unknown') {
-    const densityScore = weights.densities[density] ?? 0;
-    if (densityScore > 0) {
-      score += densityScore;
+  if (hostStyle !== null) {
+    const hostScore = weights.hostStyles[hostStyle] ?? 0;
+    if (hostScore > 0) {
+      score += hostScore;
       reasons.push({
-        axis: 'density',
-        label: `テンポ「${DENSITY_LABEL[density]}」`,
-        weight: densityScore,
+        axis: 'host',
+        label: `話し方「${HOST_STYLE_LABEL[hostStyle]}」`,
+        weight: hostScore,
       });
     }
+  }
+
+  // density（複数該当しうるので、マッチした全 density を加点）
+  const densities = inferDensities(program);
+  const matchedDensityLabels: string[] = [];
+  let densityScoreTotal = 0;
+  for (const d of densities) {
+    const w = weights.densities[d] ?? 0;
+    if (w > 0) {
+      score += w;
+      densityScoreTotal += w;
+      matchedDensityLabels.push(DENSITY_LABEL[d]);
+    }
+  }
+  if (matchedDensityLabels.length > 0) {
+    reasons.push({
+      axis: 'density',
+      label: `テンポ「${matchedDensityLabels.join(' / ')}」`,
+      weight: densityScoreTotal,
+    });
   }
 
   return { score, reasons };
 }
 
-/** 全番組をスコアリング（理由付き）*/
+/**
+ * 全番組をスコアリング（理由付き）。
+ *
+ * matchPercent は **「ヒットした最高スコア番組 = 100%」** を基準に正規化する。
+ * （旧: 理論上の最大値で正規化していたが、1 番組が全 tag を持つことは現実には無く、
+ * ベスト番組でも 60% 程度しか出ない問題があった）
+ */
 export function scorePrograms(
   programs: Program[],
   answers: QuizAnswer[],
 ): ScoredProgram[] {
   const weights = aggregateWeights(answers);
-  // 最大スコア（=全 weights が一致した時の理論値）を計算しておく
-  const maxPossible =
-    Math.max(0, ...Object.values(weights.vibes)) +
-    Math.max(0, ...Object.values(weights.genres)) +
-    Object.values(weights.tags).reduce((s, v) => s + v, 0) +
-    Math.max(0, ...Object.values(weights.hostStyles)) +
-    Math.max(0, ...Object.values(weights.densities));
 
-  return programs
-    .map((program) => {
-      const { score, reasons } = scoreProgramWithReasons(program, weights);
-      const matchPercent =
-        maxPossible > 0 ? Math.round((score / maxPossible) * 100) : 0;
-      return { program, score, reasons, matchPercent };
-    })
+  const scoredRaw = programs.map((program) => {
+    const { score, reasons } = scoreProgramWithReasons(program, weights);
+    return { program, score, reasons };
+  });
+
+  // 全番組の最大スコアを取得（=これを 100% とする）
+  const maxScore = scoredRaw.reduce((max, s) => Math.max(max, s.score), 0);
+
+  return scoredRaw
+    .map((s) => ({
+      ...s,
+      matchPercent: maxScore > 0 ? Math.round((s.score / maxScore) * 100) : 0,
+    }))
     .sort((a, b) => b.score - a.score);
 }
 
