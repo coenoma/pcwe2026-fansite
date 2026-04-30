@@ -3,7 +3,7 @@
   "name": "ポッドキャストーーク",
   "thumbnail": "/thumbnails/021.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-021/",
-  "fetchedAt": "2026-04-30T12:43:36.443Z",
+  "fetchedAt": "2026-04-30T13:45:17.169Z",
   "official": {
     "description": "Podcastを愛するパーソナリティの3人がPodcast番組を紹介する番組です。\n今まで200番組以上紹介をしてきました。職種、視点の異なる3人ならではの幅広いジャンルを網羅。\n自分だけでは見つけられなかった楽しい番組を知るきっかけになれば嬉しいです！"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/3N7FlRxLFv2YwWbMowXJLC",
     "x": "https://x.com/VoiceCapsule_PT"
+  },
+  "recommendedEpisode": {
+    "title": "【メープルウィークエンド】豪華ポッドキャスターが集結したらこんな感じになりました",
+    "url": "https://open.spotify.com/episode/1qzSJ9e9DyaSqaOdJAY1f7?si=XZNbbXWARguZf9QxblCz6Q"
   }
 }

@@ -3,7 +3,7 @@
   "name": "ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！！〜",
   "thumbnail": "/thumbnails/056.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-056/",
-  "fetchedAt": "2026-04-30T12:44:35.107Z",
+  "fetchedAt": "2026-04-30T13:46:16.217Z",
   "official": {
     "description": "ライターやクリエイターとして活動する、ゆりしー＆さほほが、いま興味のあるガールズ・カルチャーについておしゃべりしつつ、社会や歴史の話もできたらいいな〜と思いながら不定期更新でお届けしているポッドキャストです。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/3IAGVOYBkBFJ61jMuavbzS",
     "x": "https://x.com/gcrc_divedeep"
+  },
+  "recommendedEpisode": {
+    "title": "#1 私たちはこんなメディアと接してきた",
+    "url": "https://open.spotify.com/episode/6PXoLkhRnSrl3yjn6Wi5aB?si=207240defcf24af3"
   }
 }

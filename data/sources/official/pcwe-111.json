@@ -3,7 +3,7 @@
   "name": "ワイングラスからこぼれ話。",
   "thumbnail": "/thumbnails/111.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-111/",
-  "fetchedAt": "2026-04-30T12:46:22.531Z",
+  "fetchedAt": "2026-04-30T13:47:48.876Z",
   "official": {
     "description": "地方のワイナリー勤務で、ワイン好きの子持ちワインエキスパートのjellyが、雑談を交えながらワイングラスからこぼれる程度の話をしていく番組です。\nワインをもっと知ってほしい！布教したい！がモットーで、わかりやすさ重視のワインのお話をメインに配信中。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/1I4SVQ8dsk1yxart7ODNGU",
     "x": "https://x.com/jellysPodcast"
+  },
+  "recommendedEpisode": {
+    "title": "#100「カリフォルニアのぶどう王」〜長沢鼎の物語",
+    "url": "https://open.spotify.com/episode/7HtpmKJMbAUNXbcHVOTpDI?si=AXGK677NTa2zoI-MXrwWRA"
   }
 }

@@ -3,7 +3,7 @@
   "name": "まるごと放送室",
   "thumbnail": "/thumbnails/135.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-135/",
-  "fetchedAt": "2026-04-30T12:47:02.442Z",
+  "fetchedAt": "2026-04-30T13:48:29.541Z",
   "official": {
     "description": "■ まるごと放送室 とは？\n神山まるごと高専という特殊な環境に身を置く高専生が、インタビューだけでは伝わらないリアルを、体験談や特別コーナーでお届けする王道ポッドキャスト番組です！\nハッシュタグ：#まるごと放送室\n配信日：毎週水曜07:30\nPersonality：さとし、ひかり、りこ、わかな\nこの番組の母体、kamiyamacast（旧：神山まるごと高専Podcast部）ではその他の番組も放送中です。\n高専生の飾らない声を、ぜひお聴きください！"
   },
@@ -19,5 +19,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/5NU4eEPi0NarsvWnloxjmD",
     "x": "https://x.com/kamiyamacast"
+  },
+  "recommendedEpisode": {
+    "title": "【#01】神山まるごと高専について語りたい",
+    "url": "https://open.spotify.com/episode/5fvL1pA7a7Y8UBdVBUrUSR?si=9076ccd5d0754cc7"
   }
 }

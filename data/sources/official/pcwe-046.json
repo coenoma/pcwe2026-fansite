@@ -3,7 +3,7 @@
   "name": "人生百貨店",
   "thumbnail": "/thumbnails/046.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-046/",
-  "fetchedAt": "2026-04-30T12:44:20.344Z",
+  "fetchedAt": "2026-04-30T13:45:58.460Z",
   "official": {
     "description": "自分自身が社会人なるかならないかの頃、少し先を生きる人たちの考えや生き方に触れて、少しずつ自分の道が見えたり、年齢を重ねるなかで直面する壁に立ち向かう人の姿をみて、勇気やヒントをもらってきた。20代・30代は学生から社会人になったり、家庭を持ったり、転職や移住をしたり、昇進をしたりと、変化を経験することの多い年代。だからこその悩みや葛藤、決断、生き様があるはず。さまざまな領域で自分のサイズで生きている20代・30代のゲストの話を聞きながら、今しか語れないことを語っていく番組。それが「人生百貨店」です。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/3pNz2GfTmZeO0hYgjRIsHT",
     "x": "https://x.com/lifedeptstores",
     "instagram": "https://www.instagram.com/lifedepartmentstores/"
+  },
+  "recommendedEpisode": {
+    "title": "第47夜「選ばれなかった人生があるから、今の自分がいることに感謝したい」の回",
+    "url": "https://open.spotify.com/episode/2LepNYDBNca99mTEz4bwlY"
   }
 }

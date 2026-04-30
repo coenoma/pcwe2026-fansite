@@ -3,7 +3,7 @@
   "name": "クリエイターエコノミーニュース",
   "thumbnail": "/thumbnails/047.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-047/",
-  "fetchedAt": "2026-04-30T12:44:22.136Z",
+  "fetchedAt": "2026-04-30T13:46:00.238Z",
   "official": {
     "description": "ポッドキャスト、音声AI、音声配信、オーディオブック、音声ガイド等、音声配信業界のニュースまとめを配信中。日本は海外とは異なり、ポッドキャスト1強ではありません。インターネットラジオやVoicy、オーディオブックやASMLコンテンツなど、様々な音声媒体が存在し、さらには美術館などでも聴かれる音声ガイドまで、さまざまな音声コンテンツに溢れているのです。また、音声AI界隈では他業界に先駆けて社会実装が進んでいます。音声は、技術とビジネスの先行指標的とも言われ、音声市場をキャッチアップすれば、この不透明な時代もきっとサバイブできます。私と音声アシスタントといっしょに、音声市場を俯瞰してみませんか。"
   },
@@ -19,5 +19,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/2uhIn54aKBSxUvyCzr1INo",
     "x": "https://x.com/creator_enews"
+  },
+  "recommendedEpisode": {
+    "title": "2026年1月2週～Spotify新収益化、注目番組、テレ東、GoogleAI他",
+    "url": "https://open.spotify.com/episode/1gyaKJh6fwXj99NXXcuCP0"
   }
 }

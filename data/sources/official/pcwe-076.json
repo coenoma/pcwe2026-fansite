@@ -3,7 +3,7 @@
   "name": "F1ファンになる方法 #f1log",
   "thumbnail": "/thumbnails/076.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-076/",
-  "fetchedAt": "2026-04-30T12:45:22.791Z",
+  "fetchedAt": "2026-04-30T13:46:48.837Z",
   "official": {
     "description": "桐野美也子が、F1（フォーミュラ1）を日本から語り続ける稀有なポッドキャストです。\nF1はクルマを用いたスポーツであり、グローバルな政治であり、かつ映画『エフワン』やNetflix『栄光のグランプリ Drive to Survive』などエンタメでもあります。\nそんな新世代のためのモータースポーツを、ゆるく斜め45度からサステイナブルに楽しみ続けるためのポッドキャストです。"
   },
@@ -17,5 +17,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/1NusmfsiPklgv6rWHqe0O8"
+  },
+  "recommendedEpisode": {
+    "title": "148 - why he crashes again (Fl 編・映画エフワン/F1the Movieをみた後に聴きたくなる ネタバレポッドキャスト）",
+    "url": "https://open.spotify.com/episode/2QvSSJ00gd4VxL250AI1rs?si=WmU5V18-RF-2P8TjcM_9uA"
   }
 }

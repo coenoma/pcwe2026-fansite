@@ -3,7 +3,7 @@
   "name": "Kids’ News – キッズニュース",
   "thumbnail": "/thumbnails/091.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-091/",
-  "fetchedAt": "2026-04-30T12:45:47.221Z",
+  "fetchedAt": "2026-04-30T13:47:15.669Z",
   "official": {
     "description": "世界で起こるニュースをわかりやすくお話していく番組です。\n「この人だれ？」\n「どんな国？」\n「なんでニュースになってるの？」\nそんな気になるこたえを一緒にみつけていきましょう。\n〜親子に信頼できる情報源を〜\n『Kids’ News – キッズニュース』は小学校低学年から聞ける子ども向けニュース番組です。\nファクトに基づき、できるだけバイアス少なく、小学低学年でもわかるように時事ニュースを解説しています。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/1I9MfdGDCgbSj0NUupLjxq",
     "x": "https://x.com/rinaarailevia"
+  },
+  "recommendedEpisode": {
+    "title": "【1月14日】α世代（アルファせだい）ってだれ？",
+    "url": "https://open.spotify.com/episode/5bXY6Bw20078I24s6ZXcVF?si=a3c19MrsQkm7y2KvVdlw_w"
   }
 }

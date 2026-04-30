@@ -3,7 +3,7 @@
   "name": "中2の魂100まで",
   "thumbnail": "/thumbnails/031.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-031/",
-  "fetchedAt": "2026-04-30T12:43:53.072Z",
+  "fetchedAt": "2026-04-30T13:45:33.283Z",
   "official": {
     "description": "大学の同級生、ほの・まる・こまだのピーターパン症候群拗らせ系中年3人による大人のイヤイヤ期爆発系雑談Podcast\n毎週［話したいテーマを紙に書く→シャッフルしてくじ引き→出たテーマについて話す］という、ラ◯オンのごき◯んようスタイルの番組です\nマックで隣の席の話が盛り上がってる感じを目指してます\n#ちゅー100"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/5gKe6U8dxwYFuKunBSOvbH",
     "x": "https://x.com/soulofchu2_100"
+  },
+  "recommendedEpisode": {
+    "title": "#43 野球は顔じゃできないんだネ。",
+    "url": "https://open.spotify.com/episode/2FffnFf9IzEPnVOYXiBlXm?si=MnsYoFaHTciRahczKOqO5A"
   }
 }

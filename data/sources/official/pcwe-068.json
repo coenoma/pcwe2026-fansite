@@ -3,7 +3,7 @@
   "name": "ピーチウーロンの〇〇な気がする",
   "thumbnail": "/thumbnails/068.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-068/",
-  "fetchedAt": "2026-04-30T12:44:55.875Z",
+  "fetchedAt": "2026-04-30T13:46:35.225Z",
   "official": {
     "description": "「ピーチウーロンの〇〇な気がする」は、パーソナリティのピーチウーロンがお送りする雑談系ポッドキャスト。ピーチウーロンがその時に話したいことをゆるく語りながら、日常の気づきや出来事を「〜な気がする」という感覚で言葉にします。趣味のアイドルや映画の話題に加え、料理をしたり編み物をしたりする様子を音声で届ける回もあり、等身大の時間を共有している番組です。"
   },
@@ -19,5 +19,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/66f9D0KcRpmJp1kG9lpB13",
     "x": "https://x.com/peachoolong000"
+  },
+  "recommendedEpisode": {
+    "title": "#50 2024年は季節を堪能した気がする",
+    "url": "https://open.spotify.com/episode/1aZXSqg5nk0so7wKk0Ifin?si=KFtRaEqnT_SzoqDxM8z8jQ"
   }
 }

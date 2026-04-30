@@ -3,7 +3,7 @@
   "name": "ラジオただいま発酵中",
   "thumbnail": "/thumbnails/107.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-107/",
-  "fetchedAt": "2026-04-30T12:46:15.487Z",
+  "fetchedAt": "2026-04-30T13:47:41.915Z",
   "official": {
     "description": "発酵デザイナー・小倉ヒラクが、Backpackers’ Japanの石崎嵩人とお送りするPodcast。発酵をテーマに、食はもちろん、カルチャーや人類学、サイエンスまであれこれ突っ込んで語りまくる、発酵ビギナーから上級者まで楽しい発酵ラジオ。毎週水曜日更新。"
   },
@@ -17,5 +17,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/1ESl3Yo10irse8ChAN3U1I"
+  },
+  "recommendedEpisode": {
+    "title": "#298｜世界で一番飲まれているお酒はビール！ ＜旅とビール：1＞",
+    "url": "https://open.spotify.com/episode/6SPgugy5Q84TsOOQDwmUJl?si=lUJ6LgL1R62P1VmOBe6uiA"
   }
 }

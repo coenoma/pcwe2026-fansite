@@ -3,7 +3,7 @@
   "name": "読んでみてはラジオ",
   "thumbnail": "/thumbnails/123.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-123/",
-  "fetchedAt": "2026-04-30T12:46:42.400Z",
+  "fetchedAt": "2026-04-30T13:48:10.191Z",
   "official": {
     "description": "「読書は人生を豊かにする」と言う仮説を持つ幼なじみ2名が、本の内容を血肉化し、活用していくために、お互いに読んだ本を紹介し、ゆるく雑談をしてインサイトを得るラジオ番組です。\nパーソナリティを務めるのは、株式会社Right Design代表の小川貴之と、株式会社SmartHR代表の芹澤雅人です。\n日曜日の17:00に新エピソードを配信します。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/0Vv5Gs0DVYZsvAb4w4CthT",
     "x": "https://x.com/yondemiteha"
+  },
+  "recommendedEpisode": {
+    "title": "#033 凄いアウトプットをするための凄いインプットの続け方 『インプット・ルーティン』",
+    "url": "https://open.spotify.com/episode/42HVBFWJex5s0yJbk4oGk6"
   }
 }

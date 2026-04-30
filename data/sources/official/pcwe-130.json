@@ -3,7 +3,7 @@
   "name": "佐野いくみの喜々台湾",
   "thumbnail": "/thumbnails/130.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-130/",
-  "fetchedAt": "2026-04-30T12:46:54.183Z",
+  "fetchedAt": "2026-04-30T13:48:20.996Z",
   "official": {
     "description": "台湾をテーマにした番組「佐野いくみの喜々台湾」。台湾にルーツがある佐野いくみが、台湾愛に溢れるゲストとのトークや取材を通して、嬉しい楽しい台湾の話題をお届けしています。日本から、時には台湾からも発信！「佐野いくみの喜々台湾」聴きたい台湾、ここにあり！"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/15ZDxvdmNcsJ0D821NveDu",
     "x": "https://x.com/kikitaiwan_pc",
     "instagram": "https://www.instagram.com/kikitaiwan_podcast/"
+  },
+  "recommendedEpisode": {
+    "title": "＃34 みんな大好き！台湾夜市の世界！三文字昌也さん（前編）",
+    "url": "https://open.spotify.com/episode/54LJJKTw9MrAWg7y1u7Ea6"
   }
 }

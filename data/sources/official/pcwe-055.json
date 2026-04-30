@@ -3,7 +3,7 @@
   "name": "工業高校農業部",
   "thumbnail": "/thumbnails/055.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-055/",
-  "fetchedAt": "2026-04-30T12:44:33.106Z",
+  "fetchedAt": "2026-04-30T13:46:14.406Z",
   "official": {
     "description": "工業高校出身、今は何故か農家。\nこの番組は、”あの日教室の隅で聞いてたバカ話”系ポッドキャスト。\n工業高校の元クラスメイトが、いつまでもそんな話をしています。\n番組MC\nウシワカ：よく喋る兵庫県北部の牛飼い。ポッドキャスト制作「STUDIO ON」代表。\n興味の幅が広すぎる故に自宅は常に散らかっている。\nDIYやアクティブなことが好き。SNS中毒者。\n——\nますぼう：元鉄道員の農家。葉物野菜やぶどうを栽培する「ぽっぽや農園」代表。\n関西弁に強烈な拘りをもっており、同郷出身のウシワカがたまに話す標準語を度々糾弾する。\n1日出かけたり人と話すと疲れるタイプ。インドア派。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/1MhF3CYuGK9zAWUOC8e2CM",
     "x": "https://x.com/ushiwakamaruo"
+  },
+  "recommendedEpisode": {
+    "title": "良い1日は良い朝から。トークテーマ「朝ごはんどうしてる？」",
+    "url": "https://open.spotify.com/episode/6G9SOAxrxejhXCH7HLg1i0"
   }
 }

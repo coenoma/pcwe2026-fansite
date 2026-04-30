@@ -3,7 +3,7 @@
   "name": "こうきとたかやのラジオもどき",
   "thumbnail": "/thumbnails/018.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-018/",
-  "fetchedAt": "2026-04-30T12:43:31.535Z",
+  "fetchedAt": "2026-04-30T13:45:11.816Z",
   "official": {
     "description": "「わっしょい☆田中」という芸名でお笑い芸人として活動する”こうき”と一般人”たかや”がポッドキャストを使って非生産的なトークを世の中にお届けするラジオ番組となっております。予測不能なボケと、なんとか成立させようとするツッコミ未満のリアクションでお送りしています。\nイベント当日も非生産的なブースを展開させていただく予定なのでお楽しみに！"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/0XiKZ9Vzg24wFqeBYXPvmT",
     "x": "https://x.com/radiomodoki2021"
+  },
+  "recommendedEpisode": {
+    "title": "〈＃１０４〉カッパ捕獲許可証",
+    "url": "https://open.spotify.com/episode/1dbsKIaA3LZrzPqssgTd8k?si=02455bb6b67d4b46"
   }
 }

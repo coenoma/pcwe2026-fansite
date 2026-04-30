@@ -3,7 +3,7 @@
   "name": "高橋クリスのFA_RADIO:工場自動化ポッドキャスト",
   "thumbnail": "/thumbnails/019.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-019/",
-  "fetchedAt": "2026-04-30T12:43:33.171Z",
+  "fetchedAt": "2026-04-30T13:45:13.692Z",
   "official": {
     "description": "「あしたのFactoryAutomationへようこそ」。\nFA_RADIOは、工場自動化に携わる2人のエンジニア・高橋とクリスが、月曜から金曜日までの週5日、現場目線でFAの今とこれからを語るポッドキャストです。制御設計やPLC、最新技術動向から業界のリアルな話まで、所属や立場に縛られずフラットに発信。FAをもっと気軽に、もっと楽しく感じられる場を目指しています。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/6lsWTSSeaOJCGriCS9O8O4",
     "x": "https://x.com/fulhause"
+  },
+  "recommendedEpisode": {
+    "title": "#429 トヨタ自動車株式会社を退職しました【退職ポッドキャスト】",
+    "url": "https://open.spotify.com/episode/7h8nLdK9UBlONEjfxeEsPr"
   }
 }

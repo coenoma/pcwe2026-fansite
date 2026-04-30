@@ -3,7 +3,7 @@
   "name": "BACKYARD TO CLOSET",
   "thumbnail": "/thumbnails/108.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-108/",
-  "fetchedAt": "2026-04-30T12:46:17.775Z",
+  "fetchedAt": "2026-04-30T13:47:43.572Z",
   "official": {
     "description": "── 聞いたあと、クローゼットの洋服たちが今よりきっと好きになる。\nBACKYARD TO CLOSETは、セレクトショップ SLOW&STEADY を展開する、S&Sによる音声プログラムです。番組では、主に洋服の知識や歴史、本当に似合う洋服とは？といった、とにかく洋服にまつわるアレコレを、実店舗の裏にあるバックヤードから、あなたのクローゼットへお届けします。"
   },
@@ -20,5 +20,9 @@
     "spotify": "https://open.spotify.com/show/7cGFPKVuJ22gnpune8UYCz",
     "x": "https://x.com/slwanstdy",
     "instagram": "https://www.instagram.com/at_slowandsteady"
+  },
+  "recommendedEpisode": {
+    "title": "#213｜加齢とともに「センスが育つ人・止まる人」から考える洋服トーク",
+    "url": "https://open.spotify.com/episode/0iSdSCyNW48dQLSiTHOeLb?si=07c757248c234c1d"
   }
 }

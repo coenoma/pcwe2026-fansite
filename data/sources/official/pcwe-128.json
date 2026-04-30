@@ -3,7 +3,7 @@
   "name": "アシタ・シアター",
   "thumbnail": "/thumbnails/128.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-128/",
-  "fetchedAt": "2026-04-30T12:46:50.950Z",
+  "fetchedAt": "2026-04-30T13:48:17.701Z",
   "official": {
     "description": "それぞれの舞台で、アシタもなんとか頑張れるように。\n学生時代、一緒に劇団を立ち上げ活動した2人が、俳優と会社員になって7年ぶりに再会。見てきた景色は違うけど、一緒に劇場【シアター】に立った頃のように誰かを楽しませたいのは変わらない。\n好きなものも、楽しいことも、内緒話も詰め込んで。大人になった私たちの秘密基地に遊びにきてください。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/0liJZVRA9GzRNAbep93Ogp",
     "x": "https://x.com/ashita_theater"
+  },
+  "recommendedEpisode": {
+    "title": "５０話『【沼シリーズ】国民的アニメ忍たま、圧倒的沼でした』",
+    "url": "https://open.spotify.com/episode/59HC8Eub0f24hj0iPddJ0k?si=dUI57_Y1SgGEg40h_md57A"
   }
 }

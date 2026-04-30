@@ -3,7 +3,7 @@
   "name": "拝啓、3000年の人類へ",
   "thumbnail": "/thumbnails/012.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-012/",
-  "fetchedAt": "2026-04-30T12:43:21.748Z",
+  "fetchedAt": "2026-04-30T13:45:00.341Z",
   "official": {
     "description": "はるか遠い未来の人類へ、現代人は何を残せるだろうー？\nPodcast番組「拝啓、3000年の人類へ」は、西暦3000年に向けて綴る「音声アーカイブ」です。\n加速するテクノロジーの波間で、現代人が何を思い、どんな未来を夢見たのか。\n教科書には載らない、その体温を、遠い未来へ届けます。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/5Bce2dXifMfWyRJ9sKSk7S",
     "x": "https://x.com/echo3000_radio"
+  },
+  "recommendedEpisode": {
+    "title": "「好き」を語る姿、語る場が求められていくAI時代",
+    "url": "https://open.spotify.com/episode/0eKgeB74x7loMPiTpSiy9J?si=JSYK5hbwSTixE3L1yu2cbw"
   }
 }

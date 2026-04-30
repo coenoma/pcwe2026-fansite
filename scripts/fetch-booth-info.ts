@@ -98,6 +98,11 @@ interface ParsedBoothInfo {
     instagram?: string;
     website?: string;
   };
+  /** 公式の「おすすめエピソード」.entry-recommend ブロックから抽出 */
+  recommendedEpisode?: {
+    title: string;
+    url: string;
+  };
 }
 
 async function fetchBoothHtml(id: string): Promise<string> {
@@ -257,6 +262,28 @@ function parseBoothHtml(html: string): ParsedBoothInfo {
     return /\b(podcast_expo|podcastexpo)\b/i.test(url);
   };
 
+  // 公式が指定したおすすめエピソード（.entry-recommend ブロック）
+  // HTML 構造:
+  //   <div class="entry-recommend">
+  //     <div class="recommend-image"><a href="<episode-url>"><img></a></div>
+  //     <div class="recommend-body">
+  //       <div class="tit">RECOMMEND / おすすめエピソード</div>
+  //       <a href="<episode-url>">
+  //         <div class="recommend-tit"><b>エピソードタイトル</b></div>
+  //         <div class="recommend-tit-name"><b>番組名</b></div>
+  //       </a>
+  //     </div>
+  //   </div>
+  let recommendedEpisode: ParsedBoothInfo['recommendedEpisode'];
+  const $recommendBlock = $('.entry-recommend').first();
+  if ($recommendBlock.length > 0) {
+    const title = $recommendBlock.find('.recommend-tit b').first().text().trim();
+    const href = $recommendBlock.find('.recommend-body a').first().attr('href');
+    if (title.length > 0 && typeof href === 'string' && href.length > 0) {
+      recommendedEpisode = { title, url: href };
+    }
+  }
+
   // SNS / 配信プラットフォームのリンクを a[href] から抽出
   const links: ParsedBoothInfo['links'] = {};
   $('a[href]').each((_, el) => {
@@ -295,6 +322,7 @@ function parseBoothHtml(html: string): ParsedBoothInfo {
     merchandise: merchandise.length > 0 ? merchandise : undefined,
     exhibition: { days: uniqueDays, hours, area },
     links,
+    recommendedEpisode,
   };
 }
 
@@ -321,6 +349,7 @@ function buildOfficialSource(id: string, parsed: ParsedBoothInfo, existing?: Off
       boothNumber,
     },
     links: parsed.links,
+    recommendedEpisode: parsed.recommendedEpisode,
   };
 }
 

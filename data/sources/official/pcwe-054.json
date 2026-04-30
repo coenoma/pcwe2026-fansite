@@ -3,7 +3,7 @@
   "name": "よるののうか",
   "thumbnail": "/thumbnails/054.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-054/",
-  "fetchedAt": "2026-04-30T12:44:31.158Z",
+  "fetchedAt": "2026-04-30T13:46:12.896Z",
   "official": {
     "description": "和歌山の果樹農家が「農業」を面白可笑しく伝えようとしている番組です。\nー話者ー\n山本康平 桃柿みかん農家 1991年生（うるさい方）\n伊藤貴章 みかん農家 1987年生（巻き込まれている方）\n始めての方は最新回から聴くが吉。\n寂しいので、遊びに来てください。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/39Y1Qxp4yjqA8cJ98qrDJ8",
     "x": "https://x.com/kobukirubiru"
+  },
+  "recommendedEpisode": {
+    "title": "「草刈機の音」アワード",
+    "url": "https://open.spotify.com/episode/4Rsy3FIeIswKdvHILyr5bv"
   }
 }

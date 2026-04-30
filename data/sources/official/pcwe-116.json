@@ -3,7 +3,7 @@
   "name": "カウチポテトブラザーズ",
   "thumbnail": "/thumbnails/116.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-116/",
-  "fetchedAt": "2026-04-30T12:46:31.721Z",
+  "fetchedAt": "2026-04-30T13:47:56.726Z",
   "official": {
     "description": "LOY・ですけ・新牧アキラの成人男性3人組によるヤマなしオチなしイミなしなゆるふわネットラジオ。お散歩中からお仕事中まで、お耳が寂しいときのお供にどうぞ。毎月第2・第4金曜日 21時ごろ更新。"
   },
@@ -20,5 +20,9 @@
     "spotify": "https://open.spotify.com/show/6Kgh5ProKEHvwXOltIOz62",
     "x": "https://x.com/radio_CPB",
     "instagram": "https://www.instagram.com/radio_cpb/"
+  },
+  "recommendedEpisode": {
+    "title": "Ep.84「私はルンバになりました」",
+    "url": "https://open.spotify.com/episode/0CUjNobSweCFKfXzeCfLAV?si=rHf_XctOSFGvaCmkXOADDQ"
   }
 }

@@ -3,7 +3,7 @@
   "name": "夫婦関係学ラジオ",
   "thumbnail": "/thumbnails/142.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-142/",
-  "fetchedAt": "2026-04-30T12:47:15.083Z",
+  "fetchedAt": "2026-04-30T13:48:39.965Z",
   "official": {
     "description": "結婚すれば幸せになれると思っていた。ですが、現実は違います。家事育児の分担、キャリアの喪失、セックスレス、不倫、別居など、結婚後の夫婦はさまざまな葛藤に直面します。夫婦関係学ラジオでは、これらの葛藤をサバイブするためのナレッジをお伝えします。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/4Stfk1sRnzqBxeXVCSAeQF",
     "x": "https://x.com/atsuatsu",
     "instagram": "https://www.instagram.com/atsu0atsu/"
+  },
+  "recommendedEpisode": {
+    "title": "#490 夫婦に恋愛感情なんて必要ない。",
+    "url": "https://open.spotify.com/episode/1mf2So3D8zH7HYdbG1JL1d?si=0w0jlR4MQSCVmYE5R8hiIg"
   }
 }

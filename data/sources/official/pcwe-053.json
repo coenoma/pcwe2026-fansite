@@ -3,7 +3,7 @@
   "name": "丘の上喫茶",
   "thumbnail": "/thumbnails/053.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-053/",
-  "fetchedAt": "2026-04-30T12:44:29.455Z",
+  "fetchedAt": "2026-04-30T13:46:11.223Z",
   "official": {
     "description": "何となく不安を感じる20代のための、新しい気づきを得て、気持ちがちょっとだけ軽くなる場所、「丘の上喫茶」です。毎週水曜21:00配信中！\n20代後半を迎えた大学同期3人（ゆいこ、りこ、りさ）で、日々のお悩みやキャリアや恋愛など、気になるあれこれをゆるくおしゃべりしています！ふらっとカフェに立ち寄る気分で遊びに来てください:)\nこんな方におすすめ！\n・日々の小さな不安や焦りに悩んでいる人\n・なんとなく不安を感じながらも前に進みたい人\n・学校や会社と違う、ゆるい繋がりが欲しい人\n・仕事や日常のちょっとした悩みを聞きたい人\n・20代女性のリアルを覗いてみたい人"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/5qYeBF96ZSx6bXD1MTvEXB",
     "x": "https://x.com/okanoue_kissa",
     "instagram": "https://www.instagram.com/okanoue_kissa/"
+  },
+  "recommendedEpisode": {
+    "title": "#23 もしもラプンツェルが自由を知らなかったら。塔に閉じこもったままだった？-自由って聞こえはいいけど実際何なの？-",
+    "url": "https://open.spotify.com/episode/3cT9hl3BdxsklVyZwB7nPE?si=dtpTWsB9QpOKvP4HbBbqTw"
   }
 }

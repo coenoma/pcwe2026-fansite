@@ -3,7 +3,7 @@
   "name": "日暮里ゼミナール",
   "thumbnail": "/thumbnails/096.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-096/",
-  "fetchedAt": "2026-04-30T12:45:56.231Z",
+  "fetchedAt": "2026-04-30T13:47:24.313Z",
   "official": {
     "description": "複数の肩書きをもつ方々をゲストにお呼びし、「キャリア」や「カルチャー」を学んでいくラジオ番組です。「日暮里ゼミナール」という番組名は、いわゆる大学のゼミナール・研究会のようにみんなで教え合いながら成長していきたいという思いで名付けられました。様々なゲストをお呼びして体験談や想いを伺う「メイン回」と、LAMM代表・二村康太の気になるカルチャーについてLAMMメンバーで深掘りする「補講回」に分け、毎週新エピソードをお届けしています。Xのハッシュタグ「#日暮里ゼミナール」にて質問・感想を募集中です！\n日暮里ゼミナール公式サイト：https://nippori.lamm.tokyo/"
   },
@@ -17,5 +17,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/2wuDTCc51YGbjBsXKSpyCc"
+  },
+  "recommendedEpisode": {
+    "title": "#51 お前ら大卒は俺ら高卒をバカにしてんだろと問題提議されました【補講】",
+    "url": "https://open.spotify.com/episode/0OAdk0Plef9vHrsa5aJJZS?si=62a5a6c1ac5b4044"
   }
 }

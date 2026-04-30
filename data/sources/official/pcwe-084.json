@@ -3,7 +3,7 @@
   "name": "映画雑談",
   "thumbnail": "/thumbnails/084.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-084/",
-  "fetchedAt": "2026-04-30T12:45:36.053Z",
+  "fetchedAt": "2026-04-30T13:47:01.513Z",
   "official": {
     "description": "映画感想家のカシマエスヒロとライターの張江浩司が、最近観た映画や大昔に観た映\n画の話をわいわいネタバレ全開でお喋りするポッドキャストです。居酒屋で友達と映\n画の話をダラダラしている、あの感じでお楽しみください。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/4X49bPRwTi5vACN9QIeqvs",
     "x": "https://x.com/zatsudan2020",
     "instagram": "https://www.instagram.com/eigazatsudan"
+  },
+  "recommendedEpisode": {
+    "title": "その182「早くも今年の10位に決定！『HELP/復讐島』」",
+    "url": "https://open.spotify.com/episode/4d5BrjIOQZjcg87eCnXuv3?si=dLVNviVjQaeBUOxWQHetkQ"
   }
 }

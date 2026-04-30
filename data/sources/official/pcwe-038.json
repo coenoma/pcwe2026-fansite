@@ -3,7 +3,7 @@
   "name": "ゲームなんとか",
   "thumbnail": "/thumbnails/038.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-038/",
-  "fetchedAt": "2026-04-30T12:44:05.546Z",
+  "fetchedAt": "2026-04-30T13:45:44.962Z",
   "official": {
     "description": "「ゲームなんとか」はゲームが上手くもなければ詳しいわけでもないけど、ゲームの話がしたくてたまらない３人がとにかくゲームの話をするポッドキャスト番組。毎週月曜０時配信。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/0VpJSbTokWLLJ0zppnbrlM",
     "x": "https://x.com/gamenantoka"
+  },
+  "recommendedEpisode": {
+    "title": "1996年の売上ランキングをなんとか",
+    "url": "https://open.spotify.com/episode/1Prs264uLz8rx3FCJjuKFp?si=tmHhMaS8QsSRxIJN0--RaQ"
   }
 }

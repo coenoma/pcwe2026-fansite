@@ -3,7 +3,7 @@
   "name": "てきと〜",
   "thumbnail": "/thumbnails/011.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-011/",
-  "fetchedAt": "2026-04-30T12:43:20.469Z",
+  "fetchedAt": "2026-04-30T13:44:58.487Z",
   "official": {
     "description": "現代社会に不満を抱える若者たちへ送るをモットーに活動する二人組。\nパーソナリティ「山田世紀末 / 関西に住むデザイナー、燃え滾る命」「かなで / 思想強めのスピ系、特技は早食い」\n取り上げる話題は、アニメ 漫画 サブカルチャーや身近な社会問題についてなど多岐にわたる。\n過去の放送回『AIと付き合う』『SNSを見せられている』『平成女児の回』など\n週1で更新中(たまに公開収録)\n凝り固まった現代社会を生きる上で、もっと””てきと〜””でいいんじゃない？ と思いながら発信しています。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/4NgO8mWnp2JBSBrjarS7EN",
     "x": "https://x.com/tekito9899",
     "instagram": "https://instagram.com/tekito9899"
+  },
+  "recommendedEpisode": {
+    "title": "平成女児の回",
+    "url": "https://open.spotify.com/show/4NgO8mWnp2JBSBrjarS7EN"
   }
 }

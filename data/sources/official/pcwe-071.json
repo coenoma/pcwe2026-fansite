@@ -3,7 +3,7 @@
   "name": "炊き込みご飯わくわく舎",
   "thumbnail": "/thumbnails/071.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-071/",
-  "fetchedAt": "2026-04-30T12:45:01.166Z",
+  "fetchedAt": "2026-04-30T13:46:40.247Z",
   "official": {
     "description": "料理やごはんに関心のある30代、石崎・フジムラ・あずあずの３人が、身近な食材や料理、台所の話題を中心に「あくまでラフに」好き勝手話す雑談Podcast。\n専門的なテーマや学びになる会話はほぼありませんが、単純にごはんが好きな方、食材や調味料に関心がある方、30歳を過ぎて急に料理をし始めた方やもっと料理したいけどまだハマってない方、技術や知識に関係なく料理自体を楽しんでいる方など、自分たちと似た境遇の方はきっと気に入ってくれるはず……！\n庶民派ごはんPodcast「炊き込みご飯わくわく舎」、毎週月曜夕方17時ごろ配信です。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/1wkqYNX0LgeTkkuFhk1PMQ",
     "x": "https://x.com/takiwakusha"
+  },
+  "recommendedEpisode": {
+    "title": "#96 | 初めての三枚おろし",
+    "url": "https://open.spotify.com/episode/7e9SAT19uLB4rA5JgtpYbi?si=PhbWMYheSoKlvJKBDa3HcA"
   }
 }

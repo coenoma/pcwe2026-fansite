@@ -3,7 +3,7 @@
   "name": "HOG POT",
   "thumbnail": "/thumbnails/137.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-137/",
-  "fetchedAt": "2026-04-30T12:47:06.752Z",
+  "fetchedAt": "2026-04-30T13:48:32.902Z",
   "official": {
     "description": "音楽フリークのためのコミュニティPURE COMEDYがお届けする音楽が主役のPodcast。音楽家・西岡大貴が音楽仲間と共に音楽愛を語り合う。毎回テーマに沿ってそれぞれが持ち寄った選曲プレイリストも公開！"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/3dcHQjfoz4oJZZLB8mqnCU",
     "x": "https://x.com/PURE_COMEDY",
     "instagram": "https://www.instagram.com/p_ure_comedy/"
+  },
+  "recommendedEpisode": {
+    "title": "音楽フリーペーパーを作ろう",
+    "url": "https://open.spotify.com/episode/6WScELZWEBivy2slldToaW?si=913d171b09c94b0c"
   }
 }

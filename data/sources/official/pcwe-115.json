@@ -3,7 +3,7 @@
   "name": "吉村ジョナサンの高校古典講義",
   "thumbnail": "/thumbnails/115.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-115/",
-  "fetchedAt": "2026-04-30T12:46:29.831Z",
+  "fetchedAt": "2026-04-30T13:47:54.976Z",
   "official": {
     "description": "This podcast will introduce Japanese classical literature (Makura no Soshi, Hojoki, Tsurezuregusa, etc.). You can learn what Japanese high school students learn.\n高校古典のトピックスを紹介するポッドキャストです。古文や漢文の、高校で勉強する内容を学ぶのに最適です。古典について語るフリートーク回もあります。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/62k2Vqh2WbuuV6vEqlNicY",
     "x": "https://x.com/dai_koku_sama",
     "instagram": "https://www.instagram.com/book_bridge_lab"
+  },
+  "recommendedEpisode": {
+    "title": "#81 古事記10「ここにイザナキノミコト」",
+    "url": "https://open.spotify.com/episode/2Pmp1WDCJPq7HyF4VdbU0U?si=iqPRxgxhSLSjwumx36_jMA&context=spotify%3Ashow%3A62k2Vqh2WbuuV6vEqlNicY"
   }
 }

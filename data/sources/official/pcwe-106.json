@@ -3,7 +3,7 @@
   "name": "公共訴訟ラジオ｜社会を動かす裁判の話",
   "thumbnail": "/thumbnails/106.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-106/",
-  "fetchedAt": "2026-04-30T12:46:13.514Z",
+  "fetchedAt": "2026-04-30T13:47:40.388Z",
   "official": {
     "description": "CALL4は司法を通じた社会課題の解決を目指す非営利のウェブプラットフォームです。公共訴訟は、身の回りで起きている“おかしなこと“をなくすために行われている裁判です。CALL4は社会制度やルールを司法の場で問う公共訴訟を支援しています。\nCALL4 Podcastは、その活動の一環としてCALL4が提供する、公共訴訟の原告の方や弁護士の「声」を届けるPodcastです。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/4VT4CicorMa7V3FeujtwyC",
     "x": "https://x.com/CALL4_Jp",
     "instagram": "https://www.instagram.com/call4_jp/"
+  },
+  "recommendedEpisode": {
+    "title": "#67-1 原告・飯島さんの話を聞く：児童相談所で働く道を選び、現場で感じたこと（前半）",
+    "url": "https://open.spotify.com/episode/1m1K5el8ntZ4AhJASi3Q2g?si=2e681238251d4193"
   }
 }

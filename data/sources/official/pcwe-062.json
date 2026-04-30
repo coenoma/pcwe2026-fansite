@@ -3,7 +3,7 @@
   "name": "こじらせ平成夜話",
   "thumbnail": "/thumbnails/062.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-062/",
-  "fetchedAt": "2026-04-30T12:44:45.356Z",
+  "fetchedAt": "2026-04-30T13:46:26.347Z",
   "official": {
     "description": "こじらせ男性2人による、平成サブカル紹介ラジオ。\nマンガ・アニメ・映画・音楽・ゲーム・特撮……平成生まれのあらゆるコンテンツについて語り合います。\nめんどくさい奴らが、独自の視点で好きなものを押し付け合う。\n新たな解釈がそこから生まれるかも！？"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/6M70tCuyTCXtNmXvJUNnza",
     "x": "https://x.com/koziyawa"
+  },
+  "recommendedEpisode": {
+    "title": "『仮面ライダークウガ』──“子供騙し”を徹底排除し、\"リアルさ\"を追求した特撮ヒーロー(クウガ回前編) #113",
+    "url": "https://open.spotify.com/episode/1xzOJazDa0HWLmcAcW54R3?si=JFIFCt9YSdyPjehgRGSDjQ"
   }
 }

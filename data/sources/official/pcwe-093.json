@@ -3,7 +3,7 @@
   "name": "マーライオンのにやにやRadio",
   "thumbnail": "/thumbnails/093.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-093/",
-  "fetchedAt": "2026-04-30T12:45:50.476Z",
+  "fetchedAt": "2026-04-30T13:47:18.852Z",
   "official": {
     "description": "2019年5月から配信開始。エピソード数は522回以上！シンガーソングライターのマーライオンがお届けする、思わず“にやにや”してしまうポッドキャスト番組です。\n軽快な1人喋りに加え、最大の魅力はジャンルを横断した豪華ゲスト陣。これまでに曽我部恵一氏ら音楽家をはじめ、漫画家（小山ゆうじろう氏）、放送作家、お笑い芸人、イラストレーター、編集者、写真家など総勢100名以上の多彩なクリエイターを迎え、ここでしか聴けない濃厚なトークを展開しています。\n近年は番組の枠を飛び出し、「東中野雑談」での公開収録や、総勢16名が出店・DJ・LIVEをおこなう「にやにやRadioマーケット」の開催などオフラインイベントも大盛況。音楽とカルチャー、笑いが交差する熱量たっぷりの番組を、ぜひ一度体験してみてください！"
   },
@@ -20,5 +20,9 @@
     "spotify": "https://open.spotify.com/show/7s8gmwES1RQdJ4oZxmjhzt",
     "x": "https://x.com/maaraion_info",
     "instagram": "https://www.instagram.com/maaraion_niya"
+  },
+  "recommendedEpisode": {
+    "title": "#433 株式会社ごきげん社を設立しました",
+    "url": "https://open.spotify.com/episode/50etEGKz7BBUk1kwSdQojX?si=kw0M6EHBQLG9vAfYL_kSVw&pi=oX_D4ds_RZ-wE&t=33"
   }
 }

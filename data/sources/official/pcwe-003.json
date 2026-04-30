@@ -3,7 +3,7 @@
   "name": "すべての道はジャズに通ず。",
   "thumbnail": "/thumbnails/003.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-003/",
-  "fetchedAt": "2026-04-30T12:43:08.738Z",
+  "fetchedAt": "2026-04-30T13:44:47.980Z",
   "official": {
     "description": "ミュージシャンのマコトコンドウと医者芸人でジャズ芸人の井たくまが、さまざまなカルチャーについてゆる〜くトークするポッドキャスト。\n最近はジャズの話をまったくしていないので、ジャズに興味がなくても楽しめる雑談番組です！"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/6bzz4uLYH8oVK4WMlNNXz9",
     "x": "https://x.com/subejazz"
+  },
+  "recommendedEpisode": {
+    "title": "狂気のミュージシャン 高橋優について語る。",
+    "url": "https://open.spotify.com/episode/7JZSHNacdIOF6PwNrDiFeR?si=ed47371af0c24fb9"
   }
 }

@@ -3,7 +3,7 @@
   "name": "ローカルナイトニッポン 〜地方移住・関係人口を楽しく話すポッドキャスト番組〜",
   "thumbnail": "/thumbnails/066.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-066/",
-  "fetchedAt": "2026-04-30T12:44:52.516Z",
+  "fetchedAt": "2026-04-30T13:46:32.250Z",
   "official": {
     "description": "地域とつながるキッカケを楽しく作るエンターテイメント音声プログラムです。\n東京から長野県塩尻市に移住した2人が移住・関係人口・田舎暮らし・「ローカルから日本を変えたるぜ！」みたいな話題を楽しく話します。日本初！ポッドキャストスタジオ付きゲストハウス『宿とスタジオKICHI』から配信中。\n＜パーソナリティ＞\n・ユアサ（湯浅 章太郎）- ポッドキャスター / 宿とスタジオKICHI オーナー / カサネル合同会社 代表\n・あきさん（湯浅 亜木）- ソトイクプロジェクト 副代表 / カサネル合同会社"
   },
@@ -19,5 +19,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/7nROQSuectsjVBL7ION8aa",
     "x": "https://x.com/lnnradio"
+  },
+  "recommendedEpisode": {
+    "title": "#66 塩尻でゲストハウスやるぞ！〜シーズン33-1〜",
+    "url": "https://open.spotify.com/episode/6gDSYn54gCuIopDXQNTSNs?si=446d93520159422a"
   }
 }

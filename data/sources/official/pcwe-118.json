@@ -3,7 +3,7 @@
   "name": "朝日新聞ポッドキャスト",
   "thumbnail": "/thumbnails/118.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-118/",
-  "fetchedAt": "2026-04-30T12:46:35.011Z",
+  "fetchedAt": "2026-04-30T13:48:00.745Z",
   "official": {
     "description": "愛称は「朝ポキ」。従来のニュースを縛っていた枠を超え、ファクトに迫ります。\n取材や記事から見えてきた物事を語り尽くし、あなたを毎日異なる現場にいざないます。\n「ニュースの現場から」「報談」「MEDIA TALK」「新聞1面じゃなくても大事なこと -SDGsを話そう-」「ニュースの学校」\nいろんなプレイリストがあります。あなた好みの番組を探してみてください。"
   },
@@ -19,5 +19,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/392h0MYfvMTndEVzf2cOvC",
     "x": "https://x.com/AsahiPodcast"
+  },
+  "recommendedEpisode": {
+    "title": "【2000回記念】情熱をこの声にのせて　朝ポキの30シリーズ、一挙に紹介します #2000",
+    "url": "https://www.asahi.com/special/podcasts/item/?itemid=8570792d-29c9-455b-ac5e-b35500d2d261"
   }
 }

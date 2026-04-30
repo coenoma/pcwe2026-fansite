@@ -3,7 +3,7 @@
   "name": "生物をざっくり紹介するラジオ　〜ぶつざくネオ〜",
   "thumbnail": "/thumbnails/110.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-110/",
-  "fetchedAt": "2026-04-30T12:46:20.876Z",
+  "fetchedAt": "2026-04-30T13:47:47.078Z",
   "official": {
     "description": "大学時代の生物部の同期で「今もあの日の生物部」として、「生物をざっくり紹介するラジオ 〜ぶつざく〜」を配信しています。ぶつざくシリーズは100話で完結し、今生きている生き物はもちろん、過去にいた古生物や未来に誕生が予想される未来生物、博物館や動物園などの施設、生き物が住まう地球や宇宙などの環境、などなど生物にまつわるアレコレをざっくり紹介しています。現在３シーズン目の「ぶつざくネオ」では生物にまつわる定説や現象をサブテーマに配信しています！"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/6WCCO4KKQxth8dbeVUbUW3",
     "x": "https://x.com/butuzaku",
     "instagram": "https://www.instagram.com/butsubu_now"
+  },
+  "recommendedEpisode": {
+    "title": "第１話−A：「すべてはここから始まった！全生物の根源的な存在」をざっくり紹介",
+    "url": "https://open.spotify.com/episode/5YGo1khOnxSYPHkGqR2VxC?si=WTr7I7kwSdCsoS9JpaGMKw"
   }
 }

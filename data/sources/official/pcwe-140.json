@@ -3,7 +3,7 @@
   "name": "おくちのミカタラジオ",
   "thumbnail": "/thumbnails/140.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-140/",
-  "fetchedAt": "2026-04-30T12:47:12.169Z",
+  "fetchedAt": "2026-04-30T13:48:37.270Z",
   "official": {
     "description": "フリーランス歯科衛生士の青木ともみと、歯のことについてあまりに無知な大野希が、歯のことや歯のお仕事のことについて語り合っていこうという番組。これまで虫歯の正体についてや、世界一の感染症である歯周病対策のこと、親子での歯磨き習慣のことなどお話してきました。毎週土曜か日曜に配信中。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/35NOP9r3GkAghGbCxXoMgk",
     "x": "https://x.com/BarCamono",
     "instagram": "https://www.instagram.com/tomomi_aoki_dh"
+  },
+  "recommendedEpisode": {
+    "title": "Ep.08 ギネス記録！？歯周病について",
+    "url": "https://open.spotify.com/episode/0x866ku5AlMl7VDTGtpdfR?si=pivR2y4XRXWN_nylqwSlcg&context=spotify%3Ashow%3A35NOP9r3GkAghGbCxXoMgk"
   }
 }

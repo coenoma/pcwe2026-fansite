@@ -3,7 +3,7 @@
   "name": "女性消防設備士の休憩室ラジオ",
   "thumbnail": "/thumbnails/017.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-017/",
-  "fetchedAt": "2026-04-30T12:43:29.588Z",
+  "fetchedAt": "2026-04-30T13:45:10.138Z",
   "official": {
     "description": "現役の女性消防設備士3人、めぐ・りんごぢうす・のりこが、消防設備の仕事や現場のリアル、業界あるあるから日常のちょっとした出来事まで、休憩室で雑談するような感覚でお届けするポッドキャスト。専門職の話題も堅くなりすぎず、笑いと本音を交えながら、業界の人にも初めての人にも楽しんでもらえる番組です。"
   },
@@ -17,5 +17,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/3joaNS9m1I9RgsTdHIaPRU"
+  },
+  "recommendedEpisode": {
+    "title": "#防災の日スペシャル",
+    "url": "https://open.spotify.com/episode/1xjoEV98b2t0DEm3FiivYS?si=jkPPZ_ygTgyNETpJ_jdccg"
   }
 }

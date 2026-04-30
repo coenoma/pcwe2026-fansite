@@ -3,7 +3,7 @@
   "name": "本茶本茶ー１冊の本をお茶とともに",
   "thumbnail": "/thumbnails/006.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-006/",
-  "fetchedAt": "2026-04-30T12:43:13.625Z",
+  "fetchedAt": "2026-04-30T13:44:52.073Z",
   "official": {
     "description": "本茶本茶（HON-CHA HON-CHA）は、毎回ひと種類のお茶を味わいながら、一冊の本をきっかけに、ゆるやかに語るPodcast番組です。\nお茶を淹れる音、ページをめくる気配、言葉と言葉のあいだに流れる沈黙。読書や思索、日々の感覚を手がかりに、答えを急がず、考えがほどけていく時間を大切にしています。\n紹介する本は、エッセイや心理学、人類学、哲学など、新たな感覚をひらき直してくれるものを中心にセレクト。忙しさから少し距離を置き、立ち止まって味わうための、静かなひとときをお届けします。"
   },
@@ -19,5 +19,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/29QYbspP6hO2cj2PhOxcP4",
     "x": "https://x.com/honcha_honcha"
+  },
+  "recommendedEpisode": {
+    "title": "#11 「人の心はわからない」から向き合える。『心の処方箋』",
+    "url": "https://open.spotify.com/episode/535BB7XIt4C1VttsoTxoEV?si=dece7d4067e24baa"
   }
 }

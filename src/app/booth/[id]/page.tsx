@@ -152,6 +152,28 @@ export default async function BoothPage({ params }: Props) {
               {program.official.description}
             </p>
 
+            {program.recommendedEpisode !== undefined && (
+              <a
+                href={program.recommendedEpisode.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-6 block rounded-2xl border-2 border-primary-200 bg-primary-50/60 p-4 transition-all hover:-translate-y-0.5 hover:border-primary-400 hover:shadow-md sm:p-5"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-700">
+                  🎧 おすすめエピソード
+                </p>
+                <p className="mt-1 text-xs text-neutral-500">
+                  番組ホストが選ぶ「まずはこの 1 本」
+                </p>
+                <p className="mt-2 text-base font-extrabold leading-snug text-neutral-900 group-hover:text-primary-700 sm:text-lg">
+                  {program.recommendedEpisode.title}
+                </p>
+                <p className="mt-2 text-xs font-bold text-primary-600">
+                  聴いてみる ↗
+                </p>
+              </a>
+            )}
+
             {program.official.hosts !== undefined && program.official.hosts.length > 0 && (
               <div className="mt-6">
                 <h3 className="text-sm font-bold text-neutral-500">パーソナリティ</h3>

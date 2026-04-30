@@ -3,7 +3,7 @@
   "name": "桃花茶館〜薬膳もも子ラジオ〜",
   "thumbnail": "/thumbnails/090.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-090/",
-  "fetchedAt": "2026-04-30T12:45:45.703Z",
+  "fetchedAt": "2026-04-30T13:47:13.535Z",
   "official": {
     "description": "薬膳料理研究家の植木もも子先生が、日々の食事を通して薬膳や中医学の考えをお伝えする番組です。\nまだまだ知られていない薬膳や中医学の基本的な考え方やマニアックな知識まで。\n日々の食卓でできる薬膳料理のレシピ、季節に合った養生方法など身近に役立つ情報をお届けしています。\nゲストを迎えたり、薬膳の知識を通してみなさまのお悩みにも応えていきます。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/2VC73n7gaeIgiblOJkLYlg",
     "instagram": "https://www.instagram.com/tofachakan_radio/"
+  },
+  "recommendedEpisode": {
+    "title": "#1 薬膳ってなに？",
+    "url": "https://open.spotify.com/episode/1QN0D7RITfE1kQGzbjdy35?si=57b46c93a0674f9b"
   }
 }

@@ -3,7 +3,7 @@
   "name": "dining.fm",
   "thumbnail": "/thumbnails/029.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-029/",
-  "fetchedAt": "2026-04-30T12:43:49.983Z",
+  "fetchedAt": "2026-04-30T13:45:29.832Z",
   "official": {
     "description": "dining.fmは、ギャルソン好きの夫katsumaと、お菓子好きの妻daikokuの東京2人暮らし夫婦が、ゆるゆると話す雑談系Podcast。\n映画ドラマなどコンテンツの感想を中心に、ファッション、スイーツ、ホテル、マンションなど、我が家で話題のトピックをお届けします！"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/3wSB2J20uqON5nPhCmMia5",
     "x": "https://x.com/diningfm",
     "instagram": "https://instagram.com/diningfm"
+  },
+  "recommendedEpisode": {
+    "title": "116. 最高の演技を楽しむ「ファーストキス」",
+    "url": "https://dining.fm/episodes/116"
   }
 }

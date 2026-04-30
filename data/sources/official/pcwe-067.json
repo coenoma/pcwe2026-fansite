@@ -3,7 +3,7 @@
   "name": "平成女オタクのインドア同盟",
   "thumbnail": "/thumbnails/067.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-067/",
-  "fetchedAt": "2026-04-30T12:44:54.046Z",
+  "fetchedAt": "2026-04-30T13:46:33.550Z",
   "official": {
     "description": "平成元年生まれのあかねと、5年生まれのななみでお送りする番組！\n懐かしいあの頃を思い出したり、お互いの趣味を探り合ったりする女オタクたちを観察していってください～\n配信は毎月10日、20日、30日！"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/1uSjQVGimHdUINJerklK2H",
     "x": "https://x.com/indoadoumei"
+  },
+  "recommendedEpisode": {
+    "title": "俺たちの最強ヒロイン",
+    "url": "https://open.spotify.com/episode/0KpNZGL5Ma9SrsHlZrKiAt?si=ILPihGEsTXudMxrP6nmxvA"
   }
 }

@@ -3,7 +3,7 @@
   "name": "劇団雌猫の悪友ミッドナイト",
   "thumbnail": "/thumbnails/048.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-048/",
-  "fetchedAt": "2026-04-30T12:44:23.651Z",
+  "fetchedAt": "2026-04-30T13:46:01.978Z",
   "official": {
     "description": "平成元年（1989年）生まれのオタク友達4人組が、好きなエンタメや日々の生活のことなどをワイワイお話する番組です。明日から特に役に立たない、別にSNSでバズらない、ふつ〜〜のおしゃべりをお届けします。\n毎週金曜日の朝更新。同人誌「悪友」シリーズ、『浪費図鑑』『だから私はメイクする』『世界が広がる 推し活英語』などを手掛けるサークル・劇団雌猫がお送りします。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/6ZpEqiA1Zn4sO8MhPHiM0B",
     "x": "https://x.com/aku__you",
     "instagram": "https://www.instagram.com/gekidan_mesuneco/"
+  },
+  "recommendedEpisode": {
+    "title": "#75 トップ3がみんな犬「サンリオキャラ大2025」の結果を語る",
+    "url": "https://open.spotify.com/episode/7dtTmXTjwrqUqMe4ka15c5"
   }
 }

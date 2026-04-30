@@ -3,7 +3,7 @@
   "name": "月岡ツキの月面通信",
   "thumbnail": "/thumbnails/027.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-027/",
-  "fetchedAt": "2026-04-30T12:43:46.881Z",
+  "fetchedAt": "2026-04-30T13:45:26.491Z",
   "official": {
     "description": "コラムニストの月岡ツキが、最近のできごとや考えていることについてボソボソ話していくポッドキャストです。『となりの芝生はソーブルー』のつっきー（DINKsの方）でもあります。書くことや出版にまつわる話を不定期で配信中！"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/6GAgcS4OvIiwUvzj7EhA1o",
     "x": "https://x.com/olunnun",
     "instagram": "https://www.instagram.com/tsukky_dayo/"
+  },
+  "recommendedEpisode": {
+    "title": "#19 人の言語化に乗っかるでいいの？",
+    "url": "https://open.spotify.com/episode/2IBKlatHWX4c52pJjdfjnq?si=NUOsvc4HRn6FLQcWpVMcZg"
   }
 }

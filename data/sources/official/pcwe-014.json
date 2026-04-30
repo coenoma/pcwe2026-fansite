@@ -3,7 +3,7 @@
   "name": "オバトーク",
   "thumbnail": "/thumbnails/014.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-014/",
-  "fetchedAt": "2026-04-30T12:43:25.321Z",
+  "fetchedAt": "2026-04-30T13:45:04.545Z",
   "official": {
     "description": "ゆか、エリムス、酔う子のB型3人が不定期に集まって、おしゃべりする様子を配信中。どんな話題もポップでキュートにぶった斬り！笑いと元気を届けるポッドキャスト番組です。\n■不倫/美容/事件/子育て/お悩み相談/怖いほど当たると評判のエリムスタロット(占い)まで、多岐にわたるコンテンツをお届けしています。\n■週2回の不定期配信\n■ビデオポッドキャスト回あり(Spotifyのみ)\n■Spotify、Apple Podcast、Amazon music、Listenなど各種プラットフォームでお聞きいただけます。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "applePodcasts": "https://podcasts.apple.com/jp/podcast/オバトーク/id1732400331",
     "x": "https://x.com/obatalk2024"
+  },
+  "recommendedEpisode": {
+    "title": "#95 犯罪体験、宗教、そしていつのまにかのシモトーーーク",
+    "url": "https://open.spotify.com/episode/0VdTUYetCL4QZNE5HHFASc?si=_foowTDwRuiOD85Ul_SeRA"
   }
 }

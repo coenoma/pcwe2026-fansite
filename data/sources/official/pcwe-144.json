@@ -3,7 +3,7 @@
   "name": "雑食日和",
   "thumbnail": "/thumbnails/144.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-144/",
-  "fetchedAt": "2026-04-30T12:47:18.472Z",
+  "fetchedAt": "2026-04-30T13:48:43.479Z",
   "official": {
     "description": "マリンバ株式会社の代表 酒井と、精神科医兼現役学生の島田先生。視点も経験も異なる2人が、ジャンルの壁を無視して語り合うPodcastです。\nメンタルヘルス、人生、仕事、歴史、哲学、政治、社会、文化——なんでも同じテーブルに並べます。\nお互いの専門を越えて食べ続けることで、ものの見方に奥行きが生まれていく。\n気になることが多すぎる人に、ぜひ一緒に楽しんでほしい。\n雑食は、きっと今を生きる処方箋だと信じて——"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/2o8nS06Qy6a2MEJp6HBaGG",
     "x": "https://x.com/zashokubiyori",
     "instagram": "https://www.instagram.com/zashokubiyori/"
+  },
+  "recommendedEpisode": {
+    "title": "原油ってなんなん？",
+    "url": "https://open.spotify.com/episode/6cJVaXTKS84HQbVik4WYVl?si=62de3dc2c3874f40"
   }
 }

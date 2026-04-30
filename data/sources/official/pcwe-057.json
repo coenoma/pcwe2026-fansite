@@ -3,7 +3,7 @@
   "name": "りっちゃ・りょかちのやいやいラジオ",
   "thumbnail": "/thumbnails/057.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-057/",
-  "fetchedAt": "2026-04-30T12:44:37.117Z",
+  "fetchedAt": "2026-04-30T13:46:18.014Z",
   "official": {
     "description": "IT・エンタメの世界で働くミレニアル世代の二人、りっちゃ（IT広報・渉外）とりょかち（文筆家・シナリオライター）によるPodcast番組です。\n2020年からほぼ毎週更新を続け、配信回数はついに300回を突破！「第3回 Japan Podcast Award」推薦作品にも選出されました。\n最新トレンドや注目のコンテンツから、キャリア、ジェンダー、社会問題まで。雑誌のように幅広く、「いま気になること」に、等身大な本音で「やいやい」言い続けています。\n友達との会話感覚でゆるく聴けるけれど、プロの視点も役に立つ「ちょっと有益で社会派な雑談」をお届けします。\n一日の終わりのリラックスタイムや移動中のお供に、ぜひ私たちの輪に加わってみませんか？"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/3BJP1U4juNwW3P4mQ8Nhfr",
     "x": "https://x.com/yaiyai_radio",
     "instagram": "https://www.instagram.com/yaiyairadio/"
+  },
+  "recommendedEpisode": {
+    "title": "#295 2025年も「日経MJヒット商品番付」にやいやい言う",
+    "url": "https://open.spotify.com/episode/141hDikUFZOfe3GpwRMdGe"
   }
 }

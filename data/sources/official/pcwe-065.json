@@ -3,7 +3,7 @@
   "name": "そうめん屋ですが何か？",
   "thumbnail": "/thumbnails/065.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-065/",
-  "fetchedAt": "2026-04-30T12:44:50.658Z",
+  "fetchedAt": "2026-04-30T13:46:30.422Z",
   "official": {
     "description": "長崎県南島原市で手延べそうめんなどの「島原手延べ麺」を製造販売するいわゆる「そうめん屋」の夫婦が日常のことや仕事のこと、島原半島を中心にした地元のことなどをゆるく話す番組です。食べてみんね！島原手延べそうめん！"
   },
@@ -18,5 +18,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/5gmbdb8kP4Uh8bsUYyVQrr"
+  },
+  "recommendedEpisode": {
+    "title": "#034 【ゲスト：イッシュウ君】新コーナーとXでのリクエストにお答えします",
+    "url": "https://open.spotify.com/episode/6k0tthRm1zN2gkxN9P9qzj?si=9526148acebe47ce"
   }
 }

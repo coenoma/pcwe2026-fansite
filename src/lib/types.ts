@@ -138,6 +138,13 @@ export const FanGuideSchema = z.object({
 });
 export type FanGuide = z.infer<typeof FanGuideSchema>;
 
+/** 公式の「おすすめエピソード」（番組詳細ページの entry-recommend ブロックから抽出）*/
+export const RecommendedEpisodeSchema = z.object({
+  title: z.string().min(1),
+  url: z.string().url(),
+});
+export type RecommendedEpisode = z.infer<typeof RecommendedEpisodeSchema>;
+
 /** 番組（最上位）*/
 export const ProgramSchema = z.object({
   id: z.string().regex(/^pcwe-\d{3}$/, 'ID は pcwe-XXX 形式'),
@@ -151,6 +158,8 @@ export const ProgramSchema = z.object({
   exhibition: ExhibitionSchema,
   links: LinksSchema,
   fanGuide: FanGuideSchema,
+  /** 公式が指定したおすすめエピソード（任意）*/
+  recommendedEpisode: RecommendedEpisodeSchema.optional(),
 });
 export type Program = z.infer<typeof ProgramSchema>;
 

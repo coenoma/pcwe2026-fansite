@@ -3,7 +3,7 @@
   "name": "HYPLACE WAVE #はいなみ",
   "thumbnail": "/thumbnails/033.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-033/",
-  "fetchedAt": "2026-04-30T12:43:56.327Z",
+  "fetchedAt": "2026-04-30T13:45:36.628Z",
   "official": {
     "description": "名古屋を拠点に活動するイベントオーガナイザーの眞白マッシュが\nクラブシーンを中心に情報発信するスタジオ「HYPLACE NAGOYA」から様々なゲストをお迎えして\nざっくばらんなトークをお届けする、DJカルチャー特化型ポッドキャスト。\nDJやトラックメイカーの楽曲制作、イベント出演に関するウラ話やマル秘エピソードが聞けちゃうかも!?\nクラブのバーカウンターで行われる雑談をこっそり盗み聞きする感覚で、お楽しみください。\n毎週水曜19時に配信中☆"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/6dd6dzKHNHGVsEfnlET61l",
     "x": "https://x.com/hainami_758",
     "instagram": "https://www.instagram.com/mash_january25"
+  },
+  "recommendedEpisode": {
+    "title": "「バズらずとも良い作品を」。higmaさんによるサウンドメイク術",
+    "url": "https://open.spotify.com/episode/0wyndlfpOgo3xkgVtjkKVz?si=nZNLlSMeTIyEfW4ALv1cWg"
   }
 }

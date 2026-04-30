@@ -3,7 +3,7 @@
   "name": "Misa Yuka Podcast",
   "thumbnail": "/thumbnails/141.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-141/",
-  "fetchedAt": "2026-04-30T12:47:13.833Z",
+  "fetchedAt": "2026-04-30T13:48:38.519Z",
   "official": {
     "description": "東京を拠点に活動する姉妹、MisaとYukaによるポッドキャスト。20代・30代が直面するキャリアや人間関係、自己理解などのテーマについて、日常のリアルな体験をもとに言語化しながら深く掘り下げる。英語と日本語を行き来するバイリンガルならではの視点と、等身大で率直な対話を通して、リスナーが自分自身と向き合い、前に進むヒントを届ける番組。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "youtube": "https://www.youtube.com/channel/UC-8PjUhkPibqh1ogdKaWk2w",
     "instagram": "https://www.instagram.com/misayuka.podcast"
+  },
+  "recommendedEpisode": {
+    "title": "私が彼氏を作らない理由",
+    "url": "https://youtu.be/PGwbF6qUFCM?si=oOpmBUWFIzLy238F"
   }
 }

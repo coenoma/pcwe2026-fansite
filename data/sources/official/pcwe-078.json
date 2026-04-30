@@ -3,7 +3,7 @@
   "name": "３時のおやつは貝柱",
   "thumbnail": "/thumbnails/078.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-078/",
-  "fetchedAt": "2026-04-30T12:45:26.149Z",
+  "fetchedAt": "2026-04-30T13:46:52.132Z",
   "official": {
     "description": "この番組は、のんびり生きているあざらしが、日常で思ったり感じたことを、その日の気分でお話する、雑談系プログラムです。毎週水曜日8:00am。喋りが遅すぎて、時空が歪みがち。\n◯ あざらし（庄司絵美）\n職業：音楽家、ヨガインストラクター、菓子製造\n趣味：料理、編み物、ゲーム、お茶"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/3XvyDAYAcUX1pt7QMUdgJo",
     "x": "https://x.com/shona_emi",
     "instagram": "https://www.instagram.com/shona_emi"
+  },
+  "recommendedEpisode": {
+    "title": "#64 純恋歌 (湘南乃風) を音読してみた",
+    "url": "https://open.spotify.com/episode/2n3FInupZCLP5jQhTtND0b?si=tr29AoBASwGT9GnXgf_IVQ"
   }
 }

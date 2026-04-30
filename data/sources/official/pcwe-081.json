@@ -3,7 +3,7 @@
   "name": "聴くと映画が観たくなる！CINEMORE",
   "thumbnail": "/thumbnails/081.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-081/",
-  "fetchedAt": "2026-04-30T12:45:30.919Z",
+  "fetchedAt": "2026-04-30T13:46:56.676Z",
   "official": {
     "description": "読むと映画が観たくなる！映画WEBマガジンCINEMORE（シネモア）がお送りするポッドキャスト番組です。CINEMORE編集部の森下なつみと香田史生がお届けします。毎週金曜日夕方配信を目標にゆるりとやっております。"
   },
@@ -20,5 +20,9 @@
     "spotify": "https://open.spotify.com/show/6HngKRrNzZzCjOXOX03cVF",
     "x": "https://x.com/cinemorejp",
     "instagram": "https://www.instagram.com/cinemore_official"
+  },
+  "recommendedEpisode": {
+    "title": "#101 『七人の侍』世界が認めた最高傑作は圧倒的エンターテインメント！　※注！ネタバレあり！",
+    "url": "https://open.spotify.com/episode/34v7IxDr5Ash7hMgHczlQP"
   }
 }

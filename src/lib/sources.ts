@@ -15,6 +15,15 @@ import {
   OfficialInfoSchema,
 } from './types';
 
+/** 公式の「おすすめエピソード」（番組詳細ページの entry-recommend ブロックから抽出）*/
+export const RecommendedEpisodeSchema = z.object({
+  /** エピソードタイトル */
+  title: z.string().min(1),
+  /** エピソード URL（Spotify など）*/
+  url: z.string().url(),
+});
+export type RecommendedEpisode = z.infer<typeof RecommendedEpisodeSchema>;
+
 /** data/sources/official/{id}.json のスキーマ */
 export const OfficialSourceSchema = z.object({
   id: z.string().regex(/^pcwe-\d{3}$/),
@@ -34,6 +43,8 @@ export const OfficialSourceSchema = z.object({
     boothNumber: z.string().regex(/^\d{3}$/),
   }),
   links: LinksSchema,
+  /** 公式が指定したおすすめエピソード（任意、未取得時は undefined）*/
+  recommendedEpisode: RecommendedEpisodeSchema.optional(),
 });
 export type OfficialSource = z.infer<typeof OfficialSourceSchema>;
 

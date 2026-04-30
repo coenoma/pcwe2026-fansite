@@ -3,7 +3,7 @@
   "name": "ほんのれんラジオ",
   "thumbnail": "/thumbnails/043.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-043/",
-  "fetchedAt": "2026-04-30T12:44:15.260Z",
+  "fetchedAt": "2026-04-30T13:45:53.584Z",
   "official": {
     "description": "ほんのれんラジオは、ゆるく深く本と遊ぶ学習系コンテンツです。30〜40代の女性編集者が「これって恋愛？」「会社ってなんだ？」「私たちの戦争？」など、気になる問いをめぐって、毎回5冊の本を紹介しながら雑談を繰り広げています。資本主義へのモヤモヤも民主主義へのムズムズも、等身大の「わからなさ」を抱えたまま散歩するように分け入ってみる。みんなで本を読み、みんなで語る「読書対話」。思わず自分も喋りたくなる「ほんのれんラジオ」、ぜひお楽しみください。"
   },
@@ -20,5 +20,9 @@
     "applePodcasts": "https://l.instagram.com/?u=https%3A%2F%2Fpodcasts.apple.com%2Fjp%2Fpodcast%2F%25E3%2581%25BB%25E3%2582%2593%25E3%2581%25AE%25E3%2582%258C%25E3%2582%2593%25E3%2583%25A9%25E3%2582%25B8%25E3%2582%25AA%2Fid1685521940%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio&e=AT342hP25tfNIMahJLiXL5wn5APzBCyKr5p2td2HEBSZ1VjCBVsBFu5PtgRjvnQJ3xz3YTK6xBYfuSzxINvKBQeWNyBRFljpCwqAFECOI3PrpF7UfTv8vd5uFg",
     "x": "https://x.com/honnoren_radio",
     "instagram": "https://www.instagram.com/hon_no_ren/"
+  },
+  "recommendedEpisode": {
+    "title": "35-1.なぜ、私たちは本が読めなくなったのか？AI時代の「読解力」を考える",
+    "url": "https://podcasts.apple.com/jp/podcast/35-1-%E3%81%AA%E3%81%9C-%E7%A7%81%E3%81%9F%E3%81%A1%E3%81%AF%E6%9C%AC%E3%81%8C%E8%AA%AD%E3%82%81%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%8B-ai%E6%99%82%E4%BB%A3%E3%81%AE-%E8%AA%AD%E8%A7%A3%E5%8A%9B-%E3%82%92%E8%80%83%E3%81%88%E3%82%8B/id1685521940?i=1000749123831"
   }
 }

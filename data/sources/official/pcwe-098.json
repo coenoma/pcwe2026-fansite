@@ -3,7 +3,7 @@
   "name": "KNOWフードラジオ",
   "thumbnail": "/thumbnails/098.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-098/",
-  "fetchedAt": "2026-04-30T12:45:59.616Z",
+  "fetchedAt": "2026-04-30T13:47:27.346Z",
   "official": {
     "description": "農学ガチ勢TT（研究歴12年／左）＆ゆと（農学ビギナー／右）が、身近な食に隠\nされた意外な事実を楽しく喋る科学系・農系ポッドキャストです。ゲノム編集食\n品や食品ロスなどのちょっぴり難しいテーマも、科学的かつキャッチーに知るこ\nとができます。食べものをもっと深く広く知れば、スーパーの商品棚や日常の食\n卓がもっと楽しくなります（ゆと）。”のーふー”を聞いて、理科の視点で食べも\nのを一緒に味わってみましょう！"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/100MQ8ee5acV8HtAYVgm4C",
     "x": "https://x.com/noshokuradio",
     "instagram": "https://www.instagram.com/knowfoodradio/"
+  },
+  "recommendedEpisode": {
+    "title": "#35. コーヒーの苦味は 標高で決まるって 本当？",
+    "url": "https://open.spotify.com/episode/1qR8BuHuBx3onmPLZmGlow?si=75fe5927fa614793"
   }
 }

@@ -3,7 +3,7 @@
   "name": "月からミミミ",
   "thumbnail": "/thumbnails/059.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-059/",
-  "fetchedAt": "2026-04-30T12:44:40.097Z",
+  "fetchedAt": "2026-04-30T13:46:21.562Z",
   "official": {
     "description": "京都と福岡に離れて暮らす女子2人組、aulyとイエーイ岩崎がお送りするPodcast番組「月からミミミ」。\n「得るもんないけど、なんか楽しい！」をコンセプトに、日々の出来事や大して身にならない話を毎週ハイテンションでお届けします！\nSpotify、YouTube、Apple Podcastにて、毎週月曜20時に更新中！メンバーシップサービスrooomにて、毎週アフタートークも配信中です！\n是非聴いてみてね！今日からあなたも子うさぎちゃん！せーのっ！ぺったんぴょん！"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/2kzuAE4IgPrqFro9INGWZc",
     "x": "https://x.com/tsukimimi_radio"
+  },
+  "recommendedEpisode": {
+    "title": "#39【AI動画で泣いちゃうのは人類の敗北だろ】",
+    "url": "https://open.spotify.com/episode/6Ms4tTzwZHTRseLty7Rh7D?si=iHlTqJB-Qpa98d8HtBQJ3A&pi=wwyeMIunT-iy4&t=2"
   }
 }

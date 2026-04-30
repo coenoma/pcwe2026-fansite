@@ -3,7 +3,7 @@
   "name": "聴く餃子",
   "thumbnail": "/thumbnails/119.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-119/",
-  "fetchedAt": "2026-04-30T12:46:36.287Z",
+  "fetchedAt": "2026-04-30T13:48:02.424Z",
   "official": {
     "description": "「聴く餃子」は、日本で進化した焼き餃子文化の魅力を語るポッドキャスト番組です。毎週火曜日にお送りしています。\nパーソナリティ 一般社団法人焼き餃子協会 代表理事・Gyoza Jockey 小野寺力\n※「聴く餃子」はパラダイス山元師匠のエッセイ集「読む餃子」からのインスパイアです。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "x": "https://x.com/ch1cala",
     "instagram": "https://instagram.com/ch1cala"
+  },
+  "recommendedEpisode": {
+    "title": "♯119 「餃子と科学」の交差点",
+    "url": "https://open.spotify.com/episode/2hgr4P8PLJyNVsw2IpPc5K"
   }
 }

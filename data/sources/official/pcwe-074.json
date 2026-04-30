@@ -3,7 +3,7 @@
   "name": "チカブレンド",
   "thumbnail": "/thumbnails/074.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-074/",
-  "fetchedAt": "2026-04-30T12:45:19.116Z",
+  "fetchedAt": "2026-04-30T13:46:45.224Z",
   "official": {
     "description": "阪神タイガース近本光司選手のポッドキャスト「チカブレンド」考えることが好きな近本光司が、思考をブレンドしていく番組です"
   },
@@ -19,5 +19,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/6NjuAXlCrShIWZOE7uf242",
     "instagram": "https://www.instagram.com/chika_blend/"
+  },
+  "recommendedEpisode": {
+    "title": "EP48：盗塁＝勇気の鍛錬【祝！盗塁王！】",
+    "url": "https://open.spotify.com/episode/10QEnYbO2GejVFsYCCjDXf?si=mUvGMz59TkyY-va4oGvROA"
   }
 }

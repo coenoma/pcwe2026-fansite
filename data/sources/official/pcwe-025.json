@@ -3,7 +3,7 @@
   "name": "好きにしたらええやん。",
   "thumbnail": "/thumbnails/025.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-025/",
-  "fetchedAt": "2026-04-30T12:43:43.663Z",
+  "fetchedAt": "2026-04-30T13:45:23.289Z",
   "official": {
     "description": "おしゃべり映像プロデューサーのリュウ。繊細マッチョ人事マンのこへ。少年のまま髭が生えたような2人が東京の片隅からお届けする\nドキュメンタリーラジオ番組「好きにしたらええやん。」関西出身アラサーの僕らがネガティブを笑いに変える人生の楽しみ方を発信しています。毎週土曜日21:00更新！"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/0n57AqUPNmhyKpvYY2jKYc",
     "x": "https://x.com/radio_sukishita",
     "instagram": "https://www.instagram.com/radio_sukishita/"
+  },
+  "recommendedEpisode": {
+    "title": "#85 スケボーって何が悪いの？",
+    "url": "https://open.spotify.com/episode/5BfNARnOF9jFfH21sTnqp7?si=871f7ccd45f34788"
   }
 }

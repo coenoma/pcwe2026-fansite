@@ -3,7 +3,7 @@
   "name": "推しと原稿の間で",
   "thumbnail": "/thumbnails/088.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-088/",
-  "fetchedAt": "2026-04-30T12:45:42.460Z",
+  "fetchedAt": "2026-04-30T13:47:09.131Z",
   "official": {
     "description": "エンタメ関連のコラムやインタビュー原稿を年間500本執筆している傍らで、推しへの愛を集めた沼落ちZINE「Aila」の編集長をしているオタク気質のエンタメライター・於ありさがオーナーを務める日記のようなエンタメ語りラジオ。1人語りじゃ満足できず、週に2回、ゲストさんをお呼びして、最近のハマりごとや“人生を変えたエンタメ”について話を聞いています。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/2QB2V0HmhbzEdXphWM60iY",
     "x": "https://x.com/okiarichan27"
+  },
+  "recommendedEpisode": {
+    "title": "10.移動を前に、進研ゼミの言葉を送る",
+    "url": "https://open.spotify.com/episode/1pHCGTjCFZWT6BtOG3gnaH?si=TeILgf1JQc6kCdLYlmCC8A"
   }
 }

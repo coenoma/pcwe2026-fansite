@@ -3,7 +3,7 @@
   "name": "ダンドー・キュー",
   "thumbnail": "/thumbnails/030.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-030/",
-  "fetchedAt": "2026-04-30T12:43:51.453Z",
+  "fetchedAt": "2026-04-30T13:45:31.306Z",
   "official": {
     "description": "大阪出身福岡在住の【りゃん】が、台湾ネタを中心にAIからカメラ、VRまで気になったことを全部しゃべります。写真集「台湾AI男子」、漫画「センパイの答えがタイワン過ぎる！」も展開中。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/4G6pcuEOCzpSikuz0Ui2PS",
     "instagram": "https://www.instagram.com/podcastddq"
+  },
+  "recommendedEpisode": {
+    "title": "#084 台湾男性らしさの根本に迫る",
+    "url": "https://open.spotify.com/episode/3YBdwWQ4omkAMnvLSJEJHA?si=auSGViUHRReB9T9cK8Nlzw"
   }
 }

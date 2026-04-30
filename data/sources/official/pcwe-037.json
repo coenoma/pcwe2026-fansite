@@ -3,7 +3,7 @@
   "name": "映画の話したすぎるラジオ",
   "thumbnail": "/thumbnails/037.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-037/",
-  "fetchedAt": "2026-04-30T12:44:04.183Z",
+  "fetchedAt": "2026-04-30T13:45:43.005Z",
   "official": {
     "description": "大阪の南森町にある日替わりイベント型カフェバー「週間マガリ」にて月1ペースで開催している「映画の話したすぎるBAR」の店長メンバーによる映画トーク番組です。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/5urZYK7aq2BE2QdtfEOj4l",
     "x": "https://x.com/virtualeigabar",
     "instagram": "https://www.instagram.com/"
+  },
+  "recommendedEpisode": {
+    "title": "第222回(2)『ジュラシック・パーク』\"恐竜\"の話の時間だオラァ!",
+    "url": "https://open.spotify.com/episode/6CUXe6UKKT4gM3rPEwTuuX"
   }
 }

@@ -3,7 +3,7 @@
   "name": "ブラウンブラウニー",
   "thumbnail": "/thumbnails/113.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-113/",
-  "fetchedAt": "2026-04-30T12:46:26.292Z",
+  "fetchedAt": "2026-04-30T13:47:51.818Z",
   "official": {
     "description": "会社員と焼き芋屋が配信している、雑談型ミュージックトークバラエティ番組です。\n90年代のHIP HOPやR&Bを中心に、パーソナリティの２人が様々なブラックミュージックを紹介しております。\n音楽の話をしているはずが、二転三転しながら思いがけないところまで転がっていく番組です。\n会場でも番組のテンションそのままでお待ちしています。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/0hrkPMSRLSKZ8KQIzCtwzV",
     "instagram": "https://www.instagram.com/brownbrown_ie"
+  },
+  "recommendedEpisode": {
+    "title": "#5 一発屋の祭典 HIP HOP編。",
+    "url": "https://open.spotify.com/episode/19HSw6qvIuIFShDgLLt2py?si=jjy7WtW8Ta2F8EUE2EPy0A"
   }
 }

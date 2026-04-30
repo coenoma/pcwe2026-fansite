@@ -3,7 +3,7 @@
   "name": "「いま、暇？」急いで準備するからちょっと飲まない？",
   "thumbnail": "/thumbnails/100.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-100/",
-  "fetchedAt": "2026-04-30T12:46:03.209Z",
+  "fetchedAt": "2026-04-30T13:47:30.517Z",
   "official": {
     "description": "中学の同級生マオとリョウが宅飲みをしながら雑談するPodcast\n『「いま、暇？」急いで準備するからちょっと飲まない？』\nお酒を片手に、「どうしても気になること」「聞いてほしい近況」などをテーマに、ゆるくもありつつ同級生ならではのテンポ感で話しています。\n番組名は実際にあった2人のLINEのやり取りからとりました。\n疲れた日の夜、ふと「いまから飲みたいな」と思ったときのお供に聴いてもらえたらうれしいです◎\n《毎週木曜20:00 配信》"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/1T9i62IzVfSu0x3Oy94pTv",
     "x": "https://x.com/imahimanomanai"
+  },
+  "recommendedEpisode": {
+    "title": "2026年✔️やりたいことリスト100を発表します",
+    "url": "https://open.spotify.com/episode/07mMJoafvkyLnGperzSxaw?si=xt3sSIWKTzSr6IbE9aaIqA"
   }
 }

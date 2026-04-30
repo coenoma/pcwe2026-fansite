@@ -3,7 +3,7 @@
   "name": "風呂あがりのアイスキャンディー",
   "thumbnail": "/thumbnails/086.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-086/",
-  "fetchedAt": "2026-04-30T12:45:38.869Z",
+  "fetchedAt": "2026-04-30T13:47:05.630Z",
   "official": {
     "description": "住んでいる町も、生まれた町も、年齢も、性別も 様々である じょうどい、ブライトマン、小夏、きらきらぼしの4人が『オンラインの湯』に集まり、湯上がりにアイスキャンディーを一本食べ切るまでの おおよそ25分間、ポカポカを噛みしめながら ゆるーーーーく雑談しているpodcast。\nゆるすぎるが故、睡眠導入の一助になれたら それもまた嬉しい！？\n番組の最後に、 銭湯からの帰路で聴く用の 『今日の一曲』を決めてます。\n概要欄にある『今日の一曲』から Spotifyのリンクへ飛べますので、良ければ 一緒に聴いてみてください！\nあなたも私も 頑張った今日1日、\n穏やかな帰路に 共につけますように。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/1lfsm9WeoFkNAz4GhPHxOK",
     "x": "https://x.com/ofucan1121"
+  },
+  "recommendedEpisode": {
+    "title": "#005 第1回 自己分析会議(前編)",
+    "url": "https://open.spotify.com/episode/0VvxVJiGXfHQTv0VIE5lGL"
   }
 }

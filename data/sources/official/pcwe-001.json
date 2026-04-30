@@ -3,7 +3,7 @@
   "name": "電波惹句",
   "thumbnail": "/thumbnails/001.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-001/",
-  "fetchedAt": "2026-04-30T12:43:05.128Z",
+  "fetchedAt": "2026-04-30T13:44:44.629Z",
   "official": {
     "description": "このタイトルにビビっときたあなたなら聴いていて楽しいはず！おしゃべり好きのなすびさんが毎回ゲストを呼びよせて好き勝手に雑談しています。\n話題に出がちなテーマはこちら「お笑い（みなみかわ、真空ジェシカ、藤井健太郎、チャンスの時間、賞レース、etc…）／語りしろのある時事ネタ（ガクヅケ木田note、SHUNKI、スカしてる問題、選挙、etc…）／ゲストの専門分野（経済、中川大志、デジタルゲーム、音楽、etc…）」\nゲストにはこんな人々が来てくれてます。「学生時代の友人／かつてのバイト仲間／大学講師／職場の同僚／Podcaster」などなど"
   },
@@ -19,5 +19,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/2m7mxthF24J2aYsvgu9AlC",
     "x": "https://x.com/signal_cp"
+  },
+  "recommendedEpisode": {
+    "title": "第81波⚡ありのままとヤラセのあいだ（ゲスト：【履修登録】・【潜入計画】より、ヒロトさん）",
+    "url": "https://open.spotify.com/episode/60lq3thRYxUp05MZabuVFX?si=9_ibcWslREKYycM5NOTlaQ"
   }
 }

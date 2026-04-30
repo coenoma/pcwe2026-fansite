@@ -3,7 +3,7 @@
   "name": "日中バイリンガルへの道",
   "thumbnail": "/thumbnails/143.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-143/",
-  "fetchedAt": "2026-04-30T12:47:16.982Z",
+  "fetchedAt": "2026-04-30T13:48:41.491Z",
   "official": {
     "description": "40万回再生突破♪ 日本生まれ、日本育ち、社会人になってから中国語に出会った日中バイリンガルMC、ビジネス通訳者のYoyoこと宇高ようが「もっと自由に話せるようになりたい！」とチャレンジを続ける番組。日本語と中国語で語ります。基本的に台本はありませんので、発音や文法のお手本にはなりませんが「中国語を話してみたい！」「オトナになって勉強を始めても大丈夫！」と感じてもらえれば嬉しいです。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "x": "https://x.com/yoyo_jplife",
     "instagram": "https://www.instagram.com/yoyo_jplife/"
+  },
+  "recommendedEpisode": {
+    "title": "#298 【出版記念第一弾】なぜ本？どうやって本？",
+    "url": "https://open.spotify.com/episode/3kiQRNtu2uh4mUSIuQ69IK?si=DfWyMstRTOOnzulqVHBtjA"
   }
 }

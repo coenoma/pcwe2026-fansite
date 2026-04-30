@@ -3,7 +3,7 @@
   "name": "ハコとくら",
   "thumbnail": "/thumbnails/083.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-083/",
-  "fetchedAt": "2026-04-30T12:45:34.194Z",
+  "fetchedAt": "2026-04-30T13:46:59.516Z",
   "official": {
     "description": "作家のとくらじゅんと漫画家のニシハラハコがゆるっと喋るラジオ。毎週ベスト3を決めていきます。入眠にぴったりの声です。眠れない夜にぜひ。"
   },
@@ -17,5 +17,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6rLMEpDAUbmvrLeb4rBx5b"
+  },
+  "recommendedEpisode": {
+    "title": "大人になって思うことベスト3",
+    "url": "https://open.spotify.com/episode/367wwOJ9quhIwqnuEWv61j?si=add8ae884b484794"
   }
 }

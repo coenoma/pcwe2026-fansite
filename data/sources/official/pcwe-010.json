@@ -3,7 +3,7 @@
   "name": "地方ゲイだけど丁寧な暮らしがしたい",
   "thumbnail": "/thumbnails/010.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-010/",
-  "fetchedAt": "2026-04-30T12:43:18.569Z",
+  "fetchedAt": "2026-04-30T13:44:56.605Z",
   "official": {
     "description": "地方(岐阜)でひとり暮らしをするゲイならではの日常の事やお気に入りの日用品、お出かけの様子を日記のようにおしゃべりしていきます。時々お便りで爆笑したり妄想話に花を咲かせたり…？\n僕の住む大好きな街「岐阜」の道の駅、喫茶店、美味しいものなど“ちょうどいいところ“や“ちょっといいところ”も紹介しています。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/2Z0qHFI8ZgySTPF26dCvY6",
     "x": "https://x.com/chihougay"
+  },
+  "recommendedEpisode": {
+    "title": "地方ゲイの「暮らしを豊かにするもの」",
+    "url": "https://open.spotify.com/episode/2omvXaN9Z5AzLZolWAIoxH"
   }
 }

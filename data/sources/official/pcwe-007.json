@@ -3,7 +3,7 @@
   "name": "自分にやさしくするラジオ",
   "thumbnail": "/thumbnails/007.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-007/",
-  "fetchedAt": "2026-04-30T12:43:15.370Z",
+  "fetchedAt": "2026-04-30T13:44:53.323Z",
   "official": {
     "description": "哲学で攻めるメンタルヘルス。DOでもHAVEでもCANでもないBEのわたしたちを祝福しよ！\n不安や恐れから解放されて平和を感じたい。自分を好きになりたい。傷ついたと感じている自分を癒したい。家族、社会、そして最も大切な自分との人間関係を安らぎのあるものにしたい。しなやかな筋肉のようなこころを目指し自分にやさしくする練習をリスナーと共に声で綴ります。"
   },
@@ -17,5 +17,9 @@
   },
   "links": {
     "x": "https://x.com/sophieauthentic"
+  },
+  "recommendedEpisode": {
+    "title": "日本Podcast協会配信リレー：心地よい裏切り",
+    "url": "https://open.spotify.com/episode/07kIbFuzcvgsdEHrc6KvgD?si=2MG-qNdkThW5Cq4I0Ytl7g&t=4"
   }
 }

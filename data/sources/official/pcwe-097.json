@@ -3,7 +3,7 @@
   "name": "戦略的幸福論〜AI時代をどう生きる？〜",
   "thumbnail": "/thumbnails/097.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-097/",
-  "fetchedAt": "2026-04-30T12:45:58.206Z",
+  "fetchedAt": "2026-04-30T13:47:25.891Z",
   "official": {
     "description": "AIが社会のあり方を根底から変えようとしている今、私たちはどのように生きれば、より豊かな人生を歩むことができるのか？この番組は、AIとウェルビーイングのスペシャリストが、最新のAIツールや注目すべき動向を解説しながら、激変の時代を人間らしく生きるための「戦略的幸福論」を哲学するプログラムです。毎週月曜日AM6:00配信。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/4IT6zgmcXa4PL4HlvAnkCL",
     "x": "https://x.com/tiedfamily244"
+  },
+  "recommendedEpisode": {
+    "title": "#98 AIの進化が早すぎて「洞窟」に逃げ込む私たち / 仕事がAIに置き換わる未来の受け入れ方",
+    "url": "https://open.spotify.com/episode/3PvGjcjjT4THOYdSVMvEAf"
   }
 }

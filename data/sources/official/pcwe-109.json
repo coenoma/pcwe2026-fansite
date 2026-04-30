@@ -3,7 +3,7 @@
   "name": "しゃらくさラジオ",
   "thumbnail": "/thumbnails/109.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-109/",
-  "fetchedAt": "2026-04-30T12:46:19.515Z",
+  "fetchedAt": "2026-04-30T13:47:45.341Z",
   "official": {
     "description": "★★★ しゃらくさラジオ ★★★\nイケオジを目指す子持ちワイン検定ブロンズ（→シルバーに昇格しました！）の河上と、毎日同じ服でパスタばっかりむさぼる独身自由人松原、が、アラフォー男子（男子？）の視点で、毎回その時気になるエンターテイメントなニュース記事を取り上げ、世の中のしゃらくさいものとか気になることについて議論したりするラジオです。\n基本的には、MC河上のしゃらくせぇ話と、サブMC松原のよくわかんねえ話を、垂れ流していきます。\n＃しゃらくさラジオ＃ニュース\n#エンターテイメントニュース＃エンタメ\n#意識高い系＃意識低い系\n＃中年＃IT系会社員#サラリーマン#雑談\n#睡眠用#1人飲み用＃ワイン検定シルバー"
   },
@@ -19,5 +19,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/645iXhHau7wEgUGbDA5flE",
     "x": "https://x.com/SyarakusaRadio"
+  },
+  "recommendedEpisode": {
+    "title": "【Vol.27】エロ広告おじさん と パンケーキおじさん",
+    "url": "https://open.spotify.com/episode/7sxRjy6a7KrCMIacRNSk0Z?si=PurxQrurT6W0CiPQBDw23A"
   }
 }

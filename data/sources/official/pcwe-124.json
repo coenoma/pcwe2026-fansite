@@ -3,7 +3,7 @@
   "name": "読書酒紀",
   "thumbnail": "/thumbnails/124.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-124/",
-  "fetchedAt": "2026-04-30T12:46:43.731Z",
+  "fetchedAt": "2026-04-30T13:48:11.763Z",
   "official": {
     "description": "面倒くさい文学部卒、社会人コンビがお届けする飲酒×読書×雑談ラジオ。毎回一つのテーマを決めて、そのテーマについての書籍を読み込んできた２人が、先行・後行を決めて、毎回語りあっていきます。あと、毎回歩きながら収録しています。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/36X5GlyHQcAavgvrcUvIf2",
     "x": "https://x.com/OfVoice59929"
+  },
+  "recommendedEpisode": {
+    "title": "読書酒紀　♯40 テーマ：猫　後半",
+    "url": "https://open.spotify.com/episode/0oKo95e6CaMQEJbB6nWRJN?si=5aa61495ef1f481f"
   }
 }

@@ -3,7 +3,7 @@
   "name": "overture〜ミュージカル好きの語り部屋〜",
   "thumbnail": "/thumbnails/016.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-016/",
-  "fetchedAt": "2026-04-30T12:43:28.033Z",
+  "fetchedAt": "2026-04-30T13:45:08.702Z",
   "official": {
     "description": "ミュージカルは”観る”のも”出る”のも大好き！だけど仕事は会社員！な一般人、momongaによる一人語りpodcast番組。\n観劇の感想や、過去出演の思い出話、通っているボイトレやダンスのこと、知人に舞台愛を語ってもらうゲスト回など。、好きな舞台との距離感に戸惑いながら、学生の延長でどうにか好きなことを続けていく…そんな大人の生き様をどうぞ！不定期更新です。"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/5PFCGL7N1WlnusNC4j3fL0",
     "instagram": "https://www.instagram.com/hyp_ran"
+  },
+  "recommendedEpisode": {
+    "title": "133.観たぞ！『コーラスライン』日本特別公演",
+    "url": "https://open.spotify.com/episode/66JVwQGVG735IpZlNPhw2W?si=e413878d4e7f47da"
   }
 }

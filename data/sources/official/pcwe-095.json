@@ -3,7 +3,7 @@
   "name": "ハタとキシマの“黙っていられん”",
   "thumbnail": "/thumbnails/095.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-095/",
-  "fetchedAt": "2026-04-30T12:45:54.200Z",
+  "fetchedAt": "2026-04-30T13:47:22.414Z",
   "official": {
     "description": "よく動くハタと、よく食べるキシマ。\n会社の同期として出会ったコピーライターふたりによる、書かないで喋ってばかりの雑談番組です。\nライブペインティングならぬ「ライブコピーライティング」や、番組の人気企画であるキャッチコピークイズから着想を得た「クイズ！この歌詞、何の曲？」など、コピーライターならではの企画で盛り上げます！"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/42TktBhEFTlLVRYsRIUr5H",
     "x": "https://x.com/damaren_radio"
+  },
+  "recommendedEpisode": {
+    "title": "#17 宇宙人到来に備えて地球代表の3食を考える",
+    "url": "https://open.spotify.com/episode/24ccIFAeNX17dLC8OzSMDI?si=ctQEnlCuQGeXhg6L8H83cw"
   }
 }

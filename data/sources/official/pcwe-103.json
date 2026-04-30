@@ -3,7 +3,7 @@
   "name": "SONICWAVEの3355ラジオ",
   "thumbnail": "/thumbnails/103.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-103/",
-  "fetchedAt": "2026-04-30T12:46:07.681Z",
+  "fetchedAt": "2026-04-30T13:47:35.046Z",
   "official": {
     "description": "旅をテーマにしたzineや書籍、グッズなどを制作している同性パートナー二人のユニットSONICWAVE。将来、佐賀県有田町に移住し、地域に開かれた文化施設的な場所を作ろうとも計画中。このポッドキャストでは、旅のこと、食べたもの、モノづくり、音楽や映画、そして佐賀移住計画の話まで、二人が旅先や日々の暮らしのなかで見つけたことを、ただおしゃべりしています。深い話になることもあれば、どうでもいい雑談で終わることもあります。そんな二人の思考の過程を、横で聞いてもらうようなポッドキャストです。"
   },
@@ -20,5 +20,9 @@
     "spotify": "https://open.spotify.com/show/7t9lYqOiXzcYv6TqJKtc3D",
     "x": "https://x.com/weare_sonicwave",
     "instagram": "https://www.instagram.com/we_are_sonicwave/"
+  },
+  "recommendedEpisode": {
+    "title": "#18｜今さら自己紹介（はじめて聞く人はこの回から）",
+    "url": "https://open.spotify.com/episode/4x3fMPKmQqKk9YBXUEbEwC?si=671427b827f14c59"
   }
 }

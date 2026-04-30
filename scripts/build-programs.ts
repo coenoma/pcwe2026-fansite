@@ -62,6 +62,7 @@ function mergeProgram(official: OfficialSource, fanGuide: FanGuideSource): Progr
     exhibition: official.exhibition,
     links: official.links,
     fanGuide: fanGuide.fanGuide,
+    recommendedEpisode: official.recommendedEpisode,
   };
 }
 

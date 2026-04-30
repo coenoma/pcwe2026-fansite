@@ -3,7 +3,7 @@
   "name": "ヤマモトユウトのラジ推し！-エンタメ古今東西-",
   "thumbnail": "/thumbnails/039.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-039/",
-  "fetchedAt": "2026-04-30T12:44:07.341Z",
+  "fetchedAt": "2026-04-30T13:45:46.948Z",
   "official": {
     "description": "エンタメ探求家・ヤマモトユウトが、演劇・映画・ゲーム・書籍など古今東西のエンタメを勝手な視点で語ります。まっさらな状態で聴いてもワクワクできる「熱いけど耳心地が良い」番組です。毎週火曜日配信。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/021I3QnLXBOpAgZgYlFB8E",
     "x": "https://x.com/yutomajiyuto",
     "instagram": "https://www.instagram.com/radioshiyy_official/"
+  },
+  "recommendedEpisode": {
+    "title": "【感想回】ミュージカル『十二国記 -月の影 影の海-』：十二国記の世界の息遣いを感じられる極上の観劇体験！",
+    "url": "https://open.spotify.com/episode/2CJTPOsmzjnWnVfBhsksY1?si=6d207978c75f4e24"
   }
 }

@@ -3,7 +3,7 @@
   "name": "カイブツラジオ",
   "thumbnail": "/thumbnails/134.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-134/",
-  "fetchedAt": "2026-04-30T12:47:00.570Z",
+  "fetchedAt": "2026-04-30T13:48:27.869Z",
   "official": {
     "description": "「カイブツになろう！」をキャッチコピーに、自分の“好き“に夢中で向き合う人たちの価値観や生き方を掘り下げる番組です。\nカイブツとは、他人の評価に流されず、好きなことを夢中で追い続ける人のこと。\n番組では、自己中心的に見えるほど夢中になることが、結果として誰かの役に立ち、社会をやさしくするという可能性を探ります。"
   },
@@ -20,5 +20,9 @@
     "spotify": "https://open.spotify.com/show/3QC7R1GU2U0mVoGGJ8sUF9",
     "x": "https://x.com/LLCSquad152636",
     "instagram": "https://www.instagram.com/kaibutsu_squad/"
+  },
+  "recommendedEpisode": {
+    "title": "カイブツとは？",
+    "url": "https://open.spotify.com/episode/0cQFnihD3SvMMrhxHwvWxw"
   }
 }

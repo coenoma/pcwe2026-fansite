@@ -3,7 +3,7 @@
   "name": "ゲイで茶を沸かす",
   "thumbnail": "/thumbnails/101.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-101/",
-  "fetchedAt": "2026-04-30T12:46:04.478Z",
+  "fetchedAt": "2026-04-30T13:47:32.262Z",
   "official": {
     "description": "固定MCと週替わりのゲイ３人が、わ茶わ茶と身の上話や妄想トークを繰り広げる、おしゃべり人情バラエティ。\nポッドキャストのみならず、お手製エンタメてんこ盛りの単独イベントをやったり、Spotify公式アンバサダーに選出されたり。\n聴いてくださるみなさまと支え合いながら、笑いあり涙ありで毎週月曜お届け中です。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/0uhr6jQkqCLkCrfVCtF1W8",
     "x": "https://x.com/gaychatweet",
     "instagram": "https://www.instagram.com/gaychanews"
+  },
+  "recommendedEpisode": {
+    "title": "174【お便り回】\"見えづらい秘密\"に直面しているすべての人へ#ALL",
+    "url": "https://open.spotify.com/episode/44mimQYSmi4oN6oPlyLpUT?si=x2oSycQvTiuOV-bUSNc1kA"
   }
 }

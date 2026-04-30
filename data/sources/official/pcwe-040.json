@@ -3,7 +3,7 @@
   "name": "俺思 | 週刊漫画家と装丁デザイナーのPodcast",
   "thumbnail": "/thumbnails/040.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-040/",
-  "fetchedAt": "2026-04-30T12:44:09.313Z",
+  "fetchedAt": "2026-04-30T13:45:48.565Z",
   "official": {
     "description": "漫画家の根本大と装丁デザイナーのあんぼあつしが、「俺はそうは思わない」を語りながら最高のクリエイターを目指す、創作分解ドキュメンタリーPodcast。\nいつか高架下から自分たちのスタジオを作るまで。"
   },
@@ -20,5 +20,9 @@
     "spotify": "https://open.spotify.com/show/23Zw3q3hsDmgageTfv14IG",
     "x": "https://x.com/oreha_omowanai",
     "instagram": "https://www.instagram.com/orehasoha_omowanai/"
+  },
+  "recommendedEpisode": {
+    "title": "創13号　【推し活】誰かの物語に巻き込まれずに生きるの、もう無理ゲーじゃね？",
+    "url": "https://open.spotify.com/episode/7lrw2kRPdOLMwymDJmM6FF?si=d648f7b54be946aa"
   }
 }

@@ -3,7 +3,7 @@
   "name": "想らしラジオ",
   "thumbnail": "/thumbnails/034.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-034/",
-  "fetchedAt": "2026-04-30T12:43:58.244Z",
+  "fetchedAt": "2026-04-30T13:45:38.385Z",
   "official": {
     "description": "『想らしラジオ（オモラジ）』は、アラフォーの同期入社4人で結成されました。大人に放課後はないのか？無意味でピュアな感情を「オモラシ」したい！そんな想いを元気にお届けする番組です！！仕事の話あり、笑いあり、涙あり、ドッキリあり、キュンキュンあり！もはやなんでもあり！？聴いてくれるリスナーの皆さんがクスッと笑えるような配信を目指してます。\n想ラジのメンバーについて\n【桜庭うみ】陽気 仲間想い フットワーク軽め\n【AIRカラス】小心者の田舎者 理屈っぽい\n【鶏肉】独身男子 料理が得意 イケボ担当\n【クジラ】生真面目な不思議ちゃん サムネ担当"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/6vkPs13TNoxPA8SAtnR5UR",
     "x": "https://x.com/omorashi_radio_"
+  },
+  "recommendedEpisode": {
+    "title": "『衝撃事実発覚！？君は友を信用できるのか』",
+    "url": "https://open.spotify.com/episode/53VgjBcqrIwbXKh8PrnnmM?si=zuhyd7rHQaKkOj3929ZZlw"
   }
 }

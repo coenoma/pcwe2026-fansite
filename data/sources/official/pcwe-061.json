@@ -3,7 +3,7 @@
   "name": "さのみきひとのラジオ ⌞ ラのみきジオ ⌝",
   "thumbnail": "/thumbnails/061.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-061/",
-  "fetchedAt": "2026-04-30T12:44:43.918Z",
+  "fetchedAt": "2026-04-30T13:46:24.372Z",
   "official": {
     "description": "パーカッションとノイズボックスによる即興演奏を軸に活動する\nソロアーティスト さのみきひと の日常生活の一部をお届け\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿\n毎週水曜よる19時配信\nさのみきひとのラジオ ⌞ ラのみきジオ ⌝\n￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣\npercussion & noise solo artist from Hyogo.\nAn absurd experimental podcast of rhythm, chaos, and talk.\nNew episodes Wed 19:00（JST）"
   },
@@ -18,5 +18,9 @@
   "links": {
     "spotify": "https://open.spotify.com/show/0RAnsCfoM3THFZSPtRl9OH",
     "x": "https://x.com/ranomikijio"
+  },
+  "recommendedEpisode": {
+    "title": "phase:two 012｜鳥かごのアルキメデス",
+    "url": "https://open.spotify.com/episode/3pKO8z331NWiET4lQ85PO4?si=99139a54d7904bc3"
   }
 }

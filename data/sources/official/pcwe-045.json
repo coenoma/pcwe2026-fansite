@@ -3,7 +3,7 @@
   "name": "PodcastTimes｜ぽっどでの新人",
   "thumbnail": "/thumbnails/045.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-045/",
-  "fetchedAt": "2026-04-30T12:44:18.777Z",
+  "fetchedAt": "2026-04-30T13:45:56.690Z",
   "official": {
     "description": "番組をアップするだけで『AIが記事化』してくれるPodcastポータルサイト、「PodcastTimes」が、Podcastから新しいスター「ぽっどでの新人」を生み出すための番組です。ポッドキャスターや音声コンテンツ制作者のスキルアップ、モチベーションアップを目指し、音声関係者やクリエイター、パーソナリティをゲストに招き、音声コンテンツの魅力を語っていただいたり、番組制作・喋りのテクニックなどを紹介したりしていきます。"
   },
@@ -20,5 +20,9 @@
     "spotify": "https://open.spotify.com/show/4jrgTR79KBFANpFmHGw19C",
     "x": "https://x.com/Podcast_TimesJP",
     "instagram": "https://www.instagram.com/podcasttimes_jp/"
+  },
+  "recommendedEpisode": {
+    "title": "#1 ラジオスター土屋礼央が伝授する「音声で気持ちを伝える方法」",
+    "url": "https://open.spotify.com/episode/7b5QHXmABplM69p35TvjLt"
   }
 }

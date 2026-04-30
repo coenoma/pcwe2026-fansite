@@ -3,7 +3,7 @@
   "name": "金曜日の焚火会",
   "thumbnail": "/thumbnails/004.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-004/",
-  "fetchedAt": "2026-04-30T12:43:10.583Z",
+  "fetchedAt": "2026-04-30T13:44:49.425Z",
   "official": {
     "description": "福岡在住のサラリーマンキャンパー・梁と中富が、金曜日の仕事帰りに居酒屋へ行く代わりに、九州各地のキャンプ場へ出かけ、焚火を囲みながら語り合うポッドキャスト番組です。仕事のこと、日常のあれこれ、キャンプで感じた気づきを、気取らず自然体でトーク。焚火の音とともに、肩の力がふっと抜ける時間をお届けします。毎週火曜日・金曜日19時配信。Podcast Weekendは今回で4回目の出店となります。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/6LaaNBq49cjRKpfkLYe2XF",
     "x": "https://x.com/k_takibikai",
     "instagram": "https://www.instagram.com/kinyobinotakibikai/"
+  },
+  "recommendedEpisode": {
+    "title": "#470 初めてロシア料理をキャンプ料理に 福岡県宗像市izba（福岡）2 ビデオポッドキャスト",
+    "url": "https://open.spotify.com/episode/5KoHRS5JCKUnjJamkkQPHK?si=Qfgnkzj6Q8Kc7QEQgXlnwA"
   }
 }

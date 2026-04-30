@@ -3,7 +3,7 @@
   "name": "愛の抵抗",
   "thumbnail": "/thumbnails/002.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-002/",
-  "fetchedAt": "2026-04-30T12:43:07.061Z",
+  "fetchedAt": "2026-04-30T13:44:46.318Z",
   "official": {
     "description": "大学のゼミで出会った「あさちゃん」と「しだちゃん」。卒業後も年1の飲み会で話すくらいのフツーの仲だったのが、どっこい週1でポッドキャストを録ることに。ちゃんとできない三十路2人が、厳しい現実に抗って「愛」を胸に生きる様をお送りするポッドキャスト「愛の抵抗」です。"
   },
@@ -19,5 +19,9 @@
     "spotify": "https://open.spotify.com/show/2msDcnMJrgjggqUYFEztLr",
     "x": "https://x.com/asa_utsumi",
     "instagram": "https://www.instagram.com/asa_utsumi"
+  },
+  "recommendedEpisode": {
+    "title": "#88 信じる力・祈る力〜NHK「山口一郎　 “うつ”と生きる」を見て〜",
+    "url": "https://open.spotify.com/episode/66sBU58YXW5CGpumdAtqhc?si=LLIa1__QRwyNGTVny5hXHw"
   }
 }
