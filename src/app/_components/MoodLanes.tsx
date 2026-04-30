@@ -46,7 +46,7 @@ export function MoodLanes({ moods, countsBySlug }: Props) {
               </p>
               <p className="relative mt-auto flex flex-col gap-1 pt-2 text-[10px] font-bold text-neutral-500 sm:text-xs">
                 <span
-                  className="inline-flex items-center gap-1 self-start rounded-full px-2 py-0.5"
+                  className="inline-flex items-center gap-1 self-start whitespace-nowrap rounded-full px-2 py-0.5"
                   style={{
                     backgroundColor: `${mood.themeColor}1a`,
                     color: mood.themeColor,
