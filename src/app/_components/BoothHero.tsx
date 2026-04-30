@@ -194,7 +194,7 @@ export function BoothHero({ program }: Props) {
             <span aria-hidden="true">🎨</span>
             <span>分析結果: <strong style={{ color: themeColor }}>{vibe.personalityLabel}</strong></span>
             <span className="text-neutral-400">·</span>
-            <span className="text-neutral-500">独断と偏見につき、</span>
+            <span className="text-neutral-500">独断と偏見に基づくため、</span>
             <Link
               href="/about"
               className="font-bold underline decoration-transparent transition-colors hover:opacity-80"
