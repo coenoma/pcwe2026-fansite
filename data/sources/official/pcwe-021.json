@@ -3,14 +3,13 @@
   "name": "ポッドキャストーーク",
   "thumbnail": "/thumbnails/021.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-021/",
-  "fetchedAt": "2026-04-29T13:46:37.924Z",
+  "fetchedAt": "2026-04-30T12:34:28.337Z",
   "official": {
-    "description": "Podcastを愛するパーソナリティの3人がPodcast番組を紹介する番組です。\n今まで200番組以上紹介をしてきました。職種、視点の異なる3人ならではの幅広いジャンルを網羅。\n自分だけでは見つけられなかった楽しい番組を知るきっかけになれば嬉しいです！\n            \n\n      PODCAST\n  \n  \n      X"
+    "description": "Podcastを愛するパーソナリティの3人がPodcast番組を紹介する番組です。\n\n今まで200番組以上紹介をしてきました。職種、視点の異なる3人ならではの幅広いジャンルを網羅。\n\n自分だけでは見つけられなかった楽しい番組を知るきっかけになれば嬉しいです！"
   },
   "exhibition": {
     "days": [
-      "sat",
-      "sun"
+      "sat"
     ],
     "hours": "10:00 - 18:00",
     "area": "free",

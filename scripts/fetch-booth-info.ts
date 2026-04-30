@@ -129,14 +129,44 @@ function parseBoothHtml(html: string): ParsedBoothInfo {
   const name = ogTitle ?? twTitle ?? docTitle ?? h1 ?? '';
 
   // 番組概要: 優先順位
-  //   1. .entry-detail / .entry-content（番組詳細エリア）
-  //   2. og:description / twitter:description
+  //   1. .entry-detail / .entry-content（番組詳細エリア、<br> を \n に変換、SNS エリア除外）
+  //   2. og:description / twitter:description（フォールバック、改行は元から無い）
   //   3. 段落から長文抽出（「【出店予定】」「【出店内容】」は物販リストなので除外）
   const isMerchandiseText = (text: string): boolean => /^[\s　]*【出店(予定|内容)】/.test(text);
 
+  /**
+   * cheerio 要素から description を抽出する。
+   * - SNS リスト（ul.sns-area / ul）を除外
+   * - <br> を改行文字 \n に変換（公式の意図した改行を保持）
+   * - <p> ブロック間にも改行を入れる
+   */
+  const extractDescriptionWithBreaks = (selector: string): string => {
+    const $el = $(selector).first();
+    if ($el.length === 0) return '';
+    const $clone = $el.clone();
+    // SNS リンクのリストを除外（番組固有の本文ではないため）
+    $clone.find('ul.sns-area, ul').remove();
+    // <br> を改行に置換
+    $clone.find('br').each((_, br) => {
+      $(br).replaceWith('\n');
+    });
+    // <p> 末尾に改行を追加（複数段落の境界を保持）
+    $clone.find('p').each((_, p) => {
+      $(p).append('\n');
+    });
+    return $clone
+      .text()
+      // 連続する空白行は 1 つに圧縮、行頭末尾の空白は除去
+      .split('\n')
+      .map((line) => line.trim())
+      .filter((line, idx, arr) => line !== '' || (idx > 0 && arr[idx - 1] !== ''))
+      .join('\n')
+      .trim();
+  };
+
   let description = '';
   for (const selector of ['.entry-detail', '.entry-content', '.booth-description', '.description']) {
-    const text = $(selector).first().text().trim();
+    const text = extractDescriptionWithBreaks(selector);
     if (text.length > 30 && !isMerchandiseText(text)) {
       description = text;
       break;
@@ -157,14 +187,40 @@ function parseBoothHtml(html: string): ParsedBoothInfo {
     });
   }
 
-  // 出展日 / 時間 / エリア
-  const bodyText = $('body').text();
+  /*
+   * 出展日 / 時間 / エリア
+   * ⚠️ 重要: bodyText（ページ全体）から「5月9日」「5月10日」を正規表現で拾う旧方式は、
+   * ヘッダー・フッターに両方の日付が含まれるため **全番組が両日判定** になる不具合があった。
+   *
+   * 実際のサーバー応答では、各ブースの実際の出展日が `<span class="the_day ...">` の
+   * テキストとして次のいずれかで出力されている:
+   *   - 「2DAYS」 → 両日
+   *   - 「5/9 Sat」 → 土曜のみ
+   *   - 「5/10 Sun」 → 日曜のみ
+   * （`is-active` クラスはクライアントサイド JS で付与されるためサーバー応答には無い）
+   */
   const days: ('sat' | 'sun')[] = [];
-  if (/5月9日|5\/9|5月9日（土）|土曜/.test(bodyText)) days.push('sat');
-  if (/5月10日|5\/10|5月10日（日）|日曜/.test(bodyText)) days.push('sun');
-  if (days.length === 0 && /両日|2日間/.test(bodyText)) {
-    days.push('sat', 'sun');
+  $('.the_day').each((_, el) => {
+    const t = $(el).text().trim();
+    if (/2DAYS|両日|2日間/i.test(t)) {
+      days.push('sat', 'sun');
+    } else if (/Sat|5\/9|5月9日/.test(t)) {
+      days.push('sat');
+    } else if (/Sun|5\/10|5月10日/.test(t)) {
+      days.push('sun');
+    }
+  });
+  // 重複除去 + 並び順安定化（sat → sun）
+  const uniqueDays = Array.from(new Set(days)).sort() as ('sat' | 'sun')[];
+
+  // フォールバック: .the_day から取れなかった場合は最終手段で両日扱い + 警告
+  if (uniqueDays.length === 0) {
+    console.warn('  ⚠️ .the_day が取得できず、出展日判定不能。両日扱いにフォールバック');
+    uniqueDays.push('sat', 'sun');
   }
+
+  // 時間・エリアは body 全体テキストから（公式テンプレで共通記載されている前提）
+  const bodyText = $('body').text();
 
   const hoursMatch = bodyText.match(/(\d{1,2}:\d{2})\s*[-〜~ー]\s*(\d{1,2}:\d{2})/);
   const hours = hoursMatch !== null ? `${hoursMatch[1]} - ${hoursMatch[2]}` : '10:00 - 18:00';
@@ -232,7 +288,7 @@ function parseBoothHtml(html: string): ParsedBoothInfo {
     description,
     hosts: hosts.length > 0 ? hosts : undefined,
     merchandise: merchandise.length > 0 ? merchandise : undefined,
-    exhibition: { days, hours, area },
+    exhibition: { days: uniqueDays, hours, area },
     links,
   };
 }

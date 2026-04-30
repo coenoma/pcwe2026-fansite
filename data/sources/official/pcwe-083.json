@@ -3,13 +3,12 @@
   "name": "ハコとくら",
   "thumbnail": "/thumbnails/083.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-083/",
-  "fetchedAt": "2026-04-29T13:48:28.625Z",
+  "fetchedAt": "2026-04-30T12:36:10.529Z",
   "official": {
-    "description": "作家のとくらじゅんと漫画家のニシハラハコがゆるっと喋るラジオ。毎週ベスト3を決めていきます。入眠にぴったりの声です。眠れない夜にぜひ。\n            \n\n      PODCAST"
+    "description": "作家のとくらじゅんと漫画家のニシハラハコがゆるっと喋るラジオ。毎週ベスト3を決めていきます。入眠にぴったりの声です。眠れない夜にぜひ。"
   },
   "exhibition": {
     "days": [
-      "sat",
       "sun"
     ],
     "hours": "10:00 - 18:00",
