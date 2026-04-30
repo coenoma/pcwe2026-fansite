@@ -18,7 +18,7 @@ export function Footer() {
             <ul className="mt-2 space-y-1 text-neutral-600">
               <li>
                 <Link href="/about" className="transition-colors hover:text-primary-600">
-                  非公式スタンス・削除依頼
+                  非公式の徹底・削除依頼
                 </Link>
               </li>
               <li>

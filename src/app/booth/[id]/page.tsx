@@ -165,7 +165,7 @@ export default async function BoothPage({ params }: Props) {
             <div className="mt-6">
               <h3 className="text-sm font-bold text-neutral-500">出展日 / エリア</h3>
               <p className="mt-1 text-base text-neutral-800">
-                {dayLabel(program.exhibition.days)} {program.exhibition.hours} ／ {program.exhibition.area === 'free' ? '無料エリア' : '有料エリア'} ／ ブース {program.exhibition.boothNumber}
+                {dayLabel(program.exhibition.days)} {program.exhibition.hours} ／ {program.exhibition.area === 'free' ? '無料エリア' : '有料エリア'}
               </p>
             </div>
 

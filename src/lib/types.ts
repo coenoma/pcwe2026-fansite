@@ -186,6 +186,8 @@ export const CurationSchema = z.object({
   id: z.string().min(1),
   title: z.string().min(1),
   subtitle: z.string().min(1),
+  /** タブのアイコン絵文字（例: 🌙）*/
+  emoji: z.string().min(1).optional(),
   themeColor: z.string().regex(/^#[0-9a-fA-F]{6}$/),
   programIds: z.array(z.string().regex(/^pcwe-\d{3}$/)).min(2),
 });

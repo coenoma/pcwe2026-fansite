@@ -4,7 +4,7 @@ import { CREATOR, EVENT, FORM_FIX_URL, FORM_TAKEDOWN_URL, SITE } from '@/lib/con
 
 export const metadata: Metadata = {
   title: 'このサイトについて',
-  description: '非公式スタンス、削除依頼方法、情報修正依頼の受付。',
+  description: '非公式の徹底、削除依頼方法、情報修正依頼の受付。',
   alternates: { canonical: '/about' },
 };
 

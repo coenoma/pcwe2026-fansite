@@ -5,6 +5,7 @@ import { RandomGachaButton } from './_components/RandomGachaButton';
 import { QuizCta } from './_components/QuizCta';
 import { CurationLanes } from './_components/CurationLanes';
 import { MoodLanes } from './_components/MoodLanes';
+import { RecommendFromProgram } from './_components/RecommendFromProgram';
 import { safeJsonLd } from '@/lib/safe-json-ld';
 import { EVENT, SITE } from '@/lib/constants';
 import { CalendarDays, MapPin } from 'lucide-react';
@@ -172,21 +173,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ぼくのキュレーション 3 セクション */}
+      {/* ぼくのキュレーション 4 タブ セクション */}
       <section className="border-t border-neutral-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="mb-8 sm:mb-10">
+          <div className="mb-6 sm:mb-8">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
               CURATION
             </p>
             <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
-              ぼくが、あえて選ぶならこの 3 本。
+              ぼくが、4 つの切り口で選ぶならこれ。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-              テーマごとの、ぼくのキュレーションです。
+              気分や時間帯、興味の深さ。タブを切り替えて、自分に合う 5 本に出会ってください。
             </p>
           </div>
           <CurationLanes lanes={curations} />
+        </div>
+      </section>
+
+      {/* 番組ベースレコメンド（v1.7 新機能）*/}
+      <section className="border-t border-neutral-200 bg-gradient-to-b from-white via-purple-50/30 to-white">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <div className="mb-6 sm:mb-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
+              FROM A PROGRAM
+            </p>
+            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+              好きを起点に、波紋を広げる。
+            </h2>
+            <p className="mt-2 text-sm text-neutral-600 sm:text-base">
+              あの番組が好きなら、これも刺さるかも。
+              <span className="hidden sm:inline">「ど真ん中で似てる」「ジャンル広げるなら」「意外な共通点」の </span>
+              3 軸でレコメンドします。
+            </p>
+          </div>
+          <RecommendFromProgram programs={programs} />
         </div>
       </section>
 

@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
@@ -10,90 +13,111 @@ interface Props {
 }
 
 /**
- * 手動キュレーション 3 セクション
+ * 手動キュレーション タブ UI（v1.7 改修）
  *
- * - サーバーコンポーネント（静的、お気に入りなど Client 機能は使わない）
- * - 横スクロール（snap-x）で番組カードを並べる
- * - 1 レーン = 「ぼくのコメント」 + 番組カード列
+ * - 4 切り口をタブで切替
+ * - 選択中タブのみ番組カードを描画（縦に伸びすぎない）
+ * - SP: 2 列グリッド / PC: 5 列（タブごとに 5 本想定）
+ * - タブのアクティブ色は curation.themeColor を反映
  */
 export function CurationLanes({ lanes }: Props) {
+  const [activeId, setActiveId] = useState<string>(lanes[0]?.curation.id ?? '');
   if (lanes.length === 0) return null;
 
-  return (
-    <div className="space-y-10 sm:space-y-14">
-      {lanes.map(({ curation, programs }) => (
-        <Lane key={curation.id} curation={curation} programs={programs} />
-      ))}
-    </div>
-  );
-}
+  const active = lanes.find((l) => l.curation.id === activeId) ?? lanes[0];
 
-function Lane({ curation, programs }: { curation: Curation; programs: Program[] }) {
-  const accentBar = `${curation.themeColor}33`;
+  // WAI-ARIA Tabs Pattern: タブとパネルを id で結びつけて読み上げ可能にする
+  const tabId = (curationId: string) => `curation-tab-${curationId}`;
+  const panelId = (curationId: string) => `curation-panel-${curationId}`;
 
   return (
-    <section aria-labelledby={`curation-${curation.id}`}>
-      <header className="mb-4 flex items-end justify-between gap-3 sm:mb-5">
-        <div className="flex-1">
-          <div className="mb-2 flex items-center gap-2">
-            <span
-              aria-hidden="true"
-              className="inline-block h-1.5 w-8 rounded-full"
-              style={{ backgroundColor: curation.themeColor }}
-            />
-            <p
-              className="text-[11px] font-bold uppercase tracking-[0.18em]"
-              style={{ color: curation.themeColor }}
+    <div>
+      {/*
+        タブバー
+        - SP: 2x2 grid（4 タブを 2 列 × 2 段で表示、矩形ボックス + border でアクティブ表現）
+        - PC (sm 以上): 横並び flex + 下線でアクティブ表現
+      */}
+      <div
+        role="tablist"
+        aria-label="キュレーションタブ"
+        className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3 sm:border-b sm:border-neutral-200"
+      >
+        {lanes.map(({ curation }) => {
+          const isActive = curation.id === active.curation.id;
+          return (
+            <button
+              key={curation.id}
+              type="button"
+              role="tab"
+              id={tabId(curation.id)}
+              aria-selected={isActive}
+              aria-controls={panelId(curation.id)}
+              tabIndex={isActive ? 0 : -1}
+              onClick={() => setActiveId(curation.id)}
+              className={
+                // SP は矩形ボックス、PC は下線スタイル
+                isActive
+                  ? 'flex items-center justify-center gap-1.5 rounded-xl border-2 px-3 py-2.5 text-sm font-extrabold transition-colors sm:-mb-px sm:justify-start sm:rounded-none sm:border-0 sm:border-b-2 sm:px-3 sm:pb-3 sm:pt-2 sm:text-base'
+                  : 'flex items-center justify-center gap-1.5 rounded-xl border-2 border-neutral-200 px-3 py-2.5 text-sm font-bold text-neutral-500 transition-colors hover:border-primary-300 hover:text-neutral-900 sm:-mb-px sm:justify-start sm:rounded-none sm:border-0 sm:border-b-2 sm:border-transparent sm:px-3 sm:pb-3 sm:pt-2 sm:text-base'
+              }
+              style={
+                isActive
+                  ? { borderColor: curation.themeColor, color: curation.themeColor }
+                  : undefined
+              }
             >
-              CURATION
-            </p>
-          </div>
-          <h3
-            id={`curation-${curation.id}`}
-            className="text-xl font-extrabold leading-snug text-neutral-900 sm:text-2xl"
-          >
-            {curation.title}
-          </h3>
-          <p className="mt-1 text-sm text-neutral-600 sm:text-base">
-            {curation.subtitle}
-          </p>
-        </div>
-      </header>
+              {curation.emoji !== undefined && (
+                <span aria-hidden="true" className="text-base sm:text-lg">
+                  {curation.emoji}
+                </span>
+              )}
+              <span className="truncate">{curation.title}</span>
+            </button>
+          );
+        })}
+      </div>
 
-      {/* 番組カード（横スクロール）*/}
-      <div className="-mx-4 overflow-x-auto px-4 sm:-mx-6 sm:px-6">
-        <ul
-          className="flex snap-x snap-mandatory gap-4 pb-2 sm:gap-5"
-          style={{ scrollPaddingLeft: '1rem' }}
-        >
-          {programs.map((program) => (
-            <li
-              key={program.id}
-              className="w-[72%] shrink-0 snap-start sm:w-[260px]"
-            >
-              <CurationCard program={program} accentBar={accentBar} />
+      {/* アクティブタブのパネル（WAI-ARIA tabpanel）*/}
+      <div
+        role="tabpanel"
+        id={panelId(active.curation.id)}
+        aria-labelledby={tabId(active.curation.id)}
+        // タブ切替時のチラつき防止のため key で再マウント
+        key={active.curation.id}
+      >
+        {/* アクティブタブの説明 */}
+        <p className="mt-4 text-sm text-neutral-600 sm:mt-5 sm:text-base">
+          {active.curation.subtitle}
+        </p>
+
+        {/* 番組カード（SP: 2 列 / PC: 最大 5 列）*/}
+        <ul className="mt-5 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
+          {active.programs.map((program) => (
+            <li key={program.id}>
+              <CurationCard program={program} accentColor={active.curation.themeColor} />
             </li>
           ))}
         </ul>
       </div>
-    </section>
+    </div>
   );
 }
 
 function CurationCard({
   program,
-  accentBar,
+  accentColor,
 }: {
   program: Program;
-  accentBar: string;
+  accentColor: string;
 }) {
   const vibe = vibeStyle(program.fanGuide.vibe);
   const themeColor = program.fanGuide.themeColor ?? vibe.defaultThemeColor;
+  const accentBar = `${accentColor}40`;
 
   return (
     <Link
       href={`/booth/${program.id}`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl active:scale-[0.99]"
+      className="group flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl active:scale-[0.99]"
     >
       <span
         aria-hidden="true"
@@ -105,7 +129,7 @@ function CurationCard({
           src={program.thumbnail}
           alt={`${program.name} のロゴ画像`}
           fill
-          sizes="(max-width: 640px) 72vw, 260px"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div
@@ -114,27 +138,27 @@ function CurationCard({
           style={{ backgroundColor: themeColor }}
         />
       </div>
-      <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
-        <div className="flex flex-wrap gap-1.5 text-[10px]">
+      <div className="flex flex-1 flex-col gap-1.5 p-2.5 sm:p-3">
+        <div className="flex flex-wrap gap-1 text-[10px]">
           <span
-            className="rounded-full px-2 py-0.5 font-bold"
+            className="rounded-full px-1.5 py-0.5 font-bold"
             style={{ backgroundColor: `${themeColor}1a`, color: themeColor }}
           >
             {program.fanGuide.genre}
           </span>
-          <span className="rounded-full bg-neutral-100 px-2 py-0.5 font-bold text-neutral-600">
+          <span className="rounded-full bg-neutral-100 px-1.5 py-0.5 font-bold text-neutral-600">
             {dayLabel(program.exhibition.days)}
           </span>
         </div>
-        <h4 className="line-clamp-2 text-sm font-extrabold leading-snug text-neutral-900 group-hover:text-primary-700">
+        <h4 className="line-clamp-2 text-xs font-extrabold leading-snug text-neutral-900 group-hover:text-primary-700 sm:text-sm">
           {program.shortName ?? program.name}
         </h4>
-        <p className="line-clamp-3 text-xs leading-relaxed text-neutral-700">
+        <p className="line-clamp-3 text-[11px] leading-relaxed text-neutral-700 sm:text-xs">
           {program.fanGuide.catchphrase}
         </p>
-        <p className="mt-auto inline-flex items-center gap-1 text-xs font-bold text-primary-700 opacity-0 transition-opacity group-hover:opacity-100">
+        <p className="mt-auto inline-flex items-center gap-0.5 text-[10px] font-bold text-primary-700 opacity-0 transition-opacity group-hover:opacity-100">
           詳しく見る
-          <ArrowRight size={12} aria-hidden="true" />
+          <ArrowRight size={10} aria-hidden="true" />
         </p>
       </div>
     </Link>

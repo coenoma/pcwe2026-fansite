@@ -2,24 +2,59 @@
   "curations": [
     {
       "id": "for-first-timers",
-      "title": "ポッドキャスト初心者に、まずこの 3 本",
-      "subtitle": "1 本聴くと、世界が広がる入口",
+      "title": "沼の入口",
+      "subtitle": "ポッドキャスト初心者でも、笑いと共感でスッと入れる 5 本",
+      "emoji": "🚪",
       "themeColor": "#DC725A",
-      "programIds": ["pcwe-072", "pcwe-013", "pcwe-006"]
+      "programIds": [
+        "pcwe-072",
+        "pcwe-100",
+        "pcwe-050",
+        "pcwe-013",
+        "pcwe-014"
+      ]
     },
     {
       "id": "late-night",
-      "title": "夜ふかしに沈む、深い 3 本",
-      "subtitle": "考えごとと一緒に、ゆっくり聴ける夜",
+      "title": "夜ふかしに沈む",
+      "subtitle": "考えごとと一緒に、ゆっくり聴ける夜のための 5 本",
+      "emoji": "🌙",
       "themeColor": "#7C9070",
-      "programIds": ["pcwe-006", "pcwe-040", "pcwe-072"]
+      "programIds": [
+        "pcwe-006",
+        "pcwe-127",
+        "pcwe-022",
+        "pcwe-027",
+        "pcwe-005"
+      ]
     },
     {
-      "id": "morning-commute",
-      "title": "朝の通勤に効く、頭が冴える 3 本",
-      "subtitle": "知性とテンポで、一日のスイッチが入る",
+      "id": "morning-tempo",
+      "title": "朝のテンポ作り",
+      "subtitle": "通勤・支度の隣で、知性と軽快さが効く 5 本",
+      "emoji": "🌅",
       "themeColor": "#3B82F6",
-      "programIds": ["pcwe-118", "pcwe-013", "pcwe-072"]
+      "programIds": [
+        "pcwe-118",
+        "pcwe-097",
+        "pcwe-091",
+        "pcwe-104",
+        "pcwe-052"
+      ]
+    },
+    {
+      "id": "niche-deep-dive",
+      "title": "偏愛のニッチ",
+      "subtitle": "誰かが本気で偏愛しているテーマに、深く沈む 5 本",
+      "emoji": "🔍",
+      "themeColor": "#8B5CF6",
+      "programIds": [
+        "pcwe-040",
+        "pcwe-119",
+        "pcwe-019",
+        "pcwe-110",
+        "pcwe-115"
+      ]
     }
   ]
 }

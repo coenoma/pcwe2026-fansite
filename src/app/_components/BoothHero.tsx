@@ -80,12 +80,11 @@ export function BoothHero({ program }: Props) {
               >
                 {dayLabel(program.exhibition.days)}
               </span>
-              <span
-                className="rounded-full border bg-white/80 px-3 py-1 font-bold text-neutral-700 backdrop-blur"
-                style={{ borderColor: border }}
-              >
-                ブース {program.exhibition.boothNumber}
-              </span>
+              {/*
+                ブース番号は公式 URL の連番であり、当日の物理的なブース番号とは
+                一致しないため、画面表示からは外す（データは内部保持）。
+                公式が当日マップを公開した時点で、別フィールドとして再導入予定。
+              */}
               <span className="ml-auto">
                 <FavoriteButton programId={program.id} size="md" />
               </span>
