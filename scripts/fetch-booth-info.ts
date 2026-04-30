@@ -137,30 +137,35 @@ function parseBoothHtml(html: string): ParsedBoothInfo {
   /**
    * cheerio 要素から description を抽出する。
    * - SNS リスト（ul.sns-area / ul）を除外
-   * - <br> を改行文字 \n に変換（公式の意図した改行を保持）
-   * - <p> ブロック間にも改行を入れる
+   * - <br> と <p> の末尾だけを改行として扱う（公式の意図した改行を保持）
+   * - HTML ソース上のインデント由来の物理改行・タブ・連続空白はすべて半角空白 1 つに正規化
+   *   （これをやらないと「br じゃない単なるソース改行」も保存されてしまい、
+   *    whitespace-pre-line 表示で文章が異常な行間で表示される不具合になる）
    */
+  const NEWLINE_MARKER = '';
   const extractDescriptionWithBreaks = (selector: string): string => {
     const $el = $(selector).first();
     if ($el.length === 0) return '';
     const $clone = $el.clone();
     // SNS リンクのリストを除外（番組固有の本文ではないため）
     $clone.find('ul.sns-area, ul').remove();
-    // <br> を改行に置換
+    // <br> をマーカー（U+0001）に置換
     $clone.find('br').each((_, br) => {
-      $(br).replaceWith('\n');
+      $(br).replaceWith(NEWLINE_MARKER);
     });
-    // <p> 末尾に改行を追加（複数段落の境界を保持）
+    // <p> 末尾にもマーカーを追加（複数段落の境界を保持）
     $clone.find('p').each((_, p) => {
-      $(p).append('\n');
+      $(p).append(NEWLINE_MARKER);
     });
     return $clone
       .text()
-      // 連続する空白行は 1 つに圧縮、行頭末尾の空白は除去
-      .split('\n')
-      .map((line) => line.trim())
-      .filter((line, idx, arr) => line !== '' || (idx > 0 && arr[idx - 1] !== ''))
-      .join('\n')
+      // すべての whitespace（\n / \t / 半角・全角空白）を半角空白 1 つに正規化
+      // （HTML ソース上のインデント由来の改行を「文章の改行」として誤認させない）
+      .replace(/\s+/g, ' ')
+      // マーカー前後の余分なスペースを巻き込んで実改行に変換
+      .replace(/ ?+ ?/g, '\n')
+      // 連続改行を 1 つに圧縮（段落間の余分な空行は不要）
+      .replace(/\n+/g, '\n')
       .trim();
   };
 
