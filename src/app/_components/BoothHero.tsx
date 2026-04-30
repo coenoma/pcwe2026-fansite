@@ -100,23 +100,26 @@ export function BoothHero({ program }: Props) {
 
             {/*
               キャッチコピー（themeColor 蛍光下線）
-              - catchphraseLines（任意）が指定されていれば、その配列を意味の切れ目で改行
-              - 各行を block span で出すことで、行ごとに蛍光下線が独立して引かれる
-              - 未指定なら catchphrase 1 行を従来どおり表示（box-decoration-clone で複数行
-                自動折り返しにも対応）
+              - catchphraseLines（任意）が指定されていれば、行ごとに改行
+              - **下線はテキストの実幅にだけ引く** ため、block で改行を作り、内側の
+                inline span に linear-gradient 背景を適用する 2 段ラップ構造
+                （block span を直接装飾するとコンテナ幅まで下線が伸びる不具合になる）
+              - 未指定なら catchphrase 1 行（自動折り返しありうる）に box-decoration-clone
+                で各行ぶん下線
             */}
             <p className="mt-6 text-lg font-bold leading-relaxed text-neutral-800 sm:text-xl md:text-2xl">
               {program.fanGuide.catchphraseLines !== undefined ? (
                 program.fanGuide.catchphraseLines.map((line, i) => (
-                  <span
-                    key={i}
-                    className="block box-decoration-clone"
-                    style={{
-                      backgroundImage: `linear-gradient(180deg, transparent 78%, ${highlightUnderline} 78%, ${highlightUnderline} 94%, transparent 94%)`,
-                      paddingInline: '0.1em',
-                    }}
-                  >
-                    {line}
+                  <span key={i} className="block">
+                    <span
+                      className="box-decoration-clone"
+                      style={{
+                        backgroundImage: `linear-gradient(180deg, transparent 78%, ${highlightUnderline} 78%, ${highlightUnderline} 94%, transparent 94%)`,
+                        paddingInline: '0.1em',
+                      }}
+                    >
+                      {line}
+                    </span>
                   </span>
                 ))
               ) : (
