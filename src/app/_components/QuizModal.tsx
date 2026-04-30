@@ -9,6 +9,7 @@ import {
   QUIZ_QUESTIONS,
   pickTopMatches,
   type QuizAnswer,
+  type ScoredProgram,
 } from '@/lib/program-quiz';
 import { dayLabel } from '@/lib/format';
 import { vibeStyle } from '@/lib/vibe-style';
@@ -37,7 +38,7 @@ export function QuizModal({ programs, isOpen, onClose }: Props) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswer[]>([]);
   const [isThinking, setIsThinking] = useState(false);
-  const [results, setResults] = useState<Program[] | null>(null);
+  const [results, setResults] = useState<ScoredProgram[] | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   // open / close と showModal / close を同期
@@ -363,25 +364,42 @@ function ThinkingView({ programs }: { programs: Program[] }) {
   );
 }
 
-function ResultView({ results }: { results: Program[] }) {
+function ResultView({ results }: { results: ScoredProgram[] }) {
   return (
     <div>
       <p className="text-sm text-neutral-700 sm:text-base">
-        ✨ いまの気分にハマりそうな、3 番組です。
+        ✨ あなたの 5 つの選択から、いま刺さりそうな 3 番組を選びました。
       </p>
       <p className="mt-1 text-xs text-neutral-500">
-        ※ AI の独断と偏見です。当たらなくても、笑って許してください。
+        ※ AI の独断と偏見です。各カードに「なぜこれが選ばれたか」も載せています。
       </p>
       <ul className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
-        {results.map((program, index) => (
-          <ResultCard key={program.id} program={program} delay={index * 200} />
+        {results.map((scored, index) => (
+          <ResultCard
+            key={scored.program.id}
+            scored={scored}
+            delay={index * 200}
+          />
         ))}
       </ul>
     </div>
   );
 }
 
-function ResultCard({ program, delay }: { program: Program; delay: number }) {
+/**
+ * 結果カード（マッチ率 + マッチ理由可視化版）
+ * - マッチ率を上端に大きく表示（ドラマチックさ）
+ * - 番組サムネ・catchphrase の下に「あなたの好みとここが一致」セクション
+ * - 軸ごとに色分けバッジ（vibe=primary / genre=blue / tag=neutral / host/density=purple）
+ */
+function ResultCard({
+  scored,
+  delay,
+}: {
+  scored: ScoredProgram;
+  delay: number;
+}) {
+  const program = scored.program;
   const vibe = vibeStyle(program.fanGuide.vibe);
   const themeColor = program.fanGuide.themeColor ?? vibe.defaultThemeColor;
 
@@ -408,6 +426,13 @@ function ResultCard({ program, delay }: { program: Program; delay: number }) {
             className="pointer-events-none absolute inset-0 opacity-15 mix-blend-multiply"
             style={{ backgroundColor: themeColor }}
           />
+          {/* マッチ率バッジ（右上）*/}
+          <span
+            className="absolute right-2 top-2 z-10 inline-flex items-center gap-0.5 rounded-full bg-white/95 px-2 py-1 text-[11px] font-extrabold shadow-md backdrop-blur"
+            style={{ color: themeColor }}
+          >
+            🎯 {scored.matchPercent}%
+          </span>
         </div>
         <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
           <div className="flex flex-wrap gap-1.5 text-[10px]">
@@ -427,8 +452,69 @@ function ResultCard({ program, delay }: { program: Program; delay: number }) {
           <p className="text-xs leading-relaxed text-neutral-700">
             {program.fanGuide.catchphrase}
           </p>
+
+          {/* マッチ理由：あなたの好みとここが一致 */}
+          {scored.reasons.length > 0 && (
+            <div className="mt-auto border-t border-neutral-100 pt-2">
+              <p className="text-[10px] font-bold text-neutral-500">
+                あなたの好みとここが一致:
+              </p>
+              <ul className="mt-1 flex flex-wrap gap-1">
+                {scored.reasons.map((reason, i) => (
+                  <li
+                    key={i}
+                    className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-bold"
+                    style={{
+                      backgroundColor: reasonBgColor(reason.axis, themeColor),
+                      color: reasonTextColor(reason.axis, themeColor),
+                    }}
+                  >
+                    ✓ {reason.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </Link>
     </li>
   );
+}
+
+/** 軸別の背景色（軽い色）*/
+function reasonBgColor(
+  axis: ScoredProgram['reasons'][number]['axis'],
+  themeColor: string,
+): string {
+  switch (axis) {
+    case 'vibe':
+      return `${themeColor}1a`; // テーマ色 10%
+    case 'genre':
+      return 'rgb(219 234 254)'; // blue-100
+    case 'tag':
+      return 'rgb(245 245 245)'; // neutral-100
+    case 'host':
+      return 'rgb(237 233 254)'; // violet-100
+    case 'density':
+      return 'rgb(254 240 138)'; // yellow-200
+  }
+}
+
+/** 軸別の文字色 */
+function reasonTextColor(
+  axis: ScoredProgram['reasons'][number]['axis'],
+  themeColor: string,
+): string {
+  switch (axis) {
+    case 'vibe':
+      return themeColor;
+    case 'genre':
+      return 'rgb(30 64 175)'; // blue-800
+    case 'tag':
+      return 'rgb(64 64 64)'; // neutral-700
+    case 'host':
+      return 'rgb(91 33 182)'; // violet-800
+    case 'density':
+      return 'rgb(133 77 14)'; // yellow-800
+  }
 }

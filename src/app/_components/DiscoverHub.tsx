@@ -51,7 +51,7 @@ export function DiscoverHub({ programs }: Props) {
             icon={<Sparkles size={28} aria-hidden="true" />}
             badge="✨ QUIZ"
             title="30 秒で、AI の番組診断"
-            description="3 問だけ。AI の独断と偏見で、いまのあなたに刺さる 3 本を選びます。"
+            description="5 問の選択肢から、あなたに刺さる 3 本をマッチ率と理由つきで AI が提案。"
             cta="診断する"
             accent="#3B82F6"
             onClick={() => setQuizOpen(true)}

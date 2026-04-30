@@ -35,7 +35,7 @@ export function QuizCta({ programs }: Props) {
           30 秒で、AI の番組診断
         </button>
         <p className="text-xs text-neutral-500">
-          3 問だけ。AI の独断と偏見で、あなたに刺さる 3 本を選びます
+          5 問でわかる、あなたに刺さる 3 本。マッチ率と理由つきで提案します
         </p>
       </div>
 
