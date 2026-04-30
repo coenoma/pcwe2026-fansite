@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getMoods, getMoodBySlug, getProgramsByMood } from '@/lib/data';
-import { ProgramCard } from '@/app/_components/ProgramCard';
+import { getAllPrograms, getMoods, getMoodBySlug, getProgramsByMood } from '@/lib/data';
+import { ProgramListClient } from '@/app/_components/ProgramListClient';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -32,7 +32,11 @@ export default async function MoodPage({ params }: Props) {
   const mood = getMoodBySlug(slug);
   if (mood === undefined) notFound();
 
-  const programs = getProgramsByMood(mood);
+  // mood 配下では「全番組から mood の matchTags をプリセット選択した状態」で
+  // 始めてもらう。ProgramListClient の検索・フィルタ・ソート機能を使い、
+  // ユーザーがその場でさらに絞り込み・並び替えできる体験にする。
+  const allPrograms = getAllPrograms();
+  const matchedCount = getProgramsByMood(mood).length;
 
   return (
     <>
@@ -43,7 +47,7 @@ export default async function MoodPage({ params }: Props) {
           background: `linear-gradient(180deg, ${mood.themeColor}1a 0%, #ffffff 100%)`,
         }}
       >
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
           <Link
             href="/"
             className="text-sm font-bold text-neutral-600 transition-colors hover:text-primary-600"
@@ -51,32 +55,35 @@ export default async function MoodPage({ params }: Props) {
             ← トップへ戻る
           </Link>
 
-          <div className="mt-6 flex flex-col items-start gap-4">
+          <div className="mt-5 flex flex-col items-start gap-3">
             <span
               aria-hidden="true"
-              className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-3xl shadow-sm sm:h-16 sm:w-16 sm:text-4xl"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-3xl shadow-sm sm:h-14 sm:w-14 sm:text-4xl"
               style={{ backgroundColor: `${mood.themeColor}26` }}
             >
               {mood.emoji}
             </span>
-            <h1 className="text-3xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-4xl">
+            <h1 className="text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
               {mood.label}
             </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-neutral-700 sm:text-lg">
+            <p className="max-w-2xl text-sm leading-relaxed text-neutral-700 sm:text-base">
               {mood.description}
             </p>
-            <p className="text-sm text-neutral-600">
-              <span className="font-bold text-neutral-900">{programs.length}</span>{' '}
-              番組が、いまの気分にハマるかも。
+            <p className="text-xs text-neutral-600 sm:text-sm">
+              <span className="font-bold text-neutral-900">{matchedCount}</span> 番組が
+              この気分にハマる候補。
+              <span className="ml-1 text-neutral-500">
+                さらに検索・タグ・出展日で絞り込めます。
+              </span>
             </p>
           </div>
         </div>
       </section>
 
-      {/* 番組一覧 */}
+      {/* 番組一覧（mood の matchTags を初期選択 + ProgramListClient で絞り込み）*/}
       <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-          {programs.length === 0 ? (
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
+          {matchedCount === 0 ? (
             <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-12 text-center">
               <p className="text-base font-bold text-neutral-700">
                 この気分にハマる番組は、まだ準備中です。
@@ -86,11 +93,14 @@ export default async function MoodPage({ params }: Props) {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {programs.map((p) => (
-                <ProgramCard key={p.id} program={p} />
-              ))}
-            </div>
+            <ProgramListClient
+              programs={allPrograms}
+              initialTags={mood.matchTags}
+              resultLabel={{
+                withFilter: 'がこの気分にハマる候補',
+                withoutFilter: 'がこの気分にハマる候補',
+              }}
+            />
           )}
         </div>
       </section>

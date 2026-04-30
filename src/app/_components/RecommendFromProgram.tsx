@@ -205,7 +205,7 @@ export function RecommendFromProgram({ programs }: Props) {
 
       {/* 起点番組が選ばれたら、起点カード + 波紋ロード or 結果バケットを表示 */}
       {origin !== null && (
-        <div ref={resultRef} className="mt-10 scroll-mt-20">
+        <div ref={resultRef} className="mt-10 scroll-mt-4">
           <OriginShowcase origin={origin} loading={isLoading} />
 
           {isLoading ? (

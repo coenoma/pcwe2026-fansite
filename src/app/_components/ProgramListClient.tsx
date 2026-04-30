@@ -9,6 +9,14 @@ import { ProgramCard } from './ProgramCard';
 
 interface Props {
   programs: Program[];
+  /**
+   * 初期選択タグ（MOOD ページなど、特定の入口から来た時に
+   * デフォルトでフィルタを当てておく用途）。指定された場合、タグパネルが
+   * 自動で展開され、選択中タグとして表示される。
+   */
+  initialTags?: string[];
+  /** 結果見出しのカスタマイズ（MOOD ページの「気分にハマる X 番組」等）*/
+  resultLabel?: { withFilter: string; withoutFilter: string };
 }
 
 /**
@@ -23,14 +31,17 @@ interface Props {
  * - useDeferredValue で検索体感速度向上
  * - スティッキー検索バー（スクロール中も使える）
  */
-export function ProgramListClient({ programs }: Props) {
+export function ProgramListClient({ programs, initialTags, resultLabel }: Props) {
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
 
   const [genre, setGenre] = useState<Genre | ''>('');
   const [day, setDay] = useState<Day | ''>('');
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [showTagPanel, setShowTagPanel] = useState(false);
+  const [selectedTags, setSelectedTags] = useState<string[]>(initialTags ?? []);
+  // initialTags がある時のみタグパネルをデフォルト展開
+  const [showTagPanel, setShowTagPanel] = useState(
+    initialTags !== undefined && initialTags.length > 0,
+  );
 
   const allTags = useMemo(() => extractAllTags(programs), [programs]);
 
@@ -92,7 +103,7 @@ export function ProgramListClient({ programs }: Props) {
   return (
     <div>
       {/* スティッキー検索 + フィルタ（コンパクト 1 段構成）*/}
-      <div className="sticky top-[64px] z-30 -mx-4 mb-6 bg-white/95 px-4 pb-3 pt-3 backdrop-blur sm:-mx-6 sm:px-6">
+      <div className="sticky top-0 z-30 -mx-4 mb-6 bg-white/95 px-4 pb-3 pt-3 backdrop-blur sm:-mx-6 sm:px-6">
         {/* 検索バー + 絞り込みボタン: モバイル 2 段、PC 1 段 */}
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
           <div className="relative flex-1">
@@ -218,7 +229,10 @@ export function ProgramListClient({ programs }: Props) {
         >
           {visiblePrograms.length}
         </span>{' '}
-        番組{hasFilter ? '、ピックアップ中' : 'を、AI のセンスで並べてます'}
+        番組
+        {hasFilter
+          ? (resultLabel?.withFilter ?? '、ピックアップ中')
+          : (resultLabel?.withoutFilter ?? 'を、AI のセンスで並べてます')}
       </p>
 
       {/* 結果カード */}

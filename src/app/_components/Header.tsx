@@ -12,7 +12,7 @@ import { FavoriteCountBadge } from './FavoriteCountBadge';
  */
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/95 backdrop-blur">
+    <header className="border-b border-neutral-200 bg-white">
       {/* 上端の装飾グラデライン */}
       <div
         aria-hidden="true"
