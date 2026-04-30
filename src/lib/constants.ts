@@ -50,6 +50,20 @@ export const FORM_TAKEDOWN_URL = process.env.NEXT_PUBLIC_FORM_TAKEDOWN_URL ?? ''
 export const FORM_FIX_URL = process.env.NEXT_PUBLIC_FORM_FIX_URL ?? '';
 
 // ====================
+// アクセス解析
+// ====================
+
+/**
+ * Google Analytics 4 の Measurement ID
+ * 例: G-XXXXXXXXXX
+ *
+ * - 未設定（空文字）なら GA タグは一切出力されない
+ * - 本番環境（NODE_ENV === 'production'）でのみ動作
+ * - Vercel Production 環境変数に設定する想定
+ */
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? '';
+
+// ====================
 // 制作者情報
 // ====================
 
