@@ -218,7 +218,7 @@ export function ProgramListClient({ programs }: Props) {
         >
           {visiblePrograms.length}
         </span>{' '}
-        番組{hasFilter ? '、ピックアップ中' : 'を、ぼくのセンスで並べてます'}
+        番組{hasFilter ? '、ピックアップ中' : 'を、AI のセンスで並べてます'}
       </p>
 
       {/* 結果カード */}

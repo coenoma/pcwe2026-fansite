@@ -111,7 +111,7 @@ export default async function BoothPage({ params }: Props) {
               📊 こんな人に、刺さるかも？
             </h2>
             <p className="mt-1 text-xs text-neutral-500">
-              ぼくの独断と偏見で「想定リスナー」を書いてみました！
+              AI の独断と偏見で「想定リスナー」を書いてみました！
             </p>
             <p className="mt-4 text-base leading-relaxed text-neutral-800 sm:text-lg">
               {program.fanGuide.targetListener}
@@ -139,7 +139,11 @@ export default async function BoothPage({ params }: Props) {
             <h2 className="text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
               📝 公式情報
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-neutral-700">
+            {/*
+              公式説明文。description には公式テンプレの <br> 由来の改行（\n）が
+              保持されているため、whitespace-pre-line で意図した改行を反映する
+            */}
+            <p className="mt-4 whitespace-pre-line text-base leading-relaxed text-neutral-700">
               {program.official.description}
             </p>
 

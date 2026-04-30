@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Dices, X } from 'lucide-react';
@@ -15,11 +15,20 @@ interface Props {
   onClose: () => void;
 }
 
+/** 抽選演出の長さ（ms）— サイコロを揺らす時間 */
+const SHUFFLE_MS = 850;
+
 /**
- * ガチャ結果モーダル
+ * ガチャ結果モーダル（v1.7 演出強化）
  *
- * - ぼくのおすすめ 3 番組を、ふわんふわんと表示
- * - 「もう一度引く」で何度でも引き直せる（直前の 3 件は除外）
+ * 演出フロー:
+ *   1. モーダルを開く / 引き直す → 「カラカラ…」抽選中ステート（850ms）
+ *      - サイコロアイコンが回転＆スケール（dice-shake）
+ *      - 「いま、運命の 3 番組をシャッフル中…」テキスト
+ *      - サムネ予定地に番組サムネが thinking-bob でフワフワ
+ *   2. 抽選完了 → 結果カードが pop-in でドラマチック登場（stagger）
+ *   3. 「もう一度引く」で同じ演出を再生
+ *
  * - <dialog> 要素 + showModal() で Escape / フォーカストラップに対応
  * - レスポンシブ:
  *   - SP: 全幅・1 カラム
@@ -27,20 +36,39 @@ interface Props {
  */
 export function GachaModal({ programs, isOpen, onClose }: Props) {
   const [picks, setPicks] = useState<Program[]>([]);
+  const [isShuffling, setIsShuffling] = useState(false);
   const [rerollKey, setRerollKey] = useState(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
+
+  // 抽選を実行（pick → 演出 → setPicks）
+  // useCallback で参照を安定させ、useEffect の依存配列に入れて exhaustive-deps を満たす
+  const runGacha = useCallback(
+    (excludeIds?: readonly string[]) => {
+      const next = pickDiverseRandom(programs, { count: 3, excludeIds });
+      setIsShuffling(true);
+      // 演出時間後に結果を表示。結果は事前に決めて、表示タイミングだけ遅らせる
+      const t = setTimeout(() => {
+        setPicks(next);
+        setRerollKey((k) => k + 1);
+        setIsShuffling(false);
+      }, SHUFFLE_MS);
+      return () => clearTimeout(t);
+    },
+    [programs],
+  );
 
   useEffect(() => {
     const dialog = dialogRef.current;
     if (dialog === null) return;
     if (isOpen && !dialog.open) {
       dialog.showModal();
-      setPicks(pickDiverseRandom(programs, { count: 3 }));
-      setRerollKey((k) => k + 1);
+      // 開くたびに抽選演出スタート
+      const cancel = runGacha();
+      return cancel;
     } else if (!isOpen && dialog.open) {
       dialog.close();
     }
-  }, [isOpen, programs]);
+  }, [isOpen, runGacha]);
 
   // dialog の close イベント（Escape 等で閉じた時も同期）
   useEffect(() => {
@@ -55,8 +83,7 @@ export function GachaModal({ programs, isOpen, onClose }: Props) {
 
   const handleReroll = () => {
     const excludeIds = picks.map((p) => p.id);
-    setPicks(pickDiverseRandom(programs, { count: 3, excludeIds }));
-    setRerollKey((k) => k + 1);
+    runGacha(excludeIds);
   };
 
   // 背景（dialog 自体）クリックで閉じる
@@ -79,8 +106,16 @@ export function GachaModal({ programs, isOpen, onClose }: Props) {
         {/* ヘッダー */}
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white px-4 py-3 sm:px-5">
           <p className="flex items-center gap-2 text-sm font-bold text-neutral-700">
-            <Dices size={18} className="text-primary-600" aria-hidden="true" />
-            ぼくのおすすめ 3 本
+            <Dices
+              size={18}
+              className={
+                isShuffling
+                  ? 'animate-dice-shake text-primary-600'
+                  : 'text-primary-600'
+              }
+              aria-hidden="true"
+            />
+            {isShuffling ? 'いま、引いてます…' : 'AI のおすすめ 3 本'}
           </p>
           <button
             type="button"
@@ -99,9 +134,17 @@ export function GachaModal({ programs, isOpen, onClose }: Props) {
             key={rerollKey}
             className="grid min-h-[1080px] grid-cols-1 gap-4 sm:min-h-[400px] sm:grid-cols-3 sm:gap-5"
           >
-            {picks.map((program, index) => (
-              <GachaPick key={program.id} program={program} delay={index * 180} />
-            ))}
+            {isShuffling
+              ? [0, 1, 2].map((i) => (
+                  <ShufflingPlaceholder
+                    key={`shuf-${i}`}
+                    programs={programs}
+                    delay={i * 120}
+                  />
+                ))
+              : picks.map((program, index) => (
+                  <GachaPick key={program.id} program={program} delay={index * 180} />
+                ))}
           </div>
 
           {/* CTA */}
@@ -109,13 +152,23 @@ export function GachaModal({ programs, isOpen, onClose }: Props) {
             <button
               type="button"
               onClick={handleReroll}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary-600 bg-white px-6 py-2.5 text-sm font-bold text-primary-700 transition-all active:scale-95 hover:bg-primary-50 hover:shadow-md sm:w-auto"
+              disabled={isShuffling}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary-600 bg-white px-6 py-2.5 text-sm font-bold text-primary-700 transition-all active:scale-95 hover:bg-primary-50 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-white sm:w-auto"
             >
-              <Dices size={18} aria-hidden="true" />
-              もう一度引く
+              <Dices
+                size={18}
+                className={isShuffling ? 'animate-dice-shake' : ''}
+                aria-hidden="true"
+              />
+              {isShuffling ? 'シャッフル中…' : 'もう一度引く'}
             </button>
-            <p className="text-xs text-neutral-500">
-              ぐっと刺さる番組と、ここで出会えますように
+            <p
+              aria-live="polite"
+              className="text-xs text-neutral-500"
+            >
+              {isShuffling
+                ? 'カラカラカラ…運命を、選んでます'
+                : 'ぐっと刺さる番組と、ここで出会えますように'}
             </p>
           </div>
         </div>
@@ -137,7 +190,7 @@ function GachaPick({ program, delay }: GachaPickProps) {
   return (
     <Link
       href={`/booth/${program.id}`}
-      className="animate-float-in group flex h-full min-h-[340px] flex-col overflow-hidden rounded-xl border-2 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]"
+      className="animate-pop-in group flex h-full min-h-[340px] flex-col overflow-hidden rounded-xl border-2 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]"
       style={{
         borderColor: `${themeColor}40`,
         animationDelay: `${delay}ms`,
@@ -151,7 +204,6 @@ function GachaPick({ program, delay }: GachaPickProps) {
           sizes="(max-width: 640px) 100vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        {/* themeColor の薄いオーバーレイ（番組らしさを少しだけ）*/}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-15 mix-blend-multiply"
@@ -178,5 +230,51 @@ function GachaPick({ program, delay }: GachaPickProps) {
         </p>
       </div>
     </Link>
+  );
+}
+
+/**
+ * 抽選中のプレースホルダー（ランダムなサムネがフワフワ漂う）
+ * 実際にどの番組が選ばれるかは確定しているが、視覚的にはまだ「シャッフル中」を演出
+ */
+function ShufflingPlaceholder({
+  programs,
+  delay,
+}: {
+  programs: Program[];
+  delay: number;
+}) {
+  // ランダムに 1 枚サムネを選んで揺らす（演出専用、結果には影響しない）
+  const sample =
+    programs[Math.floor(Math.random() * programs.length)] ?? programs[0];
+
+  return (
+    <div
+      aria-hidden="true"
+      className="animate-bucket flex h-full min-h-[340px] flex-col overflow-hidden rounded-xl border-2 border-dashed border-neutral-300 bg-neutral-50 shadow-sm"
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 to-amber-50">
+        {sample !== undefined && (
+          <span
+            className="animate-thinking-bob relative h-20 w-20 overflow-hidden rounded-full border-4 border-white shadow-md sm:h-24 sm:w-24"
+            style={{ animationDelay: `${delay}ms` }}
+          >
+            <Image
+              src={sample.thumbnail}
+              alt=""
+              fill
+              sizes="96px"
+              className="object-cover opacity-70"
+            />
+          </span>
+        )}
+      </div>
+      <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
+        <div className="h-3 w-2/3 animate-shimmer rounded" />
+        <div className="h-3 w-full animate-shimmer rounded" />
+        <div className="h-3 w-3/4 animate-shimmer rounded" />
+      </div>
+    </div>
   );
 }

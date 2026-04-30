@@ -154,6 +154,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 番組ベースレコメンド（v1.7 新機能、最初の能動的探索の入口）*/}
+      <section className="border-t border-neutral-200 bg-gradient-to-b from-white via-purple-50/30 to-white">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <div className="mb-6 sm:mb-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
+              FROM A PROGRAM
+            </p>
+            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+              好きを起点に、波紋を広げる。
+            </h2>
+            <p className="mt-2 text-sm text-neutral-600 sm:text-base">
+              あの番組が好きなら、これも好きかも。
+              <span className="hidden sm:inline">温度感も、ジャンルも、意外な共通点も。</span>
+              3 つの軸で「次に聴く 1 本」を提案します。
+            </p>
+          </div>
+          <RecommendFromProgram programs={programs} />
+        </div>
+      </section>
+
       {/* 気分・シーン入口 */}
       <section className="border-t border-neutral-200 bg-gradient-to-b from-white via-amber-50/20 to-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
@@ -173,7 +193,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ぼくのキュレーション 4 タブ セクション */}
+      {/* AI のキュレーション 4 タブ セクション */}
       <section className="border-t border-neutral-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           <div className="mb-6 sm:mb-8">
@@ -181,33 +201,13 @@ export default function HomePage() {
               CURATION
             </p>
             <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
-              ぼくが、4 つの切り口で選ぶならこれ。
+              AI が、4 つの切り口で選ぶならこれ。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
               気分や時間帯、興味の深さ。タブを切り替えて、自分に合う 5 本に出会ってください。
             </p>
           </div>
           <CurationLanes lanes={curations} />
-        </div>
-      </section>
-
-      {/* 番組ベースレコメンド（v1.7 新機能）*/}
-      <section className="border-t border-neutral-200 bg-gradient-to-b from-white via-purple-50/30 to-white">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="mb-6 sm:mb-8">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
-              FROM A PROGRAM
-            </p>
-            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
-              好きを起点に、波紋を広げる。
-            </h2>
-            <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-              あの番組が好きなら、これも刺さるかも。
-              <span className="hidden sm:inline">「ど真ん中で似てる」「ジャンル広げるなら」「意外な共通点」の </span>
-              3 軸でレコメンドします。
-            </p>
-          </div>
-          <RecommendFromProgram programs={programs} />
         </div>
       </section>
 

@@ -6,33 +6,45 @@
  *   - 🌐 拡張: 同 vibe + 異 genre + タグ重複（雰囲気は近いが新しいジャンル）
  *   - 💫 意外: 異 vibe + 異 genre + タグ重複（カテゴリは違うが共通点あり）
  *
- * シンプルなスコア計算でソートし、各軸の上位を返す。
+ * 各レコメンド項目には「**何が一致しているか**」（共通タグ / 同 vibe / 同 genre）を
+ * 付与して返す。UI 側で「✓ 内省的」「✓ じっくり」のように共通点を可視化することで
+ * 「なぜこれをおすすめされたか」が読み手にも伝わる。
  */
 
 import type { Program } from './types';
+
+/** 個別レコメンド（番組 + 起点との一致点）*/
+export interface RecommendItem {
+  program: Program;
+  /** 起点と共通するタグ（少ない順 → 多い順で並び順は安定）*/
+  sharedTags: string[];
+  /** 起点と vibe が同じか */
+  sameVibe: boolean;
+  /** 起点と genre が同じか */
+  sameGenre: boolean;
+}
 
 export interface RecommendBuckets {
   /** 起点番組（基準）*/
   origin: Program;
   /** 同 vibe + 同 genre で似てる */
-  sameVibeAndGenre: Program[];
+  sameVibeAndGenre: RecommendItem[];
   /** 同 vibe で異 genre — ジャンルを広げる */
-  sameVibeOtherGenre: Program[];
+  sameVibeOtherGenre: RecommendItem[];
   /** 異 vibe + 異 genre だが tag 重複あり — 意外な共通点 */
-  serendipity: Program[];
+  serendipity: RecommendItem[];
 }
 
-/** タグ重複数（順不同）*/
-function tagOverlap(a: readonly string[], b: readonly string[]): number {
+/** タグ重複（起点に対する共通タグ配列）*/
+function intersectTags(a: readonly string[], b: readonly string[]): string[] {
   const set = new Set(a);
-  let count = 0;
-  for (const t of b) if (set.has(t)) count++;
-  return count;
+  return b.filter((t) => set.has(t));
 }
 
 /** 起点番組に対する各候補のスコアと分類軸 */
 interface ScoredCandidate {
   program: Program;
+  sharedTags: string[];
   tagScore: number;
   sameVibe: boolean;
   sameGenre: boolean;
@@ -45,12 +57,25 @@ function scoreCandidates(
   const originTags = origin.fanGuide.tags;
   return pool
     .filter((p) => p.id !== origin.id)
-    .map((p) => ({
-      program: p,
-      tagScore: tagOverlap(originTags, p.fanGuide.tags),
-      sameVibe: p.fanGuide.vibe === origin.fanGuide.vibe,
-      sameGenre: p.fanGuide.genre === origin.fanGuide.genre,
-    }));
+    .map((p) => {
+      const sharedTags = intersectTags(originTags, p.fanGuide.tags);
+      return {
+        program: p,
+        sharedTags,
+        tagScore: sharedTags.length,
+        sameVibe: p.fanGuide.vibe === origin.fanGuide.vibe,
+        sameGenre: p.fanGuide.genre === origin.fanGuide.genre,
+      };
+    });
+}
+
+function toItem(c: ScoredCandidate): RecommendItem {
+  return {
+    program: c.program,
+    sharedTags: c.sharedTags,
+    sameVibe: c.sameVibe,
+    sameGenre: c.sameGenre,
+  };
 }
 
 /**
@@ -73,21 +98,21 @@ export function recommendFromProgram(
     .filter((c) => c.sameVibe && c.sameGenre)
     .sort((a, b) => b.tagScore - a.tagScore || a.program.id.localeCompare(b.program.id))
     .slice(0, perBucket)
-    .map((c) => c.program);
+    .map(toItem);
 
   // 軸 2: 同 vibe + 異 genre（タグ重複多い順）
   const sameVibeOtherGenre = candidates
     .filter((c) => c.sameVibe && !c.sameGenre)
     .sort((a, b) => b.tagScore - a.tagScore || a.program.id.localeCompare(b.program.id))
     .slice(0, perBucket)
-    .map((c) => c.program);
+    .map(toItem);
 
   // 軸 3: 異 vibe + 異 genre + tag 重複あり（≥1）
   const serendipity = candidates
     .filter((c) => !c.sameVibe && !c.sameGenre && c.tagScore >= 1)
     .sort((a, b) => b.tagScore - a.tagScore || a.program.id.localeCompare(b.program.id))
     .slice(0, perBucket)
-    .map((c) => c.program);
+    .map(toItem);
 
   return { origin, sameVibeAndGenre, sameVibeOtherGenre, serendipity };
 }

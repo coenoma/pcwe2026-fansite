@@ -32,7 +32,7 @@ export function QuizCta({ programs }: Props) {
             className="transition-transform group-hover:rotate-12"
             aria-hidden="true"
           />
-          30 秒で、ぼくの番組診断
+          30 秒で、AI の番組診断
         </button>
         <p className="text-xs text-neutral-500">
           3 問だけ。AI の独断と偏見で、あなたに刺さる 3 本を選びます

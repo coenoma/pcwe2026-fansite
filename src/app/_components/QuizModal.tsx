@@ -19,16 +19,24 @@ interface Props {
   onClose: () => void;
 }
 
+/** 結果計算の演出時間（ms）— 「考え中」感を出すため */
+const THINKING_MS = 800;
+
 /**
- * 番組診断モーダル（5 問 → 上位 3 番組）
+ * 番組診断モーダル（v1.7 演出強化）
  *
- * - <dialog> + showModal() で a11y / フォーカストラップ対応
- * - 質問は 1 問ずつ表示、進捗バー付き
- * - 結果画面でカードをふわっと表示（GachaModal と同じ animate-float-in）
+ * フロー:
+ *   1. <dialog> + showModal() で a11y / フォーカストラップ
+ *   2. 質問は 1 問ずつ表示、進捗バー連動。質問遷移時に slide-in-right で右からスッと入る
+ *   3. 最終問の選択直後 → 「✨ あなたに刺さる 3 本を選んでます…」の Thinking 演出（800ms）
+ *      - スパークルアイコンが点滅、サンプル番組サムネがフワフワ漂う
+ *   4. 結果カードが pop-in でドラマチック登場（stagger）+ ヘッダーに ✨ sparkle 装飾
+ *   5. もう一度診断 → リセットして 1. へ
  */
 export function QuizModal({ programs, isOpen, onClose }: Props) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswer[]>([]);
+  const [isThinking, setIsThinking] = useState(false);
   const [results, setResults] = useState<Program[] | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -41,6 +49,7 @@ export function QuizModal({ programs, isOpen, onClose }: Props) {
       // 開くたびにリセット
       setStep(0);
       setAnswers([]);
+      setIsThinking(false);
       setResults(null);
     } else if (!isOpen && dialog.open) {
       dialog.close();
@@ -72,8 +81,14 @@ export function QuizModal({ programs, isOpen, onClose }: Props) {
     if (step < QUIZ_QUESTIONS.length - 1) {
       setStep(step + 1);
     } else {
-      // 最終問: 結果計算
-      setResults(pickTopMatches(programs, next, 3));
+      // 最終問: 結果計算 + 「考え中」演出
+      const computed = pickTopMatches(programs, next, 3);
+      setIsThinking(true);
+      const t = setTimeout(() => {
+        setResults(computed);
+        setIsThinking(false);
+      }, THINKING_MS);
+      return () => clearTimeout(t);
     }
   };
 
@@ -89,14 +104,19 @@ export function QuizModal({ programs, isOpen, onClose }: Props) {
   const handleRetake = () => {
     setStep(0);
     setAnswers([]);
+    setIsThinking(false);
     setResults(null);
   };
 
   const totalSteps = QUIZ_QUESTIONS.length;
   const currentQuestion = QUIZ_QUESTIONS[step];
+  const inResultPhase = isThinking || results !== null;
+  // 進捗バー: 質問中は step に応じて、Thinking 中は 100% 寸前、結果は 100%
   const progress = results !== null
     ? 100
-    : Math.round(((step + 0) / totalSteps) * 100);
+    : isThinking
+      ? 95
+      : Math.round(((step + 0) / totalSteps) * 100);
 
   return (
     <dialog
@@ -116,16 +136,22 @@ export function QuizModal({ programs, isOpen, onClose }: Props) {
             <div className="flex min-w-0 flex-1 items-center gap-2 text-sm font-bold text-neutral-700">
               <Sparkles
                 size={18}
-                className="flex-none text-primary-600"
+                className={
+                  results !== null
+                    ? 'animate-sparkle flex-none text-primary-600'
+                    : 'flex-none text-primary-600'
+                }
                 aria-hidden="true"
               />
-              {results === null ? (
+              {!inResultPhase ? (
                 <span className="flex min-w-0 flex-wrap items-baseline gap-x-2">
-                  <span className="truncate">30 秒、ぼくの番組診断</span>
+                  <span className="truncate">30 秒、AI の番組診断</span>
                   <span className="text-xs font-normal text-neutral-500">
                     {step + 1} / {totalSteps}
                   </span>
                 </span>
+              ) : isThinking ? (
+                <span className="truncate">あなたに刺さる 3 本を、選んでます…</span>
               ) : (
                 <span className="truncate">あなたに、刺さりそうなのは</span>
               )}
@@ -145,7 +171,7 @@ export function QuizModal({ programs, isOpen, onClose }: Props) {
             className="h-1 w-full bg-neutral-100"
           >
             <div
-              className="h-full bg-primary-500 transition-all duration-300"
+              className="h-full bg-primary-500 transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -153,7 +179,11 @@ export function QuizModal({ programs, isOpen, onClose }: Props) {
 
         {/* 本体 */}
         <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6 sm:py-8">
-          {results === null ? (
+          {results !== null ? (
+            <ResultView results={results} />
+          ) : isThinking ? (
+            <ThinkingView programs={programs} />
+          ) : (
             <QuestionView
               key={currentQuestion.id}
               question={currentQuestion}
@@ -164,8 +194,6 @@ export function QuizModal({ programs, isOpen, onClose }: Props) {
                 handleSelect(currentQuestion.id, choiceId)
               }
             />
-          ) : (
-            <ResultView results={results} />
           )}
         </div>
 
@@ -174,7 +202,7 @@ export function QuizModal({ programs, isOpen, onClose }: Props) {
           <button
             type="button"
             onClick={handleBack}
-            disabled={results === null && step === 0}
+            disabled={(results === null && step === 0) || isThinking}
             className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 disabled:cursor-not-allowed disabled:opacity-40"
           >
             <ArrowLeft size={14} aria-hidden="true" />
@@ -206,7 +234,7 @@ function QuestionView({
   onSelect: (choiceId: string) => void;
 }) {
   return (
-    <div>
+    <div className="animate-slide-in-right">
       <h3 className="text-xl font-extrabold leading-snug text-neutral-900 sm:text-2xl">
         {question.prompt}
       </h3>
@@ -256,18 +284,97 @@ function QuestionView({
   );
 }
 
+/**
+ * 思考中ビュー（最終問選択 → 結果表示までの 800ms 演出）
+ * - スパークル ✨ 装飾が周りで明滅
+ * - サンプル番組サムネ 5〜7 枚がフワフワ漂う
+ * - 「あなたに刺さる 3 本を、選んでます…」テキスト
+ */
+function ThinkingView({ programs }: { programs: Program[] }) {
+  // 演出用のサンプル 6 枚（結果には影響しない）
+  const samples = programs.slice(0, 30).sort(() => Math.random() - 0.5).slice(0, 6);
+
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className="flex flex-col items-center justify-center py-8 text-center sm:py-12"
+    >
+      <div className="relative h-24 w-24 sm:h-28 sm:w-28">
+        {/* 中央のメインスパークル */}
+        <Sparkles
+          size={56}
+          className="animate-sparkle absolute inset-0 m-auto text-primary-600"
+          aria-hidden="true"
+        />
+        {/* 小さいスパークルが 4 隅でチカチカ（位相ずらし）*/}
+        {[
+          { top: '0%', left: '0%', delay: 0 },
+          { top: '0%', right: '0%', delay: 200 },
+          { bottom: '0%', left: '0%', delay: 400 },
+          { bottom: '0%', right: '0%', delay: 600 },
+        ].map((pos, i) => (
+          <span
+            key={i}
+            aria-hidden="true"
+            className="animate-sparkle absolute"
+            style={{
+              top: pos.top,
+              left: pos.left,
+              right: pos.right,
+              bottom: pos.bottom,
+              animationDelay: `${pos.delay}ms`,
+            }}
+          >
+            ✨
+          </span>
+        ))}
+      </div>
+
+      <p className="mt-6 text-base font-extrabold text-neutral-900 sm:text-lg">
+        ✨ あなたに刺さる 3 本を、選んでます…
+      </p>
+      <p className="mt-1 text-xs text-neutral-500 sm:text-sm">
+        AI の独断と偏見で、ピンポイントで掘り当て中
+      </p>
+
+      {/* 候補サムネがフワフワ漂う（演出専用、結果には影響しない） */}
+      <div
+        aria-hidden="true"
+        className="mt-6 flex flex-wrap items-center justify-center gap-3"
+      >
+        {samples.map((p, i) => (
+          <span
+            key={p.id}
+            className="animate-thinking-bob relative h-10 w-10 overflow-hidden rounded-full border-2 border-white shadow-sm"
+            style={{ animationDelay: `${i * 180}ms` }}
+          >
+            <Image
+              src={p.thumbnail}
+              alt=""
+              fill
+              sizes="40px"
+              className="object-cover opacity-70"
+            />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ResultView({ results }: { results: Program[] }) {
   return (
     <div>
       <p className="text-sm text-neutral-700 sm:text-base">
-        いまの気分にハマりそうな、3 番組です。
+        ✨ いまの気分にハマりそうな、3 番組です。
       </p>
       <p className="mt-1 text-xs text-neutral-500">
         ※ AI の独断と偏見です。当たらなくても、笑って許してください。
       </p>
       <ul className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
         {results.map((program, index) => (
-          <ResultCard key={program.id} program={program} delay={index * 180} />
+          <ResultCard key={program.id} program={program} delay={index * 200} />
         ))}
       </ul>
     </div>
@@ -282,7 +389,7 @@ function ResultCard({ program, delay }: { program: Program; delay: number }) {
     <li>
       <Link
         href={`/booth/${program.id}`}
-        className="animate-float-in group flex h-full min-h-[300px] flex-col overflow-hidden rounded-xl border-2 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]"
+        className="animate-pop-in group flex h-full min-h-[300px] flex-col overflow-hidden rounded-xl border-2 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]"
         style={{
           borderColor: `${themeColor}40`,
           animationDelay: `${delay}ms`,

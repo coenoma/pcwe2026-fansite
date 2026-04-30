@@ -117,3 +117,122 @@ dialog[open]::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
 }
+
+/* ====== 番組ベースレコメンド「波紋を広げる」演出 ======
+ * 起点番組から外側に円が広がる波紋アニメ + バケットの下から湧き出る fade-up。
+ * 「好きを起点に、波紋を広げる」の世界観を視覚化する。
+ */
+@keyframes ripple-out {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0.18;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+.animate-ripple {
+  animation: ripple-out 1800ms cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  will-change: transform, opacity;
+}
+.animate-ripple-slow {
+  animation: ripple-out 1800ms cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation-delay: 600ms;
+  will-change: transform, opacity;
+}
+
+@keyframes bucket-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-bucket {
+  animation: bucket-reveal 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  will-change: transform, opacity;
+}
+
+/* スケルトン共通の shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.animate-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    rgba(229, 231, 235, 0.4) 0%,
+    rgba(229, 231, 235, 0.9) 50%,
+    rgba(229, 231, 235, 0.4) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1400ms linear infinite;
+}
+
+/* ====== ガチャ・診断の楽しい演出 ====== */
+
+/* サイコロが揺れる（ガチャ抽選中）*/
+@keyframes dice-shake {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-12deg) scale(1.1); }
+  50% { transform: rotate(12deg) scale(0.95); }
+  75% { transform: rotate(-6deg) scale(1.05); }
+}
+.animate-dice-shake {
+  animation: dice-shake 500ms ease-in-out infinite;
+  will-change: transform;
+}
+
+/* バウンス付き pop-in（結果カードのドラマチックな登場）*/
+@keyframes pop-in {
+  0% { opacity: 0; transform: scale(0.5) translateY(24px); }
+  55% { opacity: 1; transform: scale(1.06) translateY(-4px); }
+  80% { transform: scale(0.98) translateY(2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-pop-in {
+  animation: pop-in 750ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  will-change: transform, opacity;
+}
+
+/* ✨ スパークル（結果画面の祝福装飾）*/
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.15) rotate(180deg); }
+}
+.animate-sparkle {
+  animation: sparkle 1600ms ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* 質問の入れ替え（横スライド）*/
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(24px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 380ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  will-change: transform, opacity;
+}
+
+/* 思考中（候補番組サムネがフワフワ漂う）*/
+@keyframes thinking-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-6px) rotate(-3deg); }
+  66% { transform: translateY(3px) rotate(2deg); }
+}
+.animate-thinking-bob {
+  animation: thinking-bob 1800ms ease-in-out infinite;
+  will-change: transform;
+}

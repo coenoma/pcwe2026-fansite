@@ -223,6 +223,35 @@ Podmate ガイドラインと**同じ**:
 - **フッター**: 「by 合同会社コエノマ」+ Podmate.fm への控えめリンク
 - **About ページ**: 制作意図、PCWE 公式との関係（無関係）、削除依頼受付
 
+### カードアクセント線の実装ルール（v1.7 追加）
+
+**角丸 UI（`rounded-xl` / `rounded-2xl` 等）にアクセント線を引く際の注意**：
+
+- ❌ **`box-shadow: inset 4px 0 0 color`** で縦線・横線を引かない
+  - 線が `border-radius` に追従して **角丸でアーチ状にカーブ** してしまい、
+    Podmate のフラットな世界観と齟齬する
+- ✅ **絶対配置 `<span>` + 上下に `border-radius` 相当の余白** で直線のみを描く
+
+```tsx
+// ❌ NG（アーチ化する）
+<div className="rounded-xl" style={{ boxShadow: `inset 4px 0 0 ${color}` }}>
+
+// ✅ OK（直線部分のみに線を引く）
+<div className="relative overflow-hidden rounded-xl">
+  <span
+    aria-hidden="true"
+    className="pointer-events-none absolute bottom-3 left-0 top-3 w-1 rounded-full"
+    style={{ backgroundColor: color }}
+  />
+  ...
+</div>
+```
+
+**例外（カードの上下端の細い横帯）**：
+- `inset-x-0 top-0 h-1` のような帯は親の `overflow-hidden` でカット
+  されるため、角丸の角で「線が斜めに切れる」表現になる（アーチではない）
+- これは許容（`ProgramCard` / `CurationCard` 上端のアクセントなど）
+
 詳細は [docs/plans/v1-mvp-launch/README.md](./docs/plans/v1-mvp-launch/README.md) 参照。
 
 ---

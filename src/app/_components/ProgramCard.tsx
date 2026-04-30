@@ -46,8 +46,10 @@ interface Props {
  * - PC ホバーで浮上 + Spotify ボタン出現
  * - React.memo で再レンダリング抑制
  *
- * HTML 仕様準拠: <a> のネストを避けるため、画像 / 番組名 / Spotify は
- * それぞれ独立したリンクとして配置（カード全体の <a> ラップは行わない）。
+ * v1.7 改修: 「stretched link」パターンでカード全体をタップ可能に
+ * - <article> 全体に絶対配置の `<Link>` を 1 枚被せ、画像/タイトルを含む全領域から詳細へ遷移
+ * - ジャンルバッジ / Favorite / Spotify は `relative z-20` で stretched link より前面に置き、
+ *   それぞれ独立したアクションを保つ（HTML 仕様の <a> ネスト問題を回避）
  */
 function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -59,38 +61,41 @@ function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
       {/* vibe トップアクセントライン */}
       <span
         aria-hidden="true"
-        className={`absolute inset-x-0 top-0 z-10 h-1 ${vibe.topAccent}`}
+        className={`pointer-events-none absolute inset-x-0 top-0 z-10 h-1 ${vibe.topAccent}`}
       />
+
+      {/* stretched link: カード全体をタップ可能に（z-10、interactive 子要素より下）*/}
+      <Link
+        href={detailHref}
+        aria-label={`${program.name} の詳細を見る`}
+        className="absolute inset-0 z-10 rounded-2xl focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+      >
+        <span className="sr-only">詳細を見る</span>
+      </Link>
 
       {/* 画像エリア */}
       <div className="relative aspect-square w-full overflow-hidden bg-neutral-100">
-        <Link
-          href={detailHref}
-          className="block h-full w-full focus-visible:outline-none"
-          aria-label={`${program.name} の詳細を見る`}
-        >
-          {/* スケルトン */}
-          {!imgLoaded && (
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 animate-pulse bg-gradient-to-br from-neutral-100 to-neutral-200"
-            />
-          )}
-          <Image
-            src={program.thumbnail}
-            alt={`${program.name} のロゴ画像`}
-            fill
-            className={`object-cover transition-opacity duration-500 group-hover:scale-105 ${
-              imgLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            onLoad={() => setImgLoaded(true)}
-            loading="lazy"
-            decoding="async"
+        {/* スケルトン */}
+        {!imgLoaded && (
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 animate-pulse bg-gradient-to-br from-neutral-100 to-neutral-200"
           />
-        </Link>
+        )}
+        <Image
+          src={program.thumbnail}
+          alt={`${program.name} のロゴ画像`}
+          fill
+          className={`object-cover transition-opacity duration-500 group-hover:scale-105 ${
+            imgLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          onLoad={() => setImgLoaded(true)}
+          loading="lazy"
+          decoding="async"
+        />
 
-        {/* PC ホバー時の Spotify ボタン（Link の外側に配置、HTML 仕様準拠）*/}
+        {/* PC ホバー時の Spotify ボタン（z-20、stretched link より前面）*/}
         {program.links.spotify !== undefined && (
           <a
             href={program.links.spotify}
@@ -106,9 +111,10 @@ function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
 
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex flex-wrap items-center gap-2 text-xs">
+          {/* ジャンル: 別ページへ遷移するので z-20（stretched link より前面）*/}
           <Link
             href={`/genre/${encodeURIComponent(program.fanGuide.genre)}`}
-            className="inline-flex items-center gap-1 rounded-full bg-primary-50 px-2 py-0.5 font-bold text-primary-700 transition-colors hover:bg-primary-100"
+            className="relative z-20 inline-flex items-center gap-1 rounded-full bg-primary-50 px-2 py-0.5 font-bold text-primary-700 transition-colors hover:bg-primary-100"
           >
             <GenreIcon name={GENRE_ICON[program.fanGuide.genre]} size={12} />
             {program.fanGuide.genre}
@@ -116,16 +122,15 @@ function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
           <span className="rounded-full bg-neutral-100 px-2 py-0.5 font-bold text-neutral-700">
             {dayLabel(program.exhibition.days)}
           </span>
-          <span className="ml-auto">
+          {/* Favorite: 独立アクションなので z-20 */}
+          <span className="relative z-20 ml-auto">
             <FavoriteButton programId={program.id} />
           </span>
         </div>
 
-        <Link href={detailHref} className="block">
-          <h2 className="text-base font-extrabold leading-snug tracking-tight text-neutral-900 transition-colors hover:text-primary-700">
-            {highlightText(program.shortName ?? program.name, highlightQuery)}
-          </h2>
-        </Link>
+        <h2 className="text-base font-extrabold leading-snug tracking-tight text-neutral-900 transition-colors group-hover:text-primary-700">
+          {highlightText(program.shortName ?? program.name, highlightQuery)}
+        </h2>
 
         <p className="text-sm leading-relaxed text-neutral-700">
           <span
