@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-108",
+  "fanGuide": {
+    "catchphrase": "店の「BACKYARD」から、あなたの「CLOSET」へ、洋服の歴史と「似合う」を運ぶ。",
+    "catchphraseLines": [
+      "店の「BACKYARD」から、あなたの「CLOSET」へ、",
+      "洋服の歴史と「似合う」を運ぶ。"
+    ],
+    "subCatch": "セレクトショップ「SLOW&STEADY」による、洋服を聴くラジオ。",
+    "genre": "カルチャー",
+    "tags": [
+      "じっくり",
+      "通勤",
+      "学べる",
+      "ニッチ"
+    ],
+    "targetListener": "クローゼットを開けるたびに「なんか着る服がない」と思ってしまう人。買うより前に、いま手元にある服の物語を一度知っておきたい人。",
+    "vibe": "intellectual",
+    "themeColor": "#3D4A60",
+    "themeFont": "noto-serif-jp"
+  }
+}

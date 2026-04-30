@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-033",
+  "fanGuide": {
+    "catchphrase": "名古屋クラブの常連席で隣り合う気分で、DJ のウラ話を毎週水曜 19 時に聴ける。",
+    "catchphraseLines": [
+      "名古屋クラブの常連席で隣り合う気分で、",
+      "DJ のウラ話を毎週水曜 19 時に聴ける。"
+    ],
+    "subCatch": "HYPLACE NAGOYA 発、眞白マッシュとゲストの DJ カルチャー特化型ラジオ。",
+    "genre": "音楽",
+    "tags": [
+      "軽快",
+      "夜向き",
+      "ニッチ",
+      "二人以上の掛け合い"
+    ],
+    "targetListener": "クラブシーンの裏側に興味があるけど、表立っては入りづらかった人。DJ の楽曲制作のウラ話を、常連席の隣で聴くように楽しみたい人。",
+    "vibe": "conversational",
+    "themeColor": "#5C4A7A",
+    "themeFont": "dot-gothic-16"
+  }
+}

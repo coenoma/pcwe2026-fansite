@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-105",
+  "fanGuide": {
+    "catchphrase": "「Twitter が本体」のソウイチが、140 字じゃ書ききれない話を耳で呟いていく。",
+    "catchphraseLines": [
+      "「Twitter が本体」のソウイチが、",
+      "140 字じゃ書ききれない話を耳で呟いていく。"
+    ],
+    "subCatch": "Twitter 上のアカウントを「本体」と自認するソウイチによる、独り言ラジオ。",
+    "genre": "その他",
+    "tags": [
+      "内省的",
+      "軽快",
+      "通勤",
+      "一人語り"
+    ],
+    "targetListener": "140 字に圧縮しきれない、誰かの長尺の思考を聴きたい人。タイムラインの代わりに、独り言の長文を耳で読みたい人。",
+    "vibe": "contemplative",
+    "themeColor": "#4A6E9C",
+    "themeFont": "klee-one"
+  }
+}

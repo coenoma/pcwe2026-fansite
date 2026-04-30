@@ -1,0 +1,21 @@
+{
+  "id": "pcwe-076",
+  "fanGuide": {
+    "catchphrase": "F1 はスポーツ・政治・エンタメの 3 面体。日本から斜め 45 度で観るラジオ。",
+    "catchphraseLines": [
+      "F1 はスポーツ・政治・エンタメの 3 面体。",
+      "日本から斜め 45 度で観るラジオ。"
+    ],
+    "subCatch": "桐野美也子が、日本から F1 を語る稀有なポッドキャスト。",
+    "genre": "スポーツ",
+    "tags": [
+      "軽快",
+      "学べる",
+      "通勤",
+      "一人語り"
+    ],
+    "targetListener": "Drive to Survive で F1 の入口に立った人。チームと国際政治の絡みまで楽しみたいけど、専門解説で挫折したくない人。",
+    "vibe": "intellectual",
+    "themeFont": "noto-serif-jp"
+  }
+}

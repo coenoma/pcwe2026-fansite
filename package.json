@@ -19,7 +19,8 @@
     "build:programs": "tsx scripts/build-programs.ts",
     "download-thumbnails": "tsx scripts/download-thumbnails.ts",
     "assign-fan-guide": "tsx scripts/assign-fan-guide.ts",
-    "fan-guide-status": "tsx scripts/fan-guide-status.ts"
+    "fan-guide-status": "tsx scripts/fan-guide-status.ts",
+    "merge-fan-guide": "tsx scripts/merge-fan-guide.ts"
   },
   "dependencies": {
     "fuse.js": "^7.0.0",

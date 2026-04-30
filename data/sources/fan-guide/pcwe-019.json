@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-019",
+  "fanGuide": {
+    "catchphrase": "会社の名札を外したエンジニア 2 人が、月〜金、FA の現場を立場ぬきで語る。",
+    "catchphraseLines": [
+      "会社の名札を外したエンジニア 2 人が、",
+      "月〜金、FA の現場を立場ぬきで語る。"
+    ],
+    "subCatch": "高橋とクリス、現役 FA エンジニアの月〜金週 5 配信ポッドキャスト。",
+    "genre": "AI・テック",
+    "tags": [
+      "軽快",
+      "通勤",
+      "学べる",
+      "二人以上の掛け合い"
+    ],
+    "targetListener": "FA・製造業の現場で働いていて、業界外には話しづらいモヤモヤを抱えている人。通勤の時間に、PLC と制御設計の話で頭を温めたい人。",
+    "vibe": "conversational",
+    "themeColor": "#4A6A8B",
+    "themeFont": "zen-kaku"
+  }
+}

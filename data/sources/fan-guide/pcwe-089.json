@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-089",
+  "fanGuide": {
+    "catchphrase": "ZINE 作家がひとり、中央線沿いの喫茶店で、日記の続きを声に置いていく。",
+    "catchphraseLines": [
+      "ZINE 作家がひとり、中央線沿いの喫茶店で、",
+      "日記の続きを声に置いていく。"
+    ],
+    "subCatch": "ZINE『中央線日記』作家・憧憬による、ひとり語りカルチャー Podcast。",
+    "genre": "カルチャー",
+    "tags": [
+      "内省的",
+      "じっくり",
+      "通勤",
+      "一人語り"
+    ],
+    "targetListener": "日々の忙しなさから、ひとり 30 分だけ降りたい人。中央線沿いを歩きながら、本や酒場の時間にまつわる思索を聴いていたい人。",
+    "vibe": "contemplative",
+    "themeColor": "#C46235",
+    "themeFont": "klee-one"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "pcwe-080",
+  "fanGuide": {
+    "catchphrase": "「RAKUSUI」ならぬ「裏 KUSUI」、シェフが店で語れない話を音の湯気と。",
+    "catchphraseLines": [
+      "「RAKUSUI」ならぬ「裏 KUSUI」、",
+      "シェフが店で語れない話を音の湯気と。"
+    ],
+    "subCatch": "北新地・老舗中華の佐藤シェフによる、雑談という名の裏メニュー。",
+    "genre": "食",
+    "tags": [
+      "軽快",
+      "ニッチ",
+      "夜向き",
+      "一人語り"
+    ],
+    "targetListener": "気の知れた店主の雑談を、カウンター越しに聞く時間が好きな人。レシピより、料理人の遠回りな思い出話に酔いたい人。",
+    "vibe": "laid-back",
+    "themeColor": "#952F26",
+    "themeFont": "shippori-mincho"
+  }
+}
