@@ -102,7 +102,11 @@ export default async function BoothPage({ params }: Props) {
 
       <BoothHero program={program} />
 
-      <WaveDivider fillClass="fill-amber-50" />
+      {/*
+        Hero 末尾に波々を乗せる（負マージンで Hero 内に侵食）
+        → Hero と amber-50 セクションの間に白い余白が生まれず、自然な波の橋渡しに
+      */}
+      <WaveDivider fillClass="fill-amber-50" className="-mt-12 sm:-mt-16" />
 
       {/* こんな人に刺さる */}
       <FadeInOnScroll>
@@ -131,7 +135,7 @@ export default async function BoothPage({ params }: Props) {
         </section>
       </FadeInOnScroll>
 
-      <WaveDivider fillClass="fill-white" />
+      <WaveDivider fillClass="fill-white" className="-mt-12 sm:-mt-16" />
 
       {/* 公式情報 */}
       <FadeInOnScroll>
