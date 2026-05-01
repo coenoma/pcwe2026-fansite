@@ -11,9 +11,16 @@ interface Props {
 
 export const dynamic = 'force-static';
 
-/** ジャンルが付いている番組を集約して、該当ジャンルのみ静的生成 */
+/**
+ * ジャンルが付いている番組を集約して、該当ジャンルのみ静的生成。
+ *
+ * ⚠️ 注意: Next.js の generateStaticParams にはデコード済みの値を渡す。
+ * encodeURIComponent をかけると Next.js が再度エンコードしてしまい、
+ * URL から渡された params.name がデコード済みの「カルチャー」と一致せず
+ * zod 検証に失敗 → notFound() が呼ばれて 404 になる不具合が起きる。
+ */
 export function generateStaticParams() {
-  return getGenreCounts().map((g) => ({ name: encodeURIComponent(g.genre) }));
+  return getGenreCounts().map((g) => ({ name: g.genre }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
