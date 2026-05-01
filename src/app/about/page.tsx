@@ -54,7 +54,7 @@ export default function AboutPage() {
             <p className="mt-3">
               情報の誤り・配信先 URL の追加・キャッチコピーへの違和感など、修正したい点があればこちら。番組制作者の方もリスナーの方も大歓迎です。
               <br />
-              <span className="text-sm text-neutral-500">内容を確認のうえ、可能なものから順次反映します（数日〜1 週間目安）。</span>
+              <span className="text-sm text-neutral-500">内容を確認のうえ、数日以内に順次反映します。</span>
             </p>
             <FormButton url={FORM_FIX_URL} label="情報修正・追加依頼フォーム" />
           </section>
