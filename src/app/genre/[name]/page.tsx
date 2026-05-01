@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const programs = getProgramsByGenre(parsed.data);
   const title = `${parsed.data}（${programs.length} 番組）`;
-  const description = `「${parsed.data}」ジャンルの出展番組 ${programs.length} 件。PCWE2026 ファンガイド。`;
+  const description = `PODCAST WEEKEND 2026（ポッドキャストウィークエンド／PODCAST EXPO 2026 内のマーケットイベント）出展番組のうち「${parsed.data}」ジャンル ${programs.length} 件を、独断と偏見でキュレーションした非公式ファンガイド。`;
 
   return {
     title,

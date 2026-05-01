@@ -25,11 +25,18 @@ export default function HomePage() {
     moods.map((m) => [m.slug, getProgramsByMood(m).length]),
   );
 
-  // Event 構造化データ（PCWE2026 自体）
+  /**
+   * Event 構造化データ。
+   *
+   * 主役: PODCAST WEEKEND 2026（本サイトが特化するマーケットイベント）
+   * 傘:   PODCAST EXPO 2026（superEvent でネスト）
+   * alternateName でカタカナ・英表記・略称を網羅し、検索エンジンに表記揺れを伝える。
+   */
   const eventJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Event',
     name: EVENT.name,
+    alternateName: EVENT.alternateNames,
     startDate: `${EVENT.startDate}T10:30:00+09:00`,
     endDate: `${EVENT.endDate}T19:00:00+09:00`,
     eventStatus: 'https://schema.org/EventScheduled',
@@ -38,6 +45,11 @@ export default function HomePage() {
       '@type': 'Place',
       name: EVENT.venue,
       address: { '@type': 'PostalAddress', streetAddress: EVENT.venueAddress, addressCountry: 'JP' },
+    },
+    superEvent: {
+      '@type': 'Event',
+      name: EVENT.parentName,
+      url: EVENT.officialUrl,
     },
     url: EVENT.officialUrl,
     description: SITE.description,

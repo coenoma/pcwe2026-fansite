@@ -57,10 +57,26 @@ const zenKaku = Zen_Kaku_Gothic_New({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: SITE.name,
+    default: 'PODCAST WEEKEND 2026 非公式ファンガイド｜142 番組から「これ刺さる」を見つける',
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
+  // 検索流入の表記揺れ対策（カタカナ／英／略称／傘イベント名）。Next.js は keywords を
+  // <meta name="keywords"> に出力する。Google は keywords を SEO シグナルにしないが、
+  // 一部の検索エンジンや共有先（Slack/LINE プレビュー）で参照されることがあるため明示。
+  keywords: [
+    'PODCAST WEEKEND 2026',
+    'ポッドキャストウィークエンド 2026',
+    'PODCAST EXPO 2026',
+    'ポッドキャストエキスポ 2026',
+    'PCWE2026',
+    '非公式ファンガイド',
+    'ポッドキャストイベント',
+    'マーケット',
+    '出展番組',
+    'HOME/WORK VILLAGE',
+    '池尻大橋',
+  ],
   alternates: { canonical: '/' },
   manifest: '/manifest.webmanifest',
   applicationName: SITE.name,
@@ -74,14 +90,14 @@ export const metadata: Metadata = {
     locale: 'ja_JP',
     url: SITE.url,
     siteName: SITE.name,
-    title: SITE.name,
+    title: 'PODCAST WEEKEND 2026 非公式ファンガイド｜142 番組から「これ刺さる」を見つける',
     description: SITE.description,
     images: [{ url: SITE.ogImage, width: 1200, height: 630, alt: SITE.name }],
   },
   twitter: {
     card: 'summary_large_image',
     site: SITE.twitterHandle,
-    title: SITE.name,
+    title: 'PODCAST WEEKEND 2026 非公式ファンガイド｜142 番組から「これ刺さる」を見つける',
     description: SITE.description,
     images: [SITE.ogImage],
   },

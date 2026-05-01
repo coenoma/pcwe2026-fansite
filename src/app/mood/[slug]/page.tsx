@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const programs = getProgramsByMood(mood);
   return {
     title: `${mood.label}（${programs.length} 番組）`,
-    description: `${mood.description} PCWE2026 のなかから、いまの気分に刺さる ${programs.length} 番組。`,
+    description: `${mood.description} PODCAST WEEKEND 2026（ポッドキャストウィークエンド／PODCAST EXPO 2026 内のマーケットイベント）の出展 142 番組のなかから、いまの気分に刺さる ${programs.length} 番組を非公式ファンガイドが提案。`,
     alternates: { canonical: `/mood/${mood.slug}` },
   };
 }

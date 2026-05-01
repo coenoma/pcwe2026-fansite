@@ -56,7 +56,7 @@ export default function PrivacyPage() {
             <p className="mt-3">
               番組名・概要・ロゴ画像・配信プラットフォームへのリンクは、
               <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">
-                {EVENT.name}（{EVENT.shortName}）公式サイト
+                {EVENT.parentName}（{EVENT.name} / {EVENT.shortName}）公式サイト
               </a>
               および各番組の公開情報から引用しています。著作権は各番組制作者・公式に帰属します。
             </p>
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-extrabold text-neutral-900">7. このサイトについて</h2>
             <p className="mt-3">
-              本サイトは <strong>非公式</strong> のファンガイドであり、PCWE2026 公式とは無関係に
+              本サイトは <strong>非公式</strong> のファンガイドであり、{EVENT.parentName} / {EVENT.name}（{EVENT.shortName}）公式とは無関係に
               {CREATOR.company} の代表（{CREATOR.representative}）がファン活動として制作・運営しています。
             </p>
           </section>

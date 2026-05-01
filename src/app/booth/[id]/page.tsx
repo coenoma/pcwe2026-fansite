@@ -8,7 +8,7 @@ import { WaveDivider } from '@/app/_components/WaveDivider';
 import { FadeInOnScroll } from '@/app/_components/FadeInOnScroll';
 import { ProgramCard } from '@/app/_components/ProgramCard';
 import { safeJsonLd } from '@/lib/safe-json-ld';
-import { SITE } from '@/lib/constants';
+import { EVENT, SITE } from '@/lib/constants';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -27,7 +27,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (program === undefined) return {};
 
   const title = `${program.shortName ?? program.name}（${program.fanGuide.genre}）`;
-  const description = `${program.fanGuide.catchphrase} ${program.fanGuide.subCatch}`;
+  // 検索結果のスニペット用に「PODCAST WEEKEND 2026 出展 / ジャンル」を冒頭に置き、
+  // 番組固有のキャッチコピーと組み合わせて自然な日本語で読める形にする。
+  const description = `PODCAST WEEKEND 2026（ポッドキャストウィークエンド／PODCAST EXPO 2026 内のマーケットイベント）出展。${program.fanGuide.genre}ジャンルの「${program.fanGuide.catchphrase}」── ${program.fanGuide.subCatch}`;
 
   return {
     title,
@@ -58,6 +60,8 @@ export default async function BoothPage({ params }: Props) {
     .slice(0, 3);
 
   // JSON-LD 構造化データ（PodcastSeries + BreadcrumbList）
+  // subjectOf に Event をネストすることで、検索エンジンに「この番組は
+  // PODCAST WEEKEND 2026 に出展している」という関係を伝える。
   const podcastJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'PodcastSeries',
@@ -68,6 +72,16 @@ export default async function BoothPage({ params }: Props) {
     sameAs: [program.links.x, program.links.instagram, program.links.website].filter(
       (v): v is string => typeof v === 'string'
     ),
+    genre: program.fanGuide.genre,
+    subjectOf: {
+      '@type': 'Event',
+      name: EVENT.name,
+      alternateName: EVENT.alternateNames,
+      startDate: `${EVENT.startDate}T10:30:00+09:00`,
+      endDate: `${EVENT.endDate}T19:00:00+09:00`,
+      location: { '@type': 'Place', name: EVENT.venue },
+      url: program.boothUrl,
+    },
   };
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',

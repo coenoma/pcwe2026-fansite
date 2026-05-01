@@ -64,7 +64,7 @@ export function Footer() {
 
         <div className="mt-8 space-y-2 text-xs text-neutral-500">
           <p>
-            このサイトは <strong>非公式</strong> のファンガイドです。番組のロゴ・概要などは、各番組さんと PODCAST EXPO 2026 公式の情報を引用しています。
+            このサイトは <strong>非公式</strong> のファンガイドです。<strong>PODCAST WEEKEND 2026</strong>（ポッドキャストウィークエンド／<a href="https://podcastexpo.jp/" target="_blank" rel="noopener noreferrer" className="underline decoration-transparent transition-colors hover:text-primary-600 hover:decoration-primary-600">PODCAST EXPO 2026</a> 内のマーケットイベント）の出展番組を対象にしています。番組のロゴ・概要などは、各番組さんと公式の情報を引用しています。
           </p>
           <p>掲載取り下げや内容の修正は、上の「このサイトについて」からご連絡ください。</p>
           <p className="pt-2 text-neutral-400">© {new Date().getFullYear()} {CREATOR.company}</p>

@@ -6,9 +6,28 @@
 // イベント情報
 // ====================
 
+/**
+ * 本サイトの主役イベントは「PODCAST WEEKEND 2026」（PODCAST EXPO 2026 内の
+ * マーケットイベント = 142 番組の出展ブース）。
+ * 傘イベントとして「PODCAST EXPO 2026」、英表記の他に「ポッドキャストウィークエンド」
+ * 「ポッドキャストエキスポ」のカタカナ表記もあり、検索流入の対象。
+ */
 export const EVENT = {
-  name: 'PODCAST EXPO 2026',
+  /** メイン名称（本サイトの軸）*/
+  name: 'PODCAST WEEKEND 2026',
+  /** 傘イベントの名称 */
+  parentName: 'PODCAST EXPO 2026',
+  /** 略称 */
   shortName: 'PCWE2026',
+  /** 別名（カタカナ表記・傘イベント・略称など、構造化データ alternateName に使う）*/
+  alternateNames: [
+    'ポッドキャストウィークエンド 2026',
+    'ポッドキャストウィークエンド2026',
+    'PODCAST EXPO 2026',
+    'ポッドキャストエキスポ 2026',
+    'ポッドキャストエキスポ2026',
+    'PCWE2026',
+  ],
   startDate: '2026-05-09',
   endDate: '2026-05-10',
   hours: '10:30 - 19:00',
@@ -25,12 +44,12 @@ export const EVENT = {
 export const SITE = {
   name: 'PCWE2026 ファンガイド（非公式）',
   description:
-    'PODCAST EXPO 2026 を 120% 楽しむ、非公式ファンガイド。144 番組から「これ刺さる」を探す。',
+    'PODCAST WEEKEND 2026（ポッドキャストウィークエンド／PODCAST EXPO 2026 内のマーケットイベント）の出展 142 番組から、あなたに「刺さる 1 本」を見つける非公式ファンガイド。キャッチコピー・タグ・ジャンルで当日が楽しみになる。',
   url: 'https://pcwe2026-fansite.podmate.fm',
   ogImage: '/ogp.png',
   twitterHandle: '@yuto_podmate',
   unofficialNotice:
-    '※ 本サイトは PODCAST EXPO 2026 公式とは無関係のファンメイドです（制作: 合同会社コエノマ）',
+    '※ 本サイトは PODCAST WEEKEND / PODCAST EXPO 2026 公式とは無関係のファンメイドです（制作: 合同会社コエノマ）',
 } as const;
 
 // ====================
