@@ -20,10 +20,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (mood === undefined) return {};
 
   const programs = getProgramsByMood(mood);
+  const title = `${mood.label}（${programs.length} 番組）`;
+  const description = `${mood.description} PODCAST WEEKEND 2026（ポッドキャストウィークエンド／PODCAST EXPO 2026 内のマーケットイベント）の出展 142 番組のなかから、いまの気分に刺さる ${programs.length} 番組を非公式ファンガイドが提案。`;
   return {
-    title: `${mood.label}（${programs.length} 番組）`,
-    description: `${mood.description} PODCAST WEEKEND 2026（ポッドキャストウィークエンド／PODCAST EXPO 2026 内のマーケットイベント）の出展 142 番組のなかから、いまの気分に刺さる ${programs.length} 番組を非公式ファンガイドが提案。`,
+    title,
+    description,
     alternates: { canonical: `/mood/${mood.slug}` },
+    // 親 layout の openGraph.description が継承されないよう、子で明示的に上書き。
+    openGraph: { title, description },
+    twitter: { title, description },
   };
 }
 

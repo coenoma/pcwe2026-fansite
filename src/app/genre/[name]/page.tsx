@@ -37,6 +37,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: `/genre/${encodeURIComponent(parsed.data)}` },
+    // Next.js は親 layout の openGraph.description を継承するので、子ページの
+    // 固有 description を SNS シェア時にも反映させるには明示的に上書きが必要。
+    openGraph: { title, description },
+    twitter: { title, description },
   };
 }
 
