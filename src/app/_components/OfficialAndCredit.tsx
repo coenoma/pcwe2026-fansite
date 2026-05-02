@@ -74,17 +74,19 @@ export function OfficialAndCredit() {
               固定高さ + object-cover + object-top で「上端が常に見える」クロップ。
               これによりロゴ・サムネ部分（強調すべき要素）がモバイルでも保たれる。
             */}
-            <div className="relative h-44 overflow-hidden bg-gradient-to-br from-amber-50 via-white to-sky-50 sm:h-52">
+            {/*
+              画像エリア: アスペクト比 16:9 で固定（モバイル/PC で同じ比率）。
+              object-center により Podmate の Hero ビジュアル（ポッドキャストサイト
+              モック）の中央が常に見えるよう、左右の端を均等にクロップ。
+              画像下端のグラデオーバーレイは外して、画像本体をしっかり見せる方針。
+            */}
+            <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-amber-50 via-white to-sky-50">
               <Image
                 src="/images/podmate-hero.webp"
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white via-white/60 to-transparent"
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />
             </div>
 
