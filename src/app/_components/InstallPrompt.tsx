@@ -135,11 +135,18 @@ export function InstallPrompt() {
       className="fixed inset-x-2 bottom-[calc(theme(space.16)+theme(space.2))] z-40 mx-auto max-w-2xl rounded-2xl border border-neutral-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:inset-x-4 lg:bottom-4 lg:left-1/2 lg:-translate-x-1/2"
     >
       <div className="flex items-start gap-3">
+        {/*
+          Header と完全に同じ画像（手描きマイクのアプリアイコン）。
+          priority を付けて loading="eager" 相当にし、5 秒後の動的表示で
+          IntersectionObserver の lazy 判定が遅れて読み込まれないバグを回避。
+        */}
         <Image
           src="/icons/icon-192.png"
           alt=""
           width={48}
           height={48}
+          priority
+          unoptimized
           className="h-12 w-12 flex-shrink-0 rounded-xl shadow-sm"
         />
 
