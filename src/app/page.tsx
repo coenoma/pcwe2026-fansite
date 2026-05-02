@@ -237,13 +237,20 @@ export default function HomePage() {
       </section>
 
       {/* 番組一覧 */}
-      <section className="border-t border-neutral-200 bg-white">
+      <section
+        id="all-programs"
+        aria-labelledby="all-programs-heading"
+        className="scroll-mt-20 border-t border-neutral-200 bg-white"
+      >
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
           <div className="mb-6 sm:mb-8">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
               ALL PROGRAMS
             </p>
-            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+            <h2
+              id="all-programs-heading"
+              className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl"
+            >
               全番組から、自分で探す。
             </h2>
           </div>

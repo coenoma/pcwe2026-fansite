@@ -49,7 +49,7 @@ export const SITE = {
   ogImage: '/ogp.png',
   twitterHandle: '@yuto_podmate',
   unofficialNotice:
-    '※ 本サイトは PODCAST WEEKEND / PODCAST EXPO 2026 公式とは無関係のファンメイドです（制作: 合同会社コエノマ）',
+    '※ 本サイトは PODCAST WEEKEND / PODCAST EXPO 2026 公式とは無関係のファンサイトです（制作・運営: 合同会社コエノマ）',
 } as const;
 
 // ====================
