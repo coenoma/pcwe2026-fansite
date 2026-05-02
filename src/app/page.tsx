@@ -32,23 +32,50 @@ export default function HomePage() {
    * 傘:   PODCAST EXPO 2026（superEvent でネスト）
    * alternateName でカタカナ・英表記・略称を網羅し、検索エンジンに表記揺れを伝える。
    */
+  // location は WEEKEND / EXPO で同じなので変数化（Event.location は Google 必須項目）
+  const eventLocation = {
+    '@type': 'Place' as const,
+    name: EVENT.venue,
+    address: {
+      '@type': 'PostalAddress' as const,
+      streetAddress: EVENT.venueAddress,
+      addressCountry: 'JP',
+    },
+  };
+  const eventStart = `${EVENT.startDate}T10:30:00+09:00`;
+  const eventEnd = `${EVENT.endDate}T19:00:00+09:00`;
+  const eventImage = `${SITE.url}${SITE.ogImage}`;
+  const eventOrganizer = {
+    '@type': 'Organization' as const,
+    name: 'PODCAST EXPO',
+    url: EVENT.officialUrl,
+  };
+
   const eventJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Event',
     name: EVENT.name,
     alternateName: EVENT.alternateNames,
-    startDate: `${EVENT.startDate}T10:30:00+09:00`,
-    endDate: `${EVENT.endDate}T19:00:00+09:00`,
+    startDate: eventStart,
+    endDate: eventEnd,
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-    location: {
-      '@type': 'Place',
-      name: EVENT.venue,
-      address: { '@type': 'PostalAddress', streetAddress: EVENT.venueAddress, addressCountry: 'JP' },
-    },
+    location: eventLocation,
+    image: [eventImage],
+    organizer: eventOrganizer,
     superEvent: {
+      // Google 必須: name / startDate / location。任意推奨: image / organizer 等
       '@type': 'Event',
       name: EVENT.parentName,
+      startDate: eventStart,
+      endDate: eventEnd,
+      eventStatus: 'https://schema.org/EventScheduled',
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      location: eventLocation,
+      image: [eventImage],
+      organizer: eventOrganizer,
+      description:
+        'ポッドキャストの未来を体感する 2 日間。国内音声コンテンツの祭典 PODCAST EXPO 2026。',
       url: EVENT.officialUrl,
     },
     url: EVENT.officialUrl,
