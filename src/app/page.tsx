@@ -5,7 +5,6 @@ import { DiscoverHub } from './_components/DiscoverHub';
 import { CurationLanes } from './_components/CurationLanes';
 import { MoodLanes } from './_components/MoodLanes';
 import { RecommendFromProgram } from './_components/RecommendFromProgram';
-import { OfficialAndCredit } from './_components/OfficialAndCredit';
 import { safeJsonLd } from '@/lib/safe-json-ld';
 import { EVENT, SITE } from '@/lib/constants';
 import { CalendarDays, MapPin } from 'lucide-react';
@@ -109,10 +108,21 @@ export default function HomePage() {
             非公式ファンガイド
           </div>
 
-          {/* メインコピー */}
+          {/*
+            メインコピー: 142 を巨大数字化（ahamo の「20,000」風）
+            secondary-700 で「データ」感を強調、tabular-nums + leading-none で
+            数字を主役にする
+          */}
           <h1 className="mt-6 text-3xl font-extrabold leading-relaxed tracking-tight text-neutral-900 sm:text-4xl md:text-5xl lg:text-6xl">
-            <span className="block">{programs.length} 番組のなかから、</span>
-            <span className="mt-2 block">
+            <span className="block">
+              <span className="text-[64px] font-black leading-none tracking-tight text-secondary-700 tabular-nums sm:text-[88px] md:text-[112px] lg:text-[140px]">
+                {programs.length}
+              </span>
+              <span className="ml-2 align-baseline text-2xl font-extrabold sm:text-3xl md:text-4xl lg:text-5xl">
+                番組のなかから、
+              </span>
+            </span>
+            <span className="mt-4 block sm:mt-6">
               <span className="relative inline-block">
                 <span className="relative z-10">「これ刺さる」</span>
                 <span
@@ -244,7 +254,11 @@ export default function HomePage() {
               id="all-programs-heading"
               className="text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl"
             >
-              全 {programs.length} 番組から、自分で探す。
+              全{' '}
+              <span className="text-3xl font-black tabular-nums text-secondary-700 sm:text-4xl">
+                {programs.length}
+              </span>{' '}
+              番組から、自分で探す。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
               キーワード・タグ・ジャンル・出展日で絞り込み。
@@ -253,9 +267,6 @@ export default function HomePage() {
           <ProgramListClient programs={programs} />
         </div>
       </section>
-
-      {/* 公式情報 + 制作者情報（最後に控えめに）*/}
-      <OfficialAndCredit />
     </>
   );
 }

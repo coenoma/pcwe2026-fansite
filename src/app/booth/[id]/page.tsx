@@ -259,38 +259,9 @@ export default async function BoothPage({ params }: Props) {
       )}
 
       {/*
-        ページ末尾の控えめな公式動線（番組単位の詳細ページから、
-        全体イベントの公式情報・公式ライブ配信に自然に繋ぐ）
+        公式動線は layout の <OfficialAndCredit /> で全ページ共通表示するため、
+        番組詳細ページ専用の末尾セクションは持たない（重複回避）。
       */}
-      <FadeInOnScroll>
-        <section className="border-t border-neutral-200 bg-white">
-          <div className="mx-auto max-w-3xl px-4 py-10 text-center sm:px-6 sm:py-12">
-            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">
-              当日の最新情報・タイムテーブルは公式サイトで。来場できない方は LISTEN による無料エリア公式ライブ配信もどうぞ。
-            </p>
-            <div className="mx-auto mt-5 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:justify-center">
-              <a
-                href={EVENT.officialUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border-2 border-primary-300 bg-white px-4 py-2.5 text-sm font-bold text-primary-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary-500 hover:bg-primary-50 hover:shadow-md"
-              >
-                <span>{EVENT.parentName} 公式サイト</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-              <a
-                href={EVENT.expoTvUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border-2 border-primary-300 bg-white px-4 py-2.5 text-sm font-bold text-primary-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary-500 hover:bg-primary-50 hover:shadow-md"
-              >
-                <span>📺 {EVENT.expoTvName}</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-        </section>
-      </FadeInOnScroll>
     </>
   );
 }

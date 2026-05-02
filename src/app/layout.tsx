@@ -16,6 +16,7 @@ import { PoweredByPodmate } from './_components/PoweredByPodmate';
 import { RegisterServiceWorker } from './_components/RegisterServiceWorker';
 import { GoogleAnalytics } from './_components/GoogleAnalytics';
 import { InstallPrompt } from './_components/InstallPrompt';
+import { OfficialAndCredit } from './_components/OfficialAndCredit';
 import { SITE } from '@/lib/constants';
 
 /*
@@ -152,6 +153,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1 pb-16 lg:pb-0">{children}</main>
+        {/*
+          全ページ共通の「公式情報 + 制作者紹介」セクション。
+          各ページが個別に <OfficialAndCredit /> を呼ぶ必要はない（layout が担保）。
+        */}
+        <OfficialAndCredit />
         <Footer />
         <BottomNav />
         <PoweredByPodmate />

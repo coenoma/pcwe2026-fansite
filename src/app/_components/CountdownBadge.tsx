@@ -32,7 +32,7 @@ export function CountdownBadge() {
   }
 
   return (
-    <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-amber-100 px-4 py-1.5 text-sm font-bold text-amber-900">
+    <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-secondary-50 px-4 py-1.5 text-sm font-bold text-secondary-700 ring-1 ring-secondary-200">
       <span aria-hidden="true">⏳</span>
       {label}
     </p>

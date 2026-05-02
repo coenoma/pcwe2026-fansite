@@ -72,8 +72,10 @@ export default async function GenrePage({ params }: Props) {
             {genre}
           </h1>
           <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-            <span className="font-bold text-neutral-900">{programs.length}</span> 番組が
-            このジャンルで出展中。
+            <span className="text-2xl font-black tabular-nums text-secondary-700 sm:text-3xl">
+              {programs.length}
+            </span>{' '}
+            番組がこのジャンルで出展中。
             <span className="ml-1 text-neutral-500">検索 / タグ / 出展日でさらに絞り込めます。</span>
           </p>
         </div>

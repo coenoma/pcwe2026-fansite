@@ -75,8 +75,10 @@ export default async function MoodPage({ params }: Props) {
               {mood.description}
             </p>
             <p className="text-xs text-neutral-600 sm:text-sm">
-              <span className="font-bold text-neutral-900">{matchedCount}</span> 番組が
-              この気分にハマる候補。
+              <span className="text-2xl font-black tabular-nums text-secondary-700 sm:text-3xl">
+                {matchedCount}
+              </span>{' '}
+              番組がこの気分にハマる候補。
               <span className="ml-1 text-neutral-500">
                 さらに検索・タグ・出展日で絞り込めます。
               </span>
