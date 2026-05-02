@@ -50,9 +50,9 @@ export function DiscoverHub({ programs }: Props) {
           <DiscoverCard
             icon={<Sparkles size={28} aria-hidden="true" />}
             badge="✨ QUIZ"
-            title="30 秒で、AI の番組診断"
-            description="5 問の選択肢から、あなたに刺さる 3 本をマッチ率と理由つきで AI が提案。"
-            cta="診断する"
+            title="30 秒の質問で、刺さる 3 本がわかる"
+            description="気分・シーン・話し方を 5 問選ぶだけ。マッチ率と理由つきで、AI があなたに 3 本おすすめ。"
+            cta="答えてみる"
             accent="#3B82F6"
             onClick={() => setQuizOpen(true)}
           />
@@ -61,8 +61,8 @@ export function DiscoverHub({ programs }: Props) {
           <DiscoverCard
             icon={<Compass size={28} aria-hidden="true" />}
             badge="🎯 FROM A PROGRAM"
-            title="好きを起点に、波紋を広げる"
-            description="あの番組が好きなら、これも好きかも。3 つの軸（似てる/広げる/意外）でレコメンド。"
+            title="好きな番組から、次に聴く 1 本"
+            description="番組名を入れるだけ。「似てる／広げる／意外」の 3 つの切り口で、次に刺さりそうな番組を提案。"
             cta="番組を選ぶ"
             accent="#8B5CF6"
             onClick={scrollToRecommend}

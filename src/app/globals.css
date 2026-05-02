@@ -236,3 +236,26 @@ dialog[open]::backdrop {
   animation: thinking-bob 1800ms ease-in-out infinite;
   will-change: transform;
 }
+
+/*
+  iOS Safari の自動ズーム対策
+  ─────────────────────────────────────
+  iOS Safari は input/textarea/select の font-size が 16px 未満だと
+  フォーカス時に画面を自動拡大する仕様（拡大後にレイアウトが崩れる）。
+
+  - WebKit のみ対象に絞る（@supports -webkit-touch-callout）
+  - hover 不可かつタッチ可能な環境（= モバイル WebKit）のみ強制
+  - PC/タブレット Safari の見た目には影響を与えない
+
+  公式の推奨は「16px 以上」（ピンチズーム自体は禁止しないので a11y 的に安全）。
+  meta viewport の maximum-scale=1 でも回避できるが、ピンチ操作を奪うので不採用。
+*/
+@supports (-webkit-touch-callout: none) {
+  @media (hover: none) and (pointer: coarse) {
+    input,
+    select,
+    textarea {
+      font-size: 16px;
+    }
+  }
+}

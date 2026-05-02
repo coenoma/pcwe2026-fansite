@@ -194,10 +194,10 @@ export default function HomePage() {
               DISCOVER
             </p>
             <h2 className="mt-1 text-xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-2xl">
-              3 つの探し方から、いまの気分のひとつを。
+              迷ったら、AI に頼る。番組の見つけ方、3 通り。
             </h2>
             <p className="mt-2 text-xs text-neutral-600 sm:text-sm">
-              AI が、あなたに刺さる 3 本を毎回違う切り口で連れてきます。
+              ガチャでふわっと、診断でぴたっと、「好きな番組」から芋づる式。気分で選んでください。
             </p>
           </div>
           <DiscoverHub programs={programs} />
@@ -215,12 +215,10 @@ export default function HomePage() {
               FROM A PROGRAM
             </p>
             <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
-              好きを起点に、波紋を広げる。
+              好きな番組から、次に聴く 1 本を見つける。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-              あの番組が好きなら、これも好きかも。
-              <span className="hidden sm:inline">温度感も、ジャンルも、意外な共通点も。</span>
-              3 つの軸で「次に聴く 1 本」を提案します。
+              番組名を入れるだけで、AI が「似てる／広げる／意外」の 3 つの切り口で、次に刺さりそうな番組を提案します。
             </p>
           </div>
           <RecommendFromProgram programs={programs} />
@@ -235,11 +233,11 @@ export default function HomePage() {
               MOOD
             </p>
             <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
-              いまの気分から、出会いにいく。
+              いまの気分にぴったりの番組を見つける。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
               「朝、シャキッとしたい」「夜、ひとりで沈みたい」 ——
-              気分から始めて、検索 / タグ / 出展日でさらに絞り込めます。
+              気分タグから始めて、検索 / 詳細タグ / 出展日でさらに絞り込めます。
             </p>
           </div>
           <MoodLanes moods={moods} countsBySlug={moodCounts} />
@@ -254,10 +252,10 @@ export default function HomePage() {
               CURATION
             </p>
             <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
-              AI が、4 つの切り口で選ぶならこれ。
+              4 つの切り口で、AI が 5 本ずつ選んだ番組セット。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-              気分や時間帯、興味の深さ。タブを切り替えて、自分に合う 5 本に出会ってください。
+              「夜更けの 5 本」「笑える 5 本」など、テーマごとにタブを切り替えて、その時の気分に合うひとそろえを見つけてください。
             </p>
           </div>
           <CurationLanes lanes={curations} />
@@ -279,8 +277,11 @@ export default function HomePage() {
               id="all-programs-heading"
               className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl"
             >
-              全番組から、自分で探す。
+              全 142 番組から、自分で探す。
             </h2>
+            <p className="mt-2 text-sm text-neutral-600 sm:text-base">
+              キーワード・タグ・ジャンル・出展日で絞り込んで、気になる番組を一覧から自分のペースで選べます。
+            </p>
           </div>
           <ProgramListClient programs={programs} />
         </div>

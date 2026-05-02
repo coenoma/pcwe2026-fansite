@@ -119,7 +119,7 @@ export function ProgramListClient({ programs, initialTags, resultLabel }: Props)
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               aria-label="番組を検索"
-              className="w-full rounded-full border border-neutral-300 bg-white py-2 pl-9 pr-12 text-sm shadow-sm focus:border-primary-500 focus:outline-none sm:text-base"
+              className="w-full rounded-full border border-neutral-300 bg-white py-2 pl-9 pr-12 text-base shadow-sm focus:border-primary-500 focus:outline-none"
             />
             <kbd className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded border border-neutral-300 bg-neutral-50 px-1.5 py-0.5 text-xs font-bold text-neutral-500 sm:block">
               /

@@ -101,9 +101,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* 公式情報（PODCAST EXPO 2026 公式 + 公式ライブ配信）*/}
+          {/* イベント公式情報（PODCAST EXPO 2026 公式 + 公式ライブ配信）*/}
           <div>
-            <h3 className="font-bold text-neutral-700">公式情報</h3>
+            <h3 className="font-bold text-neutral-700">イベント公式情報</h3>
             <ul className="mt-2 space-y-1 text-neutral-600">
               <li>
                 <a
