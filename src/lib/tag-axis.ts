@@ -38,14 +38,25 @@ export function tagAxis(tag: string): TagAxis {
   return 'content';
 }
 
-/** 軸 → Tailwind クラス（ボーダー色 + 文字色）*/
+/**
+ * 軸 → Tailwind クラス（ボーダー色 + 文字色）
+ *
+ * デザインガイドライン（docs/design-guideline.md）に沿う:
+ * - mood（感情・雰囲気）  → primary 系 = 「探索・感情」を示すブランドオレンジ
+ * - scene（時間・シーン）  → secondary 系 = 「データ・事実情報」を示すブルー
+ * - content（内容・性質）  → neutral 系 = 控えめ、装飾を抑えてノイズ削減
+ *
+ * 旧: amber/sky/emerald の 3 色彩度高めで「全タグに色を当てる systemize 感」が強かった。
+ * 新: 2 系統 + ニュートラルに集約することで、画面全体の色数が減り
+ *     ahamo 的な「整理された情報密度」になる。
+ */
 export function tagAxisClass(axis: TagAxis): string {
   switch (axis) {
     case 'mood':
-      return 'border-amber-300 text-amber-800 bg-amber-50';
+      return 'border-primary-200 text-primary-700 bg-primary-50';
     case 'scene':
-      return 'border-sky-300 text-sky-800 bg-sky-50';
+      return 'border-secondary-200 text-secondary-700 bg-secondary-50';
     case 'content':
-      return 'border-emerald-300 text-emerald-800 bg-emerald-50';
+      return 'border-neutral-200 text-neutral-700 bg-neutral-50';
   }
 }

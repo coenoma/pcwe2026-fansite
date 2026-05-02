@@ -9,6 +9,7 @@ import { FadeInOnScroll } from '@/app/_components/FadeInOnScroll';
 import { ProgramCard } from '@/app/_components/ProgramCard';
 import { safeJsonLd } from '@/lib/safe-json-ld';
 import { EVENT, SITE } from '@/lib/constants';
+import { tagAxis, tagAxisClass } from '@/lib/tag-axis';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -135,11 +136,18 @@ export default async function BoothPage({ params }: Props) {
             <p className="mt-4 text-base leading-relaxed text-neutral-800 sm:text-lg">
               {program.fanGuide.targetListener}
             </p>
+            {/*
+              タグ群: tagAxis に従って色分け
+              - 雰囲気（mood）= primary 系オレンジ（感情・探索）
+              - シーン（scene）= secondary 系ブルー（時間・データ）
+              - 内容（content）= ニュートラル
+              一覧カードと統一感を保ちつつ、軸性が一目で読める。
+            */}
             <div className="mt-6 flex flex-wrap gap-2">
               {program.fanGuide.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-white px-3 py-1 text-sm font-bold text-neutral-700"
+                  className={`rounded-full border px-3 py-1 text-sm font-bold ${tagAxisClass(tagAxis(tag))}`}
                 >
                   {tag}
                 </span>
