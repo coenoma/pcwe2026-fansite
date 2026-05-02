@@ -5,6 +5,7 @@ import { DiscoverHub } from './_components/DiscoverHub';
 import { CurationLanes } from './_components/CurationLanes';
 import { MoodLanes } from './_components/MoodLanes';
 import { RecommendFromProgram } from './_components/RecommendFromProgram';
+import { OfficialAndCredit } from './_components/OfficialAndCredit';
 import { safeJsonLd } from '@/lib/safe-json-ld';
 import { EVENT, SITE } from '@/lib/constants';
 import { CalendarDays, MapPin } from 'lucide-react';
@@ -284,6 +285,9 @@ export default function HomePage() {
           <ProgramListClient programs={programs} />
         </div>
       </section>
+
+      {/* 公式情報 + 制作者情報（最後に控えめに）*/}
+      <OfficialAndCredit />
     </>
   );
 }

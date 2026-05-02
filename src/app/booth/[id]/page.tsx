@@ -256,6 +256,23 @@ export default async function BoothPage({ params }: Props) {
           </section>
         </FadeInOnScroll>
       )}
+
+      {/*
+        ページ末尾の控えめな公式動線（番組単位の詳細ページから、
+        全体イベントの公式情報・公式ライブ配信に自然に繋ぐ）
+      */}
+      <FadeInOnScroll>
+        <section className="border-t border-neutral-200 bg-white">
+          <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-12">
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-600">
+              OFFICIAL
+            </p>
+            <p className="mt-2 text-base text-neutral-700 sm:text-lg">
+              当日の最新情報・タイムテーブルは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-700 underline decoration-transparent transition-colors hover:decoration-primary-600">{EVENT.parentName} 公式サイト</a> で。来場できない方は LISTEN による無料エリア公式ライブ配信 <a href={EVENT.expoTvUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-700 underline decoration-transparent transition-colors hover:decoration-primary-600">📺 {EVENT.expoTvName}</a> もどうぞ。
+            </p>
+          </div>
+        </section>
+      </FadeInOnScroll>
     </>
   );
 }

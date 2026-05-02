@@ -35,6 +35,14 @@ export const EVENT = {
   venueAddress: '東京都世田谷区池尻 2-4-5',
   venueAccess: '東急田園都市線 池尻大橋駅 徒歩 10 分',
   officialUrl: 'https://podcastexpo.jp/',
+  /**
+   * EXPO TV powered by LISTEN（公式ライブ配信）
+   * 無料エリア = PODCAST WEEKEND / 企業ブースの熱気を 2 日間ライブ配信。
+   * （現時点では告知記事 URL。配信本体 URL は当日切り替え予定）
+   */
+  expoTvUrl:
+    'https://listen.style/blog/24/%E3%80%90%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%91Podcast%20Expo%202026%20%E5%85%AC%E5%BC%8F%E3%83%A9%E3%82%A4%E3%83%96%E3%80%8CEXPO%20TV%E3%80%8D%E3%82%92LISTEN%E3%81%8C%E5%85%A8%E9%9D%A2%E3%83%97%E3%83%AD%E3%83%87%E3%83%A5%E3%83%BC%E3%82%B9%E3%81%97%E3%81%BE%E3%81%99%EF%BC%81',
+  expoTvName: 'EXPO TV powered by LISTEN',
 } as const;
 
 // ====================

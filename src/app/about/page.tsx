@@ -40,6 +40,16 @@ export default function AboutPage() {
           </section>
 
           <section>
+            <h2 className="text-xl font-extrabold text-neutral-900">公式の動きもぜひ</h2>
+            <p className="mt-3">
+              当日の最新情報・タイムテーブル・チケットは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">{EVENT.parentName} 公式サイト</a> でご確認ください。来場できない方には、LISTEN による無料エリア（{EVENT.name} ＋企業ブース）公式ライブ配信 <a href={EVENT.expoTvUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">📺 {EVENT.expoTvName}</a> もおすすめです。
+            </p>
+            <p className="mt-3 text-sm text-neutral-500">
+              本サイトは公式とは無関係に運営しているファンサイトですが、公式の盛り上がりにこそ拍手を送りたい立場です。
+            </p>
+          </section>
+
+          <section>
             <h2 className="text-xl font-extrabold text-neutral-900">掲載取り下げのご依頼</h2>
             <p className="mt-3">
               番組制作者の方で「載せないでほしい」というご要望があれば、すぐに削除します。下記フォームからご連絡ください。

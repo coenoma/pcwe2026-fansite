@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CREATOR, FORM_FIX_URL, FORM_TAKEDOWN_URL, SITE } from '@/lib/constants';
+import { CREATOR, EVENT, FORM_FIX_URL, FORM_TAKEDOWN_URL, SITE } from '@/lib/constants';
 
 /**
  * 共通フッター
@@ -17,7 +17,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <p className="text-xs text-neutral-500">{SITE.unofficialNotice}</p>
 
-        <div className="mt-6 grid gap-6 text-sm sm:grid-cols-3">
+        <div className="mt-6 grid gap-6 text-sm sm:grid-cols-2 lg:grid-cols-4">
           {/* このサイトについて */}
           <div>
             <h3 className="font-bold text-neutral-700">このサイトについて</h3>
@@ -97,6 +97,34 @@ export function Footer() {
                 <Link href="/plan" className="transition-colors hover:text-primary-600">
                   気になる番組リスト
                 </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* 公式情報（PODCAST EXPO 2026 公式 + 公式ライブ配信）*/}
+          <div>
+            <h3 className="font-bold text-neutral-700">公式情報</h3>
+            <ul className="mt-2 space-y-1 text-neutral-600">
+              <li>
+                <a
+                  href={EVENT.officialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-primary-600"
+                >
+                  {EVENT.parentName} 公式サイト
+                </a>
+              </li>
+              <li>
+                <a
+                  href={EVENT.expoTvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-primary-600"
+                >
+                  📺 {EVENT.expoTvName}
+                </a>
+                <span className="block text-xs text-neutral-400">公式ライブ配信</span>
               </li>
             </ul>
           </div>
