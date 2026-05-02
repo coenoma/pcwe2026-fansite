@@ -214,16 +214,17 @@ export default async function BoothPage({ params }: Props) {
               </p>
             </div>
 
-            <p className="mt-8 text-sm">
+            <div className="mt-8 flex justify-center">
               <a
                 href={program.boothUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600"
+                className="inline-flex items-center justify-center gap-1.5 rounded-full border-2 border-primary-300 bg-white px-5 py-2.5 text-sm font-bold text-primary-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary-500 hover:bg-primary-50 hover:shadow-md"
               >
-                公式ブースページを見る ↗
+                <span>公式ブースページを見る</span>
+                <span aria-hidden="true">↗</span>
               </a>
-            </p>
+            </div>
           </div>
         </section>
       </FadeInOnScroll>
@@ -263,13 +264,33 @@ export default async function BoothPage({ params }: Props) {
       */}
       <FadeInOnScroll>
         <section className="border-t border-neutral-200 bg-white">
-          <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-12">
+          <div className="mx-auto max-w-3xl px-4 py-10 text-center sm:px-6 sm:py-12">
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-600">
               OFFICIAL
             </p>
-            <p className="mt-2 text-base text-neutral-700 sm:text-lg">
-              当日の最新情報・タイムテーブルは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-700 underline decoration-transparent transition-colors hover:decoration-primary-600">{EVENT.parentName} 公式サイト</a> で。来場できない方は LISTEN による無料エリア公式ライブ配信 <a href={EVENT.expoTvUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-700 underline decoration-transparent transition-colors hover:decoration-primary-600">📺 {EVENT.expoTvName}</a> もどうぞ。
+            <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">
+              当日の最新情報・タイムテーブルは公式サイトで。来場できない方は LISTEN による無料エリア公式ライブ配信もどうぞ。
             </p>
+            <div className="mx-auto mt-5 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:justify-center">
+              <a
+                href={EVENT.officialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border-2 border-primary-300 bg-white px-4 py-2.5 text-sm font-bold text-primary-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary-500 hover:bg-primary-50 hover:shadow-md"
+              >
+                <span>{EVENT.parentName} 公式サイト</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href={EVENT.expoTvUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border-2 border-primary-300 bg-white px-4 py-2.5 text-sm font-bold text-primary-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary-500 hover:bg-primary-50 hover:shadow-md"
+              >
+                <span>📺 {EVENT.expoTvName}</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </section>
       </FadeInOnScroll>
