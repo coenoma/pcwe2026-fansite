@@ -8,7 +8,9 @@
  */
 
 @theme {
-  /* ====== ブランドカラー (primary) ====== */
+  /* ====== ブランドカラー (primary)
+     podmate.fm との連続性を保つメインオレンジ。
+     主 CTA、ロゴ、強い強調などサイト全体の主役。 */
   --color-primary-50: #fdf3f1;
   --color-primary-100: #fbe7e2;
   --color-primary-200: #f5cabe;
@@ -18,9 +20,37 @@
   --color-primary-600: #c25c44;
   --color-primary-700: #a14938;
 
-  /* ====== フォント ====== */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif;
+  /* ====== セカンダリブランド (secondary / 濃いブルー)
+     ahamo に着想を得た「都会的・知的」を示すブルー。
+     主に: 数字を大きく見せる時、データ・統計・タイムテーブル系の強調、
+     セクションの理性的な見出し、外部公式リンクの hover 色、
+     primary に対するコントラスト要素として使用。 */
+  --color-secondary-50: #eef4fc;
+  --color-secondary-100: #d6e4f6;
+  --color-secondary-200: #aac6ec;
+  --color-secondary-300: #76a2dc;
+  --color-secondary-400: #467ec6;
+  --color-secondary-500: #2962b1;
+  --color-secondary-600: #1a4f99;
+  --color-secondary-700: #143e7c;
+  --color-secondary-800: #0f3260;
+  --color-secondary-900: #0a2347;
+
+  /* ====== アクセント (accent-cyan)
+     ahamo の鮮やかな水色 CTA に着想。
+     使用は控えめ: 特別な通知、新機能バッジ、ライブ配信などレアアクション。
+     primary オレンジと併用すると目立ちすぎるので、通常は単独使用。 */
+  --color-accent-cyan-300: #5dd9f0;
+  --color-accent-cyan-400: #2bcae6;
+  --color-accent-cyan-500: #00b3d4;
+  --color-accent-cyan-600: #0095b3;
+
+  /* ====== フォント
+     - sans (本体 UI / 番組タイトル / 一般本文): Noto Sans JP（layout.tsx で読込）
+     - vibe フォント 6 種: 番組詳細ページの番組らしさ表現用（layout.tsx 参照）*/
+  --font-sans: var(--font-noto-sans-jp), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP",
+    Meiryo, sans-serif;
 }
 
 /* ====== reduced motion 対応 ====== */

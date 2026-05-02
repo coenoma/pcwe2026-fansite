@@ -134,7 +134,7 @@ export default function HomePage() {
             <div className="flex items-start gap-3 rounded-xl border border-neutral-200 bg-white/80 p-4 text-left shadow-sm backdrop-blur">
               <span
                 aria-hidden="true"
-                className="mt-0.5 flex h-9 w-9 flex-none items-center justify-center rounded-full bg-primary-50 text-primary-600"
+                className="mt-0.5 flex h-9 w-9 flex-none items-center justify-center rounded-full bg-secondary-50 text-secondary-600"
               >
                 <CalendarDays size={18} />
               </span>

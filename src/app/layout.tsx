@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import {
+  Noto_Sans_JP,
   Klee_One,
   Noto_Serif_JP,
   RocknRoll_One,
@@ -17,7 +18,19 @@ import { GoogleAnalytics } from './_components/GoogleAnalytics';
 import { InstallPrompt } from './_components/InstallPrompt';
 import { SITE } from '@/lib/constants';
 
-// 番組らしさを演出するフォント群（CSS 変数で切り替え）
+/*
+  サイト全体の基本フォント = Noto Sans JP
+  ahamo に着想を得た「都会的・読みやすい・端正なサンセリフ」。
+  body の font-family は globals.css の --font-sans で参照される。
+*/
+const notoSansJp = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  display: 'swap',
+  variable: '--font-noto-sans-jp',
+});
+
+// 番組らしさを演出するフォント群（番組詳細で vibe 別に切り替え）
 const kleeOne = Klee_One({
   subsets: ['latin'],
   weight: '600',
@@ -125,6 +138,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const fontVariables = [
+    notoSansJp.variable,
     kleeOne.variable,
     notoSerifJp.variable,
     rocknRollOne.variable,
