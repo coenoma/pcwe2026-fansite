@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import type { Curation, Program } from '@/lib/types';
 import { dayLabel } from '@/lib/format';
-import { vibeStyle } from '@/lib/vibe-style';
 
 interface Props {
   lanes: { curation: Curation; programs: Program[] }[];
@@ -94,7 +93,7 @@ export function CurationLanes({ lanes }: Props) {
         <ul className="mt-5 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
           {active.programs.map((program) => (
             <li key={program.id}>
-              <CurationCard program={program} accentColor={active.curation.themeColor} />
+              <CurationCard program={program} />
             </li>
           ))}
         </ul>
@@ -103,27 +102,12 @@ export function CurationLanes({ lanes }: Props) {
   );
 }
 
-function CurationCard({
-  program,
-  accentColor,
-}: {
-  program: Program;
-  accentColor: string;
-}) {
-  const vibe = vibeStyle(program.fanGuide.vibe);
-  const themeColor = program.fanGuide.themeColor ?? vibe.defaultThemeColor;
-  const accentBar = `${accentColor}40`;
-
+function CurationCard({ program }: { program: Program }) {
   return (
     <Link
       href={`/booth/${program.id}`}
       className="group flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl active:scale-[0.99]"
     >
-      <span
-        aria-hidden="true"
-        className="block h-1"
-        style={{ backgroundColor: accentBar }}
-      />
       <div className="relative aspect-square w-full overflow-hidden bg-neutral-100">
         <Image
           src={program.thumbnail}
@@ -131,11 +115,6 @@ function CurationCard({
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-15 mix-blend-multiply"
-          style={{ backgroundColor: themeColor }}
         />
       </div>
       <div className="flex flex-1 flex-col gap-1.5 p-2.5 sm:p-3">

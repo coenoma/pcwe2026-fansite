@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { memo, useState } from 'react';
 import type { Program, Genre } from '@/lib/types';
 import { dayLabel } from '@/lib/format';
-import { vibeStyle } from '@/lib/vibe-style';
 import { tagAxis, tagAxisClass } from '@/lib/tag-axis';
 import { highlightText } from '@/lib/highlight-text';
 import { FavoriteButton } from './FavoriteButton';
@@ -41,10 +40,11 @@ interface Props {
 /**
  * 一覧用カード（Podmate ブランディング）
  *
- * - vibe 別のトップアクセントラインで番組らしさを出す
  * - 画像はスケルトン → フェードインで「止まった？」を回避
  * - PC ホバーで浮上 + Spotify ボタン出現
  * - React.memo で再レンダリング抑制
+ * - vibe 別のトップアクセントラインは廃止（全カードが色付きラインを持つと
+ *   AI 的な systemize 感が出るため、ニュートラルなボーダーで統一）
  *
  * v1.7 改修: 「stretched link」パターンでカード全体をタップ可能に
  * - <article> 全体に絶対配置の `<Link>` を 1 枚被せ、画像/タイトルを含む全領域から詳細へ遷移
@@ -53,17 +53,10 @@ interface Props {
  */
 function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
   const [imgLoaded, setImgLoaded] = useState(false);
-  const vibe = vibeStyle(program.fanGuide.vibe);
   const detailHref = `/booth/${program.id}`;
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl">
-      {/* vibe トップアクセントライン */}
-      <span
-        aria-hidden="true"
-        className={`pointer-events-none absolute inset-x-0 top-0 z-10 h-1 ${vibe.topAccent}`}
-      />
-
       {/* stretched link: カード全体をタップ可能に（z-10、interactive 子要素より下）*/}
       <Link
         href={detailHref}

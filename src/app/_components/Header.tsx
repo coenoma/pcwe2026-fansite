@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Heart } from 'lucide-react';
 import { FavoriteCountBadge } from './FavoriteCountBadge';
 
 /**
@@ -52,14 +52,15 @@ export function Header() {
             className="inline-flex items-center gap-1 rounded-full bg-primary-600 px-3 py-1.5 font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-md sm:px-4"
           >
             <Sparkles size={14} aria-hidden="true" />
-            <span className="hidden sm:inline">AI で番組を選ぶ</span>
-            <span className="sm:hidden">AI 選ぶ</span>
+            <span>AIリコメンド</span>
           </Link>
           <Link
             href="/plan"
-            className="inline-flex items-center rounded-full px-3 py-1.5 font-bold text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary-600"
+            aria-label="気になるリスト"
+            className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 font-bold text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary-600 sm:px-3"
           >
-            気になる
+            <Heart size={16} aria-hidden="true" />
+            <span className="hidden sm:inline">気になる</span>
             <FavoriteCountBadge />
           </Link>
           <Link

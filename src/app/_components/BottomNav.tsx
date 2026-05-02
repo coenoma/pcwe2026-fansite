@@ -19,7 +19,7 @@ export function BottomNav() {
     { href: '/', label: '一覧', icon: Home, activeMatch: 'exact' as const },
     {
       href: '/#discover',
-      label: 'AI で選ぶ',
+      label: 'AIリコメンド',
       icon: Sparkles,
       // # はクライアントサイドアンカーで pathname には含まれないため active 判定しない
       activeMatch: 'never' as const,
