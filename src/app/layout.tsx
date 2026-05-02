@@ -14,6 +14,7 @@ import { BottomNav } from './_components/BottomNav';
 import { PoweredByPodmate } from './_components/PoweredByPodmate';
 import { RegisterServiceWorker } from './_components/RegisterServiceWorker';
 import { GoogleAnalytics } from './_components/GoogleAnalytics';
+import { InstallPrompt } from './_components/InstallPrompt';
 import { SITE } from '@/lib/constants';
 
 // 番組らしさを演出するフォント群（CSS 変数で切り替え）
@@ -141,6 +142,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <BottomNav />
         <PoweredByPodmate />
         <RegisterServiceWorker />
+        <InstallPrompt />
         <GoogleAnalytics />
       </body>
     </html>
