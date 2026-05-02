@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { Mic } from 'lucide-react';
+import Image from 'next/image';
 import { FavoriteCountBadge } from './FavoriteCountBadge';
 
 /**
  * 共通ヘッダー
  *
  * ブランディング:
- * - マイクアイコン + PCWE2026 ロゴテキスト + サブタイトル
+ * - 手描きマイクのアプリアイコン（OGP / favicon と同シリーズ）+ PCWE2026 ロゴテキスト
  * - 「非公式ファンガイド」バッジ
  * - 装飾ストライプ（primary グラデ）で視覚的アンカー
  */
@@ -24,13 +24,15 @@ export function Header() {
           href="/"
           className="flex items-center gap-2.5 transition-opacity hover:opacity-90"
         >
-          {/* ロゴアイコン */}
-          <span
-            aria-hidden="true"
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-600 text-white shadow-sm"
-          >
-            <Mic size={18} />
-          </span>
+          {/* ロゴアイコン（手描きマイク。OGP・favicon と統一感）*/}
+          <Image
+            src="/icons/icon-192.png"
+            alt="PCWE2026 ファンガイド ロゴ"
+            width={36}
+            height={36}
+            priority
+            className="h-9 w-9 rounded-xl shadow-sm"
+          />
 
           {/* ロゴテキスト + サブ */}
           <span className="flex flex-col leading-none">
