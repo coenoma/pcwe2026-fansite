@@ -56,7 +56,13 @@ function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
   const detailHref = `/booth/${program.id}`;
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl">
+    /*
+      ⚠️ overflow-hidden を <article> に付けない:
+      お気に入りボタンの「気になるに追加」ホバー tooltip がカード外にはみ出すため、
+      クリップされて見切れる。代わりに画像エリアだけに rounded-t-2xl overflow-hidden
+      を当てて画像角を保ちつつ、article 全体は overflow-visible に。
+    */
+    <article className="group relative flex flex-col rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl">
       {/* stretched link: カード全体をタップ可能に（z-10、interactive 子要素より下）*/}
       <Link
         href={detailHref}
@@ -66,8 +72,8 @@ function ProgramCardImpl({ program, highlightQuery = '' }: Props) {
         <span className="sr-only">詳細を見る</span>
       </Link>
 
-      {/* 画像エリア */}
-      <div className="relative aspect-square w-full overflow-hidden bg-neutral-100">
+      {/* 画像エリア（上 2 角だけ rounded + overflow-hidden で画像角を綺麗に）*/}
+      <div className="relative aspect-square w-full overflow-hidden rounded-t-2xl bg-neutral-100">
         {/* スケルトン */}
         {!imgLoaded && (
           <div
