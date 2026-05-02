@@ -119,10 +119,7 @@ function CurationCard({ program }: { program: Program }) {
       </div>
       <div className="flex flex-1 flex-col gap-1.5 p-2.5 sm:p-3">
         <div className="flex flex-wrap gap-1 text-[10px]">
-          <span
-            className="rounded-full px-1.5 py-0.5 font-bold"
-            style={{ backgroundColor: `${themeColor}1a`, color: themeColor }}
-          >
+          <span className="rounded-full bg-primary-50 px-1.5 py-0.5 font-bold text-primary-700">
             {program.fanGuide.genre}
           </span>
           <span className="rounded-full bg-neutral-100 px-1.5 py-0.5 font-bold text-neutral-600">
