@@ -38,7 +38,7 @@ export function DiscoverHub({ programs }: Props) {
         <li>
           <DiscoverCard
             icon={<Dices size={28} aria-hidden="true" />}
-            badge="🎲 RANDOM"
+            badge="ガチャ"
             title="知らない番組と、運命の出会い"
             description="AI のおすすめ 3 本を、ふわっと引く。何も決めずに、ただ巡り会いたい時に。"
             cta="引いてみる"
@@ -49,7 +49,7 @@ export function DiscoverHub({ programs }: Props) {
         <li>
           <DiscoverCard
             icon={<Sparkles size={28} aria-hidden="true" />}
-            badge="✨ QUIZ"
+            badge="診断"
             title="30 秒の質問で、刺さる 3 本がわかる"
             description="気分・シーン・話し方を 5 問選ぶだけ。マッチ率と理由つきで、AI があなたに 3 本おすすめ。"
             cta="答えてみる"
@@ -60,7 +60,7 @@ export function DiscoverHub({ programs }: Props) {
         <li>
           <DiscoverCard
             icon={<Compass size={28} aria-hidden="true" />}
-            badge="🎯 FROM A PROGRAM"
+            badge="番組から探す"
             title="好きな番組から、次に聴く 1 本"
             description="番組名を入れるだけ。「似てる／広げる／意外」の 3 つの切り口で、次に刺さりそうな番組を提案。"
             cta="番組を選ぶ"
@@ -127,7 +127,7 @@ function DiscoverCard({
       </span>
 
       <p
-        className="relative text-[10px] font-bold uppercase tracking-[0.18em]"
+        className="relative text-xs font-bold tracking-tight"
         style={{ color: accent }}
       >
         {badge}

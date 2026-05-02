@@ -91,41 +91,26 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: safeJsonLd(eventJsonLd) }}
       />
 
-      {/* Hero（装飾豊か）*/}
-      <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 via-amber-50/40 to-white">
-        {/* 背景装飾: 控えめなドットパターン */}
+      {/*
+        Hero: 装飾を意図的に絞る。
+        - 旧 3 装飾（ドット + 左下ブロブ + 右上ブロブ）→ 右上ブロブ 1 つだけ残す
+        - 旧 3 色グラデ（sky → amber → white）→ 2 色（sky → white）に
+        - バッジから絵文字を取り除き、文言は「非公式ファンガイド」だけに（情報の重複解消）
+      */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 to-white">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle, currentColor 1px, transparent 1px)',
-            backgroundSize: '20px 20px',
-          }}
-        />
-        {/* 背景装飾: 右上のブロブ */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary-200/30 blur-3xl"
-        />
-        {/* 背景装飾: 左下のブロブ */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-amber-200/40 blur-3xl"
+          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary-200/25 blur-3xl"
         />
 
         <div className="relative mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-24">
-          {/* バッジ */}
-          <div className="inline-flex max-w-full items-center gap-2 whitespace-nowrap rounded-full border border-primary-200 bg-white/80 px-3 py-1.5 text-[11px] font-bold text-primary-700 shadow-sm backdrop-blur sm:px-4 sm:text-xs">
-            <span aria-hidden="true">🎙️</span>
-            <span className="truncate">
-              {EVENT.shortName} を 120% 楽しむ、非公式ファンガイド
-            </span>
+          {/* バッジ（控えめに）*/}
+          <div className="inline-flex items-center rounded-full border border-primary-200 bg-white/80 px-4 py-1.5 text-xs font-bold text-primary-700 shadow-sm">
+            非公式ファンガイド
           </div>
 
           {/* メインコピー */}
           <h1 className="mt-6 text-3xl font-extrabold leading-relaxed tracking-tight text-neutral-900 sm:text-4xl md:text-5xl lg:text-6xl">
-
             <span className="block">{programs.length} 番組のなかから、</span>
             <span className="mt-2 block">
               <span className="relative inline-block">
@@ -139,11 +124,9 @@ export default function HomePage() {
             </span>
           </h1>
 
-          {/* サブコピー */}
+          {/* サブコピー（読点を減らして 1 行に）*/}
           <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
-            行く前に「あの番組、目当てにしよう」が決まる。
-            <br className="hidden sm:block" />
-            キャッチコピーとタグで、当日が、楽しみになる。
+            キャッチコピーとタグで、行きたい番組が行く前から決まる。
           </p>
 
           {/* イベント情報カード */}
@@ -190,14 +173,11 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
           <div className="mb-6 text-center sm:mb-8">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
-              DISCOVER
-            </p>
-            <h2 className="mt-1 text-xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-2xl">
-              迷ったら、AI に頼る。番組の見つけ方、3 通り。
+            <h2 className="text-xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-2xl">
+              迷ったら、AI に番組を選んでもらう。
             </h2>
-            <p className="mt-2 text-xs text-neutral-600 sm:text-sm">
-              ガチャでふわっと、診断でぴたっと、「好きな番組」から芋づる式。気分で選んでください。
+            <p className="mt-2 text-sm text-neutral-600">
+              気分で選べる、3 つの方法。
             </p>
           </div>
           <DiscoverHub programs={programs} />
@@ -211,14 +191,11 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           <div className="mb-6 sm:mb-8">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
-              FROM A PROGRAM
-            </p>
-            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
               好きな番組から、次に聴く 1 本を見つける。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-              番組名を入れるだけで、AI が「似てる／広げる／意外」の 3 つの切り口で、次に刺さりそうな番組を提案します。
+              番組名を入れるだけ。「似てる」「広げる」「意外」の 3 軸で次の 1 本を提案します。
             </p>
           </div>
           <RecommendFromProgram programs={programs} />
@@ -229,15 +206,11 @@ export default function HomePage() {
       <section className="border-t border-neutral-200 bg-gradient-to-b from-white via-amber-50/20 to-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           <div className="mb-6 sm:mb-8">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
-              MOOD
-            </p>
-            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
               いまの気分にぴったりの番組を見つける。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-              「朝、シャキッとしたい」「夜、ひとりで沈みたい」 ——
-              気分タグから始めて、検索 / 詳細タグ / 出展日でさらに絞り込めます。
+              「朝、シャキッとしたい」「夜、ひとりで沈みたい」 — 気分から始めて、絞り込めます。
             </p>
           </div>
           <MoodLanes moods={moods} countsBySlug={moodCounts} />
@@ -248,14 +221,11 @@ export default function HomePage() {
       <section className="border-t border-neutral-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           <div className="mb-6 sm:mb-8">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
-              CURATION
-            </p>
-            <h2 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
-              4 つの切り口で、AI が 5 本ずつ選んだ番組セット。
+            <h2 className="text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
+              テーマ別に、AI が選んだ番組セット。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-              「夜更けの 5 本」「笑える 5 本」など、テーマごとにタブを切り替えて、その時の気分に合うひとそろえを見つけてください。
+              「夜更け」「笑える」など、その時の気分に合うひとそろえをタブで切り替え。
             </p>
           </div>
           <CurationLanes lanes={curations} />
@@ -270,17 +240,14 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
           <div className="mb-6 sm:mb-8">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
-              ALL PROGRAMS
-            </p>
             <h2
               id="all-programs-heading"
-              className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl"
+              className="text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl"
             >
-              全 142 番組から、自分で探す。
+              全 {programs.length} 番組から、自分で探す。
             </h2>
             <p className="mt-2 text-sm text-neutral-600 sm:text-base">
-              キーワード・タグ・ジャンル・出展日で絞り込んで、気になる番組を一覧から自分のペースで選べます。
+              キーワード・タグ・ジャンル・出展日で絞り込み。
             </p>
           </div>
           <ProgramListClient programs={programs} />

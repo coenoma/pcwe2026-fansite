@@ -265,10 +265,7 @@ export default async function BoothPage({ params }: Props) {
       <FadeInOnScroll>
         <section className="border-t border-neutral-200 bg-white">
           <div className="mx-auto max-w-3xl px-4 py-10 text-center sm:px-6 sm:py-12">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-600">
-              OFFICIAL
-            </p>
-            <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">
+            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">
               当日の最新情報・タイムテーブルは公式サイトで。来場できない方は LISTEN による無料エリア公式ライブ配信もどうぞ。
             </p>
             <div className="mx-auto mt-5 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:justify-center">

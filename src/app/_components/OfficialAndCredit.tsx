@@ -17,10 +17,7 @@ export function OfficialAndCredit() {
         <div className="grid items-stretch gap-6 sm:gap-8 lg:grid-cols-2">
           {/* 左: 公式情報（左右中央寄せ + アウトラインボタン 2 つ）*/}
           <div className="flex h-full flex-col items-center rounded-2xl border border-neutral-200 bg-white p-6 text-center sm:p-7">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-600">
-              OFFICIAL
-            </p>
-            <h2 className="mt-1 text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
+            <h2 className="text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
               公式の情報も、ぜひ。
             </h2>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-neutral-600">
@@ -108,10 +105,7 @@ export function OfficialAndCredit() {
 
             {/* テキストエリア */}
             <div className="relative flex flex-1 flex-col p-6 sm:p-7">
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-600">
-                MADE BY
-              </p>
-              <h2 className="mt-1 text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
+              <h2 className="text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
                 このサイトを作った人。
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600">

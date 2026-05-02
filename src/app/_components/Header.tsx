@@ -9,17 +9,12 @@ import { FavoriteCountBadge } from './FavoriteCountBadge';
  * ブランディング:
  * - 手描きマイクのアプリアイコン（OGP / favicon と同シリーズ）+ PCWE2026 ロゴテキスト
  * - 「非公式ファンガイド」バッジ
- * - 装飾ストライプ（primary グラデ）で視覚的アンカー
+ * - 上端の 3 色グラデ装飾線は意図的に置かない（podmate.fm のトーンに合わせて
+ *   装飾要素を絞り、過剰な装飾による「AI 的フリル感」を排除）
  */
 export function Header() {
   return (
     <header className="border-b border-neutral-200 bg-white">
-      {/* 上端の装飾グラデライン */}
-      <div
-        aria-hidden="true"
-        className="h-1 bg-gradient-to-r from-primary-500 via-amber-400 to-sky-400"
-      />
-
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"

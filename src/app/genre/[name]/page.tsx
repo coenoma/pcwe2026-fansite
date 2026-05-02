@@ -67,9 +67,7 @@ export default async function GenrePage({ params }: Props) {
         </Link>
 
         <div className="mt-5 mb-6 sm:mb-8">
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary-600">
-            GENRE
-          </p>
+          <p className="text-sm font-bold text-primary-600">ジャンル</p>
           <h1 className="mt-1 text-2xl font-extrabold leading-snug tracking-tight text-neutral-900 sm:text-3xl">
             {genre}
           </h1>
