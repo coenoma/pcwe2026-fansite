@@ -119,19 +119,19 @@ export default async function BoothPage({ params }: Props) {
 
       {/*
         Hero 末尾に波々を乗せる（負マージンで Hero 内に侵食）
-        → Hero と amber-50 セクションの間に白い余白が生まれず、自然な波の橋渡しに
+        → Hero と次のセクション（neutral-50）の間に白い余白が生まれず、自然な橋渡しに
       */}
-      <WaveDivider fillClass="fill-amber-50" className="-mt-12 sm:-mt-16" />
+      <WaveDivider fillClass="fill-neutral-50" className="-mt-12 sm:-mt-16" />
 
-      {/* こんな人に刺さる */}
+      {/* こんな人に刺さる: 派手な amber-50 → 落ち着いた neutral-50 にして共通枠の整理感を強化 */}
       <FadeInOnScroll>
-        <section className="bg-amber-50">
+        <section className="bg-neutral-50">
           <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
             <h2 className="text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
-              📊 こんな人に、刺さるかも？
+              こんな人に、刺さるかも？
             </h2>
             <p className="mt-1 text-xs text-neutral-500">
-              AI の独断と偏見で「想定リスナー」を書いてみました！
+              AI の独断と偏見で「想定リスナー」を書いてみました。
             </p>
             <p className="mt-4 text-base leading-relaxed text-neutral-800 sm:text-lg">
               {program.fanGuide.targetListener}
@@ -159,12 +159,12 @@ export default async function BoothPage({ params }: Props) {
 
       <WaveDivider fillClass="fill-white" className="-mt-12 sm:-mt-16" />
 
-      {/* 公式情報 */}
+      {/* 公式情報（共通枠: 絵文字を削って整然と） */}
       <FadeInOnScroll>
         <section className="bg-white">
           <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
             <h2 className="text-xl font-extrabold tracking-tight text-neutral-900 sm:text-2xl">
-              📝 公式情報
+              公式情報
             </h2>
             {/*
               公式説明文。description には公式テンプレの <br> 由来の改行（\n）が
@@ -181,8 +181,8 @@ export default async function BoothPage({ params }: Props) {
                 rel="noopener noreferrer"
                 className="group mt-6 block rounded-2xl border-2 border-primary-200 bg-primary-50/60 p-4 transition-all hover:-translate-y-0.5 hover:border-primary-400 hover:shadow-md sm:p-5"
               >
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary-700">
-                  🎧 おすすめエピソード
+                <p className="text-xs font-bold text-primary-700">
+                  おすすめエピソード
                 </p>
                 <p className="mt-1 text-xs text-neutral-500">
                   番組ホストが選ぶ「まずはこの 1 本」
@@ -215,10 +215,23 @@ export default async function BoothPage({ params }: Props) {
                 </div>
               )}
 
+            {/*
+              出展日 / エリア: ahamo 風の「データ感」で見せる。
+              - 出展日（土・日・両日）を secondary-700 + tabular-nums で大きく
+              - 時間帯・エリアは添え物として小さく
+            */}
             <div className="mt-6">
               <h3 className="text-sm font-bold text-neutral-500">出展日 / エリア</h3>
-              <p className="mt-1 text-base text-neutral-800">
-                {dayLabel(program.exhibition.days)} {program.exhibition.hours} ／ {program.exhibition.area === 'free' ? '無料エリア' : '有料エリア'}
+              <p className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span className="text-2xl font-black tabular-nums text-secondary-700 sm:text-3xl">
+                  {dayLabel(program.exhibition.days)}
+                </span>
+                <span className="text-sm font-bold text-neutral-700 sm:text-base">
+                  {program.exhibition.hours}
+                </span>
+                <span className="text-sm text-neutral-600 sm:text-base">
+                  ／ {program.exhibition.area === 'free' ? '無料エリア' : '有料エリア'}
+                </span>
               </p>
             </div>
 
