@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getAllPrograms, getMoods, getMoodBySlug, getProgramsByMood } from '@/lib/data';
 import { ProgramListClient } from '@/app/_components/ProgramListClient';
+import { safeJsonLd } from '@/lib/safe-json-ld';
+import { SITE } from '@/lib/constants';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -41,10 +43,36 @@ export default async function MoodPage({ params }: Props) {
   // 始めてもらう。ProgramListClient の検索・フィルタ・ソート機能を使い、
   // ユーザーがその場でさらに絞り込み・並び替えできる体験にする。
   const allPrograms = getAllPrograms();
-  const matchedCount = getProgramsByMood(mood).length;
+  const matchedPrograms = getProgramsByMood(mood);
+  const matchedCount = matchedPrograms.length;
+
+  // CollectionPage + ItemList: AI クローラーに「気分軸の番組コレクション」と伝える
+  const collectionJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${mood.label}（${matchedCount} 番組）`,
+    description: `${mood.description} PODCAST WEEKEND 2026 出展 ${matchedCount} 番組のコレクション。`,
+    url: `${SITE.url}/mood/${mood.slug}`,
+    isPartOf: { '@type': 'WebSite', name: 'PCWE2026 ファンガイド（非公式）', url: SITE.url },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: matchedCount,
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: matchedPrograms.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE.url}/booth/${p.id}`,
+        name: p.shortName ?? p.name,
+      })),
+    },
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(collectionJsonLd) }}
+      />
       {/* Hero */}
       <section
         className="relative overflow-hidden border-b border-neutral-200"

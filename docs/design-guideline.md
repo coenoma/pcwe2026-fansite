@@ -242,3 +242,61 @@ ProgramCard の overflow: <article> は overflow-visible（tooltip クリップ�
 
 `lib/vibe-style.ts` には番組詳細ページの「番組らしさ表現用」の vibe → フォント・カラーマッピングが定義されている。
 **サイト UI ではこれは使わない**（共有しないことが大事）。番組詳細ページのキャッチコピー / Hero ロゴエリアでだけ呼び出す。
+
+---
+
+## 8. AI フレンドリー化（Generative Engine Optimization）
+
+ChatGPT / Claude / Perplexity / Google Gemini など生成 AI 経由で番組情報が引用される時代。
+非公式ファンガイドとして、**生成 AI に正確に取り扱ってもらえる**ことを最重要視する。
+
+### 8.1 提供している AI 向けエンドポイント
+
+| URL | 形式 | 用途 |
+|---|---|---|
+| `/llms.txt` | Markdown | サイト全体の地図（主要ページ + ジャンル一覧 + 142 番組のリンク） |
+| `/llms-full.txt` | Markdown | 全 142 番組の詳細データを 1 ファイルに集約（LLM コンテキスト 1 発取得用） |
+| `/api/programs.json` | JSON | 全番組の構造化データ（zod 検証済み正式版） |
+| `/sitemap.xml` | XML | 全 168 URL のサイトマップ |
+| `/robots.txt` | TXT | 主要 AI ボット 15 種類を明示的に Allow |
+
+すべて `scripts/build-llms.ts` で `prebuild` 時に自動生成・配置される。
+
+### 8.2 各ページの構造化データ（JSON-LD）
+
+| ページ | スキーマ | 内容 |
+|---|---|---|
+| トップ | `Event` + `ItemList` | PODCAST WEEKEND 2026 / superEvent: PODCAST EXPO 2026 + 142 番組リスト |
+| 番組詳細 | `PodcastSeries` + `BreadcrumbList` | 番組情報 + subjectOf に Event ネスト |
+| ジャンル一覧 | `CollectionPage` + `ItemList` | 該当ジャンルの番組コレクション |
+| 気分別一覧 | `CollectionPage` + `ItemList` | 該当 mood の番組コレクション |
+
+JSON-LD は必ず `lib/safe-json-ld.ts` の `safeJsonLd()` を経由して `<` `>` `&` を Unicode エスケープ（XSS 対策）。
+
+### 8.3 robots.txt で明示している AI ボット
+
+- OpenAI: `GPTBot`, `ChatGPT-User`, `OAI-SearchBot`
+- Anthropic: `ClaudeBot`, `Claude-Web`, `anthropic-ai`
+- Perplexity: `PerplexityBot`, `Perplexity-User`
+- Google: `Google-Extended`
+- Apple: `Applebot-Extended`
+- Common Crawl: `CCBot`
+- Microsoft: `Bingbot`
+- Amazon: `Amazonbot`
+- Meta: `meta-externalagent`
+- Cohere: `cohere-ai`
+
+新しい AI ボットが登場したら `src/app/robots.ts` に追加する。
+
+### 8.4 AI フレンドリー化のルール
+
+- **新しいデータフィールドを追加した時は `scripts/build-llms.ts` も更新**
+  - `llms-full.txt` の `formatProgram()` に追加
+- **Schema.org の正式型を使う**
+  - 独自の `@type` を作らない、Schema.org の語彙に合わせる
+- **`alternateName` を活用**
+  - イベント名の表記揺れ（カナ・英・略称）を網羅的に
+- **Markdown は LLM が好む形式**
+  - 装飾を最小限に、見出し階層と箇条書きで構造化
+- **CORS 開放**
+  - `/api/*` `/llms*.txt` は `Access-Control-Allow-Origin: *` で外部からの fetch 許可

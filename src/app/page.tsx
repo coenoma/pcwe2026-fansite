@@ -83,11 +83,40 @@ export default function HomePage() {
     isAccessibleForFree: true,
   };
 
+  /**
+   * ItemList 構造化データ。
+   *
+   * AI クローラー（ChatGPT / Claude / Perplexity 等）にトップページが
+   * 「番組一覧サイト」であることと、各番組の URL を一括で伝える役割。
+   * Google の rich results にも対応する。
+   *
+   * 全 142 番組を含めると JSON が大きくなるので、トップでは ID 昇順で全件入れる
+   *（generateStaticParams と同じ単一性のあるリストなので問題ない）。
+   */
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'PODCAST WEEKEND 2026 出展番組リスト',
+    description: `${programs.length} 番組の非公式キュレーション一覧`,
+    numberOfItems: programs.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: programs.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${SITE.url}/booth/${p.id}`,
+      name: p.shortName ?? p.name,
+    })),
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(eventJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(itemListJsonLd) }}
       />
 
       {/*

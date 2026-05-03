@@ -4,6 +4,8 @@ import type { Metadata } from 'next';
 import { getGenreCounts, getProgramsByGenre } from '@/lib/data';
 import { ProgramListClient } from '@/app/_components/ProgramListClient';
 import { GenreSchema, type Genre } from '@/lib/types';
+import { safeJsonLd } from '@/lib/safe-json-ld';
+import { SITE } from '@/lib/constants';
 
 interface Props {
   params: Promise<{ name: string }>;
@@ -56,8 +58,34 @@ export default async function GenrePage({ params }: Props) {
   const programs = getProgramsByGenre(genre);
   if (programs.length === 0) notFound();
 
+  // CollectionPage + ItemList 構造化データ。
+  // AI クローラー / 検索エンジンに「このページは特定ジャンルの番組コレクション」と伝える。
+  const collectionJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${genre}（${programs.length} 番組）`,
+    description: `PODCAST WEEKEND 2026 出展番組のうち「${genre}」ジャンル ${programs.length} 件のコレクション。`,
+    url: `${SITE.url}/genre/${encodeURIComponent(genre)}`,
+    isPartOf: { '@type': 'WebSite', name: 'PCWE2026 ファンガイド（非公式）', url: SITE.url },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: programs.length,
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: programs.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE.url}/booth/${p.id}`,
+        name: p.shortName ?? p.name,
+      })),
+    },
+  };
+
   return (
     <section className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(collectionJsonLd) }}
+      />
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <Link
           href="/"

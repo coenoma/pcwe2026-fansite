@@ -51,6 +51,11 @@ next-env.d.ts
 # ビルド時に sw.template.js から生成される（git 管理外）
 /public/sw.js
 
+# AI フレンドリー化のための生成ファイル（scripts/build-llms.ts で毎ビルド再生成）
+/public/llms.txt
+/public/llms-full.txt
+/public/api/
+
 # data/sources/official + fan-guide からビルド時に生成される
 /data/programs.json
 
