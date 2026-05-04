@@ -59,6 +59,8 @@ function buildLlmsTxt(programs: Program[], genres: string[], moods: { slug: stri
 > イベント全体としては「PODCAST EXPO 2026」、その中のマーケットコーナー（出展ブース）を
 > 「PODCAST WEEKEND」と呼びます。本サイトは特に WEEKEND（ブース出展）に特化したファンガイド。
 
+最終ビルド: ${new Date().toISOString()}
+
 ## このサイトの主要ページ
 
 - [トップ](${SITE_URL}/): ${programs.length} 番組から「これ刺さる」を見つける入り口（AI レコメンド機能あり）
@@ -120,7 +122,7 @@ function buildLlmsFull(programs: Program[]): string {
 このファイルは PODCAST WEEKEND 2026 出展 ${programs.length} 番組の詳細を、
 LLM / AI クローラーが一括取得しやすいように Markdown 形式で集約したものです。
 
-最終更新: ${new Date().toISOString().slice(0, 10)}
+最終更新: ${new Date().toISOString()}
 データ源: ${SITE_URL}/api/programs.json （JSON 版）
 
 ---
@@ -210,8 +212,17 @@ function main(): void {
   console.log(`✅ public/llms-full.txt 生成 (${llmsFull.length} 文字)`);
 
   // 3. programs.json を public/api/ に複製（直接配信できるように）
-  const programsJson = readFileSync(join(ROOT, 'data/programs.json'), 'utf-8');
-  writeFileSync(join(ROOT, 'public/api/programs.json'), programsJson, 'utf-8');
+  //    lastUpdated をビルド時刻で動的に上書き → 毎デプロイで内容が変わり
+  //    ETag が必ず更新されるため、Vercel Edge Cache が確実に invalidate される
+  //    （これをしないと vercel.json のヘッダー変更が反映されない問題が発生）
+  const programsRaw = readFileSync(join(ROOT, 'data/programs.json'), 'utf-8');
+  const programsJson = JSON.parse(programsRaw) as Record<string, unknown>;
+  programsJson.lastUpdated = new Date().toISOString();
+  writeFileSync(
+    join(ROOT, 'public/api/programs.json'),
+    JSON.stringify(programsJson, null, 2),
+    'utf-8',
+  );
   console.log(`✅ public/api/programs.json 配置 (${programs.length} 番組)`);
 
   console.log('🤖 完了');
