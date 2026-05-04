@@ -319,8 +319,10 @@ JSON-LD は必ず `lib/safe-json-ld.ts` の `safeJsonLd()` を経由して `<` `
   ```json
   { "source": "/((?!llms\\.txt|llms-full\\.txt|api/programs\\.json).*)" }
   ```
-  AI endpoint 側は specific source で `Content-Type: text/markdown`（llmstxt.org 推奨）/
-  `Content-Disposition: inline`（filename を付けない）/ `Cache-Control: public, max-age=3600` のみ。
+  AI endpoint 側は specific source で `Content-Type: text/plain`（llmstxt.org は text/markdown 推奨だが、
+  ChatGPT 等の AI クライアントの web sandbox は text/markdown を「コード扱い」して
+  本文展開しないケースが観測されたため text/plain を採用）/ `Content-Disposition: inline`（filename を付けない）/
+  `Cache-Control: public, max-age=3600` のみ。
 
 **新しい AI endpoint を追加するときの手順**:
 1. `vercel.json` の global negative lookahead に新パスを追加
