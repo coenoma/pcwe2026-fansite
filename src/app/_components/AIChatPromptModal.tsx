@@ -57,9 +57,12 @@ PODCAST EXPO 2026 内のマーケットイベント「PODCAST WEEKEND 2026」（
 
 ### 推奨ルート A: LLM 向け HTML 集約データ（最も確実 / 一発で全 142 番組）
 
-1. ${SITE_URL}/data/llms-full — **全 142 番組の詳細を集約した HTML 版**（AI / LLM 向けに最適化、約 220KB の HTML、Content-Type: text/html）
+1. ${SITE_URL}/data/llms-full — **全 142 番組の詳細を集約した HTML 版**（AI / LLM 向けに最適化、約 220KB）
 
-このページが取得できれば、以降の B / C / D は不要です。HTML 形式なので、ChatGPT / Claude / Perplexity / Gemini いずれでも確実に本文展開できます。
+> **重要（HTML として処理してください）**:
+> このページは URL に拡張子がありませんが、Content-Type は \`text/html; charset=utf-8\` で配信される **HTML ドキュメント**です。レスポンスヘッダーの Content-Type を確認し、HTML としてパースしてください。冒頭に \`<title>PCWE2026 全 142 番組 詳細データ（LLM 向け）...</title>\` があり、本文は \`<article id="pcwe-001">\` 〜 \`<article id="pcwe-142">\` で 142 番組分の詳細が並びます。
+>
+> このページが取得できれば、以降の B / C は不要です。
 
 ### ルート B: テキスト / JSON 集約データ（A が使えない LLM 用）
 
