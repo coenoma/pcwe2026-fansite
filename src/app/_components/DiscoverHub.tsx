@@ -1,29 +1,35 @@
 'use client';
 
 import { useState } from 'react';
-import { Dices, Sparkles, Compass, ArrowRight } from 'lucide-react';
+import { Dices, Sparkles, Compass, MessageSquare, ArrowRight } from 'lucide-react';
 import type { Program } from '@/lib/types';
 import { GachaModal } from './GachaModal';
 import { QuizModal } from './QuizModal';
+import { AIChatPromptModal } from './AIChatPromptModal';
 
 interface Props {
   programs: Program[];
 }
 
 /**
- * 「3 つの探し方」ハブセクション（v1.7+）
+ * 番組探索の 4 機能ハブセクション。
  *
- * Hero 直下に配置し、AI レコメンドの 3 機能を **横並びカード** で提示する。
- * - 🎲 知らない番組と運命の出会い（ガチャ）→ モーダル起動
- * - ✨ 30 秒で AI の番組診断（クイズ）→ モーダル起動
- * - 🎯 好きを起点に、波紋を広げる（番組ベースレコメンド）→ FROM A PROGRAM セクションへスクロール
+ * Hero 直下に配置し、AI レコメンドの 4 機能を **横並びカード** で提示する。
+ * - ガチャ → モーダル起動（GachaModal）
+ * - 診断   → モーダル起動（QuizModal）
+ * - 番組から探す → FROM A PROGRAM セクションへスクロール
+ * - お手元の AI に聞く → モーダル起動（AIChatPromptModal）
+ *   ChatGPT / Claude / Perplexity 等にコピペ用の完成プロンプトを渡す。
+ *   サイトの /llms.txt /llms-full.txt を AI に取得させる構造で、
+ *   外部 AI クライアントから本サイトのデータをもとにレコメンドさせる。
  *
- * 各カードは同じレイアウト・サイズで「3 つの探し方」が一目で並んで見えることを
+ * 各カードは同じレイアウト・サイズで「探し方」が一目で並んで見えることを
  * 優先する。それぞれの体験はクリック後に展開（モーダル or スクロール）。
  */
 export function DiscoverHub({ programs }: Props) {
   const [gachaOpen, setGachaOpen] = useState(false);
   const [quizOpen, setQuizOpen] = useState(false);
+  const [aiPromptOpen, setAiPromptOpen] = useState(false);
 
   const scrollToRecommend = () => {
     const el = document.getElementById('from-a-program');
@@ -34,7 +40,7 @@ export function DiscoverHub({ programs }: Props) {
 
   return (
     <>
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
         <li>
           <DiscoverCard
             icon={<Dices size={28} aria-hidden="true" />}
@@ -68,9 +74,20 @@ export function DiscoverHub({ programs }: Props) {
             onClick={scrollToRecommend}
           />
         </li>
+        <li>
+          <DiscoverCard
+            icon={<MessageSquare size={28} aria-hidden="true" />}
+            badge="AI に相談"
+            title="お手元の AI に聞いてみる"
+            description="ChatGPT / Claude / Gemini に貼り付けるだけ。本サイトの 142 番組データをもとに、希望に合う 3 本を選んでもらえます。"
+            cta="プロンプトを使う"
+            accent="#10B981"
+            onClick={() => setAiPromptOpen(true)}
+          />
+        </li>
       </ul>
 
-      {/* ガチャ・診断モーダル（ハブから直接起動）*/}
+      {/* 各機能のモーダル（ハブから直接起動）*/}
       <GachaModal
         programs={programs}
         isOpen={gachaOpen}
@@ -80,6 +97,10 @@ export function DiscoverHub({ programs }: Props) {
         programs={programs}
         isOpen={quizOpen}
         onClose={() => setQuizOpen(false)}
+      />
+      <AIChatPromptModal
+        isOpen={aiPromptOpen}
+        onClose={() => setAiPromptOpen(false)}
       />
     </>
   );
