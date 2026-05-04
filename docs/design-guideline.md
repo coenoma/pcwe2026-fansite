@@ -254,13 +254,27 @@ ChatGPT / Claude / Perplexity / Google Gemini など生成 AI 経由で番組情
 
 | URL | 形式 | 用途 |
 |---|---|---|
+| `/llms-full.html` | **HTML** | **AI クライアント向けに最適化された全 142 番組詳細（最も確実、後述 §8.1.1 参照）** |
 | `/llms.txt` | Markdown | サイト全体の地図（主要ページ + ジャンル一覧 + 142 番組のリンク） |
 | `/llms-full.txt` | Markdown | 全 142 番組の詳細データを 1 ファイルに集約（LLM コンテキスト 1 発取得用） |
 | `/api/programs.json` | JSON | 全番組の構造化データ（zod 検証済み正式版） |
-| `/sitemap.xml` | XML | 全 168 URL のサイトマップ |
+| `/sitemap.xml` | XML | 全 168 URL のサイトマップ（`/llms-full.html` は意図的に除外、§8.1.1 参照） |
 | `/robots.txt` | TXT | 主要 AI ボット 15 種類を明示的に Allow |
 
 すべて `scripts/build-llms.ts` で `prebuild` 時に自動生成・配置される。
+
+#### 8.1.1 なぜ HTML 版（`/llms-full.html`）も用意するか
+
+ChatGPT 等の web sandbox は **`text/plain` / `application/json` の本文を展開しない実装が観測**されている（URL は開けるがメタ情報のみ返す。検証済み 2026-05）。一方 **HTML は確実に本文展開できる**ため、同一データを HTML 形式でも提供する。
+
+設計判断:
+
+- **sitemap.xml には含めない**: Google 検索結果での重複コンテンツ回避。AI クローラには `/llms.txt` 内のリンク + `AIChatPromptModal` のプロンプト指定で十分発見可能。
+- **サイト UI からはリンクしない**: 人間 UX を汚さない（人間ユーザーの 99% は不要）。透明性は About ページに任せず `/llms.txt` の「機械可読データエンドポイント」セクションで担保。
+- **CSS は最小インライン**: 装飾より可読性。`system-ui` + 罫線のみ。
+- **目次（`<nav class="toc">`）を `<details>` で折り畳み**: AI は読み込むが人間は邪魔されない。
+- **`<link rel="alternate">`** で txt / json 版へ相互リンク → AI が同じデータの別フォーマットも辿れる。
+- **`rel="nofollow noopener"`** は外部リンクのみ（Spotify / Apple Podcasts 等）。内部リンクは通常通り。
 
 ### 8.2 各ページの構造化データ（JSON-LD）
 

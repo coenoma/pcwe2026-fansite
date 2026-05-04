@@ -29,6 +29,13 @@
       ]
     },
     {
+      "source": "/llms-full.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
       "source": "/((?!llms\\.txt|llms-full\\.txt|api/programs\\.json).*)",
       "headers": [
         { "key": "X-Frame-Options", "value": "DENY" },
