@@ -98,7 +98,7 @@ ${programs
 
 ## 機械可読データエンドポイント
 
-- [llms-full.html](${SITE_URL}/data/llms-full.html): **AI / LLM クライアント向けに最適化された HTML 版**（text/plain や JSON が web sandbox で本文展開されない場合の確実なフォールバック。同データを HTML 形式で 1 ページに集約）
+- [llms-full (HTML)](${SITE_URL}/data/llms-full): **AI / LLM クライアント向けに最適化された HTML 版**（text/plain や JSON が web sandbox で本文展開されない場合の確実なフォールバック。同データを HTML 形式で 1 ページに集約。Content-Type は text/html）
 - [programs.json](${SITE_URL}/api/programs.json): 全番組の構造化 JSON（zod 検証済みの正式データ）
 - [llms-full.txt](${SITE_URL}/llms-full.txt): 全番組の詳細を Markdown 1 ファイルで集約（このファイルの拡張版）
 - [sitemap.xml](${SITE_URL}/sitemap.xml): 全 URL のサイトマップ
@@ -300,7 +300,7 @@ ${linkRows.map((r) => `    ${r}`).join('\n')}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PCWE2026 全 ${programs.length} 番組 詳細データ（LLM 向け） | PCWE2026 ファンガイド（非公式）</title>
 <meta name="description" content="PODCAST WEEKEND 2026 出展 ${programs.length} 番組の詳細を 1 ページに集約した LLM / AI クライアント向け HTML データページ。人間向けのファンガイドはトップページから。">
-<link rel="canonical" href="${SITE_URL}/data/llms-full.html">
+<link rel="canonical" href="${SITE_URL}/data/llms-full">
 <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="同データの Markdown 版">
 <link rel="alternate" type="application/json" href="${SITE_URL}/api/programs.json" title="同データの JSON 版">
 <style>
@@ -381,13 +381,14 @@ function main(): void {
   writeFileSync(join(ROOT, 'public/llms-full.txt'), llmsFull, 'utf-8');
   console.log(`✅ public/llms-full.txt 生成 (${llmsFull.length} 文字)`);
 
-  // 2.5. /data/llms-full.html（LLM 向け HTML 版 / ChatGPT 等の sandbox 制約対策）
-  //      ルート直下 /llms-full.html だと Vercel + Next.js (output: 'export') の
-  //      routing と衝突して 404 になる現象が観測されたため /data/ サブディレクトリに配置
+  // 2.5. /data/llms-full（LLM 向け HTML 版 / ChatGPT 等の sandbox 制約対策）
+  //      Vercel + Next.js (output: 'export') では public/ の .html ファイルが
+  //      404 になる現象が観測されたため、拡張子なしファイルとして配置し
+  //      Content-Type は vercel.json で text/html を強制する
   ensureDir(join(ROOT, 'public/data'));
   const llmsFullHtml = buildLlmsFullHtml(programs);
-  writeFileSync(join(ROOT, 'public/data/llms-full.html'), llmsFullHtml, 'utf-8');
-  console.log(`✅ public/data/llms-full.html 生成 (${llmsFullHtml.length} 文字)`);
+  writeFileSync(join(ROOT, 'public/data/llms-full'), llmsFullHtml, 'utf-8');
+  console.log(`✅ public/data/llms-full 生成 (${llmsFullHtml.length} 文字)`);
 
   // 3. programs.json を public/api/ に複製（直接配信できるように）
   //    lastUpdated をビルド時刻で動的に上書き → 毎デプロイで内容が変わり

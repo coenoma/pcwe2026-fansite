@@ -57,7 +57,7 @@ PODCAST EXPO 2026 内のマーケットイベント「PODCAST WEEKEND 2026」（
 
 ### 推奨ルート A: LLM 向け HTML 集約データ（最も確実 / 一発で全 142 番組）
 
-1. ${SITE_URL}/data/llms-full.html — **全 142 番組の詳細を集約した HTML 版**（AI / LLM 向けに最適化、約 200KB の HTML）
+1. ${SITE_URL}/data/llms-full — **全 142 番組の詳細を集約した HTML 版**（AI / LLM 向けに最適化、約 220KB の HTML、Content-Type: text/html）
 
 このページが取得できれば、以降の B / C / D は不要です。HTML 形式なので、ChatGPT / Claude / Perplexity / Gemini いずれでも確実に本文展開できます。
 

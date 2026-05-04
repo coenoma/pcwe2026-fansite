@@ -254,22 +254,26 @@ ChatGPT / Claude / Perplexity / Google Gemini など生成 AI 経由で番組情
 
 | URL | 形式 | 用途 |
 |---|---|---|
-| `/data/llms-full.html` | **HTML** | **AI クライアント向けに最適化された全 142 番組詳細（最も確実、後述 §8.1.1 参照）** |
+| `/data/llms-full` | **HTML** | **AI クライアント向けに最適化された全 142 番組詳細（最も確実、後述 §8.1.1 参照）** |
 | `/llms.txt` | Markdown | サイト全体の地図（主要ページ + ジャンル一覧 + 142 番組のリンク） |
 | `/llms-full.txt` | Markdown | 全 142 番組の詳細データを 1 ファイルに集約（LLM コンテキスト 1 発取得用） |
 | `/api/programs.json` | JSON | 全番組の構造化データ（zod 検証済み正式版） |
-| `/sitemap.xml` | XML | 全 168 URL のサイトマップ（`/data/llms-full.html` は意図的に除外、§8.1.1 参照） |
+| `/sitemap.xml` | XML | 全 168 URL のサイトマップ（`/data/llms-full` は意図的に除外、§8.1.1 参照） |
 | `/robots.txt` | TXT | 主要 AI ボット 15 種類を明示的に Allow |
 
 すべて `scripts/build-llms.ts` で `prebuild` 時に自動生成・配置される。
 
-#### 8.1.1 なぜ HTML 版（`/data/llms-full.html`）も用意するか
+#### 8.1.1 なぜ HTML 版（`/data/llms-full`）も用意するか
 
 ChatGPT 等の web sandbox は **`text/plain` / `application/json` の本文を展開しない実装が観測**されている（URL は開けるがメタ情報のみ返す。検証済み 2026-05）。一方 **HTML は確実に本文展開できる**ため、同一データを HTML 形式でも提供する。
 
 設計判断:
 
-- **配置は `/data/` サブディレクトリ**: ルート直下 `/llms-full.html` だと Vercel + Next.js (`output: 'export'`) の routing と衝突して 404 になる現象が観測された（2026-05 検証）。サブディレクトリに置くと正常配信される。
+- **配置は `/data/llms-full` （拡張子なし）**: 当初 `/llms-full.html` や `/data/llms-full.html` で配置したが、Vercel + Next.js (`output: 'export'`) では public/ の `.html` ファイルが本番 deploy で 404 を返す現象が観測された（2026-05 検証）。
+  - ローカル `out/` には正しく生成されているが、Vercel が deployment 時に弾く挙動。
+  - サブディレクトリ `/data/` にしても解消せず、**`.html` 拡張子そのものが衝突**していると判断。
+  - 拡張子なしファイル `public/data/llms-full` で出力し、`vercel.json` で `Content-Type: text/html; charset=utf-8` を強制することで正常配信される。
+  - AI クライアントは Content-Type ヘッダーで MIME 判定するため、URL に拡張子がなくても HTML として処理される。
 - **sitemap.xml には含めない**: Google 検索結果での重複コンテンツ回避。AI クローラには `/llms.txt` 内のリンク + `AIChatPromptModal` のプロンプト指定で十分発見可能。
 - **サイト UI からはリンクしない**: 人間 UX を汚さない（人間ユーザーの 99% は不要）。透明性は About ページに任せず `/llms.txt` の「機械可読データエンドポイント」セクションで担保。
 - **CSS は最小インライン**: 装飾より可読性。`system-ui` + 罫線のみ。

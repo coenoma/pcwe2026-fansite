@@ -29,10 +29,12 @@
       ]
     },
     {
-      "source": "/data/llms-full.html",
+      "source": "/data/llms-full",
       "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Content-Disposition", "value": "inline" }
       ]
     },
     {
