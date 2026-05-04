@@ -5,7 +5,7 @@
       "source": "/llms.txt",
       "headers": [
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Content-Disposition", "value": "inline" }
       ]
@@ -14,7 +14,7 @@
       "source": "/llms-full.txt",
       "headers": [
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Content-Disposition", "value": "inline" }
       ]
@@ -23,7 +23,7 @@
       "source": "/api/programs.json",
       "headers": [
         { "key": "Content-Type", "value": "application/json; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Content-Disposition", "value": "inline" }
       ]
