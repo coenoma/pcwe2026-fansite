@@ -300,3 +300,30 @@ JSON-LD は必ず `lib/safe-json-ld.ts` の `safeJsonLd()` を経由して `<` `
   - 装飾を最小限に、見出し階層と箇条書きで構造化
 - **CORS 開放**
   - `/api/*` `/llms*.txt` は `Access-Control-Allow-Origin: *` で外部からの fetch 許可
+
+### 8.5 AI endpoint の HTTP ヘッダー設計（vercel.json 運用ルール）
+
+`/llms.txt` `/llms-full.txt` `/api/programs.json` は **HTML 用のセキュリティヘッダーを付けない**こと。
+（CSP / X-Frame-Options / Permissions-Policy は HTML 文書に対するブラウザ実行コンテキスト向けの仕組みで、
+テキスト / JSON 単独配信には意味がなく、AI クローラを混乱させる恐れがある）
+
+**vercel.json での具体的な書き方**:
+
+- ❌ `source: "/(.*)"` で全パスにセキュリティヘッダーを付ける書き方
+  - Vercel の `headers` は **specific source が global を上書きしない** 挙動
+    （observed: 同じ key を後段の specific source で書いても merge されず、global の値が残る）
+  - その結果、AI endpoint にも巨大 CSP や `Content-Disposition: filename="llms.txt"` が付き、
+    AI クライアント（ChatGPT Web ツール等）が「ダウンロード対象」と誤認識して本文取得に失敗するケースが発生
+
+- ✅ global の source を **negative lookahead で AI endpoint を除外**:
+  ```json
+  { "source": "/((?!llms\\.txt|llms-full\\.txt|api/programs\\.json).*)" }
+  ```
+  AI endpoint 側は specific source で `Content-Type: text/markdown`（llmstxt.org 推奨）/
+  `Content-Disposition: inline`（filename を付けない）/ `Cache-Control: public, max-age=3600` のみ。
+
+**新しい AI endpoint を追加するときの手順**:
+1. `vercel.json` の global negative lookahead に新パスを追加
+2. specific source に minimal な headers（Content-Type / Cache-Control / CORS / Content-Disposition: inline）を定義
+3. デプロイ後、`curl -sI https://pcwe2026-fansite.podmate.fm/{新パス}` で
+   CSP / X-Frame-Options 等が **返っていないこと** を確認
