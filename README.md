@@ -95,6 +95,21 @@ pcwe2026-fansite/
             └── README.md
 ```
 
+## AI フレンドリー化（公開エンドポイント）
+
+ChatGPT / Claude / Perplexity などの生成 AI クライアントから扱いやすいよう、以下のエンドポイントを公開しています。
+
+| URL | 形式 | 用途 |
+|---|---|---|
+| `/llms.txt` | Markdown | サイト地図（[llms.txt 規格](https://llmstxt.org/)）。主要ページ・ジャンル・全番組リンクの目次 |
+| `/llms-full.txt` | Markdown | 全 142 番組の詳細を 1 ファイルに集約（LLM コンテキスト 1 発取得用）|
+| `/api/programs.json` | JSON | 全番組の構造化データ（zod 検証済み）|
+| `/sitemap.xml` | XML | 全 168 URL のサイトマップ |
+| `/robots.txt` | TXT | 主要 AI ボット 15 種類を明示的に Allow |
+
+これらは [`scripts/build-llms.ts`](./scripts/build-llms.ts) が `prebuild` フックで毎回再生成します。
+詳細・運用ルールは [docs/design-guideline.md §8](./docs/design-guideline.md#8-ai-フレンドリー化generative-engine-optimization) 参照。
+
 ## ステータス
 
 - 🚧 **開発中**（2026-04-29 開始、5/9 公開予定）
