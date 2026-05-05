@@ -11,6 +11,32 @@
       "ミニタオル",
       "ノート&チケットファイル",
       "ミュージカルソムリエ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "全部盛りセット",
+        "description": "¥1,000。ミニタオル + ノート 2 冊 + チケットクリアファイル + ステッカーのフルセット。5/9（土）出店。",
+        "sourceUrl": "https://creators.spotify.com/pod/profile/u6052u5149u7f8eu91cc/episodes/91-PCWE-e2pb2fh",
+        "sourceType": "web"
+      },
+      {
+        "name": "ノート 2 冊 + クリアファイル + ステッカーセット",
+        "description": "¥500。観劇ノート 2 冊 + チケットクリアファイル + 番組ステッカー。",
+        "sourceUrl": "https://creators.spotify.com/pod/profile/u6052u5149u7f8eu91cc/episodes/91-PCWE-e2pb2fh",
+        "sourceType": "web"
+      },
+      {
+        "name": "ミニタオル + ステッカーセット",
+        "description": "¥500。ミニタオルと番組ステッカーのお手軽セット。",
+        "sourceUrl": "https://creators.spotify.com/pod/profile/u6052u5149u7f8eu91cc/episodes/91-PCWE-e2pb2fh",
+        "sourceType": "web"
+      },
+      {
+        "name": "ミュージカルソムリエ",
+        "description": "¥100。あなたにぴったりのミュージカルをパーソナリティ momonga が直接おすすめ。購入者限定で本人が歌うミュージカル曲 1 曲 + 限定アフタートークのボーナストラック付き。",
+        "sourceUrl": "https://creators.spotify.com/pod/profile/u6052u5149u7f8eu91cc/episodes/91-PCWE-e2pb2fh",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
