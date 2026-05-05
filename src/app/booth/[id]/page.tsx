@@ -206,10 +206,10 @@ export default async function BoothPage({ params }: Props) {
               </div>
             )}
 
-            <MerchandiseSection
-              merchandise={program.official.merchandise}
-              merchandiseDetails={program.official.merchandiseDetails}
-            />
+            {/*
+              ブース物販は別 section に独立させたため、ここでは表示しない。
+              公式ブース由来の物販テキストリスト (merchandise) はそちらに集約。
+            */}
 
             {/*
               出展日 / エリア: ahamo 風の「データ感」で見せる。
@@ -244,6 +244,18 @@ export default async function BoothPage({ params }: Props) {
             </div>
           </div>
         </section>
+      </FadeInOnScroll>
+
+      {/*
+        ブース物販（独立 section）
+        - 「公式情報」と bg-white で連続させ境界を主張しない
+        - max-w-5xl + grid（sm:2 列, xl:3 列）でワイド画面を活用
+      */}
+      <FadeInOnScroll>
+        <MerchandiseSection
+          merchandise={program.official.merchandise}
+          merchandiseDetails={program.official.merchandiseDetails}
+        />
       </FadeInOnScroll>
 
       {/* 関連番組（同じジャンル）*/}

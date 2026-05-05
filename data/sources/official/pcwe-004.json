@@ -9,20 +9,6 @@
     "merchandise": [
       "金曜日の焼肉のタレ",
       "ステッカー"
-    ],
-    "merchandiseDetails": [
-      {
-        "name": "金曜日の焼肉のタレ",
-        "description": "5/10 (日) PCWE2026 会場で販売。毎回昼過ぎ売切れるため事前予約推奨。4 年連続出店の人気商品。",
-        "sourceUrl": "https://x.com/k_takibikai/status/2038883620631519300",
-        "sourceType": "x-post"
-      },
-      {
-        "name": "極鯖（ごくさば）",
-        "description": "新発売。福岡・立石フーズの五島産鯖を酢・砂糖・焼酎で 5 日以上漬け込んだ酒の肴。事前予約推奨。",
-        "sourceUrl": "https://x.com/k_takibikai/status/2038883620631519300",
-        "sourceType": "x-post"
-      }
     ]
   },
   "exhibition": {

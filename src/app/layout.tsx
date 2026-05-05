@@ -9,6 +9,8 @@ import {
   Zen_Kaku_Gothic_New,
 } from 'next/font/google';
 import './globals.css';
+// react-tweet の埋め込みカード用テーマ（.react-tweet-theme スコープ、Tailwind と衝突しない）
+import 'react-tweet/theme.css';
 import { Header } from './_components/Header';
 import { Footer } from './_components/Footer';
 import { BottomNav } from './_components/BottomNav';
