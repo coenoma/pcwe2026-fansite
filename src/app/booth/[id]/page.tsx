@@ -8,6 +8,7 @@ import { WaveDivider } from '@/app/_components/WaveDivider';
 import { FadeInOnScroll } from '@/app/_components/FadeInOnScroll';
 import { ProgramCard } from '@/app/_components/ProgramCard';
 import { safeJsonLd } from '@/lib/safe-json-ld';
+import { MerchandiseSection } from './_components/MerchandiseSection';
 import { EVENT, SITE } from '@/lib/constants';
 import { tagAxis, tagAxisClass } from '@/lib/tag-axis';
 
@@ -205,15 +206,10 @@ export default async function BoothPage({ params }: Props) {
               </div>
             )}
 
-            {program.official.merchandise !== undefined &&
-              program.official.merchandise.length > 0 && (
-                <div className="mt-6">
-                  <h3 className="text-sm font-bold text-neutral-500">ブース物販</h3>
-                  <p className="mt-1 text-base text-neutral-800">
-                    {program.official.merchandise.join(' / ')}
-                  </p>
-                </div>
-              )}
+            <MerchandiseSection
+              merchandise={program.official.merchandise}
+              merchandiseDetails={program.official.merchandiseDetails}
+            />
 
             {/*
               出展日 / エリア: ahamo 風の「データ感」で見せる。

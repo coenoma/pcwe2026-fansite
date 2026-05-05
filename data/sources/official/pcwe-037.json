@@ -3,9 +3,13 @@
   "name": "映画の話したすぎるラジオ",
   "thumbnail": "/thumbnails/037.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-037/",
-  "fetchedAt": "2026-04-30T13:45:43.005Z",
+  "fetchedAt": "2026-05-05T12:30:29.172Z",
   "official": {
-    "description": "大阪の南森町にある日替わりイベント型カフェバー「週間マガリ」にて月1ペースで開催している「映画の話したすぎるBAR」の店長メンバーによる映画トーク番組です。"
+    "description": "大阪の南森町にある日替わりイベント型カフェバー「週間マガリ」にて月1ペースで開催している「映画の話したすぎるBAR」の店長メンバーによる映画トーク番組です。",
+    "merchandise": [
+      "番組非リスナー向けおすすめ回ZINE",
+      "番組リスナー向け神回ZINE"
+    ]
   },
   "exhibition": {
     "days": [

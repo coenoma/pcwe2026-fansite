@@ -29,6 +29,7 @@
     "next": "^15.5.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-tweet": "^3.3.0",
     "zod": "^3.23.8"
   },
   "optionalDependencies": {
