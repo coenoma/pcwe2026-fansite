@@ -257,6 +257,24 @@ function parseBoothHtml(html: string): ParsedBoothInfo {
     }
   });
 
+  // 公式ブースの定型: <p>【出店予定】 アイテム1／アイテム2／...</p>
+  // h2/h3 ラベル形式ではなく <p> 内に prefix 付きで列挙される構造に対応する。
+  // 「出店予定」「販売予定」「物販」のいずれかの prefix を許容。
+  $('p').each((_, el) => {
+    const text = $(el).text().trim();
+    const prefixMatch = text.match(/^【(?:出店予定|出展予定|販売予定|物販)】\s*(.+)$/);
+    if (prefixMatch !== null) {
+      const items = prefixMatch[1]
+        .split(/[、,／\/・\n]+/)
+        .map((s) => s.trim())
+        .filter((s) => s.length > 0);
+      merchandise.push(...items);
+    }
+  });
+
+  // 重複除去（h2/h3 ラベル経路と <p> prefix 経路の両方でマッチするケースに備える）
+  const uniqueMerchandise = Array.from(new Set(merchandise));
+
   // PCWE2026 公式 SNS（番組固有でないので除外）
   const isOfficialPcweAccount = (url: string): boolean => {
     return /\b(podcast_expo|podcastexpo)\b/i.test(url);
@@ -319,7 +337,7 @@ function parseBoothHtml(html: string): ParsedBoothInfo {
     name,
     description,
     hosts: hosts.length > 0 ? hosts : undefined,
-    merchandise: merchandise.length > 0 ? merchandise : undefined,
+    merchandise: uniqueMerchandise.length > 0 ? uniqueMerchandise : undefined,
     exhibition: { days: uniqueDays, hours, area },
     links,
     recommendedEpisode,
@@ -341,6 +359,9 @@ function buildOfficialSource(id: string, parsed: ParsedBoothInfo, existing?: Off
       description: parsed.description,
       hosts: parsed.hosts,
       merchandise: parsed.merchandise,
+      // merchandiseDetails は X 投稿引用など fetch で取れない情報のため、
+      // 既存ファイルにあれば保持する（fetch で上書きされない）
+      merchandiseDetails: existing?.official.merchandiseDetails,
     },
     exhibition: {
       days: parsed.exhibition.days,

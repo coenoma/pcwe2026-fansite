@@ -3,9 +3,15 @@
   "name": "HOG POT",
   "thumbnail": "/thumbnails/137.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-137/",
-  "fetchedAt": "2026-04-30T13:48:32.902Z",
+  "fetchedAt": "2026-05-05T12:33:57.905Z",
   "official": {
-    "description": "音楽フリークのためのコミュニティPURE COMEDYがお届けする音楽が主役のPodcast。音楽家・西岡大貴が音楽仲間と共に音楽愛を語り合う。毎回テーマに沿ってそれぞれが持ち寄った選曲プレイリストも公開！"
+    "description": "音楽フリークのためのコミュニティPURE COMEDYがお届けする音楽が主役のPodcast。音楽家・西岡大貴が音楽仲間と共に音楽愛を語り合う。毎回テーマに沿ってそれぞれが持ち寄った選曲プレイリストも公開！",
+    "merchandise": [
+      "番組発フリーペーパーパイロット版",
+      "ステッカー",
+      "自主制作マガジン",
+      "イラストレーター越知翔太オリジナルグッズ"
+    ]
   },
   "exhibition": {
     "days": [

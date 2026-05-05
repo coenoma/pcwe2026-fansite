@@ -3,9 +3,16 @@
   "name": "dining.fm",
   "thumbnail": "/thumbnails/029.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-029/",
-  "fetchedAt": "2026-04-30T13:45:29.832Z",
+  "fetchedAt": "2026-05-05T12:30:12.024Z",
   "official": {
-    "description": "dining.fmは、ギャルソン好きの夫katsumaと、お菓子好きの妻daikokuの東京2人暮らし夫婦が、ゆるゆると話す雑談系Podcast。\n映画ドラマなどコンテンツの感想を中心に、ファッション、スイーツ、ホテル、マンションなど、我が家で話題のトピックをお届けします！"
+    "description": "dining.fmは、ギャルソン好きの夫katsumaと、お菓子好きの妻daikokuの東京2人暮らし夫婦が、ゆるゆると話す雑談系Podcast。\n映画ドラマなどコンテンツの感想を中心に、ファッション、スイーツ、ホテル、マンションなど、我が家で話題のトピックをお届けします！",
+    "merchandise": [
+      "うまいものエピソードフォトブック",
+      "良い感じコーヒードリップバッグ",
+      "毎日使いたいタッパーシール",
+      "オリジナルステッカー",
+      "その他"
+    ]
   },
   "exhibition": {
     "days": [

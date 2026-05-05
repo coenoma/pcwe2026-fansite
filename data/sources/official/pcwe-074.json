@@ -3,9 +3,18 @@
   "name": "チカブレンド",
   "thumbnail": "/thumbnails/074.jpeg",
   "boothUrl": "https://podcastexpo.jp/booth/pcwe-074/",
-  "fetchedAt": "2026-04-30T13:46:45.224Z",
+  "fetchedAt": "2026-05-05T12:31:41.281Z",
   "official": {
-    "description": "阪神タイガース近本光司選手のポッドキャスト「チカブレンド」考えることが好きな近本光司が、思考をブレンドしていく番組です"
+    "description": "阪神タイガース近本光司選手のポッドキャスト「チカブレンド」考えることが好きな近本光司が、思考をブレンドしていく番組です",
+    "merchandise": [
+      "ZINE",
+      "タンブラー",
+      "マグカップ",
+      "フェイスタオル",
+      "トートバッグ",
+      "ステッカー",
+      "コーヒー豆"
+    ]
   },
   "exhibition": {
     "days": [

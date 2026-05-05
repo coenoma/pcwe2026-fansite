@@ -68,12 +68,54 @@ export type Genre = z.infer<typeof GenreSchema>;
 // 番組詳細スキーマ
 // ====================
 
+/**
+ * 物販グッズの情報源タイプ。
+ *
+ * - x-post / instagram-post: SNS 投稿（個別 URL）
+ * - official-booth: PCWE 公式ブースページ（podcastexpo.jp）
+ * - official-site: 番組公式サイト or ホスト個人サイト
+ * - note: note 記事
+ * - web: その他 web ページ
+ */
+export const MerchandiseSourceTypeSchema = z.enum([
+  'x-post',
+  'instagram-post',
+  'official-booth',
+  'official-site',
+  'note',
+  'web',
+]);
+export type MerchandiseSourceType = z.infer<typeof MerchandiseSourceTypeSchema>;
+
+/**
+ * 物販グッズの詳細情報。
+ *
+ * 1 つのグッズにつき 1 エントリ。1 投稿に画像で複数グッズが写っている場合でも、
+ * グッズごとに別エントリを作って同じ sourceUrl / imageUrl を共有する。
+ */
+export const MerchandiseDetailSchema = z.object({
+  /** グッズ名（例: "オリジナルロゴステッカー"） */
+  name: z.string().min(1),
+  /** 補足（価格、限定数、配布タイミング等） */
+  description: z.string().optional(),
+  /** 情報源 URL（必須）。創作・推測情報を防ぐ */
+  sourceUrl: z.string().url(),
+  /** 情報源の種類 */
+  sourceType: MerchandiseSourceTypeSchema,
+  /** 参考画像 URL（X 投稿の画像 / 商品写真等）*/
+  imageUrl: z.string().url().optional(),
+});
+export type MerchandiseDetail = z.infer<typeof MerchandiseDetailSchema>;
+
 /** 公式ブースから抽出した情報 */
 export const OfficialInfoSchema = z.object({
   // 自動取得時に空になる場合があるため min 制約は外す。表示側でフォールバック表示。
   description: z.string(),
   hosts: z.array(z.string()).optional(),
+  /** 旧フィールド: 物販名のみの string 配列。新規データは merchandiseDetails を推奨 */
   merchandise: z.array(z.string()).optional(),
+  /** 物販詳細（情報源 URL 付き）。merchandise より優先して UI 側で表示する */
+  merchandiseDetails: z.array(MerchandiseDetailSchema).optional(),
 });
 export type OfficialInfo = z.infer<typeof OfficialInfoSchema>;
 
