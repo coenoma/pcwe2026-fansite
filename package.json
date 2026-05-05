@@ -21,7 +21,8 @@
     "download-thumbnails": "tsx scripts/download-thumbnails.ts",
     "assign-fan-guide": "tsx scripts/assign-fan-guide.ts",
     "fan-guide-status": "tsx scripts/fan-guide-status.ts",
-    "merge-fan-guide": "tsx scripts/merge-fan-guide.ts"
+    "merge-fan-guide": "tsx scripts/merge-fan-guide.ts",
+    "progress:merchandise": "tsx scripts/merchandise-progress.ts"
   },
   "dependencies": {
     "fuse.js": "^7.0.0",
