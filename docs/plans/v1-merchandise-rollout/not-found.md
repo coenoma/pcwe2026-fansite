@@ -102,7 +102,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-109 | しゃらくさラジオ | https://x.com/SyarakusaRadio | — | — | 番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-115 | 吉村ジョナサンの高校古典講義 | https://x.com/dai_koku_sama | https://www.instagram.com/book_bridge_lab | — | WebSearchで物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-121 | ぜったい大丈夫だよラジオ | https://x.com/daijobu_radio | — | — | 番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。 | 2026-05-05 |
-| pcwe-128 | アシタ・シアター | https://x.com/ashita_theater | — | — | PCWE2026の物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-135 | まるごと放送室 | https://x.com/kamiyamacast | — | — | 神山まるごと高専Podcast部の番組として確認できたが、PCWE2026の物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-141 | Misa Yuka Podcast | — | https://www.instagram.com/misayuka.podcast | — | 番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。 | 2026-05-05 |
 
