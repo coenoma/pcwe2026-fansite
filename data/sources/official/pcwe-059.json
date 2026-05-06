@@ -17,6 +17,26 @@
       "チェキ撮影",
       "ガチャガチャ",
       "rooom登録済みor新規登録 →ミニステッカープレゼント"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "ガチャガチャ（1 回 500 円）",
+        "description": "メイン企画。ラインナップは ライター / マグネット / 名言ステッカー / サムネステッカー / **大目玉「月耳マグカップ」** など。美大卒の auly のデザイン力をふんだんに使ったラインナップ。当たり多めの仕様で、現金が尽きるまでガチャ可能。Listen エピソード「#61 あすけんのお姉さんも仕事だから」（2026-05-04 公開）にて auly・イエーイ岩崎本人が告知。X 投稿（@auly_1022、2026-05-04）で画像チラ見せあり。",
+        "sourceUrl": "https://listen.style/p/tsukimimi/nugzthen",
+        "sourceType": "web"
+      },
+      {
+        "name": "チェキ撮影",
+        "description": "フィルム 20 枚分用意。ホスト 2 人とサンドで撮影可（隣ブースの方にシャッター押してもらうスタイル）。Listen エピソード「#61 あすけんのお姉さんも仕事だから」（2026-05-04 公開）にてホスト本人が告知。",
+        "sourceUrl": "https://listen.style/p/tsukimimi/nugzthen",
+        "sourceType": "web"
+      },
+      {
+        "name": "ホストに会える（無料）",
+        "description": "「直接コマクに届けるんで（耳でしか会えなかったけど）会えます」とホスト本人が告知。「いつも聞いてます」の一言を直接伝えられる機会。500 円持ってなくても気軽にブースへ立ち寄り可能。Listen エピソード「#61」（2026-05-04 公開）にて告知。5/10 のみ出展、池尻大橋・ホームワークビレッジ運動場エリア（雨天時に注意）。",
+        "sourceUrl": "https://listen.style/p/tsukimimi/nugzthen",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -29,7 +49,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/2kzuAE4IgPrqFro9INGWZc",
-    "x": "https://x.com/tsukimimi_radio"
+    "x": "https://x.com/tsukimimi_radio",
+    "listen": "https://listen.style/p/tsukimimi"
   },
   "recommendedEpisode": {
     "title": "#39【AI動画で泣いちゃうのは人類の敗北だろ】",

@@ -45,10 +45,10 @@
 | pcwe-031 | 中2の魂100まで | https://x.com/soulofchu2_100 | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-036 | とみこはん&佐々木敬子「とみことけいこのたびたび、旅｣ | https://x.com/sasakikeiko8 | https://www.instagram.com/tomikohan | — | 👤 菊池 | ✅ | URL 修正 + X投稿2件: 電鍋手ぬぐい・湯気手ぬぐい・エコバッグ・台湾パイにゃっプルケーキ・スタンプ・書籍 | 05-06 |
 | pcwe-044 | ひうら芳麗の楽女なニュース | https://x.com/marikosatoru | https://www.instagram.com/ladyfangchang | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
-| pcwe-045 | PodcastTimes｜ぽっどでの新人 | https://x.com/Podcast_TimesJP | https://www.instagram.com/podcasttime... | — | 🤖 Claude | ⏳ | — | — |
+| pcwe-045 | PodcastTimes｜ぽっどでの新人 | https://x.com/Podcast_TimesJP | https://www.instagram.com/podcasttime... | — | 🤖 Claude | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | pcwe-053 | 丘の上喫茶 | https://x.com/okanoue_kissa | https://www.instagram.com/okanoue_kissa/ | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-056 | ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！ | https://x.com/gcrc_divedeep | — | — | 👤 菊池 | ⏳ | — | — |
-| pcwe-059 | 月からミミミ | https://x.com/tsukimimi_radio | — | — | 🤖 Claude | ⏳ | — | — |
+| pcwe-056 | ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！ | https://x.com/gcrc_divedeep | — | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
+| pcwe-059 | 月からミミミ | https://x.com/tsukimimi_radio | — | — | 🤖 Claude | ✅ | https://listen.style/p/tsukimimi/nugzthen ガチャ500円(マグカップ等)・チェキ・直接会える | 05-06 |
 | pcwe-068 | ピーチウーロンの〇〇な気がする | https://x.com/peachoolong000 | — | — | 👤 菊池 | ⏳ | — | — |
 | pcwe-071 | 炊き込みご飯わくわく舎 | https://x.com/takiwakusha | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-073 | Radio18s/Teenagerからの映画部 | https://x.com/Radio18s | https://www.instagram.com/radio18s | — | 🤖 Claude | ⏳ | — | — |
@@ -91,8 +91,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 48 件
+- ⏳ 未着手: 45 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 6 件（pcwe-006, 010, 022, 027, 030, 036）
-- ❌ 告知なし確定: 2 件（pcwe-026, 044）
+- ✅ done 化済み: 7 件（pcwe-006, 010, 022, 027, 030, 036, 059）
+- ❌ 告知なし確定: 4 件（pcwe-026, 044, 045, 056）
 - 👀 候補あり要判断: 0 件

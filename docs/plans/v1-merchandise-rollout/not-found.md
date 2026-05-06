@@ -98,7 +98,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-033 | HYPLACE WAVE #はいなみ | https://x.com/hainami_758 | https://www.instagram.com/mash_january25 | — | 「HYPLACE WAVE はいなみ PCWE2026 物販」「Podcast Weekend グッズ 物販」で検索したが、PCWE2026 出展告知や物販詳細投稿は発見できず。番組内では Key Music Party 等のイベントは紹介されている。 | 2026-05-05 |
 | pcwe-045 | PodcastTimes｜ぽっどでの新人 | https://x.com/Podcast_TimesJP | https://www.instagram.com/podcasttimes_jp/ | — | 「PodcastTimes ぽっどでの新人 PCWE2026 物販」「グッズ ノベルティ」で検索したが、PCWE2026 出展は確認できるものの物販詳細投稿は発見できず。 | 2026-05-05 |
 | pcwe-053 | 丘の上喫茶 | https://x.com/okanoue_kissa | https://www.instagram.com/okanoue_kissa/ | — | 「丘の上喫茶 PCWE2026 物販」「Podcast Weekend グッズ 出展」で検索したが、出展告知投稿や物販詳細投稿は発見できず。 | 2026-05-05 |
-| pcwe-059 | 月からミミミ | https://x.com/tsukimimi_radio | — | — | 「月からミミミ PCWE2026 物販」「Podcast Weekend 2026 グッズ」で検索したが、PCWE2026 出展は確認できるものの物販詳細投稿は発見できず。 | 2026-05-05 |
 | pcwe-087 | LocalTacoStories~耳で味わうエシカルな旅~ | — | https://www.instagram.com/localtacostories/ | — | 「LocalTacoStories PCWE2026 物販」「Podcast Weekend グッズ 出展」で検索したが、PCWE2026 物販詳細投稿は発見できず。9/20 のリアル試食イベント告知は確認できたが、PCWE2026 物販と直接関連する投稿は未確認。 | 2026-05-05 |
 | pcwe-108 | BACKYARD TO CLOSET | https://x.com/slwanstdy | https://www.instagram.com/at_slowandsteady | — | 「BACKYARD TO CLOSET PCWE2026 物販」「Podcast Weekend 2026 出展」で検索したが、SLOW&STEADY の S&S CLUB（メンバーシップ）の情報は確認できるものの、PCWE2026 物販詳細投稿は未確認。 | 2026-05-05 |
 | pcwe-114 | 愛されたい女たちのラブホ女子会 | https://x.com/aisaretaijyoshi | https://www.instagram.com/aisaretai.jyoshikai | — | 「愛されたい女たち ラブホ女子会 PCWE2026 物販」「Podcast Weekend グッズ 出展」で検索したが、出展告知や物販詳細投稿は発見できず。 | 2026-05-05 |
