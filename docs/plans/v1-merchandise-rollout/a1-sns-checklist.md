@@ -87,18 +87,18 @@
 | ❌ | pcwe-133 | チ的好奇心のすすめ | https://x.com/2iche_takucho | https://www.instagram.com/takuchotaku | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ✅ | pcwe-134 | カイブツラジオ | https://x.com/LLCSquad152636 | https://www.instagram.com/kaibutsu_sq... | — | 👤 菊池 | https://www.instagram.com/reel/DXjzJFSErLO/ 両日 カイブツプロジェクト紹介+子どもたち出店 | 05-06 |
 | ❌ | pcwe-135 | まるごと放送室 | https://x.com/kamiyamacast | — | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
-| ⏳ | pcwe-137 | HOG POT | https://x.com/PURE_COMEDY | https://www.instagram.com/p_ure_comedy/ | — | 👤 菊池 | — | — |
+| ✅ | pcwe-137 | HOG POT | https://x.com/PURE_COMEDY | https://www.instagram.com/p_ure_comedy/ | — | 👤 菊池 | https://x.com/PURE_COMEDY/status/2049294401462210799 5/10 オリジナルステッカー（キラ）+ フリーペーパー無料配布 | 05-06 |
 | ❌ | pcwe-138 | ひともの研究所 | https://x.com/hitomono_lab | — | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ❌ | pcwe-140 | おくちのミカタラジオ | https://x.com/BarCamono | https://www.instagram.com/tomomi_aoki_dh | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ❌ | pcwe-141 | Misa Yuka Podcast | — | https://www.instagram.com/misayuka.po... | — | 🤖 Claude | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
-| ⏳ | pcwe-144 | 雑食日和 | https://x.com/zashokubiyori | https://www.instagram.com/zashokubiyori/ | — | 👤 菊池 | — | — |
+| ❌ | pcwe-144 | 雑食日和 | https://x.com/zashokubiyori | https://www.instagram.com/zashokubiyori/ | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 
 ---
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 2 件
+- ⏳ 未着手: **0 件 🎉 A1群完走！**
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 36 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 023, 027, 030, 031, 036, 059, 068, 071, 073, 078, 079, 084, 086, 088, 090, 091, 094, 095, 103, 108, 111, 114, 116, 117, 123, 125, 128, 134）
-- ❌ 告知なし確定: 18 件（pcwe-026, 044, 045, 053, 056, 081, 087, 097, 100, 102, 112, 124, 129, 133, 135, 138, 140, 141）
+- ✅ done 化済み: 37 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 023, 027, 030, 031, 036, 059, 068, 071, 073, 078, 079, 084, 086, 088, 090, 091, 094, 095, 103, 108, 111, 114, 116, 117, 123, 125, 128, 134, 137）
+- ❌ 告知なし確定: 19 件（pcwe-026, 044, 045, 053, 056, 081, 087, 097, 100, 102, 112, 124, 129, 133, 135, 138, 140, 141, 144）
 - 👀 候補あり要判断: 0 件
