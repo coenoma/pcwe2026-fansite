@@ -6,11 +6,12 @@
  *
  * 集計ロジック:
  * - data/programs.json を読み込み
- * - 各番組について merchandiseDetails の有無で done / not-yet を判定
- * - not-found.md の表から `pcwe-XXX` を抽出して not-found リストに加算
- * - 残りが pending（done でも not-found でもない番組）
+ * - 各番組について merchandiseDetails の有無で done を判定
+ * - needs-review.md の表から `pcwe-XXX` を抽出 → needs-review リスト
+ * - not-found.md の表から `pcwe-XXX` を抽出 → not-found リスト
+ * - 残りが pending（done / needs-review / not-found のいずれでもない番組）
  *
- * 出力: 集計表 + done リスト + pending リスト（X / IG / Web の有無付き）
+ * 出力: 集計表 + 各カテゴリのリスト（X / IG / Web の有無付き）
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -20,6 +21,7 @@ import { ProgramsDataSchema, type Program } from '../src/lib/types';
 const ROOT = process.cwd();
 const PROGRAMS_PATH = join(ROOT, 'data/programs.json');
 const NOT_FOUND_PATH = join(ROOT, 'docs/plans/v1-merchandise-rollout/not-found.md');
+const NEEDS_REVIEW_PATH = join(ROOT, 'docs/plans/v1-merchandise-rollout/needs-review.md');
 const OUTPUT_PATH = join(ROOT, 'docs/plans/v1-merchandise-rollout/progress.md');
 
 function loadPrograms(): readonly Program[] {
@@ -28,11 +30,10 @@ function loadPrograms(): readonly Program[] {
   return parsed.programs;
 }
 
-/** not-found.md の表から `pcwe-XXX` を抽出する。シンプルに正規表現マッチで OK */
-function loadNotFoundIds(): Set<string> {
-  const md = readFileSync(NOT_FOUND_PATH, 'utf8');
+/** Markdown の表から `pcwe-XXX` を抽出する */
+function loadIdsFromMd(path: string): Set<string> {
+  const md = readFileSync(path, 'utf8');
   const ids = new Set<string>();
-  // 表の各行から `| pcwe-XXX |` パターンを抽出
   const re = /\|\s*(pcwe-\d{3})\s*\|/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(md)) !== null) {
@@ -53,12 +54,18 @@ interface ClassifiedProgram {
 interface Summary {
   total: number;
   done: ClassifiedProgram[];
+  needsReview: ClassifiedProgram[];
   notFound: ClassifiedProgram[];
   pending: ClassifiedProgram[];
 }
 
-function classify(programs: readonly Program[], notFoundIds: Set<string>): Summary {
+function classify(
+  programs: readonly Program[],
+  needsReviewIds: Set<string>,
+  notFoundIds: Set<string>,
+): Summary {
   const done: ClassifiedProgram[] = [];
+  const needsReview: ClassifiedProgram[] = [];
   const notFound: ClassifiedProgram[] = [];
   const pending: ClassifiedProgram[] = [];
 
@@ -74,6 +81,8 @@ function classify(programs: readonly Program[], notFoundIds: Set<string>): Summa
     };
     if (md.length > 0) {
       done.push(cp);
+    } else if (needsReviewIds.has(p.id)) {
+      needsReview.push(cp);
     } else if (notFoundIds.has(p.id)) {
       notFound.push(cp);
     } else {
@@ -81,7 +90,7 @@ function classify(programs: readonly Program[], notFoundIds: Set<string>): Summa
     }
   }
 
-  return { total: programs.length, done, notFound, pending };
+  return { total: programs.length, done, needsReview, notFound, pending };
 }
 
 function snsBadges(p: ClassifiedProgram): string {
@@ -93,8 +102,8 @@ function snsBadges(p: ClassifiedProgram): string {
 }
 
 function formatProgressMd(summary: Summary): string {
-  const { total, done, notFound, pending } = summary;
-  const handled = done.length + notFound.length;
+  const { total, done, needsReview, notFound, pending } = summary;
+  const handled = done.length + needsReview.length + notFound.length;
   const pct = ((handled / total) * 100).toFixed(1);
 
   const now = new Date();
@@ -112,9 +121,10 @@ function formatProgressMd(summary: Summary): string {
   lines.push('| 状態 | 件数 | 割合 |');
   lines.push('|---|---:|---:|');
   lines.push(`| ✅ 完了（merchandiseDetails あり） | ${done.length} | ${((done.length / total) * 100).toFixed(1)}% |`);
+  lines.push(`| 👀 ユーザー確認待ち（needs-review.md 記載） | ${needsReview.length} | ${((needsReview.length / total) * 100).toFixed(1)}% |`);
   lines.push(`| 🔎 取得不可（not-found.md 記載） | ${notFound.length} | ${((notFound.length / total) * 100).toFixed(1)}% |`);
   lines.push(`| ⏳ 未着手（pending） | ${pending.length} | ${((pending.length / total) * 100).toFixed(1)}% |`);
-  lines.push(`| **着手済 (done + not-found)** | **${handled} / ${total}** | **${pct}%** |`);
+  lines.push(`| **着手済 (done + needs-review + not-found)** | **${handled} / ${total}** | **${pct}%** |`);
   lines.push('');
 
   // pending を SNS の有無で内訳
@@ -143,6 +153,23 @@ function formatProgressMd(summary: Summary): string {
     lines.push('|---|---|---:|');
     for (const p of done) {
       lines.push(`| ${p.id} | ${p.name} | ${p.detailsCount} |`);
+    }
+  }
+  lines.push('');
+
+  lines.push('---');
+  lines.push('');
+  lines.push('## 👀 ユーザー確認待ち（needs-review）');
+  lines.push('');
+  lines.push(`詳細は [needs-review.md](./needs-review.md) 参照。AI が候補は見つけたが、PCWE2026 当日販売の確証は取れなかった番組。ユーザー判断で done に昇格 or not-found に確定する。`);
+  lines.push('');
+  if (needsReview.length === 0) {
+    lines.push('（まだありません）');
+  } else {
+    lines.push('| ID | 番組名 | SNS |');
+    lines.push('|---|---|---|');
+    for (const p of needsReview) {
+      lines.push(`| ${p.id} | ${p.name} | ${snsBadges(p)} |`);
     }
   }
   lines.push('');
@@ -202,13 +229,14 @@ function formatProgressMd(summary: Summary): string {
 function main(): void {
   console.log('🔢 物販ロールアウト進捗を集計中...');
   const programs = loadPrograms();
-  const notFoundIds = loadNotFoundIds();
-  const summary = classify(programs, notFoundIds);
+  const needsReviewIds = loadIdsFromMd(NEEDS_REVIEW_PATH);
+  const notFoundIds = loadIdsFromMd(NOT_FOUND_PATH);
+  const summary = classify(programs, needsReviewIds, notFoundIds);
   const md = formatProgressMd(summary);
   writeFileSync(OUTPUT_PATH, md);
   console.log(`✅ ${OUTPUT_PATH} を更新しました`);
   console.log(
-    `   完了: ${summary.done.length} / 取得不可: ${summary.notFound.length} / 未着手: ${summary.pending.length} (合計: ${summary.total})`,
+    `   完了: ${summary.done.length} / 確認待ち: ${summary.needsReview.length} / 取得不可: ${summary.notFound.length} / 未着手: ${summary.pending.length} (合計: ${summary.total})`,
   );
 }
 
