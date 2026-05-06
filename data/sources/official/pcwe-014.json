@@ -11,6 +11,26 @@
       "ゲーム",
       "オリジナルグッズ（モバイルバッテリー",
       "ポーチなど）"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "オリジナルポーチ・モバイルバッテリー販売",
+        "description": "5/9（土）10:00〜出展。X 投稿（2026-05-05、@OBATalk2024）にて「ポッドキャストウィークエンド、目前に迫って参りました！オバトークのブースでは…🍋オリジナルポーチ販売 🍋オリジナルモバイルバッテリー販売」とホスト本人が告知。",
+        "sourceUrl": "https://x.com/OBATalk2024/status/2051671413581656066",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "世界唯一⁈ タロットおみくじ",
+        "description": "番組内コンテンツ「エリムスタロット」連動の体験企画。X 投稿（2026-05-05、@OBATalk2024）にて「🍋世界唯一⁈タロットおみくじ」と告知。",
+        "sourceUrl": "https://x.com/OBATalk2024/status/2051671413581656066",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "オバトークと対戦ゲーム",
+        "description": "ホストとの対戦ゲーム企画。X 投稿（2026-05-05、@OBATalk2024）にて「🍋オバトークと対戦ゲーム」と告知。",
+        "sourceUrl": "https://x.com/OBATalk2024/status/2051671413581656066",
+        "sourceType": "x-post"
+      }
     ]
   },
   "exhibition": {
