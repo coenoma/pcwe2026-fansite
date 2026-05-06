@@ -12,6 +12,44 @@
       "キーホルダー",
       "マグネット",
       "ZINE"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "ツミナハナシ 初の ZINE",
+        "description": "5/10（日）の Podcast EXPO 初出展に合わせて制作した、ツミナハナシ初の ZINE。",
+        "sourceUrl": "https://x.com/tsumina_hanashi/status/2051656908889878605",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "番組アートワーク キーホルダー",
+        "description": "番組アートワークをデザインに採用したキーホルダー。",
+        "sourceUrl": "https://x.com/tsumina_hanashi/status/2051656908889878605",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "クリアファイル",
+        "description": "番組オリジナルクリアファイル。5/10（日）会場で販売。",
+        "sourceUrl": "https://x.com/tsumina_hanashi/status/2051656908889878605",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "新作マグネット",
+        "description": "PCWE2026 に合わせた新作マグネット。",
+        "sourceUrl": "https://x.com/tsumina_hanashi/status/2051656908889878605",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "無罪キーホルダー",
+        "description": "「罪と罰」がテーマの番組らしい遊び心のある「無罪」キーホルダー。",
+        "sourceUrl": "https://x.com/tsumina_hanashi/status/2051656908889878605",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "フリーペーパー",
+        "description": "無料配布のフリーペーパー。",
+        "sourceUrl": "https://x.com/tsumina_hanashi/status/2051656908889878605",
+        "sourceType": "x-post"
+      }
     ]
   },
   "exhibition": {

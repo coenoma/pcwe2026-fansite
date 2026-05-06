@@ -9,6 +9,26 @@
     "merchandise": [
       "話し方のお悩み",
       "サクっと解決！ミニ相談会（15分）"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "15分で話し方診断（事前予約受付中）",
+        "description": "5/10（日）出展ブースにて、元アナウンサー・高山ゆかり氏が 15 分で話し方を診断。事前予約受付中。",
+        "sourceUrl": "https://x.com/takayama_yukari/status/2050558444923687116",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "話し方おみくじ",
+        "description": "ブースで引ける番組オリジナルの「話し方おみくじ」。",
+        "sourceUrl": "https://x.com/takayama_yukari/status/2050558444923687116",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "オリジナルアロマ（試作）",
+        "description": "番組の世界観に合わせて作られたオリジナルアロマの試作品を限定販売。",
+        "sourceUrl": "https://x.com/takayama_yukari/status/2050558444923687116",
+        "sourceType": "x-post"
+      }
     ]
   },
   "exhibition": {
