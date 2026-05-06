@@ -12,6 +12,14 @@
       "キャップ",
       "トートバッグ",
       "ミックスCD"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展ラインナップ",
+        "description": "公式 boothpage 番組紹介に「会場でも番組のテンションそのままでお待ちしています」とホスト本人が出展確証メッセージを記載。物販は焼き芋・ティーシャツ・キャップ・トートバッグ・ミックスCD の 5 種。会社員と焼き芋屋ユニットらしく、当日は実物の焼き芋が販売される。",
+        "sourceUrl": "https://podcastexpo.jp/booth/pcwe-113/",
+        "sourceType": "official-booth"
+      }
     ]
   },
   "exhibition": {
