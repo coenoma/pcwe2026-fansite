@@ -9,6 +9,32 @@
     "merchandise": [
       "ステッカー",
       "衣類（予定）"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "塩貝の「よく寝てよく働けるタロット占い」（特別企画）",
+        "description": "研究員・塩貝がブースに登場し、来場者を直接タロットで占う特別企画。「最近ちょっとモヤモヤする」「これってどうしたらいいの〜？」と思っていることを塩貝が見てくれる。Instagram 投稿（2026-04-30 頃）にてホスト本人が告知。",
+        "sourceUrl": "https://www.instagram.com/p/DXdVTB4k3_F/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "よく働けてよく休めるTシャツ",
+        "description": "メンバー・大槻の娘さんが描いた新キャラ「アンドコーンさん」のオリジナル T シャツ。Instagram 投稿（2026-04-30 頃）にてホスト本人が告知。",
+        "sourceUrl": "https://www.instagram.com/p/DXdVTB4k3_F/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "よく運べてよく寄り道できるトートバッグ",
+        "description": "「アンドコーンさん」デザインのオリジナルトートバッグ。ふふっと笑ってしまうかわいいグッズ。Instagram 投稿（2026-04-30 頃）にてホスト本人が告知。",
+        "sourceUrl": "https://www.instagram.com/p/DXdVTB4k3_F/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "ステッカープレゼント（フォロー＋アンケート回答で数量限定）",
+        "description": "「アンドコーンさん」のステッカーを、番組フォロー＋簡単睡眠アンケートに回答してくれた方に**数量限定**でプレゼント。Instagram 投稿（2026-04-30 頃）にて告知。5/10（日）のみ出展、ブース番号 **D14**、HOME/WORK VILLAGE。",
+        "sourceUrl": "https://www.instagram.com/p/DXdVTB4k3_F/",
+        "sourceType": "instagram-post"
+      }
     ]
   },
   "exhibition": {
@@ -21,7 +47,7 @@
   },
   "links": {
     "applePodcasts": "https://podcasts.apple.com/jp/podcast/%E3%82%8F%E3%81%9F%E3%81%97%E3%81%A8%E3%81%AD%E3%82%80%E3%82%8A%E7%A0%94%E7%A9%B6%E6%89%80-%E5%A5%B3%E6%80%A7%E3%81%8C%E3%82%88%E3%81%8F%E5%AF%9D%E3%81%A6%E3%82%88%E3%81%8F%E5%83%8D%E3%81%91%E3%82%8B%E3%83%A9%E3%82%B8%E3%82%AA/id1815448336",
-    "x": "https://x.com/watashitonemuri/status/2031120340861006226",
+    "x": "https://x.com/watashitonemuri",
     "instagram": "https://www.instagram.com/sleep.femtech/"
   },
   "recommendedEpisode": {
