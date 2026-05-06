@@ -12,6 +12,26 @@
       "手作り絆創膏入れ",
       "ポケットティッシュ",
       "キーホルダー"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "くじびき景品（缶バッチ・ステッカー・キーホルダー）",
+        "description": "ブースで実施するくじびきの景品。缶バッチ・ステッカー・キーホルダーが当たる仕組み。Listen エピソード「ポットキャストエクスポ紹介会」（2026-05-02 公開）にてホスト本人が告知。",
+        "sourceUrl": "https://listen.style/p/maikuradio",
+        "sourceType": "web"
+      },
+      {
+        "name": "くじびき特賞 ぬいぐるみ",
+        "description": "くじびきの特賞景品。ホストの母が手作りで用意した特別賞、数量限定。Listen エピソード「ポットキャストエクスポ紹介会」（2026-05-02 公開）にてホスト本人が告知（「特賞」と説明）。",
+        "sourceUrl": "https://listen.style/p/maikuradio",
+        "sourceType": "web"
+      },
+      {
+        "name": "マイクラ体験会（番組フォロー特典）",
+        "description": "ブース来場者向けのマインクラフト体験コンテンツ。番組フォローで参加可能。Listen エピソード「ポットキャストエクスポ紹介会」（2026-05-02 公開）にてホスト本人が告知。",
+        "sourceUrl": "https://listen.style/p/maikuradio",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
