@@ -17,7 +17,6 @@
 
 | 番組 ID | 番組名 | X | Instagram | Website | 調査メモ | 最終調査日 |
 |---|---|---|---|---|---|---|
-| pcwe-005 | 日々の句読点。by SEKISUI HOUSE | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-005/) のみ参照可能 | 2026-05-05 |
 | pcwe-008 | 私的エクレアイズム | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-008/) のみ参照可能 | 2026-05-05 |
 | pcwe-017 | 女性消防設備士の休憩室ラジオ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-017/) のみ参照可能 | 2026-05-05 |
 | pcwe-052 | シンプルKEIBA～難しくない競馬ラジオ～ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-052/) のみ参照可能 | 2026-05-05 |

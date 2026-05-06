@@ -26,8 +26,13 @@
 
 | 番組 ID | 番組名 | X | Instagram | Website | 確認結果 / 次のアクション | 確認日 |
 |---|---|---|---|---|---|---|
+| pcwe-005 | 日々の句読点。by SEKISUI HOUSE | — | — | — | ユーザー指摘を受け Listen.style で 3 エピソード（bnxhrtsf / isqg69cr / kct09rga）を WebFetch 確認。「ブース出展（5/9-10）」のみ告知、物販詳細記載なし。SNS なしのため当日近くの追加情報源待ち | 2026-05-06 |
 | pcwe-057 | りっちゃ・りょかちのやいやいラジオ | https://x.com/yaiyai_radio | — | — | Spotify ep #306「Podcast EXPO でブース出すよ」を AI が WebFetch 確認、物販詳細記載なし。ユーザー側で Listen.style の文字起こし or 当日告知投稿を再チェック推奨。SUZURI「やいやい商店」の常設グッズあり | 2026-05-06 |
 | pcwe-066 | ローカルナイトニッポン | https://x.com/lnnradio | — | — | ユーザー目視で言及なし確認。BASE 公式ショップ (lnn.base.ec) 常設のみ確認。当日近くの新規告知投稿を再チェック推奨 | 2026-05-06 |
+| pcwe-099 | 本の虫のススメ | https://x.com/honnomushi_ssm | — | — | ユーザー目視で言及なし確認。文学フリマ東京 41/42 の出店告知あり、PCWE2026 の固有物販告知は未発見。当日近くの追加投稿を再チェック推奨 | 2026-05-06 |
+| pcwe-118 | 朝日新聞ポッドキャスト | https://x.com/AsahiPodcast | — | — | ユーザー目視で言及なし確認。X タイムラインで「2 日間出店」のみ確認、朝リスちゃんグッズキャンペーンの固有 status URL 未特定。当日近くの追加投稿を再チェック推奨 | 2026-05-06 |
+| pcwe-120 | hitokoto Radio | https://x.com/hitokotoRadio | — | — | Listen.style ep cakqiayt（PCWE2026 出展決定告知）を AI が WebFetch 確認、物販詳細記載なし。当日近くの番組更新を再チェック推奨 | 2026-05-06 |
+| pcwe-126 | 神崎恵＆大森葉子の「WONT」 | — | https://www.instagram.com/wont_podcast/ | — | ユーザー目視で言及なし確認。Instagram で「5/10 ブース出展、ステッカー先着配布」の言及スニペットあるが固有 IG 投稿 URL 未特定。当日近くの追加投稿を再チェック推奨 | 2026-05-06 |
 
 ---
 
