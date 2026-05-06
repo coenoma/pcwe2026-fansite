@@ -202,6 +202,37 @@ export default function HomePage() {
           <div className="mt-8">
             <CountdownBadge />
           </div>
+
+          {/* 会場マップへの動線 */}
+          <div className="mx-auto mt-8 max-w-3xl">
+            <a
+              href="/map"
+              className="group flex items-center justify-between gap-4 rounded-2xl border border-primary-200 bg-gradient-to-r from-primary-50 to-amber-50 px-5 py-4 transition-all hover:shadow-md focus-visible:outline-2 focus-visible:outline-primary-500"
+            >
+              <div className="flex items-center gap-3 text-left">
+                <span
+                  aria-hidden="true"
+                  className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-primary-500 text-white"
+                >
+                  🗺
+                </span>
+                <div className="text-sm">
+                  <p className="font-bold text-neutral-900">
+                    会場マップを見る
+                  </p>
+                  <p className="mt-0.5 text-xs text-neutral-600">
+                    142 番組のブースを土日切替・グッズ検索で
+                  </p>
+                </div>
+              </div>
+              <span
+                aria-hidden="true"
+                className="text-sm font-bold text-primary-700 group-hover:translate-x-0.5 transition-transform"
+              >
+                →
+              </span>
+            </a>
+          </div>
         </div>
       </section>
 
