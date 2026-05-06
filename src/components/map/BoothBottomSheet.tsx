@@ -14,7 +14,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
-import { ExternalLink, X } from 'lucide-react';
+import { Check, ExternalLink, Star, X } from 'lucide-react';
 import type { Day, Program } from '@/lib/types';
 import type { SlotPlacement } from '@/lib/booth-map';
 
@@ -27,9 +27,22 @@ interface Props {
   day: Day;
   /** 閉じるコールバック */
   onClose: () => void;
+  isFavorite?: boolean;
+  isVisited?: boolean;
+  onToggleFavorite?: () => void;
+  onToggleVisited?: () => void;
 }
 
-export function BoothBottomSheet({ placement, program, day, onClose }: Props) {
+export function BoothBottomSheet({
+  placement,
+  program,
+  day,
+  onClose,
+  isFavorite = false,
+  isVisited = false,
+  onToggleFavorite,
+  onToggleVisited,
+}: Props) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   // 開いた直後に閉じるボタンへフォーカス（フォーカストラップ起点）
@@ -195,7 +208,48 @@ export function BoothBottomSheet({ placement, program, day, onClose }: Props) {
         ) : null}
 
         {/* CTA */}
-        <div className="sticky bottom-0 mt-5 border-t border-neutral-100 bg-white px-5 py-3">
+        <div className="sticky bottom-0 mt-5 border-t border-neutral-100 bg-white px-5 py-3 space-y-2">
+          {/* お気に入り / 会えた */}
+          {(onToggleFavorite || onToggleVisited) && !isExternal ? (
+            <div className="flex gap-2">
+              {onToggleFavorite ? (
+                <button
+                  type="button"
+                  aria-pressed={isFavorite}
+                  onClick={onToggleFavorite}
+                  className={
+                    isFavorite
+                      ? 'flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-amber-100 px-3 py-2 text-xs font-bold text-amber-800 transition-colors hover:bg-amber-200'
+                      : 'flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-xs font-bold text-neutral-600 transition-colors hover:border-amber-300 hover:text-amber-700'
+                  }
+                >
+                  <Star
+                    size={14}
+                    aria-hidden="true"
+                    fill={isFavorite ? 'currentColor' : 'none'}
+                  />
+                  {isFavorite ? 'お気に入り済み' : 'お気に入りに追加'}
+                </button>
+              ) : null}
+              {onToggleVisited ? (
+                <button
+                  type="button"
+                  aria-pressed={isVisited}
+                  onClick={onToggleVisited}
+                  className={
+                    isVisited
+                      ? 'flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-accent-cyan-500/10 px-3 py-2 text-xs font-bold text-accent-cyan-600 transition-colors hover:bg-accent-cyan-500/20'
+                      : 'flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-xs font-bold text-neutral-600 transition-colors hover:border-accent-cyan-400 hover:text-accent-cyan-600'
+                  }
+                >
+                  <Check size={14} aria-hidden="true" />
+                  {isVisited ? '会えた済み' : '会えた'}
+                </button>
+              ) : null}
+            </div>
+          ) : null}
+
+          {/* メイン CTA */}
           {program ? (
             <Link
               href={`/booth/${program.id}`}
@@ -208,12 +262,12 @@ export function BoothBottomSheet({ placement, program, day, onClose }: Props) {
             </Link>
           ) : (
             <a
-              href={`https://podcastexpo.jp/booth/pcwe-${placement.position}/`}
+              href={`https://podcastexpo.jp/booth/`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-600"
             >
-              公式ブースを見る
+              公式サイトを見る
               <ExternalLink size={16} aria-hidden="true" />
             </a>
           )}
