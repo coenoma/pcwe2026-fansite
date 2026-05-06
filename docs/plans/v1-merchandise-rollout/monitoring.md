@@ -60,6 +60,26 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-120 | hitokoto Radio | https://x.com/hitokotoRadio | — | — | Listen.style ep cakqiayt および Apple Podcasts ep#90「告知！PODCAST WEEKEND 2026出展決定」（ID: 1000758009722）で出展は確実。物販ラインナップ・価格は当日告知待ち。当日近くの番組更新を再チェック推奨 | 2026-05-06 |
 | pcwe-016 | overture〜ミュージカル好きの語り部屋〜 | — | https://www.instagram.com/hyp_ran | — | ユーザー目視で言及なし確認（2026-05-06）。Spotify ep #91 は PCWE2024 の告知で PCWE2026 用ではない。Instagram / Spotify が active なため当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 
+| pcwe-026 | 雨の日には本をさして。 | https://x.com/amehonns2 | https://www.instagram.com/amehons2 | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-044 | ひうら芳麗の楽女なニュース | https://x.com/marikosatoru | https://www.instagram.com/ladyfangchang | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-045 | PodcastTimes｜ぽっどでの新人 | https://x.com/Podcast_TimesJP | https://www.instagram.com/podcasttimes_jp/ | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-053 | 丘の上喫茶 | https://x.com/okanoue_kissa | https://www.instagram.com/okanoue_kissa/ | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-056 | ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！！〜 | https://x.com/gcrc_divedeep | — | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-081 | 聴くと映画が観たくなる！CINEMORE | https://x.com/cinemorejp | https://www.instagram.com/cinemore_official | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-087 | LocalTacoStories~耳で味わうエシカルな旅~ | — | https://www.instagram.com/localtacostories/ | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-097 | 戦略的幸福論〜AI時代をどう生きる？〜 | https://x.com/tiedfamily244 | — | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-100 | 「いま、暇？」急いで準備するからちょっと飲まない？ | https://x.com/imahimanomanai | — | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-102 | watashito | — | https://www.instagram.com/watashito_podcast/ | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-112 | 深呼吸できる女とできない女 | https://x.com/shinjo_podcast | — | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-124 | 読書酒紀 | https://x.com/OfVoice59929 | — | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-129 | ちょいクズ男たちの恋愛本音研究所 | https://x.com/choikuzu_otoko | https://www.instagram.com/choi_kuzu_otoko | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-133 | チ的好奇心のすすめ | https://x.com/2iche_takucho | https://www.instagram.com/takuchotaku | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-135 | まるごと放送室 | https://x.com/kamiyamacast | — | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-138 | ひともの研究所 | https://x.com/hitomono_lab | — | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-140 | おくちのミカタラジオ | https://x.com/BarCamono | https://www.instagram.com/tomomi_aoki_dh | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-141 | Misa Yuka Podcast | — | https://www.instagram.com/misayuka.podcast | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-144 | 雑食日和 | https://x.com/zashokubiyori | https://www.instagram.com/zashokubiyori/ | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+
 ---
 
 ## 解決ログ
