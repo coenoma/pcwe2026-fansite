@@ -2,6 +2,18 @@
 
 要件 #4「番組グッズの傾向分析、検索・絞り込みの切り口」と #6「全番組への適用」の核心ドキュメント。
 
+## 📊 進捗マトリクス
+
+| サブタスク | 状況 |
+|---|:---:|
+| グッズタクソノミー定義（6 カテゴリ + 詳細レイヤー）| ✅ |
+| `MerchandiseTagSchema` zod 型定義 | ⏳ |
+| `OfficialInfoSchema` 拡張（merchandiseTags / merchandiseSubTypes / merchandiseSpotlight）| ⏳ |
+| `scripts/auto-tag-merchandise.ts` 実装 | ⏳ |
+| 142 番組への自動タグ付与 | ⏳ |
+| 人間レビュー（Q6 確認: 自動付与でリリース OK、後続レビュー）| 後続 |
+| `merchandiseSpotlight` 手書き（30 件以上）| 後続 |
+
 ---
 
 ## 1. 設計の出発点

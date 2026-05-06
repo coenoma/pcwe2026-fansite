@@ -2,6 +2,17 @@
 
 設計が確定（00-04 のレビュー完了）後の実装フェーズ分割、ライブラリ選定、リリース判定基準。
 
+## 📊 進捗マトリクス（実装フェーズ）
+
+| Phase | 状況 |
+|---|:---:|
+| **Phase 0: 設計**（00-05 + 自己レビュー）| ✅ |
+| **Phase 1: データ整備**（部分完了）| 🟡 |
+| Phase 2: SVG マップ + ピン + ボトムシート | ⏳ |
+| Phase 3: 検索 / フィルタ / リスト切替 | ⏳ |
+| Phase 4: 当日運用 | ⏳ |
+| Phase 5: v2.5（当日後）| ⏳ |
+
 ---
 
 ## 1. 全体タイムライン
@@ -277,18 +288,64 @@ data/programs.json ──(merge by programId)──→ src/app/map/page.tsx (ser
 
 ---
 
-## 9. ユーザーへの確認事項（実装着手前の質問）
+## 9. ユーザー確認事項の最終回答（Phase 0 合意済み）
 
-設計 Phase 0 の合意確定にあたり、以下を菊池さんに確認:
+| # | 質問 | ユーザー回答 | 反映 |
+|---|---|---|---|
+| Q1 | テント 30, 31 のブース割当 | **一旦空白** | booth-positions.json で placeholder（`note: '一旦空白で進行'`）|
+| Q2 | 3 番組（PodWalker / まかないラジオ / アイデア刺激法）の追加 | **追加** | programs.json schema は触らず、booth-positions.json で `external` 参照として追加（fanGuide 必須項目を捏造しないため）|
+| Q3 | ファンガイドトップのテイスト統一（primary オレンジベース）| **YES** | 02-data-and-svg.md §5-1 でカラートークンを既存 `--color-primary-500` 等に統一明記 |
+| Q4 | 公式画像 DL ボタン UIUX | **Claude 判断** | 02-data-and-svg.md §5-2 で「マップ下部の独立セクション」配置案、サムネ + DL ボタン + 公式リンク |
+| Q5 | v2 必須機能リスト | **OK** | README §「v2 リリース必須機能まとめ」確定 |
+| Q6 | 公式へ事前報告 | **しない** | 「公式画像をもとに独自に描き直してます／公式画像はこちらから DL」を透明に明記（02-data-and-svg.md §5-3）|
 
-| # | 質問 | デフォルト案 |
+## 10. 設計書レビュー結果（自己レビュー、AGENTS.md 整合）
+
+### 10-1. AGENTS.md 絶対的禁止事項のチェック
+
+| 禁止事項 | チェック結果 |
+|---|---|
+| `any` 型禁止 | ✅ 全コンポーネントは `MerchandiseDetail` 等の既存型を使う設計 |
+| `as` 安易使用禁止 | ✅ booth-positions.json の値は zod スキーマで実行時検証 |
+| ESLint 警告無視禁止 | ✅ 既存 lint pass の継続を維持 |
+| エラー握りつぶし禁止 | ✅ Tweet 取得失敗時は既存 `<TweetNotFound>` パターン |
+| TODO/FIXME 先送り禁止 | ✅ TODO は本ドキュメントの進捗マトリクスで管理 |
+| 日本語必須 | ✅ コンポーネント説明・エラーログすべて日本語 |
+| LLM API 直接呼び出し禁止 | ✅ クライアント・サーバーで LLM API を呼ばない |
+| 公式画像ホットリンク禁止 | ✅ `public/images/map/` に配置、DL リンクは自サイト経由 |
+| 「公式」表記禁止 | ✅ 「位置情報の出典: 公式マップ」と引用としてのみ言及、ファンサイト自体は「公式画像をもとに独自描画」 |
+| サーバーサイド処理追加禁止 | ✅ 全機能 SSG + クライアントインタラクション、API Route なし、Server Action なし |
+
+### 10-2. 必須ルールのチェック
+
+| ルール | 設計反映 |
+|---|---|
+| 純粋関数分離 | ✅ ピン状態・フィルタロジックは `src/lib/map/` の純粋関数に分離設計 |
+| App Router + RSC 優先 | ✅ `app/map/page.tsx` は Server Component で programs/booth-positions を読み込み props 渡し、`MapClient.tsx` が `'use client'` |
+| 静的生成 SSG | ✅ `export const dynamic = 'force-static'` |
+| next/image | ✅ 公式画像 DL サムネ・番組サムネはすべて `next/image` |
+| アクセシビリティ | ✅ ARIA + tabindex + キーボード操作、リストモードでスクリーンリーダー対応 |
+| レスポンシブ | ✅ モバイルファースト、タップ領域 44px+ |
+| パフォーマンス | ✅ ライブラリ選定で bundle 抑制（react-zoom-pan-pinch ~30KB、Radix Dialog 軽量、Framer Motion は tree-shake）|
+
+### 10-3. ベストプラクティス（Next.js 15.5 / React 19 / Tailwind 4）
+
+- ✅ App Router + Server Component 優先
+- ✅ `'use client'` は最小境界（VenueMap, BoothBottomSheet, MapFilterChips, MapSearchBar, useSearchParams 系）
+- ✅ `useSearchParams` で URL 状態同期（クライアントサイド）
+- ✅ Tailwind 4 既存トークン (`--color-primary-500` 等) を `bg-primary-500` で参照
+- ✅ Static Export モード (`output: 'export'`) と互換: 動的ルートは `generateStaticParams` で対応、API Route 使わない
+- ✅ Service Worker は v2.5 で検討（v2 では Vercel CDN + ブラウザキャッシュで足りる想定）
+
+### 10-4. 既存実装との整合
+
+| 既存資産 | 整合性 | 備考 |
 |---|---|---|
-| Q1 | テント 30, 31 のブース割当は公式に問い合わせる？ それとも当日現地確認で良い？ | 公式に問い合わせ（時間あれば） |
-| Q2 | PodWalker / まかないラジオ / アイデア刺激法 の 3 番組は programs.json に追加する？ | YES（PCWE 公式追加出展者として）|
-| Q3 | ファンガイドトップのテイスト統一は primary オレンジ (#dc725a) ベースで OK？ | YES |
-| Q4 | 公式画像 DL ボタンの配置は「マップ右下フローティング」と「下部ユーティリティバー」どちら？ | 下部ユーティリティバー（フローティングは指タップ時に邪魔） |
-| Q5 | v2 必須機能リストの過不足ある？ | 上記 README §「v2 リリース必須機能まとめ」参照 |
-| Q6 | 公式に「fansite として公式画像 DL + 独自 SVG マップ公開」事前報告する？ | YES（コエノマ側から） |
+| `src/lib/types.ts` の `MerchandiseDetail` | ✅ 既存維持、`MerchandiseTag` 列挙を新規追加 |
+| `src/components/merchandise/MerchandiseList.tsx` | ✅ ボトムシート内で `layout="popup"` で再利用可能（v1 で既に実装済み）|
+| `data/programs.json` schema | ✅ `OfficialInfoSchema` に optional 追加のみ、既存番組への影響なし |
+| `scripts/build-programs.ts` | ✅ 既存ビルドフローを維持、merchandiseTags 追加だけ |
+| `next.config.ts` の `output: 'export'` | ✅ 維持、API Route 不要 |
 
 ---
 

@@ -6,6 +6,54 @@ PCWE2026 ファンサイトの第2の柱。**142 番組ある中から「自分�
 
 ---
 
+## 📊 進捗マトリクス（このドキュメント群の最新状況）
+
+| Phase | タスク | 状況 | 担当 | 備考 |
+|---|---|:---:|---|---|
+| **Phase 0: 設計** | 00 README 全体方針 | ✅ | Claude | ユーザーレビュー反映済み |
+| | 01 ベストプラクティス調査 | ✅ | Claude | |
+| | 02 データ + SVG 戦略 | ✅ | Claude | テント 32 含む 32 個構成、テイスト統一済み |
+| | 03 グッズ分類 | ✅ | Claude | 6 カテゴリ + 詳細レイヤー |
+| | 04 探索体験 UX | ✅ | Claude | 必須機能ライン引き済み |
+| | 05 実装計画 | ✅ | Claude | Q1-Q6 ユーザー回答反映済み |
+| | **設計書レビュー（自己レビュー）** | ✅ | Claude | AGENTS.md / 既存コード整合性チェック完了 |
+| **Phase 1: データ整備** | booth-positions.json 確定 | ✅ | Claude | 142 番組すべて配置確定（テント 30/31 placeholder） |
+| | 公式画像 webp 配置 | ✅ | Claude | DL 提供用 |
+| | 3 番組外部参照追加 | ✅ | Claude | PodWalker / まかないラジオ / アイデア刺激法 |
+| | merchandiseTags 自動付与 | ⏳ | Claude | scripts/auto-tag-merchandise.ts |
+| | スキーマ拡張（types.ts） | ⏳ | Claude | merchandiseTags / position / etc |
+| | バリデーションスクリプト | ⏳ | Claude | scripts/validate-booth-positions.ts |
+| **Phase 2: SVG マップ実装** | SVG 座標起こし（Figma） | ⏳ | コエノマ運営 | 公式 webp を背景に手作業 |
+| | VenueMap コンポーネント | ⏳ | Claude | |
+| | BoothBottomSheet | ⏳ | Claude | |
+| | DayToggle | ⏳ | Claude | |
+| | 検索バー | ⏳ | Claude | |
+| **Phase 3: フィルタ・リスト** | フィルタチップ UI | ⏳ | Claude | |
+| | リストビュー | ⏳ | Claude | |
+| | URL 状態保存 | ⏳ | Claude | |
+| | 「会えた」/ お気に入り | ⏳ | Claude | LocalStorage |
+| | 公式画像 DL ボタン | ⏳ | Claude | |
+| **Phase 2-3 横断** | A11y・キーボード操作 | ⏳ | Claude | ARIA + Tab/Enter/Esc |
+| | レスポンシブ確認 | ⏳ | Claude | モバイル/PC |
+| **Phase 4: 当日運用** | デプロイ・動作確認 | ⏳ | Claude + コエノマ運営 | 5/9 朝 |
+| | 当日修正対応 | ⏳ | コエノマ運営 | |
+| **Phase 5: v2.5（当日後）** | 推奨ルート計算 | ⏳ | 後続 | |
+| | recap ページ | ⏳ | 後続 | |
+| | 静的混雑ヒント | ⏳ | 後続 | |
+
+**凡例**: ✅ 完了 / 🟡 進行中 / ⏳ 未着手 / ⚠️ ブロック中
+
+### 残課題（リリースまでに片付けるべき）
+
+| # | 課題 | 重要度 | 担当 |
+|---|---|---|---|
+| R1 | テント 30, 31 のブース割当（一旦空白で進行、ユーザー Q1 で確認済み） | 中 | コエノマ運営 |
+| R2 | 3 番組の公式情報取得（programs.json への正式登録、fanGuide 執筆） | 低 | コエノマ運営（後続） |
+| R3 | SVG 座標起こし（Figma 作業） | 高 | コエノマ運営 |
+| R4 | merchandiseTags の人間レビュー（自動付与の精度確認） | 中 | コエノマ運営（v2 リリース後 OK） |
+
+---
+
 ## なぜマップが必要か
 
 ### 現状の課題
