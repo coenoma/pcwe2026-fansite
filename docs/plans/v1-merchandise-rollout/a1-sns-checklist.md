@@ -69,10 +69,10 @@
 | ✅ | pcwe-091 | Kids’ News – キッズニュース | https://x.com/rinaarailevia | — | — | 🤖 Claude | https://x.com/RinaAraiLevia/status/2051927908072202520 5/10 キッズニュースビンゴ・ワークブック | 05-06 |
 | ✅ | pcwe-094 | 荒ぶるペーのオネエじゃないのよ | https://x.com/fuji_tate_p | https://www.instagram.com/fuji_tate_p | — | 👤 菊池 | https://x.com/fuji_tate_p/status/2051855154996281618 5/10 新作グッズ（工作） | 05-06 |
 | ✅ | pcwe-095 | ハタとキシマの“黙っていられん” | https://x.com/damaren_radio | — | — | 👤 菊池 | X 投稿3件: ブックマーカー200円・ライブコピーライティング・クイズ企画 | 05-06 |
-| ⏳ | pcwe-097 | 戦略的幸福論〜AI時代をどう生きる？〜 | https://x.com/tiedfamily244 | — | — | 👤 菊池 | — | — |
+| ❌ | pcwe-097 | 戦略的幸福論〜AI時代をどう生きる？〜 | https://x.com/tiedfamily244 | — | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ❌ | pcwe-100 | 「いま、暇？」急いで準備するからちょっと飲まない？ | https://x.com/imahimanomanai | — | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ❌ | pcwe-102 | watashito | — | https://www.instagram.com/watashito_p... | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
-| ⏳ | pcwe-103 | SONICWAVEの3355ラジオ | https://x.com/weare_sonicwave | https://www.instagram.com/we_are_soni... | — | 👤 菊池 | — | — |
+| ✅ | pcwe-103 | SONICWAVEの3355ラジオ | https://x.com/weare_sonicwave | https://www.instagram.com/we_are_soni... | — | 👤 菊池 | X 投稿5件: 新刊「Thailand 2569」+ 既刊書籍 + 自己探求本 + ビジュアルブック | 05-06 |
 | ✅ | pcwe-108 | BACKYARD TO CLOSET | https://x.com/slwanstdy | https://www.instagram.com/at_slowands... | — | 👤 菊池 | https://listen.style/p/sands/mckvryof 両日 ペインティットブランク商品 | 05-06 |
 | ⏳ | pcwe-111 | ワイングラスからこぼれ話。 | https://x.com/jellysPodcast | — | — | 👤 菊池 | — | — |
 | ❌ | pcwe-112 | 深呼吸できる女とできない女 | https://x.com/shinjo_podcast | — | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
@@ -97,8 +97,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 9 件
+- ⏳ 未着手: 7 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 32 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 023, 027, 030, 031, 036, 059, 068, 071, 073, 078, 079, 084, 086, 088, 090, 091, 094, 095, 108, 114, 116, 117, 128, 134）
-- ❌ 告知なし確定: 15 件（pcwe-026, 044, 045, 053, 056, 081, 087, 100, 102, 112, 124, 129, 138, 140, 141）
+- ✅ done 化済み: 33 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 023, 027, 030, 031, 036, 059, 068, 071, 073, 078, 079, 084, 086, 088, 090, 091, 094, 095, 103, 108, 114, 116, 117, 128, 134）
+- ❌ 告知なし確定: 16 件（pcwe-026, 044, 045, 053, 056, 081, 087, 097, 100, 102, 112, 124, 129, 138, 140, 141）
 - 👀 候補あり要判断: 0 件
