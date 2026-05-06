@@ -74,10 +74,10 @@
 | pcwe-116 | カウチポテトブラザーズ | https://x.com/radio_CPB | https://www.instagram.com/radio_cpb/ | — | 👤 菊池 | ✅ | https://listen.style/p/pze2qlhk/sxztifkn 両日 おみくじ・撮影体験・ZINE・楽曲DLカード等 | 05-06 |
 | pcwe-117 | 玄石の原石 | https://x.com/genseki_podcast | — | — | 🤖 Claude | ✅ | https://x.com/genseki_podcast/status/2050165025474822345 5/10 ステッカー・石井玄氏来場 | 05-06 |
 | pcwe-123 | 読んでみてはラジオ | https://x.com/yondemiteha | — | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-124 | 読書酒紀 | https://x.com/OfVoice59929 | — | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-124 | 読書酒紀 | https://x.com/OfVoice59929 | — | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | pcwe-125 | 女性がよく寝てよく働けるラジオ　わたしとねむり研究所 | https://x.com/watashitonemuri/status/... | https://www.instagram.com/sleep.femtech/ | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-128 | アシタ・シアター | https://x.com/ashita_theater | — | — | 👤 菊池 | ⏳ | — | — |
-| pcwe-129 | ちょいクズ男たちの恋愛本音研究所 | https://x.com/choikuzu_otoko | https://www.instagram.com/choi_kuzu_o... | — | 🤖 Claude | ⏳ | — | — |
+| pcwe-128 | アシタ・シアター | https://x.com/ashita_theater | — | — | 👤 菊池 | ✅ | https://x.com/ashita_theater/status/2050564095641002330 5/9 雑貨制作体験・ZINE・ステッカー・展示（0円多め） | 05-06 |
+| pcwe-129 | ちょいクズ男たちの恋愛本音研究所 | https://x.com/choikuzu_otoko | https://www.instagram.com/choi_kuzu_o... | — | 🤖 Claude | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | pcwe-133 | チ的好奇心のすすめ | https://x.com/2iche_takucho | https://www.instagram.com/takuchotaku | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-134 | カイブツラジオ | https://x.com/LLCSquad152636 | https://www.instagram.com/kaibutsu_sq... | — | 👤 菊池 | ⏳ | — | — |
 | pcwe-135 | まるごと放送室 | https://x.com/kamiyamacast | — | — | 🤖 Claude | ⏳ | — | — |
@@ -91,8 +91,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 30 件
+- ⏳ 未着手: 27 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 19 件（pcwe-006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094, 108, 114, 116, 117）
-- ❌ 告知なし確定: 7 件（pcwe-026, 044, 045, 056, 100, 102, 112）
+- ✅ done 化済み: 20 件（pcwe-006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094, 108, 114, 116, 117, 128）
+- ❌ 告知なし確定: 9 件（pcwe-026, 044, 045, 056, 100, 102, 112, 124, 129）
 - 👀 候補あり要判断: 0 件
