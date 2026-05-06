@@ -11,6 +11,26 @@
       "特製ラー油",
       "門外不出 XO醬",
       "手拭い など"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "実録・修羅場カルタ",
+        "description": "大阪名物？恋の修羅場をカルタにした番組オリジナル商品。「言ったことがある、言われたことがある、いつか言ってみたい」セリフが多々掲載。失恋は笑い飛ばしてしまえ。",
+        "sourceUrl": "https://x.com/urakusui/status/2051596713782354024",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "レシピ手拭い（五川麻婆豆腐）",
+        "description": "RAKUSUI 自慢の「五川麻婆豆腐」の作り方が書かれた便利な手拭い。購入後に RAKUSUI に行くと佐藤さんが贔屓してくれる一品。",
+        "sourceUrl": "https://x.com/urakusui/status/2051257628005925046",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "胡桃の飴炊き",
+        "description": "中華の伝統的お菓子。そのまま食べてもよし、アイスクリームにのせてもよし、アルコールにも合う一品。",
+        "sourceUrl": "https://x.com/urakusui/status/2050880984187580612",
+        "sourceType": "x-post"
+      }
     ]
   },
   "exhibition": {

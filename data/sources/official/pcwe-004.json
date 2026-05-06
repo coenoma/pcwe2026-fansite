@@ -9,6 +9,20 @@
     "merchandise": [
       "金曜日の焼肉のタレ",
       "ステッカー"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "金曜日の焼肉のタレ",
+        "description": "5/10（日）PCWE2026 会場で販売。毎回昼過ぎには売切れる人気商品のため事前予約推奨。4 年連続 4 回目の出店。",
+        "sourceUrl": "https://x.com/k_takibikai/status/2038883620631519300",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "極鯖（ごくさば）",
+        "description": "新発売。5/10（日）会場で販売。事前予約推奨。事前予約は番組告知のフォームから受け付け、商品は当日会場でお支払い後お渡し。",
+        "sourceUrl": "https://x.com/k_takibikai/status/2038883620631519300",
+        "sourceType": "x-post"
+      }
     ]
   },
   "exhibition": {
