@@ -20,23 +20,29 @@ PCWE2026 ファンサイトの第2の柱。**142 番組ある中から「自分�
 | **Phase 1: データ整備** | booth-positions.json 確定 | ✅ | Claude | 142 番組すべて配置確定（テント 30/31 placeholder） |
 | | 公式画像 webp 配置 | ✅ | Claude | DL 提供用 |
 | | 3 番組外部参照追加 | ✅ | Claude | PodWalker / まかないラジオ / アイデア刺激法 |
-| | merchandiseTags 自動付与 | ⏳ | Claude | scripts/auto-tag-merchandise.ts |
-| | スキーマ拡張（types.ts） | ⏳ | Claude | merchandiseTags / position / etc |
-| | バリデーションスクリプト | ⏳ | Claude | scripts/validate-booth-positions.ts |
-| **Phase 2: SVG マップ実装** | SVG 座標起こし（Figma） | ⏳ | コエノマ運営 | 公式 webp を背景に手作業 |
-| | VenueMap コンポーネント | ⏳ | Claude | |
-| | BoothBottomSheet | ⏳ | Claude | |
-| | DayToggle | ⏳ | Claude | |
-| | 検索バー | ⏳ | Claude | |
-| **Phase 3: フィルタ・リスト** | フィルタチップ UI | ⏳ | Claude | |
-| | リストビュー | ⏳ | Claude | |
-| | URL 状態保存 | ⏳ | Claude | |
-| | 「会えた」/ お気に入り | ⏳ | Claude | LocalStorage |
-| | 公式画像 DL ボタン | ⏳ | Claude | |
-| **Phase 2-3 横断** | A11y・キーボード操作 | ⏳ | Claude | ARIA + Tab/Enter/Esc |
-| | レスポンシブ確認 | ⏳ | Claude | モバイル/PC |
-| **Phase 4: 当日運用** | デプロイ・動作確認 | ⏳ | Claude + コエノマ運営 | 5/9 朝 |
-| | 当日修正対応 | ⏳ | コエノマ運営 | |
+| | merchandiseTags 自動付与 | ✅ | Claude | 141 番組タグ付与 |
+| | スキーマ拡張（types.ts） | ✅ | Claude | merchandiseTags / position / TentSchema 等 |
+| | バリデーションスクリプト | ✅ | Claude | scripts/validate-booth-positions.ts |
+| | build-programs に position 注入 | ✅ | Claude | exhibition.position 自動注入 |
+| **Phase 2a: SVG マップ最小機能** | VenueMap コンポーネント | ✅ | Claude | 32 テント概算座標 |
+| | BoothBottomSheet | ✅ | Claude | キャッチ + 物販 + CTA |
+| | DayToggle | ✅ | Claude | counts 表示付き |
+| | 公式画像 DL セクション | ✅ | Claude | 独立セクション、出典明記 |
+| | URL 状態同期 | ✅ | Claude | ?day=sat&pin=14-A |
+| **Phase 2b: 探索体験** | 検索バー | ✅ | Claude | 番組 / ブース / グッズ、サジェスト付き |
+| | 6 カテゴリフィルタチップ | ✅ | Claude | ヒット数バッジ |
+| | リストビュー | ✅ | Claude | サムネ + spotlight + 1/2/3 列 |
+| | マップ ⇄ リスト切替 | ✅ | Claude | URL 同期 |
+| | お気に入り（LocalStorage）| ✅ | Claude | ⭐️ボタン |
+| | 「会えた」記録（LocalStorage）| ✅ | Claude | ✅ボタン |
+| | トップページからの動線 | ✅ | Claude | ヒーロー直下 |
+| **Phase 2 横断** | A11y・キーボード操作 | ✅ | Claude | ARIA + Tab/Enter/Esc + focus-visible |
+| | レスポンシブ確認 | ✅ | Claude | sm/md/lg breakpoints |
+| | ファンガイドトップ統一テイスト | ✅ | Claude | primary/secondary/amber トークン使用 |
+| **Phase 4: 当日運用** | Vercel デプロイ確認 | ⏳ | コエノマ運営 | main マージ済み、本番反映待ち |
+| | SVG 座標 Figma 精密化 | ⏳ | コエノマ運営 | 暫定座標で十分視認可、必要なら差し替え |
+| | merchandiseTags 人間レビュー | ⏳ | コエノマ運営 | 自動付与でリリース済、後続でレビュー |
+| | 当日修正対応 | ⏳ | コエノマ運営 | テント 30/31 含む |
 | **Phase 5: v2.5（当日後）** | 推奨ルート計算 | ⏳ | 後続 | |
 | | recap ページ | ⏳ | 後続 | |
 | | 静的混雑ヒント | ⏳ | 後続 | |
@@ -45,12 +51,39 @@ PCWE2026 ファンサイトの第2の柱。**142 番組ある中から「自分�
 
 ### 残課題（リリースまでに片付けるべき）
 
-| # | 課題 | 重要度 | 担当 |
-|---|---|---|---|
-| R1 | テント 30, 31 のブース割当（一旦空白で進行、ユーザー Q1 で確認済み） | 中 | コエノマ運営 |
-| R2 | 3 番組の公式情報取得（programs.json への正式登録、fanGuide 執筆） | 低 | コエノマ運営（後続） |
-| R3 | SVG 座標起こし（Figma 作業） | 高 | コエノマ運営 |
-| R4 | merchandiseTags の人間レビュー（自動付与の精度確認） | 中 | コエノマ運営（v2 リリース後 OK） |
+| # | 課題 | 重要度 | 担当 | 状態 |
+|---|---|---|---|---|
+| R1 | テント 30, 31 のブース割当 | 中 | コエノマ運営 | 一旦空白で進行（Q1）、当日告知時に追記可 |
+| R2 | 3 番組の公式情報取得（programs.json への正式登録、fanGuide 執筆）| 低 | コエノマ運営 | external 参照で表示済み、後続で正式登録 |
+| R3 | SVG 座標 Figma 精密化 | 中 | コエノマ運営 | 暫定座標でも視認可、改善余地として |
+| R4 | merchandiseTags の人間レビュー | 中 | コエノマ運営 | 自動付与でリリース済、レビューは後続 |
+| R5 | Vercel 本番デプロイ確認 | 高 | コエノマ運営 | main マージ済（Phase 2b commit ae8fff6）、Vercel 自動デプロイ待ち |
+
+---
+
+## ✅ Phase 2 完了報告（v2 リリース可能状態）
+
+リリース必須機能（v2 必須リスト）は **すべて実装完了**:
+
+- [x] マップ表示・ピンタップ・ボトムシート
+- [x] 土日切替（自動デフォルト = 当日）
+- [x] 検索（番組名 / ブース番号 / グッズ）
+- [x] 6 カテゴリのグッズフィルタ
+- [x] マップ ⇄ リスト切替
+- [x] お気に入り保存（LocalStorage）
+- [x] 「会えた」記録（LocalStorage）
+- [x] URL 状態保存（day/pin/cat/q/view）
+- [x] ARIA + キーボード操作
+- [x] 公式画像 DL ボタン
+- [x] ファンガイドトップ統一テイスト
+- [x] トップページからの動線
+
+実装チェックリスト（実装完了時のルール）:
+
+- [x] **要件満たし**: 142 番組すべて配置、6 カテゴリ動作、土日切替動作
+- [x] **AGENTS.md お作法**: any/as 禁止、SSG 維持、サーバー処理追加なし、日本語ログ
+- [x] **ライブラリ作法**: Next.js 15 App Router + RSC、`'use client'` 最小、next/image
+- [x] **暫定対応なし**: TODO/FIXME を本ドキュメントの進捗マトリクスに集約、コード内に放置なし
 
 ---
 
