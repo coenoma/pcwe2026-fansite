@@ -44,20 +44,20 @@
 | ✅ | pcwe-013 | ピスタチオパフェクラブ | https://x.com/pisparfaitclub | https://www.instagram.com/pisparfaitclub | — | 👤 菊池 | Spotify「PODCAST EXPOで何するの？」あくびSt2種・しおり2種・コースター・カズマ自作St2種・現金のみ | 05-06 |
 | ✅ | pcwe-015 | 好き趣味発見！まにまにラジオ | https://x.com/mani2radio | — | — | 👤 菊池 | X 投稿2件: ZINE(エッセイ集)・三つ折りパンフ「まにぺでぃあ」無料配布 | 05-06 |
 | ✅ | pcwe-022 | ねむれぬ夜にはラブレター | https://x.com/ameniwaarisa | https://www.instagram.com/ameniwaarisa | — | 👤 菊池 | https://listen.style/p/ameniwaarisa/snfmpsjj 5/10 ブース16-B、新刊ZINE+トート+缶バッジ | 05-06 |
-| ⏳ | pcwe-023 | 脳内口外 | https://x.com/nounaikougai | https://www.instagram.com/nounaikougai/ | — | 👤 菊池 | — | — |
+| ✅ | pcwe-023 | 脳内口外 | https://x.com/nounaikougai | https://www.instagram.com/nounaikougai/ | — | 👤 菊池 | https://x.com/nounaikougai/status/2051601279596851210 ショート尺ポッドキャスト100本+フリーペーパー無料配布 | 05-06 |
 | ❌ | pcwe-026 | 雨の日には本をさして。 | https://x.com/amehonns2 | https://www.instagram.com/amehons2 | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ✅ | pcwe-027 | 月岡ツキの月面通信 | https://x.com/olunnun | https://www.instagram.com/tsukky_dayo/ | — | 🤖 Claude | https://www.instagram.com/p/DXeHu3vn2xh/ 5/10 著書4種+ステッカー+となしばアクキー | 05-06 |
 | ✅ | pcwe-030 | ダンドー・キュー | — | https://www.instagram.com/podcastddq | — | 👤 菊池 | https://www.instagram.com/p/DWQNDKZgcVI/ 「台湾AI男子」PCWE限定ポストカード | 05-06 |
-| ⏳ | pcwe-031 | 中2の魂100まで | https://x.com/soulofchu2_100 | — | — | 👤 菊池 | — | — |
+| ✅ | pcwe-031 | 中2の魂100まで | https://x.com/soulofchu2_100 | — | — | 👤 菊池 | https://x.com/soulofchu2_100/status/2050921174121783615 5/9 ちゅー100オリジナルグッズ | 05-06 |
 | ✅ | pcwe-036 | とみこはん&佐々木敬子「とみことけいこのたびたび、旅｣ | https://x.com/sasakikeiko8 | https://www.instagram.com/tomikohan | — | 👤 菊池 | URL 修正 + X投稿2件: 電鍋手ぬぐい・湯気手ぬぐい・エコバッグ・台湾パイにゃっプルケーキ・スタンプ・書籍 | 05-06 |
 | ❌ | pcwe-044 | ひうら芳麗の楽女なニュース | https://x.com/marikosatoru | https://www.instagram.com/ladyfangchang | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ❌ | pcwe-045 | PodcastTimes｜ぽっどでの新人 | https://x.com/Podcast_TimesJP | https://www.instagram.com/podcasttime... | — | 🤖 Claude | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
-| ⏳ | pcwe-053 | 丘の上喫茶 | https://x.com/okanoue_kissa | https://www.instagram.com/okanoue_kissa/ | — | 👤 菊池 | — | — |
+| ❌ | pcwe-053 | 丘の上喫茶 | https://x.com/okanoue_kissa | https://www.instagram.com/okanoue_kissa/ | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ❌ | pcwe-056 | ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！ | https://x.com/gcrc_divedeep | — | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ✅ | pcwe-059 | 月からミミミ | https://x.com/tsukimimi_radio | — | — | 🤖 Claude | https://listen.style/p/tsukimimi/nugzthen ガチャ500円(マグカップ等)・チェキ・直接会える | 05-06 |
 | ✅ | pcwe-068 | ピーチウーロンの〇〇な気がする | https://x.com/peachoolong000 | — | — | 👤 菊池 | https://x.com/peachoolong000/status/2042254245827883098 ZINE+手編みグッズ | 05-06 |
-| ⏳ | pcwe-071 | 炊き込みご飯わくわく舎 | https://x.com/takiwakusha | — | — | 👤 菊池 | — | — |
-| ⏳ | pcwe-073 | Radio18s/Teenagerからの映画部 | https://x.com/Radio18s | https://www.instagram.com/radio18s | — | 👤 菊池 | — | — |
+| ✅ | pcwe-071 | 炊き込みご飯わくわく舎 | https://x.com/takiwakusha | — | — | 👤 菊池 | https://x.com/takiwakusha/status/2050015387312599528 ZINE第2号20P 1000円 | 05-06 |
+| ✅ | pcwe-073 | Radio18s/Teenagerからの映画部 | https://x.com/Radio18s | https://www.instagram.com/radio18s | — | 👤 菊池 | https://x.com/Radio18s/status/2047689078796329298 ステッカー・Tシャツ・特別音源・シネフィルギャググッズ | 05-06 |
 | ✅ | pcwe-078 | ３時のおやつは貝柱 | https://x.com/shona_emi | https://www.instagram.com/shona_emi | — | 👤 菊池 | https://x.com/shona_emi/status/2051466993673638003 5/10 お菓子販売 | 05-06 |
 | ⏳ | pcwe-079 | 歴史を紐解く！聞き流し偉人伝 | https://x.com/nasutokai | — | — | 👤 菊池 | — | — |
 | ⏳ | pcwe-081 | 聴くと映画が観たくなる！CINEMORE | https://x.com/cinemorejp | https://www.instagram.com/cinemore_of... | — | 👤 菊池 | — | — |
@@ -97,8 +97,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 18 件
+- ⏳ 未着手: 13 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 26 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094, 108, 114, 116, 117, 128, 134）
-- ❌ 告知なし確定: 12 件（pcwe-026, 044, 045, 056, 100, 102, 112, 124, 129, 138, 140, 141）
+- ✅ done 化済み: 30 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 023, 027, 030, 031, 036, 059, 068, 071, 073, 078, 084, 086, 088, 090, 091, 094, 108, 114, 116, 117, 128, 134）
+- ❌ 告知なし確定: 13 件（pcwe-026, 044, 045, 053, 056, 100, 102, 112, 124, 129, 138, 140, 141）
 - 👀 候補あり要判断: 0 件
