@@ -67,7 +67,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-116 | カウチポテトブラザーズ | https://x.com/radio_CPB | https://www.instagram.com/radio_cpb/ | — | PCWE2024参加情報のみPCWE2026物販不明 | 2026-05-05 |
 | pcwe-129 | ちょいクズ男たちの恋愛本音研究所 | https://x.com/choikuzu_otoko | https://www.instagram.com/choi_kuzu_otoko | — | PCWE出展希望言及あるが物販詳細不明 | 2026-05-05 |
 | pcwe-011 | てきと〜 | https://x.com/tekito9899 | https://instagram.com/tekito9899 | — | 番組ホスト（@tekito9899）のPCWE2026関連物販告知投稿は見つからなかった。 | 2026-05-05 |
-| pcwe-018 | こうきとたかやのラジオもどき | https://x.com/radiomodoki2021 | — | — | 番組ホスト（@radiomodoki2021）のPCWE2026関連物販告知投稿は見つからなかった。 | 2026-05-05 |
 | pcwe-030 | ダンドー・キュー | — | https://www.instagram.com/podcastddq | — | Instagram（@podcastddq）のPCWE2026物販詳細投稿は見つからず。出店事実はWeb情報で確認できるが、物販投稿URLは特定できなかった。 | 2026-05-05 |
 | pcwe-036 | とみこはん&佐々木敬子「とみことけいこのたびたび、旅｣ | https://x.com/tomikohan%20(とみこはん)%20https://x.com/sasakikeiko8%20(佐々木敬子)%20 | https://www.instagram.com/tomikohan%20(とみこはん)%20%20https://www.instagram.com/estonianavi%20（佐々木敬子）%20 | — | PODCAST EXPO 2026出店75組には含まれているが、物販詳細投稿は見つからなかった。 | 2026-05-05 |
 | pcwe-056 | ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！！〜 | https://x.com/gcrc_divedeep | — | — | 番組ホスト（@gcrc_divedeep）のPCWE2026物販詳細投稿は見つからなかった。 | 2026-05-05 |
