@@ -21,22 +21,31 @@
 
 ### Phase 1: データ整備
 
-#### 1-1. テント ↔ 番組マッピング
+#### 1-1. テント ↔ 番組マッピング ✅ 一部完了
 
-**最優先タスク**:
-1. PCWE 公式（podcastexpo.jp）に「ブース配置データ」を依頼（コエノマ運営から）
-2. 取得できなければ **公式マップ JPEG（Day1/Day2）の OCR + 目視起こし**
+**完了済み**:
+- ✅ PCWE 公式 md 取得（テント 1-29 の 175 スロット）
+- ✅ `data/sources/booth-map/booth-positions-source.md` 配置
+- ✅ `data/booth-positions.json` 自動生成（142 番組すべて配置確定）
+- ✅ 公式画像配置 `public/images/map/pcwe2026-day{1,2}.webp`
 
-**作業内容**:
-- 公式 JPEG をローカルに保存（`data/sources/booth-map/pcwe2026-day1.png`）
-- OCR で抽出された数字（テント番号 + A/B/C/D）を CSV に
-- 各テント ID → 番組 ID（pcwe-XXX）を手動でマップ
-- `data/booth-positions.json` を生成
-- バリデーションスクリプト `scripts/validate-booth-positions.ts` を作成（142 番組の `exhibition.days` と一致するか確認）
+**残タスク**:
+- 🔴 **テント 30, 31** のブース割当を取得（公式 podcastexpo.jp に確認 or 当日現地確認）
+- 🔴 **3 番組（PodWalker / まかないラジオ / アイデア刺激法）**を programs.json に追加するか判断
+- 🟡 SVG 座標起こし（Figma で公式 webp を背景に配置 → テント矩形を囲む → polygon 座標を booth-positions.json に追記）
 
-**SVG 座標起こし**:
-- Figma で公式 JPEG を背景に配置 → テントごとに矩形で囲む → 座標値メモ
-- `viewBox="0 0 1000 850"` ベースに正規化
+**SVG 座標起こし手順**:
+1. Figma で `pcwe2026-day1.webp` を背景レイヤーに配置（透明度 30%）
+2. 各テント矩形を `<rect>` で囲む（テント 1-32 = 32 個）
+3. 各 quad テントを 2x2 グリッドで割って A/B/C/D の座標も取る
+4. ビューポート `viewBox="0 0 1000 850"` 正規化
+5. 座標を `data/booth-positions.json` の各テント `polygon` に追記
+
+#### 1-1.5. バリデーションスクリプト追加
+
+`scripts/validate-booth-positions.ts` を新規作成:
+- 142 番組の `exhibition.days` と `booth-positions.json` の `slots[].sat/sun` の整合性チェック
+- 例: 番組 X が `days: ['sat']` なのにテントの `sun` スロットに居る場合エラー
 
 #### 1-2. グッズ自動タグ付与
 
@@ -265,6 +274,21 @@ data/programs.json ──(merge by programId)──→ src/app/map/page.tsx (ser
 - ❌ チケット販売（PCWE 公式の領域）
 - ❌ 動画・音声配信機能
 - ❌ Mapbox / Leaflet（オーバーキル）
+
+---
+
+## 9. ユーザーへの確認事項（実装着手前の質問）
+
+設計 Phase 0 の合意確定にあたり、以下を菊池さんに確認:
+
+| # | 質問 | デフォルト案 |
+|---|---|---|
+| Q1 | テント 30, 31 のブース割当は公式に問い合わせる？ それとも当日現地確認で良い？ | 公式に問い合わせ（時間あれば） |
+| Q2 | PodWalker / まかないラジオ / アイデア刺激法 の 3 番組は programs.json に追加する？ | YES（PCWE 公式追加出展者として）|
+| Q3 | ファンガイドトップのテイスト統一は primary オレンジ (#dc725a) ベースで OK？ | YES |
+| Q4 | 公式画像 DL ボタンの配置は「マップ右下フローティング」と「下部ユーティリティバー」どちら？ | 下部ユーティリティバー（フローティングは指タップ時に邪魔） |
+| Q5 | v2 必須機能リストの過不足ある？ | 上記 README §「v2 リリース必須機能まとめ」参照 |
+| Q6 | 公式に「fansite として公式画像 DL + 独自 SVG マップ公開」事前報告する？ | YES（コエノマ側から） |
 
 ---
 
