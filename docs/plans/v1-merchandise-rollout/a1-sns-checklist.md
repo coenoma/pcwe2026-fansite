@@ -79,7 +79,7 @@
 | ✅ | pcwe-114 | 愛されたい女たちのラブホ女子会 | https://x.com/aisaretaijyoshi | https://www.instagram.com/aisaretai.j... | — | 👤 菊池 | https://listen.style/p/aisaretaijyoshi/jryqisgx シール2種・缶バッジ3色・CDチャーム10限定・アクセ | 05-06 |
 | ✅ | pcwe-116 | カウチポテトブラザーズ | https://x.com/radio_CPB | https://www.instagram.com/radio_cpb/ | — | 👤 菊池 | https://listen.style/p/pze2qlhk/sxztifkn 両日 おみくじ・撮影体験・ZINE・楽曲DLカード等 | 05-06 |
 | ✅ | pcwe-117 | 玄石の原石 | https://x.com/genseki_podcast | — | — | 🤖 Claude | https://x.com/genseki_podcast/status/2050165025474822345 5/10 ステッカー・石井玄氏来場 | 05-06 |
-| ⏳ | pcwe-123 | 読んでみてはラジオ | https://x.com/yondemiteha | — | — | 👤 菊池 | — | — |
+| ✅ | pcwe-123 | 読んでみてはラジオ | https://x.com/yondemiteha | — | — | 👤 菊池 | https://listen.style/p/auhsy5rp/y3pujprj 5/9 ブックスワップ・Vibe Writing(AI小説体験)・グッズ販売 | 05-06 |
 | ❌ | pcwe-124 | 読書酒紀 | https://x.com/OfVoice59929 | — | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ⏳ | pcwe-125 | 女性がよく寝てよく働けるラジオ　わたしとねむり研究所 | https://x.com/watashitonemuri/status/... | https://www.instagram.com/sleep.femtech/ | — | 👤 菊池 | — | — |
 | ✅ | pcwe-128 | アシタ・シアター | https://x.com/ashita_theater | — | — | 👤 菊池 | https://x.com/ashita_theater/status/2050564095641002330 5/9 雑貨制作体験・ZINE・ステッカー・展示（0円多め） | 05-06 |
@@ -97,8 +97,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 6 件
+- ⏳ 未着手: 5 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 34 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 023, 027, 030, 031, 036, 059, 068, 071, 073, 078, 079, 084, 086, 088, 090, 091, 094, 095, 103, 108, 111, 114, 116, 117, 128, 134）
+- ✅ done 化済み: 35 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 023, 027, 030, 031, 036, 059, 068, 071, 073, 078, 079, 084, 086, 088, 090, 091, 094, 095, 103, 108, 111, 114, 116, 117, 123, 128, 134）
 - ❌ 告知なし確定: 16 件（pcwe-026, 044, 045, 053, 056, 081, 087, 097, 100, 102, 112, 124, 129, 138, 140, 141）
 - 👀 候補あり要判断: 0 件
