@@ -11,6 +11,32 @@
       "コンパクトミラー",
       "ポーチ",
       "Tシャツ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "ライター",
+        "description": "¥500。Listen エピソード「Podcast Weekend初出展！限定グッズ公開｜『火をつけたのはそっちでしょ』に込めた想い【第73回】」（2026/5/1 公開）にて公開。番組タイトルにもなった「火をつけたのはそっちでしょ」のフレーズと連動した限定グッズ。",
+        "sourceUrl": "https://listen.style/p/l6sbmpbm/vjjaq99a",
+        "sourceType": "web"
+      },
+      {
+        "name": "前髪クリップ「あんたは可愛い」",
+        "description": "「あんたは可愛い」というメッセージを乗せた前髪クリップ。Podcast Weekend 初出展に合わせた限定グッズ。",
+        "sourceUrl": "https://listen.style/p/l6sbmpbm/vjjaq99a",
+        "sourceType": "web"
+      },
+      {
+        "name": "名言ステッカー",
+        "description": "番組内の名言をモチーフにしたステッカー。Podcast Weekend 初出展に合わせた限定グッズ。",
+        "sourceUrl": "https://listen.style/p/l6sbmpbm/vjjaq99a",
+        "sourceType": "web"
+      },
+      {
+        "name": "ラブホテル風デザインアイテム",
+        "description": "番組の世界観を反映したラブホテル風デザインの限定グッズ。Podcast Weekend 初出展のために制作。",
+        "sourceUrl": "https://listen.style/p/l6sbmpbm/vjjaq99a",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {

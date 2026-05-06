@@ -9,6 +9,14 @@
     "merchandise": [
       "番組非リスナー向けおすすめ回ZINE",
       "番組リスナー向け神回ZINE"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "ZINE（番組オリジナル）",
+        "description": "5/10(日) Podcast Weekend 出展。番組未リスナー向けの「おすすめ回ZINE」と、リスナー向けの「神回ZINE」を制作中。詳細スペック・価格は当日公開予定。番組ホスト発の公式告知記事（2026/2/16 公開）にて出展と ZINE 制作が明示。",
+        "sourceUrl": "https://virtualeigabar.com/podcast-announce/",
+        "sourceType": "official-site"
+      }
     ]
   },
   "exhibition": {

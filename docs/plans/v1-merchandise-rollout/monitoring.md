@@ -6,11 +6,37 @@
 
 ---
 
-## ステータスの違い
+## ステータスの違い（迷わない判定フロー）
 
-- **needs-review**: AI が候補 URL は見つけたが、PCWE2026 の確証が取れず、ユーザー判断仰ぐ
-- **monitoring**（このファイル）: ユーザーが見ても現時点で言及なし、**でも今後の告知に期待 / 当日近くに再チェック**
-- **not-found**: 探索手段が limited（SNS なし等）or 過去 PCWE のものしか見つからない、確定的に取得不可
+下のフローを上から順にYES/NOで判定してください。最初にマッチしたステータスを採用します。
+
+```
+Q1. SNS / 公式サイトで「PCWE2026 の物販告知」を発見できたか？
+    → YES: 【done】 JSON に merchandiseDetails を追記
+    → NO: Q2 へ
+
+Q2. AI が「PCWE2026 用かどうか確証取れない候補 URL」を見つけたか？
+    （例：常設グッズショップだけ、過去年度の告知、内容曖昧な投稿）
+    → YES: 【needs-review】 ユーザー判断仰ぐ
+    → NO: Q3 へ
+
+Q3. 番組ホストの SNS / 公式サイトはそもそも存在するか？
+    → NO: 【not-found】 探索手段なしで確定取得不可
+    → YES: Q4 へ
+
+Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がもうないか？
+    → YES: 【not-found】 これ以上の探索余地なし
+    → NO: 【monitoring】（このファイル）当日まで新規告知の可能性あり、再チェック推奨
+```
+
+### 一行サマリ
+
+| ステータス | 一言で言うと |
+|---|---|
+| **done** | PCWE2026 物販告知を発見、JSON 反映済み |
+| **needs-review** | 候補 URL あり、PCWE2026 確証なし、ユーザー判断待ち |
+| **monitoring**（このファイル） | SNS あり、現時点で言及なし、当日まで再チェック推奨 |
+| **not-found** | SNS なし or 過去 PCWE のみで探索余地なし |
 
 ---
 
@@ -31,8 +57,9 @@
 | pcwe-066 | ローカルナイトニッポン | https://x.com/lnnradio | — | — | ユーザー目視で言及なし確認。BASE 公式ショップ (lnn.base.ec) 常設のみ確認。当日近くの新規告知投稿を再チェック推奨 | 2026-05-06 |
 | pcwe-099 | 本の虫のススメ | https://x.com/honnomushi_ssm | — | — | ユーザー目視で言及なし確認。文学フリマ東京 41/42 の出店告知あり、PCWE2026 の固有物販告知は未発見。当日近くの追加投稿を再チェック推奨 | 2026-05-06 |
 | pcwe-118 | 朝日新聞ポッドキャスト | https://x.com/AsahiPodcast | — | — | ユーザー目視で言及なし確認。X タイムラインで「2 日間出店」のみ確認、朝リスちゃんグッズキャンペーンの固有 status URL 未特定。当日近くの追加投稿を再チェック推奨 | 2026-05-06 |
-| pcwe-120 | hitokoto Radio | https://x.com/hitokotoRadio | — | — | Listen.style ep cakqiayt（PCWE2026 出展決定告知）を AI が WebFetch 確認、物販詳細記載なし。当日近くの番組更新を再チェック推奨 | 2026-05-06 |
+| pcwe-120 | hitokoto Radio | https://x.com/hitokotoRadio | — | — | Listen.style ep cakqiayt および Apple Podcasts ep#90「告知！PODCAST WEEKEND 2026出展決定」（ID: 1000758009722）で出展は確実。物販ラインナップ・価格は当日告知待ち。当日近くの番組更新を再チェック推奨 | 2026-05-06 |
 | pcwe-126 | 神崎恵＆大森葉子の「WONT」 | — | https://www.instagram.com/wont_podcast/ | — | ユーザー目視で言及なし確認。Instagram で「5/10 ブース出展、ステッカー先着配布」の言及スニペットあるが固有 IG 投稿 URL 未特定。当日近くの追加投稿を再チェック推奨 | 2026-05-06 |
+| pcwe-016 | overture〜ミュージカル好きの語り部屋〜 | — | https://www.instagram.com/hyp_ran | — | ユーザー目視で言及なし確認（2026-05-06）。Spotify ep #91 は PCWE2024 の告知で PCWE2026 用ではない。Instagram / Spotify が active なため当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 
 ---
 
