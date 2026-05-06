@@ -21,9 +21,24 @@ PODCAST WEEKEND 2026（PCWE2026）出展全 142 番組のブース物販情報�
 
 1. `data/programs.json` を集計したとき、各番組が以下のいずれかに該当する
    - `merchandiseDetails` が 1 件以上ある（→ done）
-   - `not-found.md` に番組 ID が記載されている（→ not-found）
+   - `needs-review.md` / `monitoring.md` / `not-found.md` のいずれかに記載されている
 2. `docs/plans/v1-merchandise-rollout/progress.md` がスクリプトで自動生成されている
 3. `feature/merchandise-rollout-*` を main にマージ済み、Vercel 本番反映済み
+
+## ステータスの定義（5 段階）
+
+| ステータス | 意味 | ファイル |
+|---|---|---|
+| ✅ done | merchandiseDetails あり、PCWE2026 の確証もあり、本番ページに掲載済み | `data/sources/official/pcwe-XXX.json` |
+| 👀 needs-review | AI が候補 URL は見つけたが、PCWE2026 の確証が取れず、ユーザー判断仰ぐ | [needs-review.md](./needs-review.md) |
+| 🔄 monitoring | ユーザーが確認して現時点では物販告知なし、当日（5/9-10）に向けて再チェック推奨 | [monitoring.md](./monitoring.md) |
+| 🔎 not-found | 探索手段なし / 過去年度のみ等、確定的に取得不可 | [not-found.md](./not-found.md) |
+| ⏳ pending | 着手前（progress スクリプトで 0 になることが望ましい） | — |
+
+**ステータス遷移**:
+- `pending` → `done` / `needs-review` / `monitoring` / `not-found`
+- `needs-review` → `done`（候補が確定したら）/ `not-found`（不採用と確定したら）/ `monitoring`（候補なくなったが今後に期待）
+- `monitoring` → `done`（新告知が出たら）/ `not-found`（当日まで何もなかった、当日も販売なしと確定）
 
 ---
 
