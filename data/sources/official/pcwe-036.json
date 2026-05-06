@@ -15,6 +15,32 @@
       "メガネふき",
       "紙雑貨",
       "書籍"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "電鍋手ぬぐい・湯気手ぬぐい",
+        "description": "5/9・10 の池尻 PODCAST EXPO 2026 から販売開始。佐々木敬子の X 投稿（2026-05-01）にて「電鍋と湯気手ぬぐいを撮影してみました！」と告知、お取り扱い希望の店舗向け DM 案内も。",
+        "sourceUrl": "https://x.com/sasakikeiko8/status/2050187062578708894",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "スペシャルエコバッグ（PCWE 限定）",
+        "description": "このイベントのためにとみこはんが作ったスペシャルエコバッグ。佐々木敬子の X 投稿（2026-05-01）にて告知。",
+        "sourceUrl": "https://x.com/sasakikeiko8/status/2050052815452786816",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "台湾パイにゃっプルケーキ",
+        "description": "佐々木敬子の X 投稿（2026-05-01）にて「出品はこのイベントのためにとみこはんが作ったスペシャルエコバッグ、台湾パイにゃっプルケーキ、その他スタンプ、書籍など販売します」と告知。",
+        "sourceUrl": "https://x.com/sasakikeiko8/status/2050052815452786816",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "スタンプ・書籍",
+        "description": "5/9・10 池尻 PODCAST EXPO 2026 で販売。無料エリアに出店。佐々木敬子は「バルト三国のキッチンから」（産業編集センター刊）の著者で、台湾台所探訪記（仮）も刊行予定。とみこはんは「ベルギー 猫祭りとチョコレートめぐり」（産業編集センター刊）の著者。佐々木敬子の X 投稿（2026-05-01）にて告知。",
+        "sourceUrl": "https://x.com/sasakikeiko8/status/2050052815452786816",
+        "sourceType": "x-post"
+      }
     ]
   },
   "exhibition": {
@@ -27,8 +53,8 @@
     "boothNumber": "036"
   },
   "links": {
-    "x": "https://x.com/tomikohan%20(とみこはん)%20https://x.com/sasakikeiko8%20(佐々木敬子)%20",
-    "instagram": "https://www.instagram.com/tomikohan%20(とみこはん)%20%20https://www.instagram.com/estonianavi%20（佐々木敬子）%20"
+    "x": "https://x.com/sasakikeiko8",
+    "instagram": "https://www.instagram.com/tomikohan"
   },
   "recommendedEpisode": {
     "title": "#54レターありがとう&2025年を振り返る",
