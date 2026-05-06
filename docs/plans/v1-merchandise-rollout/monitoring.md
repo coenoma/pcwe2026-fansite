@@ -80,6 +80,11 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-141 | Misa Yuka Podcast | — | https://www.instagram.com/misayuka.podcast | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 | pcwe-144 | 雑食日和 | https://x.com/zashokubiyori | https://www.instagram.com/zashokubiyori/ | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 
+| pcwe-019 | 高橋クリスのFA_RADIO:工場自動化ポッドキャスト | https://x.com/fulhause | — | — | 5/6 菊池さん目視で言及なし確認（B群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-041 | 酒の道～日本酒の聖地から～@しぶさわくんFM | https://x.com/shibusawakunfm | — | — | 5/6 菊池さん目視で言及なし確認（B群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-046 | 人生百貨店 | https://x.com/lifedeptstores | https://www.instagram.com/lifedepartmentstores/ | — | 5/6 菊池さん目視で言及なし確認（B群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+| pcwe-047 | クリエイターエコノミーニュース | https://x.com/creator_enews | — | — | 5/6 菊池さん目視で言及なし確認（B群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+
 ---
 
 ## 解決ログ

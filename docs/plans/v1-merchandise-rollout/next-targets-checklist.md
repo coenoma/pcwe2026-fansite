@@ -40,11 +40,11 @@ A1 群（Listen 未登録 + SNS あり）は全 56 件完走済み（37 done / 1
 |---|---|---|---|---|---|---:|---|---|
 | ✅ | pcwe-007 | 自分にやさしくするラジオ | https://x.com/sophieauthentic | — | https://listen.style/p/begentlewithyourself | 5 | https://x.com/SOPHIEauthentic/status/2051621345700770239 番組英語タイトル彫り入りノート | 05-06 |
 | ✅ | pcwe-014 | オバトーク | https://x.com/obatalk2024 | — | https://listen.style/p/obatalk | 4 | https://x.com/OBATalk2024/status/2051671413581656066 ポーチ・モババ・タロットおみくじ・対戦ゲーム | 05-06 |
-| ❌ | pcwe-019 | 高橋クリスのFA_RADIO:工場自動化ポッドキャスト | https://x.com/fulhause | — | https://listen.style/p/faradio | 6 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
+| 🔄 | pcwe-019 | 高橋クリスのFA_RADIO:工場自動化ポッドキャスト | https://x.com/fulhause | — | https://listen.style/p/faradio | 6 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ✅ | pcwe-033 | HYPLACE WAVE #はいなみ | https://x.com/hainami_758 | https://www.instagram.com/mash_january25 | https://listen.style/p/hainami758 | 3 | X 2件: PODRAPユニット🔊BUZZY NIGHT🌃 デビュー曲最速頒布 + 音楽CD・ステッカー | 05-06 |
-| ❌ | pcwe-041 | 酒の道～日本酒の聖地から～@しぶさわくんFM | https://x.com/shibusawakunfm | — | https://listen.style/p/w6pm3kfn | 2 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
-| ❌ | pcwe-046 | 人生百貨店 | https://x.com/lifedeptstores | https://www.instagram.com/lifedepartm... | https://listen.style/p/lifedeptstores | 3 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
-| ⏳ | pcwe-047 | クリエイターエコノミーニュース | https://x.com/creator_enews | — | https://listen.style/p/creator_enews | 2 | — | — |
+| 🔄 | pcwe-041 | 酒の道～日本酒の聖地から～@しぶさわくんFM | https://x.com/shibusawakunfm | — | https://listen.style/p/w6pm3kfn | 2 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
+| 🔄 | pcwe-046 | 人生百貨店 | https://x.com/lifedeptstores | https://www.instagram.com/lifedepartm... | https://listen.style/p/lifedeptstores | 3 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
+| 🔄 | pcwe-047 | クリエイターエコノミーニュース | https://x.com/creator_enews | — | https://listen.style/p/creator_enews | 2 | 菊池さん目視で PCWE 言及なし確認、当日まで monitoring | 05-06 |
 | ⏳ | pcwe-061 | さのみきひとのラジオ ⌞ ラのみきジオ ⌝ | https://x.com/ranomikijio | — | https://listen.style/p/ranomikijio | 4 | — | — |
 | ⏳ | pcwe-106 | 公共訴訟ラジオ｜社会を動かす裁判の話 | https://x.com/CALL4_Jp | https://www.instagram.com/call4_jp/ | https://listen.style/p/cem9oa2z | 5 | — | — |
 | ⏳ | pcwe-107 | ラジオただいま発酵中 | — | — | https://listen.style/p/cnjfbfzz | 4 | — | — |
@@ -57,10 +57,11 @@ A1 群（Listen 未登録 + SNS あり）は全 56 件完走済み（37 done / 1
 
 ## サマリ
 
-- ⏳ 未着手: 8 件
+- ⏳ 未着手: 7 件
 - 🔍 探索中: 0 件
 - ✅ done 化済み: 3 件（pcwe-007, pcwe-014, pcwe-033）
-- ❌ 告知なし確定: 3 件（pcwe-019, pcwe-041, pcwe-046）
+- 🔄 monitoring（菊池さん目視で言及なし、当日まで再チェック余地あり）: 4 件（pcwe-019, pcwe-041, pcwe-046, pcwe-047）
+- ❌ 告知なし確定: 0 件
 - 👀 候補あり要判断: 0 件
 
 ---
