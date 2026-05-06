@@ -2,11 +2,34 @@
 
 このリストは「**候補となる情報源 URL は見つかったが、PCWE2026 当日販売の確証が AI 側では取れなかった**」番組です。
 ユーザー（番組ホストとつながりがある人 / 当日現地で確認できる人）の判断で、
-done に昇格させるか not-found に確定するかを決めるためのリスト。
+done に昇格させるか別ステータスへ確定するかを決めるためのリスト。
 
 ---
 
-## 凡例
+## ステータスの違い（迷わない判定フロー）
+
+[monitoring.md](./monitoring.md) と同じフロー。最初にマッチしたステータスを採用します。
+
+```
+Q1. SNS / 公式サイトで「PCWE2026 の物販告知」を発見できたか？
+    → YES: 【done】 JSON に merchandiseDetails を追記
+    → NO: Q2 へ
+
+Q2. AI が「PCWE2026 用かどうか確証取れない候補 URL」を見つけたか？
+    （例：常設グッズショップだけ、過去年度の告知、内容曖昧な投稿）
+    → YES: 【needs-review】（このファイル）ユーザー判断仰ぐ
+    → NO: Q3 へ
+
+Q3. 番組ホストの SNS / 公式サイトはそもそも存在するか？
+    → NO: 【not-found】 探索手段なしで確定取得不可
+    → YES: Q4 へ
+
+Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がもうないか？
+    → YES: 【not-found】 これ以上の探索余地なし
+    → NO: 【monitoring】 当日まで新規告知の可能性あり
+```
+
+### 凡例（needs-review に分類されやすいパターン）
 
 - **常設グッズショップのみ**: 番組のオリジナルグッズが BASE / SUZURI / BOOTH 等で販売されているが、
   「PCWE2026 ブースで売る」とホストが明示していないもの。実態としては当日販売される確率が高いが、
@@ -24,7 +47,8 @@ done に昇格させるか not-found に確定するかを決めるためのリ�
    - [runbook.md](./runbook.md) ステップ 3〜10 に従って `data/sources/official/pcwe-XXX.json` に追記
    - このリストから該当行を削除
 3. 「PCWE2026 では売らない」「物販詳細不明のまま」と確定した場合：
-   - [not-found.md](./not-found.md) に移動
+   - **SNS あり、当日まで再チェックの余地** → [monitoring.md](./monitoring.md) へ
+   - **SNS なし or 過去 PCWE のみで探索余地なし** → [not-found.md](./not-found.md) へ
    - このリストから該当行を削除
 
 ---
@@ -33,8 +57,8 @@ done に昇格させるか not-found に確定するかを決めるためのリ�
 
 | 番組 ID | 番組名 | 候補 URL | カテゴリ | AI コメント |
 |---|---|---|---|---|
-| pcwe-016 | overture〜ミュージカル好きの語り部屋〜 | https://creators.spotify.com/pod/profile/u6052u5149u7f8eu91cc/episodes/91-PCWE-e2pb2fh | 過去年度の振り返り（要再調査） | **AI が一度 done として誤掲載 → 降格**。Spotify エピソード #91「ゲスト回感想メール紹介＆PCWE 番組グッズ公開」は **PCWE2024（2024/11/3）の物販告知**であり、PCWE2026 用ではない。PCWE2026 用の物販告知は別エピソードや SNS にあるかもしれず、要再調査。 |
-| pcwe-037 | 映画の話したすぎるラジオ | https://suzuri.jp/virtualeigabar | https://x.com/virtualeigabar （X 投稿で 5/10 ZINE 販売告知あり、URL 取得不可） | SUZURI に「virtualeigabar」公式ショップあり。PCWE 限定告知は未確認。 |
+
+（2026-05-06 時点で確認待ちなし。pcwe-016 → not-found 降格、pcwe-037 → done 化、pcwe-092 → done 化）
 
 ---
 
@@ -42,4 +66,11 @@ done に昇格させるか not-found に確定するかを決めるためのリ�
 
 - **20 件**を一律 not-found としていたが、ファクト的には「常設グッズあり / 過去販売実績 / 告知言及あり」など強い兆候が確認できているケースが多い。
 - ユーザーの目（番組ホストとつながりがある / 過去 PCWE 参加経験 / 当日現地確認可能）で判断すれば、半数以上は done に昇格する見込み。
-| pcwe-092 | 平成1桁女子の自己肯定感爆上がり恋愛ラジオ | https://x.com/heisei1keta_radio | https://www.instagram.com/heisei1keta_radio | — | Listen エピソード `vjjaq99a` で「Podcast Weekend 初出展」「ライター ¥500、前髪クリップ、名言ステッカー」等の物販告知あり。ただし本文に **「5月19日、画面越しじゃなくて直接会える日」** との記載があり PCWE 公式日程（5/9-10）と齟齬。本文と PCWE2026 の関連を要再確認（別イベント告知の可能性 / 配信日言及の可能性）|
+
+---
+
+## 解決ログ
+
+- **2026-05-06**: pcwe-016 overture → ユーザー目視で言及なし、**monitoring** へ降格（Instagram / Spotify あり、当日まで新規告知の可能性あり）
+- **2026-05-06**: pcwe-037 映画の話したすぎるラジオ → 公式告知記事 (https://virtualeigabar.com/podcast-announce/) で 5/10 出展 + ZINE 制作明示、done 化
+- **2026-05-06**: pcwe-092 平成1桁女子 → Listen エピソード `vjjaq99a` のタイトル「Podcast Weekend初出展！限定グッズ公開」で出展確証 + 物販4種詳細あり、done 化（「5月19日」の文言は本エピソード内では PCWE 関連の物販告知文脈外と判断、limited グッズはタイトル通り PCWE 用と確定）
