@@ -33,11 +33,15 @@ export function FadeInOnScroll({ children, rootMargin = '-10%', className }: Pro
           }
         }
       },
-      // threshold は 0 にして「target が 1px でも viewport に入ったら発火」とする。
-      // 旧設定の 0.15 だと、X 埋め込み等で section 高さが 3000px+ に膨らむケースで
-      // 「section の 15% が常に画面外」となり永久に fade-in しない不具合が出た。
-      // rootMargin で viewport の有効範囲を絞っているので、これで十分に
-      // 「中央寄りで自然に fade-in」する体験を保てる。
+      // threshold は 0、発火タイミングは rootMargin（デフォルト '-10%'）で調整する。
+      // 旧設定の threshold:0.15 だと、X 埋め込み等で section 高さが 3000px+ に
+      // 膨らむケースで「section の 15% が常に画面外」となり永久に fade-in しない
+      // 不具合があった。target に依存しない rootMargin（viewport ベース）で
+      // 制御する方が、巨大セクションでも安定する。
+      // - rootMargin '-10%': viewport の上下左右 10% を除外した内側で発火
+      // - threshold 0: 「target が 1px でも上記の縮小 viewport に入ったら発火」
+      // 結果、画面端ぎりぎりで section が顔を出した瞬間ではなく、画面の中央付近
+      // まで進入したタイミングで自然に fade-in する。
       { threshold: 0, rootMargin }
     );
 

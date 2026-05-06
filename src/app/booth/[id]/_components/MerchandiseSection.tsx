@@ -73,15 +73,19 @@ function groupConsecutive(
 }
 
 export function MerchandiseSection({ merchandise, merchandiseDetails }: Props) {
-  const hasDetails =
-    merchandiseDetails !== undefined && merchandiseDetails.length > 0;
-  const hasList = merchandise !== undefined && merchandise.length > 0;
+  // 制御フロー解析でナローイングするため、配列そのものを参照する形で判定
+  const detailsList =
+    merchandiseDetails !== undefined && merchandiseDetails.length > 0
+      ? merchandiseDetails
+      : null;
+  const merchList =
+    merchandise !== undefined && merchandise.length > 0 ? merchandise : null;
 
-  if (!hasDetails && !hasList) {
+  if (detailsList === null && merchList === null) {
     return null;
   }
 
-  const groups = hasDetails ? groupConsecutive(merchandiseDetails!) : [];
+  const groups = detailsList !== null ? groupConsecutive(detailsList) : [];
 
   return (
     <section className="bg-white">
@@ -100,10 +104,9 @@ export function MerchandiseSection({ merchandise, merchandiseDetails }: Props) {
           //   1280px+ (xl): 3 列（各 ~355px+ 確保）
           <div className="mt-6 grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
             {groups.map((group, i) => (
-              <MerchandiseGroupCard
-                key={`${group.sourceUrl}-${i}`}
-                group={group}
-              />
+              // key は index ベース。連続しない同 sourceUrl 重複を許容しつつ、
+              // grouping 後の表示順は安定するため index で十分。
+              <MerchandiseGroupCard key={i} group={group} />
             ))}
           </div>
         ) : null}
@@ -112,15 +115,15 @@ export function MerchandiseSection({ merchandise, merchandiseDetails }: Props) {
           merchandiseDetails があれば公式ブースのテキストリストは「補足」として控えめに。
           merchandiseDetails がなければ既存通りメインで表示。
         */}
-        {!hasDetails && hasList ? (
+        {detailsList === null && merchList !== null ? (
           <p className="mt-3 text-base text-neutral-800">
-            {merchandise!.join(' / ')}
+            {merchList.join(' / ')}
           </p>
         ) : null}
 
-        {hasDetails && hasList ? (
+        {detailsList !== null && merchList !== null ? (
           <p className="mt-6 text-xs text-neutral-500">
-            公式ブース出店予定: {merchandise!.join(' / ')}
+            公式ブース出店予定: {merchList.join(' / ')}
           </p>
         ) : null}
       </div>
@@ -146,7 +149,7 @@ function MerchandiseGroupCard({ group }: { group: MerchandiseGroup }) {
     <article className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5">
       {group.items.map((item, i) => (
         <div
-          key={`${item.name}-${i}`}
+          key={i}
           className={
             i > 0 ? 'mt-3 border-t border-neutral-100 pt-3' : ''
           }
