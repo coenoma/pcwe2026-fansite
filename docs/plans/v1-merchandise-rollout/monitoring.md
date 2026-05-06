@@ -89,6 +89,8 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-109 | しゃらくさラジオ | https://x.com/SyarakusaRadio | — | — | 5/6 菊池さん目視で言及なし確認（B群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 | pcwe-115 | 吉村ジョナサンの高校古典講義 | https://x.com/dai_koku_sama | https://www.instagram.com/book_bridge_lab | — | 5/6 菊池さん目視で言及なし確認（B群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 
+| pcwe-139 | ぬまずっきゅーんfromみんキャス | https://x.com/numazukyun | https://www.instagram.com/numazukyun/ | — | 5/6 菊池さん目視で PCWE 言及なし確認（B群最終ターゲット）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+
 ---
 
 ## 解決ログ
