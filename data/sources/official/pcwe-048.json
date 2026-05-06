@@ -10,6 +10,14 @@
       "ステッカー",
       "Tシャツ",
       "トレカケース"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（番組ページ（PODCAST WEEKEND 2026出店告知）",
+        "description": "PODCAST WEEKEND 2026に出店予定（劇団雌猫は2026年5月10日のみ参加、HOME/WORK VILLAGE）。番組ページに「いろんなグッズを売ります」との記載あり、具体的商品内容は明記されていない。",
+        "sourceUrl": "https://listen.style/p/gekidan-mesuneco",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -23,7 +31,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/6ZpEqiA1Zn4sO8MhPHiM0B",
     "x": "https://x.com/aku__you",
-    "instagram": "https://www.instagram.com/gekidan_mesuneco/"
+    "instagram": "https://www.instagram.com/gekidan_mesuneco/",
+    "listen": "https://listen.style/p/gekidan-mesuneco"
   },
   "recommendedEpisode": {
     "title": "#75 トップ3がみんな犬「サンリオキャラ大2025」の結果を語る",

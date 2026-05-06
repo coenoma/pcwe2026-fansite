@@ -11,6 +11,14 @@
       "読まれない本",
       "忘れられた服",
       "その他雑貨"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（ep.19 かもしれない運転）",
+        "description": "Podcast Weekend 2026 (5月9日のみ出展、池尻大橋ホームワークビレッジ、10時～18時)。販売予定品: フットマッサージャー(約1万5千円相当)、シックスパッド(EMS腹筋器、ケース・拭き取りシート付き)、書籍『ピュートフク ジャガワ』全20巻セット、ホスト着用済み・未使用Tシャツ多数、ジョジョランズTシャツ(新品・非売品)、アシックスランニングシューズ(黄緑、使用済み)、ドクターマーチン8ホールブーツ(黒・赤)、アークテリクスキャップ(シミあり、格安)、チェコ軍ガスマスク、スノーピークサウナバッグ(未使用)、帽子。合言葉「アド街を見た」でブース裏の隠し商品購入可。",
+        "sourceUrl": "https://listen.style/p/ojisan_output/2kdzocgh",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -23,7 +31,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6XrIliBtszGwqUdYyKoUjx",
-    "x": "https://x.com/ojisan_output"
+    "x": "https://x.com/ojisan_output",
+    "listen": "https://listen.style/p/ojisan_output"
   },
   "recommendedEpisode": {
     "title": "ep.1 やらなきゃ意味ないよ",

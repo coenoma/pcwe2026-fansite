@@ -10,6 +10,14 @@
       "ステッカー",
       "キーホルダー",
       "巾着ポーチ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（（番組ページ最新エピソード／PODCAST EXPO 出店告）",
+        "description": "PODCAST EXPO（5月9日(土)・10日(日)、東京・池尻 HOME/WORK VILLAGE）に出展。番組初の物販グッズシリーズとして『キラキラステッカー』を販売予定。個別商品の価格は本文では明示なし。詳細は番組のお問い合わせフォームおよび @dokuposi_radio の Instagram/X で確認するよう案内",
+        "sourceUrl": "https://listen.style/p/smaadp7u",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -24,7 +32,8 @@
   "links": {
     "applePodcasts": "https://podcasts.apple.com/jp/podcast/%E5%A4%96%E5%90%91%E3%81%8D%E3%83%9D%E3%82%B8%E3%83%86%E3%82%A3%E3%83%96ol%E3%81%9F%E3%81%A1%E3%81%AE%E6%AF%92%E8%88%8C%E6%BC%AB%E8%AB%87%E3%83%A9%E3%82%B8%E3%82%AA/id1671551572",
     "x": "https://x.com/dokuposi_radio",
-    "instagram": "https://www.instagram.com/dokuposi_radio/"
+    "instagram": "https://www.instagram.com/dokuposi_radio/",
+    "listen": "https://listen.style/p/smaadp7u"
   },
   "recommendedEpisode": {
     "title": "#43 独身女子の自己肯定感の上げ方💋",

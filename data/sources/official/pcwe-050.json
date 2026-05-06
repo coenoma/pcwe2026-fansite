@@ -13,6 +13,20 @@
       "アパレル受注",
       "某文房具",
       "その他ステッカー等番組グッズ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（104話 春の変な人ホイホイマンスリー2026）",
+        "description": "『5/9・10（土・日）こちらも両日出店しております！』PODCAST WEEKEND 2026両日出店の告知。",
+        "sourceUrl": "https://listen.style/p/ateshika555",
+        "sourceType": "web"
+      },
+      {
+        "name": "PCWE2026 出展告知（106話 2周年の女）",
+        "description": "『4/19(日)すみれ子参戦🔥絶対会いにきてね！＃ポッドキャストステッカーベース』との言及。チケット制90分入れ替え各回30名限定（これは別の4/19イベントの言及）。",
+        "sourceUrl": "https://listen.style/p/ateshika555",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -27,7 +41,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/5rhdqKYQFPqAj6NszKc4De",
     "x": "https://x.com/ateshika555",
-    "instagram": "https://www.instagram.com/ateshika555"
+    "instagram": "https://www.instagram.com/ateshika555",
+    "listen": "https://listen.style/p/ateshika555"
   },
   "recommendedEpisode": {
     "title": "アテしかのご案内♡",

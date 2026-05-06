@@ -14,6 +14,14 @@
       "ZINE",
       "にがおえ",
       "野良シール"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（S3E67 #雑談系ポッドキャストの日 vol.5・シールが）",
+        "description": "5月10日 PCWE 2026 出店予定の告知あり（4/19 ポッドキャストステッカーベースと併せて告知）。物販計画として、ステッカー、メッセージカード／ポストカード、その場で手書きする野良シールワークショップ、冊子／ジン、ネーム本／カード、名刺・ペーパー配布などを検討中とのトーク。具体的な商品名・価格は計画段階で未確定",
+        "sourceUrl": "https://listen.style/p/shaberitarinaibu/dyzpwnra",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -26,7 +34,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/76YLu4NfmscBT9X0FGLfEG",
-    "x": "https://x.com/ShaberiTarinaiB"
+    "x": "https://x.com/ShaberiTarinaiB",
+    "listen": "https://listen.style/p/shaberitarinaibu"
   },
   "recommendedEpisode": {
     "title": "S3E40 『しゃべり足りない部』改めて自己紹介／余談の「飛行機に遅れそうな夢」話",

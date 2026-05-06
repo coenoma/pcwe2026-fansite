@@ -14,6 +14,20 @@
       "推しぬい撮影会(アクスタ可)",
       "シール交換",
       "インドア同盟公式ファンブック"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（番外編 Podcast Weekend 出店決定！）",
+        "description": "『2026年5月9日10日に開催されるPODCAST EXPO 2026のなかのマーケットイベントPodcast Weekend 2026への出店が決定しました』",
+        "sourceUrl": "https://listen.style/p/indoadoumei",
+        "sourceType": "web"
+      },
+      {
+        "name": "PCWE2026 出展告知（第127回 最近のこと&ファンブック）",
+        "description": "PCWE2026で販売予定のファンブックについて言及。事前購入意向の表明を呼びかけ。",
+        "sourceUrl": "https://listen.style/p/indoadoumei",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -26,7 +40,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/1uSjQVGimHdUINJerklK2H",
-    "x": "https://x.com/indoadoumei"
+    "x": "https://x.com/indoadoumei",
+    "listen": "https://listen.style/p/indoadoumei"
   },
   "recommendedEpisode": {
     "title": "俺たちの最強ヒロイン",

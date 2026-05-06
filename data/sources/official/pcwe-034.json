@@ -11,6 +11,14 @@
       "Tシャツ",
       "日めくりAIRカラスの名言",
       "キーホルダーなど"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（#209 PODCAST WEEKEND★5/9（土）10:）",
+        "description": "PODCAST WEEKEND 2026年5月9日（土）10:00-19:00への出展告知。エピソード内で『想らしグッズをチラ見せしてみた』との言及あり（具体商品内容・価格は記載なし）。",
+        "sourceUrl": "https://listen.style/p/wbxraifc/onyuysuo",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -23,7 +31,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6vkPs13TNoxPA8SAtnR5UR",
-    "x": "https://x.com/omorashi_radio_"
+    "x": "https://x.com/omorashi_radio_",
+    "listen": "https://listen.style/p/wbxraifc"
   },
   "recommendedEpisode": {
     "title": "『衝撃事実発覚！？君は友を信用できるのか』",

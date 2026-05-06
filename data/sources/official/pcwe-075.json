@@ -10,6 +10,20 @@
       "ステッカー",
       "キーホルダー",
       "音声キーホルダー等"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（ChatGPT Images 2.0 圧倒的！/イーロン･マ）",
+        "description": "Podcast Weekend & Mixer event出展告知（具体的物販詳細は未記載）",
+        "sourceUrl": "https://listen.style/p/ochitsuki-ai/aamhgxeo",
+        "sourceType": "web"
+      },
+      {
+        "name": "PCWE2026 出展告知（ep.66（2026年5月5日配信）/ ep.61（2026）",
+        "description": "PODCAST WEEKEND 2026出展・登壇の告知あり。物販内容は本文に明記なし。",
+        "sourceUrl": "https://listen.style/p/ochitsuki-ai",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -23,7 +37,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6iGk39bSta5KZ1QD7jvK2o",
-    "x": "https://x.com/ochitsuki_AI"
+    "x": "https://x.com/ochitsuki_AI",
+    "listen": "https://listen.style/p/ochitsuki-ai"
   },
   "recommendedEpisode": {
     "title": "[1月20日:速報回]AIに話した秘密、漏れます。元刑事が警告するGemini/Anthropicのプライバシー問題(ep.35)",

@@ -12,6 +12,14 @@
       "ポストカード",
       "キーホルダー",
       "Tシャツ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（（番組ページ最新エピソード群／2026年4月28日〜5月1日）",
+        "description": "Podcast Weekend に出店予定の告知あり。エピソード説明欄に『Podcastweekend 出店します！！食い意地プロフィールも配布します⭐️』との記載。配布物: 食い意地プロフィール。具体的な商品名・価格・正確な出展日（PCWE2026 公式 5/9-10 と推定）は本文では明示なし",
+        "sourceUrl": "https://listen.style/p/kuiiji",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -24,7 +32,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/03LFcdPG4j2wJ9alN0arB6",
-    "instagram": "https://www.instagram.com/illustwaai"
+    "instagram": "https://www.instagram.com/illustwaai",
+    "listen": "https://listen.style/p/kuiiji"
   },
   "recommendedEpisode": {
     "title": "おいしいパンが生まれる秘訣がわかった！そしてスーパーのおにぎりたちもっと頑張れ",

@@ -10,6 +10,14 @@
       "ステッカー",
       "夫婦円満お守り",
       "夫婦関係相談"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（#2-127 PODCAST EXPO2026 出展のお知ら）",
+        "description": "PODCAST EXPO 2026 (5月9日土曜、9時～18時、東京・池尻大橋ホームワークビレッジ) 出展。用意するもの: 『番組ステッカー』(番組を聞いてきた旨を伝えると無料プレゼント)、『夫婦みくじ』(おみくじを番組オリジナルで作成)。",
+        "sourceUrl": "https://listen.style/p/atsu/yxs9ei2y",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -23,7 +31,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/4Stfk1sRnzqBxeXVCSAeQF",
     "x": "https://x.com/atsuatsu",
-    "instagram": "https://www.instagram.com/atsu0atsu/"
+    "instagram": "https://www.instagram.com/atsu0atsu/",
+    "listen": "https://listen.style/p/atsu"
   },
   "recommendedEpisode": {
     "title": "#490 夫婦に恋愛感情なんて必要ない。",

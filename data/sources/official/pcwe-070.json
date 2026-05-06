@@ -10,6 +10,14 @@
       "旅先シミュレーター",
       "グッズ（検討中",
       "アクスタや手書きマップなど）"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（#140 祝2周年！そしてお知らせも！）",
+        "description": "PODCAST WEEKEND 2026（2026年5月9日(土)・10日(日) 10:00〜19:00、ホームワークビレッジ 東京都世田谷区池尻大橋）に出展。出展物: 旅先シミュレーター（イベント体験型企画）、手書きマップ（神奈川県版／33市町村網羅、パーソナルコメント付き、裏面に神奈川県年表）。価格はエピソード内で明示なし",
+        "sourceUrl": "https://listen.style/p/dzrqxmig/j4uwrllf",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -24,7 +32,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/5kdJh8PDtIQWN9fF7C3xZV",
     "x": "https://x.com/ototabi_podcast",
-    "instagram": "https://www.instagram.com/ototabi_podcast"
+    "instagram": "https://www.instagram.com/ototabi_podcast",
+    "listen": "https://listen.style/p/dzrqxmig"
   },
   "recommendedEpisode": {
     "title": "#108【岩手】種蒔く人のユートピアPart1",

@@ -9,6 +9,14 @@
     "merchandise": [
       "ステッカー",
       "Tシャツ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（Ep.091 PCWEに出店し、ただめいめいし続けるだけの行）",
+        "description": "PCWE2026（5/9土）出店内容として『限界命名』ブースを実施予定。来場者と一緒にオープンからクローズまで命名し続けるマラソン企画。参加特典として番組ステッカー、命名紙を配布。来場者は『収録に参加しながら命名する』『収録なしで会話に参加する』『見学のみ』から選択可能。",
+        "sourceUrl": "https://listen.style/p/r5kbt1bd/wenzwxh9",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -21,7 +29,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/0ncSKh6ObHoQxynVxW5SBb",
-    "x": "https://x.com/meimeishimasu"
+    "x": "https://x.com/meimeishimasu",
+    "listen": "https://listen.style/p/r5kbt1bd"
   },
   "recommendedEpisode": {
     "title": "Ep.001「１度上げると暑すぎて、下げると寒すぎるエアコン」",

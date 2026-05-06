@@ -14,6 +14,14 @@
       "台湾雑貨",
       "似顔絵缶バッジ作り",
       "インタビュー収録など"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（#45 【告知】イベント出店＆公開収録）",
+        "description": "PODCAST EXPO 2026 (5月9日・10日、HOME/WORK VILLAGE) 出店。販売予定: 番組オリジナルグッズ、イラストレーター・佐々木千絵さんによる『似顔絵缶バッジ』。具体的な価格は番組内で未明示。",
+        "sourceUrl": "https://listen.style/p/dzhfljtm/ygrztor8",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -27,7 +35,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/15ZDxvdmNcsJ0D821NveDu",
     "x": "https://x.com/kikitaiwan_pc",
-    "instagram": "https://www.instagram.com/kikitaiwan_podcast/"
+    "instagram": "https://www.instagram.com/kikitaiwan_podcast/",
+    "listen": "https://listen.style/p/dzhfljtm"
   },
   "recommendedEpisode": {
     "title": "＃34 みんな大好き！台湾夜市の世界！三文字昌也さん（前編）",
