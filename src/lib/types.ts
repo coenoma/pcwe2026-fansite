@@ -123,6 +123,43 @@ export const MerchandiseDetailSchema = z.object({
   imageUrl: z.string().url().optional(),
   /** 補助的な情報源（任意・複数）。UI では「関連: 1, 2」と小さく表示 */
   additionalSources: z.array(MerchandiseAdditionalSourceSchema).optional(),
+  /**
+   * 自サイト配信の画像パス（DL → public/images/sources/ 配下に配置）。
+   * X 以外（note / web / instagram-post / official-site / official-booth）の出典で、
+   * 視覚的情報を伝えたい場合に使用。X 投稿は react-tweet 埋め込みで画像が出るので不要。
+   * 引用要件（出典明記・主従関係・必要性）を満たす範囲で使用すること。
+   */
+  imagePath: z
+    .string()
+    .regex(
+      /^\/images\/sources\/.+\.(png|jpg|jpeg|webp)$/,
+      '画像パスは /images/sources/XXX.{png,jpg,jpeg,webp} 形式',
+    )
+    .optional(),
+  /** 画像の alt テキスト（スクリーンリーダー・SEO 用）*/
+  imageAlt: z.string().optional(),
+  /** 画像のクレジット表記（例: "© 内海あさ（note 記事より、引用）"）*/
+  imageCredit: z.string().optional(),
+  /**
+   * 出典の参照日時（ISO 8601）。日本式出典に「（2026年5月7日参照）」と表示するために使う。
+   * 例: "2026-05-07T07:33+09:00" / "2026-05-07"
+   */
+  accessedAt: z
+    .string()
+    .regex(
+      /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2})?(Z|[+-]\d{2}:?\d{2})?)?$/,
+      'accessedAt は ISO 8601（YYYY-MM-DD or YYYY-MM-DDTHH:mm[:ss][±HH:MM]）',
+    )
+    .optional(),
+  /** 出典の公開日（YYYY-MM-DD）。日本式出典の「（2026年5月4日公開）」用 */
+  sourcePublishedAt: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, 'sourcePublishedAt は YYYY-MM-DD')
+    .optional(),
+  /** 出典の著者名（日本式出典の冒頭に表示）。例: "内海あさ" */
+  sourceAuthor: z.string().optional(),
+  /** 出典のタイトル（日本式出典で「」で囲まれる）。例: "PCWE2026 出展商品ラインアップ" */
+  sourceTitle: z.string().optional(),
 });
 export type MerchandiseDetail = z.infer<typeof MerchandiseDetailSchema>;
 

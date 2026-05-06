@@ -16,9 +16,65 @@
     "merchandiseDetails": [
       {
         "name": "PCWE2026 出展告知（#100 ポッドキャストウィークエンド直前スペシャル！！）",
-        "description": "PODCAST WEEKEND 2026（5月9日）に #愛の抵抗 として出店予定。既刊のZINEとアクリルキーホルダーを販売予定。お品書きの詳細はnote（https://note.com/asa_utsumi/n/n5a82a1833e81）で公開。具体的な商品ラインナップ（個別商品名・価格）はエピソード本文では明示されていない",
+        "description": "PODCAST WEEKEND 2026（5月9日）に #愛の抵抗 として出店予定。既刊のZINEとアクリルキーホルダーを販売予定。お品書きの詳細はnoteで公開。",
         "sourceUrl": "https://listen.style/p/ainoteikou/ddauhm7m",
         "sourceType": "web"
+      },
+      {
+        "name": "Love Letter from 愛の抵抗（番組ペーパー）",
+        "description": "A3二つ折り・白黒裏表（A4・4面）／100円。番組紹介・歩み・おすすめエピソード掲載。「防災アドバイス（あさちゃん）」または「恋愛タロット相談（しだちゃん）」の選べるオプション付き。出店日: 5/9、ブース: 11-B。",
+        "sourceUrl": "https://note.com/asa_utsumi/n/n5a82a1833e81",
+        "sourceType": "note",
+        "imagePath": "/images/sources/pcwe-002-asa_utsumi-okashinagaki.png",
+        "imageAlt": "愛の抵抗 PCWE2026 出展商品ラインアップ概要（Love Letter／あすけん生活／好（ハオ）／番組グッズ）",
+        "imageCredit": "© 内海あさ（@asa_utsumi）／note 記事より引用",
+        "accessedAt": "2026-05-07T07:33+09:00",
+        "sourcePublishedAt": "2026-05-04",
+        "sourceAuthor": "内海あさ",
+        "sourceTitle": "PCWE2026 出展商品ラインアップ",
+        "additionalSources": [
+          {
+            "url": "https://x.com/asa_utsumi/status/2051227151329067247",
+            "type": "x-post",
+            "label": "番組ホストの告知ツイート"
+          }
+        ]
+      },
+      {
+        "name": "あすけん生活（ZINE）",
+        "description": "A5・白黒／800円。著者: 内海あさ。食事管理アプリ「あすけん」を活用した8ヶ月8kg減量の記録。",
+        "sourceUrl": "https://note.com/asa_utsumi/n/n5a82a1833e81",
+        "sourceType": "note"
+      },
+      {
+        "name": "好（ハオ）（ZINE）",
+        "description": "B6・白黒／800円。著者: しだちゃん。「『好き』とは何か」をテーマにした10代・20代の記録。",
+        "sourceUrl": "https://note.com/asa_utsumi/n/n5a82a1833e81",
+        "sourceType": "note"
+      },
+      {
+        "name": "ポッドキャスト御朱印帳",
+        "description": "2,000円。ポッドキャストの聴取データを記録するためのオリジナルノート。",
+        "sourceUrl": "https://note.com/asa_utsumi/n/n5a82a1833e81",
+        "sourceType": "note"
+      },
+      {
+        "name": "キーホルダー各種",
+        "description": "各500円。「愛の抵抗キーホルダー」と「わすよるキーホルダー」（NFC機能付き）の2種展開。",
+        "sourceUrl": "https://note.com/asa_utsumi/n/n5a82a1833e81",
+        "sourceType": "note"
+      },
+      {
+        "name": "ステッカー各種",
+        "description": "各100円。「愛の抵抗ステッカー」と「わすよるステッカー」の2種展開。",
+        "sourceUrl": "https://note.com/asa_utsumi/n/n5a82a1833e81",
+        "sourceType": "note"
+      },
+      {
+        "name": "紙製しおり",
+        "description": "無料配布。番組QRコード付き。",
+        "sourceUrl": "https://note.com/asa_utsumi/n/n5a82a1833e81",
+        "sourceType": "note"
       }
     ]
   },
