@@ -45,22 +45,22 @@ A1 群（Listen 未登録 + SNS あり）は全 56 件完走済み（37 done / 1
 | 🔄 | pcwe-041 | 酒の道～日本酒の聖地から～@しぶさわくんFM | https://x.com/shibusawakunfm | — | https://listen.style/p/w6pm3kfn | 2 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | 🔄 | pcwe-046 | 人生百貨店 | https://x.com/lifedeptstores | https://www.instagram.com/lifedepartm... | https://listen.style/p/lifedeptstores | 3 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | 🔄 | pcwe-047 | クリエイターエコノミーニュース | https://x.com/creator_enews | — | https://listen.style/p/creator_enews | 2 | 菊池さん目視で PCWE 言及なし確認、当日まで monitoring | 05-06 |
-| ⏳ | pcwe-061 | さのみきひとのラジオ ⌞ ラのみきジオ ⌝ | https://x.com/ranomikijio | — | https://listen.style/p/ranomikijio | 4 | — | — |
+| ✅ | pcwe-061 | さのみきひとのラジオ ⌞ ラのみきジオ ⌝ | https://x.com/ranomikijio | — | https://listen.style/p/ranomikijio | 4 | https://x.com/ranomikijio/status/2047888758092296639 NEW GOODS 3点（円盤・キラ角シール・紙束）| 05-06 |
 | ⏳ | pcwe-106 | 公共訴訟ラジオ｜社会を動かす裁判の話 | https://x.com/CALL4_Jp | https://www.instagram.com/call4_jp/ | https://listen.style/p/cem9oa2z | 5 | — | — |
-| ⏳ | pcwe-107 | ラジオただいま発酵中 | — | — | https://listen.style/p/cnjfbfzz | 4 | — | — |
-| ⏳ | pcwe-109 | しゃらくさラジオ | https://x.com/SyarakusaRadio | — | https://listen.style/p/syarakusaradio | 4 | — | — |
-| ⏳ | pcwe-115 | 吉村ジョナサンの高校古典講義 | https://x.com/dai_koku_sama | https://www.instagram.com/book_bridge... | https://listen.style/p/yoshimurajona | 3 | — | — |
-| ⏳ | pcwe-121 | ぜったい大丈夫だよラジオ | https://x.com/daijobu_radio | — | https://listen.style/p/6ki02xqz | 6 | — | — |
+| 🔄 | pcwe-107 | ラジオただいま発酵中 | — | — | https://listen.style/p/cnjfbfzz | 4 | 菊池さん目視で PCWE 言及なし、当日まで monitoring | 05-06 |
+| 🔄 | pcwe-109 | しゃらくさラジオ | https://x.com/SyarakusaRadio | — | https://listen.style/p/syarakusaradio | 4 | 菊池さん目視で PCWE 言及なし、当日まで monitoring | 05-06 |
+| 🔄 | pcwe-115 | 吉村ジョナサンの高校古典講義 | https://x.com/dai_koku_sama | https://www.instagram.com/book_bridge... | https://listen.style/p/yoshimurajona | 3 | 菊池さん目視で PCWE 言及なし、当日まで monitoring | 05-06 |
+| ✅ | pcwe-121 | ぜったい大丈夫だよラジオ | https://x.com/daijobu_radio | — | https://listen.style/p/6ki02xqz | 6 | https://x.com/daijobu_radio/status/2052002184255111246 5/9 ブース17-C 秘密のコミック・限定音源・NEW GOODS | 05-06 |
 | ⏳ | pcwe-139 | ぬまずっきゅーんfromみんキャス | https://x.com/numazukyun | https://www.instagram.com/numazukyun/ | https://listen.style/p/edjfkyvh | 2 | — | — |
 
 ---
 
 ## サマリ
 
-- ⏳ 未着手: 7 件
+- ⏳ 未着手: 2 件（pcwe-106, pcwe-139）
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 3 件（pcwe-007, pcwe-014, pcwe-033）
-- 🔄 monitoring（菊池さん目視で言及なし、当日まで再チェック余地あり）: 4 件（pcwe-019, pcwe-041, pcwe-046, pcwe-047）
+- ✅ done 化済み: 5 件（pcwe-007, 014, 033, 061, 121）
+- 🔄 monitoring（菊池さん目視で言及なし、当日まで再チェック余地あり）: 7 件（pcwe-019, 041, 046, 047, 107, 109, 115）
 - ❌ 告知なし確定: 0 件
 - 👀 候補あり要判断: 0 件
 
