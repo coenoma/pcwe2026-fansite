@@ -17,10 +17,28 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（#45 【告知】イベント出店＆公開収録）",
-        "description": "PODCAST EXPO 2026 (5月9日・10日、HOME/WORK VILLAGE) 出店。販売予定: 番組オリジナルグッズ、イラストレーター・佐々木千絵さんによる『似顔絵缶バッジ』。具体的な価格は番組内で未明示。",
-        "sourceUrl": "https://listen.style/p/dzhfljtm/ygrztor8",
-        "sourceType": "web"
+        "name": "缶バッジ",
+        "description": "500円。番組ロゴの作者は人気イラストレーター・佐々木千絵さん。お支払いは現金のみ。9日のみ出店。X 投稿「【ブース紹介①】今週末開催の「PODCAST EXPO」#喜々台湾 は９日に出店し、番組グッズを販売！」（2026-05-06 公開）にて告知。",
+        "sourceUrl": "https://x.com/kikitaiwan_pc/status/2051903986358526232",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "キーホルダー",
+        "description": "700円。お支払いは現金のみ。9日のみ出店。X 投稿「【ブース紹介①】今週末開催の「PODCAST EXPO」#喜々台湾 は９日に出店し、番組グッズを販売！」（2026-05-06 公開）にて告知。",
+        "sourceUrl": "https://x.com/kikitaiwan_pc/status/2051903986358526232",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "Tシャツ（M/Lサイズ）",
+        "description": "3000円。お支払いは現金のみ。9日のみ出店。X 投稿「【ブース紹介①】今週末開催の「PODCAST EXPO」#喜々台湾 は９日に出店し、番組グッズを販売！」（2026-05-06 公開）にて告知。",
+        "sourceUrl": "https://x.com/kikitaiwan_pc/status/2051903986358526232",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "似顔絵缶バッジ（その場制作）",
+        "description": "1000円（現金のみ）。イラストレーター・佐々木千絵さんがその場で似顔絵を描いて缶バッジにする企画。前回も大人気だった企画。9日のみ出店。X 投稿「【ブース紹介②】今週末開催の「PODCAST EXPO」#喜々台湾 🇹🇼は９日に出店し「似顔絵缶バッジ」を販売します！」（2026-05-06 公開）にて告知。",
+        "sourceUrl": "https://x.com/kikitaiwan_pc/status/2051911688279257139",
+        "sourceType": "x-post"
       }
     ]
   },
