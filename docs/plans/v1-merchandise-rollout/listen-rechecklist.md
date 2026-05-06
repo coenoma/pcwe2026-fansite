@@ -52,15 +52,28 @@
 
 ---
 
-## サマリ
+## B群サマリ（このチェックリストの対象 = 23 件）
 
-- ✅ **done 化: 12 件**
+- ✅ **done 化: 9 件**
   - **1st pass（Listen タイトル検索）**: pcwe-012, pcwe-024, pcwe-032, pcwe-042
   - **2nd pass（Listen transcript 深掘り）**: pcwe-040, pcwe-055, pcwe-077, pcwe-110
   - **3rd pass（boothpage + Listen 行動裏付け）**: pcwe-018
-  - **4th pass（boothpage description 単独で出展確証メッセージ）**: pcwe-028, pcwe-105, pcwe-113
 - 👀 needs-review: 0 件
-- ❌ not-found 確定: 11 件（探索余地なし、Listen 最新エピソードに PCWE2026 物販告知なし、transcript 深掘りでも発見できず）
+- ❌ not-found 確定: 14 件（探索余地なし、Listen 最新エピソードに PCWE2026 物販告知なし、transcript 深掘りでも発見できず）
+
+## 副次的な発見（B 群外の番組も含めた boothpage description sweep）
+
+B 群の探索ロジックを応用して、**not-found 全件**の `official.description`（公式 boothpage scrape 結果）に
+「PCWEに初出店」「ブースで〇〇収集します」「会場でお待ちしています」など
+ホスト本人による出展確証メッセージが含まれているケースを発見。これらは sourceUrl: 公式 boothpage、
+sourceType: `'official-booth'` で done 化。
+
+**4th pass（boothpage description 単独で出展確証メッセージ）**: 3 件追加 done 化
+- pcwe-028 土曜のサカナ
+- pcwe-105 呟ききれない話
+- pcwe-113 ブラウンブラウニー
+
+→ B 群以外も含めた **Listen / boothpage 経由の累計 done 化: 12 件**
 
 ### 4th pass について
 

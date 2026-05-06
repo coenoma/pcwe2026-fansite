@@ -102,14 +102,31 @@ PODCAST WEEKEND 2026（PCWE2026）出展全 142 番組のブース物販情報�
 
 ---
 
-## 番組分類（着手時点 = 2026-05-05）
+## 進捗サマリ（2026-05-06 19:14 更新）
 
-- 完了: **1 / 142** (pcwe-098 KNOWフードラジオ)
-- 未着手: **141 / 142**
-  - X あり: 119
-  - Instagram あり: 74
-  - Website あり: 0
-  - **SNS なし**（即 not-found 確定）: 12
+| 状態 | 件数 | 割合 |
+|---|---:|---:|
+| ✅ done（merchandiseDetails あり） | **78 / 142** | **54.9%** |
+| 🔄 monitoring（言及なし、当日まで再チェック推奨） | 7 / 142 | 4.9% |
+| 🔎 not-found（取得不可） | 57 / 142 | 40.1% |
+| 👀 needs-review | 0 / 142 | 0.0% |
+| ⏳ 未着手 | 0 / 142 | 0.0% |
+
+着手時点（2026-05-05）は 1/142 → 5/6 中に **+77 件 done 化**。
+
+### 当初分類（事前準備時点）
+
+- X あり: 119
+- Instagram あり: 74
+- Website あり: 0
+- **SNS なし**（即 not-found 確定）: 12
+
+### 現在の探索状況別チェックリスト
+
+- [a1-sns-checklist.md](./a1-sns-checklist.md): A1 群（Listen 未登録だが SNS あり）の探索進捗
+  - 21 done / 12 not-found / 23 未着手（5/6 19:14 時点）
+- [listen-rechecklist.md](./listen-rechecklist.md): B 群（Listen 登録あり）の探索結果
+  - 9 件 done 化済み（残り 14 件は探索余地なし、別経路で 3 件 done 化を追加発見）
 
 最新の数字は `npm run progress:merchandise` で `progress.md` を再生成して確認。
 
