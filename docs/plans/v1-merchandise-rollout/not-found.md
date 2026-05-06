@@ -55,7 +55,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-107 | ラジオただいま発酵中 | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-107/) のみ参照可能 | 2026-05-05 |
 | pcwe-127 | 暮らしのおへそラジオ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-127/) のみ参照可能 | 2026-05-05 |
 | pcwe-132 | 高揚館 | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-132/) のみ参照可能 | 2026-05-05 |
-| pcwe-001 | 電波惹句 | https://x.com/signal_cp | — | — | Spotifyエピソードで言及あるが物販詳細URL特定できず | 2026-05-05 |
 | pcwe-023 | 脳内口外 | https://x.com/nounaikougai | https://www.instagram.com/nounaikougai/ | — | ZINE制作言及あるが物販URL特定できず | 2026-05-05 |
 | pcwe-041 | 酒の道～日本酒の聖地から～@しぶさわくんFM | https://x.com/shibusawakunfm | — | — | PCWE物販投稿の特定なし | 2026-05-05 |
 | pcwe-047 | クリエイターエコノミーニュース | https://x.com/creator_enews | — | — | 検索ヒットなし | 2026-05-05 |
@@ -69,7 +68,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-111 | ワイングラスからこぼれ話。 | https://x.com/jellysPodcast | — | — | PODCAST EXPO 2026出店確認できるが、X（@jellysPodcast）の物販詳細投稿は特定できなかった。 | 2026-05-05 |
 | pcwe-123 | 読んでみてはラジオ | https://x.com/yondemiteha | — | — | 番組ホスト（@yondemiteha）のPCWE2026物販詳細投稿は見つからなかった。 | 2026-05-05 |
 | pcwe-137 | HOG POT | https://x.com/PURE_COMEDY | https://www.instagram.com/p_ure_comedy/ | — | 番組ホスト（@PURE_COMEDY）のPCWE2026物販詳細投稿は見つからなかった。 | 2026-05-05 |
-| pcwe-003 | すべての道はジャズに通ず。 | https://x.com/subejazz | — | — | PCWE2026 (5/9-10) 出店番組として確認できる物販詳細投稿は WebSearch で発見できず。過去 (Podcast Weekend 2024) には参加実績ありだが 2026 向けの物販ラインナップを示す SNS 投稿/note は未確認。X: https://x.com/subejazz をユーザー側で直接確認推奨。 | 2026-05-05 |
 | pcwe-019 | 高橋クリスのFA_RADIO:工場自動化ポッドキャスト | https://x.com/fulhause | — | — | PCWE2026 出店組としての言及・物販詳細投稿は WebSearch で発見できず。X: https://x.com/fulhause を直接確認推奨。 | 2026-05-05 |
 | pcwe-031 | 中2の魂100まで | https://x.com/soulofchu2_100 | — | — | 番組のX投稿で雑談系ポッドキャスト系イベントへの参加表明は確認できたが、PCWE2026 物販ラインナップを示す詳細投稿は WebSearch で発見できず。X: https://x.com/soulofchu2_100 直接確認推奨。 | 2026-05-05 |
 | pcwe-112 | 深呼吸できる女とできない女 | https://x.com/shinjo_podcast | — | — | PCWE2026 物販詳細投稿は WebSearch で発見できず。X: https://x.com/shinjo_podcast を直接確認推奨。 | 2026-05-05 |
