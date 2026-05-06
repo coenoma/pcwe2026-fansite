@@ -59,12 +59,12 @@
 | pcwe-086 | 風呂あがりのアイスキャンディー | https://x.com/ofucan1121 | — | — | 👤 菊池 | ✅ | https://x.com/ofucan1121/status/2034645926711812240 しおり「サンセットブックマーク」 | 05-06 |
 | pcwe-087 | LocalTacoStories~耳で味わうエシカルな旅~ | — | https://www.instagram.com/localtacost... | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-088 | 推しと原稿の間で | https://x.com/okiarichan27 | — | — | 👤 菊池 | ✅ | https://x.com/okiarichan27/status/2051950185056731205 エンタメ処方箋・公開収録 | 05-06 |
-| pcwe-090 | 桃花茶館〜薬膳もも子ラジオ〜 | — | https://www.instagram.com/tofachakan_... | — | 👤 菊池 | ⏳ | — | — |
-| pcwe-091 | Kids’ News – キッズニュース | https://x.com/rinaarailevia | — | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-094 | 荒ぶるペーのオネエじゃないのよ | https://x.com/fuji_tate_p | https://www.instagram.com/fuji_tate_p | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-090 | 桃花茶館〜薬膳もも子ラジオ〜 | — | https://www.instagram.com/tofachakan_radio | — | 👤 菊池 | ✅ | https://www.instagram.com/p/DWDOBbrEoaI/ 5/9 薬膳ジェラート・茶・レシピ本・ステッカー・おまもりポーチ | 05-06 |
+| pcwe-091 | Kids’ News – キッズニュース | https://x.com/rinaarailevia | — | — | 🤖 Claude | ✅ | https://x.com/RinaAraiLevia/status/2051927908072202520 5/10 キッズニュースビンゴ・ワークブック | 05-06 |
+| pcwe-094 | 荒ぶるペーのオネエじゃないのよ | https://x.com/fuji_tate_p | https://www.instagram.com/fuji_tate_p | — | 👤 菊池 | ✅ | https://x.com/fuji_tate_p/status/2051855154996281618 5/10 新作グッズ（工作） | 05-06 |
 | pcwe-095 | ハタとキシマの“黙っていられん” | https://x.com/damaren_radio | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-097 | 戦略的幸福論〜AI時代をどう生きる？〜 | https://x.com/tiedfamily244 | — | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-100 | 「いま、暇？」急いで準備するからちょっと飲まない？ | https://x.com/imahimanomanai | — | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-100 | 「いま、暇？」急いで準備するからちょっと飲まない？ | https://x.com/imahimanomanai | — | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | pcwe-102 | watashito | — | https://www.instagram.com/watashito_p... | — | 👤 菊池 | ⏳ | — | — |
 | pcwe-103 | SONICWAVEの3355ラジオ | https://x.com/weare_sonicwave | https://www.instagram.com/we_are_soni... | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-108 | BACKYARD TO CLOSET | https://x.com/slwanstdy | https://www.instagram.com/at_slowands... | — | 👤 菊池 | ⏳ | — | — |
@@ -91,8 +91,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 40 件
+- ⏳ 未着手: 36 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 12 件（pcwe-006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088）
-- ❌ 告知なし確定: 4 件（pcwe-026, 044, 045, 056）
+- ✅ done 化済み: 15 件（pcwe-006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094）
+- ❌ 告知なし確定: 5 件（pcwe-026, 044, 045, 056, 100）
 - 👀 候補あり要判断: 0 件
