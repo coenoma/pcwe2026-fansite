@@ -12,6 +12,14 @@
       "もしかしたら新刊）",
       "ポッドキャストが流れるアクリルキーホルダー",
       "ステッカー"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（#100 ポッドキャストウィークエンド直前スペシャル！！）",
+        "description": "PODCAST WEEKEND 2026（5月9日）に #愛の抵抗 として出店予定。既刊のZINEとアクリルキーホルダーを販売予定。お品書きの詳細はnote（https://note.com/asa_utsumi/n/n5a82a1833e81）で公開。具体的な商品ラインナップ（個別商品名・価格）はエピソード本文では明示されていない",
+        "sourceUrl": "https://listen.style/p/ainoteikou/ddauhm7m",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -25,7 +33,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/2msDcnMJrgjggqUYFEztLr",
     "x": "https://x.com/asa_utsumi",
-    "instagram": "https://www.instagram.com/asa_utsumi"
+    "instagram": "https://www.instagram.com/asa_utsumi",
+    "listen": "https://listen.style/p/ainoteikou"
   },
   "recommendedEpisode": {
     "title": "#88 信じる力・祈る力〜NHK「山口一郎　 “うつ”と生きる」を見て〜",

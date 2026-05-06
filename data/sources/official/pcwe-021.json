@@ -10,6 +10,14 @@
       "神回エピソードガチャ",
       "PCWE2026限定Tシャツ",
       "オリジナルデジタル名刺作成"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（【PCWE】ポッドキャストって何？#2026）",
+        "description": "PCWE2026出展（2026年5月9日）。神回エピソードガチャ（200番組以上から厳選した神回をガチャカプセルに詰めて配布）、NFCタグ入りプレーリーカード作成（推し番組のステッカーを貼り、その場でNFCタグに番組URLを書き込み）、数量限定Tシャツ販売（出店全番組のアートワークを使用したデザイン）",
+        "sourceUrl": "https://listen.style/p/podcastalk",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -22,7 +30,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/3N7FlRxLFv2YwWbMowXJLC",
-    "x": "https://x.com/VoiceCapsule_PT"
+    "x": "https://x.com/VoiceCapsule_PT",
+    "listen": "https://listen.style/p/podcastalk"
   },
   "recommendedEpisode": {
     "title": "【メープルウィークエンド】豪華ポッドキャスターが集結したらこんな感じになりました",

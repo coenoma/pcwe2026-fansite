@@ -9,6 +9,14 @@
     "merchandise": [
       "八朔ジュース",
       "農業クイズ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（10・31 番組イベント開催！『ひるののうか』（みかん収穫体）",
+        "description": "PODCAST WEEKEND / PODCAST EXPO 2026（5月9日、東京・池尻 HOME/WORK VILLAGE）にて『八朔ジュース』を販売予定。「農産物以外は売れない」事情から八朔ジュースに絞ったとの言及。ホスト2名分の2種類のジュースを用意。価格はエピソード内で明示なし",
+        "sourceUrl": "https://listen.style/p/yorunonouka/8klseuwk",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -21,7 +29,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/39Y1Qxp4yjqA8cJ98qrDJ8",
-    "x": "https://x.com/kobukirubiru"
+    "x": "https://x.com/kobukirubiru",
+    "listen": "https://listen.style/p/yorunonouka"
   },
   "recommendedEpisode": {
     "title": "「草刈機の音」アワード",

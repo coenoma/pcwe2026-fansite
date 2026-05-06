@@ -9,6 +9,14 @@
     "merchandise": [
       "ステッカー",
       "パーカー"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（「健康的な甘え」と「不健康な甘え」 の見極め方（3周年記念回）",
+        "description": "5月10日 PODCAST EXPO 2026 にブース出展予定。リスナーとの直接交流が目的。目印として『オレンジのタオル』を持つよう案内。具体的な物販商品名・価格は本エピソードでは未記載。",
+        "sourceUrl": "https://listen.style/p/teacherteacher/cvswgyh5",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -22,7 +30,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/6E6qDLbwzrot6slopywkwr",
     "x": "https://x.com/onlinet0719",
-    "instagram": "https://www.instagram.com/team_teacherteacher/"
+    "instagram": "https://www.instagram.com/team_teacherteacher/",
+    "listen": "https://listen.style/p/teacherteacher"
   },
   "recommendedEpisode": {
     "title": "「子どもの遅刻癖がなおらない…」トークンシステムでポジティブな行動を奨励せよ",

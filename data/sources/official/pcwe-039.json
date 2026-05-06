@@ -12,6 +12,14 @@
       "缶ミラー",
       "缶バッジ",
       "ステッカー"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（PODCAST EXPO 2026：国内最大級のポッドキャス）",
+        "description": "出展日: 5月9日(土)のみ（5月10日は出展なし）。物販: ラジ推しロゴTシャツ 4,000円、ステッカー1枚 300円・2枚セット 500円、チケットホルダー 1,500円、番組台本集 500円、缶バッジセット 800円、缶ミラー 600円、サウンドカード（WE ARE VAZEE KNIGHT）500円。特別企画として推しボード参加者にステッカープレゼント、マシロマッシュ氏・牛若氏とのポッドラッププロジェクト・コラボ楽曲。キャッシュレス決済対応",
+        "sourceUrl": "https://listen.style/p/radioshiyy/7nxv1vb5",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -25,7 +33,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/021I3QnLXBOpAgZgYlFB8E",
     "x": "https://x.com/yutomajiyuto",
-    "instagram": "https://www.instagram.com/radioshiyy_official/"
+    "instagram": "https://www.instagram.com/radioshiyy_official/",
+    "listen": "https://listen.style/p/radioshiyy"
   },
   "recommendedEpisode": {
     "title": "【感想回】ミュージカル『十二国記 -月の影 影の海-』：十二国記の世界の息遣いを感じられる極上の観劇体験！",

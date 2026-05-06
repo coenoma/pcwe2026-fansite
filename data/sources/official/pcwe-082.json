@@ -12,6 +12,20 @@
       "手ぬぐい",
       "ワイングラス",
       "ステッカー"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（#244 風とワイン2026を振り返り）",
+        "description": "ポッドキャストウィークエンド出展への言及あり。番組ページに『ワインの輪オンラインショップ https://circleofwine.official.ec/』のリンクあり。物販詳細は本文に明記なし。",
+        "sourceUrl": "https://listen.style/p/qivjtsb2",
+        "sourceType": "web"
+      },
+      {
+        "name": "PCWE2026 出展告知（#243 ジョージアの風・ウガンダの風）",
+        "description": "2026/4/24配信。PODCAST WEEKENDへの参加に言及（公式リンク https://podcastexpo.jp/podcastweekend/ 記載）",
+        "sourceUrl": "https://listen.style/p/qivjtsb2",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -26,7 +40,8 @@
   "links": {
     "applePodcasts": "https://podcasts.apple.com/jp/podcast/%E3%83%AF%E3%82%A4%E3%83%B3%E3%81%AE%E8%BC%AA/id1507494892",
     "x": "https://x.com/winenowa",
-    "instagram": "https://www.instagram.com/winenowa/"
+    "instagram": "https://www.instagram.com/winenowa/",
+    "listen": "https://listen.style/p/qivjtsb2"
   },
   "recommendedEpisode": {
     "title": "#225 『ギターとワイン・音から想像するワイン』",

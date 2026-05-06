@@ -10,6 +10,14 @@
       "ステッカー",
       "ZINE",
       "ラジオ収録体験"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（#87 国内最大のPodcastイベントに出ます！【PCWE）",
+        "description": "PODCAST EXPO 2026（5月9日(土)・10日(日)、HOME/WORK VILLAGE 東京都世田谷区池尻2-4-5）に出展。出展2日目（5月10日）にラジオ収録体験を企画。3年応募し続けてようやく出展決定との内容。本エピソードには物販商品名・価格は明記されていない",
+        "sourceUrl": "https://listen.style/p/ryukohe",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -23,7 +31,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/0n57AqUPNmhyKpvYY2jKYc",
     "x": "https://x.com/radio_sukishita",
-    "instagram": "https://www.instagram.com/radio_sukishita/"
+    "instagram": "https://www.instagram.com/radio_sukishita/",
+    "listen": "https://listen.style/p/ryukohe"
   },
   "recommendedEpisode": {
     "title": "#85 スケボーって何が悪いの？",
