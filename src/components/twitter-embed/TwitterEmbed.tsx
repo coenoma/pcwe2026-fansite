@@ -9,6 +9,10 @@
  * - iframe を持たないため、CSP 制約・widgets.js のタイミング問題から解放される
  * - 画像も syndication API 経由で取得した URL を使うため X TOS（Display Requirements）に準拠
  *
+ * 配置:
+ * - 番組詳細ページの「ブース物販」だけでなく、将来のマップポップアップ等でも使う想定で
+ *   `src/components/twitter-embed/` に配置している
+ *
  * 関連:
  * - https://react-tweet.vercel.app/next
  * - https://github.com/vercel/react-tweet
