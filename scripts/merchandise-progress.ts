@@ -202,14 +202,8 @@ function formatProgressMd(summary: Summary): string {
   } else {
     lines.push('| ID | 番組名 | SNS |');
     lines.push('|---|---|---|');
-    // X あり → IG のみ → Web のみ → SNS なし
+    // X あり → IG のみ → Web のみ → SNS なし、同順位なら ID 昇順
     const sorted = [...pending].sort((a, b) => {
-      const score = (p: ClassifiedProgram) =>
-        (p.hasX ? 0 : 0) + (p.hasX ? 0 : p.hasInstagram ? 1 : p.hasWebsite ? 2 : 3);
-      // 上記は誤魔化し。再書き直し:
-      return 0;
-    });
-    sorted.sort((a, b) => {
       const rank = (p: ClassifiedProgram) =>
         p.hasX ? 0 : p.hasInstagram ? 1 : p.hasWebsite ? 2 : 3;
       const ra = rank(a);
