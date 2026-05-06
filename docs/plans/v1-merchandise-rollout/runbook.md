@@ -177,18 +177,28 @@ npx serve out -p 3015 &
 
 ---
 
-## ステップ 8: not-found に移動（投稿が見つからなかった場合）
+## ステップ 8: 適切なステータスに移動
+
+物販詳細が確定できなかった場合、以下のいずれかに振り分ける（[README.md](./README.md) 参照）。
+
+### A. ユーザーが目視確認した結果「現時点で言及なし、当日に向けて期待」
+
+`docs/plans/v1-merchandise-rollout/monitoring.md` に追記。
+当日（5/9-10）が近づいたら再チェックすべき番組。
+
+```markdown
+| pcwe-XXX | 番組名 | https://x.com/handle | — | — | ユーザー目視で言及なし確認。常設グッズショップあり。当日近くの新規告知投稿を再チェック推奨 | 2026-05-06 |
+```
+
+### B. AI が候補 URL を発見したが PCWE2026 の確証が取れない
+
+`docs/plans/v1-merchandise-rollout/needs-review.md` に追記。
+ユーザー判断で done 昇格 or not-found 確定するためのリスト。
+
+### C. 探索手段なし / 過去年度のものしか見つからない / 削除済み
 
 `docs/plans/v1-merchandise-rollout/not-found.md` の表に追記。
-記載項目:
-
-- 番組 ID
-- 番組名
-- 公式 X / Instagram / Website URL
-- 調査メモ（どこを見て、なぜ見つからなかったか）
-- 最終調査日
-
-例:
+確定的に取得不可と判定されたもの。
 
 ```markdown
 | pcwe-XXX | 番組名 | https://x.com/handle | （IG なし） | （Web なし） | X タイムラインに 2026-04 以降 PCWE2026 関連投稿なし。最新投稿は 2026-03-15 | 2026-05-05 |

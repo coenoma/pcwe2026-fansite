@@ -4,12 +4,16 @@
  *
  * 実行: npm run progress:merchandise
  *
- * 集計ロジック:
+ * 集計ロジック（5 段階）:
  * - data/programs.json を読み込み
  * - 各番組について merchandiseDetails の有無で done を判定
  * - needs-review.md の表から `pcwe-XXX` を抽出 → needs-review リスト
+ *   （AI が候補は見つけたが PCWE2026 確証なし、ユーザー判断待ち）
+ * - monitoring.md の表から `pcwe-XXX` を抽出 → monitoring リスト
+ *   （ユーザー確認で現時点言及なし、当日近くに再チェック）
  * - not-found.md の表から `pcwe-XXX` を抽出 → not-found リスト
- * - 残りが pending（done / needs-review / not-found のいずれでもない番組）
+ *   （探索手段なし / 過去年度のみ等、確定的に取得不可）
+ * - 残りが pending（着手前）
  *
  * 出力: 集計表 + 各カテゴリのリスト（X / IG / Web の有無付き）
  */
@@ -22,6 +26,7 @@ const ROOT = process.cwd();
 const PROGRAMS_PATH = join(ROOT, 'data/programs.json');
 const NOT_FOUND_PATH = join(ROOT, 'docs/plans/v1-merchandise-rollout/not-found.md');
 const NEEDS_REVIEW_PATH = join(ROOT, 'docs/plans/v1-merchandise-rollout/needs-review.md');
+const MONITORING_PATH = join(ROOT, 'docs/plans/v1-merchandise-rollout/monitoring.md');
 const OUTPUT_PATH = join(ROOT, 'docs/plans/v1-merchandise-rollout/progress.md');
 
 function loadPrograms(): readonly Program[] {
@@ -55,6 +60,7 @@ interface Summary {
   total: number;
   done: ClassifiedProgram[];
   needsReview: ClassifiedProgram[];
+  monitoring: ClassifiedProgram[];
   notFound: ClassifiedProgram[];
   pending: ClassifiedProgram[];
 }
@@ -62,10 +68,12 @@ interface Summary {
 function classify(
   programs: readonly Program[],
   needsReviewIds: Set<string>,
+  monitoringIds: Set<string>,
   notFoundIds: Set<string>,
 ): Summary {
   const done: ClassifiedProgram[] = [];
   const needsReview: ClassifiedProgram[] = [];
+  const monitoring: ClassifiedProgram[] = [];
   const notFound: ClassifiedProgram[] = [];
   const pending: ClassifiedProgram[] = [];
 
@@ -83,6 +91,8 @@ function classify(
       done.push(cp);
     } else if (needsReviewIds.has(p.id)) {
       needsReview.push(cp);
+    } else if (monitoringIds.has(p.id)) {
+      monitoring.push(cp);
     } else if (notFoundIds.has(p.id)) {
       notFound.push(cp);
     } else {
@@ -90,7 +100,14 @@ function classify(
     }
   }
 
-  return { total: programs.length, done, needsReview, notFound, pending };
+  return {
+    total: programs.length,
+    done,
+    needsReview,
+    monitoring,
+    notFound,
+    pending,
+  };
 }
 
 function snsBadges(p: ClassifiedProgram): string {
@@ -102,8 +119,9 @@ function snsBadges(p: ClassifiedProgram): string {
 }
 
 function formatProgressMd(summary: Summary): string {
-  const { total, done, needsReview, notFound, pending } = summary;
-  const handled = done.length + needsReview.length + notFound.length;
+  const { total, done, needsReview, monitoring, notFound, pending } = summary;
+  const handled =
+    done.length + needsReview.length + monitoring.length + notFound.length;
   const pct = ((handled / total) * 100).toFixed(1);
 
   const now = new Date();
@@ -122,9 +140,10 @@ function formatProgressMd(summary: Summary): string {
   lines.push('|---|---:|---:|');
   lines.push(`| ✅ 完了（merchandiseDetails あり） | ${done.length} | ${((done.length / total) * 100).toFixed(1)}% |`);
   lines.push(`| 👀 ユーザー確認待ち（needs-review.md 記載） | ${needsReview.length} | ${((needsReview.length / total) * 100).toFixed(1)}% |`);
+  lines.push(`| 🔄 言及なし・要再チェック（monitoring.md 記載） | ${monitoring.length} | ${((monitoring.length / total) * 100).toFixed(1)}% |`);
   lines.push(`| 🔎 取得不可（not-found.md 記載） | ${notFound.length} | ${((notFound.length / total) * 100).toFixed(1)}% |`);
   lines.push(`| ⏳ 未着手（pending） | ${pending.length} | ${((pending.length / total) * 100).toFixed(1)}% |`);
-  lines.push(`| **着手済 (done + needs-review + not-found)** | **${handled} / ${total}** | **${pct}%** |`);
+  lines.push(`| **着手済 (done + needs-review + monitoring + not-found)** | **${handled} / ${total}** | **${pct}%** |`);
   lines.push('');
 
   // pending を SNS の有無で内訳
@@ -169,6 +188,23 @@ function formatProgressMd(summary: Summary): string {
     lines.push('| ID | 番組名 | SNS |');
     lines.push('|---|---|---|');
     for (const p of needsReview) {
+      lines.push(`| ${p.id} | ${p.name} | ${snsBadges(p)} |`);
+    }
+  }
+  lines.push('');
+
+  lines.push('---');
+  lines.push('');
+  lines.push('## 🔄 言及なし・要再チェック（monitoring）');
+  lines.push('');
+  lines.push(`詳細は [monitoring.md](./monitoring.md) 参照。ユーザーが確認して現時点では物販告知なし。当日（5/9-10）に向けて新告知が出る可能性があり、定期的に再チェック推奨。`);
+  lines.push('');
+  if (monitoring.length === 0) {
+    lines.push('（まだありません）');
+  } else {
+    lines.push('| ID | 番組名 | SNS |');
+    lines.push('|---|---|---|');
+    for (const p of monitoring) {
       lines.push(`| ${p.id} | ${p.name} | ${snsBadges(p)} |`);
     }
   }
@@ -224,13 +260,19 @@ function main(): void {
   console.log('🔢 物販ロールアウト進捗を集計中...');
   const programs = loadPrograms();
   const needsReviewIds = loadIdsFromMd(NEEDS_REVIEW_PATH);
+  const monitoringIds = loadIdsFromMd(MONITORING_PATH);
   const notFoundIds = loadIdsFromMd(NOT_FOUND_PATH);
-  const summary = classify(programs, needsReviewIds, notFoundIds);
+  const summary = classify(
+    programs,
+    needsReviewIds,
+    monitoringIds,
+    notFoundIds,
+  );
   const md = formatProgressMd(summary);
   writeFileSync(OUTPUT_PATH, md);
   console.log(`✅ ${OUTPUT_PATH} を更新しました`);
   console.log(
-    `   完了: ${summary.done.length} / 確認待ち: ${summary.needsReview.length} / 取得不可: ${summary.notFound.length} / 未着手: ${summary.pending.length} (合計: ${summary.total})`,
+    `   完了: ${summary.done.length} / 確認待ち: ${summary.needsReview.length} / 要再チェック: ${summary.monitoring.length} / 取得不可: ${summary.notFound.length} / 未着手: ${summary.pending.length} (合計: ${summary.total})`,
   );
 }
 
