@@ -35,7 +35,6 @@ done に昇格させるか not-found に確定するかを決めるためのリ�
 |---|---|---|---|---|
 | pcwe-016 | overture〜ミュージカル好きの語り部屋〜 | https://creators.spotify.com/pod/profile/u6052u5149u7f8eu91cc/episodes/91-PCWE-e2pb2fh | 過去年度の振り返り（要再調査） | **AI が一度 done として誤掲載 → 降格**。Spotify エピソード #91「ゲスト回感想メール紹介＆PCWE 番組グッズ公開」は **PCWE2024（2024/11/3）の物販告知**であり、PCWE2026 用ではない。PCWE2026 用の物販告知は別エピソードや SNS にあるかもしれず、要再調査。 |
 | pcwe-037 | 映画の話したすぎるラジオ | https://suzuri.jp/virtualeigabar | https://x.com/virtualeigabar （X 投稿で 5/10 ZINE 販売告知あり、URL 取得不可） | SUZURI に「virtualeigabar」公式ショップあり。PCWE 限定告知は未確認。 |
-| pcwe-074 | チカブレンド | https://www.threads.com/@chika_blend/post/DRiSHGSCNrE / https://ckbld.official.ec/ | 告知言及あるが固有 URL 未特定 | Threads に物販投稿（完売・再販告知）あり、CHIKA BLEND STORE 公式 EC あり。Threads は埋め込み未対応のため、別の SNS / 公式サイト URL があれば望ましい。 |
 | pcwe-099 | 本の虫のススメ | https://x.com/honnomushi_ssm | 告知言及あるが固有 URL 未特定 | 文フリ東京と PCWE 両方に出展、自著「Podcastのススメ」を Booth/Amazon で販売中、過去 PCWE 参加実績あり。X タイムラインで PCWE 物販告知投稿が見つかれば即 done 化可能。 |
 | pcwe-101 | ゲイで茶を沸かす | https://wabisabi-cha.com/column/874/ | 過去年度の振り返り | PCWE2024 ブース紹介記事（T シャツ・ミニ扇子＝茶マーク）。記事内で PCWE2026 5/9 出店予定にも言及。2026 で同じ物販を売るかは不明。 |
 | pcwe-118 | 朝日新聞ポッドキャスト | https://x.com/AsahiPodcast | 告知言及あるが固有 URL 未特定 | X タイムラインで「朝リスちゃんグッズ 3 ステップキャンペーン」を PCWE2026 開催に合わせて告知中（subagent 報告）。固有 status URL 取得できれば react-tweet で即埋め込み可能。 |

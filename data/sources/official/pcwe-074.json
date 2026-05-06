@@ -14,6 +14,74 @@
       "トートバッグ",
       "ステッカー",
       "コーヒー豆"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "フォト ZINE（撮影：近本光司）",
+        "description": "¥3,000。近本さんがキャンプ中にプライベートで撮影したアート作品。お気に入りのグラインダーを被写体に、様々なシーンを撮影。それぞれのテーマやメッセージを読み取る楽しさ。数量限定。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "コーヒー豆「CHIKA BLEND」 250g",
+        "description": "¥3,300。近本さんが自らテイスティングして作ったオリジナルブレンド。EC 発売では毎回当日に売り切れる人気商品。100 袋限定で販売。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "タンブラー（ベージュ / ホワイト）",
+        "description": "¥4,950。昨年 12 月に販売して即完となった人気タンブラーの新色。近本さんもコーヒーをタンブラーに入れて球場に持っていっている週間があるところから着想を受けて制作。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "トートバッグ（ブラック）",
+        "description": "¥4,950。前回大人気で即完した人気商品。球場に行く時の荷物入れにとても重宝。今回は一番人気だった黒のみ販売。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "ステッカー",
+        "description": "¥300。チカブレンドで登場した名言やキーワードをモチーフに遊び心のあるステッカーを限定発売。近本さんもご自身のパソコンや AirPods のケースに貼り付けて楽しんでいるとのこと。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "単行本「僕は白と黒の間で生きている。」",
+        "description": "¥1,980。今年 3/25 発売の初の書籍を会場で販売。チカブレンドの世界を体系的に感じる事ができる。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "限定エピソードのしおり（無料配布）",
+        "description": "ブースで無料エピソードの QR コードが書かれたしおりを先着順でプレゼント。プロデューサー Ryu と近本さんが収録した「受け取った人だけが聴ける、ミニ番組」付き。数量限定。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "🎙 Podcast レコーディング体験",
+        "description": "ブースに近本さんが普段利用しているマイクを設置し、収録できるようになっている体験コンテンツ。あなたの 60 秒エピソードが番組で採用されるかも。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "🫘 コーヒーミル体験",
+        "description": "フォト ZINE にも登場する、近本光司の私物のコーヒーミルに触れる事ができる体験コンテンツ。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "📷 写真展示",
+        "description": "竹内裕二カメラマンによる、昨年 12 月のイベントの際に撮影された近本光司のスナップ写真や、書籍の写真の未公開カットなどを展示。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "👑 トロフィー展示",
+        "description": "2026 ポッドキャストアワード企画賞受賞時に贈呈されたトロフィーを展示。",
+        "sourceUrl": "https://www.instagram.com/chika_blend/",
+        "sourceType": "instagram-post"
+      }
     ]
   },
   "exhibition": {
