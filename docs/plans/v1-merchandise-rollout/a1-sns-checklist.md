@@ -32,8 +32,8 @@
 |---|---|---|---|---|---|---|---|---|
 | pcwe-001 | 電波惹句 | https://x.com/signal_cp | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-003 | すべての道はジャズに通ず。 | https://x.com/subejazz | — | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-006 | 本茶本茶ー１冊の本をお茶とともに | https://x.com/honcha_honcha | — | — | 👤 菊池 | ⏳ | — | — |
-| pcwe-010 | 地方ゲイだけど丁寧な暮らしがしたい | https://x.com/chihougay | — | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-006 | 本茶本茶ー１冊の本をお茶とともに | https://x.com/honcha_honcha | — | — | 👤 菊池 | ✅ | https://x.com/honcha_honcha/status/2029180276392517902 両日出店、本＆お茶 | 05-06 |
+| pcwe-010 | 地方ゲイだけど丁寧な暮らしがしたい | https://x.com/chihougay | — | — | 👤 菊池 | ✅ | https://x.com/chihougay/status/2051644039129432304 PCWE限定ステッカー3種 | 05-06 |
 | pcwe-011 | てきと〜 | https://x.com/tekito9899 | https://instagram.com/tekito9899 | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-013 | ピスタチオパフェクラブ | https://x.com/pisparfaitclub | https://www.instagram.com/pisparfaitclub | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-015 | 好き趣味発見！まにまにラジオ | https://x.com/mani2radio | — | — | 🤖 Claude | ⏳ | — | — |
@@ -91,8 +91,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 56 件
+- ⏳ 未着手: 54 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 0 件
+- ✅ done 化済み: 2 件（pcwe-006, pcwe-010）
 - ❌ 告知なし確定: 0 件
 - 👀 候補あり要判断: 0 件

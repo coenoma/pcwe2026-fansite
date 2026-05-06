@@ -56,7 +56,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-127 | 暮らしのおへそラジオ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-127/) のみ参照可能 | 2026-05-05 |
 | pcwe-132 | 高揚館 | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-132/) のみ参照可能 | 2026-05-05 |
 | pcwe-001 | 電波惹句 | https://x.com/signal_cp | — | — | Spotifyエピソードで言及あるが物販詳細URL特定できず | 2026-05-05 |
-| pcwe-010 | 地方ゲイだけど丁寧な暮らしがしたい | https://x.com/chihougay | — | — | 検索ヒットなし | 2026-05-05 |
 | pcwe-023 | 脳内口外 | https://x.com/nounaikougai | https://www.instagram.com/nounaikougai/ | — | ZINE制作言及あるが物販URL特定できず | 2026-05-05 |
 | pcwe-041 | 酒の道～日本酒の聖地から～@しぶさわくんFM | https://x.com/shibusawakunfm | — | — | PCWE物販投稿の特定なし | 2026-05-05 |
 | pcwe-047 | クリエイターエコノミーニュース | https://x.com/creator_enews | — | — | 検索ヒットなし | 2026-05-05 |
@@ -97,7 +96,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-125 | 女性がよく寝てよく働けるラジオ　わたしとねむり研究所 | https://x.com/watashitonemuri/status/2031120340861006226 | https://www.instagram.com/sleep.femtech/ | — | 番組SNS・公式サイトでPCWE2026出展や物販に関する詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-133 | チ的好奇心のすすめ | https://x.com/2iche_takucho | https://www.instagram.com/takuchotaku | — | 番組SNSでPCWE2026の物販詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-139 | ぬまずっきゅーんfromみんキャス | https://x.com/numazukyun | https://www.instagram.com/numazukyun/ | — | 沼津マルシェ等のローカルイベントでオリジナルグッズ販売実績はあるが、PCWE2026固有の物販詳細投稿は未確認 | 2026-05-05 |
-| pcwe-006 | 本茶本茶ー１冊の本をお茶とともに | https://x.com/honcha_honcha | — | — | 「本茶本茶 PCWE2026 物販」「本茶本茶 ポッドキャスト グッズ Podcast Weekend」で検索したが、PCWE2026 出展告知や物販詳細投稿は発見できず。番組固有のグッズ販売情報も見当たらない。 | 2026-05-05 |
 | pcwe-014 | オバトーク | https://x.com/obatalk2024 | — | — | PCWE2026 出展は確認済みだが、ホストの SNS / note / 公式サイトで PCWE2026 物販に特化した詳細投稿は発見できず。SUZURI グッズの存在は把握。 | 2026-05-05 |
 | pcwe-027 | 月岡ツキの月面通信 | https://x.com/olunnun | https://www.instagram.com/tsukky_dayo/ | — | 「月岡ツキの月面通信 PCWE2026 物販」「月岡ツキ Podcast Weekend 2026 グッズ」で検索したが、PCWE2026 出展は確認できるものの物販詳細投稿は発見できず。 | 2026-05-05 |
 | pcwe-033 | HYPLACE WAVE #はいなみ | https://x.com/hainami_758 | https://www.instagram.com/mash_january25 | — | 「HYPLACE WAVE はいなみ PCWE2026 物販」「Podcast Weekend グッズ 物販」で検索したが、PCWE2026 出展告知や物販詳細投稿は発見できず。番組内では Key Music Party 等のイベントは紹介されている。 | 2026-05-05 |
