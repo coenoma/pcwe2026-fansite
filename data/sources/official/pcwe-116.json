@@ -15,6 +15,14 @@
       "アクスタ",
       "ステッカー",
       "アパレル等"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 カポブラブース全解説エピソード",
+        "description": "5/9（土）・10（日）2 日間出展。Listen エピソード「Ep.90 発光ッッッ♡」（2026-04-24 公開）にて「カポブラは 2 日間一体何をするのか全解説！この回を聴けば PCWE カポブラブースが 120% 楽しめるかも！？」とホスト本人が告知。具体的な物販ラインナップは公式 boothpage に記載: おみくじ・撮影体験・ZINE・楽曲DLカード・ポストカード・アクスタ・ステッカー・アパレル等。",
+        "sourceUrl": "https://listen.style/p/pze2qlhk/sxztifkn",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -29,7 +37,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/6Kgh5ProKEHvwXOltIOz62",
     "x": "https://x.com/radio_CPB",
-    "instagram": "https://www.instagram.com/radio_cpb/"
+    "instagram": "https://www.instagram.com/radio_cpb/",
+    "listen": "https://listen.style/p/pze2qlhk"
   },
   "recommendedEpisode": {
     "title": "Ep.84「私はルンバになりました」",

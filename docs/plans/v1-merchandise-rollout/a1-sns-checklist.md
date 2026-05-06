@@ -70,9 +70,9 @@
 | pcwe-108 | BACKYARD TO CLOSET | https://x.com/slwanstdy | https://www.instagram.com/at_slowands... | — | 👤 菊池 | ✅ | https://listen.style/p/sands/mckvryof 両日 ペインティットブランク商品 | 05-06 |
 | pcwe-111 | ワイングラスからこぼれ話。 | https://x.com/jellysPodcast | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-112 | 深呼吸できる女とできない女 | https://x.com/shinjo_podcast | — | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
-| pcwe-114 | 愛されたい女たちのラブホ女子会 | https://x.com/aisaretaijyoshi | https://www.instagram.com/aisaretai.j... | — | 👤 菊池 | ⏳ | — | — |
-| pcwe-116 | カウチポテトブラザーズ | https://x.com/radio_CPB | https://www.instagram.com/radio_cpb/ | — | 👤 菊池 | ⏳ | — | — |
-| pcwe-117 | 玄石の原石 | https://x.com/genseki_podcast | — | — | 🤖 Claude | ⏳ | — | — |
+| pcwe-114 | 愛されたい女たちのラブホ女子会 | https://x.com/aisaretaijyoshi | https://www.instagram.com/aisaretai.j... | — | 👤 菊池 | ✅ | https://listen.style/p/aisaretaijyoshi/jryqisgx シール2種・缶バッジ3色・CDチャーム10限定・アクセ | 05-06 |
+| pcwe-116 | カウチポテトブラザーズ | https://x.com/radio_CPB | https://www.instagram.com/radio_cpb/ | — | 👤 菊池 | ✅ | https://listen.style/p/pze2qlhk/sxztifkn 両日 おみくじ・撮影体験・ZINE・楽曲DLカード等 | 05-06 |
+| pcwe-117 | 玄石の原石 | https://x.com/genseki_podcast | — | — | 🤖 Claude | ✅ | https://x.com/genseki_podcast/status/2050165025474822345 5/10 ステッカー・石井玄氏来場 | 05-06 |
 | pcwe-123 | 読んでみてはラジオ | https://x.com/yondemiteha | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-124 | 読書酒紀 | https://x.com/OfVoice59929 | — | — | 👤 菊池 | ⏳ | — | — |
 | pcwe-125 | 女性がよく寝てよく働けるラジオ　わたしとねむり研究所 | https://x.com/watashitonemuri/status/... | https://www.instagram.com/sleep.femtech/ | — | 🤖 Claude | ⏳ | — | — |
@@ -91,8 +91,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 33 件
+- ⏳ 未着手: 30 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 16 件（pcwe-006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094, 108）
+- ✅ done 化済み: 19 件（pcwe-006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094, 108, 114, 116, 117）
 - ❌ 告知なし確定: 7 件（pcwe-026, 044, 045, 056, 100, 102, 112）
 - 👀 候補あり要判断: 0 件
