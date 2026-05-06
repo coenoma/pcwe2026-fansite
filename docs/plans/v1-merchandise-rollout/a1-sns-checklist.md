@@ -37,14 +37,14 @@
 | pcwe-011 | てきと〜 | https://x.com/tekito9899 | https://instagram.com/tekito9899 | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-013 | ピスタチオパフェクラブ | https://x.com/pisparfaitclub | https://www.instagram.com/pisparfaitclub | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-015 | 好き趣味発見！まにまにラジオ | https://x.com/mani2radio | — | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-022 | ねむれぬ夜にはラブレター | https://x.com/ameniwaarisa | https://www.instagram.com/ameniwaarisa | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-022 | ねむれぬ夜にはラブレター | https://x.com/ameniwaarisa | https://www.instagram.com/ameniwaarisa | — | 👤 菊池 | ✅ | https://listen.style/p/ameniwaarisa/snfmpsjj 5/10 ブース16-B、新刊ZINE+トート+缶バッジ | 05-06 |
 | pcwe-023 | 脳内口外 | https://x.com/nounaikougai | https://www.instagram.com/nounaikougai/ | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-026 | 雨の日には本をさして。 | https://x.com/amehonns2 | https://www.instagram.com/amehons2 | — | 👤 菊池 | ⏳ | — | — |
-| pcwe-027 | 月岡ツキの月面通信 | https://x.com/olunnun | https://www.instagram.com/tsukky_dayo/ | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-030 | ダンドー・キュー | — | https://www.instagram.com/podcastddq | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-026 | 雨の日には本をさして。 | https://x.com/amehonns2 | https://www.instagram.com/amehons2 | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
+| pcwe-027 | 月岡ツキの月面通信 | https://x.com/olunnun | https://www.instagram.com/tsukky_dayo/ | — | 🤖 Claude | ✅ | https://www.instagram.com/p/DXeHu3vn2xh/ 5/10 著書4種+ステッカー+となしばアクキー | 05-06 |
+| pcwe-030 | ダンドー・キュー | — | https://www.instagram.com/podcastddq | — | 👤 菊池 | ✅ | https://www.instagram.com/p/DWQNDKZgcVI/ 「台湾AI男子」PCWE限定ポストカード | 05-06 |
 | pcwe-031 | 中2の魂100まで | https://x.com/soulofchu2_100 | — | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-036 | とみこはん&佐々木敬子「とみことけいこのたびたび、旅｣ | https://x.com/tomikohan%20(とみこはん)%20h... | https://www.instagram.com/tomikohan%2... | — | 👤 菊池 | ⏳ | — | — |
-| pcwe-044 | ひうら芳麗の楽女なニュース | https://x.com/marikosatoru | https://www.instagram.com/ladyfangchang | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-036 | とみこはん&佐々木敬子「とみことけいこのたびたび、旅｣ | https://x.com/sasakikeiko8 | https://www.instagram.com/tomikohan | — | 👤 菊池 | ✅ | URL 修正 + X投稿2件: 電鍋手ぬぐい・湯気手ぬぐい・エコバッグ・台湾パイにゃっプルケーキ・スタンプ・書籍 | 05-06 |
+| pcwe-044 | ひうら芳麗の楽女なニュース | https://x.com/marikosatoru | https://www.instagram.com/ladyfangchang | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | pcwe-045 | PodcastTimes｜ぽっどでの新人 | https://x.com/Podcast_TimesJP | https://www.instagram.com/podcasttime... | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-053 | 丘の上喫茶 | https://x.com/okanoue_kissa | https://www.instagram.com/okanoue_kissa/ | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-056 | ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！ | https://x.com/gcrc_divedeep | — | — | 👤 菊池 | ⏳ | — | — |
@@ -91,8 +91,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 54 件
+- ⏳ 未着手: 48 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 2 件（pcwe-006, pcwe-010）
-- ❌ 告知なし確定: 0 件
+- ✅ done 化済み: 6 件（pcwe-006, 010, 022, 027, 030, 036）
+- ❌ 告知なし確定: 2 件（pcwe-026, 044）
 - 👀 候補あり要判断: 0 件
