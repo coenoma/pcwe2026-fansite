@@ -9,9 +9,10 @@
     "officialMapDay2": "/images/map/pcwe2026-day2.webp"
   },
   "notes": [
-    "テント 30, 31 は元データに含まれず未割当（公式に確認必要）",
+    "テント 30, 31 は元データに含まれず未割当（一旦空白で進行、Q1 確認済み）",
     "テント 32 は ※キッチンブース（番組出展なし、特別ブース扱い）",
-    "PodWalker / まかないラジオ / アイデア刺激法 は programs.json に存在しない番組（要追加調査）"
+    "PodWalker / まかないラジオ / アイデア刺激法 〜どう？〜 は programs.json 未登録の追加出展者",
+    "マップ UI ではこれら 3 番組も表示するが、「番組詳細を見る」CTA は無効化（公式ブース URL のみ参照）"
   ],
   "tents": [
     {
@@ -255,7 +256,12 @@
           "position": "13-B",
           "sat": "pcwe-090",
           "sun": null,
-          "slot": "B"
+          "slot": "B",
+          "sunExternal": {
+            "kind": "external",
+            "name": "アイデア刺激法 〜どう？〜",
+            "note": "programs.json 未登録、PCWE 公式追加出展者"
+          }
         },
         {
           "position": "13-C",
@@ -553,7 +559,12 @@
           "position": "24-C",
           "sat": null,
           "sun": "pcwe-008",
-          "slot": "C"
+          "slot": "C",
+          "satExternal": {
+            "kind": "external",
+            "name": "PodWalker",
+            "note": "programs.json 未登録、PCWE 公式追加出展者"
+          }
         },
         {
           "position": "24-D",
@@ -607,7 +618,12 @@
           "position": "26-B",
           "sat": "pcwe-142",
           "sun": null,
-          "slot": "B"
+          "slot": "B",
+          "sunExternal": {
+            "kind": "external",
+            "name": "まかないラジオ",
+            "note": "programs.json 未登録、PCWE 公式追加出展者"
+          }
         },
         {
           "position": "26-C",
@@ -716,13 +732,13 @@
     {
       "id": 30,
       "shape": "single",
-      "note": "未割当（要追加データ）",
+      "note": "一旦空白（ユーザー Q1 確認、未割当のままリリース）",
       "slots": []
     },
     {
       "id": 31,
       "shape": "single",
-      "note": "未割当（要追加データ）",
+      "note": "一旦空白（ユーザー Q1 確認、未割当のままリリース）",
       "slots": []
     },
     {
