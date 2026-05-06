@@ -38,9 +38,9 @@ A1 群（Listen 未登録 + SNS あり）は全 56 件完走済み（37 done / 1
 
 | 状態 | ID | 番組名 | X | Instagram | Listen | 公式merch | 発見 URL / メモ | 更新日 |
 |---|---|---|---|---|---|---:|---|---|
-| ⏳ | pcwe-007 | 自分にやさしくするラジオ | https://x.com/sophieauthentic | — | https://listen.style/p/begentlewithyourself | 5 | — | — |
-| ⏳ | pcwe-014 | オバトーク | https://x.com/obatalk2024 | — | https://listen.style/p/obatalk | 4 | — | — |
-| ⏳ | pcwe-019 | 高橋クリスのFA_RADIO:工場自動化ポッドキャスト | https://x.com/fulhause | — | https://listen.style/p/faradio | 6 | — | — |
+| ✅ | pcwe-007 | 自分にやさしくするラジオ | https://x.com/sophieauthentic | — | https://listen.style/p/begentlewithyourself | 5 | https://x.com/SOPHIEauthentic/status/2051621345700770239 番組英語タイトル彫り入りノート | 05-06 |
+| ✅ | pcwe-014 | オバトーク | https://x.com/obatalk2024 | — | https://listen.style/p/obatalk | 4 | https://x.com/OBATalk2024/status/2051671413581656066 ポーチ・モババ・タロットおみくじ・対戦ゲーム | 05-06 |
+| ❌ | pcwe-019 | 高橋クリスのFA_RADIO:工場自動化ポッドキャスト | https://x.com/fulhause | — | https://listen.style/p/faradio | 6 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ⏳ | pcwe-033 | HYPLACE WAVE #はいなみ | https://x.com/hainami_758 | https://www.instagram.com/mash_january25 | https://listen.style/p/hainami758 | 3 | — | — |
 | ⏳ | pcwe-041 | 酒の道～日本酒の聖地から～@しぶさわくんFM | https://x.com/shibusawakunfm | — | https://listen.style/p/w6pm3kfn | 2 | — | — |
 | ⏳ | pcwe-046 | 人生百貨店 | https://x.com/lifedeptstores | https://www.instagram.com/lifedepartm... | https://listen.style/p/lifedeptstores | 3 | — | — |
@@ -57,10 +57,10 @@ A1 群（Listen 未登録 + SNS あり）は全 56 件完走済み（37 done / 1
 
 ## サマリ
 
-- ⏳ 未着手: 14 件
+- ⏳ 未着手: 11 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 0 件
-- ❌ 告知なし確定: 0 件
+- ✅ done 化済み: 2 件（pcwe-007, pcwe-014）
+- ❌ 告知なし確定: 1 件（pcwe-019）
 - 👀 候補あり要判断: 0 件
 
 ---
