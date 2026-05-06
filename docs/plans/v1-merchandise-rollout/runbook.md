@@ -216,6 +216,84 @@ npm run progress:merchandise
 
 ---
 
+## 大量精査（Listen.style 一括ワークフロー）
+
+not-found / monitoring / needs-review の番組について Listen.style の文字起こし
+や番組ページから物販詳細を発掘する場合のワークフロー。**生データを必ず永続化**
+することで、セッションが変わっても担当が変わっても引き継げる体制を保つ。
+
+### 1. 担当 batch ファイルを作成
+
+```bash
+# 例: not-found 117 件を 6 batch に分割
+python3 <<'EOF' > /dev/null
+import json, re
+with open('docs/plans/v1-merchandise-rollout/not-found.md') as f:
+    nf_ids = set(re.findall(r'\|\s*(pcwe-\d{3})\s*\|', f.read()))
+with open('data/programs.json') as f:
+    data = json.load(f)
+targets = [...]  # nf_ids に該当する番組を抽出
+n = 6
+for i, b in enumerate([targets[j::n] for j in range(n)]):
+    with open(f'docs/plans/v1-merchandise-rollout/listen-research/pcwe-listen-batch-{i+1}.json', 'w') as out:
+        json.dump(b, out, ensure_ascii=False, indent=2)
+EOF
+```
+
+`docs/plans/v1-merchandise-rollout/listen-research/` 配下に永続化すること
+（`/tmp` は将来消える）。
+
+### 2. subagent で並列探索
+
+各 batch ファイルを担当する subagent を 6 並列起動。プロンプトの厳守事項:
+
+- 創作禁止: 投稿 / エピソード本文で言及されていない物販を勝手に書かない
+- 過去年度禁止: PCWE2024（2024/11/3）/ PCWE2022 と PCWE2026 を混同しない
+- 2026 年明示確認: 「PCWE2026」「2026年5月9日(土)・10日(日)」等が明示されている
+  ものだけ採用
+
+各 subagent は結果を `docs/plans/v1-merchandise-rollout/listen-research/pcwe-listen-result-N.json`
+に書き出す（フォーマットは README 参照）。
+
+### 3. 結果反映 + 整合性同期
+
+```bash
+# 1. 探索結果を JSON に反映（merchandiseDetails 追加 + links.listen 追加）
+npm run apply:listen-research
+
+# 2. programs.json 再生成
+npm run build:programs
+
+# 3. done 化した番組を旧ステータスファイルから削除（整合性同期）
+npm run sync:status-files
+
+# 4. 進捗集計
+npm run progress:merchandise
+```
+
+各スクリプトは**冪等**なので再実行しても安全。
+
+### 4. ファクトチェック必要な番組は SKIP_DONE で
+
+subagent が found 判定したが日付やイベント名に齟齬があるケース（例:
+PCWE 公式日程「5/9-10」と本文「5/19」が一致しない pcwe-092）は、
+`scripts/apply-listen-research.ts` の `SKIP_DONE` セットに ID を追加して
+done 化対象外にする。代わりに `needs-review.md` へ手動で行を追加し、
+ユーザー確認後に再判定する。
+
+### 5. 引き継ぎ性の担保
+
+`docs/plans/v1-merchandise-rollout/listen-research/README.md` に生データの
+構造とスクリプトの動作を記載済み。新しい担当者は以下の順で確認すれば全体像を
+把握できる:
+
+1. README.md（このディレクトリの全体方針）
+2. listen-research/README.md（生データの説明）
+3. progress.md（自動生成、5 段階分類で現状把握）
+4. needs-review.md / monitoring.md / not-found.md（個別番組の状態）
+
+---
+
 ## ステップ 10: コミット（5〜10 番組まとめて）
 
 ```bash

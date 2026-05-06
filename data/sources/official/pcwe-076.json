@@ -10,6 +10,14 @@
       "書籍",
       "ステッカー",
       "Tシャツ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（Episode 168: f1loss (2026 F1春休）",
+        "description": "2026年5月9日（土）のみブース出展（PCWE-076）。物販はSUZURI（https://suzuri.jp/f1log）でTシャツ等を販売",
+        "sourceUrl": "https://listen.style/p/f1log",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -21,7 +29,8 @@
     "boothNumber": "076"
   },
   "links": {
-    "spotify": "https://open.spotify.com/show/1NusmfsiPklgv6rWHqe0O8"
+    "spotify": "https://open.spotify.com/show/1NusmfsiPklgv6rWHqe0O8",
+    "listen": "https://listen.style/p/f1log"
   },
   "recommendedEpisode": {
     "title": "148 - why he crashes again (Fl 編・映画エフワン/F1the Movieをみた後に聴きたくなる ネタバレポッドキャスト）",

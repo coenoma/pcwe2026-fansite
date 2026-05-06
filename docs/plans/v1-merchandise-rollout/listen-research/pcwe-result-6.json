@@ -1,0 +1,158 @@
+{
+  "batch": 6,
+  "results": [
+    {
+      "id": "pcwe-007",
+      "name": "自分にやさしくするラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "WebSearchで「自分にやさしくするラジオ PCWE2026 物販」「グッズ」を検索しても物販詳細投稿は見つからず、一般的なラジオサービスの情報のみ。"
+    },
+    {
+      "id": "pcwe-015",
+      "name": "好き趣味発見！まにまにラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "WebSearchで物販・グッズ関連の具体的な投稿は見つからず。番組固有の物販詳細投稿の特定不可。"
+    },
+    {
+      "id": "pcwe-022",
+      "name": "ねむれぬ夜にはラブレター",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組ページ（ポッドキャストランキング）は確認できたがPCWE2026の物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-028",
+      "name": "土曜のサカナ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "検索ではサカナクション関連の結果のみで、土曜のサカナ自体のPCWE2026物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-034",
+      "name": "想らしラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "WebSearchで物販・グッズ関連の具体的な投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-040",
+      "name": "俺思 | 週刊漫画家と装丁デザイナーのPodcast",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組概要と参加情報は確認できたが、PCWE2026での具体的な物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-046",
+      "name": "人生百貨店",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は確認できたが、物販詳細投稿の特定はできず。"
+    },
+    {
+      "id": "pcwe-054",
+      "name": "よるののうか",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://creators.spotify.com/pod/show/yorunonouka/episodes/ep-e1fgp8d",
+          "summary": "番組内のポッドキャストウィークエンド関連エピソード「【イベントお知らせ】ポッドキャストウィークエンド」。物販詳細はエピソード音声内で言及されている可能性が高い。",
+          "sourceType": "web"
+        }
+      ],
+      "note": "番組ページから「ポッドキャストウィークエンド」の告知エピソードを発見。SUZURIでオリジナルグッズ販売の言及もあり。具体的なPCWE2026物販投稿はSNS直接確認推奨。"
+    },
+    {
+      "id": "pcwe-060",
+      "name": "文学ラジオ空飛び猫たち",
+      "status": "not-found",
+      "candidates": [],
+      "note": "AKASAKA BOOK STUDIO 2026や世界とつながるブックフェアでZINE・グッズ委託販売の情報あり。PCWE2026固有の物販投稿は特定できず。"
+    },
+    {
+      "id": "pcwe-067",
+      "name": "平成女オタクのインドア同盟",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は確認できたが、物販詳細投稿の特定はできず。"
+    },
+    {
+      "id": "pcwe-073",
+      "name": "Radio18s/Teenagerからの映画部",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026参加は確認できたが、PCWE2026の物販詳細投稿の特定はできず。"
+    },
+    {
+      "id": "pcwe-081",
+      "name": "聴くと映画が観たくなる！CINEMORE",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-088",
+      "name": "推しと原稿の間で",
+      "status": "not-found",
+      "candidates": [],
+      "note": "WebSearchで物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-094",
+      "name": "荒ぶるペーのオネエじゃないのよ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "5/10（日）にPCWE2026出店の言及はあるが、物販詳細投稿の特定はできず。"
+    },
+    {
+      "id": "pcwe-102",
+      "name": "watashito",
+      "status": "not-found",
+      "candidates": [],
+      "note": "WebSearchで物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-109",
+      "name": "しゃらくさラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-115",
+      "name": "吉村ジョナサンの高校古典講義",
+      "status": "not-found",
+      "candidates": [],
+      "note": "WebSearchで物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-121",
+      "name": "ぜったい大丈夫だよラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-128",
+      "name": "アシタ・シアター",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026の物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-135",
+      "name": "まるごと放送室",
+      "status": "not-found",
+      "candidates": [],
+      "note": "神山まるごと高専Podcast部の番組として確認できたが、PCWE2026の物販詳細投稿は見つからず。"
+    },
+    {
+      "id": "pcwe-141",
+      "name": "Misa Yuka Podcast",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。"
+    }
+  ]
+}

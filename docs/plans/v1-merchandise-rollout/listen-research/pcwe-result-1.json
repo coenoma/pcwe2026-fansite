@@ -1,0 +1,182 @@
+{
+  "batch": 1,
+  "results": [
+    {
+      "id": "pcwe-001",
+      "name": "電波惹句",
+      "status": "not-found",
+      "candidates": [],
+      "note": "Spotifyエピソードで言及あるが物販詳細URL特定できず"
+    },
+    {
+      "id": "pcwe-010",
+      "name": "地方ゲイだけど丁寧な暮らしがしたい",
+      "status": "not-found",
+      "candidates": [],
+      "note": "検索ヒットなし"
+    },
+    {
+      "id": "pcwe-016",
+      "name": "overture〜ミュージカル好きの語り部屋〜",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://creators.spotify.com/pod/profile/u6052u5149u7f8eu91cc/episodes/91-PCWE-e2pb2fh",
+          "summary": "PCWE番組グッズ公開エピソード",
+          "sourceType": "web"
+        }
+      ],
+      "note": "Spotify ep91でPCWEグッズ公開"
+    },
+    {
+      "id": "pcwe-023",
+      "name": "脳内口外",
+      "status": "not-found",
+      "candidates": [],
+      "note": "ZINE制作言及あるが物販URL特定できず"
+    },
+    {
+      "id": "pcwe-029",
+      "name": "dining.fm",
+      "status": "not-found",
+      "candidates": [],
+      "note": "検索ヒットなし"
+    },
+    {
+      "id": "pcwe-035",
+      "name": "38℃ラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "缶バッジ予約フォーム言及あるが投稿URL不明"
+    },
+    {
+      "id": "pcwe-041",
+      "name": "酒の道～日本酒の聖地から～@しぶさわくんFM",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE物販投稿の特定なし"
+    },
+    {
+      "id": "pcwe-047",
+      "name": "クリエイターエコノミーニュース",
+      "status": "not-found",
+      "candidates": [],
+      "note": "検索ヒットなし"
+    },
+    {
+      "id": "pcwe-055",
+      "name": "工業高校農業部",
+      "status": "not-found",
+      "candidates": [],
+      "note": "SUZURI店舗ありPCWE物販投稿特定なし"
+    },
+    {
+      "id": "pcwe-061",
+      "name": "さのみきひとのラジオ ⌞ ラのみきジオ ⌝",
+      "status": "not-found",
+      "candidates": [],
+      "note": "検索ヒットなし"
+    },
+    {
+      "id": "pcwe-068",
+      "name": "ピーチウーロンの〇〇な気がする",
+      "status": "not-found",
+      "candidates": [],
+      "note": "検索ヒットなし"
+    },
+    {
+      "id": "pcwe-074",
+      "name": "チカブレンド",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://www.threads.com/@chika_blend/post/DRiSHGSCNrE",
+          "summary": "公式Threads物販投稿",
+          "sourceType": "web"
+        },
+        {
+          "url": "https://ckbld.official.ec/",
+          "summary": "CHIKA BLEND STORE公式",
+          "sourceType": "official-site"
+        }
+      ],
+      "note": "完売・再販告知Threads投稿あり"
+    },
+    {
+      "id": "pcwe-082",
+      "name": "ワインの輪",
+      "status": "not-found",
+      "candidates": [],
+      "note": "オンラインショップありPCWE物販投稿特定なし"
+    },
+    {
+      "id": "pcwe-089",
+      "name": "中央線 Daily Escape",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://x.com/alliscalmallis/status/1913451215176024286",
+          "summary": "自己紹介ZINE制作の投稿",
+          "sourceType": "x-post"
+        }
+      ],
+      "note": "ZINE制作投稿ありPCWE限定は不明"
+    },
+    {
+      "id": "pcwe-095",
+      "name": "ハタとキシマの“黙っていられん”",
+      "status": "not-found",
+      "candidates": [],
+      "note": "検索ヒットなし"
+    },
+    {
+      "id": "pcwe-103",
+      "name": "SONICWAVEの3355ラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "検索ヒットなし"
+    },
+    {
+      "id": "pcwe-110",
+      "name": "生物をざっくり紹介するラジオ　〜ぶつざくネオ〜",
+      "status": "not-found",
+      "candidates": [],
+      "note": "SUZURI店舗ありPCWE物販投稿特定なし"
+    },
+    {
+      "id": "pcwe-116",
+      "name": "カウチポテトブラザーズ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2024参加情報のみPCWE2026物販不明"
+    },
+    {
+      "id": "pcwe-122",
+      "name": "ねぇ、一歩踏みだしてみない？",
+      "status": "not-found",
+      "candidates": [],
+      "note": "Tシャツ等グッズあるがPCWE2026特定不可"
+    },
+    {
+      "id": "pcwe-129",
+      "name": "ちょいクズ男たちの恋愛本音研究所",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE出展希望言及あるが物販詳細不明"
+    },
+    {
+      "id": "pcwe-136",
+      "name": "子育てのラジオ「Teacher Teacher」",
+      "status": "not-found",
+      "candidates": [],
+      "note": "5/10ブース出展言及あるが物販投稿URL不明"
+    },
+    {
+      "id": "pcwe-142",
+      "name": "夫婦関係学ラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "検索ヒットなし"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "batch": 5,
+  "results": [
+    {
+      "id": "pcwe-007",
+      "name": "自分にやさしくするラジオ",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/begentlewithyourself",
+      "candidates": [],
+      "note": "listen.style に番組ページあり（最新Ep.117 2026年5月3日まで確認）。番組ページ・最新エピソードを確認したがPCWE2026への出展告知や物販詳細の記載は見当たらず。"
+    },
+    {
+      "id": "pcwe-014",
+      "name": "オバトーク",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/obatalk",
+      "candidates": [],
+      "note": "listen.style に番組ページあり。最新3エピソード（#220 2026/5/1, #218 2026/4/23, #216 2026/4/15）を確認したがPCWE2026の物販詳細に関する記載は見当たらず。プレスリリース上では出店決定リスト中に名前があるとの情報あるが、Listen.style 番組内では確認できず。"
+    },
+    {
+      "id": "pcwe-022",
+      "name": "ねむれぬ夜にはラブレター",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style への番組登録は確認できず（site検索ヒットなし）。Spotify / Apple Podcasts のみで配信されている模様。"
+    },
+    {
+      "id": "pcwe-028",
+      "name": "土曜のサカナ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style に番組ページなし。他番組（4流のろくおんぶ 2026/3月配信）から言及されているのみ。Apple Podcasts / Spotify で配信。"
+    },
+    {
+      "id": "pcwe-034",
+      "name": "想らしラジオ",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/wbxraifc",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/wbxraifc/onyuysuo",
+          "episodeTitle": "#209 PODCAST WEEKEND★5/9（土）10:00-19:00",
+          "merchInfo": "PODCAST WEEKEND 2026年5月9日（土）10:00-19:00への出展告知。エピソード内で『想らしグッズをチラ見せしてみた』との言及あり（具体商品内容・価格は記載なし）。",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "2026/4/27配信のEp.209でPCWE2026出展を告知。グッズ販売の存在は示唆されているが詳細はlisten.style本文には記載されず、X等の確認推奨。"
+    },
+    {
+      "id": "pcwe-042",
+      "name": "あきらめラジオ",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/akirameradio",
+      "candidates": [],
+      "note": "listen.style に番組ページあり（最新エピソード概要のみ表示）。PCWE2026への言及・物販詳細の記載は見当たらず。"
+    },
+    {
+      "id": "pcwe-050",
+      "name": "アテクシの屍を越えてって♡",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/ateshika555",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/ateshika555",
+          "episodeTitle": "104話 春の変な人ホイホイマンスリー2026",
+          "merchInfo": "『5/9・10（土・日）こちらも両日出店しております！』PODCAST WEEKEND 2026両日出店の告知。",
+          "publishedYear": "2026"
+        },
+        {
+          "url": "https://listen.style/p/ateshika555",
+          "episodeTitle": "106話 2周年の女",
+          "merchInfo": "『4/19(日)すみれ子参戦🔥絶対会いにきてね！＃ポッドキャストステッカーベース』との言及。チケット制90分入れ替え各回30名限定（これは別の4/19イベントの言及）。",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "2026年4月配信エピソード（104話・106話）でPCWE2026両日出店を告知。具体的物販商品の詳細はlisten.style本文には未記載。"
+    },
+    {
+      "id": "pcwe-059",
+      "name": "月からミミミ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 検索で番組ページ未発見（/p/tsukimimi_radio は404）。Spotify中心配信の模様。"
+    },
+    {
+      "id": "pcwe-067",
+      "name": "平成女オタクのインドア同盟",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/indoadoumei",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/indoadoumei",
+          "episodeTitle": "番外編 Podcast Weekend 出店決定！",
+          "merchInfo": "『2026年5月9日10日に開催されるPODCAST EXPO 2026のなかのマーケットイベントPodcast Weekend 2026への出店が決定しました』",
+          "publishedYear": "2026"
+        },
+        {
+          "url": "https://listen.style/p/indoadoumei",
+          "episodeTitle": "第127回 最近のこと&ファンブック",
+          "merchInfo": "PCWE2026で販売予定のファンブックについて言及。事前購入意向の表明を呼びかけ。",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "2026/2/17配信の番外編で出店決定告知、第127回（2026/4/20）でファンブック販売を予告。具体価格・仕様等の詳細は本文には未記載。"
+    },
+    {
+      "id": "pcwe-075",
+      "name": "おちつきAIラジオ",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/ochitsuki-ai",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/ochitsuki-ai/aamhgxeo",
+          "episodeTitle": "ChatGPT Images 2.0 圧倒的！/イーロン･マスクのCursor買収/政府AI源内 (ep.64)",
+          "merchInfo": "Podcast Weekend & Mixer event出展告知（具体的物販詳細は未記載）",
+          "publishedYear": "2026"
+        },
+        {
+          "url": "https://listen.style/p/ochitsuki-ai",
+          "episodeTitle": "ep.66（2026年5月5日配信）/ ep.61（2026年4月17日配信）",
+          "merchInfo": "PODCAST WEEKEND 2026出展・登壇の告知あり。物販内容は本文に明記なし。",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "複数エピソードでPCWE2026への出展・登壇告知あり。物販グッズの具体的記載はlisten.style本文には見当たらず。"
+    },
+    {
+      "id": "pcwe-082",
+      "name": "ワインの輪",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/qivjtsb2",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/qivjtsb2",
+          "episodeTitle": "#244 風とワイン2026を振り返り",
+          "merchInfo": "ポッドキャストウィークエンド出展への言及あり。番組ページに『ワインの輪オンラインショップ https://circleofwine.official.ec/』のリンクあり。物販詳細は本文に明記なし。",
+          "publishedYear": "2026"
+        },
+        {
+          "url": "https://listen.style/p/qivjtsb2",
+          "episodeTitle": "#243 ジョージアの風・ウガンダの風",
+          "merchInfo": "2026/4/24配信。PODCAST WEEKENDへの参加に言及（公式リンク https://podcastexpo.jp/podcastweekend/ 記載）",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen.style 番組ページに複数エピソードでPCWE2026への参加言及あり。オンラインショップは存在するが、PCWE2026当日の具体物販内容はlisten.style本文では未記載。"
+    },
+    {
+      "id": "pcwe-088",
+      "name": "推しと原稿の間で",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style に番組ページ未確認（site検索ヒットなし）。Spotify中心配信の模様。"
+    },
+    {
+      "id": "pcwe-096",
+      "name": "日暮里ゼミナール",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style に番組ページ確認できず。Apple Podcasts / Spotify / stand.fm で配信されている模様。PCWE2026関連の言及も検索ではヒットせず。"
+    },
+    {
+      "id": "pcwe-106",
+      "name": "公共訴訟ラジオ｜社会を動かす裁判の話",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/cem9oa2z",
+      "candidates": [],
+      "note": "listen.style に番組ページあり（最新Ep.68 2026/4/6まで確認）。最新エピソードはCALL4 6周年関西イベントの告知が中心で、PCWE2026への言及・物販詳細の記載は見当たらず。"
+    },
+    {
+      "id": "pcwe-112",
+      "name": "深呼吸できる女とできない女",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style への番組登録は確認できず（site検索ヒットなし）。HAA（haajapan.com）プロデュースの番組でSpotify/Apple Podcasts配信。"
+    },
+    {
+      "id": "pcwe-121",
+      "name": "ぜったい大丈夫だよラジオ",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/6ki02xqz",
+      "candidates": [],
+      "note": "listen.style に番組ページあり。2024年6月以降休止状態の旨告知あり。最新エピソード（#174など）にもPCWE2026の物販・出店言及なし。なお他番組（マンガ760）からの言及はあるがそれはPCWE2023の話で2026とは関係なし。"
+    },
+    {
+      "id": "pcwe-128",
+      "name": "アシタ・シアター",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style への番組登録は確認できず（site検索ヒットなし）。Spotify中心配信の模様。"
+    },
+    {
+      "id": "pcwe-134",
+      "name": "カイブツラジオ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style への番組登録は確認できず（site検索ヒットなし）。Spotify配信の模様。"
+    },
+    {
+      "id": "pcwe-140",
+      "name": "おくちのミカタラジオ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style への番組登録は確認できず（site検索ヒットなし）。"
+    }
+  ]
+}

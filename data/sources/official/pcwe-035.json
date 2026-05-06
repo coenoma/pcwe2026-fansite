@@ -12,6 +12,14 @@
       "ボトルマーカー",
       "キーホルダー",
       "タオル"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（#280〜#282 等（Podcast Weekend 20）",
+        "description": "缶バッジ事前注文フォーム公開（出店者向け: forms.gle/ABD6Yxk68yqqxcRHA、一般来場者向け: forms.gle/QqjcfDyTRfjDJQH26）。複数の最新エピソード（4/27〜5/4公開）でPCWE2026への出店と缶バッジ販売を告知",
+        "sourceUrl": "https://listen.style/p/38do-radio",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -25,7 +33,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/3JwBXpv3z9JFOl003OrJiO",
     "x": "https://x.com/38doRadio",
-    "instagram": "https://www.instagram.com/38do.radio/"
+    "instagram": "https://www.instagram.com/38do.radio/",
+    "listen": "https://listen.style/p/38do-radio"
   },
   "recommendedEpisode": {
     "title": "【30代のモヤモヤ】家・育児・仕事が思い通りにいきません！ #243",

@@ -1,0 +1,172 @@
+{
+  "batch": 3,
+  "results": [
+    {
+      "id": "pcwe-003",
+      "name": "すべての道はジャズに通ず。",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style に番組ページが見つからず（Spotify/Apple/Amazon中心の配信）。PCWE2026関連の物販詳細は Listen 上では確認できなかった。"
+    },
+    {
+      "id": "pcwe-012",
+      "name": "拝啓、3000年の人類へ",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/aqqtrbw5",
+      "candidates": [],
+      "note": "Listen 番組ページに PCWE2026 出展告知エピソード（タイトルに「ポッドキャストオアシス 2025 を楽しもう！【Part2】」など複数の活動報告系）はあるが、出展ページ（https://podcastexpo.jp/booth/pcwe-012/）へのリンクのみで、Listen 上のエピソード本文に物販・グッズの具体詳細は記載されていない。"
+    },
+    {
+      "id": "pcwe-019",
+      "name": "高橋クリスのFA_RADIO:工場自動化ポッドキャスト",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/faradio",
+      "candidates": [],
+      "note": "Listen 番組ページに「5/9.5/10 ポッドキャストEXPO出ます！」の告知はあるが、物販・グッズ詳細は Listen 上に記載なし。"
+    },
+    {
+      "id": "pcwe-026",
+      "name": "雨の日には本をさして。",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページが確認できず（Spotify/Instagram中心）。"
+    },
+    {
+      "id": "pcwe-032",
+      "name": "13歳からのPodcast",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/13karapodcast",
+      "candidates": [],
+      "note": "Listen 番組概要に「PODCAST EXPO 2026に出展します！【番外編】」というエピソードがあり「グッズ情報解禁！？」の記載があるが、Listen 上のエピソード本文（最新公開分）に具体的な物販・グッズ詳細は載っていなかった。エピソード etx9estv は2025年7月29日公開のIBS京都ワークショップ振り返り回でPCWE物販には触れず。"
+    },
+    {
+      "id": "pcwe-040",
+      "name": "俺思 | 週刊漫画家と装丁デザイナーのPodcast",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/oreomo",
+      "candidates": [],
+      "note": "Listen 番組ページに PCWE2026 出展告知（5/9-10）の言及はあるが、物販・グッズの詳細記載は Listen 上では確認できず。"
+    },
+    {
+      "id": "pcwe-047",
+      "name": "クリエイターエコノミーニュース",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/creator_enews",
+      "candidates": [],
+      "note": "Listen 番組ページにエピソード一覧はあるが、PCWE2026出展に関する物販・グッズ詳細記載は確認できなかった。"
+    },
+    {
+      "id": "pcwe-055",
+      "name": "工業高校農業部",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/kounoubu",
+      "candidates": [],
+      "note": "Listen 番組ページは存在するが、PCWE2026 物販・グッズの具体詳細は Listen エピソード上では未確認。"
+    },
+    {
+      "id": "pcwe-064",
+      "name": "めいめい",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/r5kbt1bd",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/r5kbt1bd/wenzwxh9",
+          "episodeTitle": "Ep.091 PCWEに出店し、ただめいめいし続けるだけの行為",
+          "merchInfo": "PCWE2026（5/9土）出店内容として『限界命名』ブースを実施予定。来場者と一緒にオープンからクローズまで命名し続けるマラソン企画。参加特典として番組ステッカー、命名紙を配布。来場者は『収録に参加しながら命名する』『収録なしで会話に参加する』『見学のみ』から選択可能。",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen ユーザーページ https://listen.style/u/meimeishimasu と番組ページ https://listen.style/p/r5kbt1bd の両方からアクセス可。Ep.091 は 2026年4月16日公開。物販販売そのものではなく『限界命名』参加型ブース＋ステッカー・命名紙配布が中心の様子。"
+    },
+    {
+      "id": "pcwe-071",
+      "name": "炊き込みご飯わくわく舎",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページが確認できず（Apple/Spotifyのみ確認）。PCWE2026物販詳細は Listen 経由では発掘できなかった。"
+    },
+    {
+      "id": "pcwe-079",
+      "name": "歴史を紐解く！聞き流し偉人伝",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページは確認できず（Spotify/YouTube/Amazon中心の配信）。"
+    },
+    {
+      "id": "pcwe-086",
+      "name": "風呂あがりのアイスキャンディー",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページが見つからず（Spotify/Apple中心）。"
+    },
+    {
+      "id": "pcwe-094",
+      "name": "荒ぶるペーのオネエじゃないのよ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページが見つからず（Spotify/Apple中心）。"
+    },
+    {
+      "id": "pcwe-103",
+      "name": "SONICWAVEの3355ラジオ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページが確認できなかった。"
+    },
+    {
+      "id": "pcwe-110",
+      "name": "生物をざっくり紹介するラジオ　〜ぶつざくネオ〜",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/butuzaku-neo",
+      "candidates": [],
+      "note": "Listen 番組ページは存在するが、PCWE2026 出展関連の物販・グッズ詳細はエピソード一覧・番組概要に明記なし。"
+    },
+    {
+      "id": "pcwe-116",
+      "name": "カウチポテトブラザーズ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページが確認できず（Spotify/Apple/YouTubeのみ）。PCWE2026出展自体はプレスで確認済だが Listen 経由では物販詳細を発掘できなかった。"
+    },
+    {
+      "id": "pcwe-125",
+      "name": "女性がよく寝てよく働けるラジオ　わたしとねむり研究所",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページが確認できなかった（Apple Podcasts等で配信）。"
+    },
+    {
+      "id": "pcwe-132",
+      "name": "高揚館",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Spotify中心の配信で、Listen.style 上に固有の番組ページは確認できなかった。"
+    },
+    {
+      "id": "pcwe-138",
+      "name": "ひともの研究所",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページが見つからず（試行URL https://listen.style/p/hitomono_lab は 404）。Spotify中心の配信。"
+    },
+    {
+      "id": "pcwe-144",
+      "name": "雑食日和",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 上に番組ページが確認できなかった（Spotify/Instagramでの配信が中心）。"
+    }
+  ]
+}

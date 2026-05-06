@@ -1,0 +1,235 @@
+{
+  "batch": 2,
+  "results": [
+    {
+      "id": "pcwe-002",
+      "name": "愛の抵抗",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/ainoteikou",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/ainoteikou/ddauhm7m",
+          "episodeTitle": "#100 ポッドキャストウィークエンド直前スペシャル！！",
+          "merchInfo": "PODCAST WEEKEND 2026（5月9日）に #愛の抵抗 として出店予定。既刊のZINEとアクリルキーホルダーを販売予定。お品書きの詳細はnote（https://note.com/asa_utsumi/n/n5a82a1833e81）で公開。具体的な商品ラインナップ（個別商品名・価格）はエピソード本文では明示されていない",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり。PCWE2026 出店告知あり。ZINE・アクリルキーホルダー販売予定だが詳細価格は note 参照"
+    },
+    {
+      "id": "pcwe-011",
+      "name": "てきと〜",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 検索でも該当する番組ページなし。Listen 未登録の可能性が高い"
+    },
+    {
+      "id": "pcwe-018",
+      "name": "こうきとたかやのラジオもどき",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/radiomodoki",
+      "candidates": [],
+      "note": "Listen ページ存在（未認証外部RSS、最新エピソードのみ表示）。最新エピソード一覧（#155〜#159、4/4〜5/1）に PCWE2026 / PODCAST EXPO 2026 / PODCAST WEEKEND 2026 関連の物販告知エピソードは確認できず"
+    },
+    {
+      "id": "pcwe-025",
+      "name": "好きにしたらええやん。",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/ryukohe",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/ryukohe",
+          "episodeTitle": "#87 国内最大のPodcastイベントに出ます！【PCWE2026】",
+          "merchInfo": "PODCAST EXPO 2026（5月9日(土)・10日(日)、HOME/WORK VILLAGE 東京都世田谷区池尻2-4-5）に出展。出展2日目（5月10日）にラジオ収録体験を企画。3年応募し続けてようやく出展決定との内容。本エピソードには物販商品名・価格は明記されていない",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり。PCWE2026 出展告知エピソードあり（5/10 ラジオ収録体験を実施）。物販詳細（商品名・価格）はエピソード内では明示されていない"
+    },
+    {
+      "id": "pcwe-031",
+      "name": "中2の魂100まで",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 検索結果には他番組での言及のみで、自番組ページは確認できず（直接 URL https://listen.style/p/soulofchu2 は 404）。Listen 未登録の可能性"
+    },
+    {
+      "id": "pcwe-039",
+      "name": "ヤマモトユウトのラジ推し！-エンタメ古今東西-",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/radioshiyy",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/radioshiyy/7nxv1vb5",
+          "episodeTitle": "PODCAST EXPO 2026：国内最大級のポッドキャストイベントを解説！／ラジ推しのコラボ企画＆全グッズレビュー！",
+          "merchInfo": "出展日: 5月9日(土)のみ（5月10日は出展なし）。物販: ラジ推しロゴTシャツ 4,000円、ステッカー1枚 300円・2枚セット 500円、チケットホルダー 1,500円、番組台本集 500円、缶バッジセット 800円、缶ミラー 600円、サウンドカード（WE ARE VAZEE KNIGHT）500円。特別企画として推しボード参加者にステッカープレゼント、マシロマッシュ氏・牛若氏とのポッドラッププロジェクト・コラボ楽曲。キャッシュレス決済対応",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり。PCWE2026 出展詳細・全グッズの商品名・価格が明記された決定的エピソードあり"
+    },
+    {
+      "id": "pcwe-046",
+      "name": "人生百貨店",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/lifedeptstores",
+      "candidates": [],
+      "note": "Listen 番組ページは存在するが、トップ・最新エピソード一覧から PCWE2026 / PODCAST EXPO 2026 / PODCAST WEEKEND 2026 関連の物販告知エピソードは確認できず"
+    },
+    {
+      "id": "pcwe-054",
+      "name": "よるののうか",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/yorunonouka",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/yorunonouka/8klseuwk",
+          "episodeTitle": "10・31 番組イベント開催！『ひるののうか』（みかん収穫体験）",
+          "merchInfo": "PODCAST WEEKEND / PODCAST EXPO 2026（5月9日、東京・池尻 HOME/WORK VILLAGE）にて『八朔ジュース』を販売予定。「農産物以外は売れない」事情から八朔ジュースに絞ったとの言及。ホスト2名分の2種類のジュースを用意。価格はエピソード内で明示なし",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり。PCWE2026 物販として八朔ジュース販売予定の告知。価格は不明"
+    },
+    {
+      "id": "pcwe-063",
+      "name": "しゃべり足りない部",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/shaberitarinaibu",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/shaberitarinaibu/dyzpwnra",
+          "episodeTitle": "S3E67 #雑談系ポッドキャストの日 vol.5・シールがないならつくればよい",
+          "merchInfo": "5月10日 PCWE 2026 出店予定の告知あり（4/19 ポッドキャストステッカーベースと併せて告知）。物販計画として、ステッカー、メッセージカード／ポストカード、その場で手書きする野良シールワークショップ、冊子／ジン、ネーム本／カード、名刺・ペーパー配布などを検討中とのトーク。具体的な商品名・価格は計画段階で未確定",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり。PCWE2026 出店（5/10）告知済みだが、物販詳細は計画段階で具体的価格未定"
+    },
+    {
+      "id": "pcwe-070",
+      "name": "大人になりたい旅がしたい",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/dzrqxmig",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/dzrqxmig/j4uwrllf",
+          "episodeTitle": "#140 祝2周年！そしてお知らせも！",
+          "merchInfo": "PODCAST WEEKEND 2026（2026年5月9日(土)・10日(日) 10:00〜19:00、ホームワークビレッジ 東京都世田谷区池尻大橋）に出展。出展物: 旅先シミュレーター（イベント体験型企画）、手書きマップ（神奈川県版／33市町村網羅、パーソナルコメント付き、裏面に神奈川県年表）。価格はエピソード内で明示なし",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり。PCWE2026 出展告知エピソードあり。物販コンテンツは旅先シミュレーターと手書きマップ（神奈川版）。価格未公開"
+    },
+    {
+      "id": "pcwe-078",
+      "name": "３時のおやつは貝柱",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 検索結果ではあざらし氏のポッドキャストへの他番組言及のみで、自番組ページ（/p/...形式）は確認できず。Audible 配信中だが Listen 未登録の可能性"
+    },
+    {
+      "id": "pcwe-085",
+      "name": "外向きポジティブOLたちの毒舌漫談ラジオ",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/smaadp7u",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/smaadp7u",
+          "episodeTitle": "（番組ページ最新エピソード／PODCAST EXPO 出店告知）",
+          "merchInfo": "PODCAST EXPO（5月9日(土)・10日(日)、東京・池尻 HOME/WORK VILLAGE）に出展。番組初の物販グッズシリーズとして『キラキラステッカー』を販売予定。個別商品の価格は本文では明示なし。詳細は番組のお問い合わせフォームおよび @dokuposi_radio の Instagram/X で確認するよう案内",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり（旧名「ぱぎとぐぐは毒舌ポジティブピーポー」）。PCWE2026 出店告知あり、初の物販グッズとしてキラキラステッカー販売予定。価格未公開"
+    },
+    {
+      "id": "pcwe-092",
+      "name": "平成1桁女子の自己肯定感爆上がり恋愛ラジオ",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/l6sbmpbm",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/l6sbmpbm/vjjaq99a",
+          "episodeTitle": "Podcast Weekend初出展！限定グッズ公開｜「火をつけたのはそっちでしょ」に込めた想い【第73回】",
+          "merchInfo": "Podcast Weekend 初出展。テーマ「火をつけたのはそっちでしょ」の限定グッズを制作。商品: ラブホテル風デザインのアイテム、「あんたは可愛い」と言ってくれる前髪クリップ、名言ステッカー、ライター（500円）。エピソード本文には『5月19日、画面越しじゃなくて直接会える日』との記載があり、PCWE2026 公式日程（5月9日・10日）と一致しない点に注意",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり。Podcast Weekend 初出展告知エピソードあり。グッズ詳細（前髪クリップ、名言ステッカー、ライター 500円など）は明記。ただし本文に『5月19日』との記載があり、PCWE2026 公式日程（5/9-10）との照合が必要"
+    },
+    {
+      "id": "pcwe-102",
+      "name": "watashito",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 検索でも該当する番組ページなし。Spotify／Apple Podcasts 等で配信中だが Listen 未登録"
+    },
+    {
+      "id": "pcwe-109",
+      "name": "しゃらくさラジオ",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/syarakusaradio",
+      "candidates": [],
+      "note": "Listen 番組ページは存在するが、エピソード一覧から PCWE2026 / PODCAST EXPO 2026 / PODCAST WEEKEND 2026 関連の物販告知エピソードは確認できず"
+    },
+    {
+      "id": "pcwe-115",
+      "name": "吉村ジョナサンの高校古典講義",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/yoshimurajona",
+      "candidates": [],
+      "note": "Listen 番組ページは存在するが、PCWE2026 / PODCAST EXPO 2026 / PODCAST WEEKEND 2026 関連の物販告知エピソードは確認できず"
+    },
+    {
+      "id": "pcwe-124",
+      "name": "読書酒紀",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 検索結果から自番組ページの直接 URL は確認できず。番組案内では LISTEN 配信に言及があるが、固有の /p/... URL は今回の調査では特定できず"
+    },
+    {
+      "id": "pcwe-131",
+      "name": "食い意地ラジオ",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/kuiiji",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/kuiiji",
+          "episodeTitle": "（番組ページ最新エピソード群／2026年4月28日〜5月1日配信）",
+          "merchInfo": "Podcast Weekend に出店予定の告知あり。エピソード説明欄に『Podcastweekend 出店します！！食い意地プロフィールも配布します⭐️』との記載。配布物: 食い意地プロフィール。具体的な商品名・価格・正確な出展日（PCWE2026 公式 5/9-10 と推定）は本文では明示なし",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり。Podcast Weekend 出店告知あり、配布物として食い意地プロフィール。価格情報なし"
+    },
+    {
+      "id": "pcwe-137",
+      "name": "HOG POT",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 検索でも該当する番組ページなし。Listen 未登録"
+    },
+    {
+      "id": "pcwe-143",
+      "name": "日中バイリンガルへの道",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/pklcbeym",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/pklcbeym",
+          "episodeTitle": "#309【お知らせ】5/9（土）お待ちしています♪",
+          "merchInfo": "Podcast Weekend 2026（2026年5月9日(土)、10:00〜18:00、HOME/WORK VILLAGE 東京都世田谷区池尻2-4-5）に出展。『日中バイリンガルへの道』は5月9日のみ参加。物販内容: 中国語がもっと楽しくなるグッズ販売、『你喜欢什么？』をテーマにした収録参加体験コーナー。具体的な商品名・価格は本文では明示なし",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Listen 番組ページあり。PCWE2026 出展（5/9 のみ）告知あり。中国語グッズ販売と収録体験コーナーを実施予定。具体的価格は不明"
+    }
+  ]
+}

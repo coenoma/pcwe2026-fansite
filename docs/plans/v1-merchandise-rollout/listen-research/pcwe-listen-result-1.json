@@ -1,0 +1,193 @@
+{
+  "batch": 1,
+  "results": [
+    {
+      "id": "pcwe-001",
+      "name": "電波惹句",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style に番組登録なし"
+    },
+    {
+      "id": "pcwe-010",
+      "name": "地方ゲイだけど丁寧な暮らしがしたい",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 番組ページ未確認"
+    },
+    {
+      "id": "pcwe-017",
+      "name": "女性消防設備士の休憩室ラジオ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-024",
+      "name": "マイクラジオ",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/maikuradio",
+      "candidates": [],
+      "note": "番組登録あり、PCWE関連エピソードなし"
+    },
+    {
+      "id": "pcwe-030",
+      "name": "ダンドー・キュー",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-036",
+      "name": "とみこはん&佐々木敬子「とみことけいこのたびたび、旅｣",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-045",
+      "name": "PodcastTimes｜ぽっどでの新人",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 番組ページ未確認"
+    },
+    {
+      "id": "pcwe-053",
+      "name": "丘の上喫茶",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-061",
+      "name": "さのみきひとのラジオ ⌞ ラのみきジオ ⌝",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/ranomikijio",
+      "candidates": [],
+      "note": "番組登録あり、PCWE関連エピソードなし"
+    },
+    {
+      "id": "pcwe-069",
+      "name": "おじさんのアウトプット",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/ojisan_output",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/ojisan_output/2kdzocgh",
+          "episodeTitle": "ep.19 かもしれない運転",
+          "merchInfo": "Podcast Weekend 2026 (5月9日のみ出展、池尻大橋ホームワークビレッジ、10時～18時)。販売予定品: フットマッサージャー(約1万5千円相当)、シックスパッド(EMS腹筋器、ケース・拭き取りシート付き)、書籍『ピュートフク ジャガワ』全20巻セット、ホスト着用済み・未使用Tシャツ多数、ジョジョランズTシャツ(新品・非売品)、アシックスランニングシューズ(黄緑、使用済み)、ドクターマーチン8ホールブーツ(黒・赤)、アークテリクスキャップ(シミあり、格安)、チェコ軍ガスマスク、スノーピークサウナバッグ(未使用)、帽子。合言葉「アド街を見た」でブース裏の隠し商品購入可。",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "5/9出展、私物中心の物販ラインナップ"
+    },
+    {
+      "id": "pcwe-077",
+      "name": "アラサー同期のみなまでいうと",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/uuhfgtfm",
+      "candidates": [],
+      "note": "番組登録あり、PCWE関連エピソードなし"
+    },
+    {
+      "id": "pcwe-084",
+      "name": "映画雑談",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-091",
+      "name": "Kids' News – キッズニュース",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-100",
+      "name": "「いま、暇？」急いで準備するからちょっと飲まない？",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-108",
+      "name": "BACKYARD TO CLOSET",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 番組ページ未確認 (rooom.listen.styleのみ)"
+    },
+    {
+      "id": "pcwe-114",
+      "name": "愛されたい女たちのラブホ女子会",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-123",
+      "name": "読んでみてはラジオ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-130",
+      "name": "佐野いくみの喜々台湾",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/dzhfljtm",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/dzhfljtm/ygrztor8",
+          "episodeTitle": "#45 【告知】イベント出店＆公開収録",
+          "merchInfo": "PODCAST EXPO 2026 (5月9日・10日、HOME/WORK VILLAGE) 出店。販売予定: 番組オリジナルグッズ、イラストレーター・佐々木千絵さんによる『似顔絵缶バッジ』。具体的な価格は番組内で未明示。",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "似顔絵缶バッジ等を販売予定"
+    },
+    {
+      "id": "pcwe-136",
+      "name": "子育てのラジオ「Teacher Teacher」",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/teacherteacher",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/teacherteacher/cvswgyh5",
+          "episodeTitle": "「健康的な甘え」と「不健康な甘え」 の見極め方（3周年記念回！）",
+          "merchInfo": "5月10日 PODCAST EXPO 2026 にブース出展予定。リスナーとの直接交流が目的。目印として『オレンジのタオル』を持つよう案内。具体的な物販商品名・価格は本エピソードでは未記載。",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "5/10出展、物販詳細は本編未掲載"
+    },
+    {
+      "id": "pcwe-142",
+      "name": "夫婦関係学ラジオ",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/atsu",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/atsu/yxs9ei2y",
+          "episodeTitle": "#2-127 PODCAST EXPO2026 出展のお知らせ",
+          "merchInfo": "PODCAST EXPO 2026 (5月9日土曜、9時～18時、東京・池尻大橋ホームワークビレッジ) 出展。用意するもの: 『番組ステッカー』(番組を聞いてきた旨を伝えると無料プレゼント)、『夫婦みくじ』(おみくじを番組オリジナルで作成)。",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "ステッカー無料配布＋夫婦みくじ"
+    }
+  ]
+}

@@ -15,6 +15,20 @@
       "フリーマーケット",
       "限定動画リンク付きグリーティングカード配布",
       "メンバーが撮った写真の展示"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（#157 About PCWE2026 of NE1PO（原）",
+        "description": "PCWE2026出店決定。当日かっぴーは不在。オリジナルTシャツ再販予定、その他オリジナルグッズ準備中（公式SNSで段階的告知）",
+        "sourceUrl": "https://listen.style/p/ne1po",
+        "sourceType": "web"
+      },
+      {
+        "name": "PCWE2026 出展告知（#156 最近初めて行ったア・ソ・コ）",
+        "description": "PCWE2026出店決定告知、Tシャツ再販予定",
+        "sourceUrl": "https://listen.style/p/ne1po",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -28,7 +42,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/2awC2CBveSzYoPEE18MkPg",
     "x": "https://x.com/ne1po_step",
-    "instagram": "https://www.instagram.com/ne1po_step"
+    "instagram": "https://www.instagram.com/ne1po_step",
+    "listen": "https://listen.style/p/ne1po"
   },
   "recommendedEpisode": {
     "title": "#110 あなたはあなたは何個見つけられる!?ことば落としゲーム開催！",
