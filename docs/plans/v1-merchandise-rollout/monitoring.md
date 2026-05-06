@@ -91,6 +91,8 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 
 | pcwe-139 | ぬまずっきゅーんfromみんキャス | https://x.com/numazukyun | https://www.instagram.com/numazukyun/ | — | 5/6 菊池さん目視で PCWE 言及なし確認（B群最終ターゲット）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 
+| pcwe-106 | 公共訴訟ラジオ｜社会を動かす裁判の話 | https://x.com/CALL4_Jp | https://www.instagram.com/call4_jp/ | — | Claude 単独確認で Listen / 公式サイト言及なし、X/IG タイムラインへの構造的アクセス手段限界。菊池さん目視待ち、当日まで monitoring | 2026-05-06 |
+
 ---
 
 ## 解決ログ
