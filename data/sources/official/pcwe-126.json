@@ -8,6 +8,26 @@
     "description": "美容家の神崎恵と編集者の大森葉子でお届けする雑談ポッドキャスト。ふと「私って誰なんだ？」と思う瞬間ありますよね？恋愛、友情、キャリア、育児……など、テーマは縦横無尽。思わず自分がぐらついてしまう時の戸惑い、そして、「その時どうする？」をアラフィフ２人組がリスナーの皆さんと一緒に考えていきます！",
     "merchandise": [
       "ステッカー"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "ステッカー（先着配布）",
+        "description": "5/10(日) Podcast Weekend ブース来場者に先着でプレゼント。番組公式 Instagram 告知より。",
+        "sourceUrl": "https://www.instagram.com/p/DX6e2RGFHji/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "手書き名言カード（先着配布）",
+        "description": "5/10(日) Podcast Weekend ブース来場者に先着でプレゼント。番組公式 Instagram 告知より。",
+        "sourceUrl": "https://www.instagram.com/p/DX6e2RGFHji/",
+        "sourceType": "instagram-post"
+      },
+      {
+        "name": "📚 既読本の交換コーナー（体験コンテンツ）",
+        "description": "大森葉子さんが自身の書棚から既読本を持参。来場者と本の交換が可能。「もちろん、おしゃべりだけでも。お気軽にお立ち寄りください。大森とスタッフがお待ちしております‼︎」と告知。",
+        "sourceUrl": "https://www.instagram.com/p/DX6e2RGFHji/",
+        "sourceType": "instagram-post"
+      }
     ]
   },
   "exhibition": {
