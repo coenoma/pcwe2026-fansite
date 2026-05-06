@@ -35,7 +35,6 @@ done に昇格させるか not-found に確定するかを決めるためのリ�
 |---|---|---|---|---|
 | pcwe-016 | overture〜ミュージカル好きの語り部屋〜 | https://creators.spotify.com/pod/profile/u6052u5149u7f8eu91cc/episodes/91-PCWE-e2pb2fh | 過去年度の振り返り（要再調査） | **AI が一度 done として誤掲載 → 降格**。Spotify エピソード #91「ゲスト回感想メール紹介＆PCWE 番組グッズ公開」は **PCWE2024（2024/11/3）の物販告知**であり、PCWE2026 用ではない。PCWE2026 用の物販告知は別エピソードや SNS にあるかもしれず、要再調査。 |
 | pcwe-037 | 映画の話したすぎるラジオ | https://suzuri.jp/virtualeigabar | https://x.com/virtualeigabar （X 投稿で 5/10 ZINE 販売告知あり、URL 取得不可） | SUZURI に「virtualeigabar」公式ショップあり。PCWE 限定告知は未確認。 |
-| pcwe-038 | ゲームなんとか | https://gamenantoka.booth.pm/ | https://x.com/gamenantoka （X 投稿で 5/9 グッズ販売告知あり、URL 取得不可） | BOOTH 公式ショップ + 公式サイトあり。PCWE2026 限定告知は未確認。 |
 | pcwe-051 | テツセカ〜哲学の世界を知りたい！〜 | https://listen.style/p/zotfdozq/ikcskoon | https://x.com/tetsuseka （5/9-10 出展、冊子 ¥300 / 3 冊セット ¥1000 / クッキー / レザーコースター / 手帳 / おみくじ ¥200 全 12 種等の販売告知 X 投稿あり、URL 取得不可） | PCWE2024 物販（グラス・ノート・シール・コースター・クッキー・アイロンシート）の振り返りエピソードあり。2026 で同じ商品を売るか不明。 |
 | pcwe-057 | りっちゃ・りょかちのやいやいラジオ | https://suzuri.jp/yaiyai_radio | 常設グッズショップのみ | SUZURI「やいやい商店」あり、ロゴステッカー等を販売。PCWE 限定告知は未確認。 |
 | pcwe-062 | こじらせ平成夜話 | https://www.youtube.com/watch?v=q_MfYdFxgTc | 確証弱い（重複疑い） | YouTube #102「Podcaster の物販イベントに出店決定！」だが、これは別番組（裏KUSUI）の動画と思われる。実際にこじらせ平成夜話の動画か要確認。 |
