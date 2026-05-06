@@ -32,18 +32,18 @@
 | pcwe-024 | マイクラジオ | https://listen.style/p/maikuradio | ✅ | 01kqkwxf6xkt1yk93qr6bdyg9r | **done 化**: 「ポットキャストエクスポ紹介会」(2026-05-02) でくじ景品4種 + マイクラ体験会を本人告知 |
 | pcwe-032 | 13歳からのPodcast | https://listen.style/p/13karapodcast | ✅ | 01khjzpq8f2h8carhbfnb1ygw5 | **done 化**: 「PODCAST EXPO 2026に出展します！」(2026-02-16) で出展確証。グッズ詳細は「お楽しみ」「考え中」とのコメントだが公式 merchandise は scrape 済み |
 | pcwe-033 | HYPLACE WAVE #はいなみ | https://listen.style/p/hainami758 | ❌ | — | DJ系番組。最新50回タイトルに PCWE 関連エピソードなし |
-| pcwe-040 | 俺思 | https://listen.style/p/oreomo | ❌ | — | 最新50回タイトルに PCWE 関連エピソードなし |
+| pcwe-040 | 俺思 | https://listen.style/p/oreomo | ✅ | 01kqq4bt8zt54bza3ejv9x94pd | **done 化（2nd pass）**: 「創44号」(2026-05-03) のエンディングでホスト本人が「5月9日5月10日 ポッドキャストエキスポでグッズ出します」と告知 |
 | pcwe-041 | 酒の道～日本酒の聖地から～ | https://listen.style/p/w6pm3kfn | ❌ | — | search_podcasts でヒットせず（しぶさわくんFM 関連別番組はあるが PCWE 関連エピソードなし）、URL slug 直接照会も MCP で不可 |
 | pcwe-042 | あきらめラジオ | https://listen.style/p/akirameradio | ✅ | 01kqm503hn9psjcce2r228mr5w | **done 化**: 「【番外編】PCWE2026の裏話」(2026-05-02) で出店確証 + 命綱ターミナルチェーン・真鍮チャーム・諦め探しジャーナリング体験を本人告知 |
 | pcwe-046 | 人生百貨店 | https://listen.style/p/lifedeptstores | ❌ | — | 最新50回タイトルに PCWE 関連エピソードなし |
 | pcwe-047 | クリエイターエコノミーニュース | https://listen.style/p/creator_enews | ❌ | — | ニュース番組。最新50回タイトルに PCWE 関連エピソードなし |
-| pcwe-055 | 工業高校農業部 | https://listen.style/p/kounoubu | ❌ | — | 最新50回タイトルに PCWE 関連エピソードなし |
+| pcwe-055 | 工業高校農業部 | https://listen.style/p/kounoubu | ✅ | 01kqj5w8rc7bg7t4x6b551r6qc | **done 化（2nd pass）**: 「【特別回】同級生ポッドキャストの大先輩呼んでみた」(2026-05-01) で PCWE 主催・株式会社雑談の渋谷さんをゲストに招き、ブース出展+わらしべ長者選手権を告知 |
 | pcwe-061 | さのみきひとのラジオ ⌞ ラのみきジオ ⌝ | https://listen.style/p/ranomikijio | ❌ | — | search_podcasts では別番組ヒットあり。Spotify 限定番組のため Listen に PCWE 関連エピソードなし |
-| pcwe-077 | アラサー同期のみなまでいうと | https://listen.style/p/uuhfgtfm | ❌ | — | 最新50回タイトルに PCWE 関連エピソードなし |
+| pcwe-077 | アラサー同期のみなまでいうと | https://listen.style/p/uuhfgtfm | ✅ | 01kqq5znrfa9xz57825z5qj12w | **done 化（2nd pass）**: 「📮#6 もらった手紙にみなまでいうと」(2026-05-03) 冒頭でホスト本人が「ポッドキャストウィークエンド出展当選しました! 5月9日に出展」と告知 |
 | pcwe-106 | 公共訴訟ラジオ | https://listen.style/p/cem9oa2z | ❌ | — | 2024年に PCWE2024 出店告知エピソードあり (`01jbpy4h1pj8k9n0ca9efvrg29`) だが PCWE2026 関連エピソードなし。過去年度誤掲載防止のため not-found 維持 |
 | pcwe-107 | ラジオただいま発酵中 | https://listen.style/p/cnjfbfzz | ❌ | — | 最新50回タイトルに PCWE 関連エピソードなし |
 | pcwe-109 | しゃらくさラジオ | https://listen.style/p/syarakusaradio | ❌ | — | 最新50回タイトルに PCWE 関連エピソードなし |
-| pcwe-110 | 生物をざっくり紹介するラジオ ぶつざくネオ | https://listen.style/p/butuzaku-neo | ❌ | — | 「ぶつ部総会」というリアルイベント言及あるが PCWE2026 とは別イベント。PCWE 関連エピソードなし |
+| pcwe-110 | 生物をざっくり紹介するラジオ ぶつざくネオ | https://listen.style/p/butuzaku-neo | ✅ | 01kq6rr0jzd71v4c9je25dgtka | **done 化（2nd pass）**: 「第68話-B」(2026-04-27) のエンディングでホスト本人が「5月10日日曜日に出展、仏作キク百種図鑑2を販売」と告知 |
 | pcwe-115 | 吉村ジョナサンの高校古典講義 | https://listen.style/p/yoshimurajona | ❌ | — | search_podcasts でヒットせず、Listen MCP では番組ヒットせず再検索余地なし |
 | pcwe-121 | ぜったい大丈夫だよラジオ | https://listen.style/p/6ki02xqz | ❌ | 01j9xe5prymnny76awqednaj6b | 2024年に「PCWEで何する？公開会議する私たち」(2024-10-11) あり (PCWE2024 関連)。PCWE2026 関連エピソードなし |
 | pcwe-139 | ぬまずっきゅーんfromみんキャス | https://listen.style/p/edjfkyvh | ❌ | — | 最新50回タイトルに PCWE 関連エピソードなし |
@@ -54,9 +54,17 @@
 
 ## サマリ
 
-- ✅ **done 化: 4 件**（pcwe-012, pcwe-024, pcwe-032, pcwe-042）
+- ✅ **done 化: 8 件**
+  - **1st pass（タイトル検索）**: pcwe-012, pcwe-024, pcwe-032, pcwe-042
+  - **2nd pass（transcript 深掘り）**: pcwe-040, pcwe-055, pcwe-077, pcwe-110
 - 👀 needs-review: 0 件
-- ❌ not-found 確定: 19 件（探索余地なし、Listen 最新エピソードに PCWE2026 物販告知なし）
+- ❌ not-found 確定: 15 件（探索余地なし、Listen 最新エピソードに PCWE2026 物販告知なし、transcript 深掘りでも発見できず）
+
+### 2nd pass の発見ポイント
+
+タイトルが PCWE 関連でなくても、**通常エピソードの冒頭・末尾に告知が入っている**ケースを transcript 取得で発見できた。
+ポッドキャストの慣習として「本編とは別にイベント告知をエンディング/イントロで入れる」のがあり、タイトルだけでは判定できない。
+今後の探索ではタイトル検索 → ヒット無しでも、最新 2〜4 エピソードの transcript を必ず確認する方針が有効。
 
 ---
 

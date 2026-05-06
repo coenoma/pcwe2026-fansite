@@ -11,6 +11,20 @@
       "コースター",
       "ステッカー",
       "わらしべ長者企画"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "公式グッズ販売",
+        "description": "Listen エピソード「【特別回】同級生ポッドキャストの大先輩呼んでみた【guest:SHIBUちゃん】」（2026-05-01 公開、PCWE2026 主催・株式会社雑談の渋谷さんをゲストに招いた回）にて、ホスト本人が「ブースを出展して公式のグッズみたいなのを販売する」と告知。公式ブースページ掲載のグッズは Tシャツ・コースター・ステッカーの3種。",
+        "sourceUrl": "https://listen.style/p/kounoubu",
+        "sourceType": "web"
+      },
+      {
+        "name": "ますぼうVS牛若 わらしべ長者選手権",
+        "description": "5/9 当日のブース企画。ホスト2人がそれぞれイベント開始から不要なものを来場者と交換しまくり、最後にどちらがより長者かを競う。Listen エピソード「【特別回】同級生ポッドキャストの大先輩呼んでみた【guest:SHIBUちゃん】」（2026-05-01 公開）にてホスト本人が告知。",
+        "sourceUrl": "https://listen.style/p/kounoubu",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
