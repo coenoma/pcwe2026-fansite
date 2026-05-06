@@ -93,17 +93,36 @@ export type MerchandiseSourceType = z.infer<typeof MerchandiseSourceTypeSchema>;
  * 1 つのグッズにつき 1 エントリ。1 投稿に画像で複数グッズが写っている場合でも、
  * グッズごとに別エントリを作って同じ sourceUrl / imageUrl を共有する。
  */
+/**
+ * 補助的な情報源（同一物販に対して複数の参照を持ちたいケース用）。
+ * 例: 1 つの物販を異なるツイート（写真詳細・価格紹介・予約フォーム告知）の
+ *     それぞれが補強しているとき、メイン sourceUrl 1 つに加えて
+ *     additionalSources でリンクを並べる。
+ */
+export const MerchandiseAdditionalSourceSchema = z.object({
+  url: z.string().url(),
+  type: MerchandiseSourceTypeSchema,
+  /** 表示ラベル（例: "予約フォーム", "サイズ詳細"）。未指定なら type ベースの
+   *  ラベル（"X 投稿" 等）が使われる */
+  label: z.string().optional(),
+});
+export type MerchandiseAdditionalSource = z.infer<
+  typeof MerchandiseAdditionalSourceSchema
+>;
+
 export const MerchandiseDetailSchema = z.object({
   /** グッズ名（例: "オリジナルロゴステッカー"） */
   name: z.string().min(1),
   /** 補足（価格、限定数、配布タイミング等） */
   description: z.string().optional(),
-  /** 情報源 URL（必須）。創作・推測情報を防ぐ */
+  /** メイン情報源 URL（必須）。X 投稿なら埋め込み、それ以外はリンクボタン化される */
   sourceUrl: z.string().url(),
   /** 情報源の種類 */
   sourceType: MerchandiseSourceTypeSchema,
   /** 参考画像 URL（X 投稿の画像 / 商品写真等）*/
   imageUrl: z.string().url().optional(),
+  /** 補助的な情報源（任意・複数）。UI では「関連: 1, 2」と小さく表示 */
+  additionalSources: z.array(MerchandiseAdditionalSourceSchema).optional(),
 });
 export type MerchandiseDetail = z.infer<typeof MerchandiseDetailSchema>;
 
