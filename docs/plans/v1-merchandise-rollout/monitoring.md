@@ -58,8 +58,13 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-099 | 本の虫のススメ | https://x.com/honnomushi_ssm | — | — | ユーザー目視で言及なし確認。文学フリマ東京 41/42 の出店告知あり、PCWE2026 の固有物販告知は未発見。当日近くの追加投稿を再チェック推奨 | 2026-05-06 |
 | pcwe-118 | 朝日新聞ポッドキャスト | https://x.com/AsahiPodcast | — | — | ユーザー目視で言及なし確認。X タイムラインで「2 日間出店」のみ確認、朝リスちゃんグッズキャンペーンの固有 status URL 未特定。当日近くの追加投稿を再チェック推奨 | 2026-05-06 |
 | pcwe-120 | hitokoto Radio | https://x.com/hitokotoRadio | — | — | Listen.style ep cakqiayt および Apple Podcasts ep#90「告知！PODCAST WEEKEND 2026出展決定」（ID: 1000758009722）で出展は確実。物販ラインナップ・価格は当日告知待ち。当日近くの番組更新を再チェック推奨 | 2026-05-06 |
-| pcwe-126 | 神崎恵＆大森葉子の「WONT」 | — | https://www.instagram.com/wont_podcast/ | — | ユーザー目視で言及なし確認。Instagram で「5/10 ブース出展、ステッカー先着配布」の言及スニペットあるが固有 IG 投稿 URL 未特定。当日近くの追加投稿を再チェック推奨 | 2026-05-06 |
 | pcwe-016 | overture〜ミュージカル好きの語り部屋〜 | — | https://www.instagram.com/hyp_ran | — | ユーザー目視で言及なし確認（2026-05-06）。Spotify ep #91 は PCWE2024 の告知で PCWE2026 用ではない。Instagram / Spotify が active なため当日近くの新規告知を再チェック推奨 | 2026-05-06 |
+
+---
+
+## 解決ログ
+
+- **2026-05-06**: pcwe-126 WONT → done 化。ユーザー提供の Instagram 投稿 https://www.instagram.com/p/DX6e2RGFHji/ にて、ステッカー・手書き名言カードの先着配布 + 大森葉子さんによる既読本交換コーナーを確認
 
 ---
 
