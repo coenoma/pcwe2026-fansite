@@ -49,16 +49,16 @@
 | pcwe-053 | 丘の上喫茶 | https://x.com/okanoue_kissa | https://www.instagram.com/okanoue_kissa/ | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-056 | ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！ | https://x.com/gcrc_divedeep | — | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | pcwe-059 | 月からミミミ | https://x.com/tsukimimi_radio | — | — | 🤖 Claude | ✅ | https://listen.style/p/tsukimimi/nugzthen ガチャ500円(マグカップ等)・チェキ・直接会える | 05-06 |
-| pcwe-068 | ピーチウーロンの〇〇な気がする | https://x.com/peachoolong000 | — | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-068 | ピーチウーロンの〇〇な気がする | https://x.com/peachoolong000 | — | — | 👤 菊池 | ✅ | https://x.com/peachoolong000/status/2042254245827883098 ZINE+手編みグッズ | 05-06 |
 | pcwe-071 | 炊き込みご飯わくわく舎 | https://x.com/takiwakusha | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-073 | Radio18s/Teenagerからの映画部 | https://x.com/Radio18s | https://www.instagram.com/radio18s | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-078 | ３時のおやつは貝柱 | https://x.com/shona_emi | https://www.instagram.com/shona_emi | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-078 | ３時のおやつは貝柱 | https://x.com/shona_emi | https://www.instagram.com/shona_emi | — | 👤 菊池 | ✅ | https://x.com/shona_emi/status/2051466993673638003 5/10 お菓子販売 | 05-06 |
 | pcwe-079 | 歴史を紐解く！聞き流し偉人伝 | https://x.com/nasutokai | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-081 | 聴くと映画が観たくなる！CINEMORE | https://x.com/cinemorejp | https://www.instagram.com/cinemore_of... | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-084 | 映画雑談 | https://x.com/zatsudan2020 | https://www.instagram.com/eigazatsudan | — | 👤 菊池 | ⏳ | — | — |
-| pcwe-086 | 風呂あがりのアイスキャンディー | https://x.com/ofucan1121 | — | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-084 | 映画雑談 | https://x.com/zatsudan2020 | https://www.instagram.com/eigazatsudan | — | 👤 菊池 | ✅ | https://x.com/zatsudan2020/status/2051124679537299574 NEW ZINE+NEW Tシャツ+キーホルダー | 05-06 |
+| pcwe-086 | 風呂あがりのアイスキャンディー | https://x.com/ofucan1121 | — | — | 👤 菊池 | ✅ | https://x.com/ofucan1121/status/2034645926711812240 しおり「サンセットブックマーク」 | 05-06 |
 | pcwe-087 | LocalTacoStories~耳で味わうエシカルな旅~ | — | https://www.instagram.com/localtacost... | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-088 | 推しと原稿の間で | https://x.com/okiarichan27 | — | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-088 | 推しと原稿の間で | https://x.com/okiarichan27 | — | — | 👤 菊池 | ✅ | https://x.com/okiarichan27/status/2051950185056731205 エンタメ処方箋・公開収録 | 05-06 |
 | pcwe-090 | 桃花茶館〜薬膳もも子ラジオ〜 | — | https://www.instagram.com/tofachakan_... | — | 👤 菊池 | ⏳ | — | — |
 | pcwe-091 | Kids’ News – キッズニュース | https://x.com/rinaarailevia | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-094 | 荒ぶるペーのオネエじゃないのよ | https://x.com/fuji_tate_p | https://www.instagram.com/fuji_tate_p | — | 👤 菊池 | ⏳ | — | — |
@@ -91,8 +91,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 45 件
+- ⏳ 未着手: 40 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 7 件（pcwe-006, 010, 022, 027, 030, 036, 059）
+- ✅ done 化済み: 12 件（pcwe-006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088）
 - ❌ 告知なし確定: 4 件（pcwe-026, 044, 045, 056）
 - 👀 候補あり要判断: 0 件
