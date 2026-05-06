@@ -61,7 +61,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-129 | ちょいクズ男たちの恋愛本音研究所 | https://x.com/choikuzu_otoko | https://www.instagram.com/choi_kuzu_otoko | — | PCWE出展希望言及あるが物販詳細不明 | 2026-05-05 |
 | pcwe-056 | ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！！〜 | https://x.com/gcrc_divedeep | — | — | 番組ホスト（@gcrc_divedeep）のPCWE2026物販詳細投稿は見つからなかった。 | 2026-05-05 |
 | pcwe-097 | 戦略的幸福論〜AI時代をどう生きる？〜 | https://x.com/tiedfamily244 | — | — | 番組ホスト（@tiedfamily244）のPCWE2026物販詳細投稿は見つからなかった。 | 2026-05-05 |
-| pcwe-111 | ワイングラスからこぼれ話。 | https://x.com/jellysPodcast | — | — | PODCAST EXPO 2026出店確認できるが、X（@jellysPodcast）の物販詳細投稿は特定できなかった。 | 2026-05-05 |
 | pcwe-123 | 読んでみてはラジオ | https://x.com/yondemiteha | — | — | 番組ホスト（@yondemiteha）のPCWE2026物販詳細投稿は見つからなかった。 | 2026-05-05 |
 | pcwe-137 | HOG POT | https://x.com/PURE_COMEDY | https://www.instagram.com/p_ure_comedy/ | — | 番組ホスト（@PURE_COMEDY）のPCWE2026物販詳細投稿は見つからなかった。 | 2026-05-05 |
 | pcwe-019 | 高橋クリスのFA_RADIO:工場自動化ポッドキャスト | https://x.com/fulhause | — | — | PCWE2026 出店組としての言及・物販詳細投稿は WebSearch で発見できず。X: https://x.com/fulhause を直接確認推奨。 | 2026-05-05 |
