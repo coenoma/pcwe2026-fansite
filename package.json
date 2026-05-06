@@ -22,7 +22,9 @@
     "assign-fan-guide": "tsx scripts/assign-fan-guide.ts",
     "fan-guide-status": "tsx scripts/fan-guide-status.ts",
     "merge-fan-guide": "tsx scripts/merge-fan-guide.ts",
-    "progress:merchandise": "tsx scripts/merchandise-progress.ts"
+    "progress:merchandise": "tsx scripts/merchandise-progress.ts",
+    "apply:listen-research": "tsx scripts/apply-listen-research.ts",
+    "sync:status-files": "tsx scripts/sync-status-files.ts"
   },
   "dependencies": {
     "fuse.js": "^7.0.0",

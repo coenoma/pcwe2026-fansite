@@ -1,0 +1,199 @@
+{
+  "batch": 3,
+  "results": [
+    {
+      "id": "pcwe-003",
+      "name": "すべての道はジャズに通ず。",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 (5/9-10) 出店番組として確認できる物販詳細投稿は WebSearch で発見できず。過去 (Podcast Weekend 2024) には参加実績ありだが 2026 向けの物販ラインナップを示す SNS 投稿/note は未確認。X: https://x.com/subejazz をユーザー側で直接確認推奨。"
+    },
+    {
+      "id": "pcwe-012",
+      "name": "拝啓、3000年の人類へ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "ホスト本人(あいこ)は過去 Podcast Weekend で他番組ブースの売り子手伝いをしていた言及があるが、自番組としての PCWE2026 物販詳細投稿は WebSearch で発見できず。X: https://x.com/echo3000_radio 直接確認推奨。"
+    },
+    {
+      "id": "pcwe-019",
+      "name": "高橋クリスのFA_RADIO:工場自動化ポッドキャスト",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 出店組としての言及・物販詳細投稿は WebSearch で発見できず。X: https://x.com/fulhause を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-025",
+      "name": "好きにしたらええやん。",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細を示す投稿は WebSearch で発見できず。X (https://x.com/radio_sukishita) / Instagram (https://www.instagram.com/radio_sukishita/) を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-031",
+      "name": "中2の魂100まで",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組のX投稿で雑談系ポッドキャスト系イベントへの参加表明は確認できたが、PCWE2026 物販ラインナップを示す詳細投稿は WebSearch で発見できず。X: https://x.com/soulofchu2_100 直接確認推奨。"
+    },
+    {
+      "id": "pcwe-037",
+      "name": "映画の話したすぎるラジオ",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://suzuri.jp/virtualeigabar",
+          "summary": "番組公式の SUZURI グッズショップ (virtualeigabar)。番組グッズの常設販売チャネル。PCWE2026 ブースで取り扱われる物販の参考になる。",
+          "sourceType": "official-site"
+        }
+      ],
+      "note": "番組固有の suzuri ショップを確認。PCWE2026 専用の物販詳細投稿(X/note)は別途確認が必要。"
+    },
+    {
+      "id": "pcwe-043",
+      "name": "ほんのれんラジオ",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://note.com/honnoren/n/n7bd03ab57875",
+          "summary": "ほんのれんラジオ 公式 note 記事「PODCAST EXPO 2026 にほんのれんラジオ出展します!! 2026/5/9-10」。ブースで販売予定の問いと本のオリジナル冊子(36テーマ)、リベラルアーツ100冊の冊子、読書を楽しくするオリジナルグッズについて記載。",
+          "sourceType": "note"
+        },
+        {
+          "url": "https://www.instagram.com/p/DXmbbzNj1pS/",
+          "summary": "ほんのれんラジオ Instagram 投稿。5/10(日)に出店する Podcast Weekend 2026 で販売予定の物販に関する告知。",
+          "sourceType": "instagram-post"
+        }
+      ],
+      "note": "公式 note と Instagram 投稿の両方で物販詳細が公開されている。"
+    },
+    {
+      "id": "pcwe-050",
+      "name": "アテクシの屍を越えてって♡",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細投稿は WebSearch で発見できず。X (https://x.com/ateshika555) / Instagram (https://www.instagram.com/ateshika555) を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-057",
+      "name": "りっちゃ・りょかちのやいやいラジオ",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://suzuri.jp/yaiyai_radio",
+          "summary": "番組公式 SUZURI ショップ「やいやい商店」。番組ロゴステッカーなど、オリジナルグッズを販売。PCWE2026 ブース取り扱いの参考。",
+          "sourceType": "official-site"
+        },
+        {
+          "url": "https://note.com/yaiyai_radio/n/n748eac86fb68",
+          "summary": "番組公式 note プロフィール&リンク集。やいやい商店(SUZURI)へのリンクなど。",
+          "sourceType": "note"
+        }
+      ],
+      "note": "PCWE2026 専用の個別物販投稿は未確認だが、番組公式グッズ販売チャネルが確認できる。"
+    },
+    {
+      "id": "pcwe-063",
+      "name": "しゃべり足りない部",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細を示す投稿は WebSearch で発見できず。X: https://x.com/ShaberiTarinaiB を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-070",
+      "name": "大人になりたい旅がしたい",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 出店組として一部記事に言及あるが、物販詳細の SNS / note 投稿は WebSearch で確認できず。X / Instagram (@ototabi_podcast) を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-078",
+      "name": "３時のおやつは貝柱",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細投稿は WebSearch で発見できず。X (https://x.com/shona_emi) / Instagram を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-085",
+      "name": "外向きポジティブOLたちの毒舌漫談ラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細投稿は WebSearch で発見できず。X (https://x.com/dokuposi_radio) / Instagram (https://www.instagram.com/dokuposi_radio/) を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-091",
+      "name": "Kids' News - キッズニュース",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細を示す投稿は WebSearch で発見できず。X: https://x.com/rinaarailevia を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-099",
+      "name": "本の虫のススメ",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://x.com/honnomushi_ssm",
+          "summary": "番組公式 X (生物学者と書店員のポッドキャスト)。文フリ東京(せ-21)出店も告知しており、物販活動を能動的に発信。PCWE2026 物販ラインナップの発信元として有力。",
+          "sourceType": "x-post"
+        }
+      ],
+      "note": "番組公式 T シャツ(Amazon)、自著「Podcastのススメ」(Booth)を販売中で過去 Podcast Weekend にも参加実績あり。PCWE2026 個別投稿は X タイムラインで要確認。"
+    },
+    {
+      "id": "pcwe-105",
+      "name": "呟ききれない話",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細投稿は WebSearch で発見できず。X (https://x.com/Soichi_ii) / Instagram (https://www.instagram.com/soichi_ii/) を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-112",
+      "name": "深呼吸できる女とできない女",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細投稿は WebSearch で発見できず。X: https://x.com/shinjo_podcast を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-118",
+      "name": "朝日新聞ポッドキャスト",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://x.com/AsahiPodcast",
+          "summary": "番組公式 X (朝ポキ)。Podcast Weekend (5/9・10) を朝リスちゃんグッズプレゼントの3ステップキャンペーンと共に告知中。",
+          "sourceType": "x-post"
+        }
+      ],
+      "note": "公式 X 上で PCWE2026 開催に合わせた朝リスちゃんグッズキャンペーンが告知されている。具体的な物販ラインナップ詳細は X タイムラインで要確認。"
+    },
+    {
+      "id": "pcwe-124",
+      "name": "読書酒紀",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細投稿は WebSearch で発見できず。X: https://x.com/OfVoice59929 を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-131",
+      "name": "食い意地ラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細投稿は WebSearch で発見できず。Instagram: https://www.instagram.com/illustwaai を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-138",
+      "name": "ひともの研究所",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細投稿は WebSearch で発見できず。X: https://x.com/hitomono_lab を直接確認推奨。"
+    },
+    {
+      "id": "pcwe-144",
+      "name": "雑食日和",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026 物販詳細投稿は WebSearch で発見できず。X (https://x.com/zashokubiyori) / Instagram (https://www.instagram.com/zashokubiyori/) を直接確認推奨。"
+    }
+  ]
+}

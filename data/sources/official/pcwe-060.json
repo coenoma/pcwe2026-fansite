@@ -17,6 +17,14 @@
       "文学ラジオ空飛び猫たちの作り方（ポッドキャスト制作がわかる展示物）",
       "その他",
       "グッズ多数"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（番外編第79回「人はなぜ本を積むのか」）",
+        "description": "5月9日（土）のみ出展（HOME/WORK VILLAGE 世田谷区池尻2-4-5）。販売予定：冊子、グッズ。海外文学のオススメ本パーソナル提案、おすすめ本トーク企画",
+        "sourceUrl": "https://listen.style/p/radiocatwings/pmezzcly",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -30,7 +38,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/3Mfwyk4hbmGXxc6Gkqum8P",
     "x": "https://x.com/radiocatwings",
-    "instagram": "https://www.instagram.com/radiocatwings"
+    "instagram": "https://www.instagram.com/radiocatwings",
+    "listen": "https://listen.style/p/radiocatwings"
   },
   "recommendedEpisode": {
     "title": "第81回 1ページ目から面白い！話題のSF大作「プロジェクト・ヘイル・メアリー 上」アンディ・ウィアー著",

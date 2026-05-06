@@ -12,6 +12,20 @@
       "毎日使いたいタッパーシール",
       "オリジナルステッカー",
       "その他"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "PCWE2026 出展告知（Episode 175: PODCAST WEEKEND 2）",
+        "description": "5/10(日)出展。販売予定：ステッカー、耐水ラベル、コーヒーブレンド、フォトブック、古着、テーブルクロス（チャプター単位で6カテゴリ紹介）",
+        "sourceUrl": "https://listen.style/p/diningfm",
+        "sourceType": "web"
+      },
+      {
+        "name": "PCWE2026 出展告知（Episode 167: GINZA COFFEE FEST）",
+        "description": "PCWE2026出店告知とグッズ計画の議論",
+        "sourceUrl": "https://listen.style/p/diningfm",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -25,7 +39,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/3wSB2J20uqON5nPhCmMia5",
     "x": "https://x.com/diningfm",
-    "instagram": "https://instagram.com/diningfm"
+    "instagram": "https://instagram.com/diningfm",
+    "listen": "https://listen.style/p/diningfm"
   },
   "recommendedEpisode": {
     "title": "116. 最高の演技を楽しむ「ファーストキス」",

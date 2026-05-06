@@ -1,0 +1,203 @@
+{
+  "batch": 4,
+  "results": [
+    {
+      "id": "pcwe-004",
+      "name": "金曜日の焚火会",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://takibikai.base.shop/",
+          "summary": "金曜日の焚火会の公式オンラインショップ（BASE）。オリジナルTシャツ、ステッカー、焼肉のたれなどのグッズを取り扱う。PCWE2024でも焼肉のたれを販売しており、PCWE2026の物販候補商品が並ぶショップ",
+          "sourceType": "official-site"
+        },
+        {
+          "url": "https://takibikai.base.shop/items/67726354",
+          "summary": "金曜日の焚火会Tシャツ（S・M・L・XL）の販売ページ。物販イベントで取り扱う代表的な公式グッズ",
+          "sourceType": "official-site"
+        }
+      ],
+      "note": "BASEショップでオリジナルTシャツや焼肉のたれを販売。PCWE2026出店確定。SNS固有の物販詳細投稿は未確認だが、BASEショップが番組公式の物販窓口"
+    },
+    {
+      "id": "pcwe-013",
+      "name": "ピスタチオパフェクラブ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は確定しているが、物販詳細を発信する番組ホストのSNS投稿・noteは確認できなかった"
+    },
+    {
+      "id": "pcwe-020",
+      "name": "丸ちゃん教授のツミナハナシ",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://note.com/tsuminahanashi",
+          "summary": "丸ちゃん教授のツミナハナシ公式note。PCWE2026出展に関する情報を発信。キーホルダー、クリアファイル、初のZINEなどを販売予定との記述あり",
+          "sourceType": "note"
+        }
+      ],
+      "note": "PCWE2026は5/10(日)出展、入場無料。物販はキーホルダー・クリアファイル・ZINE等。番組のnoteに詳細情報"
+    },
+    {
+      "id": "pcwe-026",
+      "name": "雨の日には本をさして。",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は確認できたが、物販詳細を伝える番組ホストSNS/note等の投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-032",
+      "name": "13歳からのPodcast",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は確認できたが、物販詳細を伝える番組ホストSNS投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-038",
+      "name": "ゲームなんとか",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://gamenantoka.booth.pm/",
+          "summary": "ゲームなんとか公式BOOTHショップ。番組グッズの常設販売窓口。PCWE2026の物販候補となる商品を取り扱い",
+          "sourceType": "official-site"
+        },
+        {
+          "url": "https://gamenantoka.com/",
+          "summary": "ゲームなんとか公式サイト。番組情報・グッズ販売情報を集約",
+          "sourceType": "official-site"
+        }
+      ],
+      "note": "PCWE2026出店確定。BOOTHでオリジナルグッズを販売中。SNSでのPCWE2026物販詳細投稿は確認できないが、BOOTHが公式販売窓口"
+    },
+    {
+      "id": "pcwe-044",
+      "name": "ひうら芳麗の楽女なニュース",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組やSNSでPCWE2026の物販詳細投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-051",
+      "name": "テツセカ〜哲学の世界を知りたい！〜",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/zotfdozq/ikcskoon",
+          "summary": "テツセカ #93「Podcast Weekendお疲れさまでした！」エピソード。PCWE2024で販売した物販（グラス、ノート、シール、コースター、クッキー、Tシャツ用アイロンシート等）の振り返り。PCWE2026物販を考える上で重要な参考情報",
+          "sourceType": "web"
+        }
+      ],
+      "note": "PCWE2024ではグラス・ノート・シール・コースター・クッキー・アイロンシート等を販売。PCWE2026の物販詳細投稿は未確認"
+    },
+    {
+      "id": "pcwe-058",
+      "name": "イロモノラジオ",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://open.spotify.com/episode/2RuJbLhfLG41cuMs0xVSOP",
+          "summary": "イロモノラジオ #284『【ご報告】イロモノラジオ、ついにリアル出没します【PODCAST EXPO 2026】』。PCWE2026で5/10(日)のみ出展、リアル「いろねぇのタロット占い」を実施することを告知",
+          "sourceType": "web"
+        }
+      ],
+      "note": "PCWE2026は5/10のみ出展、ブースでタロット占いを開催する旨を告知済み"
+    },
+    {
+      "id": "pcwe-064",
+      "name": "めいめい",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は確認できたが、番組SNSでの物販詳細投稿は未確認"
+    },
+    {
+      "id": "pcwe-071",
+      "name": "炊き込みご飯わくわく舎",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組SNSでPCWE2026の物販詳細投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-079",
+      "name": "歴史を紐解く！聞き流し偉人伝",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組SNSでPCWE2026の物販詳細投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-086",
+      "name": "風呂あがりのアイスキャンディー",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は確認できたが、物販詳細を伝える番組SNS投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-092",
+      "name": "平成1桁女子の自己肯定感爆上がり恋愛ラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組SNSでPCWE2026の物販詳細投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-100",
+      "name": "「いま、暇？」急いで準備するからちょっと飲まない？",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2024ではステッカー、お正月のお守り等を販売した実績はあるが、PCWE2026固有の物販詳細投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-106",
+      "name": "公共訴訟ラジオ｜社会を動かす裁判の話",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2024ではポスター展示、ワッペン作り体験、チャリティーグッズ販売等を実施した実績はあるが、PCWE2026固有の物販詳細投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-113",
+      "name": "ブラウンブラウニー",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は確認できたが、物販詳細投稿は未確認"
+    },
+    {
+      "id": "pcwe-119",
+      "name": "聴く餃子",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://suzuri.jp/ch1cala",
+          "summary": "聴く餃子（一般社団法人焼き餃子協会 / ch1cala）公式SUZURIショップ。番組オリジナルグッズの常設販売窓口。PCWE2026の物販候補商品ラインナップ",
+          "sourceType": "official-site"
+        },
+        {
+          "url": "https://note.com/ch1cala/n/n3a69f071068b",
+          "summary": "小野寺力（ch1cala）のnote記事「愛と狂気のマーケット後半戦！」。物販イベント出展に関する情報",
+          "sourceType": "note"
+        }
+      ],
+      "note": "SUZURIで番組オリジナルグッズを販売。PCWE2026固有の物販詳細投稿は未確認だが、SUZURIが番組の公式物販窓口"
+    },
+    {
+      "id": "pcwe-125",
+      "name": "女性がよく寝てよく働けるラジオ　わたしとねむり研究所",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組SNS・公式サイトでPCWE2026出展や物販に関する詳細投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-133",
+      "name": "チ的好奇心のすすめ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組SNSでPCWE2026の物販詳細投稿は確認できなかった"
+    },
+    {
+      "id": "pcwe-139",
+      "name": "ぬまずっきゅーんfromみんキャス",
+      "status": "not-found",
+      "candidates": [],
+      "note": "沼津マルシェ等のローカルイベントでオリジナルグッズ販売実績はあるが、PCWE2026固有の物販詳細投稿は未確認"
+    }
+  ]
+}

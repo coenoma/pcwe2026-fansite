@@ -1,0 +1,204 @@
+{
+  "batch": 6,
+  "results": [
+    {
+      "id": "pcwe-008",
+      "name": "私的エクレアイズム",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "WebSearchで listen.style 登録ページは見つからず（Spotify/Apple/Anchor のみ配信）"
+    },
+    {
+      "id": "pcwe-015",
+      "name": "好き趣味発見！まにまにラジオ",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "WebSearchで listen.style 該当ページなし。類似名（むしゃむしゃラジオ等）のみヒット"
+    },
+    {
+      "id": "pcwe-023",
+      "name": "脳内口外",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style に該当番組ページが見つからず"
+    },
+    {
+      "id": "pcwe-029",
+      "name": "dining.fm",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/diningfm",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/diningfm",
+          "episodeTitle": "Episode 175: PODCAST WEEKEND 2026 グッズ紹介",
+          "merchInfo": "5/10(日)出展。販売予定：ステッカー、耐水ラベル、コーヒーブレンド、フォトブック、古着、テーブルクロス（チャプター単位で6カテゴリ紹介）",
+          "publishedYear": "2026"
+        },
+        {
+          "url": "https://listen.style/p/diningfm",
+          "episodeTitle": "Episode 167: GINZA COFFEE FESTIVAL感想記とPodcast Weekend 2026出店のお知らせ",
+          "merchInfo": "PCWE2026出店告知とグッズ計画の議論",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "ブースID: 26-029（podcastexpo.jp/booth/26-029/）。出展は5月10日のみ"
+    },
+    {
+      "id": "pcwe-035",
+      "name": "38℃ラジオ",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/38do-radio",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/38do-radio",
+          "episodeTitle": "#280〜#282 等（Podcast Weekend 2026 関連告知エピソード群）",
+          "merchInfo": "缶バッジ事前注文フォーム公開（出店者向け: forms.gle/ABD6Yxk68yqqxcRHA、一般来場者向け: forms.gle/QqjcfDyTRfjDJQH26）。複数の最新エピソード（4/27〜5/4公開）でPCWE2026への出店と缶バッジ販売を告知",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "Podcast Weekend 2026にブース出展。缶バッジを物販予定"
+    },
+    {
+      "id": "pcwe-044",
+      "name": "ひうら芳麗の楽女なニュース",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style に該当ページなし"
+    },
+    {
+      "id": "pcwe-052",
+      "name": "シンプルKEIBA～難しくない競馬ラジオ～",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Spotify/Apple のみ配信。listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-060",
+      "name": "文学ラジオ空飛び猫たち",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/radiocatwings",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/radiocatwings/pmezzcly",
+          "episodeTitle": "番外編第79回「人はなぜ本を積むのか」",
+          "merchInfo": "5月9日（土）のみ出展（HOME/WORK VILLAGE 世田谷区池尻2-4-5）。販売予定：冊子、グッズ。海外文学のオススメ本パーソナル提案、おすすめ本トーク企画",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "公開日 2026年4月27日"
+    },
+    {
+      "id": "pcwe-068",
+      "name": "ピーチウーロンの〇〇な気がする",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 登録なし（Spotify中心）"
+    },
+    {
+      "id": "pcwe-076",
+      "name": "F1ファンになる方法 #f1log",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/f1log",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/f1log",
+          "episodeTitle": "Episode 168: f1loss (2026 F1春休み)",
+          "merchInfo": "2026年5月9日（土）のみブース出展（PCWE-076）。物販はSUZURI（https://suzuri.jp/f1log）でTシャツ等を販売",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "公開日 2026年4月25日。podcastexpo.jp/booth/pcwe-076/"
+    },
+    {
+      "id": "pcwe-083",
+      "name": "ハコとくら",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-090",
+      "name": "桃花茶館〜薬膳もも子ラジオ〜",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-097",
+      "name": "戦略的幸福論〜AI時代をどう生きる？〜",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-107",
+      "name": "ラジオただいま発酵中",
+      "status": "not-found",
+      "listenUrl": "https://listen.style/p/cnjfbfzz",
+      "candidates": [],
+      "note": "listen.style ページは存在するが、PCWE2026/Podcast Weekend 2026 に関する記述・物販情報なし"
+    },
+    {
+      "id": "pcwe-113",
+      "name": "ブラウンブラウニー",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 登録なし"
+    },
+    {
+      "id": "pcwe-122",
+      "name": "ねぇ、一歩踏みだしてみない？",
+      "status": "found",
+      "listenUrl": "https://listen.style/p/ne1po",
+      "candidates": [
+        {
+          "url": "https://listen.style/p/ne1po",
+          "episodeTitle": "#157 About PCWE2026 of NE1PO（原点回帰と成長過程のご報告）",
+          "merchInfo": "PCWE2026出店決定。当日かっぴーは不在。オリジナルTシャツ再販予定、その他オリジナルグッズ準備中（公式SNSで段階的告知）",
+          "publishedYear": "2026"
+        },
+        {
+          "url": "https://listen.style/p/ne1po",
+          "episodeTitle": "#156 最近初めて行ったア・ソ・コ",
+          "merchInfo": "PCWE2026出店決定告知、Tシャツ再販予定",
+          "publishedYear": "2026"
+        }
+      ],
+      "note": "公開日 #157=2026/4/19、#156=2026/4/12"
+    },
+    {
+      "id": "pcwe-129",
+      "name": "ちょいクズ男たちの恋愛本音研究所",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 登録なし（Spotify/Audible中心）"
+    },
+    {
+      "id": "pcwe-135",
+      "name": "まるごと放送室",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "Spotify中心配信。listen.style 直接の番組ページが特定できず"
+    },
+    {
+      "id": "pcwe-141",
+      "name": "Misa Yuka Podcast",
+      "status": "not-found",
+      "listenUrl": null,
+      "candidates": [],
+      "note": "listen.style 登録なし"
+    }
+  ]
+}

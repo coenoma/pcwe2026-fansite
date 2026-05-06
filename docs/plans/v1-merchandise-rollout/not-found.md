@@ -21,7 +21,6 @@
 | pcwe-017 | 女性消防設備士の休憩室ラジオ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-017/) のみ参照可能 | 2026-05-05 |
 | pcwe-052 | シンプルKEIBA～難しくない競馬ラジオ～ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-052/) のみ参照可能 | 2026-05-05 |
 | pcwe-065 | そうめん屋ですが何か？ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-065/) のみ参照可能 | 2026-05-05 |
-| pcwe-076 | F1ファンになる方法 #f1log | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-076/) のみ参照可能 | 2026-05-05 |
 | pcwe-077 | アラサー同期のみなまでいうと | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-077/) のみ参照可能 | 2026-05-05 |
 | pcwe-083 | ハコとくら | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-083/) のみ参照可能 | 2026-05-05 |
 | pcwe-096 | 日暮里ゼミナール | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-096/) のみ参照可能 | 2026-05-05 |
@@ -31,8 +30,6 @@
 | pcwe-001 | 電波惹句 | https://x.com/signal_cp | — | — | Spotifyエピソードで言及あるが物販詳細URL特定できず | 2026-05-05 |
 | pcwe-010 | 地方ゲイだけど丁寧な暮らしがしたい | https://x.com/chihougay | — | — | 検索ヒットなし | 2026-05-05 |
 | pcwe-023 | 脳内口外 | https://x.com/nounaikougai | https://www.instagram.com/nounaikougai/ | — | ZINE制作言及あるが物販URL特定できず | 2026-05-05 |
-| pcwe-029 | dining.fm | https://x.com/diningfm | https://instagram.com/diningfm | — | 検索ヒットなし | 2026-05-05 |
-| pcwe-035 | 38℃ラジオ | https://x.com/38doRadio | https://www.instagram.com/38do.radio/ | — | 缶バッジ予約フォーム言及あるが投稿URL不明 | 2026-05-05 |
 | pcwe-041 | 酒の道～日本酒の聖地から～@しぶさわくんFM | https://x.com/shibusawakunfm | — | — | PCWE物販投稿の特定なし | 2026-05-05 |
 | pcwe-047 | クリエイターエコノミーニュース | https://x.com/creator_enews | — | — | 検索ヒットなし | 2026-05-05 |
 | pcwe-055 | 工業高校農業部 | https://x.com/ushiwakamaruo | — | — | SUZURI店舗ありPCWE物販投稿特定なし | 2026-05-05 |
@@ -42,7 +39,6 @@
 | pcwe-103 | SONICWAVEの3355ラジオ | https://x.com/weare_sonicwave | https://www.instagram.com/we_are_sonicwave/ | — | 検索ヒットなし | 2026-05-05 |
 | pcwe-110 | 生物をざっくり紹介するラジオ　〜ぶつざくネオ〜 | https://x.com/butuzaku | https://www.instagram.com/butsubu_now | — | SUZURI店舗ありPCWE物販投稿特定なし | 2026-05-05 |
 | pcwe-116 | カウチポテトブラザーズ | https://x.com/radio_CPB | https://www.instagram.com/radio_cpb/ | — | PCWE2024参加情報のみPCWE2026物販不明 | 2026-05-05 |
-| pcwe-122 | ねぇ、一歩踏みだしてみない？ | https://x.com/ne1po_step | https://www.instagram.com/ne1po_step | — | Tシャツ等グッズあるがPCWE2026特定不可 | 2026-05-05 |
 | pcwe-129 | ちょいクズ男たちの恋愛本音研究所 | https://x.com/choikuzu_otoko | https://www.instagram.com/choi_kuzu_otoko | — | PCWE出展希望言及あるが物販詳細不明 | 2026-05-05 |
 | pcwe-011 | てきと〜 | https://x.com/tekito9899 | https://instagram.com/tekito9899 | — | 番組ホスト（@tekito9899）のPCWE2026関連物販告知投稿は見つからなかった。 | 2026-05-05 |
 | pcwe-018 | こうきとたかやのラジオもどき | https://x.com/radiomodoki2021 | — | — | 番組ホスト（@radiomodoki2021）のPCWE2026関連物販告知投稿は見つからなかった。 | 2026-05-05 |
@@ -101,7 +97,6 @@
 | pcwe-028 | 土曜のサカナ | https://x.com/Saturday__fish | — | — | 検索ではサカナクション関連の結果のみで、土曜のサカナ自体のPCWE2026物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-040 | 俺思 \| 週刊漫画家と装丁デザイナーのPodcast | https://x.com/oreha_omowanai | https://www.instagram.com/orehasoha_omowanai/ | — | 番組概要と参加情報は確認できたが、PCWE2026での具体的な物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-046 | 人生百貨店 | https://x.com/lifedeptstores | https://www.instagram.com/lifedepartmentstores/ | — | PCWE2026出店は確認できたが、物販詳細投稿の特定はできず。 | 2026-05-05 |
-| pcwe-060 | 文学ラジオ空飛び猫たち | https://x.com/radiocatwings | https://www.instagram.com/radiocatwings | — | AKASAKA BOOK STUDIO 2026や世界とつながるブックフェアでZINE・グッズ委託販売の情報あり。PCWE2026固有の物販投稿は特定できず。 | 2026-05-05 |
 | pcwe-073 | Radio18s/Teenagerからの映画部 | https://x.com/Radio18s | https://www.instagram.com/radio18s | — | PCWE2026参加は確認できたが、PCWE2026の物販詳細投稿の特定はできず。 | 2026-05-05 |
 | pcwe-081 | 聴くと映画が観たくなる！CINEMORE | https://x.com/cinemorejp | https://www.instagram.com/cinemore_official | — | 番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-088 | 推しと原稿の間で | https://x.com/okiarichan27 | — | — | WebSearchで物販詳細投稿は見つからず。 | 2026-05-05 |

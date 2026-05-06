@@ -1,0 +1,171 @@
+{
+  "batch": 2,
+  "results": [
+    {
+      "id": "pcwe-002",
+      "name": "愛の抵抗",
+      "status": "not-found",
+      "candidates": [],
+      "note": "WebSearchでは番組ホストのSNS（@asa_utsumi）による物販詳細投稿を特定できず。PCWE2026出店は確認できるが、グッズ告知は見つからなかった。"
+    },
+    {
+      "id": "pcwe-011",
+      "name": "てきと〜",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組ホスト（@tekito9899）のPCWE2026関連物販告知投稿は見つからなかった。"
+    },
+    {
+      "id": "pcwe-018",
+      "name": "こうきとたかやのラジオもどき",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組ホスト（@radiomodoki2021）のPCWE2026関連物販告知投稿は見つからなかった。"
+    },
+    {
+      "id": "pcwe-024",
+      "name": "マイクラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組ホスト（@maikurajio33515）のPCWE2026関連物販告知は見つからなかった。"
+    },
+    {
+      "id": "pcwe-030",
+      "name": "ダンドー・キュー",
+      "status": "not-found",
+      "candidates": [],
+      "note": "Instagram（@podcastddq）のPCWE2026物販詳細投稿は見つからず。出店事実はWeb情報で確認できるが、物販投稿URLは特定できなかった。"
+    },
+    {
+      "id": "pcwe-036",
+      "name": "とみこはん&佐々木敬子「とみことけいこのたびたび、旅｣",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PODCAST EXPO 2026出店75組には含まれているが、物販詳細投稿は見つからなかった。"
+    },
+    {
+      "id": "pcwe-042",
+      "name": "あきらめラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は確認できるが、ホスト（@guccicoaching）の物販詳細投稿は見つからなかった。"
+    },
+    {
+      "id": "pcwe-048",
+      "name": "劇団雌猫の悪友ミッドナイト",
+      "status": "not-found",
+      "candidates": [],
+      "note": "BOOTHや既刊同人誌の販売情報はあるが、PCWE2026のための物販詳細投稿は特定できなかった。"
+    },
+    {
+      "id": "pcwe-056",
+      "name": "ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！！〜",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組ホスト（@gcrc_divedeep）のPCWE2026物販詳細投稿は見つからなかった。"
+    },
+    {
+      "id": "pcwe-062",
+      "name": "こじらせ平成夜話",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://www.youtube.com/watch?v=q_MfYdFxgTc",
+          "summary": "「【売り子もやるよ】Podcasterの物販イベントに出店決定！【Podcast Weekend参加告知】#102」というタイトルで、Podcast Weekend出店告知を行っているYouTube動画。番組ホストによる物販イベント参加の言及が確認できる。",
+          "sourceType": "web"
+        }
+      ],
+      "note": "YouTube動画として「Podcast Weekend参加告知」を発見。X（@koziyawa）の個別物販投稿URLは特定できなかったが、番組による告知コンテンツとして利用可能。"
+    },
+    {
+      "id": "pcwe-069",
+      "name": "おじさんのアウトプット",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PCWE2026出店は推定されるが、ホスト（@ojisan_output）の物販詳細投稿は特定できなかった。"
+    },
+    {
+      "id": "pcwe-075",
+      "name": "おちつきAIラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組ホスト（@ochitsuki_AI）のPCWE2026物販詳細投稿は見つからなかった。"
+    },
+    {
+      "id": "pcwe-084",
+      "name": "映画雑談",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組グッズとしてTシャツ販売情報があるが、PCWE2026専用物販詳細投稿（@zatsudan2020）は特定できなかった。"
+    },
+    {
+      "id": "pcwe-090",
+      "name": "桃花茶館〜薬膳もも子ラジオ〜",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PODCAST EXPO 2026出店確認できるが、Instagram（@tofachakan_radio）の物販詳細投稿は特定できなかった。"
+    },
+    {
+      "id": "pcwe-097",
+      "name": "戦略的幸福論〜AI時代をどう生きる？〜",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組ホスト（@tiedfamily244）のPCWE2026物販詳細投稿は見つからなかった。"
+    },
+    {
+      "id": "pcwe-104",
+      "name": "話し方のハナシ",
+      "status": "found",
+      "candidates": [
+        {
+          "url": "https://hanashi.koelab.net/",
+          "summary": "番組公式サイト。Podcast EXPO 2026への出店情報、5月10日（日）にブースを構え、話し方診断とコンサルティングを実施する旨の告知が掲載されている。",
+          "sourceType": "official-site"
+        }
+      ],
+      "note": "公式サイトに出展情報の記載あり。X（@takayama_yukari）の物販個別投稿URLは特定できなかったが、公式サイトに告知内容が確認できる。"
+    },
+    {
+      "id": "pcwe-111",
+      "name": "ワイングラスからこぼれ話。",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PODCAST EXPO 2026出店確認できるが、X（@jellysPodcast）の物販詳細投稿は特定できなかった。"
+    },
+    {
+      "id": "pcwe-117",
+      "name": "玄石の原石",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組（@genseki_podcast）でステッカー作成等の動きはあるが、PCWE2026物販詳細投稿は特定できなかった。"
+    },
+    {
+      "id": "pcwe-123",
+      "name": "読んでみてはラジオ",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組ホスト（@yondemiteha）のPCWE2026物販詳細投稿は見つからなかった。"
+    },
+    {
+      "id": "pcwe-130",
+      "name": "佐野いくみの喜々台湾",
+      "status": "not-found",
+      "candidates": [],
+      "note": "X（@kikitaiwan_pc）/Instagram（@kikitaiwan_podcast）にPCWE2026の物販詳細投稿は特定できなかった。"
+    },
+    {
+      "id": "pcwe-137",
+      "name": "HOG POT",
+      "status": "not-found",
+      "candidates": [],
+      "note": "番組ホスト（@PURE_COMEDY）のPCWE2026物販詳細投稿は見つからなかった。"
+    },
+    {
+      "id": "pcwe-143",
+      "name": "日中バイリンガルへの道",
+      "status": "not-found",
+      "candidates": [],
+      "note": "PODCAST EXPO 2026出店確認できるが、ホスト（@yoyo_jplife）の物販詳細投稿は特定できなかった。"
+    }
+  ]
+}
