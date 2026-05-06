@@ -40,9 +40,9 @@
 | ✅ | pcwe-003 | すべての道はジャズに通ず。 | https://x.com/subejazz | — | — | 👤 菊池 | YouTube「【再】グッズ紹介をしたい生配信」（公式merchandiseの紹介動画） | 05-06 |
 | ✅ | pcwe-006 | 本茶本茶ー１冊の本をお茶とともに | https://x.com/honcha_honcha | — | — | 👤 菊池 | https://x.com/honcha_honcha/status/2029180276392517902 両日出店、本＆お茶 | 05-06 |
 | ✅ | pcwe-010 | 地方ゲイだけど丁寧な暮らしがしたい | https://x.com/chihougay | — | — | 👤 菊池 | https://x.com/chihougay/status/2051644039129432304 PCWE限定ステッカー3種 | 05-06 |
-| ⏳ | pcwe-011 | てきと〜 | https://x.com/tekito9899 | https://instagram.com/tekito9899 | — | 👤 菊池 | — | — |
-| ⏳ | pcwe-013 | ピスタチオパフェクラブ | https://x.com/pisparfaitclub | https://www.instagram.com/pisparfaitclub | — | 👤 菊池 | — | — |
-| ⏳ | pcwe-015 | 好き趣味発見！まにまにラジオ | https://x.com/mani2radio | — | — | 👤 菊池 | — | — |
+| ✅ | pcwe-011 | てきと〜 | https://x.com/tekito9899 | https://instagram.com/tekito9899 | — | 👤 菊池 | https://x.com/tekito9899/status/2046505145765404721 5/9 準備中告知 | 05-06 |
+| ✅ | pcwe-013 | ピスタチオパフェクラブ | https://x.com/pisparfaitclub | https://www.instagram.com/pisparfaitclub | — | 👤 菊池 | Spotify「PODCAST EXPOで何するの？」あくびSt2種・しおり2種・コースター・カズマ自作St2種・現金のみ | 05-06 |
+| ✅ | pcwe-015 | 好き趣味発見！まにまにラジオ | https://x.com/mani2radio | — | — | 👤 菊池 | X 投稿2件: ZINE(エッセイ集)・三つ折りパンフ「まにぺでぃあ」無料配布 | 05-06 |
 | ✅ | pcwe-022 | ねむれぬ夜にはラブレター | https://x.com/ameniwaarisa | https://www.instagram.com/ameniwaarisa | — | 👤 菊池 | https://listen.style/p/ameniwaarisa/snfmpsjj 5/10 ブース16-B、新刊ZINE+トート+缶バッジ | 05-06 |
 | ⏳ | pcwe-023 | 脳内口外 | https://x.com/nounaikougai | https://www.instagram.com/nounaikougai/ | — | 👤 菊池 | — | — |
 | ❌ | pcwe-026 | 雨の日には本をさして。 | https://x.com/amehonns2 | https://www.instagram.com/amehons2 | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
@@ -97,8 +97,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 21 件
+- ⏳ 未着手: 18 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 23 件（pcwe-001, 003, 006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094, 108, 114, 116, 117, 128, 134）
+- ✅ done 化済み: 26 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094, 108, 114, 116, 117, 128, 134）
 - ❌ 告知なし確定: 12 件（pcwe-026, 044, 045, 056, 100, 102, 112, 124, 129, 138, 140, 141）
 - 👀 候補あり要判断: 0 件
