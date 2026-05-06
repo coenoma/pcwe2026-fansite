@@ -8,6 +8,14 @@
     "description": "── 聞いたあと、クローゼットの洋服たちが今よりきっと好きになる。\nBACKYARD TO CLOSETは、セレクトショップ SLOW&STEADY を展開する、S&Sによる音声プログラムです。番組では、主に洋服の知識や歴史、本当に似合う洋服とは？といった、とにかく洋服にまつわるアレコレを、実店舗の裏にあるバックヤードから、あなたのクローゼットへお届けします。",
     "merchandise": [
       "オリジナルアパレルグッズ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "ペインティットブランクの商品（オーナーブランド）",
+        "description": "5/9・10 両日出展（去年に引き続いての出展）。ホスト一人＋東京スタッフで運営（相方の長谷川誠さんは本業のそば屋多忙のため不参加）。Listen エピソード「#232｜音声メディアの力『PODCAST EXPO』から考える洋服トーク」（2026-04-30 公開）にて「僕がやっているペインティットブランクの商品を、メインに持って行かせていただこうかなと思っています。今販売しているものを中心になるのかな。なので、生で見ていただいて、触れて体験していただけたらと思います」とホスト本人が告知。",
+        "sourceUrl": "https://listen.style/p/sands/mckvryof",
+        "sourceType": "web"
+      }
     ]
   },
   "exhibition": {
@@ -22,7 +30,8 @@
   "links": {
     "spotify": "https://open.spotify.com/show/7cGFPKVuJ22gnpune8UYCz",
     "x": "https://x.com/slwanstdy",
-    "instagram": "https://www.instagram.com/at_slowandsteady"
+    "instagram": "https://www.instagram.com/at_slowandsteady",
+    "listen": "https://listen.style/p/sands"
   },
   "recommendedEpisode": {
     "title": "#213｜加齢とともに「センスが育つ人・止まる人」から考える洋服トーク",
