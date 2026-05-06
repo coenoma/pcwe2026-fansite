@@ -1,6 +1,22 @@
 # 02. データ構造と SVG 戦略
 
-要件 #1（2 日間対応）#2（SVG 化）#6（JSON 再整備）に対する設計。
+要件 #1（2 日間対応）#2（SVG 化）#6（JSON 再整備）+ ユーザー追加要件（公式画像 DL、ファンガイドトップ雰囲気踏襲）に対する設計。
+
+## 0. データ取得状況（2026-05-07 時点）
+
+✅ **取得完了**:
+- `data/sources/booth-map/booth-positions-source.md`: PCWE 公式提供のテント↔番組マッピング表（テント 1-29 を網羅）
+- `data/booth-positions.json`: 上記 md をパース・programs.json と突合した確定 JSON（175 スロット、142 番組すべて配置確定）
+- `public/images/map/pcwe2026-day1.webp`: 公式 Day1 マップ画像（DL 提供用）
+- `public/images/map/pcwe2026-day2.webp`: 公式 Day2 マップ画像（DL 提供用）
+
+⚠️ **未確定**:
+- **テント 30, 31** のブース割当（公式 md に記載なし、要追加データ）
+- **3 番組**が programs.json に存在しない: `PodWalker` / `まかないラジオ` / `アイデア刺激法 〜どう？〜`
+  → PCWE 直前追加の出展者の可能性。programs.json 側の追加可否を判断必要
+
+✅ **特殊扱い**:
+- **テント 32**: 「※キッチンブース」（番組出展なし）。マップには領域として描画するが、ピンタップ時には「キッチンブース」案内を出す
 
 ---
 
@@ -32,56 +48,72 @@ PCWE 公式（podcastexpo.jp）に「ブース配置データを CSV / JSON で�
 #### 手段 D: 現地確認
 当日 5/9 朝に会場で配布される紙パンフレットに記載されているはず。**当日確定でも OK な情報** として割り切る運用も可能。
 
-### 1-3. データ表現
+### 1-3. データ表現（実装済み）
 
-論理 ↔ 物理マッピングは **マッピング JSON ファイルで別管理**。
+論理 ↔ 物理マッピングは **マッピング JSON ファイルで別管理**: `data/booth-positions.json`（既に生成済み）。
 
-`data/booth-positions.json`:
+実際のスキーマ（簡略化版）:
 
 ```json
 {
-  "version": "1.0",
-  "lastUpdated": "2026-05-08",
+  "version": "0.1.0",
+  "lastUpdated": "2026-05-07",
+  "venue": "HOME/WORK VILLAGE",
+  "address": "東京都世田谷区池尻2-4-5",
+  "sources": {
+    "positionMapping": "data/sources/booth-map/booth-positions-source.md",
+    "officialMapDay1": "/images/map/pcwe2026-day1.webp",
+    "officialMapDay2": "/images/map/pcwe2026-day2.webp"
+  },
+  "notes": [
+    "テント 30, 31 は元データに含まれず未割当（公式に確認必要）",
+    "テント 32 は ※キッチンブース（番組出展なし、特別ブース扱い）",
+    "PodWalker / まかないラジオ / アイデア刺激法 は programs.json に存在しない番組（要追加調査）"
+  ],
   "tents": [
     {
       "id": 1,
-      "label": "1",
-      "shape": "single",  // single | quad
-      "polygon": [[12, 580], [60, 580], [60, 628], [12, 628]],
-      "slots": {
-        "sat": [{ "position": "1", "programId": "pcwe-001" }],
-        "sun": [{ "position": "1", "programId": "pcwe-007" }]
-      }
+      "shape": "single",
+      "slots": [
+        { "position": "1", "sat": "pcwe-074", "sun": "pcwe-074" }
+      ]
     },
     {
       "id": 14,
-      "label": "14",
       "shape": "quad",
-      "polygon": [[612, 712], [684, 712], [684, 784], [612, 784]],
-      "slots": {
-        "sat": [
-          { "position": "14-A", "programId": "pcwe-014" },
-          { "position": "14-B", "programId": "pcwe-068" },
-          { "position": "14-C", "programId": "pcwe-122" },
-          { "position": "14-D", "programId": "pcwe-130" }
-        ],
-        "sun": [
-          { "position": "14-A", "programId": "pcwe-021" },
-          { "position": "14-B", "programId": "pcwe-099" },
-          { "position": "14-C", "programId": "pcwe-129" },
-          { "position": "14-D", "programId": "pcwe-141" }
-        ]
-      }
+      "slots": [
+        { "position": "14-A", "slot": "A", "sat": "pcwe-081", "sun": "pcwe-081" },
+        { "position": "14-B", "slot": "B", "sat": "pcwe-016", "sun": "pcwe-010" },
+        { "position": "14-C", "slot": "C", "sat": "pcwe-062", "sun": "pcwe-097" },
+        { "position": "14-D", "slot": "D", "sat": "pcwe-096", "sun": "pcwe-125" }
+      ]
+    },
+    {
+      "id": 32,
+      "shape": "single",
+      "kind": "kitchen-booth",
+      "note": "キッチンブース（番組出展なし）",
+      "slots": []
     }
   ]
 }
 ```
 
 **設計のポイント**:
-- `shape: 'single' | 'quad'` でテント形状を表現（公式マップを見ると 1〜7 と 18〜19, 28〜29, 30〜31 は single、その他は quad の模様）
-- `polygon` は SVG ビューポート上の絶対座標 (4 点で矩形を表現)
-- `slots[day]` は **その日のブース割当**。両日同番組なら `sat` と `sun` で同じ `programId`
-- A/B/C/D の 4 区画は `quad` テントで `slots.sat` `slots.sun` が最大 4 件入る配列
+- `shape: 'single' | 'quad'` でテント形状を表現
+- `slots[].position` は表示ラベル、`slot` は A/B/C/D（quad のみ）、`sat` / `sun` で日別 `programId`
+- 両日同番組なら `sat === sun`、両日異番組なら別 ID
+- `kind: 'kitchen-booth'` で特別ブース型を表現（テント 32）
+- `slots: []` は割当未確定または番組出展なし
+
+**SVG 上の座標は別フィールド**として後で追加（Phase 1.5 で Figma で起こす）:
+```json
+{
+  "id": 14,
+  "polygon": [[612, 712], [684, 784]],
+  ...
+}
+```
 
 ### 1-4. programs.json との関係
 
@@ -321,13 +353,55 @@ src/
 
 ---
 
-## 5. ライセンス・引用
+## 5. ライセンス・引用とテイスト方針（ユーザー要件 #7）
+
+### 5-1. 独自 SVG はファンガイドトップのテイストで描く
+
+ユーザー指示: 「公式は参考で、テイストもファンガイドトップページの雰囲気にしましょう！」
+
+公式マップは **位置情報の参考** として扱い、ビジュアルは **コエノマ ファンガイドのブランドアイデンティティに統一**:
+
+| 要素 | コエノマ既存トークン | 適用 |
+|---|---|---|
+| メインピン色 | `--color-primary-500` (#dc725a オレンジ) | テント矩形の塗り |
+| ピンホバー | `--color-primary-600` (#c25c44) | ホバー強調 |
+| 背景・装飾 | `--color-secondary-100` (#d6e4f6 薄青) | マップ背景 |
+| アクセント | `--color-accent-cyan-500` (#00b3d4) | 「お気に入り」「会えた」アイコン |
+| テキスト | 既存 typography（`font-klee` / `font-zen` 等、番組毎の `themeFont` は無視、マップは中立） |
+| 角丸 | rounded-2xl (既存カードと同じ) | テント矩形 |
+| 余白 / シャドウ | 既存カード（`shadow-sm` 等）に合わせる |
+
+公式マップの **濃いピンク色 (#FF1493 系)** は使わない。コエノマブランドのオレンジ + 落ち着いた青で「ファンガイドの世界観」を保つ。
+
+### 5-2. 公式画像の DL 機能（ユーザー要件追加）
+
+公式画像 `pcwe2026-day1.webp` / `pcwe2026-day2.webp` は **マップ画面から DL 可能** にする:
+
+UI 配置:
+```
+[ 公式マップを見る ▾ ]
+  ├── [⬇ Day1（土曜）公式画像 DL]
+  ├── [⬇ Day2（日曜）公式画像 DL]
+  └── [🔗 PCWE 公式サイト →]
+```
+
+実装:
+- `<a href="/images/map/pcwe2026-day1.webp" download="pcwe2026-day1.webp">` で簡単に
+- ボタンは画面右下にフローティング、または下部ユーティリティバーに
+
+意図:
+- 当日電波が弱い前提のフォールバック（公式画像をスマホに保存しておけば確実）
+- コエノママップ側のバグ・誤情報があった場合の保険
+- 公式へのリスペクト + リーダーシップ表明（「我々のマップは公式画像を頼りに作ってます」と透明性）
+
+### 5-3. ライセンス整理
 
 公式 JPEG マップを **そのまま再配布する場合** はライセンス確認が必要。
 
-ただし:
-- **公式の配置情報を独自 SVG として再描画する** のは事実情報の利用にあたり、創作的表現の複製ではない（と整理）
-- 公式の **デザイン要素（ロゴ・タイポ）は再利用しない**、独自デザインで構築
-- マップ下部に「Based on PCWE2026 公式会場マップ／©PODCAST WEEKEND 2026」明記
+本プロジェクトのスタンス:
+- **公式 webp 画像をそのまま `public/images/map/` に配置 + DL 提供** → 「リスナーの利便性のためのキャッシュ的提供」と整理。出典明記 + 公式リンク常設で透明性確保
+- **独自 SVG マップ** → 公式の配置情報という事実を参照しつつ、デザイン要素（ロゴ・色・タイポ）は完全に独自
+- マップ下部に「位置情報の出典: PCWE2026 公式会場マップ／©PODCAST WEEKEND 2026」を明記
+- 公式サイト [podcastexpo.jp](https://podcastexpo.jp/) へのリンク常設
 
-→ 安全策として **公式 podcastexpo.jp に「公式マップを参考にした独自 SVG マップを fansite で公開してよいか」確認** を、コエノマ側から事前に依頼するのが最善。
+→ 安全策として **コエノマ側から PCWE 公式に「fansite として公式画像を DL 提供 + 独自 SVG マップを公開」を事前報告** する運用が望ましい。

@@ -1,0 +1,736 @@
+{
+  "version": "0.1.0",
+  "lastUpdated": "2026-05-07",
+  "venue": "HOME/WORK VILLAGE",
+  "address": "東京都世田谷区池尻2-4-5",
+  "sources": {
+    "positionMapping": "data/sources/booth-map/booth-positions-source.md",
+    "officialMapDay1": "/images/map/pcwe2026-day1.webp",
+    "officialMapDay2": "/images/map/pcwe2026-day2.webp"
+  },
+  "notes": [
+    "テント 30, 31 は元データに含まれず未割当（公式に確認必要）",
+    "テント 32 は ※キッチンブース（番組出展なし、特別ブース扱い）",
+    "PodWalker / まかないラジオ / アイデア刺激法 は programs.json に存在しない番組（要追加調査）"
+  ],
+  "tents": [
+    {
+      "id": 1,
+      "shape": "single",
+      "slots": [
+        {
+          "position": "1",
+          "sat": "pcwe-074",
+          "sun": "pcwe-074"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "shape": "single",
+      "slots": [
+        {
+          "position": "2",
+          "sat": "pcwe-123",
+          "sun": "pcwe-132"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "shape": "single",
+      "slots": [
+        {
+          "position": "3",
+          "sat": "pcwe-005",
+          "sun": "pcwe-005"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "shape": "single",
+      "slots": [
+        {
+          "position": "4",
+          "sat": "pcwe-134",
+          "sun": "pcwe-134"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "shape": "single",
+      "slots": [
+        {
+          "position": "5",
+          "sat": "pcwe-113",
+          "sun": "pcwe-106"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "shape": "single",
+      "slots": [
+        {
+          "position": "6",
+          "sat": "pcwe-045",
+          "sun": "pcwe-045"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "shape": "single",
+      "slots": [
+        {
+          "position": "7",
+          "sat": "pcwe-108",
+          "sun": "pcwe-108"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "8-A",
+          "sat": "pcwe-036",
+          "sun": "pcwe-036",
+          "slot": "A"
+        },
+        {
+          "position": "8-B",
+          "sat": "pcwe-067",
+          "sun": "pcwe-048",
+          "slot": "B"
+        },
+        {
+          "position": "8-C",
+          "sat": "pcwe-042",
+          "sun": "pcwe-124",
+          "slot": "C"
+        },
+        {
+          "position": "8-D",
+          "sat": "pcwe-054",
+          "sun": "pcwe-140",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "9-A",
+          "sat": "pcwe-041",
+          "sun": "pcwe-041",
+          "slot": "A"
+        },
+        {
+          "position": "9-B",
+          "sat": "pcwe-069",
+          "sun": "pcwe-078",
+          "slot": "B"
+        },
+        {
+          "position": "9-C",
+          "sat": "pcwe-047",
+          "sun": "pcwe-047",
+          "slot": "C"
+        },
+        {
+          "position": "9-D",
+          "sat": "pcwe-021",
+          "sun": "pcwe-088",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "10-A",
+          "sat": "pcwe-109",
+          "sun": "pcwe-109",
+          "slot": "A"
+        },
+        {
+          "position": "10-B",
+          "sat": "pcwe-011",
+          "sun": "pcwe-073",
+          "slot": "B"
+        },
+        {
+          "position": "10-C",
+          "sat": "pcwe-135",
+          "sun": "pcwe-135",
+          "slot": "C"
+        },
+        {
+          "position": "10-D",
+          "sat": "pcwe-101",
+          "sun": "pcwe-141",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "11-A",
+          "sat": "pcwe-023",
+          "sun": "pcwe-023",
+          "slot": "A"
+        },
+        {
+          "position": "11-B",
+          "sat": "pcwe-002",
+          "sun": "pcwe-091",
+          "slot": "B"
+        },
+        {
+          "position": "11-C",
+          "sat": "pcwe-001",
+          "sun": "pcwe-001",
+          "slot": "C"
+        },
+        {
+          "position": "11-D",
+          "sat": "pcwe-038",
+          "sun": "pcwe-136",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "12-A",
+          "sat": "pcwe-087",
+          "sun": "pcwe-087",
+          "slot": "A"
+        },
+        {
+          "position": "12-B",
+          "sat": "pcwe-077",
+          "sun": "pcwe-083",
+          "slot": "B"
+        },
+        {
+          "position": "12-C",
+          "sat": "pcwe-068",
+          "sun": "pcwe-068",
+          "slot": "C"
+        },
+        {
+          "position": "12-D",
+          "sat": "pcwe-072",
+          "sun": "pcwe-053",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "13-A",
+          "sat": "pcwe-093",
+          "sun": "pcwe-093",
+          "slot": "A"
+        },
+        {
+          "position": "13-B",
+          "sat": "pcwe-090",
+          "sun": null,
+          "slot": "B"
+        },
+        {
+          "position": "13-C",
+          "sat": "pcwe-006",
+          "sun": "pcwe-006",
+          "slot": "C"
+        },
+        {
+          "position": "13-D",
+          "sat": "pcwe-102",
+          "sun": "pcwe-133",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "14-A",
+          "sat": "pcwe-081",
+          "sun": "pcwe-081",
+          "slot": "A"
+        },
+        {
+          "position": "14-B",
+          "sat": "pcwe-016",
+          "sun": "pcwe-010",
+          "slot": "B"
+        },
+        {
+          "position": "14-C",
+          "sat": "pcwe-062",
+          "sun": "pcwe-097",
+          "slot": "C"
+        },
+        {
+          "position": "14-D",
+          "sat": "pcwe-096",
+          "sun": "pcwe-125",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "15-A",
+          "sat": "pcwe-119",
+          "sun": "pcwe-095",
+          "slot": "A"
+        },
+        {
+          "position": "15-B",
+          "sat": "pcwe-035",
+          "sun": "pcwe-056",
+          "slot": "B"
+        },
+        {
+          "position": "15-C",
+          "sat": "pcwe-128",
+          "sun": "pcwe-063",
+          "slot": "C"
+        },
+        {
+          "position": "15-D",
+          "sat": "pcwe-085",
+          "sun": "pcwe-085",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "16-A",
+          "sat": "pcwe-065",
+          "sun": "pcwe-065",
+          "slot": "A"
+        },
+        {
+          "position": "16-B",
+          "sat": "pcwe-092",
+          "sun": "pcwe-022",
+          "slot": "B"
+        },
+        {
+          "position": "16-C",
+          "sat": "pcwe-055",
+          "sun": "pcwe-026",
+          "slot": "C"
+        },
+        {
+          "position": "16-D",
+          "sat": "pcwe-112",
+          "sun": "pcwe-110",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "17-A",
+          "sat": "pcwe-082",
+          "sun": "pcwe-082",
+          "slot": "A"
+        },
+        {
+          "position": "17-B",
+          "sat": "pcwe-111",
+          "sun": "pcwe-071",
+          "slot": "B"
+        },
+        {
+          "position": "17-C",
+          "sat": "pcwe-121",
+          "sun": "pcwe-107",
+          "slot": "C"
+        },
+        {
+          "position": "17-D",
+          "sat": "pcwe-086",
+          "sun": "pcwe-029",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "shape": "single",
+      "slots": [
+        {
+          "position": "18",
+          "sat": "pcwe-116",
+          "sun": "pcwe-116"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "shape": "single",
+      "slots": [
+        {
+          "position": "19",
+          "sat": "pcwe-118",
+          "sun": "pcwe-118"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "20-A",
+          "sat": "pcwe-050",
+          "sun": "pcwe-050",
+          "slot": "A"
+        },
+        {
+          "position": "20-B",
+          "sat": "pcwe-084",
+          "sun": "pcwe-004",
+          "slot": "B"
+        },
+        {
+          "position": "20-C",
+          "sat": "pcwe-115",
+          "sun": "pcwe-131",
+          "slot": "C"
+        },
+        {
+          "position": "20-D",
+          "sat": "pcwe-138",
+          "sun": "pcwe-104",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "21-A",
+          "sat": "pcwe-070",
+          "sun": "pcwe-070",
+          "slot": "A"
+        },
+        {
+          "position": "21-B",
+          "sat": "pcwe-060",
+          "sun": "pcwe-025",
+          "slot": "B"
+        },
+        {
+          "position": "21-C",
+          "sat": "pcwe-024",
+          "sun": "pcwe-019",
+          "slot": "C"
+        },
+        {
+          "position": "21-D",
+          "sat": "pcwe-014",
+          "sun": "pcwe-126",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "22-A",
+          "sat": "pcwe-051",
+          "sun": "pcwe-051",
+          "slot": "A"
+        },
+        {
+          "position": "22-B",
+          "sat": "pcwe-018",
+          "sun": "pcwe-059",
+          "slot": "B"
+        },
+        {
+          "position": "22-C",
+          "sat": "pcwe-030",
+          "sun": "pcwe-012",
+          "slot": "C"
+        },
+        {
+          "position": "22-D",
+          "sat": "pcwe-052",
+          "sun": "pcwe-044",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "23-A",
+          "sat": "pcwe-099",
+          "sun": "pcwe-037",
+          "slot": "A"
+        },
+        {
+          "position": "23-B",
+          "sat": "pcwe-139",
+          "sun": "pcwe-139",
+          "slot": "B"
+        },
+        {
+          "position": "23-C",
+          "sat": "pcwe-130",
+          "sun": "pcwe-032",
+          "slot": "C"
+        },
+        {
+          "position": "23-D",
+          "sat": "pcwe-143",
+          "sun": "pcwe-137",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "24-A",
+          "sat": "pcwe-043",
+          "sun": "pcwe-043",
+          "slot": "A"
+        },
+        {
+          "position": "24-B",
+          "sat": "pcwe-089",
+          "sun": "pcwe-027",
+          "slot": "B"
+        },
+        {
+          "position": "24-C",
+          "sat": null,
+          "sun": "pcwe-008",
+          "slot": "C"
+        },
+        {
+          "position": "24-D",
+          "sat": "pcwe-127",
+          "sun": "pcwe-020",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "25-A",
+          "sat": "pcwe-066",
+          "sun": "pcwe-066",
+          "slot": "A"
+        },
+        {
+          "position": "25-B",
+          "sat": "pcwe-033",
+          "sun": "pcwe-017",
+          "slot": "B"
+        },
+        {
+          "position": "25-C",
+          "sat": "pcwe-013",
+          "sun": "pcwe-007",
+          "slot": "C"
+        },
+        {
+          "position": "25-D",
+          "sat": "pcwe-034",
+          "sun": "pcwe-098",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "26-A",
+          "sat": "pcwe-040",
+          "sun": "pcwe-040",
+          "slot": "A"
+        },
+        {
+          "position": "26-B",
+          "sat": "pcwe-142",
+          "sun": null,
+          "slot": "B"
+        },
+        {
+          "position": "26-C",
+          "sat": "pcwe-079",
+          "sun": "pcwe-046",
+          "slot": "C"
+        },
+        {
+          "position": "26-D",
+          "sat": "pcwe-064",
+          "sun": "pcwe-144",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "27-A",
+          "sat": "pcwe-015",
+          "sun": "pcwe-015",
+          "slot": "A"
+        },
+        {
+          "position": "27-B",
+          "sat": "pcwe-031",
+          "sun": "pcwe-028",
+          "slot": "B"
+        },
+        {
+          "position": "27-C",
+          "sat": "pcwe-057",
+          "sun": "pcwe-094",
+          "slot": "C"
+        },
+        {
+          "position": "27-D",
+          "sat": "pcwe-039",
+          "sun": "pcwe-003",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "28-A",
+          "sat": "pcwe-120",
+          "sun": "pcwe-120",
+          "slot": "A"
+        },
+        {
+          "position": "28-B",
+          "sat": "pcwe-129",
+          "sun": "pcwe-114",
+          "slot": "B"
+        },
+        {
+          "position": "28-C",
+          "sat": "pcwe-100",
+          "sun": "pcwe-058",
+          "slot": "C"
+        },
+        {
+          "position": "28-D",
+          "sat": "pcwe-122",
+          "sun": "pcwe-117",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "shape": "quad",
+      "slots": [
+        {
+          "position": "29-A",
+          "sat": "pcwe-075",
+          "sun": "pcwe-075",
+          "slot": "A"
+        },
+        {
+          "position": "29-B",
+          "sat": "pcwe-076",
+          "sun": "pcwe-105",
+          "slot": "B"
+        },
+        {
+          "position": "29-C",
+          "sat": "pcwe-103",
+          "sun": "pcwe-103",
+          "slot": "C"
+        },
+        {
+          "position": "29-D",
+          "sat": "pcwe-061",
+          "sun": "pcwe-080",
+          "slot": "D"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "shape": "single",
+      "note": "未割当（要追加データ）",
+      "slots": []
+    },
+    {
+      "id": 31,
+      "shape": "single",
+      "note": "未割当（要追加データ）",
+      "slots": []
+    },
+    {
+      "id": 32,
+      "shape": "single",
+      "kind": "kitchen-booth",
+      "note": "キッチンブース（番組出展なし）",
+      "slots": []
+    }
+  ]
+}
