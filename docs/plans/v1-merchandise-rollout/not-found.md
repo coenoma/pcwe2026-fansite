@@ -61,7 +61,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-019 | 高橋クリスのFA_RADIO:工場自動化ポッドキャスト | https://x.com/fulhause | — | — | PCWE2026 出店組としての言及・物販詳細投稿は WebSearch で発見できず。X: https://x.com/fulhause を直接確認推奨。 | 2026-05-05 |
 | pcwe-106 | 公共訴訟ラジオ｜社会を動かす裁判の話 | https://x.com/CALL4_Jp | https://www.instagram.com/call4_jp/ | — | PCWE2024ではポスター展示、ワッペン作り体験、チャリティーグッズ販売等を実施した実績はあるが、PCWE2026固有の物販詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-139 | ぬまずっきゅーんfromみんキャス | https://x.com/numazukyun | https://www.instagram.com/numazukyun/ | — | 沼津マルシェ等のローカルイベントでオリジナルグッズ販売実績はあるが、PCWE2026固有の物販詳細投稿は未確認 | 2026-05-05 |
-| pcwe-033 | HYPLACE WAVE #はいなみ | https://x.com/hainami_758 | https://www.instagram.com/mash_january25 | — | 「HYPLACE WAVE はいなみ PCWE2026 物販」「Podcast Weekend グッズ 物販」で検索したが、PCWE2026 出展告知や物販詳細投稿は発見できず。番組内では Key Music Party 等のイベントは紹介されている。 | 2026-05-05 |
 | pcwe-046 | 人生百貨店 | https://x.com/lifedeptstores | https://www.instagram.com/lifedepartmentstores/ | — | PCWE2026出店は確認できたが、物販詳細投稿の特定はできず。 | 2026-05-05 |
 | pcwe-109 | しゃらくさラジオ | https://x.com/SyarakusaRadio | — | — | 番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-115 | 吉村ジョナサンの高校古典講義 | https://x.com/dai_koku_sama | https://www.instagram.com/book_bridge_lab | — | WebSearchで物販詳細投稿は見つからず。 | 2026-05-05 |
