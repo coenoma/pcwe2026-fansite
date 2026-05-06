@@ -73,7 +73,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-144 | 雑食日和 | https://x.com/zashokubiyori | https://www.instagram.com/zashokubiyori/ | — | PCWE2026 物販詳細投稿は WebSearch で発見できず。X (https://x.com/zashokubiyori) / Instagram (https://www.instagram.com/zashokubiyori/) を直接確認推奨。 | 2026-05-05 |
 | pcwe-026 | 雨の日には本をさして。 | https://x.com/amehonns2 | https://www.instagram.com/amehons2 | — | PCWE2026出店は確認できたが、物販詳細を伝える番組ホストSNS/note等の投稿は確認できなかった | 2026-05-05 |
 | pcwe-044 | ひうら芳麗の楽女なニュース | https://x.com/marikosatoru | https://www.instagram.com/ladyfangchang | — | 番組やSNSでPCWE2026の物販詳細投稿は確認できなかった | 2026-05-05 |
-| pcwe-079 | 歴史を紐解く！聞き流し偉人伝 | https://x.com/nasutokai | — | — | 番組SNSでPCWE2026の物販詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-100 | 「いま、暇？」急いで準備するからちょっと飲まない？ | https://x.com/imahimanomanai | — | — | PCWE2024ではステッカー、お正月のお守り等を販売した実績はあるが、PCWE2026固有の物販詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-106 | 公共訴訟ラジオ｜社会を動かす裁判の話 | https://x.com/CALL4_Jp | https://www.instagram.com/call4_jp/ | — | PCWE2024ではポスター展示、ワッペン作り体験、チャリティーグッズ販売等を実施した実績はあるが、PCWE2026固有の物販詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-125 | 女性がよく寝てよく働けるラジオ　わたしとねむり研究所 | https://x.com/watashitonemuri/status/2031120340861006226 | https://www.instagram.com/sleep.femtech/ | — | 番組SNS・公式サイトでPCWE2026出展や物販に関する詳細投稿は確認できなかった | 2026-05-05 |

@@ -59,8 +59,8 @@
 | ✅ | pcwe-071 | 炊き込みご飯わくわく舎 | https://x.com/takiwakusha | — | — | 👤 菊池 | https://x.com/takiwakusha/status/2050015387312599528 ZINE第2号20P 1000円 | 05-06 |
 | ✅ | pcwe-073 | Radio18s/Teenagerからの映画部 | https://x.com/Radio18s | https://www.instagram.com/radio18s | — | 👤 菊池 | https://x.com/Radio18s/status/2047689078796329298 ステッカー・Tシャツ・特別音源・シネフィルギャググッズ | 05-06 |
 | ✅ | pcwe-078 | ３時のおやつは貝柱 | https://x.com/shona_emi | https://www.instagram.com/shona_emi | — | 👤 菊池 | https://x.com/shona_emi/status/2051466993673638003 5/10 お菓子販売 | 05-06 |
-| ⏳ | pcwe-079 | 歴史を紐解く！聞き流し偉人伝 | https://x.com/nasutokai | — | — | 👤 菊池 | — | — |
-| ⏳ | pcwe-081 | 聴くと映画が観たくなる！CINEMORE | https://x.com/cinemorejp | https://www.instagram.com/cinemore_of... | — | 👤 菊池 | — | — |
+| ✅ | pcwe-079 | 歴史を紐解く！聞き流し偉人伝 | https://x.com/nasutokai | — | — | 👤 菊池 | https://x.com/nasutokai/status/2050009720992456800 5/9 グッズ+参加企画 | 05-06 |
+| ❌ | pcwe-081 | 聴くと映画が観たくなる！CINEMORE | https://x.com/cinemorejp | https://www.instagram.com/cinemore_of... | — | 👤 菊池 | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | ✅ | pcwe-084 | 映画雑談 | https://x.com/zatsudan2020 | https://www.instagram.com/eigazatsudan | — | 👤 菊池 | https://x.com/zatsudan2020/status/2051124679537299574 NEW ZINE+NEW Tシャツ+キーホルダー | 05-06 |
 | ✅ | pcwe-086 | 風呂あがりのアイスキャンディー | https://x.com/ofucan1121 | — | — | 👤 菊池 | https://x.com/ofucan1121/status/2034645926711812240 しおり「サンセットブックマーク」 | 05-06 |
 | ⏳ | pcwe-087 | LocalTacoStories~耳で味わうエシカルな旅~ | — | https://www.instagram.com/localtacost... | — | 👤 菊池 | — | — |
@@ -97,8 +97,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 13 件
+- ⏳ 未着手: 11 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 30 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 023, 027, 030, 031, 036, 059, 068, 071, 073, 078, 084, 086, 088, 090, 091, 094, 108, 114, 116, 117, 128, 134）
-- ❌ 告知なし確定: 13 件（pcwe-026, 044, 045, 053, 056, 100, 102, 112, 124, 129, 138, 140, 141）
+- ✅ done 化済み: 31 件（pcwe-001, 003, 006, 010, 011, 013, 015, 022, 023, 027, 030, 031, 036, 059, 068, 071, 073, 078, 079, 084, 086, 088, 090, 091, 094, 108, 114, 116, 117, 128, 134）
+- ❌ 告知なし確定: 14 件（pcwe-026, 044, 045, 053, 056, 081, 100, 102, 112, 124, 129, 138, 140, 141）
 - 👀 候補あり要判断: 0 件
