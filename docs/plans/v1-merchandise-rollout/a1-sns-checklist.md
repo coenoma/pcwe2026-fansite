@@ -65,11 +65,11 @@
 | pcwe-095 | ハタとキシマの“黙っていられん” | https://x.com/damaren_radio | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-097 | 戦略的幸福論〜AI時代をどう生きる？〜 | https://x.com/tiedfamily244 | — | — | 🤖 Claude | ⏳ | — | — |
 | pcwe-100 | 「いま、暇？」急いで準備するからちょっと飲まない？ | https://x.com/imahimanomanai | — | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
-| pcwe-102 | watashito | — | https://www.instagram.com/watashito_p... | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-102 | watashito | — | https://www.instagram.com/watashito_p... | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | pcwe-103 | SONICWAVEの3355ラジオ | https://x.com/weare_sonicwave | https://www.instagram.com/we_are_soni... | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-108 | BACKYARD TO CLOSET | https://x.com/slwanstdy | https://www.instagram.com/at_slowands... | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-108 | BACKYARD TO CLOSET | https://x.com/slwanstdy | https://www.instagram.com/at_slowands... | — | 👤 菊池 | ✅ | https://listen.style/p/sands/mckvryof 両日 ペインティットブランク商品 | 05-06 |
 | pcwe-111 | ワイングラスからこぼれ話。 | https://x.com/jellysPodcast | — | — | 🤖 Claude | ⏳ | — | — |
-| pcwe-112 | 深呼吸できる女とできない女 | https://x.com/shinjo_podcast | — | — | 👤 菊池 | ⏳ | — | — |
+| pcwe-112 | 深呼吸できる女とできない女 | https://x.com/shinjo_podcast | — | — | 👤 菊池 | ❌ | 菊池さん目視で PCWE 言及なし確認 | 05-06 |
 | pcwe-114 | 愛されたい女たちのラブホ女子会 | https://x.com/aisaretaijyoshi | https://www.instagram.com/aisaretai.j... | — | 👤 菊池 | ⏳ | — | — |
 | pcwe-116 | カウチポテトブラザーズ | https://x.com/radio_CPB | https://www.instagram.com/radio_cpb/ | — | 👤 菊池 | ⏳ | — | — |
 | pcwe-117 | 玄石の原石 | https://x.com/genseki_podcast | — | — | 🤖 Claude | ⏳ | — | — |
@@ -91,8 +91,8 @@
 
 ## サマリ（自動更新）
 
-- ⏳ 未着手: 36 件
+- ⏳ 未着手: 33 件
 - 🔍 探索中: 0 件
-- ✅ done 化済み: 15 件（pcwe-006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094）
-- ❌ 告知なし確定: 5 件（pcwe-026, 044, 045, 056, 100）
+- ✅ done 化済み: 16 件（pcwe-006, 010, 022, 027, 030, 036, 059, 068, 078, 084, 086, 088, 090, 091, 094, 108）
+- ❌ 告知なし確定: 7 件（pcwe-026, 044, 045, 056, 100, 102, 112）
 - 👀 候補あり要判断: 0 件
