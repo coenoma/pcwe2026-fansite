@@ -60,14 +60,12 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-041 | 酒の道～日本酒の聖地から～@しぶさわくんFM | https://x.com/shibusawakunfm | — | — | PCWE物販投稿の特定なし | 2026-05-05 |
 | pcwe-047 | クリエイターエコノミーニュース | https://x.com/creator_enews | — | — | 検索ヒットなし | 2026-05-05 |
 | pcwe-061 | さのみきひとのラジオ ⌞ ラのみきジオ ⌝ | https://x.com/ranomikijio | — | — | 検索ヒットなし | 2026-05-05 |
-| pcwe-068 | ピーチウーロンの〇〇な気がする | https://x.com/peachoolong000 | — | — | 検索ヒットなし | 2026-05-05 |
 | pcwe-095 | ハタとキシマの“黙っていられん” | https://x.com/damaren_radio | — | — | 検索ヒットなし | 2026-05-05 |
 | pcwe-103 | SONICWAVEの3355ラジオ | https://x.com/weare_sonicwave | https://www.instagram.com/we_are_sonicwave/ | — | 検索ヒットなし | 2026-05-05 |
 | pcwe-116 | カウチポテトブラザーズ | https://x.com/radio_CPB | https://www.instagram.com/radio_cpb/ | — | PCWE2024参加情報のみPCWE2026物販不明 | 2026-05-05 |
 | pcwe-129 | ちょいクズ男たちの恋愛本音研究所 | https://x.com/choikuzu_otoko | https://www.instagram.com/choi_kuzu_otoko | — | PCWE出展希望言及あるが物販詳細不明 | 2026-05-05 |
 | pcwe-011 | てきと〜 | https://x.com/tekito9899 | https://instagram.com/tekito9899 | — | 番組ホスト（@tekito9899）のPCWE2026関連物販告知投稿は見つからなかった。 | 2026-05-05 |
 | pcwe-056 | ゆりしー&さほほのガールズ・カルチャー・リサーチ〜深く潜れ！！〜 | https://x.com/gcrc_divedeep | — | — | 番組ホスト（@gcrc_divedeep）のPCWE2026物販詳細投稿は見つからなかった。 | 2026-05-05 |
-| pcwe-084 | 映画雑談 | https://x.com/zatsudan2020 | https://www.instagram.com/eigazatsudan | — | 番組グッズとしてTシャツ販売情報があるが、PCWE2026専用物販詳細投稿（@zatsudan2020）は特定できなかった。 | 2026-05-05 |
 | pcwe-090 | 桃花茶館〜薬膳もも子ラジオ〜 | — | https://www.instagram.com/tofachakan_radio/ | — | PODCAST EXPO 2026出店確認できるが、Instagram（@tofachakan_radio）の物販詳細投稿は特定できなかった。 | 2026-05-05 |
 | pcwe-097 | 戦略的幸福論〜AI時代をどう生きる？〜 | https://x.com/tiedfamily244 | — | — | 番組ホスト（@tiedfamily244）のPCWE2026物販詳細投稿は見つからなかった。 | 2026-05-05 |
 | pcwe-111 | ワイングラスからこぼれ話。 | https://x.com/jellysPodcast | — | — | PODCAST EXPO 2026出店確認できるが、X（@jellysPodcast）の物販詳細投稿は特定できなかった。 | 2026-05-05 |
@@ -77,7 +75,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-003 | すべての道はジャズに通ず。 | https://x.com/subejazz | — | — | PCWE2026 (5/9-10) 出店番組として確認できる物販詳細投稿は WebSearch で発見できず。過去 (Podcast Weekend 2024) には参加実績ありだが 2026 向けの物販ラインナップを示す SNS 投稿/note は未確認。X: https://x.com/subejazz をユーザー側で直接確認推奨。 | 2026-05-05 |
 | pcwe-019 | 高橋クリスのFA_RADIO:工場自動化ポッドキャスト | https://x.com/fulhause | — | — | PCWE2026 出店組としての言及・物販詳細投稿は WebSearch で発見できず。X: https://x.com/fulhause を直接確認推奨。 | 2026-05-05 |
 | pcwe-031 | 中2の魂100まで | https://x.com/soulofchu2_100 | — | — | 番組のX投稿で雑談系ポッドキャスト系イベントへの参加表明は確認できたが、PCWE2026 物販ラインナップを示す詳細投稿は WebSearch で発見できず。X: https://x.com/soulofchu2_100 直接確認推奨。 | 2026-05-05 |
-| pcwe-078 | ３時のおやつは貝柱 | https://x.com/shona_emi | https://www.instagram.com/shona_emi | — | PCWE2026 物販詳細投稿は WebSearch で発見できず。X (https://x.com/shona_emi) / Instagram を直接確認推奨。 | 2026-05-05 |
 | pcwe-091 | Kids’ News – キッズニュース | https://x.com/rinaarailevia | — | — | PCWE2026 物販詳細を示す投稿は WebSearch で発見できず。X: https://x.com/rinaarailevia を直接確認推奨。 | 2026-05-05 |
 | pcwe-112 | 深呼吸できる女とできない女 | https://x.com/shinjo_podcast | — | — | PCWE2026 物販詳細投稿は WebSearch で発見できず。X: https://x.com/shinjo_podcast を直接確認推奨。 | 2026-05-05 |
 | pcwe-124 | 読書酒紀 | https://x.com/OfVoice59929 | — | — | PCWE2026 物販詳細投稿は WebSearch で発見できず。X: https://x.com/OfVoice59929 を直接確認推奨。 | 2026-05-05 |
@@ -88,7 +85,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-044 | ひうら芳麗の楽女なニュース | https://x.com/marikosatoru | https://www.instagram.com/ladyfangchang | — | 番組やSNSでPCWE2026の物販詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-071 | 炊き込みご飯わくわく舎 | https://x.com/takiwakusha | — | — | 番組SNSでPCWE2026の物販詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-079 | 歴史を紐解く！聞き流し偉人伝 | https://x.com/nasutokai | — | — | 番組SNSでPCWE2026の物販詳細投稿は確認できなかった | 2026-05-05 |
-| pcwe-086 | 風呂あがりのアイスキャンディー | https://x.com/ofucan1121 | — | — | PCWE2026出店は確認できたが、物販詳細を伝える番組SNS投稿は確認できなかった | 2026-05-05 |
 | pcwe-100 | 「いま、暇？」急いで準備するからちょっと飲まない？ | https://x.com/imahimanomanai | — | — | PCWE2024ではステッカー、お正月のお守り等を販売した実績はあるが、PCWE2026固有の物販詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-106 | 公共訴訟ラジオ｜社会を動かす裁判の話 | https://x.com/CALL4_Jp | https://www.instagram.com/call4_jp/ | — | PCWE2024ではポスター展示、ワッペン作り体験、チャリティーグッズ販売等を実施した実績はあるが、PCWE2026固有の物販詳細投稿は確認できなかった | 2026-05-05 |
 | pcwe-125 | 女性がよく寝てよく働けるラジオ　わたしとねむり研究所 | https://x.com/watashitonemuri/status/2031120340861006226 | https://www.instagram.com/sleep.femtech/ | — | 番組SNS・公式サイトでPCWE2026出展や物販に関する詳細投稿は確認できなかった | 2026-05-05 |
@@ -108,7 +104,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-046 | 人生百貨店 | https://x.com/lifedeptstores | https://www.instagram.com/lifedepartmentstores/ | — | PCWE2026出店は確認できたが、物販詳細投稿の特定はできず。 | 2026-05-05 |
 | pcwe-073 | Radio18s/Teenagerからの映画部 | https://x.com/Radio18s | https://www.instagram.com/radio18s | — | PCWE2026参加は確認できたが、PCWE2026の物販詳細投稿の特定はできず。 | 2026-05-05 |
 | pcwe-081 | 聴くと映画が観たくなる！CINEMORE | https://x.com/cinemorejp | https://www.instagram.com/cinemore_official | — | 番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。 | 2026-05-05 |
-| pcwe-088 | 推しと原稿の間で | https://x.com/okiarichan27 | — | — | WebSearchで物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-094 | 荒ぶるペーのオネエじゃないのよ | https://x.com/fuji_tate_p | https://www.instagram.com/fuji_tate_p | — | 5/10（日）にPCWE2026出店の言及はあるが、物販詳細投稿の特定はできず。 | 2026-05-05 |
 | pcwe-102 | watashito | — | https://www.instagram.com/watashito_podcast/ | — | WebSearchで物販詳細投稿は見つからず。 | 2026-05-05 |
 | pcwe-109 | しゃらくさラジオ | https://x.com/SyarakusaRadio | — | — | 番組情報は確認できたが、PCWE2026の物販詳細投稿は見つからず。 | 2026-05-05 |
