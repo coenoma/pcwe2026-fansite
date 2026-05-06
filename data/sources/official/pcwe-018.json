@@ -19,6 +19,13 @@
         "sourceUrl": "https://podcastexpo.jp/booth/pcwe-018/",
         "sourceType": "official-booth"
       }
+    ],
+    "merchandiseTags": [
+      "experience"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -31,8 +38,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/0XiKZ9Vzg24wFqeBYXPvmT",
-    "x": "https://x.com/radiomodoki2021",
-    "listen": "https://listen.style/p/radiomodoki"
+    "listen": "https://listen.style/p/radiomodoki",
+    "x": "https://x.com/radiomodoki2021"
   },
   "recommendedEpisode": {
     "title": "〈＃１０４〉カッパ捕獲許可証",

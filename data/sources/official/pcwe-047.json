@@ -9,6 +9,12 @@
     "merchandise": [
       "NFCエピソードカード",
       "ZINE（同人小冊子）"
+    ],
+    "merchandiseTags": [
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -22,8 +28,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/2uhIn54aKBSxUvyCzr1INo",
-    "x": "https://x.com/creator_enews",
-    "listen": "https://listen.style/p/creator_enews"
+    "listen": "https://listen.style/p/creator_enews",
+    "x": "https://x.com/creator_enews"
   },
   "recommendedEpisode": {
     "title": "2026年1月2週～Spotify新収益化、注目番組、テレ東、GoogleAI他",

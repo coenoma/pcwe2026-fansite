@@ -25,20 +25,20 @@
         "description": "A3二つ折り・白黒裏表（A4・4面）／100円。番組紹介・歩み・おすすめエピソード掲載。「防災アドバイス（あさちゃん）」または「恋愛タロット相談（しだちゃん）」の選べるオプション付き。出店日: 5/9、ブース: 11-B。",
         "sourceUrl": "https://note.com/asa_utsumi/n/n5a82a1833e81",
         "sourceType": "note",
-        "imagePath": "/images/sources/pcwe-002-asa_utsumi-okashinagaki.png",
-        "imageAlt": "愛の抵抗 PCWE2026 出展商品ラインアップ概要（Love Letter／あすけん生活／好（ハオ）／番組グッズ）",
-        "imageCredit": "© 内海あさ（@asa_utsumi）／note 記事より引用",
-        "accessedAt": "2026-05-07T07:33+09:00",
-        "sourcePublishedAt": "2026-05-04",
-        "sourceAuthor": "内海あさ",
-        "sourceTitle": "PCWE2026 出展商品ラインアップ",
         "additionalSources": [
           {
             "url": "https://x.com/asa_utsumi/status/2051227151329067247",
             "type": "x-post",
             "label": "番組ホストの告知ツイート"
           }
-        ]
+        ],
+        "imagePath": "/images/sources/pcwe-002-asa_utsumi-okashinagaki.png",
+        "imageAlt": "愛の抵抗 PCWE2026 出展商品ラインアップ概要（Love Letter／あすけん生活／好（ハオ）／番組グッズ）",
+        "imageCredit": "© 内海あさ（@asa_utsumi）／note 記事より引用",
+        "accessedAt": "2026-05-07T07:33+09:00",
+        "sourcePublishedAt": "2026-05-04",
+        "sourceAuthor": "内海あさ",
+        "sourceTitle": "PCWE2026 出展商品ラインアップ"
       },
       {
         "name": "あすけん生活（ZINE）",
@@ -76,6 +76,17 @@
         "sourceUrl": "https://note.com/asa_utsumi/n/n5a82a1833e81",
         "sourceType": "note"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "free-distribution",
+      "limited-new",
+      "rare-curious",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -88,9 +99,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/2msDcnMJrgjggqUYFEztLr",
+    "listen": "https://listen.style/p/ainoteikou",
     "x": "https://x.com/asa_utsumi",
-    "instagram": "https://www.instagram.com/asa_utsumi",
-    "listen": "https://listen.style/p/ainoteikou"
+    "instagram": "https://www.instagram.com/asa_utsumi"
   },
   "recommendedEpisode": {
     "title": "#88 信じる力・祈る力〜NHK「山口一郎　 “うつ”と生きる」を見て〜",

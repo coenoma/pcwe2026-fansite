@@ -9,6 +9,12 @@
     "merchandise": [
       "沼津ご当地グルメ＆雑貨",
       "オリジナルグッズ"
+    ],
+    "merchandiseTags": [
+      "food-drink"
+    ],
+    "merchandiseSubTypes": [
+      "goods-misc"
     ]
   },
   "exhibition": {
@@ -22,9 +28,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/3pVQH2wXcl0HRseeWEdPzG",
+    "listen": "https://listen.style/p/edjfkyvh",
     "x": "https://x.com/numazukyun",
-    "instagram": "https://www.instagram.com/numazukyun/",
-    "listen": "https://listen.style/p/edjfkyvh"
+    "instagram": "https://www.instagram.com/numazukyun/"
   },
   "recommendedEpisode": {
     "title": "【第247回】中編：鈴木恵子さん（SEAGLASS）– 自分を取り戻すきっかけ、そして「食」を選んだ理由",

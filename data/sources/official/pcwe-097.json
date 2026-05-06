@@ -9,6 +9,12 @@
     "merchandise": [
       "ステッカー",
       "体験コーチング"
+    ],
+    "merchandiseTags": [
+      "experience"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {

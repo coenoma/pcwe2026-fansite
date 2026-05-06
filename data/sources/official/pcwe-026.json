@@ -11,6 +11,12 @@
       "ステッカー",
       "しおり",
       "ブックカバー"
+    ],
+    "merchandiseTags": [
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {

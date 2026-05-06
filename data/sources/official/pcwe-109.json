@@ -11,6 +11,10 @@
       "厳選エピソード名刺",
       "番組特製コアラのマーチ",
       "番組特製オリジナルCD"
+    ],
+    "merchandiseSubTypes": [
+      "audio-music",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -24,8 +28,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/645iXhHau7wEgUGbDA5flE",
-    "x": "https://x.com/SyarakusaRadio",
-    "listen": "https://listen.style/p/syarakusaradio"
+    "listen": "https://listen.style/p/syarakusaradio",
+    "x": "https://x.com/SyarakusaRadio"
   },
   "recommendedEpisode": {
     "title": "【Vol.27】エロ広告おじさん と パンケーキおじさん",

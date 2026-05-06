@@ -21,6 +21,16 @@
         "sourceUrl": "https://x.com/daijobu_radio/status/2052002184255111246",
         "sourceType": "x-post"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "limited-new",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "audio-music",
+      "goods-misc",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -33,8 +43,8 @@
   },
   "links": {
     "applePodcasts": "https://podcasts.apple.com/jp/podcast/124-%E3%83%8F%E3%82%A4%E3%82%AD%E3%83%A5%E3%83%BC-%E3%83%90%E3%83%AC%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%AB%E8%B6%85%E3%81%88%E3%81%A6%E4%BA%BA%E7%94%9F%E3%81%AE%E6%95%99%E7%A7%91%E6%9B%B8%E3%81%AB%E5%B0%8A%E3%81%95%E7%88%86%E7%99%BA%E3%81%AE%E7%A7%81%E3%81%9F%E3%81%A1/id1547061619?i=1000649300665",
-    "x": "https://x.com/daijobu_radio",
-    "listen": "https://listen.style/p/6ki02xqz"
+    "listen": "https://listen.style/p/6ki02xqz",
+    "x": "https://x.com/daijobu_radio"
   },
   "recommendedEpisode": {
     "title": "#124『ハイキュー!!』バレーボール超えて人生の教科書に尊さ爆発の私たち",

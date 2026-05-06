@@ -18,6 +18,11 @@
         "sourceUrl": "https://listen.style/p/smaadp7u",
         "sourceType": "web"
       }
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -31,9 +36,9 @@
   },
   "links": {
     "applePodcasts": "https://podcasts.apple.com/jp/podcast/%E5%A4%96%E5%90%91%E3%81%8D%E3%83%9D%E3%82%B8%E3%83%86%E3%82%A3%E3%83%96ol%E3%81%9F%E3%81%A1%E3%81%AE%E6%AF%92%E8%88%8C%E6%BC%AB%E8%AB%87%E3%83%A9%E3%82%B8%E3%82%AA/id1671551572",
+    "listen": "https://listen.style/p/smaadp7u",
     "x": "https://x.com/dokuposi_radio",
-    "instagram": "https://www.instagram.com/dokuposi_radio/",
-    "listen": "https://listen.style/p/smaadp7u"
+    "instagram": "https://www.instagram.com/dokuposi_radio/"
   },
   "recommendedEpisode": {
     "title": "#43 独身女子の自己肯定感の上げ方💋",

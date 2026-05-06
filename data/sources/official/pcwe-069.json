@@ -19,6 +19,13 @@
         "sourceUrl": "https://listen.style/p/ojisan_output/2kdzocgh",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-misc"
     ]
   },
   "exhibition": {
@@ -31,8 +38,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6XrIliBtszGwqUdYyKoUjx",
-    "x": "https://x.com/ojisan_output",
-    "listen": "https://listen.style/p/ojisan_output"
+    "listen": "https://listen.style/p/ojisan_output",
+    "x": "https://x.com/ojisan_output"
   },
   "recommendedEpisode": {
     "title": "ep.1 やらなきゃ意味ないよ",

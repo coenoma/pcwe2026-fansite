@@ -20,6 +20,13 @@
         "sourceUrl": "https://listen.style/p/pklcbeym",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience"
+    ],
+    "merchandiseSubTypes": [
+      "goods-misc",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -32,9 +39,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/0ncn4Glxzk9ownpJLeDAZJ",
+    "listen": "https://listen.style/p/pklcbeym",
     "x": "https://x.com/yoyo_jplife",
-    "instagram": "https://www.instagram.com/yoyo_jplife/",
-    "listen": "https://listen.style/p/pklcbeym"
+    "instagram": "https://www.instagram.com/yoyo_jplife/"
   },
   "recommendedEpisode": {
     "title": "#298 【出版記念第一弾】なぜ本？どうやって本？",

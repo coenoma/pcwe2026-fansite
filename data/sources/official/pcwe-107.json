@@ -11,6 +11,10 @@
       "本",
       "Tシャツ",
       "各種発酵食品"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {

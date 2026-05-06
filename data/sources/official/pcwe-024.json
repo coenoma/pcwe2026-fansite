@@ -32,6 +32,15 @@
         "sourceUrl": "https://listen.style/p/maikuradio",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "limited-new"
+    ],
+    "merchandiseSubTypes": [
+      "goods-acrylic",
+      "goods-misc",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -44,8 +53,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/0xO7lQNFvePqTvundgfzgK",
-    "x": "https://x.com/maikurajio33515",
-    "listen": "https://listen.style/p/maikuradio"
+    "listen": "https://listen.style/p/maikuradio",
+    "x": "https://x.com/maikurajio33515"
   },
   "recommendedEpisode": {
     "title": "45,ついにマイクラジオ一周年",

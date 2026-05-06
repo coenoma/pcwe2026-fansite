@@ -18,6 +18,13 @@
         "sourceUrl": "https://listen.style/p/atsu/yxs9ei2y",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "free-distribution"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -30,9 +37,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/4Stfk1sRnzqBxeXVCSAeQF",
+    "listen": "https://listen.style/p/atsu",
     "x": "https://x.com/atsuatsu",
-    "instagram": "https://www.instagram.com/atsu0atsu/",
-    "listen": "https://listen.style/p/atsu"
+    "instagram": "https://www.instagram.com/atsu0atsu/"
   },
   "recommendedEpisode": {
     "title": "#490 夫婦に恋愛感情なんて必要ない。",

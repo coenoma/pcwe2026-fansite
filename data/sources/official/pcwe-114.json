@@ -36,6 +36,14 @@
         "sourceUrl": "https://listen.style/p/aisaretaijyoshi/jryqisgx",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "limited-new"
+    ],
+    "merchandiseSubTypes": [
+      "audio-music",
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -48,9 +56,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/16PoNBFvuZo9pTsgDT267T",
+    "listen": "https://listen.style/p/aisaretaijyoshi",
     "x": "https://x.com/aisaretaijyoshi",
-    "instagram": "https://www.instagram.com/aisaretai.jyoshikai",
-    "listen": "https://listen.style/p/aisaretaijyoshi"
+    "instagram": "https://www.instagram.com/aisaretai.jyoshikai"
   },
   "recommendedEpisode": {
     "title": "恋愛における”気遣い”とは？",

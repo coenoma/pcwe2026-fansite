@@ -28,6 +28,12 @@
         "sourceUrl": "https://listen.style/p/indoadoumei",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -40,8 +46,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/1uSjQVGimHdUINJerklK2H",
-    "x": "https://x.com/indoadoumei",
-    "listen": "https://listen.style/p/indoadoumei"
+    "listen": "https://listen.style/p/indoadoumei",
+    "x": "https://x.com/indoadoumei"
   },
   "recommendedEpisode": {
     "title": "俺たちの最強ヒロイン",

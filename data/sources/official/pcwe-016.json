@@ -11,6 +11,10 @@
       "ミニタオル",
       "ノート&チケットファイル",
       "ミュージカルソムリエ"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {

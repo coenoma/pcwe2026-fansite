@@ -25,6 +25,11 @@
         "sourceUrl": "https://listen.style/p/kounoubu",
         "sourceType": "web"
       }
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-tableware",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -37,8 +42,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/1MhF3CYuGK9zAWUOC8e2CM",
-    "x": "https://x.com/ushiwakamaruo",
-    "listen": "https://listen.style/p/kounoubu"
+    "listen": "https://listen.style/p/kounoubu",
+    "x": "https://x.com/ushiwakamaruo"
   },
   "recommendedEpisode": {
     "title": "良い1日は良い朝から。トークテーマ「朝ごはんどうしてる？」",

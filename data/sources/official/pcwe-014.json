@@ -31,6 +31,13 @@
         "sourceUrl": "https://x.com/OBATalk2024/status/2051671413581656066",
         "sourceType": "x-post"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "rare-curious"
+    ],
+    "merchandiseSubTypes": [
+      "apparel"
     ]
   },
   "exhibition": {
@@ -43,8 +50,8 @@
   },
   "links": {
     "applePodcasts": "https://podcasts.apple.com/jp/podcast/オバトーク/id1732400331",
-    "x": "https://x.com/obatalk2024",
-    "listen": "https://listen.style/p/obatalk"
+    "listen": "https://listen.style/p/obatalk",
+    "x": "https://x.com/obatalk2024"
   },
   "recommendedEpisode": {
     "title": "#95 犯罪体験、宗教、そしていつのまにかのシモトーーーク",

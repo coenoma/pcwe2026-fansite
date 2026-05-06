@@ -11,6 +11,12 @@
       "マグカップ",
       "キーホルダー",
       "Tシャツ"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic",
+      "goods-tableware",
+      "paper-stationery"
     ]
   },
   "exhibition": {

@@ -16,6 +16,11 @@
       "ボールペン",
       "ステッカー",
       "キーホルダー"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {

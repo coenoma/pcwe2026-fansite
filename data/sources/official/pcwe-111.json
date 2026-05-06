@@ -17,6 +17,13 @@
         "sourceUrl": "https://listen.style/p/jelly/kq8otfdu",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "food-drink",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -29,8 +36,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/1I4SVQ8dsk1yxart7ODNGU",
-    "x": "https://x.com/jellysPodcast",
-    "listen": "https://listen.style/p/jelly"
+    "listen": "https://listen.style/p/jelly",
+    "x": "https://x.com/jellysPodcast"
   },
   "recommendedEpisode": {
     "title": "#100「カリフォルニアのぶどう王」〜長沢鼎の物語",

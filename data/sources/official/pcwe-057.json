@@ -11,6 +11,14 @@
       "ステッカー",
       "Tシャツ",
       "ZINE"
+    ],
+    "merchandiseTags": [
+      "experience",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {

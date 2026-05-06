@@ -12,6 +12,13 @@
       "焼き菓子",
       "コーヒーパック",
       "匿名お手紙の輪"
+    ],
+    "merchandiseTags": [
+      "food-drink",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {
