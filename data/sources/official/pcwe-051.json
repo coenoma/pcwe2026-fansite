@@ -14,6 +14,58 @@
       "レザーカバー手帳",
       "キャラクッキー",
       "Tシャツ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "アクリルキーチェーン",
+        "description": "左: miso / 右: フクロウ。各 10 個限定。5/9-10（土・日）ブースで直接手に取って選択可。",
+        "sourceUrl": "https://x.com/tetsuseka/status/2045818146872000985",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "3 人がそれぞれ作る冊子",
+        "description": "1 冊 ¥300 / 3 冊セット ¥1,000。限定 20 冊。「買い手の気持ちを揺さぶる価格設定」。グッズ購入者と哲学対話を収録予定。",
+        "sourceUrl": "https://x.com/tetsuseka/status/2050468641330933884",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/tetsuseka/status/2043199456078897450",
+            "type": "x-post",
+            "label": "出展概要"
+          }
+        ]
+      },
+      {
+        "name": "テツセカおみくじ",
+        "description": "全 12 種類、一回 ¥200。「ばぁさんが気持ちを込めてやってます。御利益あるわよ」。",
+        "sourceUrl": "https://x.com/tetsuseka/status/2049138761037209714",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "クッキー",
+        "description": "前回（PCWE2024）でも好評だった品。今年もご用意。お取り置きは番組のフォームから受付。",
+        "sourceUrl": "https://x.com/tetsuseka/status/2050453151107650020",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "革くら特製レザーコースター",
+        "description": "フクロウと「あるはあるないはない」の刻印入り。6 色展開で日常使いにぴったり。",
+        "sourceUrl": "https://x.com/tetsuseka/status/2050453151107650020",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/tetsuseka/status/2047491785447051449",
+            "type": "x-post",
+            "label": "詳細投稿"
+          }
+        ]
+      },
+      {
+        "name": "手帳",
+        "description": "前回（PCWE2024）でも好評だった品。今年もご用意。お取り置きは番組のフォームから受付。",
+        "sourceUrl": "https://x.com/tetsuseka/status/2050453151107650020",
+        "sourceType": "x-post"
+      }
     ]
   },
   "exhibition": {

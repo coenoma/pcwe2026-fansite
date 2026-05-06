@@ -12,9 +12,16 @@
  * 完全な static HTML が生成される（iframe 不使用、widgets.js 不使用）。
  *
  * レイアウト:
- * - 「公式情報」セクション（max-w-3xl）から独立して、max-w-5xl の独立セクションに
- * - グリッドで sm:2 列、xl:3 列にして PC ワイド画面でも空白を活かす
- * - bg-white で公式情報と同色 → セクション境界を主張せず連続感を保つ
+ * - 「公式情報」セクション（max-w-3xl）から独立して、max-w-6xl の独立セクションに
+ * - グリッドで md:2 列、xl:3 列にして PC ワイド画面でも空白を活かす
+ *
+ * グルーピング:
+ * - 同じ sourceUrl を持つ連続する merchandiseDetails は 1 グループ（1 カード）に
+ *   まとめられる（X 埋め込みも 1 回のみ表示）
+ * - これは「1 つの投稿で複数物販を紹介しているケース」（pcwe-020 等）に対応する
+ *   ためで、出典の重複表示を避ける
+ * - 同じ商品に対して情報源が複数ある場合は `additionalSources` で補強（小さく
+ *   関連リンクを並べる）
  */
 
 import { ExternalLink } from 'lucide-react';
@@ -28,6 +35,43 @@ interface Props {
   merchandiseDetails: ReadonlyArray<MerchandiseDetail> | undefined;
 }
 
+/**
+ * 連続する同 sourceUrl の merchandiseDetails をグループ化する。
+ * 例: [A url1, B url1, C url1, D url2] → [{url1, items: [A, B, C]}, {url2, items: [D]}]
+ *
+ * 同じ sourceUrl を持つ entry が連続でない場合（途中に別 URL が挟まる場合）は別グループに
+ * なるが、これはほぼ起きない（データ作成時に同じ出典の物販はまとめて並べるルール）。
+ */
+interface MerchandiseGroup {
+  sourceUrl: string;
+  sourceType: MerchandiseSourceType;
+  /** この出典でまとめて紹介される物販 1 件以上 */
+  items: MerchandiseDetail[];
+}
+
+function groupConsecutive(
+  details: ReadonlyArray<MerchandiseDetail>,
+): MerchandiseGroup[] {
+  const groups: MerchandiseGroup[] = [];
+  for (const d of details) {
+    const last = groups[groups.length - 1];
+    if (
+      last !== undefined &&
+      last.sourceUrl === d.sourceUrl &&
+      last.sourceType === d.sourceType
+    ) {
+      last.items.push(d);
+    } else {
+      groups.push({
+        sourceUrl: d.sourceUrl,
+        sourceType: d.sourceType,
+        items: [d],
+      });
+    }
+  }
+  return groups;
+}
+
 export function MerchandiseSection({ merchandise, merchandiseDetails }: Props) {
   const hasDetails =
     merchandiseDetails !== undefined && merchandiseDetails.length > 0;
@@ -36,6 +80,8 @@ export function MerchandiseSection({ merchandise, merchandiseDetails }: Props) {
   if (!hasDetails && !hasList) {
     return null;
   }
+
+  const groups = hasDetails ? groupConsecutive(merchandiseDetails!) : [];
 
   return (
     <section className="bg-white">
@@ -47,16 +93,17 @@ export function MerchandiseSection({ merchandise, merchandiseDetails }: Props) {
           番組ホストが SNS で予告したグッズ・情報を可能な範囲でまとめています。
         </p>
 
-        {hasDetails ? (
+        {groups.length > 0 ? (
           // breakpoint:
           //   ~768px (md 未満): 1 列
-          //   768-1279px (md-xl): 2 列（各 ~360-580px）
+          //   768-1279px (md-xl): 2 列
           //   1280px+ (xl): 3 列（各 ~355px+ 確保）
-          // tweet 埋め込みは横幅 350px 程度から綺麗に表示できるため、
-          // 最大 3 列でも各カードが「細長すぎ」になるのを避けられる。
           <div className="mt-6 grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {merchandiseDetails!.map((detail, i) => (
-              <MerchandiseCard key={`${detail.sourceUrl}-${i}`} detail={detail} />
+            {groups.map((group, i) => (
+              <MerchandiseGroupCard
+                key={`${group.sourceUrl}-${i}`}
+                group={group}
+              />
             ))}
           </div>
         ) : null}
@@ -82,25 +129,55 @@ export function MerchandiseSection({ merchandise, merchandiseDetails }: Props) {
 }
 
 /**
- * 1 つの物販詳細カード。
- * sourceType が 'x-post' なら react-tweet で SSG 時に投稿を埋め込み、
- * それ以外（公式ブース / note / web 等）は出典リンクボタンで誘導。
+ * 1 グループ（= 1 出典に紐づく 1 件以上の物販）を 1 カードでレンダリングする。
+ *
+ * - グループ内の物販リストを縦に並べて表示
+ * - X 投稿は最後に 1 度だけ埋め込み、それ以外の出典は「○○で見る」リンクボタンに
+ * - 各 item に additionalSources があれば小さく「関連: 1, 2」を並べる
  *
  * カード自体は flex-col で、tweet 埋め込みが下に伸びても他カードと並んだ時の
  * 上揃えを保つ（grid 内で各カードの heights は独立して伸縮する）。
  */
-function MerchandiseCard({ detail }: { detail: MerchandiseDetail }) {
+function MerchandiseGroupCard({ group }: { group: MerchandiseGroup }) {
   const tweetId =
-    detail.sourceType === 'x-post' ? extractTweetId(detail.sourceUrl) : null;
+    group.sourceType === 'x-post' ? extractTweetId(group.sourceUrl) : null;
 
   return (
     <article className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5">
-      <h3 className="font-bold text-neutral-900">{detail.name}</h3>
-      {detail.description !== undefined && detail.description.length > 0 ? (
-        <p className="mt-1 text-sm leading-relaxed text-neutral-700">
-          {detail.description}
-        </p>
-      ) : null}
+      {group.items.map((item, i) => (
+        <div
+          key={`${item.name}-${i}`}
+          className={
+            i > 0 ? 'mt-3 border-t border-neutral-100 pt-3' : ''
+          }
+        >
+          <h3 className="font-bold text-neutral-900">{item.name}</h3>
+          {item.description !== undefined && item.description.length > 0 ? (
+            <p className="mt-1 text-sm leading-relaxed text-neutral-700">
+              {item.description}
+            </p>
+          ) : null}
+          {item.additionalSources !== undefined &&
+          item.additionalSources.length > 0 ? (
+            <p className="mt-2 text-xs text-neutral-500">
+              関連:{' '}
+              {item.additionalSources.map((src, si) => (
+                <span key={src.url}>
+                  {si > 0 ? ' / ' : ''}
+                  <a
+                    href={src.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 underline-offset-2 hover:underline"
+                  >
+                    {src.label ?? sourceTypeLabel(src.type)}
+                  </a>
+                </span>
+              ))}
+            </p>
+          ) : null}
+        </div>
+      ))}
       {tweetId !== null ? (
         // react-tweet がビルド時に server で syndication API から取得し、static HTML として埋め込む
         <div className="mt-3 [&_.react-tweet-theme]:!my-0">
@@ -108,12 +185,12 @@ function MerchandiseCard({ detail }: { detail: MerchandiseDetail }) {
         </div>
       ) : (
         <a
-          href={detail.sourceUrl}
+          href={group.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-3 inline-flex items-center gap-1 self-start text-sm font-bold text-primary-700 transition-colors hover:text-primary-800 hover:underline"
         >
-          {sourceTypeLabel(detail.sourceType)}で見る
+          {sourceTypeLabel(group.sourceType)}で見る
           <ExternalLink size={14} aria-hidden="true" />
         </a>
       )}
