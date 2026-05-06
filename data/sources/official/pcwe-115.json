@@ -10,6 +10,9 @@
       "古典文学ゲーム",
       "創作コーナー",
       "文法書"
+    ],
+    "merchandiseTags": [
+      "experience"
     ]
   },
   "exhibition": {
@@ -22,9 +25,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/62k2Vqh2WbuuV6vEqlNicY",
+    "listen": "https://listen.style/p/yoshimurajona",
     "x": "https://x.com/dai_koku_sama",
-    "instagram": "https://www.instagram.com/book_bridge_lab",
-    "listen": "https://listen.style/p/yoshimurajona"
+    "instagram": "https://www.instagram.com/book_bridge_lab"
   },
   "recommendedEpisode": {
     "title": "#81 古事記10「ここにイザナキノミコト」",

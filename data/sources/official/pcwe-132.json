@@ -13,6 +13,15 @@
       "似顔絵",
       "占い",
       "tシャツ"
+    ],
+    "merchandiseTags": [
+      "experience",
+      "rare-curious",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {

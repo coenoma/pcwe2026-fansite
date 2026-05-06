@@ -19,6 +19,15 @@
         "sourceUrl": "https://x.com/ranomikijio/status/2047888758092296639",
         "sourceType": "x-post"
       }
+    ],
+    "merchandiseTags": [
+      "free-distribution",
+      "limited-new",
+      "rare-curious"
+    ],
+    "merchandiseSubTypes": [
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -31,8 +40,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/0RAnsCfoM3THFZSPtRl9OH",
-    "x": "https://x.com/ranomikijio",
-    "listen": "https://listen.style/p/ranomikijio"
+    "listen": "https://listen.style/p/ranomikijio",
+    "x": "https://x.com/ranomikijio"
   },
   "recommendedEpisode": {
     "title": "phase:two 012｜鳥かごのアルキメデス",

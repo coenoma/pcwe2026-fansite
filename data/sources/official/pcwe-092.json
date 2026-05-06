@@ -37,6 +37,13 @@
         "sourceUrl": "https://listen.style/p/l6sbmpbm/vjjaq99a",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "limited-new"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -49,9 +56,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/1XgVEdJX0OW08dYvDpihar",
+    "listen": "https://listen.style/p/l6sbmpbm",
     "x": "https://x.com/bakukoiradio",
-    "instagram": "https://www.instagram.com/rinaarailevia/",
-    "listen": "https://listen.style/p/l6sbmpbm"
+    "instagram": "https://www.instagram.com/rinaarailevia/"
   },
   "recommendedEpisode": {
     "title": "恋って結局なに？好き・執着・安心の違いを雑談で整理する回【第37回】",

@@ -18,6 +18,14 @@
         "sourceUrl": "https://listen.style/p/podcastalk",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "limited-new"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -30,8 +38,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/3N7FlRxLFv2YwWbMowXJLC",
-    "x": "https://x.com/VoiceCapsule_PT",
-    "listen": "https://listen.style/p/podcastalk"
+    "listen": "https://listen.style/p/podcastalk",
+    "x": "https://x.com/VoiceCapsule_PT"
   },
   "recommendedEpisode": {
     "title": "【メープルウィークエンド】豪華ポッドキャスターが集結したらこんな感じになりました",

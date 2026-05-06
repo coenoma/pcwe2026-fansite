@@ -17,6 +17,13 @@
         "sourceUrl": "https://listen.style/p/teacherteacher/cvswgyh5",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "limited-new"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -29,9 +36,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6E6qDLbwzrot6slopywkwr",
+    "listen": "https://listen.style/p/teacherteacher",
     "x": "https://x.com/onlinet0719",
-    "instagram": "https://www.instagram.com/team_teacherteacher/",
-    "listen": "https://listen.style/p/teacherteacher"
+    "instagram": "https://www.instagram.com/team_teacherteacher/"
   },
   "recommendedEpisode": {
     "title": "「子どもの遅刻癖がなおらない…」トークンシステムでポジティブな行動を奨励せよ",

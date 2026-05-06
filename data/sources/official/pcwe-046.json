@@ -10,6 +10,13 @@
       "ステッカー",
       "オリジナルハーブティー",
       "Podcast相談会"
+    ],
+    "merchandiseTags": [
+      "experience",
+      "food-drink"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -22,9 +29,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/3pNz2GfTmZeO0hYgjRIsHT",
+    "listen": "https://listen.style/p/lifedeptstores",
     "x": "https://x.com/lifedeptstores",
-    "instagram": "https://www.instagram.com/lifedepartmentstores/",
-    "listen": "https://listen.style/p/lifedeptstores"
+    "instagram": "https://www.instagram.com/lifedepartmentstores/"
   },
   "recommendedEpisode": {
     "title": "第47夜「選ばれなかった人生があるから、今の自分がいることに感謝したい」の回",

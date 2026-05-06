@@ -20,6 +20,10 @@
         "sourceUrl": "https://listen.style/p/38do-radio",
         "sourceType": "web"
       }
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic"
     ]
   },
   "exhibition": {
@@ -32,9 +36,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/3JwBXpv3z9JFOl003OrJiO",
+    "listen": "https://listen.style/p/38do-radio",
     "x": "https://x.com/38doRadio",
-    "instagram": "https://www.instagram.com/38do.radio/",
-    "listen": "https://listen.style/p/38do-radio"
+    "instagram": "https://www.instagram.com/38do.radio/"
   },
   "recommendedEpisode": {
     "title": "【30代のモヤモヤ】家・育児・仕事が思い通りにいきません！ #243",

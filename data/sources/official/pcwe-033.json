@@ -30,6 +30,10 @@
         "sourceUrl": "https://x.com/mash_january25/status/2048343629715087871",
         "sourceType": "x-post"
       }
+    ],
+    "merchandiseSubTypes": [
+      "audio-music",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -42,9 +46,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6dd6dzKHNHGVsEfnlET61l",
+    "listen": "https://listen.style/p/hainami758",
     "x": "https://x.com/hainami_758",
-    "instagram": "https://www.instagram.com/mash_january25",
-    "listen": "https://listen.style/p/hainami758"
+    "instagram": "https://www.instagram.com/mash_january25"
   },
   "recommendedEpisode": {
     "title": "「バズらずとも良い作品を」。higmaさんによるサウンドメイク術",

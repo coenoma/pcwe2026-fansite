@@ -21,6 +21,12 @@
         "sourceUrl": "https://www.youtube.com/watch?v=UVS3Q4IHw7o",
         "sourceType": "web"
       }
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic",
+      "goods-misc",
+      "paper-stationery"
     ]
   },
   "exhibition": {

@@ -34,6 +34,13 @@
         "sourceUrl": "https://listen.style/p/auhsy5rp/y3pujprj",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience"
+    ],
+    "merchandiseSubTypes": [
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -46,8 +53,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/0Vv5Gs0DVYZsvAb4w4CthT",
-    "x": "https://x.com/yondemiteha",
-    "listen": "https://listen.style/p/auhsy5rp"
+    "listen": "https://listen.style/p/auhsy5rp",
+    "x": "https://x.com/yondemiteha"
   },
   "recommendedEpisode": {
     "title": "#033 凄いアウトプットをするための凄いインプットの続け方 『インプット・ルーティン』",

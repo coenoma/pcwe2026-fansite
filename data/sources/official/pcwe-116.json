@@ -23,6 +23,13 @@
         "sourceUrl": "https://listen.style/p/pze2qlhk/sxztifkn",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -36,9 +43,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6Kgh5ProKEHvwXOltIOz62",
+    "listen": "https://listen.style/p/pze2qlhk",
     "x": "https://x.com/radio_CPB",
-    "instagram": "https://www.instagram.com/radio_cpb/",
-    "listen": "https://listen.style/p/pze2qlhk"
+    "instagram": "https://www.instagram.com/radio_cpb/"
   },
   "recommendedEpisode": {
     "title": "Ep.84「私はルンバになりました」",

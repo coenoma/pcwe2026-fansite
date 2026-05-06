@@ -25,6 +25,14 @@
         "sourceUrl": "https://listen.style/p/radiocatwings/pmezzcly",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "goods-tableware",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -37,9 +45,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/3Mfwyk4hbmGXxc6Gkqum8P",
+    "listen": "https://listen.style/p/radiocatwings",
     "x": "https://x.com/radiocatwings",
-    "instagram": "https://www.instagram.com/radiocatwings",
-    "listen": "https://listen.style/p/radiocatwings"
+    "instagram": "https://www.instagram.com/radiocatwings"
   },
   "recommendedEpisode": {
     "title": "第81回 1ページ目から面白い！話題のSF大作「プロジェクト・ヘイル・メアリー 上」アンディ・ウィアー著",

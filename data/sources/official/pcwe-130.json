@@ -40,6 +40,15 @@
         "sourceUrl": "https://x.com/kikitaiwan_pc/status/2051911688279257139",
         "sourceType": "x-post"
       }
+    ],
+    "merchandiseTags": [
+      "experience"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic",
+      "goods-misc",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -52,9 +61,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/15ZDxvdmNcsJ0D821NveDu",
+    "listen": "https://listen.style/p/dzhfljtm",
     "x": "https://x.com/kikitaiwan_pc",
-    "instagram": "https://www.instagram.com/kikitaiwan_podcast/",
-    "listen": "https://listen.style/p/dzhfljtm"
+    "instagram": "https://www.instagram.com/kikitaiwan_podcast/"
   },
   "recommendedEpisode": {
     "title": "＃34 みんな大好き！台湾夜市の世界！三文字昌也さん（前編）",

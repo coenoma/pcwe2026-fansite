@@ -24,7 +24,9 @@
     "merge-fan-guide": "tsx scripts/merge-fan-guide.ts",
     "progress:merchandise": "tsx scripts/merchandise-progress.ts",
     "apply:listen-research": "tsx scripts/apply-listen-research.ts",
-    "sync:status-files": "tsx scripts/sync-status-files.ts"
+    "sync:status-files": "tsx scripts/sync-status-files.ts",
+    "auto-tag-merchandise": "tsx scripts/auto-tag-merchandise.ts",
+    "validate-booth-positions": "tsx scripts/validate-booth-positions.ts"
   },
   "dependencies": {
     "fuse.js": "^7.0.0",

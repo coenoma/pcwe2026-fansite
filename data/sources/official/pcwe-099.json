@@ -11,6 +11,13 @@
       "ステッカー",
       "ポストカード",
       "クリアファイル"
+    ],
+    "merchandiseTags": [
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "goods-misc",
+      "paper-stationery"
     ]
   },
   "exhibition": {

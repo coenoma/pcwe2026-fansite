@@ -26,6 +26,15 @@
         "sourceUrl": "https://listen.style/p/qivjtsb2",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "food-drink"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-tableware",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -39,9 +48,9 @@
   },
   "links": {
     "applePodcasts": "https://podcasts.apple.com/jp/podcast/%E3%83%AF%E3%82%A4%E3%83%B3%E3%81%AE%E8%BC%AA/id1507494892",
+    "listen": "https://listen.style/p/qivjtsb2",
     "x": "https://x.com/winenowa",
-    "instagram": "https://www.instagram.com/winenowa/",
-    "listen": "https://listen.style/p/qivjtsb2"
+    "instagram": "https://www.instagram.com/winenowa/"
   },
   "recommendedEpisode": {
     "title": "#225 『ギターとワイン・音から想像するワイン』",

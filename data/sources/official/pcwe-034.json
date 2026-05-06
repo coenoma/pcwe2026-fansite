@@ -19,6 +19,10 @@
         "sourceUrl": "https://listen.style/p/wbxraifc/onyuysuo",
         "sourceType": "web"
       }
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic"
     ]
   },
   "exhibition": {
@@ -31,8 +35,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6vkPs13TNoxPA8SAtnR5UR",
-    "x": "https://x.com/omorashi_radio_",
-    "listen": "https://listen.style/p/wbxraifc"
+    "listen": "https://listen.style/p/wbxraifc",
+    "x": "https://x.com/omorashi_radio_"
   },
   "recommendedEpisode": {
     "title": "『衝撃事実発覚！？君は友を信用できるのか』",

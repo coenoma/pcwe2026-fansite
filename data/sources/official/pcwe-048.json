@@ -18,6 +18,10 @@
         "sourceUrl": "https://listen.style/p/gekidan-mesuneco",
         "sourceType": "web"
       }
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -30,9 +34,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6ZpEqiA1Zn4sO8MhPHiM0B",
+    "listen": "https://listen.style/p/gekidan-mesuneco",
     "x": "https://x.com/aku__you",
-    "instagram": "https://www.instagram.com/gekidan_mesuneco/",
-    "listen": "https://listen.style/p/gekidan-mesuneco"
+    "instagram": "https://www.instagram.com/gekidan_mesuneco/"
   },
   "recommendedEpisode": {
     "title": "#75 トップ3がみんな犬「サンリオキャラ大2025」の結果を語る",

@@ -163,6 +163,35 @@ export const MerchandiseDetailSchema = z.object({
 });
 export type MerchandiseDetail = z.infer<typeof MerchandiseDetailSchema>;
 
+/**
+ * 物販タクソノミー（散策型来場者向けの 6 カテゴリ）。
+ *
+ * フィルタ UI のチップに使う主要分類。番組ファン向け詳細種別（アパレル・アクスタ等）は
+ * `MerchandiseSubTypeSchema` で持ち、フィルタには出さない。
+ *
+ * 設計詳細: docs/plans/v2-interactive-map/03-merchandise-taxonomy.md
+ */
+export const MerchandiseTagSchema = z.enum([
+  'food-drink',          // 🍴 食・飲み物
+  'experience',          // 🎟 体験・参加型
+  'rare-curious',        // 🔮 珍しい・話題系（占い、肌測定等）
+  'free-distribution',   // 🎁 無料配布
+  'limited-new',         // ✨ 新作・限定（PCWE 限定、先行販売、NEW GOODS）
+  'zine-book',           // 📕 ZINE・読み物
+]);
+export type MerchandiseTag = z.infer<typeof MerchandiseTagSchema>;
+
+/** 物販の詳細種別（フィルタには出さない、参考表示用）*/
+export const MerchandiseSubTypeSchema = z.enum([
+  'apparel',             // 👕 アパレル
+  'paper-stationery',    // 🖊 紙物・文具（ステッカー・しおり・ポストカード等）
+  'goods-acrylic',       // 🔑 アクリル・バッジ系
+  'goods-tableware',     // ☕ タンブラー・マグカップ系
+  'audio-music',         // 🎵 音源・映像
+  'goods-misc',          // 🧴 その他物販（入浴剤・雑貨等）
+]);
+export type MerchandiseSubType = z.infer<typeof MerchandiseSubTypeSchema>;
+
 /** 公式ブースから抽出した情報 */
 export const OfficialInfoSchema = z.object({
   // 自動取得時に空になる場合があるため min 制約は外す。表示側でフォールバック表示。
@@ -172,8 +201,39 @@ export const OfficialInfoSchema = z.object({
   merchandise: z.array(z.string()).optional(),
   /** 物販詳細（情報源 URL 付き）。merchandise より優先して UI 側で表示する */
   merchandiseDetails: z.array(MerchandiseDetailSchema).optional(),
+  /**
+   * 物販分類タグ（フィルタ UI で使う 6 カテゴリ、複数所属 OK）。
+   * 自動付与スクリプトでキーワードから推定し、人間レビューで確定。
+   */
+  merchandiseTags: z.array(MerchandiseTagSchema).optional(),
+  /** 詳細種別（参考表示用、フィルタ非表示）*/
+  merchandiseSubTypes: z.array(MerchandiseSubTypeSchema).optional(),
+  /**
+   * 散策型向け一行コピー（番組を知らない人にも刺さる「これ目当てでも来る価値あり」）。
+   * 8-60 字、コエノマ運営手書き。書ける番組（食・体験・珍しい系）にだけ書く。
+   */
+  merchandiseSpotlight: z
+    .string()
+    .min(8, 'merchandiseSpotlight は 8 字以上')
+    .max(60, 'merchandiseSpotlight は 60 字以内')
+    .optional(),
 });
 export type OfficialInfo = z.infer<typeof OfficialInfoSchema>;
+
+/**
+ * マップ上の物理位置（テント番号 + A/B/C/D 区画）。
+ * ブース割当が両日同じ場合は exhibition.position に単一指定、
+ * 両日で位置が変わる場合は exhibition.positionBySatSun に { sat, sun } で指定。
+ */
+export const BoothPositionSchema = z.object({
+  /** テント番号（1〜32） */
+  tent: z.number().int().min(1).max(32),
+  /** quad テント (8-17, 20-29) の区画。single テントでは不要 */
+  slot: z.enum(['A', 'B', 'C', 'D']).optional(),
+  /** 表示用ラベル（"14-A" or "1" 等）*/
+  label: z.string().min(1),
+});
+export type BoothPosition = z.infer<typeof BoothPositionSchema>;
 
 /** 出展情報 */
 export const ExhibitionSchema = z.object({
@@ -181,6 +241,15 @@ export const ExhibitionSchema = z.object({
   hours: z.string(),
   area: AreaSchema,
   boothNumber: z.string().regex(/^\d{3}$/, 'ブース番号は 3 桁'),
+  /** 物理位置（両日同じ場合）*/
+  position: BoothPositionSchema.optional(),
+  /** 両日で物理位置が異なる場合は sat/sun で個別指定（position は使わない）*/
+  positionBySatSun: z
+    .object({
+      sat: BoothPositionSchema.optional(),
+      sun: BoothPositionSchema.optional(),
+    })
+    .optional(),
 });
 export type Exhibition = z.infer<typeof ExhibitionSchema>;
 
@@ -269,6 +338,86 @@ export const ProgramsDataSchema = z.object({
   programs: z.array(ProgramSchema),
 });
 export type ProgramsData = z.infer<typeof ProgramsDataSchema>;
+
+// ====================
+// ブース位置（マップ機能 v2）
+// ====================
+
+/**
+ * テント形状。
+ *
+ * - single: テント 1-7, 18-19, 30-31 — 1 ブース 1 テント
+ * - quad: テント 8-17, 20-29 — 1 テントを A/B/C/D で 4 区画分割
+ * - kitchen-booth: テント 32 — キッチン専用（番組出展なし）
+ */
+export const TentShapeSchema = z.enum(['single', 'quad', 'kitchen-booth']);
+export type TentShape = z.infer<typeof TentShapeSchema>;
+
+/**
+ * 1 区画の番組割当。
+ *
+ * `sat` / `sun` は programs.json の id（pcwe-XXX）or null。
+ * `satExternal` / `sunExternal` は programs.json 未登録の追加出展者を表す参照情報。
+ */
+export const BoothSlotSchema = z.object({
+  position: z.string().min(1), // "1" or "14-A"
+  slot: z.enum(['A', 'B', 'C', 'D']).optional(),
+  sat: z
+    .string()
+    .regex(/^pcwe-\d{3}$/, 'sat は pcwe-XXX 形式')
+    .nullable()
+    .optional(),
+  sun: z
+    .string()
+    .regex(/^pcwe-\d{3}$/, 'sun は pcwe-XXX 形式')
+    .nullable()
+    .optional(),
+  satExternal: z
+    .object({
+      kind: z.literal('external'),
+      name: z.string().min(1),
+      note: z.string().optional(),
+    })
+    .optional(),
+  sunExternal: z
+    .object({
+      kind: z.literal('external'),
+      name: z.string().min(1),
+      note: z.string().optional(),
+    })
+    .optional(),
+});
+export type BoothSlot = z.infer<typeof BoothSlotSchema>;
+
+/** テント定義 */
+export const TentSchema = z.object({
+  id: z.number().int().min(1).max(32),
+  shape: TentShapeSchema,
+  /** SVG ビューポート上の polygon 座標（4 点で矩形を表現）。Phase 1.5 で Figma から起こす */
+  polygon: z.array(z.tuple([z.number(), z.number()])).length(2).optional(),
+  kind: z.literal('kitchen-booth').optional(),
+  note: z.string().optional(),
+  slots: z.array(BoothSlotSchema),
+});
+export type Tent = z.infer<typeof TentSchema>;
+
+/** booth-positions.json のルートスキーマ */
+export const BoothPositionsDataSchema = z.object({
+  version: z.string(),
+  lastUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'lastUpdated は YYYY-MM-DD'),
+  venue: z.string(),
+  address: z.string().optional(),
+  sources: z
+    .object({
+      positionMapping: z.string().optional(),
+      officialMapDay1: z.string().optional(),
+      officialMapDay2: z.string().optional(),
+    })
+    .optional(),
+  notes: z.array(z.string()).optional(),
+  tents: z.array(TentSchema),
+});
+export type BoothPositionsData = z.infer<typeof BoothPositionsDataSchema>;
 
 // ====================
 // ジャンルメタ情報

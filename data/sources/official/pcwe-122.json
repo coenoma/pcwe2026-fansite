@@ -35,6 +35,14 @@
         "sourceUrl": "https://x.com/ne1po_step/status/2049334060968001718",
         "sourceType": "x-post"
       }
+    ],
+    "merchandiseTags": [
+      "limited-new"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -47,9 +55,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/2awC2CBveSzYoPEE18MkPg",
+    "listen": "https://listen.style/p/ne1po",
     "x": "https://x.com/ne1po_step",
-    "instagram": "https://www.instagram.com/ne1po_step",
-    "listen": "https://listen.style/p/ne1po"
+    "instagram": "https://www.instagram.com/ne1po_step"
   },
   "recommendedEpisode": {
     "title": "#110 あなたはあなたは何個見つけられる!?ことば落としゲーム開催！",

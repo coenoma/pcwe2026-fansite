@@ -26,6 +26,13 @@
         "sourceUrl": "https://listen.style/p/diningfm",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "food-drink"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -38,9 +45,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/3wSB2J20uqON5nPhCmMia5",
+    "listen": "https://listen.style/p/diningfm",
     "x": "https://x.com/diningfm",
-    "instagram": "https://instagram.com/diningfm",
-    "listen": "https://listen.style/p/diningfm"
+    "instagram": "https://instagram.com/diningfm"
   },
   "recommendedEpisode": {
     "title": "116. 最高の演技を楽しむ「ファーストキス」",

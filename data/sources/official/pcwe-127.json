@@ -9,6 +9,12 @@
     "merchandise": [
       "雑誌",
       "ステッカー"
+    ],
+    "merchandiseTags": [
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {

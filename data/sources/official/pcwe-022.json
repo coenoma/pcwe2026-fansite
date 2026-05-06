@@ -38,6 +38,16 @@
         "sourceUrl": "https://listen.style/p/ameniwaarisa/snfmpsjj",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "free-distribution",
+      "limited-new",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -50,9 +60,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/22r7UJqRptC8DKTZvMV8YY",
+    "listen": "https://listen.style/p/ameniwaarisa",
     "x": "https://x.com/ameniwaarisa",
-    "instagram": "https://www.instagram.com/ameniwaarisa",
-    "listen": "https://listen.style/p/ameniwaarisa"
+    "instagram": "https://www.instagram.com/ameniwaarisa"
   },
   "recommendedEpisode": {
     "title": "#01 初めまして！脚本家の雨庭有沙です！好きなものがたくさんある話！",

@@ -37,6 +37,16 @@
         "sourceUrl": "https://listen.style/p/tsukimimi/nugzthen",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "free-distribution"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic",
+      "goods-tableware",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -49,8 +59,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/2kzuAE4IgPrqFro9INGWZc",
-    "x": "https://x.com/tsukimimi_radio",
-    "listen": "https://listen.style/p/tsukimimi"
+    "listen": "https://listen.style/p/tsukimimi",
+    "x": "https://x.com/tsukimimi_radio"
   },
   "recommendedEpisode": {
     "title": "#39【AI動画で泣いちゃうのは人類の敗北だろ】",

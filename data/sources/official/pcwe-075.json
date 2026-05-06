@@ -24,6 +24,10 @@
         "sourceUrl": "https://listen.style/p/ochitsuki-ai",
         "sourceType": "web"
       }
+    ],
+    "merchandiseSubTypes": [
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -37,8 +41,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/6iGk39bSta5KZ1QD7jvK2o",
-    "x": "https://x.com/ochitsuki_AI",
-    "listen": "https://listen.style/p/ochitsuki-ai"
+    "listen": "https://listen.style/p/ochitsuki-ai",
+    "x": "https://x.com/ochitsuki_AI"
   },
   "recommendedEpisode": {
     "title": "[1月20日:速報回]AIに話した秘密、漏れます。元刑事が警告するGemini/Anthropicのプライバシー問題(ep.35)",

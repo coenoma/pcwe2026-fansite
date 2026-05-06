@@ -18,6 +18,13 @@
         "sourceUrl": "https://listen.style/p/ryukohe",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "zine-book"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -30,9 +37,9 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/0n57AqUPNmhyKpvYY2jKYc",
+    "listen": "https://listen.style/p/ryukohe",
     "x": "https://x.com/radio_sukishita",
-    "instagram": "https://www.instagram.com/radio_sukishita/",
-    "listen": "https://listen.style/p/ryukohe"
+    "instagram": "https://www.instagram.com/radio_sukishita/"
   },
   "recommendedEpisode": {
     "title": "#85 スケボーって何が悪いの？",

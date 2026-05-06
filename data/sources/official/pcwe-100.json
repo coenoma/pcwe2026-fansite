@@ -11,6 +11,13 @@
       "コースター",
       "フォトブース",
       "ガチャガチャ…etc"
+    ],
+    "merchandiseTags": [
+      "experience"
+    ],
+    "merchandiseSubTypes": [
+      "goods-tableware",
+      "paper-stationery"
     ]
   },
   "exhibition": {

@@ -20,6 +20,14 @@
         "sourceUrl": "https://listen.style/p/kuiiji",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "free-distribution"
+    ],
+    "merchandiseSubTypes": [
+      "apparel",
+      "goods-acrylic",
+      "paper-stationery"
     ]
   },
   "exhibition": {
@@ -32,8 +40,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/03LFcdPG4j2wJ9alN0arB6",
-    "instagram": "https://www.instagram.com/illustwaai",
-    "listen": "https://listen.style/p/kuiiji"
+    "listen": "https://listen.style/p/kuiiji",
+    "instagram": "https://www.instagram.com/illustwaai"
   },
   "recommendedEpisode": {
     "title": "おいしいパンが生まれる秘訣がわかった！そしてスーパーのおにぎりたちもっと頑張れ",
