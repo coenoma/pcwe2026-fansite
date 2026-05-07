@@ -372,18 +372,6 @@ function TentClickArea({
           aria-label={`テント ${tent.id}（4 区画個別タップモード）`}
           style={{ transition: 'opacity 0.25s ease-out' }}
         >
-          {/* テント番号を上端に小さく（区画ラベルと重ならないように外側に）*/}
-          <text
-            x={x0 + width / 2}
-            y={y0 - 5}
-            fill="var(--color-neutral-600)"
-            fontSize={11}
-            fontWeight={900}
-            textAnchor="middle"
-            aria-hidden="true"
-          >
-            テント{tent.id}
-          </text>
           {(['A', 'B', 'C', 'D'] as const).map((slotLabel) => {
             const offset = quadrantOffsets[slotLabel];
             const quadX = x0 + offset.dx;
@@ -411,8 +399,10 @@ function TentClickArea({
                 y={quadY}
                 width={halfW}
                 height={halfH}
-                // 個別モードでは区画文字（A/B/C/D）のみを大きく表示。テント番号は g 上端に別途
-                label={slotLabel}
+                // 個別モード: ハイフン省略で「14A」「14B」のように圧縮（3 文字に詰める）
+                label={`${tent.id}${slotLabel}`}
+                // 3 文字なら halfW * 0.42 程度で収まる（下限 9px）
+                fontSizeOverride={Math.max(9, Math.min(halfW * 0.42, 14))}
                 kind="program"
                 isSelected={slotIsSelected}
                 isFiltered={slotIsFiltered}
@@ -546,6 +536,8 @@ interface TentRectProps {
   isFavorite?: boolean;
   isVisited?: boolean;
   ariaLabel: string;
+  /** 明示的に fontSize を上書きしたい時（個別タップモードで小さい区画でラベルを収めるため）*/
+  fontSizeOverride?: number;
   onClick: () => void;
 }
 
@@ -563,12 +555,15 @@ function TentRect({
   isFavorite = false,
   isVisited = false,
   ariaLabel,
+  fontSizeOverride,
   onClick,
 }: TentRectProps) {
   const cx = x + width / 2;
   const cy = y + height / 2;
-  // 番号サイズ拡大（読みやすさ重視）
-  const fontSize = Math.min(width, height) * 0.55;
+  // 番号サイズ: 通常は領域の 0.55 倍。個別モード等で fontSizeOverride 指定時はそれを優先（下限 7px）
+  const fontSize = fontSizeOverride !== undefined
+    ? Math.max(7, fontSizeOverride)
+    : Math.min(width, height) * 0.55;
 
   // kind 別の色分け
   // - program: 番組ブース → primary オレンジ（コエノマブランド）

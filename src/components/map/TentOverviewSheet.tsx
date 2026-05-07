@@ -50,10 +50,7 @@ export function TentOverviewSheet({
   onClose,
 }: Props) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (tentId !== null) closeButtonRef.current?.focus();
-  }, [tentId]);
+  // 開いた瞬間のオートフォーカスは「謎のオレンジ枠」の原因になるため不採用。
 
   useEffect(() => {
     if (tentId === null) return undefined;
@@ -100,7 +97,7 @@ export function TentOverviewSheet({
         role="dialog"
         aria-modal="true"
         aria-labelledby="tent-overview-title"
-        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto max-h-[78vh] max-w-5xl overflow-y-auto rounded-t-3xl bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[85vh]"
+        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto max-h-[78vh] max-w-5xl overflow-y-auto rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[85vh]"
       >
         <div className="sticky top-0 flex justify-center bg-white pb-1 pt-3">
           <span

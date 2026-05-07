@@ -52,11 +52,8 @@ export function BoothBottomSheet({
 }: Props) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    if (placement) {
-      closeButtonRef.current?.focus();
-    }
-  }, [placement]);
+  // 注: 開いた瞬間のオートフォーカスはユーザー観点で「謎のオレンジ枠」になるため不採用。
+  // フォーカス管理は Esc キーや背景タップで閉じる動作・ARIA 属性に任せる。
 
   useEffect(() => {
     if (!placement) return undefined;
@@ -97,7 +94,7 @@ export function BoothBottomSheet({
         role="dialog"
         aria-modal="true"
         aria-labelledby="booth-sheet-title"
-        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto flex max-h-[80vh] max-w-5xl flex-col rounded-t-3xl bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[88vh]"
+        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto flex max-h-[80vh] max-w-5xl flex-col overflow-hidden rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[88vh]"
       >
         {/* drag handle */}
         <div className="sticky top-0 flex justify-center bg-white pt-3">
