@@ -58,8 +58,13 @@ function loadBoothPositions(): Map<string, { sat?: BoothPosition; sun?: BoothPos
         const programId = slot[day];
         if (programId !== null && programId !== undefined) {
           const existing = result.get(programId) ?? {};
-          existing[day] = position;
-          result.set(programId, existing);
+          // 同じ番組が複数位置に居る場合は **最初に見つかった位置** を採用
+          // （メインブースを優先する想定。例: まかないラジオは 26-B 日 + 32 日 両方居るが、
+          //   tents 配列の id 順で 26 が先なので 26-B が exhibition.position に注入される）
+          if (existing[day] === undefined) {
+            existing[day] = position;
+            result.set(programId, existing);
+          }
         }
       }
     }
