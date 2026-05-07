@@ -1,26 +1,33 @@
 /**
- * マップ検索バー。
+ * マップ検索バー（番組 + 物販 + ブース番号 + スポンサー枠）。
  *
- * - 番組名（部分一致）/ ブース番号（"14-A" や "14a" 正規化）
- * - 入力中はサジェストを表示、選択でジャンプ
- * - グッズキーワード（「占い」「コーヒー」等）は merchandiseTags ラベルマッチでヒット
+ * 検索対象（その日のすべての placement に対して走査、重複位置はそれぞれ別ヒット）:
+ * - 番組名 / shortName 部分一致
+ * - ブース番号（"14-A" or "14a" → "14-A" 自動正規化）
+ * - グッズキーワード（merchandise[].name / merchandiseSpotlight / merchandiseTags ラベル）
+ * - 外部参照（スポンサー / キッチンブース）も "Youtrust（スポンサー）" のように出す
  */
+
+'use client';
 
 import { Search, X } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { Day, Program, MerchandiseTag } from '@/lib/types';
-import { getPositionLabel } from '@/lib/booth-map';
+import type { Day, MerchandiseTag, Program } from '@/lib/types';
+import type { SlotPlacement } from '@/lib/booth-map';
 
 interface SearchHit {
-  type: 'program' | 'position';
+  type: 'program' | 'external' | 'position';
+  /** ジャンプ先ブース position */
+  position: string;
   programId?: string;
-  position?: string;
   label: string;
   sublabel?: string;
 }
 
 interface Props {
   programs: Program[];
+  placements: SlotPlacement[];
+  /** 表示中の日付（将来 day 別の挙動が必要なら使用、現状は placements に含まれているため未使用）*/
   day: Day;
   onSelectHit: (hit: SearchHit) => void;
   query: string;
@@ -29,7 +36,8 @@ interface Props {
 
 export function MapSearchBar({
   programs,
-  day,
+  placements,
+  day: _day,
   onSelectHit,
   query,
   onQueryChange,
@@ -38,9 +46,17 @@ export function MapSearchBar({
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const hits = useMemo(() => searchAll(programs, day, query), [programs, day, query]);
+  const programsById = useMemo(() => {
+    const m = new Map<string, Program>();
+    for (const p of programs) m.set(p.id, p);
+    return m;
+  }, [programs]);
 
-  // 外部クリックで閉じる
+  const hits = useMemo(
+    () => searchAll(placements, programsById, query),
+    [placements, programsById, query],
+  );
+
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (
@@ -99,10 +115,11 @@ export function MapSearchBar({
       {open && hits.length > 0 ? (
         <ul
           role="listbox"
+          aria-label="検索候補"
           className="absolute left-0 right-0 top-full z-30 mt-1 max-h-80 overflow-y-auto rounded-2xl border border-neutral-200 bg-white py-1 shadow-lg"
         >
-          {hits.slice(0, 8).map((hit, i) => (
-            <li key={`${hit.type}-${hit.programId ?? hit.position}-${i}`}>
+          {hits.slice(0, 12).map((hit, i) => (
+            <li key={`${hit.type}-${hit.position}-${i}`}>
               <button
                 type="button"
                 role="option"
@@ -113,8 +130,15 @@ export function MapSearchBar({
                 }}
                 className="flex w-full items-start gap-2 px-3 py-2 text-left transition-colors hover:bg-neutral-50"
               >
-                <span className="text-xs font-bold text-primary-600 shrink-0 mt-0.5">
-                  {hit.type === 'position' ? '📍' : '🎙'}
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 shrink-0 text-xs font-bold text-primary-600"
+                >
+                  {hit.type === 'position'
+                    ? '📍'
+                    : hit.type === 'external'
+                      ? '🤝'
+                      : '🎙'}
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block truncate text-sm font-medium text-neutral-900">
@@ -129,9 +153,9 @@ export function MapSearchBar({
               </button>
             </li>
           ))}
-          {hits.length > 8 ? (
+          {hits.length > 12 ? (
             <li className="px-3 py-1.5 text-xs text-neutral-500">
-              ＋ あと {hits.length - 8} 件
+              ＋ あと {hits.length - 12} 件（条件を絞ってね）
             </li>
           ) : null}
         </ul>
@@ -146,98 +170,125 @@ export function MapSearchBar({
   );
 }
 
-/** ブース番号の正規化（"14a", "14A", "014-A" → "14-A"）*/
+/** ブース番号正規化（"14a" / "014-A" → "14-A"、"30" → "30"）*/
 function normalizePosition(input: string): string {
-  const match = input.match(/^0*(\d+)\s*-?\s*([abcd]?)$/i);
-  if (!match) return input.toUpperCase();
+  const trimmed = input.trim();
+  const match = trimmed.match(/^0*(\d+)\s*-?\s*([abcd]?)$/i);
+  if (!match) return trimmed.toUpperCase();
   const tent = match[1];
   const slot = match[2]?.toUpperCase();
   return slot ? `${tent}-${slot}` : tent;
 }
 
+const TAG_LABELS: Record<MerchandiseTag, string[]> = {
+  'food-drink': ['食', '飲み物', 'コーヒー', 'お茶', '飲料'],
+  experience: ['体験', '占い', 'タロット', 'ガチャ', 'ワークショップ'],
+  'rare-curious': ['珍しい', '占い', '肌測定', 'AI 診断', '希少'],
+  'free-distribution': ['無料', '配布', 'フリー', 'ノベルティ'],
+  'limited-new': ['新作', '限定', 'NEW', '初販', '記念'],
+  'zine-book': ['ZINE', '本', '読み物', '冊子'],
+};
+
 function searchAll(
-  programs: Program[],
-  day: Day,
+  placements: ReadonlyArray<SlotPlacement>,
+  programsById: ReadonlyMap<string, Program>,
   rawQuery: string,
 ): SearchHit[] {
   const q = rawQuery.trim();
   if (q.length === 0) return [];
-
   const lower = q.toLowerCase();
   const normalizedPos = normalizePosition(q);
   const hits: SearchHit[] = [];
 
-  // ブース番号一致
-  for (const program of programs) {
-    const label = getPositionLabel(program, day);
-    if (label !== undefined && label === normalizedPos) {
+  for (const pl of placements) {
+    // 1. ブース番号完全一致 → 最優先
+    if (pl.position === normalizedPos) {
+      const program = pl.programId ? programsById.get(pl.programId) : undefined;
       hits.push({
         type: 'position',
-        programId: program.id,
-        position: label,
-        label: `ブース ${label}: ${program.name}`,
-        sublabel: program.fanGuide.subCatch,
+        position: pl.position,
+        programId: pl.programId,
+        label: program
+          ? `ブース ${pl.position}: ${program.name}`
+          : pl.externalName
+            ? `ブース ${pl.position}: ${pl.externalName}（${externalLabel(pl.externalKind)}）`
+            : `ブース ${pl.position}`,
+        sublabel: program?.fanGuide.subCatch,
       });
+      continue; // この placement は確定ヒット、別の理由でも追加しない
     }
-  }
 
-  // 番組名 / shortName 部分一致
-  for (const program of programs) {
-    if (
-      program.name.toLowerCase().includes(lower) ||
-      (program.shortName?.toLowerCase().includes(lower) ?? false)
-    ) {
-      const label = getPositionLabel(program, day);
-      if (hits.some((h) => h.programId === program.id)) continue;
-      hits.push({
-        type: 'program',
-        programId: program.id,
-        position: label,
-        label: program.name,
-        sublabel: label ? `ブース ${label}` : '位置情報なし',
-      });
-    }
-  }
+    // 2. 番組情報マッチ
+    const program = pl.programId ? programsById.get(pl.programId) : undefined;
+    if (program) {
+      // 番組名 / shortName 部分一致
+      const nameMatch =
+        program.name.toLowerCase().includes(lower) ||
+        (program.shortName?.toLowerCase().includes(lower) ?? false);
 
-  // グッズタグラベル / グッズ名 部分一致
-  for (const program of programs) {
-    if (hits.some((h) => h.programId === program.id)) continue;
-    const tagLabels: Partial<Record<MerchandiseTag, string[]>> = {
-      'food-drink': ['食', '飲み物', 'コーヒー', 'お茶'],
-      experience: ['体験', '占い', 'タロット', 'ガチャ'],
-      'rare-curious': ['珍しい', '占い', '肌測定'],
-      'free-distribution': ['無料', '配布', '無料配布'],
-      'limited-new': ['新作', '限定', 'NEW'],
-      'zine-book': ['ZINE', '本', '読み物'],
-    };
-    let matched = false;
-    for (const tag of program.official.merchandiseTags ?? []) {
-      const labels = tagLabels[tag] ?? [];
-      if (labels.some((l) => l.toLowerCase().includes(lower) || lower.includes(l.toLowerCase()))) {
-        matched = true;
-        break;
-      }
-    }
-    if (!matched) {
-      // 物販個別名で部分一致
-      const merchHit =
+      // 物販キーワード一致
+      const merchMatch =
         (program.official.merchandise ?? []).some((m) =>
           m.toLowerCase().includes(lower),
         ) ||
         (program.official.merchandiseDetails ?? []).some((d) =>
           d.name.toLowerCase().includes(lower),
+        ) ||
+        (program.official.merchandiseSpotlight ?? '')
+          .toLowerCase()
+          .includes(lower);
+
+      // タグラベル一致
+      const tagMatch = (program.official.merchandiseTags ?? []).some((tag) => {
+        const labels = TAG_LABELS[tag] ?? [];
+        return labels.some(
+          (l) =>
+            l.toLowerCase().includes(lower) ||
+            lower.includes(l.toLowerCase()),
         );
-      if (!merchHit) continue;
+      });
+
+      if (nameMatch || merchMatch || tagMatch) {
+        hits.push({
+          type: 'program',
+          position: pl.position,
+          programId: program.id,
+          label: program.name,
+          sublabel: `ブース ${pl.position}` +
+            (program.official.merchandiseTags?.length
+              ? ` · ${program.official.merchandiseTags.length} カテゴリ`
+              : ''),
+        });
+      }
+      continue;
     }
-    const label = getPositionLabel(program, day);
-    hits.push({
-      type: 'program',
-      programId: program.id,
-      position: label,
-      label: program.name,
-      sublabel: `グッズ: ${(program.official.merchandiseTags ?? []).join(', ')}`,
-    });
+
+    // 3. 外部参照（スポンサー / キッチン）マッチ
+    if (pl.externalName) {
+      const extMatch = pl.externalName.toLowerCase().includes(lower);
+      if (extMatch) {
+        hits.push({
+          type: 'external',
+          position: pl.position,
+          label: `${pl.externalName}（${externalLabel(pl.externalKind)}）`,
+          sublabel: `ブース ${pl.position}`,
+        });
+      }
+    }
   }
 
   return hits;
+}
+
+function externalLabel(kind: SlotPlacement['externalKind']): string {
+  switch (kind) {
+    case 'sponsor':
+      return 'スポンサー';
+    case 'kitchen-only':
+      return 'キッチンブース';
+    case 'external-program':
+      return '外部参照';
+    default:
+      return '出展';
+  }
 }

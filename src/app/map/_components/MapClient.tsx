@@ -379,6 +379,7 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
           {/* 2 段目: 検索バー */}
           <MapSearchBar
             programs={programs}
+            placements={placementsAll}
             day={day}
             onSelectHit={handleSearchHit}
             query={query}
@@ -427,7 +428,7 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
             <p className="mt-2 text-center text-xs leading-relaxed text-neutral-500">
               {isFiltering
                 ? `フィルタヒット: ${highlightedPositions?.size ?? 0} ブース（その他は半透明）`
-                : 'テントをタップで番組情報。ピンチで拡大・ドラッグで移動。土日で違う番組が出展する場合あり。'}
+                : 'テントをタップで番組情報。土日で違う番組が出展する場合あり。'}
             </p>
           </>
         ) : (

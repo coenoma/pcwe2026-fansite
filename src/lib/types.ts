@@ -436,6 +436,8 @@ export const BoothPositionsDataSchema = z.object({
       height: z.number().int().positive(),
     })
     .optional(),
+  /** 会場の輪郭 polygon（公式画像から自動抽出、SVG path で会場形状を独自描画する用）*/
+  venuePolygon: z.array(z.tuple([z.number(), z.number()])).optional(),
   sources: z
     .object({
       positionMapping: z.string().optional(),

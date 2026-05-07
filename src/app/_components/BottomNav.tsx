@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Sparkles, Heart, Info } from 'lucide-react';
+import { Home, Sparkles, Heart, Info, MapPin } from 'lucide-react';
 
 /**
  * スマホ用ボトムナビゲーション（PWA でホーム画面起動された想定）
@@ -17,6 +17,12 @@ export function BottomNav() {
 
   const tabs = [
     { href: '/', label: '一覧', icon: Home, activeMatch: 'exact' as const },
+    {
+      href: '/map',
+      label: 'マップ',
+      icon: MapPin,
+      activeMatch: 'prefix' as const,
+    },
     {
       href: '/#discover',
       label: 'AIリコメンド',

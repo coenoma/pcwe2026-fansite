@@ -90,7 +90,7 @@ export function TentOverviewSheet({
         role="dialog"
         aria-modal="true"
         aria-labelledby="tent-overview-title"
-        className="fixed inset-x-0 bottom-0 z-50 max-h-[85vh] overflow-y-auto rounded-t-3xl bg-white shadow-2xl animate-[slideUp_0.25s_ease-out]"
+        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 max-h-[78vh] overflow-y-auto rounded-t-3xl bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[85vh]"
       >
         <div className="sticky top-0 flex justify-center bg-white pb-1 pt-3">
           <span

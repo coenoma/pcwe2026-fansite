@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Sparkles, Heart } from 'lucide-react';
+import { Sparkles, Heart, MapPin } from 'lucide-react';
 import { FavoriteCountBadge } from './FavoriteCountBadge';
 
 /**
@@ -46,18 +46,28 @@ export function Header() {
         </Link>
 
         <nav aria-label="メインナビゲーション" className="flex items-center gap-1 text-sm">
-          {/* メイン機能 = AI 番組レコメンドへ最短アクセス。プライマリーカラーで強調 */}
+          {/* メイン機能 = AI 番組レコメンド + 会場マップ × グッズ探索 */}
           <Link
             href="/#discover"
-            className="inline-flex items-center gap-1 rounded-full bg-primary-600 px-3 py-1.5 font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-md sm:px-4"
+            className="inline-flex items-center gap-1 rounded-full bg-primary-600 px-2.5 py-1.5 font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-md sm:px-4"
           >
             <Sparkles size={14} aria-hidden="true" />
-            <span>AIリコメンド</span>
+            <span className="hidden sm:inline">AIリコメンド</span>
+            <span className="sm:hidden">AI</span>
+          </Link>
+          <Link
+            href="/map"
+            aria-label="会場マップ・グッズ探索"
+            className="inline-flex items-center gap-1 rounded-full border border-secondary-200 bg-white px-2.5 py-1.5 font-bold text-secondary-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-secondary-300 hover:bg-secondary-50 sm:px-3"
+          >
+            <MapPin size={14} aria-hidden="true" />
+            <span className="hidden sm:inline">マップ × グッズ</span>
+            <span className="sm:hidden">マップ</span>
           </Link>
           <Link
             href="/plan"
             aria-label="気になるリスト"
-            className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 font-bold text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary-600 sm:px-3"
+            className="inline-flex items-center gap-1.5 rounded-full px-2 py-1.5 font-bold text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary-600 sm:px-3"
           >
             <Heart size={16} aria-hidden="true" />
             <span className="hidden sm:inline">気になる</span>
