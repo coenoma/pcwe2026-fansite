@@ -396,12 +396,24 @@ function TentClickArea({
       // 4 区画を 2x2 グリッドで配置
       const halfW = width / 2;
       const halfH = height / 2;
-      const quadrantOffsets: Record<'A' | 'B' | 'C' | 'D', { dx: number; dy: number }> = {
-        A: { dx: 0, dy: 0 },
-        B: { dx: halfW, dy: 0 },
-        C: { dx: 0, dy: halfH },
-        D: { dx: halfW, dy: halfH },
-      };
+      // 公式マップの A/B/C/D 配置:
+      //   テント 12-27: 右上=A、右下=B、左上=C、左下=D
+      //   テント 8-11, 20-29 のうち 28-29 など他: 左上=A、右上=B、左下=C、右下=D
+      // ※ 公式画像目視によるユーザー指摘に従う
+      const isRightAlignedAB = tent.id >= 12 && tent.id <= 27;
+      const quadrantOffsets: Record<'A' | 'B' | 'C' | 'D', { dx: number; dy: number }> = isRightAlignedAB
+        ? {
+            A: { dx: halfW, dy: 0 },     // 右上
+            B: { dx: halfW, dy: halfH }, // 右下
+            C: { dx: 0, dy: 0 },         // 左上
+            D: { dx: 0, dy: halfH },     // 左下
+          }
+        : {
+            A: { dx: 0, dy: 0 },         // 左上
+            B: { dx: halfW, dy: 0 },     // 右上
+            C: { dx: 0, dy: halfH },     // 左下
+            D: { dx: halfW, dy: halfH }, // 右下
+          };
       return (
         <g
           aria-label={`テント ${tent.id}（4 区画個別タップモード）`}
@@ -564,6 +576,12 @@ interface TentRectProps {
   height: number;
   label: string;
   showQuadHints?: boolean;
+  /**
+   * quad テントの A/B/C/D ヒント文字の配置。
+   * - 'left-ac': A 左上 / B 右上 / C 左下 / D 右下（標準）
+   * - 'right-ab': A 右上 / B 右下 / C 左上 / D 左下（テント 12-27 の公式配置）
+   */
+  quadHintsLayout?: 'left-ac' | 'right-ab';
   kind: TentRectKind;
   hasContent: boolean;
   isSelected: boolean;
@@ -583,6 +601,7 @@ function TentRect({
   height,
   label,
   showQuadHints = false,
+  quadHintsLayout = 'left-ac',
   kind,
   hasContent,
   isSelected,
@@ -684,14 +703,25 @@ function TentRect({
         {label}
       </text>
 
-      {/* quad テントの A/B/C/D ヒント（4 隅に小さく）*/}
+      {/* quad テントの A/B/C/D ヒント（4 隅に小さく、公式配置に従う）*/}
       {showQuadHints ? (
-        <>
-          <text x={x + 4} y={y + 12} fill={labelColor} fontSize={11} fontWeight={700} aria-hidden="true">A</text>
-          <text x={x + width - 4} y={y + 12} fill={labelColor} fontSize={11} fontWeight={700} textAnchor="end" aria-hidden="true">B</text>
-          <text x={x + 4} y={y + height - 4} fill={labelColor} fontSize={11} fontWeight={700} aria-hidden="true">C</text>
-          <text x={x + width - 4} y={y + height - 4} fill={labelColor} fontSize={11} fontWeight={700} textAnchor="end" aria-hidden="true">D</text>
-        </>
+        quadHintsLayout === 'right-ab' ? (
+          // テント 12-27 配置: A 右上 / B 右下 / C 左上 / D 左下
+          <>
+            <text x={x + width - 4} y={y + 12} fill={labelColor} fontSize={11} fontWeight={700} textAnchor="end" aria-hidden="true">A</text>
+            <text x={x + width - 4} y={y + height - 4} fill={labelColor} fontSize={11} fontWeight={700} textAnchor="end" aria-hidden="true">B</text>
+            <text x={x + 4} y={y + 12} fill={labelColor} fontSize={11} fontWeight={700} aria-hidden="true">C</text>
+            <text x={x + 4} y={y + height - 4} fill={labelColor} fontSize={11} fontWeight={700} aria-hidden="true">D</text>
+          </>
+        ) : (
+          // 標準配置: A 左上 / B 右上 / C 左下 / D 右下
+          <>
+            <text x={x + 4} y={y + 12} fill={labelColor} fontSize={11} fontWeight={700} aria-hidden="true">A</text>
+            <text x={x + width - 4} y={y + 12} fill={labelColor} fontSize={11} fontWeight={700} textAnchor="end" aria-hidden="true">B</text>
+            <text x={x + 4} y={y + height - 4} fill={labelColor} fontSize={11} fontWeight={700} aria-hidden="true">C</text>
+            <text x={x + width - 4} y={y + height - 4} fill={labelColor} fontSize={11} fontWeight={700} textAnchor="end" aria-hidden="true">D</text>
+          </>
+        )
       ) : null}
 
       {/* フィルタヒント（半透明オーバーレイ）*/}

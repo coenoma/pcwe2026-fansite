@@ -34,7 +34,7 @@ a { color: #1a5fb4; }
   <h1>PCWE2026 全 145 番組 詳細データ（LLM 向け）</h1>
   <p>PODCAST EXPO 2026 内のマーケットイベント <strong>PODCAST WEEKEND 2026</strong>（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）出展 145 番組の詳細を 1 ページに集約した、LLM / AI クライアント向けの HTML データページです。</p>
   <p>人間向けファンガイドは <a href="https://pcwe2026-fansite.podmate.fm/">トップページ</a>。同じデータの他フォーマット: <a href="https://pcwe2026-fansite.podmate.fm/llms-full.txt">llms-full.txt</a> / <a href="https://pcwe2026-fansite.podmate.fm/api/programs.json">programs.json</a> / <a href="https://pcwe2026-fansite.podmate.fm/llms.txt">llms.txt（サイト地図）</a></p>
-  <p class="meta">最終ビルド: <time datetime="2026-05-07T13:48:48.566Z">2026-05-07T13:48:48.566Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
+  <p class="meta">最終ビルド: <time datetime="2026-05-07T23:35:18.791Z">2026-05-07T23:35:18.791Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
 </header>
 
 <nav class="toc">
@@ -1451,7 +1451,7 @@ DJやトラックメイカーの楽曲制作、イベント出演に関するウ
   <h3>公式説明</h3>
   <p>自分自身が社会人なるかならないかの頃、少し先を生きる人たちの考えや生き方に触れて、少しずつ自分の道が見えたり、年齢を重ねるなかで直面する壁に立ち向かう人の姿をみて、勇気やヒントをもらってきた。20代・30代は学生から社会人になったり、家庭を持ったり、転職や移住をしたり、昇進をしたりと、変化を経験することの多い年代。だからこその悩みや葛藤、決断、生き様があるはず。さまざまな領域で自分のサイズで生きている20代・30代のゲストの話を聞きながら、今しか語れないことを語っていく番組。それが「人生百貨店」です。</p>
   
-  <p><strong>ブース物販</strong>: ステッカー / オリジナルハーブティー / Podcast相談会</p>
+  <p><strong>ブース物販</strong>: ステッカー / オリジナルハーブティー / Podcast相談会 / サコッシュ</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-046">このサイトの番組詳細ページ</a></li>

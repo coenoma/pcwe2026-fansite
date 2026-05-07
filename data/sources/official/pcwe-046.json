@@ -9,14 +9,25 @@
     "merchandise": [
       "ステッカー",
       "オリジナルハーブティー",
-      "Podcast相談会"
+      "Podcast相談会",
+      "サコッシュ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "番組グッズ②サコッシュ（青 × 赤茶 / NEW）",
+        "description": "5/10（日）出店に合わせて新しく作られた番組グッズ第 2 弾。ステッカーと同色の青と赤茶のデザイン。500ml ペットボトル・長財布・文庫本も入るサイズで、会場で買ったものを入れるのにもおすすめ。X 投稿（2026-05-07、@lifedeptstores）にて告知。",
+        "sourceUrl": "https://x.com/lifedeptstores/status/2052488641465692224",
+        "sourceType": "x-post"
+      }
     ],
     "merchandiseTags": [
       "experience",
-      "food-drink"
+      "food-drink",
+      "limited-new"
     ],
     "merchandiseSubTypes": [
-      "paper-stationery"
+      "paper-stationery",
+      "apparel"
     ]
   },
   "exhibition": {
