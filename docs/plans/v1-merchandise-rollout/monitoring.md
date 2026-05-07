@@ -95,6 +95,9 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-145 | PodWalker：ポッドウォーカー | — | — | https://listen.style/p/podwalker | 5/8 菊池さん目視で PCWE 言及なし確認。当日まで monitoring | 2026-05-08 |
 | pcwe-147 | アイデア刺激法 〜どう？〜 | — | — | — | 5/8 菊池さん目視で PCWE 言及なし確認。当日まで monitoring | 2026-05-08 |
 
+| pcwe-017 | 女性消防設備士の休憩室ラジオ | https://x.com/9Kshitsu_radio | — | — | 5/8 菊池さん発見: 公式 X (https://x.com/9Kshitsu_radio) 確認、ブース物販は言及なし。当日近くの新規告知を再チェック推奨 | 2026-05-08 |
+| pcwe-065 | そうめん屋ですが何か？ | https://x.com/soumenmegu | — | https://listen.style/p/edyjqcmx | 5/8 菊池さん発見: Listen + 公式 X 確認、ブース物販は公式情報以上は見つからず。当日近くの新規告知を再チェック推奨 | 2026-05-08 |
+
 ---
 
 ## 解決ログ
