@@ -23,12 +23,16 @@
 'use client';
 
 import { Minus, Move, Plus, RotateCcw } from 'lucide-react';
+import { useState } from 'react';
 import {
   TransformComponent,
   TransformWrapper,
 } from 'react-zoom-pan-pinch';
 import type { SlotPlacement } from '@/lib/booth-map';
 import type { BoothPositionsData, Day, Tent } from '@/lib/types';
+
+/** quad テントを A/B/C/D 個別タップに切替える scale 閾値 */
+const QUAD_DETAIL_SCALE_THRESHOLD = 1.8;
 
 interface Props {
   placements: SlotPlacement[];
@@ -74,6 +78,12 @@ export function VenueMap({
     ? toSvgPath(data.venuePolygon)
     : null;
 
+  // 操作開始でヒント非表示（一度触ったら邪魔しない）
+  const [hintVisible, setHintVisible] = useState(true);
+  // 現在のズーム scale（quad テントの個別タップ切替用）
+  const [scale, setScale] = useState(1);
+  const isDetailZoom = scale >= QUAD_DETAIL_SCALE_THRESHOLD;
+
   // マップを単独でズーム + パン可能にする（react-zoom-pan-pinch）
   // 親に aspect-ratio を当てて TransformWrapper が画面全体に拡張されないように制御
   return (
@@ -90,6 +100,10 @@ export function VenueMap({
         wheel={{ step: 0.2 }}
         panning={{ velocityDisabled: true }}
         pinch={{ step: 5 }}
+        onPanningStart={() => setHintVisible(false)}
+        onPinchStart={() => setHintVisible(false)}
+        onZoomStart={() => setHintVisible(false)}
+        onTransform={(_ref, state) => setScale(state.scale)}
       >
         {({ zoomIn, zoomOut, resetTransform }) => (
           <>
@@ -213,17 +227,33 @@ export function VenueMap({
                     highlightedPositions={highlightedPositions}
                     favoriteProgramIds={favoriteProgramIds}
                     visitedPositions={visitedPositions}
+                    isDetailZoom={isDetailZoom}
                   />
                 ))}
               </svg>
             </TransformComponent>
 
-            {/* 操作ヒント（左上、軽くフェード）*/}
-            <div className="pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full bg-neutral-900/70 px-2.5 py-1 text-[10px] font-bold text-white shadow-md backdrop-blur">
+            {/* 操作ヒント（左上、操作開始でフェードアウト）*/}
+            <div
+              className="pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full bg-neutral-900/70 px-2.5 py-1 text-[10px] font-bold text-white shadow-md backdrop-blur transition-all duration-500"
+              style={{
+                opacity: hintVisible ? 1 : 0,
+                transform: hintVisible ? 'translateY(0)' : 'translateY(-8px)',
+              }}
+              aria-hidden={!hintVisible}
+            >
               <Move size={11} aria-hidden="true" />
               <span className="hidden sm:inline">ピンチ / ホイール / ボタンで拡大</span>
               <span className="sm:hidden">ピンチで拡大</span>
             </div>
+
+            {/* 拡大時のテント別表示ヒント（quad テントの個別タップ可能化）*/}
+            {isDetailZoom ? (
+              <div className="pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full bg-accent-cyan-600/90 px-2.5 py-1 text-[10px] font-bold text-white shadow-md backdrop-blur">
+                <span aria-hidden="true">🎯</span>
+                <span>A・B・C・D 直接タップ可能</span>
+              </div>
+            ) : null}
 
             {/* ズームコントロール（右下に固定）*/}
             <div className="pointer-events-auto absolute bottom-3 right-3 z-10 flex flex-col gap-1.5">
@@ -279,6 +309,8 @@ interface TentClickAreaProps {
   highlightedPositions?: Set<string>;
   favoriteProgramIds?: Set<string>;
   visitedPositions?: Set<string>;
+  /** scale が閾値以上なら quad テントは A/B/C/D を個別タップに切替 */
+  isDetailZoom?: boolean;
 }
 
 function TentClickArea({
@@ -291,6 +323,7 @@ function TentClickArea({
   highlightedPositions,
   favoriteProgramIds,
   visitedPositions,
+  isDetailZoom = false,
 }: TentClickAreaProps) {
   if (!tent.polygon) return null;
   const [[x0, y0], [x1, y1]] = tent.polygon;
@@ -317,15 +350,81 @@ function TentClickArea({
     const isSelectedAny =
       isTentSelected || tent.slots.some((s) => s.position === selectedPosition);
 
-    // テント内のいずれかの slot が「お気に入り」「会えた」なら印を付ける
     const hasFavorite = tent.slots.some((s) => {
       const pl = placementByPosition.get(s.position);
       return pl?.programId !== undefined && favoriteProgramIds?.has(pl.programId);
     });
     const hasVisited = tent.slots.some((s) => visitedPositions?.has(s.position));
 
+    // 拡大時: A/B/C/D の 4 区画それぞれを個別タップ可能に切替
+    if (isDetailZoom) {
+      // 4 区画を 2x2 グリッドで配置
+      const halfW = width / 2;
+      const halfH = height / 2;
+      const quadrantOffsets: Record<'A' | 'B' | 'C' | 'D', { dx: number; dy: number }> = {
+        A: { dx: 0, dy: 0 },
+        B: { dx: halfW, dy: 0 },
+        C: { dx: 0, dy: halfH },
+        D: { dx: halfW, dy: halfH },
+      };
+      return (
+        <g
+          aria-label={`テント ${tent.id}（4 区画個別タップモード）`}
+          style={{ transition: 'opacity 0.25s ease-out' }}
+        >
+          {(['A', 'B', 'C', 'D'] as const).map((slotLabel) => {
+            const offset = quadrantOffsets[slotLabel];
+            const quadX = x0 + offset.dx;
+            const quadY = y0 + offset.dy;
+            const positionLabel = `${tent.id}-${slotLabel}`;
+            const placement = placementByPosition.get(positionLabel);
+            const slotHasContent =
+              placement !== undefined &&
+              (placement.programId !== undefined ||
+                placement.externalName !== undefined);
+            const slotIsSelected = selectedPosition === positionLabel;
+            const slotIsFiltered =
+              highlightedPositions !== undefined &&
+              !highlightedPositions.has(positionLabel);
+            const slotIsFavorite =
+              placement?.programId !== undefined &&
+              (favoriteProgramIds?.has(placement.programId) ?? false);
+            const slotIsVisited =
+              visitedPositions?.has(positionLabel) ?? false;
+
+            return (
+              <TentRect
+                key={slotLabel}
+                x={quadX}
+                y={quadY}
+                width={halfW}
+                height={halfH}
+                label={`${tent.id}-${slotLabel}`}
+                kind="program"
+                isSelected={slotIsSelected}
+                isFiltered={slotIsFiltered}
+                hasContent={slotHasContent}
+                isFavorite={slotIsFavorite}
+                isVisited={slotIsVisited}
+                ariaLabel={`ブース ${positionLabel}${
+                  placement?.programId ? '（タップで番組情報）' : ''
+                }`}
+                onClick={() => {
+                  if (slotHasContent && placement) onSelectSlot(placement);
+                }}
+              />
+            );
+          })}
+        </g>
+      );
+    }
+
+    // 通常表示: テント全体を 1 つのタップ領域に
     return (
-      <g aria-label={`テント ${tent.id}（4 区画）`}>
+      <g
+        aria-label={`テント ${tent.id}（4 区画）`}
+        className="animate-[fadeIn_0.25s_ease-out]"
+      >
         <TentRect
           x={x0}
           y={y0}

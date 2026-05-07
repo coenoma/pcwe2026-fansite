@@ -79,7 +79,7 @@ export function DiscoverHub({ programs }: Props) {
             icon={<MessageSquare size={28} aria-hidden="true" />}
             badge="AI に相談"
             title="お手元の AI に聞いてみる"
-            description="ChatGPT / Claude / Gemini に貼り付けるだけ。本サイトの 142 番組データをもとに、希望に合う 3 本を選んでもらえます。"
+            description="ChatGPT / Claude / Gemini に貼り付けるだけ。本サイトの 145 番組データをもとに、希望に合う 3 本を選んでもらえます。"
             cta="プロンプトを使う"
             accent="#10B981"
             onClick={() => setAiPromptOpen(true)}

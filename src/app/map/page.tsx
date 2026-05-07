@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   title: '会場マップ｜PCWE2026 非公式ファンガイド',
   description:
     'PODCAST WEEKEND 2026（5月9日土・5月10日日）の会場マップ。' +
-    '142 番組のブースをタップで詳細確認。土日切替・グッズ検索・お気に入り対応。',
+    '145 番組のブースをタップで詳細確認。土日切替・グッズ検索・お気に入り対応。',
   alternates: {
     canonical: `${SITE.url}/map`,
   },
   openGraph: {
     title: '会場マップ｜PCWE2026 非公式ファンガイド',
     description:
-      'PODCAST WEEKEND 2026 の会場マップ。142 番組のブースを土日切替で確認。',
+      'PODCAST WEEKEND 2026 の会場マップ。145 番組のブースを土日切替で確認。',
     url: `${SITE.url}/map`,
     type: 'website',
   },

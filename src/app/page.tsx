@@ -90,7 +90,7 @@ export default function HomePage() {
    * 「番組一覧サイト」であることと、各番組の URL を一括で伝える役割。
    * Google の rich results にも対応する。
    *
-   * 全 142 番組を含めると JSON が大きくなるので、トップでは ID 昇順で全件入れる
+   * 全 145 番組を含めると JSON が大きくなるので、トップでは ID 昇順で全件入れる
    *（generateStaticParams と同じ単一性のあるリストなので問題ない）。
    */
   const itemListJsonLd = {
@@ -221,7 +221,7 @@ export default function HomePage() {
                     会場マップを見る
                   </p>
                   <p className="mt-0.5 text-xs text-neutral-600">
-                    142 番組のブースを土日切替・グッズ検索で
+                    145 番組のブースを土日切替・グッズ検索で
                   </p>
                 </div>
               </div>

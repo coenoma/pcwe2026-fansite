@@ -46,13 +46,27 @@ export const EVENT = {
 } as const;
 
 // ====================
+// 番組数（programs.json 由来、ハードコードしないための定数）
+// ====================
+
+/**
+ * 全出展番組数（programs.json の totalPrograms と一致させる）。
+ *
+ * 当初の公式 142 番組 + 後追加 3 番組（PodWalker / まかないラジオ / アイデア刺激法 〜どう？〜）
+ * = 145 番組
+ *
+ * scripts/build-programs.ts で programs.json 生成時に検証され、
+ * 値が変わったらここも更新する運用。
+ */
+export const TOTAL_PROGRAMS = 145;
+
+// ====================
 // サイトメタ情報
 // ====================
 
 export const SITE = {
   name: 'PCWE2026 ファンガイド（非公式）',
-  description:
-    'PODCAST WEEKEND 2026（ポッドキャストウィークエンド／PODCAST EXPO 2026 内のマーケットイベント）の出展 142 番組から、あなたに「刺さる 1 本」を見つける非公式ファンガイド。キャッチコピー・タグ・ジャンルで当日が楽しみになる。',
+  description: `PODCAST WEEKEND 2026（ポッドキャストウィークエンド／PODCAST EXPO 2026 内のマーケットイベント）の出展 ${TOTAL_PROGRAMS} 番組から、あなたに「刺さる 1 本」を見つける非公式ファンガイド。キャッチコピー・タグ・ジャンルで当日が楽しみになる。`,
   url: 'https://pcwe2026-fansite.podmate.fm',
   ogImage: '/ogp.png',
   twitterHandle: '@yuto_podmate',

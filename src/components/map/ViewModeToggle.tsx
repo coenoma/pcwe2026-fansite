@@ -26,12 +26,12 @@ export function ViewModeToggle({ mode, onChange }: Props) {
         title="マップ表示"
         className={
           mode === 'map'
-            ? 'inline-flex items-center gap-1 rounded-full bg-neutral-900 px-3 py-1.5 text-xs font-bold text-white transition-colors'
-            : 'inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-bold text-neutral-600 transition-colors hover:text-neutral-900'
+            ? 'inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full bg-neutral-900 px-2.5 py-1.5 text-xs font-bold text-white transition-colors sm:px-3'
+            : 'inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1.5 text-xs font-bold text-neutral-600 transition-colors hover:text-neutral-900 sm:px-3'
         }
       >
         <MapIcon size={14} aria-hidden="true" />
-        マップ
+        <span>マップ</span>
       </button>
       <button
         type="button"
@@ -41,12 +41,12 @@ export function ViewModeToggle({ mode, onChange }: Props) {
         title="リスト表示"
         className={
           mode === 'list'
-            ? 'inline-flex items-center gap-1 rounded-full bg-neutral-900 px-3 py-1.5 text-xs font-bold text-white transition-colors'
-            : 'inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-bold text-neutral-600 transition-colors hover:text-neutral-900'
+            ? 'inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full bg-neutral-900 px-2.5 py-1.5 text-xs font-bold text-white transition-colors sm:px-3'
+            : 'inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1.5 text-xs font-bold text-neutral-600 transition-colors hover:text-neutral-900 sm:px-3'
         }
       >
         <List size={14} aria-hidden="true" />
-        リスト
+        <span>リスト</span>
       </button>
     </div>
   );

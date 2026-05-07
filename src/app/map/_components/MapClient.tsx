@@ -201,21 +201,27 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
   }, [selectedPlacement, programsById]);
 
   // テント概要シート用：選択中テントの 4 区画情報
+  // フィルタ・検索が効いている場合は **その条件にヒットした区画だけハイライト**、
+  // それ以外は半透明扱いの情報を渡す（ユーザー FB: フィルタしたカテゴリの番組だけ強調）
   const tentSlotsInfo: TentSlotInfo[] = useMemo(() => {
     if (selectedTentId === null) return [];
     const tent = boothPositions.tents.find((t) => t.id === selectedTentId);
     if (!tent) return [];
     return tent.slots.map((slot) => {
       const pl = placementsAll.find((p) => p.position === slot.position);
+      const matchesFilter = highlightedPositions
+        ? highlightedPositions.has(slot.position)
+        : true;
       return {
         position: slot.position,
         slot: slot.slot,
         program: pl?.programId ? programsById.get(pl.programId) : undefined,
         externalKind: pl?.externalKind,
         externalName: pl?.externalName,
+        matchesFilter,
       };
     });
-  }, [selectedTentId, boothPositions, placementsAll, programsById]);
+  }, [selectedTentId, boothPositions, placementsAll, programsById, highlightedPositions]);
 
   // ====== URL 同期 ======
   const updateUrl = useCallback(
@@ -396,7 +402,6 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
               <DayToggle
                 selectedDay={day}
                 onChange={handleDayChange}
-                counts={counts}
               />
             </div>
           </div>

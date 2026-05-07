@@ -47,7 +47,7 @@ function buildPrompt(userWish: string): string {
   return `# PODCAST WEEKEND 2026 出展番組から、私に刺さる 3 本を選んでください
 
 あなたは音声番組に詳しい案内人です。
-PODCAST EXPO 2026 内のマーケットイベント「PODCAST WEEKEND 2026」（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）には 142 番組が出展します。
+PODCAST EXPO 2026 内のマーケットイベント「PODCAST WEEKEND 2026」（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）には 145 番組が出展します。
 
 非公式ファンガイドサイト「PCWE2026 ファンガイド」が、全番組の詳細データを LLM 向けに公開しています。下記 URL を取得して内容を踏まえた上で、私の希望に合う番組を 3 本選んでください。
 
@@ -55,12 +55,12 @@ PODCAST EXPO 2026 内のマーケットイベント「PODCAST WEEKEND 2026」（
 
 優先順位の高い順に試してください。**1 つが本文取得できれば次は不要**です。
 
-### 推奨ルート A: LLM 向け HTML 集約データ（最も確実 / 一発で全 142 番組）
+### 推奨ルート A: LLM 向け HTML 集約データ（最も確実 / 一発で全 145 番組）
 
-1. ${SITE_URL}/data/llms-full — **全 142 番組の詳細を集約した HTML 版**（AI / LLM 向けに最適化、約 220KB）
+1. ${SITE_URL}/data/llms-full — **全 145 番組の詳細を集約した HTML 版**（AI / LLM 向けに最適化、約 220KB）
 
 > **重要（HTML として処理してください）**:
-> このページは URL に拡張子がありませんが、Content-Type は \`text/html; charset=utf-8\` で配信される **HTML ドキュメント**です。レスポンスヘッダーの Content-Type を確認し、HTML としてパースしてください。冒頭に \`<title>PCWE2026 全 142 番組 詳細データ（LLM 向け）...</title>\` があり、本文は \`<article id="pcwe-001">\` 〜 \`<article id="pcwe-142">\` で 142 番組分の詳細が並びます。
+> このページは URL に拡張子がありませんが、Content-Type は \`text/html; charset=utf-8\` で配信される **HTML ドキュメント**です。レスポンスヘッダーの Content-Type を確認し、HTML としてパースしてください。冒頭に \`<title>PCWE2026 全 145 番組 詳細データ（LLM 向け）...</title>\` があり、本文は \`<article id="pcwe-001">\` 〜 \`<article id="pcwe-142">\` で 145 番組分の詳細が並びます。
 >
 > このページが取得できれば、以降の B / C は不要です。
 
@@ -76,7 +76,7 @@ PODCAST EXPO 2026 内のマーケットイベント「PODCAST WEEKEND 2026」（
 
 A / B が読めない場合は、次の HTML ページを順に取得してください:
 
-1. ${SITE_URL}/ — トップページ（全 142 番組への ItemList JSON-LD 構造化データを含む）
+1. ${SITE_URL}/ — トップページ（全 145 番組への ItemList JSON-LD 構造化データを含む）
 2. ${SITE_URL}/genre/{ジャンル名} — ジャンル別の番組一覧（カルチャー / 食 / 音楽 / 旅 など）
 3. ${SITE_URL}/booth/pcwe-XXX — 個別番組詳細（XXX は 001〜142 の 3 桁）
 
@@ -230,7 +230,7 @@ export function AIChatPromptModal({ isOpen, onClose }: Props) {
                 いつもの AI に、相談してみる
               </h2>
               <p className="mt-1 text-xs text-neutral-500 sm:text-sm">
-                ChatGPT / Claude / Gemini に貼り付けるだけ。本サイトの 142 番組データを参照して、3 本提案してくれます。
+                ChatGPT / Claude / Gemini に貼り付けるだけ。本サイトの 145 番組データを参照して、3 本提案してくれます。
               </p>
             </div>
           </div>
