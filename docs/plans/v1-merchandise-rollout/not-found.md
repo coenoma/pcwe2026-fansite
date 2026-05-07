@@ -46,7 +46,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 
 | 番組 ID | 番組名 | X | Instagram | Website | 調査メモ | 最終調査日 |
 |---|---|---|---|---|---|---|
-| pcwe-008 | 私的エクレアイズム | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-008/) のみ参照可能 | 2026-05-05 |
 | pcwe-017 | 女性消防設備士の休憩室ラジオ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-017/) のみ参照可能 | 2026-05-05 |
 | pcwe-052 | シンプルKEIBA～難しくない競馬ラジオ～ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-052/) のみ参照可能 | 2026-05-05 |
 | pcwe-065 | そうめん屋ですが何か？ | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-065/) のみ参照可能 | 2026-05-05 |

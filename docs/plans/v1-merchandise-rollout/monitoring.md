@@ -92,9 +92,14 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 
 | pcwe-106 | 公共訴訟ラジオ｜社会を動かす裁判の話 | https://x.com/CALL4_Jp | https://www.instagram.com/call4_jp/ | — | Claude 単独確認で Listen / 公式サイト言及なし、X/IG タイムラインへの構造的アクセス手段限界。菊池さん目視待ち、当日まで monitoring | 2026-05-06 |
 
+| pcwe-145 | PodWalker：ポッドウォーカー | — | — | https://listen.style/p/podwalker | 5/8 菊池さん目視で PCWE 言及なし確認。当日まで monitoring | 2026-05-08 |
+| pcwe-147 | アイデア刺激法 〜どう？〜 | — | — | — | 5/8 菊池さん目視で PCWE 言及なし確認。当日まで monitoring | 2026-05-08 |
+
 ---
 
 ## 解決ログ
+
+- **2026-05-08**: pcwe-008 私的エクレアイズム → done 化。Spotify 告知エピソード https://open.spotify.com/episode/0lAtamQLe1TsDGHwGRq5dJ にてラジオドラマ出演体験（3 種類のドラマ・セリフ選択制）の詳細告知
 
 - **2026-05-08**: pcwe-046 人生百貨店 → done 化。X 投稿 https://x.com/lifedeptstores/status/2052488641465692224 にて NEW グッズ第2弾サコッシュ告知（青×赤茶、500mlペットボトル・長財布・文庫本収納可、5/10 出店）
 
