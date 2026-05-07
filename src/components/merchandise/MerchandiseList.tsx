@@ -22,15 +22,18 @@ import {
   groupMerchandiseDetails,
 } from './MerchandiseGroupCard';
 import type { MerchandiseDetail } from '@/lib/types';
+import type { TweetMap } from '@/lib/tweet-cache';
 
 interface Props {
   /** 構造化された物販詳細（X 投稿引用など）*/
   details: ReadonlyArray<MerchandiseDetail>;
   /** 表示レイアウト。'grid' は件数別自動切り替え、'popup' はコンパクト縦積み */
   layout?: 'grid' | 'popup';
+  /** SSG で pre-fetch した X 投稿データ（compact mode 時に EmbeddedTweet に渡す）*/
+  tweets?: TweetMap;
 }
 
-export function MerchandiseList({ details, layout = 'grid' }: Props) {
+export function MerchandiseList({ details, layout = 'grid', tweets }: Props) {
   if (details.length === 0) return null;
 
   const groups = groupMerchandiseDetails(details);
@@ -40,7 +43,7 @@ export function MerchandiseList({ details, layout = 'grid' }: Props) {
     return (
       <div className="flex flex-col gap-3">
         {groups.map((group, i) => (
-          <MerchandiseGroupCard key={i} group={group} compact />
+          <MerchandiseGroupCard key={i} group={group} compact tweets={tweets} />
         ))}
       </div>
     );

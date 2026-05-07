@@ -25,6 +25,7 @@ import { Check, ExternalLink, Star, X } from 'lucide-react';
 import { MerchandiseList } from '@/components/merchandise/MerchandiseList';
 import type { Day, MerchandiseTag, Program } from '@/lib/types';
 import type { SlotPlacement } from '@/lib/booth-map';
+import type { TweetMap } from '@/lib/tweet-cache';
 
 interface Props {
   /** 開いている placement、null なら閉じる */
@@ -33,6 +34,8 @@ interface Props {
   program?: Program;
   /** 表示中の day */
   day: Day;
+  /** SSG 時に pre-fetch した X 投稿データ（compact mode で EmbeddedTweet に渡す）*/
+  tweets?: TweetMap;
   onClose: () => void;
   isFavorite?: boolean;
   isVisited?: boolean;
@@ -44,6 +47,7 @@ export function BoothBottomSheet({
   placement,
   program,
   day,
+  tweets,
   onClose,
   isFavorite = false,
   isVisited = false,
@@ -223,6 +227,7 @@ export function BoothBottomSheet({
                 <MerchandiseList
                   details={program.official.merchandiseDetails}
                   layout="popup"
+                  tweets={tweets}
                 />
               </div>
             </section>

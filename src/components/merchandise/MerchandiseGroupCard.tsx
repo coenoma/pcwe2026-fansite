@@ -23,11 +23,12 @@
 
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
+import { EmbeddedTweet, TweetNotFound } from 'react-tweet';
 import {
   TwitterEmbed,
   extractTweetId,
 } from '@/components/twitter-embed/TwitterEmbed';
-import { TweetClient } from '@/components/twitter-embed/TweetClient';
+import type { TweetMap } from '@/lib/tweet-cache';
 import type {
   MerchandiseDetail,
   MerchandiseSourceType,
@@ -44,9 +45,11 @@ interface Props {
   group: MerchandiseGroup;
   /** 限られたスペース向けの圧縮表示モード（マップポップアップ等）*/
   compact?: boolean;
+  /** SSG で pre-fetch 済みの tweet データ（compact mode で EmbeddedTweet に渡す）*/
+  tweets?: TweetMap;
 }
 
-export function MerchandiseGroupCard({ group, compact = false }: Props) {
+export function MerchandiseGroupCard({ group, compact = false, tweets }: Props) {
   const mainTweetId =
     group.sourceType === 'x-post' ? extractTweetId(group.sourceUrl) : null;
 
@@ -157,8 +160,8 @@ export function MerchandiseGroupCard({ group, compact = false }: Props) {
         ) : null}
 
         {/* 王道パターン: 補助 X 投稿
-            - compact（マップポップアップ等、Client Component 内）: TweetClient（CSR fetch 版）で埋め込み
-            - 通常（Server Component の番組詳細ページ）: TwitterEmbed (Server, getTweet で SSR) で埋め込み */}
+            - compact（マップポップアップ等、Client Component 内）: SSG pre-fetched tweets から EmbeddedTweet
+            - 通常（Server Component の番組詳細ページ）: TwitterEmbed (async Server, getTweet で SSR) */}
         {supplementaryTweetId !== null ? (
           <div className={compact ? 'mt-3 [&_.react-tweet-theme]:!my-0' : 'mt-4 [&_.react-tweet-theme]:!my-0'}>
             <p
@@ -171,7 +174,11 @@ export function MerchandiseGroupCard({ group, compact = false }: Props) {
               📣 番組ホストの告知ツイート
             </p>
             {compact ? (
-              <TweetClient tweetId={supplementaryTweetId} />
+              tweets?.[supplementaryTweetId] ? (
+                <EmbeddedTweet tweet={tweets[supplementaryTweetId]!} />
+              ) : (
+                <TweetNotFound />
+              )
             ) : (
               <TwitterEmbed tweetId={supplementaryTweetId} />
             )}
@@ -189,7 +196,11 @@ export function MerchandiseGroupCard({ group, compact = false }: Props) {
           }
         >
           {compact ? (
-            <TweetClient tweetId={mainTweetId} />
+            tweets?.[mainTweetId] ? (
+              <EmbeddedTweet tweet={tweets[mainTweetId]!} />
+            ) : (
+              <TweetNotFound />
+            )
           ) : (
             <TwitterEmbed tweetId={mainTweetId} />
           )}
