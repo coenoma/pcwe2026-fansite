@@ -50,14 +50,17 @@ import type {
   MerchandiseTag,
   Program,
 } from '@/lib/types';
+import type { TweetMap } from '@/lib/tweet-cache';
 
 interface Props {
   programs: Program[];
   boothPositions: BoothPositionsData;
+  /** SSG 時に pre-fetch した tweet データ（ID → Tweet）*/
+  tweets: TweetMap;
   eventDates: { sat: string; sun: string };
 }
 
-export function MapClient({ programs, boothPositions, eventDates }: Props) {
+export function MapClient({ programs, boothPositions, tweets, eventDates }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -543,6 +546,7 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
         placement={selectedPlacement}
         program={selectedProgram}
         day={day}
+        tweets={tweets}
         onClose={handleCloseBottomSheet}
         isFavorite={
           selectedPlacement?.programId

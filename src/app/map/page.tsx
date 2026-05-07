@@ -10,6 +10,7 @@
 import type { Metadata } from 'next';
 import { getAllPrograms } from '@/lib/data';
 import { getBoothPositions } from '@/lib/booth-map';
+import { fetchTweetsForPrograms } from '@/lib/tweet-cache';
 import { MapClient } from './_components/MapClient';
 import { EVENT, SITE } from '@/lib/constants';
 
@@ -32,15 +33,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function MapPage() {
+export default async function MapPage() {
   const programs = getAllPrograms();
   const boothPositions = getBoothPositions();
+  // SSG ビルド時に X 投稿を一括 pre-fetch
+  // → ランタイム fetch ゼロ、レート制限と "Tweet not found" の誤発火を回避
+  const tweets = await fetchTweetsForPrograms(programs);
 
   return (
     <main className="min-h-screen bg-neutral-50">
       <MapClient
         programs={programs}
         boothPositions={boothPositions}
+        tweets={tweets}
         eventDates={{
           sat: EVENT.startDate,
           sun: EVENT.endDate,
