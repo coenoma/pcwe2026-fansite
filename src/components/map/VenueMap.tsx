@@ -39,6 +39,10 @@ interface Props {
   selectedPosition?: string;
   selectedTentId?: number;
   highlightedPositions?: Set<string>;
+  /** お気に入り中の programId 集合（ピンに⭐️マーク）*/
+  favoriteProgramIds?: Set<string>;
+  /** 「会えた」済みの position 集合（ピンに✅マーク）*/
+  visitedPositions?: Set<string>;
 }
 
 const FALLBACK_IMAGE_SIZE = { width: 932, height: 808 };
@@ -52,6 +56,8 @@ export function VenueMap({
   selectedPosition,
   selectedTentId,
   highlightedPositions,
+  favoriteProgramIds,
+  visitedPositions,
 }: Props) {
   const imageSize = data.imageSize ?? FALLBACK_IMAGE_SIZE;
   const placementByPosition = new Map<string, SlotPlacement>();
@@ -205,6 +211,8 @@ export function VenueMap({
                     selectedPosition={selectedPosition}
                     selectedTentId={selectedTentId}
                     highlightedPositions={highlightedPositions}
+                    favoriteProgramIds={favoriteProgramIds}
+                    visitedPositions={visitedPositions}
                   />
                 ))}
               </svg>
@@ -269,6 +277,8 @@ interface TentClickAreaProps {
   selectedPosition?: string;
   selectedTentId?: number;
   highlightedPositions?: Set<string>;
+  favoriteProgramIds?: Set<string>;
+  visitedPositions?: Set<string>;
 }
 
 function TentClickArea({
@@ -279,6 +289,8 @@ function TentClickArea({
   selectedPosition,
   selectedTentId,
   highlightedPositions,
+  favoriteProgramIds,
+  visitedPositions,
 }: TentClickAreaProps) {
   if (!tent.polygon) return null;
   const [[x0, y0], [x1, y1]] = tent.polygon;
@@ -305,6 +317,13 @@ function TentClickArea({
     const isSelectedAny =
       isTentSelected || tent.slots.some((s) => s.position === selectedPosition);
 
+    // テント内のいずれかの slot が「お気に入り」「会えた」なら印を付ける
+    const hasFavorite = tent.slots.some((s) => {
+      const pl = placementByPosition.get(s.position);
+      return pl?.programId !== undefined && favoriteProgramIds?.has(pl.programId);
+    });
+    const hasVisited = tent.slots.some((s) => visitedPositions?.has(s.position));
+
     return (
       <g aria-label={`テント ${tent.id}（4 区画）`}>
         <TentRect
@@ -314,9 +333,12 @@ function TentClickArea({
           height={height}
           label={`${tent.id}`}
           showQuadHints
+          kind="program"
           isSelected={isSelectedAny}
           isFiltered={isFiltered}
           hasContent={hasAnyContent}
+          isFavorite={hasFavorite}
+          isVisited={hasVisited}
           ariaLabel={`テント ${tent.id}（タップで 4 区画から選択）`}
           onClick={() => onSelectTent(tent.id)}
         />
@@ -336,10 +358,23 @@ function TentClickArea({
     !highlightedPositions.has(positionLabel);
   const isSelected = selectedPosition === positionLabel;
 
+  // kind 判定（色分け用）
+  const kind: TentRectKind = isKitchen
+    ? 'kitchen'
+    : placement?.externalKind === 'kitchen-only'
+      ? 'kitchen'
+      : placement?.externalKind === 'sponsor'
+        ? 'sponsor'
+        : 'program';
+  const isFavorite =
+    placement?.programId !== undefined &&
+    (favoriteProgramIds?.has(placement.programId) ?? false);
+  const isVisited = visitedPositions?.has(positionLabel) ?? false;
+
   const ariaLabel = !hasContent
     ? `テント ${positionLabel}（情報なし）`
     : placement?.programId
-      ? `ブース ${positionLabel}（タップで番組情報）`
+      ? `ブース ${positionLabel}（タップで番組情報）${isFavorite ? '・お気に入り済' : ''}${isVisited ? '・会えた済' : ''}`
       : placement?.externalKind === 'sponsor'
         ? `テント ${positionLabel} ${placement.externalName}（スポンサー）`
         : placement?.externalKind === 'kitchen-only'
@@ -354,10 +389,12 @@ function TentClickArea({
         width={width}
         height={height}
         label={`${tent.id}`}
-        isKitchen={isKitchen}
+        kind={kind}
         isSelected={isSelected}
         isFiltered={isFiltered}
         hasContent={hasContent}
+        isFavorite={isFavorite}
+        isVisited={isVisited}
         ariaLabel={ariaLabel}
         onClick={() => {
           if (hasContent && placement) onSelectSlot(placement);
@@ -367,18 +404,21 @@ function TentClickArea({
       {isKitchen ? (
         <text
           x={cx}
-          y={y1 + 12}
-          fill="var(--color-neutral-500)"
-          fontSize={10}
+          y={y1 + 13}
+          fill="var(--color-neutral-600)"
+          fontSize={11}
+          fontWeight={700}
           textAnchor="middle"
           aria-hidden="true"
         >
-          ※キッチンブース
+          🍳 キッチン
         </text>
       ) : null}
     </g>
   );
 }
+
+type TentRectKind = 'program' | 'sponsor' | 'kitchen';
 
 interface TentRectProps {
   x: number;
@@ -387,10 +427,12 @@ interface TentRectProps {
   height: number;
   label: string;
   showQuadHints?: boolean;
-  isKitchen?: boolean;
+  kind: TentRectKind;
   hasContent: boolean;
   isSelected: boolean;
   isFiltered: boolean;
+  isFavorite?: boolean;
+  isVisited?: boolean;
   ariaLabel: string;
   onClick: () => void;
 }
@@ -402,24 +444,33 @@ function TentRect({
   height,
   label,
   showQuadHints = false,
-  isKitchen = false,
+  kind,
   hasContent,
   isSelected,
   isFiltered,
+  isFavorite = false,
+  isVisited = false,
   ariaLabel,
   onClick,
 }: TentRectProps) {
   const cx = x + width / 2;
   const cy = y + height / 2;
-  const fontSize = Math.min(width, height) * 0.45;
+  // 番号サイズ拡大（読みやすさ重視）
+  const fontSize = Math.min(width, height) * 0.55;
 
-  // テント色: 通常はコエノマ primary、キッチンは neutral
-  const fillColor = isKitchen
-    ? 'var(--color-neutral-300)'
-    : !hasContent
-      ? 'var(--color-neutral-200)'
-      : 'var(--color-primary-500)';
-  const labelColor = !isKitchen && hasContent ? '#fff' : 'var(--color-neutral-700)';
+  // kind 別の色分け
+  // - program: 番組ブース → primary オレンジ（コエノマブランド）
+  // - sponsor: スポンサー → secondary 青（落ち着き）
+  // - kitchen: キッチンブース → amber 黄系（食感）
+  // - 未割当: neutral グレー
+  const fillColor = !hasContent
+    ? 'var(--color-neutral-200)'
+    : kind === 'sponsor'
+      ? 'var(--color-secondary-500)'
+      : kind === 'kitchen'
+        ? '#f59e0b' // amber-500
+        : 'var(--color-primary-500)';
+  const labelColor = hasContent ? '#fff' : 'var(--color-neutral-600)';
 
   return (
     <g
@@ -515,6 +566,53 @@ function TentRect({
           rx={4}
           aria-hidden="true"
         />
+      ) : null}
+
+      {/* お気に入りバッジ（右上、⭐️）*/}
+      {isFavorite ? (
+        <g aria-hidden="true">
+          <circle
+            cx={x + width - 6}
+            cy={y + 6}
+            r={9}
+            fill="#f59e0b"
+            stroke="#fff"
+            strokeWidth={1.5}
+          />
+          <text
+            x={x + width - 6}
+            y={y + 10}
+            fontSize={11}
+            textAnchor="middle"
+            fill="#fff"
+          >
+            ★
+          </text>
+        </g>
+      ) : null}
+
+      {/* 「会えた」バッジ（左下、✓）*/}
+      {isVisited ? (
+        <g aria-hidden="true">
+          <circle
+            cx={x + 6}
+            cy={y + height - 6}
+            r={9}
+            fill="var(--color-accent-cyan-500)"
+            stroke="#fff"
+            strokeWidth={1.5}
+          />
+          <text
+            x={x + 6}
+            y={y + height - 2}
+            fontSize={11}
+            textAnchor="middle"
+            fill="#fff"
+            fontWeight={900}
+          >
+            ✓
+          </text>
+        </g>
       ) : null}
     </g>
   );

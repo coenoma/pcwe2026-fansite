@@ -32,11 +32,12 @@ export function MapListView({ programs, placements, day, onSelect }: Props) {
   if (items.length === 0) {
     return (
       <div className="rounded-2xl border border-neutral-200 bg-white px-4 py-12 text-center">
-        <p className="text-sm text-neutral-600">
-          該当ブースは見つかりませんでした。
+        <p className="text-3xl" aria-hidden="true">🔍✨</p>
+        <p className="mt-3 text-sm font-bold text-neutral-700">
+          条件にぴったりのブースは見つからなかった！
         </p>
         <p className="mt-1 text-xs text-neutral-500">
-          フィルタを外す or 検索キーワードを変えてみて。
+          フィルタを外す・検索キーワードを変える・別の日も覗いてみる ── どれかで見つかるかも ✨
         </p>
       </div>
     );
