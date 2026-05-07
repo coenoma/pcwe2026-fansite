@@ -11,11 +11,9 @@ import type { Day } from '@/lib/types';
 interface Props {
   selectedDay: Day;
   onChange: (day: Day) => void;
-  /** 土・日それぞれの該当ブース数を表示（任意）*/
-  counts?: { sat: number; sun: number };
 }
 
-export function DayToggle({ selectedDay, onChange, counts }: Props) {
+export function DayToggle({ selectedDay, onChange }: Props) {
   return (
     <div
       role="tablist"
@@ -29,11 +27,11 @@ export function DayToggle({ selectedDay, onChange, counts }: Props) {
         onClick={() => onChange('sat')}
         className={
           selectedDay === 'sat'
-            ? 'rounded-full bg-primary-500 px-4 py-1.5 text-sm font-bold text-white transition-colors'
-            : 'rounded-full px-4 py-1.5 text-sm font-bold text-neutral-600 transition-colors hover:text-neutral-900'
+            ? 'shrink-0 whitespace-nowrap rounded-full bg-primary-500 px-3 py-1.5 text-xs font-bold text-white transition-colors sm:px-4 sm:text-sm'
+            : 'shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold text-neutral-600 transition-colors hover:text-neutral-900 sm:px-4 sm:text-sm'
         }
       >
-        5/9 土{counts ? `（${counts.sat}）` : ''}
+        5/9 土
       </button>
       <button
         type="button"
@@ -42,11 +40,11 @@ export function DayToggle({ selectedDay, onChange, counts }: Props) {
         onClick={() => onChange('sun')}
         className={
           selectedDay === 'sun'
-            ? 'rounded-full bg-primary-500 px-4 py-1.5 text-sm font-bold text-white transition-colors'
-            : 'rounded-full px-4 py-1.5 text-sm font-bold text-neutral-600 transition-colors hover:text-neutral-900'
+            ? 'shrink-0 whitespace-nowrap rounded-full bg-primary-500 px-3 py-1.5 text-xs font-bold text-white transition-colors sm:px-4 sm:text-sm'
+            : 'shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold text-neutral-600 transition-colors hover:text-neutral-900 sm:px-4 sm:text-sm'
         }
       >
-        5/10 日{counts ? `（${counts.sun}）` : ''}
+        5/10 日
       </button>
     </div>
   );

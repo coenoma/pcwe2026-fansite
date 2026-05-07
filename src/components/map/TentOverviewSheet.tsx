@@ -25,6 +25,8 @@ export interface TentSlotInfo {
   program?: Program;
   externalKind?: 'sponsor' | 'kitchen-only' | 'external-program';
   externalName?: string;
+  /** 現在のフィルタ条件にヒットしているか（フィルタなしなら true）*/
+  matchesFilter?: boolean;
 }
 
 interface Props {
@@ -77,6 +79,14 @@ export function TentOverviewSheet({
     .map((s) => slots.find((sl) => sl.slot === s))
     .filter((s): s is TentSlotInfo => s !== undefined);
 
+  // フィルタが効いてる場合: マッチした slot だけ表示
+  // 全部マッチしている、もしくはフィルタ未適用の場合は通常の 4 件表示
+  const hasFilter = sortedSlots.some((s) => s.matchesFilter === false);
+  const displaySlots = hasFilter
+    ? sortedSlots.filter((s) => s.matchesFilter !== false)
+    : sortedSlots;
+  const filteredOutCount = sortedSlots.length - displaySlots.length;
+
   return (
     <>
       <button
@@ -90,7 +100,7 @@ export function TentOverviewSheet({
         role="dialog"
         aria-modal="true"
         aria-labelledby="tent-overview-title"
-        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 max-h-[78vh] overflow-y-auto rounded-t-3xl bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[85vh]"
+        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto max-h-[78vh] max-w-5xl overflow-y-auto rounded-t-3xl bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[85vh]"
       >
         <div className="sticky top-0 flex justify-center bg-white pb-1 pt-3">
           <span
@@ -102,16 +112,20 @@ export function TentOverviewSheet({
         <div className="flex items-start justify-between gap-3 px-5 pb-2 pt-2">
           <div className="flex-1 min-w-0">
             <p className="text-xs font-bold text-primary-600">
-              テント {tentId}（{dayLabel}・4 区画）
+              テント {tentId}（{dayLabel}・{sortedSlots.length} 区画）
             </p>
             <h2
               id="tent-overview-title"
               className="mt-1 text-lg font-bold leading-tight text-neutral-900"
             >
-              気になるブースを選んでね
+              {hasFilter
+                ? `条件にヒットしたブースだけ表示中 ✨`
+                : '気になるブースを選んでね'}
             </h2>
             <p className="mt-1 text-xs text-neutral-500">
-              A・B・C・D の 4 区画から気になるブースをタップ
+              {hasFilter
+                ? `${displaySlots.length} 件ヒット（${filteredOutCount} 件は条件外で非表示）`
+                : `A・B・C・D の ${sortedSlots.length} 区画から気になるブースをタップ`}
             </p>
           </div>
 
@@ -126,25 +140,33 @@ export function TentOverviewSheet({
           </button>
         </div>
 
-        {/* A/B/C/D グリッド */}
-        <div className="grid grid-cols-2 gap-3 px-5 pb-4 pt-3">
-          {sortedSlots.map((slot) => (
+        {/* 区画グリッド: ヒット件数に応じて 1 列 or 2 列 */}
+        <div
+          className={
+            displaySlots.length === 1
+              ? 'mx-auto grid max-w-md grid-cols-1 gap-3 px-5 pb-4 pt-3'
+              : 'grid grid-cols-2 gap-3 px-5 pb-4 pt-3'
+          }
+        >
+          {displaySlots.map((slot) => (
             <SlotCard
               key={slot.position}
               slot={slot}
               onClick={() => onSelectSlot(slot.position)}
             />
           ))}
-          {/* 区画が 4 つ未満の場合のプレースホルダー（テント形状で 4 区画あるが情報なし）*/}
-          {Array.from({ length: 4 - sortedSlots.length }).map((_, i) => (
-            <div
-              key={`empty-${i}`}
-              aria-hidden="true"
-              className="rounded-2xl border border-dashed border-neutral-200 bg-neutral-50 p-3 text-center"
-            >
-              <p className="text-xs text-neutral-400">空き / 情報未取得</p>
-            </div>
-          ))}
+          {/* フィルタ未適用 + 区画 4 未満の場合のプレースホルダー */}
+          {!hasFilter
+            ? Array.from({ length: 4 - sortedSlots.length }).map((_, i) => (
+                <div
+                  key={`empty-${i}`}
+                  aria-hidden="true"
+                  className="rounded-2xl border border-dashed border-neutral-200 bg-neutral-50 p-3 text-center"
+                >
+                  <p className="text-xs text-neutral-400">空き / 情報未取得</p>
+                </div>
+              ))
+            : null}
         </div>
       </div>
 

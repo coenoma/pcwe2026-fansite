@@ -22,7 +22,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-xl font-extrabold text-neutral-900">非公式ファンガイドです</h2>
             <p className="mt-3">
-              このサイトは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">{EVENT.parentName}</a> 内のマーケットイベント <strong>{EVENT.name}</strong>（ポッドキャストウィークエンド 2026）の出展 142 番組を、ファンの視点でまとめた <strong>非公式</strong> のガイドサイトです。公式とは無関係に、{CREATOR.company} の代表（{CREATOR.representative}）がファン活動として制作しました。
+              このサイトは <a href={EVENT.officialUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-primary-600 underline decoration-transparent transition-colors hover:decoration-primary-600">{EVENT.parentName}</a> 内のマーケットイベント <strong>{EVENT.name}</strong>（ポッドキャストウィークエンド 2026）の出展 145 番組を、ファンの視点でまとめた <strong>非公式</strong> のガイドサイトです。公式とは無関係に、{CREATOR.company} の代表（{CREATOR.representative}）がファン活動として制作しました。
             </p>
             <p className="mt-3">
               番組情報・画像は各番組制作者と公式に帰属します。本サイトのキャッチコピー・タグ・ジャンル分類は、{CREATOR.representative} と AI が一緒に「<strong>独断と偏見で書いてみた</strong>」ファンキュレーションです（公式の引用ではありません）。違うじゃん！って思ったら、お気軽にご連絡ください。
@@ -32,7 +32,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-xl font-extrabold text-neutral-900">作った理由</h2>
             <p className="mt-3">
-              142 番組という規模に対して、公式の「番組名 + ロゴ + 概要」だけでは、行く前に「これ刺さる」を見つけにくい。配信者側からも「リスナー以外に番組を知ってもらう機会」がもっとあっていい。
+              145 番組という規模に対して、公式の「番組名 + ロゴ + 概要」だけでは、行く前に「これ刺さる」を見つけにくい。配信者側からも「リスナー以外に番組を知ってもらう機会」がもっとあっていい。
             </p>
             <p className="mt-3">
               そう思って、勝手に作りました。当日が、もっと楽しみになりますように。

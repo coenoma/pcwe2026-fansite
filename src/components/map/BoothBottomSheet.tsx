@@ -97,7 +97,7 @@ export function BoothBottomSheet({
         role="dialog"
         aria-modal="true"
         aria-labelledby="booth-sheet-title"
-        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 flex max-h-[80vh] flex-col rounded-t-3xl bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[88vh]"
+        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto flex max-h-[80vh] max-w-5xl flex-col rounded-t-3xl bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[88vh]"
       >
         {/* drag handle */}
         <div className="sticky top-0 flex justify-center bg-white pt-3">

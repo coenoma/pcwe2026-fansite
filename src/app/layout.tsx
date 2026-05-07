@@ -74,7 +74,7 @@ const zenKaku = Zen_Kaku_Gothic_New({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'PODCAST WEEKEND 2026 非公式ファンガイド｜142 番組から「これ刺さる」を見つける',
+    default: 'PODCAST WEEKEND 2026 非公式ファンガイド｜145 番組から「これ刺さる」を見つける',
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
@@ -107,14 +107,14 @@ export const metadata: Metadata = {
     locale: 'ja_JP',
     url: SITE.url,
     siteName: SITE.name,
-    title: 'PODCAST WEEKEND 2026 非公式ファンガイド｜142 番組から「これ刺さる」を見つける',
+    title: 'PODCAST WEEKEND 2026 非公式ファンガイド｜145 番組から「これ刺さる」を見つける',
     description: SITE.description,
     images: [{ url: SITE.ogImage, width: 1200, height: 630, alt: SITE.name }],
   },
   twitter: {
     card: 'summary_large_image',
     site: SITE.twitterHandle,
-    title: 'PODCAST WEEKEND 2026 非公式ファンガイド｜142 番組から「これ刺さる」を見つける',
+    title: 'PODCAST WEEKEND 2026 非公式ファンガイド｜145 番組から「これ刺さる」を見つける',
     description: SITE.description,
     images: [SITE.ogImage],
   },
