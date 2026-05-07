@@ -482,6 +482,8 @@ function TentClickArea({
           height={height}
           label={`${tent.id}`}
           showQuadHints
+          // 12-27 は公式マップで A/B が右、C/D が左（ユーザー指摘）
+          quadHintsLayout={tent.id >= 12 && tent.id <= 27 ? 'right-ab' : 'left-ac'}
           kind="program"
           isSelected={isSelectedAny}
           isFiltered={isFiltered}

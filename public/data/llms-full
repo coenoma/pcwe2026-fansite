@@ -34,7 +34,7 @@ a { color: #1a5fb4; }
   <h1>PCWE2026 全 145 番組 詳細データ（LLM 向け）</h1>
   <p>PODCAST EXPO 2026 内のマーケットイベント <strong>PODCAST WEEKEND 2026</strong>（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）出展 145 番組の詳細を 1 ページに集約した、LLM / AI クライアント向けの HTML データページです。</p>
   <p>人間向けファンガイドは <a href="https://pcwe2026-fansite.podmate.fm/">トップページ</a>。同じデータの他フォーマット: <a href="https://pcwe2026-fansite.podmate.fm/llms-full.txt">llms-full.txt</a> / <a href="https://pcwe2026-fansite.podmate.fm/api/programs.json">programs.json</a> / <a href="https://pcwe2026-fansite.podmate.fm/llms.txt">llms.txt（サイト地図）</a></p>
-  <p class="meta">最終ビルド: <time datetime="2026-05-07T23:39:05.278Z">2026-05-07T23:39:05.278Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
+  <p class="meta">最終ビルド: <time datetime="2026-05-07T23:58:52.154Z">2026-05-07T23:58:52.154Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
 </header>
 
 <nav class="toc">
@@ -399,7 +399,7 @@ a { color: #1a5fb4; }
   <p>この番組は会話劇を通じて様々な場面をお届けする短編のラジオドラマシリーズです。作品では少し変わっている人物たちが出てきて、些細なやりとりや気まずい沈黙を積み重ねながら、それぞれが人間関係を模索する様子を描いています。シリーズの根幹は軽快なセリフの応酬にあるのですが、題材として常にジェンダーやセクシュアリティ、精神的な症状、生活困窮などの社会性を持ち込みつつ、それでいて誰も気に留めないような事柄からお話が立ち上がってくるのが魅力です。
 各話独立した物語なので、気軽に楽しめる内容からカロリーのいるシリアスまで、ご自身の時間とコンディションに合わせて、ぜひ気になった新しいエピソードから聴いてみて下さい。</p>
   
-  <p><strong>ブース物販</strong>: ラジオドラマ出演体験</p>
+  <p><strong>ブース物販</strong>: ラジオドラマ出演体験（3 種類のドラマ・セリフ選択制） / 番組紹介配布物</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-008">このサイトの番組詳細ページ</a></li>
@@ -631,6 +631,7 @@ Podcast番組「拝啓、3000年の人類へ」は、西暦3000年に向けて�
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-017">このサイトの番組詳細ページ</a></li>
     <li><a href="https://podcastexpo.jp/booth/pcwe-017/" rel="nofollow noopener">PCWE 公式ブースページ</a></li>
     <li><a href="https://open.spotify.com/show/3joaNS9m1I9RgsTdHIaPRU" rel="nofollow noopener">Spotify</a></li>
+    <li><a href="https://x.com/9Kshitsu_radio" rel="nofollow noopener">X (Twitter)</a></li>
   </ul>
   <p><strong>番組ホストおすすめエピソード</strong>: <a href="https://open.spotify.com/episode/1xjoEV98b2t0DEm3FiivYS?si=jkPPZ_ygTgyNETpJ_jdccg" rel="nofollow noopener">#防災の日スペシャル</a></p>
 </article>
@@ -1451,7 +1452,7 @@ DJやトラックメイカーの楽曲制作、イベント出演に関するウ
   <h3>公式説明</h3>
   <p>自分自身が社会人なるかならないかの頃、少し先を生きる人たちの考えや生き方に触れて、少しずつ自分の道が見えたり、年齢を重ねるなかで直面する壁に立ち向かう人の姿をみて、勇気やヒントをもらってきた。20代・30代は学生から社会人になったり、家庭を持ったり、転職や移住をしたり、昇進をしたりと、変化を経験することの多い年代。だからこその悩みや葛藤、決断、生き様があるはず。さまざまな領域で自分のサイズで生きている20代・30代のゲストの話を聞きながら、今しか語れないことを語っていく番組。それが「人生百貨店」です。</p>
   
-  <p><strong>ブース物販</strong>: ステッカー / オリジナルハーブティー / Podcast相談会 / サコッシュ</p>
+  <p><strong>ブース物販</strong>: 番組グッズ①ステッカー（青／赤茶） / 番組グッズ②サコッシュ（青 × 赤茶） / 番組グッズ③オリジナルハーブティー「ゆら」 / Podcast相談会</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-046">このサイトの番組詳細ページ</a></li>
@@ -1995,6 +1996,7 @@ New episodes Wed 19:00（JST）</p>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-065">このサイトの番組詳細ページ</a></li>
     <li><a href="https://podcastexpo.jp/booth/pcwe-065/" rel="nofollow noopener">PCWE 公式ブースページ</a></li>
     <li><a href="https://open.spotify.com/show/5gmbdb8kP4Uh8bsUYyVQrr" rel="nofollow noopener">Spotify</a></li>
+    <li><a href="https://x.com/soumenmegu" rel="nofollow noopener">X (Twitter)</a></li>
   </ul>
   <p><strong>番組ホストおすすめエピソード</strong>: <a href="https://open.spotify.com/episode/6k0tthRm1zN2gkxN9P9qzj?si=9526148acebe47ce" rel="nofollow noopener">#034 【ゲスト：イッシュウ君】新コーナーとXでのリクエストにお答えします</a></p>
 </article>
@@ -4308,7 +4310,7 @@ Teacher Teacherの⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠�
   <h3>公式説明</h3>
   <p>東京・押上にあるレストラン「枯朽」のオーナーシェフ清藤と、オンライン料理教室「シェフレピ」を運営するefoo株式会社の山本が、料理の世界で日々感じた気づきや発見を、まかないを囲むようにゆるく語り合う番組です。現役シェフとフードテック起業家がゆるりと語る食×テクノロジートークをお楽しみください。</p>
   <p><strong>ホスト</strong>: 清藤洸希（h.b.／枯朽オーナーシェフ） / 山本篤（efoo株式会社／シェフレピ運営）</p>
-  
+  <p><strong>ブース物販</strong>: ナポリタン / 唐揚げ / フライドポテト（山椒 × お茶パウダー） / キーマカレー / クラフトコーラ / 水出しお茶（柑橘の香り） / 番組ステッカー（幻になる予定）</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-146">このサイトの番組詳細ページ</a></li>
