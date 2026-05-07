@@ -8,18 +8,51 @@
     "description": "『アラサー同期のみなまでいうと』は、新卒から同じ会社のアラサー同期「イワシ」「自由律」が、ソフドリが充実した大衆居酒屋からお届けしております。\n「相席になった女たちが、なんだか、みなまで言ってるぞ？」気づけばクスッ。一緒にちょっと、考える。そんな時間を、肴に一杯。ご相席どうぞ。\n─────\nだいたい毎週日曜配信\n＋たまにゲリラで平日配信！\nフォローしてお待ちを\n─────",
     "merchandise": [
       "ステッカー",
+      "アクリルキーホルダー（リスナーのアイコン版）",
+      "アクスタ（自由律さん／イワシさん／抹茶）",
+      "番組オリジナル名刺（無料配布）",
       "その他グッズ"
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（グッズ準備中）",
-        "description": "Listen エピソード「📮#6 もらった手紙にみなまでいうと」（2026-05-03 公開）の冒頭にて、ホスト本人が「ポッドキャストウィークエンド出展当選しました! 5月9日に出展をしますので、お近くの方は遊びに来ていただけると嬉しいです」と告知。収録時点でグッズは「全然なんもないんだから、今から準備できるものをどうにか」とのことで具体名は未公開。公式ブースページ掲載のグッズはステッカー・その他グッズ。",
-        "sourceUrl": "https://listen.style/p/uuhfgtfm",
-        "sourceType": "web"
+        "name": "リスナーのアイコン アクリルキーホルダー（0 円・本人渡し）",
+        "description": "ハッシュタグ「#みなまでいうと」で番組につぶやいたリスナーのアイコンを勝手にアクスタにする企画。本人に 0 円でお渡し。X 投稿（2026-05-07、@minamade_iuto）にて告知。「みんなのアイコンはあるかな？絶対来てね」。",
+        "sourceUrl": "https://x.com/minamade_iuto/status/2052376063754604966",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "アクスタ（自由律さん／イワシさん／抹茶 各 10 円）",
+        "description": "リスナー向けアクキーとは別に、番組ホスト「自由律さん」「イワシさん」「抹茶」のアクスタを別途 10 円で販売予定。X 投稿（2026-05-07、@minamade_iuto）にて告知。「丹精込めて描いた＆焼いたので、そちらもよかったらゲットして」。",
+        "sourceUrl": "https://x.com/minamade_iuto/status/2052388966914281495",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "番組オリジナル名刺（無料配布）",
+        "description": "5/9 当日「🍵」が名刺を大配布。自由律さんのイラスト入り、PCWE2026 限定。X 投稿（2026-05-05、@minamade_iuto）にて完成報告。「在庫を枯らして、イワシさんと自由律さんに褒められる予定」",
+        "sourceUrl": "https://x.com/minamade_iuto/status/2051656911142220191",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "アクスタ制作風景①（自由律さんのおはじき）",
+        "description": "PCWE2026 に向けて準備中の制作風景。X 投稿（2026-05-04、@minamade_iuto）にて、「自由律さんが飽きてきちゃっておはじきを始めてしまってる」とリアルタイム制作中の様子を投稿。アクスタは自由律さんのイラスト次第とのこと。",
+        "sourceUrl": "https://x.com/minamade_iuto/status/2051269856084054474",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "グッズ制作風景②（誰と誰でしょう？）",
+        "description": "X 投稿（2026-05-03、@minamade_iuto）にてグッズ制作の進捗報告。「制作途中でちょっとふざけました／誰と誰でしょうか⁉️」と遊び心たっぷりの制作中ショット。",
+        "sourceUrl": "https://x.com/minamade_iuto/status/2050938737149047057",
+        "sourceType": "x-post"
       }
     ],
+    "merchandiseTags": [
+      "free-distribution",
+      "limited-new",
+      "experience"
+    ],
     "merchandiseSubTypes": [
-      "paper-stationery"
+      "paper-stationery",
+      "goods-acrylic"
     ]
   },
   "exhibition": {
@@ -32,7 +65,8 @@
   },
   "links": {
     "spotify": "https://open.spotify.com/show/1pf7WoAKtR6hxmu6Pv7Ktg",
-    "listen": "https://listen.style/p/uuhfgtfm"
+    "listen": "https://listen.style/p/uuhfgtfm",
+    "x": "https://x.com/minamade_iuto"
   },
   "recommendedEpisode": {
     "title": "#6 爪褒めてくる男ってなんなん？",

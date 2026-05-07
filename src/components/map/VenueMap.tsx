@@ -196,10 +196,10 @@ export function VenueMap({
                   {daySub}
                 </text>
 
-                {/* PODCAST WEEKEND 2026（テント 12-17 とかぶらないように左寄せ）*/}
-                <text x={130} y={420} fill="var(--color-primary-200)" fontSize={50} fontWeight={900} opacity={0.45} aria-hidden="true">PODCAST</text>
-                <text x={130} y={480} fill="var(--color-primary-200)" fontSize={50} fontWeight={900} opacity={0.45} aria-hidden="true">WEEKEND</text>
-                <text x={130} y={550} fill="var(--color-primary-200)" fontSize={56} fontWeight={900} opacity={0.45} aria-hidden="true">2026</text>
+                {/* PODCAST WEEKEND 2026（左端テント 1-7 と被らない位置に右シフト）*/}
+                <text x={170} y={420} fill="var(--color-primary-200)" fontSize={48} fontWeight={900} opacity={0.45} aria-hidden="true">PODCAST</text>
+                <text x={170} y={480} fill="var(--color-primary-200)" fontSize={48} fontWeight={900} opacity={0.45} aria-hidden="true">WEEKEND</text>
+                <text x={170} y={550} fill="var(--color-primary-200)" fontSize={54} fontWeight={900} opacity={0.45} aria-hidden="true">2026</text>
 
                 {/* メインゲート */}
                 <text
