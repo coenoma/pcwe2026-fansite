@@ -100,14 +100,26 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     [boothPositions, day],
   );
 
-  // フィルタ + 検索を適用
+  // 「お気に入りだけ」モード（特殊フィルタ）
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+
+  // フィルタ + 検索 + お気に入りモードを適用
   const placementsFiltered = useMemo(() => {
     const lowerQuery = query.trim().toLowerCase();
     return placementsAll.filter((pl) => {
-      // external（スポンサー / キッチン）はフィルタ・検索の対象外（残す）
-      if (pl.programId === undefined) return true;
+      // external（スポンサー / キッチン）は通常フィルタの対象外
+      if (pl.programId === undefined) {
+        // ただし「お気に入りだけ」モードでは除外
+        if (showFavoritesOnly) return false;
+        return true;
+      }
       const program = programsById.get(pl.programId);
       if (!program) return true;
+
+      // お気に入りだけモード
+      if (showFavoritesOnly && !favorites.includes(pl.programId)) {
+        return false;
+      }
 
       if (selectedCats.size > 0) {
         const tags = new Set(program.official.merchandiseTags ?? []);
@@ -136,12 +148,23 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
 
       return true;
     });
-  }, [placementsAll, selectedCats, query, programsById]);
+  }, [placementsAll, selectedCats, query, programsById, showFavoritesOnly, favorites]);
 
-  const isFiltering = selectedCats.size > 0 || query.trim().length > 0;
+  const isFiltering =
+    selectedCats.size > 0 || query.trim().length > 0 || showFavoritesOnly;
   const highlightedPositions: Set<string> | undefined = isFiltering
     ? new Set(placementsFiltered.map((p) => p.position))
     : undefined;
+
+  // VenueMap に渡す Set
+  const favoriteProgramIdSet = useMemo(
+    () => new Set(favorites),
+    [favorites],
+  );
+  const visitedPositionSet = useMemo(
+    () => new Set(Object.keys(visited)),
+    [visited],
+  );
 
   // 土/日の番組数
   const counts = useMemo(() => {
@@ -354,6 +377,8 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
   // ====== レンダリング ======
   const visitedCount = Object.keys(visited).length;
   const favCount = favorites.length;
+  // 「会えた」プログレス（その日の番組数を分母にして達成感）
+  const visitedPercent = counts[day] > 0 ? Math.round((visitedCount / counts[day]) * 100) : 0;
 
   return (
     <>
@@ -386,7 +411,7 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
             onQueryChange={handleQueryChange}
           />
 
-          {/* 3 段目: フィルタチップ（横スクロール対応で SP でも崩れない）*/}
+          {/* 3 段目: フィルタチップ + お気に入りモードトグル（横スクロール）*/}
           <div className="-mx-1 overflow-x-auto px-1">
             <div className="flex items-center gap-1.5 [&>*]:shrink-0">
               <MapFilterChips
@@ -395,16 +420,58 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
                 onClear={handleCatClear}
                 counts={categoryCounts}
               />
+              {/* お気に入りモード切替トグル（お気に入り 1 件以上で表示）*/}
+              {favCount > 0 ? (
+                <button
+                  type="button"
+                  aria-pressed={showFavoritesOnly}
+                  onClick={() => setShowFavoritesOnly((v) => !v)}
+                  className={
+                    showFavoritesOnly
+                      ? 'inline-flex items-center gap-1 rounded-full bg-amber-500 px-3 py-1.5 text-xs font-bold text-white shadow-sm transition-colors'
+                      : 'inline-flex items-center gap-1 rounded-full border border-amber-300 bg-amber-50 px-3 py-1.5 text-xs font-bold text-amber-800 transition-colors hover:bg-amber-100'
+                  }
+                >
+                  <span aria-hidden="true">⭐️</span>
+                  <span>お気に入りだけ</span>
+                  <span
+                    className={
+                      showFavoritesOnly
+                        ? 'ml-1 rounded-full bg-white/30 px-1.5 text-[10px]'
+                        : 'ml-1 rounded-full bg-white px-1.5 text-[10px] text-amber-700'
+                    }
+                  >
+                    {favCount}
+                  </span>
+                </button>
+              ) : null}
             </div>
           </div>
 
-          {/* 4 段目: お気に入り / 会えた サマリ（あれば）*/}
-          {favCount > 0 || visitedCount > 0 ? (
-            <p className="text-[11px] text-neutral-500">
-              {favCount > 0 ? `⭐️ お気に入り ${favCount} 件` : null}
-              {favCount > 0 && visitedCount > 0 ? ' · ' : null}
-              {visitedCount > 0 ? `✅ 会えた ${visitedCount} 件` : null}
-            </p>
+          {/* 4 段目: 「会えた」プログレスバー（5/9 or 5/10 の達成感）*/}
+          {visitedCount > 0 ? (
+            <div className="flex items-center gap-2 rounded-full bg-accent-cyan-500/10 px-3 py-1.5">
+              <span aria-hidden="true" className="text-sm">✅</span>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-xs font-bold text-accent-cyan-700">
+                    {visitedCount} 件 会えた！
+                  </span>
+                  <span className="text-[10px] text-neutral-500">
+                    （{day === 'sat' ? '5/9 土' : '5/10 日'} 全 {counts[day]} ブース中）
+                  </span>
+                </div>
+                <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-white">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-accent-cyan-400 to-accent-cyan-600 transition-all duration-500"
+                    style={{ width: `${Math.min(100, visitedPercent)}%` }}
+                  />
+                </div>
+              </div>
+              <span className="text-xs font-bold tabular-nums text-accent-cyan-700">
+                {visitedPercent}%
+              </span>
+            </div>
           ) : null}
         </div>
       </header>
@@ -423,12 +490,16 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
                 selectedPosition={selectedPosition ?? undefined}
                 selectedTentId={selectedTentId ?? undefined}
                 highlightedPositions={highlightedPositions}
+                favoriteProgramIds={favoriteProgramIdSet}
+                visitedPositions={visitedPositionSet}
               />
             </div>
             <p className="mt-2 text-center text-xs leading-relaxed text-neutral-500">
-              {isFiltering
-                ? `フィルタヒット: ${highlightedPositions?.size ?? 0} ブース（その他は半透明）`
-                : 'テントをタップで番組情報。土日で違う番組が出展する場合あり。'}
+              {showFavoritesOnly
+                ? `⭐️ お気に入りだけ表示中（${highlightedPositions?.size ?? 0} ブース）`
+                : isFiltering
+                  ? `条件にぴったりの ${highlightedPositions?.size ?? 0} ブースが浮かび上がってるよ ✨`
+                  : '気になるブースをタップ ✨ ピンチで拡大もできるよ'}
             </p>
           </>
         ) : (
