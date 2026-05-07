@@ -350,7 +350,7 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
             <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
               <VenueMap
                 placements={placementsAll}
-                tents={boothPositions.tents}
+                data={boothPositions}
                 day={day}
                 onSelect={handleSelect}
                 selectedPosition={selectedPosition ?? undefined}

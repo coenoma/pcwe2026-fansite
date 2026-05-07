@@ -389,12 +389,24 @@ export const BoothSlotSchema = z.object({
 });
 export type BoothSlot = z.infer<typeof BoothSlotSchema>;
 
+/** テント中央数字の bbox（公式画像から自動抽出）*/
+export const TentCenterNumberSchema = z.object({
+  cx: z.number(),
+  cy: z.number(),
+  w: z.number(),
+  h: z.number(),
+});
+export type TentCenterNumber = z.infer<typeof TentCenterNumberSchema>;
+
 /** テント定義 */
 export const TentSchema = z.object({
   id: z.number().int().min(1).max(32),
   shape: TentShapeSchema,
-  /** SVG ビューポート上の polygon 座標（4 点で矩形を表現）。Phase 1.5 で Figma から起こす */
+  /** SVG ビューポート上の polygon 座標（[左上, 右下] の 2 点で矩形を表現）。
+   *  座標系は imageSize に従う（公式 webp 画像のピクセル座標と一致） */
   polygon: z.array(z.tuple([z.number(), z.number()])).length(2).optional(),
+  /** テント中央数字の bbox（公式画像から自動抽出、参考情報）*/
+  centerNumber: TentCenterNumberSchema.optional(),
   kind: z.literal('kitchen-booth').optional(),
   note: z.string().optional(),
   slots: z.array(BoothSlotSchema),
@@ -407,6 +419,13 @@ export const BoothPositionsDataSchema = z.object({
   lastUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'lastUpdated は YYYY-MM-DD'),
   venue: z.string(),
   address: z.string().optional(),
+  /** マップ画像のピクセルサイズ（SVG viewBox に使用）*/
+  imageSize: z
+    .object({
+      width: z.number().int().positive(),
+      height: z.number().int().positive(),
+    })
+    .optional(),
   sources: z
     .object({
       positionMapping: z.string().optional(),
