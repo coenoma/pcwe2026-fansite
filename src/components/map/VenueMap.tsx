@@ -372,6 +372,18 @@ function TentClickArea({
           aria-label={`テント ${tent.id}（4 区画個別タップモード）`}
           style={{ transition: 'opacity 0.25s ease-out' }}
         >
+          {/* テント番号を上端に小さく（区画ラベルと重ならないように外側に）*/}
+          <text
+            x={x0 + width / 2}
+            y={y0 - 5}
+            fill="var(--color-neutral-600)"
+            fontSize={11}
+            fontWeight={900}
+            textAnchor="middle"
+            aria-hidden="true"
+          >
+            テント{tent.id}
+          </text>
           {(['A', 'B', 'C', 'D'] as const).map((slotLabel) => {
             const offset = quadrantOffsets[slotLabel];
             const quadX = x0 + offset.dx;
@@ -399,7 +411,8 @@ function TentClickArea({
                 y={quadY}
                 width={halfW}
                 height={halfH}
-                label={`${tent.id}-${slotLabel}`}
+                // 個別モードでは区画文字（A/B/C/D）のみを大きく表示。テント番号は g 上端に別途
+                label={slotLabel}
                 kind="program"
                 isSelected={slotIsSelected}
                 isFiltered={slotIsFiltered}
