@@ -1,13 +1,19 @@
 /**
  * マップ画面の Client Component（インタラクティブ部分の集約）。
  *
- * 責務:
- * - 日付（土/日）/ 検索 / フィルタ / 表示モード（マップ・リスト）/ 選択ピン の状態管理
- * - URL 状態同期（?day=sat&pin=14-A&cat=food-drink&q=...&view=map）
- * - VenueMap / MapListView / BoothBottomSheet の統合
- * - LocalStorage（お気に入り / 「会えた」）
+ * 主要状態:
+ * - day（土/日）/ view（map/list）/ query / cat / pin / tent
+ * - LocalStorage: お気に入り（pcwe-XXX 配列）, 会えた（position 別タイムスタンプ）
  *
- * Phase 2b: 検索 / フィルタ / リスト切替 / お気に入り / 会えた を追加
+ * 状態破綻対策（FB #5 エッジケース対応）:
+ * - 日付切替で選択がその日に出展しない場合、自動で選択クリア
+ * - URL `pin` が不正 / 未割当のテント → エフェクトで自動クリア
+ * - 削除済み programId の LocalStorage 残骸 → 静かに無視
+ * - external（スポンサー / キッチン）はお気に入り・会えた対象外
+ *
+ * シート遷移:
+ * - single テント/スポンサー/キッチン → BoothBottomSheet
+ * - quad テント → TentOverviewSheet → 区画選択 → BoothBottomSheet
  */
 
 'use client';
@@ -22,6 +28,10 @@ import { MapFilterChips } from '@/components/map/MapFilterChips';
 import { MapSearchBar } from '@/components/map/MapSearchBar';
 import { MapListView } from '@/components/map/MapListView';
 import { ViewModeToggle, type ViewMode } from '@/components/map/ViewModeToggle';
+import {
+  TentOverviewSheet,
+  type TentSlotInfo,
+} from '@/components/map/TentOverviewSheet';
 import {
   getSlotPlacementsForDay,
   type SlotPlacement,
@@ -51,9 +61,7 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // ====================
-  // URL からの初期状態
-  // ====================
+  // ====== URL 初期状態 ======
   const dayParam = searchParams.get('day');
   const pinParam = searchParams.get('pin');
   const catParam = searchParams.get('cat');
@@ -67,11 +75,12 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
 
   const [day, setDay] = useState<Day>(initialDay);
   const [selectedPosition, setSelectedPosition] = useState<string | null>(pinParam);
+  const [selectedTentId, setSelectedTentId] = useState<number | null>(null);
   const [view, setView] = useState<ViewMode>(initialView);
   const [selectedCats, setSelectedCats] = useState<Set<MerchandiseTag>>(initialCats);
   const [query, setQuery] = useState<string>(qParam ?? '');
 
-  // LocalStorage 初期化（クライアントマウント後に読み込み）
+  // ====== LocalStorage ======
   const [favorites, setFavorites] = useState<string[]>([]);
   const [visited, setVisitedState] = useState<Record<string, string>>({});
   useEffect(() => {
@@ -79,9 +88,7 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     setVisitedState(loadVisited());
   }, []);
 
-  // ====================
-  // 派生データ
-  // ====================
+  // ====== 派生データ ======
   const programsById = useMemo(() => {
     const m = new Map<string, Program>();
     for (const p of programs) m.set(p.id, p);
@@ -93,23 +100,21 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     [boothPositions, day],
   );
 
-  // フィルタ + 検索を適用した placement
+  // フィルタ + 検索を適用
   const placementsFiltered = useMemo(() => {
     const lowerQuery = query.trim().toLowerCase();
     return placementsAll.filter((pl) => {
-      // 番組情報がない slot はフィルタ対象外（表示は維持）
+      // external（スポンサー / キッチン）はフィルタ・検索の対象外（残す）
       if (pl.programId === undefined) return true;
       const program = programsById.get(pl.programId);
       if (!program) return true;
 
-      // カテゴリフィルタ
       if (selectedCats.size > 0) {
         const tags = new Set(program.official.merchandiseTags ?? []);
         const hit = [...selectedCats].some((c) => tags.has(c));
         if (!hit) return false;
       }
 
-      // 検索
       if (lowerQuery.length > 0) {
         const hay =
           program.name.toLowerCase() +
@@ -133,7 +138,6 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     });
   }, [placementsAll, selectedCats, query, programsById]);
 
-  // フィルタ・検索が効いているかどうか（マップでハイライト処理に使う）
   const isFiltering = selectedCats.size > 0 || query.trim().length > 0;
   const highlightedPositions: Set<string> | undefined = isFiltering
     ? new Set(placementsFiltered.map((p) => p.position))
@@ -150,7 +154,6 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     return { sat, sun };
   }, [boothPositions]);
 
-  // 各カテゴリのヒット数
   const categoryCounts = useMemo(() => {
     const result: Partial<Record<MerchandiseTag, number>> = {};
     for (const pl of placementsAll) {
@@ -164,7 +167,6 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     return result;
   }, [placementsAll, programsById]);
 
-  // 選択中 placement
   const selectedPlacement: SlotPlacement | null = useMemo(() => {
     if (!selectedPosition) return null;
     return placementsAll.find((p) => p.position === selectedPosition) ?? null;
@@ -175,9 +177,24 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     return programsById.get(selectedPlacement.programId);
   }, [selectedPlacement, programsById]);
 
-  // ====================
-  // URL 状態同期
-  // ====================
+  // テント概要シート用：選択中テントの 4 区画情報
+  const tentSlotsInfo: TentSlotInfo[] = useMemo(() => {
+    if (selectedTentId === null) return [];
+    const tent = boothPositions.tents.find((t) => t.id === selectedTentId);
+    if (!tent) return [];
+    return tent.slots.map((slot) => {
+      const pl = placementsAll.find((p) => p.position === slot.position);
+      return {
+        position: slot.position,
+        slot: slot.slot,
+        program: pl?.programId ? programsById.get(pl.programId) : undefined,
+        externalKind: pl?.externalKind,
+        externalName: pl?.externalName,
+      };
+    });
+  }, [selectedTentId, boothPositions, placementsAll, programsById]);
+
+  // ====== URL 同期 ======
   const updateUrl = useCallback(
     (state: {
       day: Day;
@@ -197,13 +214,21 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     [router],
   );
 
-  // ====================
-  // ハンドラ
-  // ====================
-  const handleSelect = useCallback(
+  // E10/E12: 不正な pin が URL に来たら自動クリア
+  useEffect(() => {
+    if (!pinParam) return;
+    const exists = placementsAll.some((p) => p.position === pinParam);
+    if (!exists) {
+      setSelectedPosition(null);
+      updateUrl({ day, pin: null, cat: selectedCats, q: query, view });
+    }
+  }, [pinParam, placementsAll, day, selectedCats, query, view, updateUrl]);
+
+  // ====== ハンドラ ======
+  const handleSelectSlot = useCallback(
     (placement: SlotPlacement) => {
       setSelectedPosition(placement.position);
-      // リストから選んだら自動的にマップビューに戻る
+      setSelectedTentId(null);
       const nextView: ViewMode = view === 'list' ? 'map' : view;
       setView(nextView);
       updateUrl({
@@ -217,15 +242,45 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     [day, selectedCats, query, view, updateUrl],
   );
 
-  const handleClose = useCallback(() => {
+  // quad テント全体タップ → テント概要シート
+  const handleSelectTent = useCallback((tentId: number) => {
+    setSelectedTentId(tentId);
+  }, []);
+
+  // テント概要シートで区画選択 → ボトムシートへ
+  const handleSelectSlotFromTent = useCallback(
+    (position: string) => {
+      const placement = placementsAll.find((p) => p.position === position);
+      setSelectedTentId(null);
+      if (placement) {
+        setSelectedPosition(placement.position);
+        updateUrl({
+          day,
+          pin: placement.position,
+          cat: selectedCats,
+          q: query,
+          view,
+        });
+      }
+    },
+    [placementsAll, day, selectedCats, query, view, updateUrl],
+  );
+
+  const handleCloseBottomSheet = useCallback(() => {
     setSelectedPosition(null);
     updateUrl({ day, pin: null, cat: selectedCats, q: query, view });
   }, [day, selectedCats, query, view, updateUrl]);
 
+  const handleCloseTentSheet = useCallback(() => {
+    setSelectedTentId(null);
+  }, []);
+
   const handleDayChange = useCallback(
     (nextDay: Day) => {
       setDay(nextDay);
+      // 日付切替で選択クリア（その位置に別番組がいる可能性、混乱回避）
       setSelectedPosition(null);
+      setSelectedTentId(null);
       updateUrl({ day: nextDay, pin: null, cat: selectedCats, q: query, view });
     },
     [selectedCats, query, view, updateUrl],
@@ -272,13 +327,12 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
       if (!position) return;
       const placement = placementsAll.find((p) => p.position === position);
       if (placement) {
-        handleSelect(placement);
+        handleSelectSlot(placement);
       }
     },
-    [placementsAll, handleSelect],
+    [placementsAll, handleSelectSlot],
   );
 
-  // お気に入り・「会えた」トグル
   const handleToggleFavorite = useCallback(
     (id: string) => {
       const next = toggleMapFavorite(favorites, id);
@@ -297,19 +351,22 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
     [visited],
   );
 
-  // ====================
-  // レンダリング
-  // ====================
+  // ====== レンダリング ======
+  const visitedCount = Object.keys(visited).length;
+  const favCount = favorites.length;
+
   return (
     <>
-      {/* ヘッダー */}
+      {/* ヘッダー（SP 最適化） */}
       <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-3 sm:px-6">
-          <div className="flex items-center justify-between gap-2">
-            <h1 className="text-base font-bold text-neutral-900 sm:text-lg">
-              🗺 会場マップ
+        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-3 py-2.5 sm:px-6 sm:py-3">
+          {/* 1 段目: タイトル + ビュー切替 + 日付 */}
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h1 className="flex shrink-0 items-baseline gap-1.5 text-sm font-bold text-neutral-900 sm:text-base">
+              <span aria-hidden="true">🗺</span>
+              <span>会場マップ</span>
             </h1>
-            <div className="flex items-center gap-2">
+            <div className="ml-auto flex items-center gap-1.5">
               <ViewModeToggle mode={view} onChange={handleViewChange} />
               <DayToggle
                 selectedDay={day}
@@ -318,63 +375,74 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
               />
             </div>
           </div>
+
+          {/* 2 段目: 検索バー */}
           <MapSearchBar
             programs={programs}
+            placements={placementsAll}
             day={day}
             onSelectHit={handleSearchHit}
             query={query}
             onQueryChange={handleQueryChange}
           />
-          <MapFilterChips
-            selected={selectedCats}
-            onToggle={handleCatToggle}
-            onClear={handleCatClear}
-            counts={categoryCounts}
-          />
-          {(visited && Object.keys(visited).length > 0) || favorites.length > 0 ? (
+
+          {/* 3 段目: フィルタチップ（横スクロール対応で SP でも崩れない）*/}
+          <div className="-mx-1 overflow-x-auto px-1">
+            <div className="flex items-center gap-1.5 [&>*]:shrink-0">
+              <MapFilterChips
+                selected={selectedCats}
+                onToggle={handleCatToggle}
+                onClear={handleCatClear}
+                counts={categoryCounts}
+              />
+            </div>
+          </div>
+
+          {/* 4 段目: お気に入り / 会えた サマリ（あれば）*/}
+          {favCount > 0 || visitedCount > 0 ? (
             <p className="text-[11px] text-neutral-500">
-              {favorites.length > 0 ? `⭐️ お気に入り ${favorites.length} 件` : null}
-              {favorites.length > 0 && Object.keys(visited).length > 0 ? ' · ' : null}
-              {Object.keys(visited).length > 0
-                ? `✅ 会えた ${Object.keys(visited).length} 件`
-                : null}
+              {favCount > 0 ? `⭐️ お気に入り ${favCount} 件` : null}
+              {favCount > 0 && visitedCount > 0 ? ' · ' : null}
+              {visitedCount > 0 ? `✅ 会えた ${visitedCount} 件` : null}
             </p>
           ) : null}
         </div>
       </header>
 
       {/* メインコンテンツ */}
-      <div className="mx-auto max-w-5xl px-3 py-4 sm:px-6">
+      <div className="mx-auto max-w-5xl px-3 py-3 sm:px-6 sm:py-4">
         {view === 'map' ? (
           <>
             <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
               <VenueMap
                 placements={placementsAll}
-                tents={boothPositions.tents}
+                data={boothPositions}
                 day={day}
-                onSelect={handleSelect}
+                onSelectSlot={handleSelectSlot}
+                onSelectTent={handleSelectTent}
                 selectedPosition={selectedPosition ?? undefined}
+                selectedTentId={selectedTentId ?? undefined}
                 highlightedPositions={highlightedPositions}
               />
             </div>
-            <p className="mt-2 text-center text-xs text-neutral-500">
+            <p className="mt-2 text-center text-xs leading-relaxed text-neutral-500">
               {isFiltering
                 ? `フィルタヒット: ${highlightedPositions?.size ?? 0} ブース（その他は半透明）`
-                : 'ピンクのテントをタップで番組情報。土日で違う番組が出展する場合あり。'}
+                : 'テントをタップで番組情報。土日で違う番組が出展する場合あり。'}
             </p>
           </>
         ) : (
           <>
             <p className="mb-3 text-xs text-neutral-500">
               {isFiltering
-                ? `${placementsFiltered.length} 件 / 全 ${placementsAll.length} 件`
-                : `全 ${placementsAll.length} 件`}
+                ? `${placementsFiltered.filter((p) => p.programId || p.externalName).length} 件 / 全 ${placementsAll.filter((p) => p.programId || p.externalName).length} 件`
+                : `全 ${placementsAll.filter((p) => p.programId || p.externalName).length} 件`}
             </p>
             <MapListView
               programs={programs}
               placements={placementsFiltered}
               day={day}
-              onSelect={handleSelect}
+              onSelect={handleSelectSlot}
             />
           </>
         )}
@@ -385,13 +453,26 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
         <OfficialMapDownload />
       </div>
 
-      {/* ボトムシート */}
+      {/* テント概要シート（quad テント全体タップ時）*/}
+      <TentOverviewSheet
+        tentId={selectedTentId}
+        slots={tentSlotsInfo}
+        day={day}
+        onSelectSlot={handleSelectSlotFromTent}
+        onClose={handleCloseTentSheet}
+      />
+
+      {/* ボトムシート（個別ブース選択時）*/}
       <BoothBottomSheet
         placement={selectedPlacement}
         program={selectedProgram}
         day={day}
-        onClose={handleClose}
-        isFavorite={selectedPlacement?.programId ? favorites.includes(selectedPlacement.programId) : false}
+        onClose={handleCloseBottomSheet}
+        isFavorite={
+          selectedPlacement?.programId
+            ? favorites.includes(selectedPlacement.programId)
+            : false
+        }
         isVisited={selectedPlacement ? selectedPlacement.position in visited : false}
         onToggleFavorite={
           selectedPlacement?.programId
@@ -399,7 +480,7 @@ export function MapClient({ programs, boothPositions, eventDates }: Props) {
             : undefined
         }
         onToggleVisited={
-          selectedPlacement
+          selectedPlacement && !selectedPlacement.externalKind
             ? () => handleToggleVisited(selectedPlacement.position)
             : undefined
         }

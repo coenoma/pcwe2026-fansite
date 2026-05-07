@@ -1,0 +1,27 @@
+{
+  "id": "pcwe-145",
+  "name": "PodWalker：ポッドウォーカー",
+  "shortName": "PodWalker",
+  "thumbnail": "/thumbnails/145.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-145/",
+  "fetchedAt": "2026-05-07T07:30:00.000Z",
+  "official": {
+    "description": "「ポッドウォーカー」は日常のちょっとした気付きや対話をカジュアルに発信していくポッドキャストです！「絶滅メディア博物館」「原稿執筆カフェ」「高円寺三角地帯」「スタジオ236/318」などのプロデューサーでお馴染みヒマナイヌ川井が軽快なトークでお届けします！録音はOnePlus 12！編集なしの一発録音！毎日1本配信します！",
+    "hosts": [
+      "川井拓也（ヒマナイヌ）"
+    ],
+    "merchandise": [],
+    "merchandiseDetails": []
+  },
+  "exhibition": {
+    "days": [
+      "sat"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "145"
+  },
+  "links": {
+    "listen": "https://listen.style/p/podwalker"
+  }
+}

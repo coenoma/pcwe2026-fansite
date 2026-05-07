@@ -354,10 +354,32 @@ export const TentShapeSchema = z.enum(['single', 'quad', 'kitchen-booth']);
 export type TentShape = z.infer<typeof TentShapeSchema>;
 
 /**
+ * 番組以外のブース占有種別。
+ *
+ * - sponsor: スポンサー出展（Youtrust / TBSラジオ等、programs.json には登録しない）
+ * - kitchen-only: 飲食提供のみ（特定番組なし、テント 32 等）
+ * - external-program: programs.json 未登録の番組（情報取得後に正式登録される予定の暫定）
+ */
+export const BoothExternalKindSchema = z.enum([
+  'sponsor',
+  'kitchen-only',
+  'external-program',
+]);
+export type BoothExternalKind = z.infer<typeof BoothExternalKindSchema>;
+
+export const BoothExternalSchema = z.object({
+  kind: BoothExternalKindSchema,
+  name: z.string().min(1),
+  url: z.string().url().optional(),
+  note: z.string().optional(),
+});
+export type BoothExternal = z.infer<typeof BoothExternalSchema>;
+
+/**
  * 1 区画の番組割当。
  *
  * `sat` / `sun` は programs.json の id（pcwe-XXX）or null。
- * `satExternal` / `sunExternal` は programs.json 未登録の追加出展者を表す参照情報。
+ * `satExternal` / `sunExternal` は番組以外のブース占有（スポンサー / 飲食ブース等）。
  */
 export const BoothSlotSchema = z.object({
   position: z.string().min(1), // "1" or "14-A"
@@ -372,29 +394,29 @@ export const BoothSlotSchema = z.object({
     .regex(/^pcwe-\d{3}$/, 'sun は pcwe-XXX 形式')
     .nullable()
     .optional(),
-  satExternal: z
-    .object({
-      kind: z.literal('external'),
-      name: z.string().min(1),
-      note: z.string().optional(),
-    })
-    .optional(),
-  sunExternal: z
-    .object({
-      kind: z.literal('external'),
-      name: z.string().min(1),
-      note: z.string().optional(),
-    })
-    .optional(),
+  satExternal: BoothExternalSchema.optional(),
+  sunExternal: BoothExternalSchema.optional(),
 });
 export type BoothSlot = z.infer<typeof BoothSlotSchema>;
+
+/** テント中央数字の bbox（公式画像から自動抽出）*/
+export const TentCenterNumberSchema = z.object({
+  cx: z.number(),
+  cy: z.number(),
+  w: z.number(),
+  h: z.number(),
+});
+export type TentCenterNumber = z.infer<typeof TentCenterNumberSchema>;
 
 /** テント定義 */
 export const TentSchema = z.object({
   id: z.number().int().min(1).max(32),
   shape: TentShapeSchema,
-  /** SVG ビューポート上の polygon 座標（4 点で矩形を表現）。Phase 1.5 で Figma から起こす */
+  /** SVG ビューポート上の polygon 座標（[左上, 右下] の 2 点で矩形を表現）。
+   *  座標系は imageSize に従う（公式 webp 画像のピクセル座標と一致） */
   polygon: z.array(z.tuple([z.number(), z.number()])).length(2).optional(),
+  /** テント中央数字の bbox（公式画像から自動抽出、参考情報）*/
+  centerNumber: TentCenterNumberSchema.optional(),
   kind: z.literal('kitchen-booth').optional(),
   note: z.string().optional(),
   slots: z.array(BoothSlotSchema),
@@ -407,6 +429,15 @@ export const BoothPositionsDataSchema = z.object({
   lastUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'lastUpdated は YYYY-MM-DD'),
   venue: z.string(),
   address: z.string().optional(),
+  /** マップ画像のピクセルサイズ（SVG viewBox に使用）*/
+  imageSize: z
+    .object({
+      width: z.number().int().positive(),
+      height: z.number().int().positive(),
+    })
+    .optional(),
+  /** 会場の輪郭 polygon（公式画像から自動抽出、SVG path で会場形状を独自描画する用）*/
+  venuePolygon: z.array(z.tuple([z.number(), z.number()])).optional(),
   sources: z
     .object({
       positionMapping: z.string().optional(),

@@ -1,121 +1,198 @@
 /**
- * 会場マップの SVG コンポーネント。
+ * 会場マップの SVG コンポーネント（独自描画版）。
  *
- * - 32 テントを矩形で描画
- * - quad テントは A/B/C/D の 4 区画に分割
- * - テント / 区画タップで onSelect を呼ぶ
- * - 選択中ピンは波紋アニメーション、フィルタ非対象は半透明
+ * 戦略:
+ * - 公式画像は **使わない**（リスペクト = 配置と形状の踏襲、ビジュアルはコエノマブランド）
+ * - 会場の輪郭（venuePolygon）を SVG path で描く（公式画像から抽出した点列）
+ * - 各テントの正方形を独自描画（コエノマ primary オレンジ）
+ * - quad テントは A/B/C/D ラベル付き
+ * - 装飾文字「PODCAST WEEKEND 2026」「↑ MAIN GATE」「※ キッチンブース」も SVG <text>
  *
- * 座標は src/lib/booth-map.ts の TENT_LAYOUTS から取得（最小実装版）。
- * Phase 1.5 で Figma から正確な座標起こしに差し替える。
+ * 公式リスペクトの精神:
+ * - テント 12, 13 が近く 14 がやや離れる、20/24 と 12 の階段配置などの位置関係
+ * - メインゲートが左下寄り、キッチンブースが右下に飛び出している形状
+ * - これらは booth-positions.json の polygon と venuePolygon で 100% 維持
  *
- * アクセシビリティ:
- * - <svg role="application">、各 slot は <a tabindex="0" role="button">
- * - キーボード Tab で次のブースにフォーカス、Enter/Space で onSelect
+ * テイスト:
+ * - 背景: コエノマ secondary-50 + amber-50 のソフトグラデ
+ * - 会場枠: コエノマ primary-300 の細線
+ * - テント: primary-500 塗り + 白文字
+ * - 選択中: accent-cyan-500 波紋 + 強調枠
  */
 
-import {
-  getQuadrantLayout,
-  getTentLayout,
-  type SlotPlacement,
-} from '@/lib/booth-map';
-import type { Day, Tent } from '@/lib/types';
+'use client';
+
+import type { SlotPlacement } from '@/lib/booth-map';
+import type { BoothPositionsData, Day, Tent } from '@/lib/types';
 
 interface Props {
-  /** その日の slot 配置（getSlotPlacementsForDay の結果）*/
   placements: SlotPlacement[];
-  /** booth-positions.json の tents 配列 */
-  tents: Tent[];
-  /** 表示中の日付 */
+  data: BoothPositionsData;
   day: Day;
-  /** タップ時のコールバック */
-  onSelect: (placement: SlotPlacement) => void;
-  /** 選択中の position（"14-A" 等）。波紋表示用 */
+  onSelectSlot: (placement: SlotPlacement) => void;
+  onSelectTent: (tentId: number) => void;
   selectedPosition?: string;
-  /** フィルタ ヒット position 集合（含まれないものは半透明）*/
+  selectedTentId?: number;
   highlightedPositions?: Set<string>;
 }
 
+const FALLBACK_IMAGE_SIZE = { width: 932, height: 808 };
+
 export function VenueMap({
   placements,
-  tents,
+  data,
   day,
-  onSelect,
+  onSelectSlot,
+  onSelectTent,
   selectedPosition,
+  selectedTentId,
   highlightedPositions,
 }: Props) {
+  const imageSize = data.imageSize ?? FALLBACK_IMAGE_SIZE;
   const placementByPosition = new Map<string, SlotPlacement>();
   for (const p of placements) {
     placementByPosition.set(p.position, p);
   }
 
   const dayLabel = day === 'sat' ? '5月9日 土曜日' : '5月10日 日曜日';
+  const dayShort = day === 'sat' ? '5.9' : '5.10';
+  const daySub = day === 'sat' ? 'SAT / DAY1' : 'SUN / DAY2';
+
+  // 会場輪郭の SVG path（venuePolygon → "M x y L x y L x y ... Z"）
+  const venuePath = data.venuePolygon
+    ? toSvgPath(data.venuePolygon)
+    : null;
 
   return (
     <svg
       role="application"
       aria-label={`PCWE2026 会場マップ（${dayLabel}）`}
-      viewBox="0 0 1000 850"
-      className="h-auto w-full"
+      viewBox={`0 0 ${imageSize.width} ${imageSize.height}`}
+      className="block h-auto w-full select-none"
       preserveAspectRatio="xMidYMid meet"
+      style={{ touchAction: 'manipulation' }}
     >
       <title>{`PCWE2026 会場マップ（${dayLabel}）`}</title>
       <desc>
-        HOME/WORK VILLAGE のブース配置。テント 1〜31 が番組ブース、32 はキッチンブース。タップで番組情報を表示。
+        HOME/WORK VILLAGE のブース配置を独自描画したマップ。テント 1〜31 が番組ブース、32 はキッチンブース。
+        公式マップの配置・形状を尊重しつつ、コエノマブランドカラーで再構成。
       </desc>
 
-      {/* 背景 */}
+      <defs>
+        {/* 背景グラデーション（コエノマ系）*/}
+        <linearGradient id="venue-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="var(--color-secondary-50)" />
+          <stop offset="60%" stopColor="#fdf6f0" />
+          <stop offset="100%" stopColor="var(--color-amber-50, #fef3c7)" />
+        </linearGradient>
+        <linearGradient id="venue-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#fdfaf7" />
+        </linearGradient>
+      </defs>
+
+      {/* 全体背景 */}
       <rect
         x={0}
         y={0}
-        width={1000}
-        height={850}
-        fill="var(--color-secondary-50)"
-        rx={16}
+        width={imageSize.width}
+        height={imageSize.height}
+        fill="url(#venue-bg)"
       />
 
-      {/* 装飾文字: PODCAST WEEKEND 2026 */}
+      {/* 会場の輪郭（公式の形を独自に再描画）*/}
+      {venuePath ? (
+        <path
+          d={venuePath}
+          fill="url(#venue-fill)"
+          stroke="var(--color-primary-300)"
+          strokeWidth={2}
+          strokeLinejoin="round"
+          aria-hidden="true"
+        />
+      ) : (
+        // フォールバック: 角丸矩形
+        <rect
+          x={20}
+          y={20}
+          width={imageSize.width - 40}
+          height={imageSize.height - 40}
+          fill="url(#venue-fill)"
+          stroke="var(--color-primary-300)"
+          strokeWidth={2}
+          rx={20}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* 装飾文字: 5.9/5.10 SAT/SUN（公式マップの右上配置を踏襲、薄く）*/}
+      <text
+        x={imageSize.width - 60}
+        y={120}
+        fill="var(--color-neutral-900)"
+        fontSize={72}
+        fontWeight={900}
+        textAnchor="end"
+        opacity={0.85}
+        aria-hidden="true"
+      >
+        {dayShort}
+      </text>
+      <text
+        x={imageSize.width - 60}
+        y={170}
+        fill="var(--color-neutral-900)"
+        fontSize={20}
+        fontWeight={800}
+        textAnchor="end"
+        opacity={0.7}
+        aria-hidden="true"
+      >
+        {daySub}
+      </text>
+
+      {/* 装飾文字: PODCAST WEEKEND 2026（公式マップの中央配置を踏襲）*/}
       <text
         x={250}
-        y={500}
+        y={420}
         fill="var(--color-primary-200)"
         fontSize={56}
-        fontWeight={700}
-        opacity={0.5}
+        fontWeight={900}
+        opacity={0.55}
         aria-hidden="true"
       >
         PODCAST
       </text>
       <text
         x={250}
-        y={570}
+        y={485}
         fill="var(--color-primary-200)"
         fontSize={56}
-        fontWeight={700}
-        opacity={0.5}
+        fontWeight={900}
+        opacity={0.55}
         aria-hidden="true"
       >
         WEEKEND
       </text>
       <text
         x={250}
-        y={650}
+        y={555}
         fill="var(--color-primary-200)"
         fontSize={64}
-        fontWeight={700}
-        opacity={0.5}
+        fontWeight={900}
+        opacity={0.55}
         aria-hidden="true"
       >
         2026
       </text>
 
-      {/* メインゲート */}
+      {/* メインゲート（左下寄り、公式踏襲）*/}
       <text
-        x={460}
-        y={830}
+        x={285}
+        y={770}
         fill="var(--color-neutral-700)"
         fontSize={14}
-        fontWeight={700}
+        fontWeight={800}
         textAnchor="middle"
         aria-hidden="true"
       >
@@ -123,198 +200,211 @@ export function VenueMap({
       </text>
 
       {/* 各テント */}
-      {tents.map((tent) => {
-        const layout = getTentLayout(tent.id);
-        if (!layout) return null;
-        return (
-          <TentGroup
-            key={tent.id}
-            tent={tent}
-            layout={layout}
-            placementByPosition={placementByPosition}
-            day={day}
-            onSelect={onSelect}
-            selectedPosition={selectedPosition}
-            highlightedPositions={highlightedPositions}
-          />
-        );
-      })}
+      {data.tents.map((tent) => (
+        <TentClickArea
+          key={`${tent.id}-${day}`}
+          tent={tent}
+          placementByPosition={placementByPosition}
+          onSelectSlot={onSelectSlot}
+          onSelectTent={onSelectTent}
+          selectedPosition={selectedPosition}
+          selectedTentId={selectedTentId}
+          highlightedPositions={highlightedPositions}
+        />
+      ))}
     </svg>
   );
 }
 
-interface TentGroupProps {
+/** Polygon points → SVG path d 属性 */
+function toSvgPath(points: ReadonlyArray<readonly [number, number]>): string {
+  if (points.length < 2) return '';
+  let d = `M ${points[0][0]} ${points[0][1]}`;
+  for (let i = 1; i < points.length; i++) {
+    d += ` L ${points[i][0]} ${points[i][1]}`;
+  }
+  return d + ' Z';
+}
+
+interface TentClickAreaProps {
   tent: Tent;
-  layout: ReturnType<typeof getTentLayout>;
   placementByPosition: Map<string, SlotPlacement>;
-  day: Day;
-  onSelect: (placement: SlotPlacement) => void;
+  onSelectSlot: (placement: SlotPlacement) => void;
+  onSelectTent: (tentId: number) => void;
   selectedPosition?: string;
+  selectedTentId?: number;
   highlightedPositions?: Set<string>;
 }
 
-function TentGroup({
+function TentClickArea({
   tent,
-  layout,
   placementByPosition,
-  onSelect,
+  onSelectSlot,
+  onSelectTent,
   selectedPosition,
+  selectedTentId,
   highlightedPositions,
-}: TentGroupProps) {
-  if (!layout) return null;
-  const isKitchen = tent.shape === 'kitchen-booth';
-  const isUnassigned = tent.slots.length === 0 && !isKitchen;
+}: TentClickAreaProps) {
+  if (!tent.polygon) return null;
+  const [[x0, y0], [x1, y1]] = tent.polygon;
+  const width = x1 - x0;
+  const height = y1 - y0;
+  const cx = x0 + width / 2;
 
-  // single テント or キッチン or 未割当: テント矩形 1 つ
-  if (tent.shape === 'single' || isKitchen || isUnassigned) {
-    const slot = tent.slots[0];
-    const positionLabel = slot?.position ?? `${tent.id}`;
-    const placement = placementByPosition.get(positionLabel);
+  const isQuad = tent.shape === 'quad';
+  const isKitchen = tent.shape === 'kitchen-booth';
+  const isTentSelected = selectedTentId === tent.id;
+
+  if (isQuad) {
+    let isFiltered = false;
+    if (highlightedPositions) {
+      const anyHit = tent.slots.some((s) =>
+        highlightedPositions.has(s.position),
+      );
+      isFiltered = !anyHit;
+    }
+    const hasAnyContent = tent.slots.some((s) => {
+      const pl = placementByPosition.get(s.position);
+      return pl && (pl.programId || pl.externalName);
+    });
+    const isSelectedAny =
+      isTentSelected || tent.slots.some((s) => s.position === selectedPosition);
+
     return (
-      <SlotCell
-        x={layout.x}
-        y={layout.y}
-        width={layout.width}
-        height={layout.height}
-        label={`${tent.id}`}
-        sublabel={undefined}
-        placement={placement}
-        position={positionLabel}
-        kind={isKitchen ? 'kitchen' : isUnassigned ? 'unassigned' : 'single'}
-        onSelect={onSelect}
-        selectedPosition={selectedPosition}
-        highlightedPositions={highlightedPositions}
-      />
+      <g aria-label={`テント ${tent.id}（4 区画）`}>
+        <TentRect
+          x={x0}
+          y={y0}
+          width={width}
+          height={height}
+          label={`${tent.id}`}
+          showQuadHints
+          isSelected={isSelectedAny}
+          isFiltered={isFiltered}
+          hasContent={hasAnyContent}
+          ariaLabel={`テント ${tent.id}（タップで 4 区画から選択）`}
+          onClick={() => onSelectTent(tent.id)}
+        />
+      </g>
     );
   }
 
-  // quad テント: 4 区画 + テント番号ラベル
+  // single テント or キッチン or 未割当
+  const slot = tent.slots[0];
+  const positionLabel = slot?.position ?? `${tent.id}`;
+  const placement = placementByPosition.get(positionLabel);
+  const hasContent =
+    placement !== undefined &&
+    (placement.programId !== undefined || placement.externalName !== undefined);
+  const isFiltered =
+    highlightedPositions !== undefined &&
+    !highlightedPositions.has(positionLabel);
+  const isSelected = selectedPosition === positionLabel;
+
+  const ariaLabel = !hasContent
+    ? `テント ${positionLabel}（情報なし）`
+    : placement?.programId
+      ? `ブース ${positionLabel}（タップで番組情報）`
+      : placement?.externalKind === 'sponsor'
+        ? `テント ${positionLabel} ${placement.externalName}（スポンサー）`
+        : placement?.externalKind === 'kitchen-only'
+          ? `テント ${positionLabel} 飲食ブース`
+          : `テント ${positionLabel}`;
+
   return (
-    <g aria-label={`テント ${tent.id}`}>
-      {/* テント全体の枠 */}
-      <rect
-        x={layout.x - 1}
-        y={layout.y - 1}
-        width={layout.width + 2}
-        height={layout.height + 2}
-        fill="none"
-        stroke="var(--color-neutral-300)"
-        strokeWidth={1}
-        rx={4}
-        aria-hidden="true"
+    <g>
+      <TentRect
+        x={x0}
+        y={y0}
+        width={width}
+        height={height}
+        label={`${tent.id}`}
+        isKitchen={isKitchen}
+        isSelected={isSelected}
+        isFiltered={isFiltered}
+        hasContent={hasContent}
+        ariaLabel={ariaLabel}
+        onClick={() => {
+          if (hasContent && placement) onSelectSlot(placement);
+        }}
       />
-      {(['A', 'B', 'C', 'D'] as const).map((slotLabel) => {
-        const q = getQuadrantLayout(layout, slotLabel);
-        const positionLabel = `${tent.id}-${slotLabel}`;
-        const placement = placementByPosition.get(positionLabel);
-        return (
-          <SlotCell
-            key={slotLabel}
-            x={q.x}
-            y={q.y}
-            width={q.width}
-            height={q.height}
-            label={`${tent.id}`}
-            sublabel={slotLabel}
-            placement={placement}
-            position={positionLabel}
-            kind="quad"
-            onSelect={onSelect}
-            selectedPosition={selectedPosition}
-            highlightedPositions={highlightedPositions}
-          />
-        );
-      })}
+      {/* キッチンブース注釈 */}
+      {isKitchen ? (
+        <text
+          x={cx}
+          y={y1 + 12}
+          fill="var(--color-neutral-500)"
+          fontSize={10}
+          textAnchor="middle"
+          aria-hidden="true"
+        >
+          ※キッチンブース
+        </text>
+      ) : null}
     </g>
   );
 }
 
-interface SlotCellProps {
+interface TentRectProps {
   x: number;
   y: number;
   width: number;
   height: number;
   label: string;
-  sublabel?: string;
-  placement?: SlotPlacement;
-  position: string;
-  kind: 'single' | 'quad' | 'kitchen' | 'unassigned';
-  onSelect: (placement: SlotPlacement) => void;
-  selectedPosition?: string;
-  highlightedPositions?: Set<string>;
+  showQuadHints?: boolean;
+  isKitchen?: boolean;
+  hasContent: boolean;
+  isSelected: boolean;
+  isFiltered: boolean;
+  ariaLabel: string;
+  onClick: () => void;
 }
 
-function SlotCell({
+function TentRect({
   x,
   y,
   width,
   height,
   label,
-  sublabel,
-  placement,
-  position,
-  kind,
-  onSelect,
-  selectedPosition,
-  highlightedPositions,
-}: SlotCellProps) {
-  const isSelected = selectedPosition === position;
-  const isFiltered =
-    highlightedPositions !== undefined && !highlightedPositions.has(position);
+  showQuadHints = false,
+  isKitchen = false,
+  hasContent,
+  isSelected,
+  isFiltered,
+  ariaLabel,
+  onClick,
+}: TentRectProps) {
+  const cx = x + width / 2;
+  const cy = y + height / 2;
+  const fontSize = Math.min(width, height) * 0.45;
 
-  const isKitchen = kind === 'kitchen';
-  const isUnassigned = kind === 'unassigned';
-  const hasContent =
-    placement !== undefined &&
-    (placement.programId !== undefined || placement.externalName !== undefined);
-
-  // 配色決定
+  // テント色: 通常はコエノマ primary、キッチンは neutral
   const fillColor = isKitchen
-    ? 'var(--color-neutral-200)'
-    : isUnassigned
-      ? 'var(--color-neutral-100)'
-      : hasContent
-        ? 'var(--color-primary-500)'
-        : 'var(--color-neutral-200)';
-  const labelColor = hasContent || isKitchen ? '#fff' : 'var(--color-neutral-500)';
-
-  const ariaLabel = isKitchen
-    ? `テント ${label} キッチンブース`
-    : isUnassigned
-      ? `テント ${label} 未割当`
-      : placement?.programId
-        ? `ブース ${position} （タップで番組情報）`
-        : placement?.externalName
-          ? `ブース ${position} ${placement.externalName}（外部参照）`
-          : `ブース ${position}`;
-
-  const handleClick = () => {
-    if (placement && hasContent) {
-      onSelect(placement);
-    } else if (isKitchen || isUnassigned) {
-      // 情報がないものはクリックしても何もしない（デザイン的にフォーカス可だが選択は無効）
-    }
-  };
+    ? 'var(--color-neutral-300)'
+    : !hasContent
+      ? 'var(--color-neutral-200)'
+      : 'var(--color-primary-500)';
+  const labelColor = !isKitchen && hasContent ? '#fff' : 'var(--color-neutral-700)';
 
   return (
     <g
       role={hasContent ? 'button' : 'group'}
       tabIndex={hasContent ? 0 : -1}
       aria-label={ariaLabel}
-      onClick={handleClick}
+      onClick={onClick}
       onKeyDown={(e) => {
         if (hasContent && (e.key === 'Enter' || e.key === ' ')) {
           e.preventDefault();
-          handleClick();
+          onClick();
         }
       }}
       style={{
         cursor: hasContent ? 'pointer' : 'default',
-        opacity: isFiltered ? 0.3 : 1,
-        transition: 'opacity 0.2s, transform 0.15s',
         outline: 'none',
+        opacity: isFiltered ? 0.3 : 1,
+        transition: 'opacity 0.2s',
       }}
-      className="focus-visible:[outline:2px_solid_var(--color-primary-700)] focus-visible:[outline-offset:2px]"
+      className="focus-visible:[outline:2px_solid_var(--color-accent-cyan-500)] focus-visible:[outline-offset:2px]"
     >
       {/* 選択中の波紋 */}
       {isSelected ? (
@@ -325,7 +415,7 @@ function SlotCell({
           height={height + 8}
           fill="none"
           stroke="var(--color-accent-cyan-500)"
-          strokeWidth={2}
+          strokeWidth={3}
           rx={6}
           aria-hidden="true"
         >
@@ -338,38 +428,58 @@ function SlotCell({
         </rect>
       ) : null}
 
+      {/* テント本体 */}
       <rect
         x={x}
         y={y}
         width={width}
         height={height}
         fill={fillColor}
-        rx={4}
-        stroke={isSelected ? 'var(--color-primary-700)' : 'transparent'}
+        stroke={isSelected ? 'var(--color-accent-cyan-600)' : 'transparent'}
         strokeWidth={isSelected ? 2 : 0}
+        rx={4}
+        className={
+          hasContent
+            ? 'transition-colors hover:[fill:var(--color-primary-600)]'
+            : ''
+        }
       />
+
+      {/* テント番号 */}
       <text
-        x={x + width / 2}
-        y={y + height / 2 + 4}
+        x={cx}
+        y={cy + fontSize * 0.34}
         fill={labelColor}
-        fontSize={Math.min(width, height) > 40 ? 16 : 12}
-        fontWeight={700}
+        fontSize={fontSize}
+        fontWeight={900}
         textAnchor="middle"
         aria-hidden="true"
       >
-        {sublabel ? `${label}-${sublabel}` : label}
+        {label}
       </text>
-      {isKitchen ? (
-        <text
-          x={x + width / 2}
-          y={y + height + 12}
-          fill="var(--color-neutral-500)"
-          fontSize={9}
-          textAnchor="middle"
+
+      {/* quad テントの A/B/C/D ヒント（4 隅に小さく）*/}
+      {showQuadHints ? (
+        <>
+          <text x={x + 4} y={y + 12} fill={labelColor} fontSize={11} fontWeight={700} aria-hidden="true">A</text>
+          <text x={x + width - 4} y={y + 12} fill={labelColor} fontSize={11} fontWeight={700} textAnchor="end" aria-hidden="true">B</text>
+          <text x={x + 4} y={y + height - 4} fill={labelColor} fontSize={11} fontWeight={700} aria-hidden="true">C</text>
+          <text x={x + width - 4} y={y + height - 4} fill={labelColor} fontSize={11} fontWeight={700} textAnchor="end" aria-hidden="true">D</text>
+        </>
+      ) : null}
+
+      {/* フィルタヒント（半透明オーバーレイ）*/}
+      {isFiltered ? (
+        <rect
+          x={x}
+          y={y}
+          width={width}
+          height={height}
+          fill="white"
+          opacity={0.6}
+          rx={4}
           aria-hidden="true"
-        >
-          キッチン
-        </text>
+        />
       ) : null}
     </g>
   );

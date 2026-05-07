@@ -1,0 +1,28 @@
+{
+  "id": "pcwe-147",
+  "name": "アイデア刺激法 〜どう？〜",
+  "shortName": "どう？",
+  "thumbnail": "/thumbnails/147.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-147/",
+  "fetchedAt": "2026-05-07T07:30:00.000Z",
+  "official": {
+    "description": "「どう？」は、クリエイティブ界隈の中堅二人が開発したアイデアを刺激する秘伝のテクニックで、語尾に「どう？」とつけてアイデアやネタを言いあい、いい＜かなりいい＜相当いいで評価しあう作品群です。押さえておきたいクリエイティブ事例や豊富な予備知識とともに、2012年から提案し合い貯め続けた10万以上の「どう？」を、ランダムな月毎にご紹介。毎週日曜AM7時更新。",
+    "hosts": [
+      "尾上鳥晃（広告プランナー）",
+      "村田チュン平（広告プランナー）"
+    ],
+    "merchandise": [],
+    "merchandiseDetails": []
+  },
+  "exhibition": {
+    "days": [
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "147"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/6fDVioZyLcGnNg3yzCl88H"
+  }
+}

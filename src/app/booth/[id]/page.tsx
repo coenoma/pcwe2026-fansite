@@ -231,6 +231,51 @@ export default async function BoothPage({ params }: Props) {
               </p>
             </div>
 
+            {/* 物理位置: 会場マップへの動線（exhibition.position or positionBySatSun があれば）*/}
+            {(program.exhibition.position || program.exhibition.positionBySatSun) ? (
+              <div className="mt-6">
+                <h3 className="text-sm font-bold text-neutral-500">ブース位置</h3>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  {program.exhibition.position ? (
+                    <Link
+                      href={`/map?day=${program.exhibition.days[0] ?? 'sat'}&pin=${encodeURIComponent(program.exhibition.position.label)}`}
+                      className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-all hover:bg-primary-100 hover:shadow-sm"
+                    >
+                      <span aria-hidden="true">🗺</span>
+                      <span>
+                        ブース {program.exhibition.position.label}
+                        {program.exhibition.days.length === 2 ? '（両日）' : ''}
+                      </span>
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  ) : null}
+                  {program.exhibition.positionBySatSun?.sat ? (
+                    <Link
+                      href={`/map?day=sat&pin=${encodeURIComponent(program.exhibition.positionBySatSun.sat.label)}`}
+                      className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-all hover:bg-primary-100 hover:shadow-sm"
+                    >
+                      <span aria-hidden="true">🗺</span>
+                      <span>5/9 土 ブース {program.exhibition.positionBySatSun.sat.label}</span>
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  ) : null}
+                  {program.exhibition.positionBySatSun?.sun ? (
+                    <Link
+                      href={`/map?day=sun&pin=${encodeURIComponent(program.exhibition.positionBySatSun.sun.label)}`}
+                      className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-all hover:bg-primary-100 hover:shadow-sm"
+                    >
+                      <span aria-hidden="true">🗺</span>
+                      <span>5/10 日 ブース {program.exhibition.positionBySatSun.sun.label}</span>
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  ) : null}
+                </div>
+                <p className="mt-2 text-xs text-neutral-500">
+                  会場マップでブース位置を確認できます。
+                </p>
+              </div>
+            ) : null}
+
             <div className="mt-8 flex justify-center">
               <a
                 href={program.boothUrl}
