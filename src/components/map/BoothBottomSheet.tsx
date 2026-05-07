@@ -69,6 +69,19 @@ export function BoothBottomSheet({
     };
   }, [placement, onClose]);
 
+  // モーダル表示中は背景スクロール無効化（マップやページがスクロールしないように）
+  useEffect(() => {
+    if (!placement) return undefined;
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    };
+  }, [placement]);
+
   if (!placement) return null;
 
   const dayLabel = day === 'sat' ? '5/9 土' : '5/10 日';
