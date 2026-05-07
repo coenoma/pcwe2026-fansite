@@ -10,8 +10,34 @@
       "清藤洸希（h.b.／枯朽オーナーシェフ）",
       "山本篤（efoo株式会社／シェフレピ運営）"
     ],
-    "merchandise": [],
-    "merchandiseDetails": []
+    "merchandise": [
+      "ナポリタン",
+      "唐揚げ",
+      "フライドポテト（山椒 × お茶パウダー）",
+      "キーマカレー",
+      "クラフトコーラ",
+      "水出しお茶（柑橘の香り）",
+      "番組ステッカー（幻になる予定）"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "キッチンブース 提供メニュー（ナポリタン・唐揚げ・フライドポテト・キーマカレー）+ ドリンク（クラフトコーラ・水出しお茶）+ ステッカー",
+        "description": "5/10（日）テント 32 のキッチンブースで提供。ナポリタン（ロゴのモチーフ）を主軸に、唐揚げ、山椒とお茶パウダーをまぶしたフライドポテト、キーマカレーを展開。ドリンクはクラフトコーラと、柑橘で香り付けした水出しお茶。番組ステッカーも販売予定（番組名変更予定のため「幻のステッカー」になるとのこと）。Listen エピソード「#38【番組名がコンセプトに化けた瞬間】PODCAST EXPO 2026出展会議」（2026-05-01 公開、51:55）にて、シェフ清藤さんとシェフレピ山本さんが出展会議の模様を配信。",
+        "sourceUrl": "https://listen.style/p/makanai-radio/uhxnkovc",
+        "sourceType": "web",
+        "sourceAuthor": "まかないラジオ",
+        "sourceTitle": "#38【番組名がコンセプトに化けた瞬間】PODCAST EXPO 2026出展会議",
+        "sourcePublishedAt": "2026-05-01",
+        "accessedAt": "2026-05-08"
+      }
+    ],
+    "merchandiseTags": [
+      "food-drink",
+      "limited-new"
+    ],
+    "merchandiseSubTypes": [
+      "paper-stationery"
+    ]
   },
   "exhibition": {
     "days": [
