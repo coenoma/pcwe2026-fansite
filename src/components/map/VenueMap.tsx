@@ -22,6 +22,11 @@
 
 'use client';
 
+import { Minus, Move, Plus, RotateCcw } from 'lucide-react';
+import {
+  TransformComponent,
+  TransformWrapper,
+} from 'react-zoom-pan-pinch';
 import type { SlotPlacement } from '@/lib/booth-map';
 import type { BoothPositionsData, Day, Tent } from '@/lib/types';
 
@@ -63,156 +68,186 @@ export function VenueMap({
     ? toSvgPath(data.venuePolygon)
     : null;
 
+  // マップを単独でズーム + パン可能にする（react-zoom-pan-pinch）
+  // 親に aspect-ratio を当てて TransformWrapper が画面全体に拡張されないように制御
   return (
-    <svg
-      role="application"
-      aria-label={`PCWE2026 会場マップ（${dayLabel}）`}
-      viewBox={`0 0 ${imageSize.width} ${imageSize.height}`}
-      className="block h-auto w-full select-none"
-      preserveAspectRatio="xMidYMid meet"
-      style={{ touchAction: 'manipulation' }}
+    <div
+      className="relative w-full overflow-hidden rounded-2xl bg-white"
+      style={{ aspectRatio: `${imageSize.width} / ${imageSize.height}` }}
     >
-      <title>{`PCWE2026 会場マップ（${dayLabel}）`}</title>
-      <desc>
-        HOME/WORK VILLAGE のブース配置を独自描画したマップ。テント 1〜31 が番組ブース、32 はキッチンブース。
-        公式マップの配置・形状を尊重しつつ、コエノマブランドカラーで再構成。
-      </desc>
-
-      <defs>
-        {/* 背景グラデーション（コエノマ系）*/}
-        <linearGradient id="venue-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="var(--color-secondary-50)" />
-          <stop offset="60%" stopColor="#fdf6f0" />
-          <stop offset="100%" stopColor="var(--color-amber-50, #fef3c7)" />
-        </linearGradient>
-        <linearGradient id="venue-fill" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#ffffff" />
-          <stop offset="100%" stopColor="#fdfaf7" />
-        </linearGradient>
-      </defs>
-
-      {/* 全体背景 */}
-      <rect
-        x={0}
-        y={0}
-        width={imageSize.width}
-        height={imageSize.height}
-        fill="url(#venue-bg)"
-      />
-
-      {/* 会場の輪郭（公式の形を独自に再描画）*/}
-      {venuePath ? (
-        <path
-          d={venuePath}
-          fill="url(#venue-fill)"
-          stroke="var(--color-primary-300)"
-          strokeWidth={2}
-          strokeLinejoin="round"
-          aria-hidden="true"
-        />
-      ) : (
-        // フォールバック: 角丸矩形
-        <rect
-          x={20}
-          y={20}
-          width={imageSize.width - 40}
-          height={imageSize.height - 40}
-          fill="url(#venue-fill)"
-          stroke="var(--color-primary-300)"
-          strokeWidth={2}
-          rx={20}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* 装飾文字: 5.9/5.10 SAT/SUN（公式マップの右上配置を踏襲、薄く）*/}
-      <text
-        x={imageSize.width - 60}
-        y={120}
-        fill="var(--color-neutral-900)"
-        fontSize={72}
-        fontWeight={900}
-        textAnchor="end"
-        opacity={0.85}
-        aria-hidden="true"
+      <TransformWrapper
+        initialScale={1}
+        minScale={1}
+        maxScale={4}
+        centerOnInit
+        doubleClick={{ mode: 'toggle', step: 1.5 }}
+        wheel={{ step: 0.2 }}
+        panning={{ velocityDisabled: true }}
+        pinch={{ step: 5 }}
       >
-        {dayShort}
-      </text>
-      <text
-        x={imageSize.width - 60}
-        y={170}
-        fill="var(--color-neutral-900)"
-        fontSize={20}
-        fontWeight={800}
-        textAnchor="end"
-        opacity={0.7}
-        aria-hidden="true"
-      >
-        {daySub}
-      </text>
+        {({ zoomIn, zoomOut, resetTransform }) => (
+          <>
+            <TransformComponent
+              wrapperStyle={{ width: '100%', height: '100%' }}
+              contentStyle={{ width: '100%', height: '100%' }}
+            >
+              <svg
+                role="application"
+                aria-label={`PCWE2026 会場マップ（${dayLabel}）`}
+                viewBox={`0 0 ${imageSize.width} ${imageSize.height}`}
+                className="block h-full w-full select-none"
+                preserveAspectRatio="xMidYMid meet"
+                style={{ touchAction: 'none' }}
+              >
+                <title>{`PCWE2026 会場マップ（${dayLabel}）`}</title>
+                <desc>
+                  HOME/WORK VILLAGE のブース配置を独自描画したマップ。テント 1〜31 が番組ブース、32 はキッチンブース。
+                  公式マップの配置・形状を尊重しつつ、コエノマブランドカラーで再構成。ピンチ・マウスホイールで拡大可能。
+                </desc>
 
-      {/* 装飾文字: PODCAST WEEKEND 2026（公式マップの中央配置を踏襲）*/}
-      <text
-        x={250}
-        y={420}
-        fill="var(--color-primary-200)"
-        fontSize={56}
-        fontWeight={900}
-        opacity={0.55}
-        aria-hidden="true"
-      >
-        PODCAST
-      </text>
-      <text
-        x={250}
-        y={485}
-        fill="var(--color-primary-200)"
-        fontSize={56}
-        fontWeight={900}
-        opacity={0.55}
-        aria-hidden="true"
-      >
-        WEEKEND
-      </text>
-      <text
-        x={250}
-        y={555}
-        fill="var(--color-primary-200)"
-        fontSize={64}
-        fontWeight={900}
-        opacity={0.55}
-        aria-hidden="true"
-      >
-        2026
-      </text>
+                <defs>
+                  <linearGradient id="venue-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="var(--color-secondary-50)" />
+                    <stop offset="60%" stopColor="#fdf6f0" />
+                    <stop offset="100%" stopColor="var(--color-amber-50, #fef3c7)" />
+                  </linearGradient>
+                  <linearGradient id="venue-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#ffffff" />
+                    <stop offset="100%" stopColor="#fdfaf7" />
+                  </linearGradient>
+                </defs>
 
-      {/* メインゲート（左下寄り、公式踏襲）*/}
-      <text
-        x={285}
-        y={770}
-        fill="var(--color-neutral-700)"
-        fontSize={14}
-        fontWeight={800}
-        textAnchor="middle"
-        aria-hidden="true"
-      >
-        ↑ MAIN GATE
-      </text>
+                {/* 全体背景 */}
+                <rect
+                  x={0}
+                  y={0}
+                  width={imageSize.width}
+                  height={imageSize.height}
+                  fill="url(#venue-bg)"
+                />
 
-      {/* 各テント */}
-      {data.tents.map((tent) => (
-        <TentClickArea
-          key={`${tent.id}-${day}`}
-          tent={tent}
-          placementByPosition={placementByPosition}
-          onSelectSlot={onSelectSlot}
-          onSelectTent={onSelectTent}
-          selectedPosition={selectedPosition}
-          selectedTentId={selectedTentId}
-          highlightedPositions={highlightedPositions}
-        />
-      ))}
-    </svg>
+                {/* 会場輪郭 */}
+                {venuePath ? (
+                  <path
+                    d={venuePath}
+                    fill="url(#venue-fill)"
+                    stroke="var(--color-primary-300)"
+                    strokeWidth={2}
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <rect
+                    x={20}
+                    y={20}
+                    width={imageSize.width - 40}
+                    height={imageSize.height - 40}
+                    fill="url(#venue-fill)"
+                    stroke="var(--color-primary-300)"
+                    strokeWidth={2}
+                    rx={20}
+                    aria-hidden="true"
+                  />
+                )}
+
+                {/* 装飾文字: 日付（右上）*/}
+                <text
+                  x={imageSize.width - 60}
+                  y={120}
+                  fill="var(--color-neutral-900)"
+                  fontSize={72}
+                  fontWeight={900}
+                  textAnchor="end"
+                  opacity={0.85}
+                  aria-hidden="true"
+                >
+                  {dayShort}
+                </text>
+                <text
+                  x={imageSize.width - 60}
+                  y={170}
+                  fill="var(--color-neutral-900)"
+                  fontSize={20}
+                  fontWeight={800}
+                  textAnchor="end"
+                  opacity={0.7}
+                  aria-hidden="true"
+                >
+                  {daySub}
+                </text>
+
+                {/* PODCAST WEEKEND 2026 */}
+                <text x={250} y={420} fill="var(--color-primary-200)" fontSize={56} fontWeight={900} opacity={0.55} aria-hidden="true">PODCAST</text>
+                <text x={250} y={485} fill="var(--color-primary-200)" fontSize={56} fontWeight={900} opacity={0.55} aria-hidden="true">WEEKEND</text>
+                <text x={250} y={555} fill="var(--color-primary-200)" fontSize={64} fontWeight={900} opacity={0.55} aria-hidden="true">2026</text>
+
+                {/* メインゲート */}
+                <text
+                  x={285}
+                  y={770}
+                  fill="var(--color-neutral-700)"
+                  fontSize={14}
+                  fontWeight={800}
+                  textAnchor="middle"
+                  aria-hidden="true"
+                >
+                  ↑ MAIN GATE
+                </text>
+
+                {/* 各テント */}
+                {data.tents.map((tent) => (
+                  <TentClickArea
+                    key={`${tent.id}-${day}`}
+                    tent={tent}
+                    placementByPosition={placementByPosition}
+                    onSelectSlot={onSelectSlot}
+                    onSelectTent={onSelectTent}
+                    selectedPosition={selectedPosition}
+                    selectedTentId={selectedTentId}
+                    highlightedPositions={highlightedPositions}
+                  />
+                ))}
+              </svg>
+            </TransformComponent>
+
+            {/* 操作ヒント（左上、軽くフェード）*/}
+            <div className="pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full bg-neutral-900/70 px-2.5 py-1 text-[10px] font-bold text-white shadow-md backdrop-blur">
+              <Move size={11} aria-hidden="true" />
+              <span className="hidden sm:inline">ピンチ / ホイール / ボタンで拡大</span>
+              <span className="sm:hidden">ピンチで拡大</span>
+            </div>
+
+            {/* ズームコントロール（右下に固定）*/}
+            <div className="pointer-events-auto absolute bottom-3 right-3 z-10 flex flex-col gap-1.5">
+              <button
+                type="button"
+                aria-label="拡大"
+                onClick={() => zoomIn()}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white/95 text-neutral-700 shadow-md backdrop-blur transition-colors hover:bg-primary-50 hover:text-primary-700"
+              >
+                <Plus size={16} aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                aria-label="縮小"
+                onClick={() => zoomOut()}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white/95 text-neutral-700 shadow-md backdrop-blur transition-colors hover:bg-primary-50 hover:text-primary-700"
+              >
+                <Minus size={16} aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                aria-label="ズームをリセット"
+                onClick={() => resetTransform()}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-white/95 text-neutral-700 shadow-md backdrop-blur transition-colors hover:bg-primary-50 hover:text-primary-700"
+              >
+                <RotateCcw size={14} aria-hidden="true" />
+              </button>
+            </div>
+          </>
+        )}
+      </TransformWrapper>
+    </div>
   );
 }
 
