@@ -27,6 +27,7 @@ import {
   TwitterEmbed,
   extractTweetId,
 } from '@/components/twitter-embed/TwitterEmbed';
+import { TweetClient } from '@/components/twitter-embed/TweetClient';
 import type {
   MerchandiseDetail,
   MerchandiseSourceType,
@@ -156,46 +157,43 @@ export function MerchandiseGroupCard({ group, compact = false }: Props) {
         ) : null}
 
         {/* 王道パターン: 補助 X 投稿
-            - compact（マップポップアップ等、Client Component 内）: TwitterEmbed は async Server なので使えない → リンクで代替
-            - 通常（Server Component の番組詳細ページ）: 埋め込み */}
+            - compact（マップポップアップ等、Client Component 内）: TweetClient（CSR fetch 版）で埋め込み
+            - 通常（Server Component の番組詳細ページ）: TwitterEmbed (Server, getTweet で SSR) で埋め込み */}
         {supplementaryTweetId !== null ? (
-          compact ? (
-            <a
-              href={(headItem.additionalSources?.find((s) => s.type === 'x-post')?.url) ?? '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-1 self-start rounded-lg bg-secondary-50 px-3 py-1.5 text-xs font-bold text-secondary-700 transition-colors hover:bg-secondary-100"
+          <div className={compact ? 'mt-3 [&_.react-tweet-theme]:!my-0' : 'mt-4 [&_.react-tweet-theme]:!my-0'}>
+            <p
+              className={
+                compact
+                  ? 'mb-2 text-[10px] font-semibold tracking-wide text-neutral-500'
+                  : 'mb-2 text-xs font-semibold tracking-wide text-neutral-500'
+              }
             >
-              📣 番組ホストの告知ツイートを見る
-              <ExternalLink size={12} aria-hidden="true" />
-            </a>
-          ) : (
-            <div className="mt-4 [&_.react-tweet-theme]:!my-0">
-              <p className="mb-2 text-xs font-semibold tracking-wide text-neutral-500">
-                📣 番組ホストの告知ツイート
-              </p>
+              📣 番組ホストの告知ツイート
+            </p>
+            {compact ? (
+              <TweetClient tweetId={supplementaryTweetId} />
+            ) : (
               <TwitterEmbed tweetId={supplementaryTweetId} />
-            </div>
-          )
+            )}
+          </div>
         ) : null}
       </div>
 
-      {/* CTA: メイン出典が X なら埋め込み、それ以外はリンクボタン
-          compact（Client から呼ばれる）モードでは TwitterEmbed を使わずリンクに */}
-      {mainTweetId !== null && !compact ? (
-        <div className="border-t border-neutral-100 p-4 sm:p-5 [&_.react-tweet-theme]:!my-0">
-          <TwitterEmbed tweetId={mainTweetId} />
-        </div>
-      ) : mainTweetId !== null && compact ? (
-        <a
-          href={group.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mx-3 mb-3 inline-flex items-center gap-1 self-start rounded-lg bg-primary-50 px-3 py-1.5 text-xs font-bold text-primary-700 transition-colors hover:bg-primary-100"
+      {/* CTA: メイン出典が X なら埋め込み、それ以外はリンクボタン */}
+      {mainTweetId !== null ? (
+        <div
+          className={
+            compact
+              ? 'border-t border-neutral-100 p-3 [&_.react-tweet-theme]:!my-0'
+              : 'border-t border-neutral-100 p-4 sm:p-5 [&_.react-tweet-theme]:!my-0'
+          }
         >
-          X 投稿で見る
-          <ExternalLink size={12} aria-hidden="true" />
-        </a>
+          {compact ? (
+            <TweetClient tweetId={mainTweetId} />
+          ) : (
+            <TwitterEmbed tweetId={mainTweetId} />
+          )}
+        </div>
       ) : (
         <a
           href={group.sourceUrl}
