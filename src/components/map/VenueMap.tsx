@@ -634,37 +634,35 @@ function TentRect({
       }}
       className="focus-visible:[outline:2px_solid_var(--color-accent-cyan-500)] focus-visible:[outline-offset:2px]"
     >
-      {/* 選択中の波紋 */}
+      {/* 選択中の波紋（外側で 1 重のみ。テント本体には枠を付けない）*/}
       {isSelected ? (
         <rect
-          x={x - 4}
-          y={y - 4}
-          width={width + 8}
-          height={height + 8}
+          x={x - 5}
+          y={y - 5}
+          width={width + 10}
+          height={height + 10}
           fill="none"
           stroke="var(--color-accent-cyan-500)"
           strokeWidth={3}
-          rx={6}
+          rx={8}
           aria-hidden="true"
         >
           <animate
             attributeName="stroke-opacity"
-            values="1;0.3;1"
+            values="1;0.4;1"
             dur="1.5s"
             repeatCount="indefinite"
           />
         </rect>
       ) : null}
 
-      {/* テント本体 */}
+      {/* テント本体（選択中でも枠は付けず、外側の波紋だけで強調）*/}
       <rect
         x={x}
         y={y}
         width={width}
         height={height}
         fill={fillColor}
-        stroke={isSelected ? 'var(--color-accent-cyan-600)' : 'transparent'}
-        strokeWidth={isSelected ? 2 : 0}
         rx={4}
         className={
           hasContent
