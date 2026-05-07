@@ -34,7 +34,7 @@ a { color: #1a5fb4; }
   <h1>PCWE2026 全 145 番組 詳細データ（LLM 向け）</h1>
   <p>PODCAST EXPO 2026 内のマーケットイベント <strong>PODCAST WEEKEND 2026</strong>（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）出展 145 番組の詳細を 1 ページに集約した、LLM / AI クライアント向けの HTML データページです。</p>
   <p>人間向けファンガイドは <a href="https://pcwe2026-fansite.podmate.fm/">トップページ</a>。同じデータの他フォーマット: <a href="https://pcwe2026-fansite.podmate.fm/llms-full.txt">llms-full.txt</a> / <a href="https://pcwe2026-fansite.podmate.fm/api/programs.json">programs.json</a> / <a href="https://pcwe2026-fansite.podmate.fm/llms.txt">llms.txt（サイト地図）</a></p>
-  <p class="meta">最終ビルド: <time datetime="2026-05-07T23:35:18.791Z">2026-05-07T23:35:18.791Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
+  <p class="meta">最終ビルド: <time datetime="2026-05-07T23:39:05.278Z">2026-05-07T23:39:05.278Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
 </header>
 
 <nav class="toc">
@@ -2338,12 +2338,13 @@ F1はクルマを用いたスポーツであり、グローバルな政治であ
 フォローしてお待ちを
 ─────</p>
   
-  <p><strong>ブース物販</strong>: ステッカー / その他グッズ</p>
+  <p><strong>ブース物販</strong>: ステッカー / アクリルキーホルダー（リスナーのアイコン版） / アクスタ（自由律さん／イワシさん／抹茶） / 番組オリジナル名刺（無料配布） / その他グッズ</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-077">このサイトの番組詳細ページ</a></li>
     <li><a href="https://podcastexpo.jp/booth/pcwe-077/" rel="nofollow noopener">PCWE 公式ブースページ</a></li>
     <li><a href="https://open.spotify.com/show/1pf7WoAKtR6hxmu6Pv7Ktg" rel="nofollow noopener">Spotify</a></li>
+    <li><a href="https://x.com/minamade_iuto" rel="nofollow noopener">X (Twitter)</a></li>
   </ul>
   <p><strong>番組ホストおすすめエピソード</strong>: <a href="https://open.spotify.com/episode/5IPVcZJU4JIewkRZ0aseZi?si=Bn1nRfzCQlK1AWJhEmGvcA" rel="nofollow noopener">#6 爪褒めてくる男ってなんなん？</a></p>
 </article>
