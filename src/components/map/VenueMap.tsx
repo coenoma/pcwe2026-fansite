@@ -196,10 +196,10 @@ export function VenueMap({
                   {daySub}
                 </text>
 
-                {/* PODCAST WEEKEND 2026 */}
-                <text x={250} y={420} fill="var(--color-primary-200)" fontSize={56} fontWeight={900} opacity={0.55} aria-hidden="true">PODCAST</text>
-                <text x={250} y={485} fill="var(--color-primary-200)" fontSize={56} fontWeight={900} opacity={0.55} aria-hidden="true">WEEKEND</text>
-                <text x={250} y={555} fill="var(--color-primary-200)" fontSize={64} fontWeight={900} opacity={0.55} aria-hidden="true">2026</text>
+                {/* PODCAST WEEKEND 2026（テント 12-17 とかぶらないように左寄せ）*/}
+                <text x={130} y={420} fill="var(--color-primary-200)" fontSize={50} fontWeight={900} opacity={0.45} aria-hidden="true">PODCAST</text>
+                <text x={130} y={480} fill="var(--color-primary-200)" fontSize={50} fontWeight={900} opacity={0.45} aria-hidden="true">WEEKEND</text>
+                <text x={130} y={550} fill="var(--color-primary-200)" fontSize={56} fontWeight={900} opacity={0.45} aria-hidden="true">2026</text>
 
                 {/* メインゲート */}
                 <text
@@ -213,6 +213,41 @@ export function VenueMap({
                 >
                   ↑ MAIN GATE
                 </text>
+
+                {/* 装飾的な建物（公式マップに描かれている小屋等）*/}
+                {data.decorativeBuildings?.map((bldg) => (
+                  <g key={bldg.id} aria-hidden="true">
+                    {/* 上面（3D 感）*/}
+                    {bldg.topPolygon ? (
+                      <polygon
+                        points={bldg.topPolygon.map((p) => p.join(',')).join(' ')}
+                        fill="#f5f5f5"
+                        stroke="#cbd5e0"
+                        strokeWidth={1}
+                      />
+                    ) : null}
+                    {/* 側面（右奥）*/}
+                    {bldg.sidePolygon ? (
+                      <polygon
+                        points={bldg.sidePolygon.map((p) => p.join(',')).join(' ')}
+                        fill="#d4d4d4"
+                        stroke="#cbd5e0"
+                        strokeWidth={1}
+                      />
+                    ) : null}
+                    {/* 正面 */}
+                    <rect
+                      x={bldg.frontRect.x}
+                      y={bldg.frontRect.y}
+                      width={bldg.frontRect.width}
+                      height={bldg.frontRect.height}
+                      fill="#e5e7eb"
+                      stroke="#9ca3af"
+                      strokeWidth={1}
+                      rx={1}
+                    />
+                  </g>
+                ))}
 
                 {/* 各テント */}
                 {data.tents.map((tent) => (
