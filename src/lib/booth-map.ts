@@ -39,7 +39,10 @@ export interface SlotPlacement {
   position: string;
   slot?: 'A' | 'B' | 'C' | 'D';
   programId?: string;
+  /** 番組以外のブース占有（スポンサー / 飲食ブース等） */
+  externalKind?: 'sponsor' | 'kitchen-only' | 'external-program';
   externalName?: string;
+  externalUrl?: string;
   externalNote?: string;
 }
 
@@ -52,26 +55,28 @@ export function getSlotPlacementsForDay(
     for (const slot of tent.slots) {
       const programId = slot[day] ?? undefined;
       const ext = day === 'sat' ? slot.satExternal : slot.sunExternal;
-      if (programId === null || programId === undefined) {
-        if (ext) {
-          result.push({
-            tent: tent.id,
-            shape: tent.shape,
-            position: slot.position,
-            slot: slot.slot,
-            externalName: ext.name,
-            externalNote: ext.note,
-          });
-        }
-        continue;
+
+      // 番組と external が同時に設定されている場合は番組優先（program と external は補助情報として両方表示することは将来的検討）
+      if (programId !== null && programId !== undefined) {
+        result.push({
+          tent: tent.id,
+          shape: tent.shape,
+          position: slot.position,
+          slot: slot.slot,
+          programId,
+        });
+      } else if (ext) {
+        result.push({
+          tent: tent.id,
+          shape: tent.shape,
+          position: slot.position,
+          slot: slot.slot,
+          externalKind: ext.kind,
+          externalName: ext.name,
+          externalUrl: ext.url,
+          externalNote: ext.note,
+        });
       }
-      result.push({
-        tent: tent.id,
-        shape: tent.shape,
-        position: slot.position,
-        slot: slot.slot,
-        programId,
-      });
     }
   }
   return result;

@@ -9,10 +9,10 @@
     "officialMapDay2": "/images/map/pcwe2026-day2.webp"
   },
   "notes": [
-    "テント 30, 31 は元データに含まれず未割当（一旦空白で進行、Q1 確認済み）",
-    "テント 32 は ※キッチンブース（番組出展なし、特別ブース扱い）",
-    "PodWalker / まかないラジオ / アイデア刺激法 〜どう？〜 は programs.json 未登録の追加出展者",
-    "マップ UI ではこれら 3 番組も表示するが、「番組詳細を見る」CTA は無効化（公式ブース URL のみ参照）"
+    "テント 30: 5/9 Youtrust スポンサー出展、5/10 出展なし",
+    "テント 31: 5/9 TBSラジオ スポンサー出展、5/10 出展なし",
+    "テント 32: キッチンブース。5/9 飲食提供のみ、5/10 はまかないラジオが出展",
+    "PodWalker / まかないラジオ / アイデア刺激法 〜どう？〜 は programs.json に正式登録済み（pcwe-145/146/147）"
   ],
   "tents": [
     {
@@ -447,13 +447,8 @@
         {
           "position": "13-B",
           "sat": "pcwe-090",
-          "sun": null,
-          "slot": "B",
-          "sunExternal": {
-            "kind": "external",
-            "name": "アイデア刺激法 〜どう？〜",
-            "note": "programs.json 未登録、PCWE 公式追加出展者"
-          }
+          "sun": "pcwe-147",
+          "slot": "B"
         },
         {
           "position": "13-C",
@@ -925,14 +920,9 @@
         },
         {
           "position": "24-C",
-          "sat": null,
+          "sat": "pcwe-145",
           "sun": "pcwe-008",
-          "slot": "C",
-          "satExternal": {
-            "kind": "external",
-            "name": "PodWalker",
-            "note": "programs.json 未登録、PCWE 公式追加出展者"
-          }
+          "slot": "C"
         },
         {
           "position": "24-D",
@@ -1017,13 +1007,8 @@
         {
           "position": "26-B",
           "sat": "pcwe-142",
-          "sun": null,
-          "slot": "B",
-          "sunExternal": {
-            "kind": "external",
-            "name": "まかないラジオ",
-            "note": "programs.json 未登録、PCWE 公式追加出展者"
-          }
+          "sun": "pcwe-146",
+          "slot": "B"
         },
         {
           "position": "26-C",
@@ -1196,8 +1181,20 @@
     {
       "id": 30,
       "shape": "single",
-      "note": "一旦空白（ユーザー Q1 確認、未割当のままリリース）",
-      "slots": [],
+      "note": "スポンサー出展枠（5/9 Youtrust、5/10 出展なし）",
+      "slots": [
+        {
+          "position": "30",
+          "sat": null,
+          "sun": null,
+          "satExternal": {
+            "kind": "sponsor",
+            "name": "Youtrust",
+            "url": "https://youtrust.jp/",
+            "note": "スポンサー出展（5/9 のみ）"
+          }
+        }
+      ],
       "polygon": [
         [
           92,
@@ -1218,8 +1215,20 @@
     {
       "id": 31,
       "shape": "single",
-      "note": "一旦空白（ユーザー Q1 確認、未割当のままリリース）",
-      "slots": [],
+      "note": "スポンサー出展枠（5/9 TBSラジオ、5/10 出展なし）",
+      "slots": [
+        {
+          "position": "31",
+          "sat": null,
+          "sun": null,
+          "satExternal": {
+            "kind": "sponsor",
+            "name": "TBSラジオ",
+            "url": "https://www.tbsradio.jp/",
+            "note": "スポンサー出展（5/9 のみ）"
+          }
+        }
+      ],
       "polygon": [
         [
           736,
@@ -1241,8 +1250,19 @@
       "id": 32,
       "shape": "single",
       "kind": "kitchen-booth",
-      "note": "キッチンブース（番組出展なし）",
-      "slots": [],
+      "note": "キッチンブース（5/9 飲食提供のみ、5/10 はまかないラジオ）",
+      "slots": [
+        {
+          "position": "32",
+          "sat": null,
+          "sun": "pcwe-146",
+          "satExternal": {
+            "kind": "kitchen-only",
+            "name": "飲食提供（キッチンブース）",
+            "note": "5/9 は特定番組なし、飲食提供のみ"
+          }
+        }
+      ],
       "polygon": [
         [
           746,

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PCWE2026 全 142 番組 詳細データ（LLM 向け） | PCWE2026 ファンガイド（非公式）</title>
-<meta name="description" content="PODCAST WEEKEND 2026 出展 142 番組の詳細を 1 ページに集約した LLM / AI クライアント向け HTML データページ。人間向けのファンガイドはトップページから。">
+<title>PCWE2026 全 145 番組 詳細データ（LLM 向け） | PCWE2026 ファンガイド（非公式）</title>
+<meta name="description" content="PODCAST WEEKEND 2026 出展 145 番組の詳細を 1 ページに集約した LLM / AI クライアント向け HTML データページ。人間向けのファンガイドはトップページから。">
 <link rel="canonical" href="https://pcwe2026-fansite.podmate.fm/data/llms-full">
 <link rel="alternate" type="text/plain" href="https://pcwe2026-fansite.podmate.fm/llms-full.txt" title="同データの Markdown 版">
 <link rel="alternate" type="application/json" href="https://pcwe2026-fansite.podmate.fm/api/programs.json" title="同データの JSON 版">
@@ -31,15 +31,15 @@ a { color: #1a5fb4; }
 </head>
 <body>
 <header>
-  <h1>PCWE2026 全 142 番組 詳細データ（LLM 向け）</h1>
-  <p>PODCAST EXPO 2026 内のマーケットイベント <strong>PODCAST WEEKEND 2026</strong>（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）出展 142 番組の詳細を 1 ページに集約した、LLM / AI クライアント向けの HTML データページです。</p>
+  <h1>PCWE2026 全 145 番組 詳細データ（LLM 向け）</h1>
+  <p>PODCAST EXPO 2026 内のマーケットイベント <strong>PODCAST WEEKEND 2026</strong>（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）出展 145 番組の詳細を 1 ページに集約した、LLM / AI クライアント向けの HTML データページです。</p>
   <p>人間向けファンガイドは <a href="https://pcwe2026-fansite.podmate.fm/">トップページ</a>。同じデータの他フォーマット: <a href="https://pcwe2026-fansite.podmate.fm/llms-full.txt">llms-full.txt</a> / <a href="https://pcwe2026-fansite.podmate.fm/api/programs.json">programs.json</a> / <a href="https://pcwe2026-fansite.podmate.fm/llms.txt">llms.txt（サイト地図）</a></p>
-  <p class="meta">最終ビルド: <time datetime="2026-05-07T12:29:19.542Z">2026-05-07T12:29:19.542Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
+  <p class="meta">最終ビルド: <time datetime="2026-05-07T12:36:14.069Z">2026-05-07T12:36:14.069Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
 </header>
 
 <nav class="toc">
   <details>
-    <summary>番組目次（142 番組）</summary>
+    <summary>番組目次（145 番組）</summary>
     <ol>
       <li><a href="#pcwe-001">電波惹句</a></li>
       <li><a href="#pcwe-002">愛の抵抗</a></li>
@@ -183,6 +183,9 @@ a { color: #1a5fb4; }
       <li><a href="#pcwe-142">夫婦関係学ラジオ</a></li>
       <li><a href="#pcwe-143">日中バイリンガルへの道</a></li>
       <li><a href="#pcwe-144">雑食日和</a></li>
+      <li><a href="#pcwe-145">PodWalker</a></li>
+      <li><a href="#pcwe-146">まかないラジオ</a></li>
+      <li><a href="#pcwe-147">どう？</a></li>
     </ol>
   </details>
 </nav>
@@ -4263,6 +4266,83 @@ Teacher Teacherの⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠�
     <li><a href="https://www.instagram.com/zashokubiyori/" rel="nofollow noopener">Instagram</a></li>
   </ul>
   <p><strong>番組ホストおすすめエピソード</strong>: <a href="https://open.spotify.com/episode/6cJVaXTKS84HQbVik4WYVl?si=62de3dc2c3874f40" rel="nofollow noopener">原油ってなんなん？</a></p>
+</article>
+
+<article id="pcwe-145">
+  <h2>PodWalker <span class="meta">(pcwe-145)</span></h2>
+  <p class="meta">正式名称: PodWalker：ポッドウォーカー</p>
+  <ul class="meta-list">
+    <li><strong>ジャンル</strong>: カルチャー</li>
+    <li><strong>タグ</strong>: 軽快 / 通勤 / 一人語り / ニッチ</li>
+    <li><strong>vibe</strong>: laid-back</li>
+    <li><strong>出展</strong>: 土曜のみ / 10:00 - 18:00 / 無料エリア</li>
+  </ul>
+  <p><strong>キャッチコピー（独断と偏見）</strong>: 歩きながら一発録音、毎日 1 本。日常の気付きをそのまま届ける即興ポッドキャスト。</p>
+  <p><strong>サブキャッチ</strong>: メディアプロデューサー川井拓也が歩きながら録る、編集なしの 5-10 分カジュアル発信。</p>
+  <p><strong>ターゲットリスナー</strong>: メディア・カルチャー観察が好きな人。整えすぎない一発録りの自然なトークが好きな人。毎日の通勤に流し聴きできる軽い番組を探している人。</p>
+  <h3>公式説明</h3>
+  <p>「ポッドウォーカー」は日常のちょっとした気付きや対話をカジュアルに発信していくポッドキャストです！「絶滅メディア博物館」「原稿執筆カフェ」「高円寺三角地帯」「スタジオ236/318」などのプロデューサーでお馴染みヒマナイヌ川井が軽快なトークでお届けします！録音はOnePlus 12！編集なしの一発録音！毎日1本配信します！</p>
+  <p><strong>ホスト</strong>: 川井拓也（ヒマナイヌ）</p>
+  
+  <h3>リンク</h3>
+  <ul>
+    <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-145">このサイトの番組詳細ページ</a></li>
+    <li><a href="https://podcastexpo.jp/booth/pcwe-145/" rel="nofollow noopener">PCWE 公式ブースページ</a></li>
+  </ul>
+  
+</article>
+
+<article id="pcwe-146">
+  <h2>まかないラジオ <span class="meta">(pcwe-146)</span></h2>
+  
+  <ul class="meta-list">
+    <li><strong>ジャンル</strong>: 食</li>
+    <li><strong>タグ</strong>: じっくり / 学べる / 二人以上の掛け合い / 通勤</li>
+    <li><strong>vibe</strong>: intellectual</li>
+    <li><strong>出展</strong>: 日曜のみ / 10:00 - 18:00 / 無料エリア</li>
+  </ul>
+  <p><strong>キャッチコピー（独断と偏見）</strong>: ミシュラン掲載シェフとフードテック起業家が、まかないを囲むように語る食 × テクノロジー。</p>
+  <p><strong>サブキャッチ</strong>: 枯朽オーナーシェフとシェフレピ山本の、料理の現場と最先端を行き来する対話。</p>
+  <p><strong>ターゲットリスナー</strong>: 料理を仕事にしている／したい人。フードテック・飲食業界の次の景色を知りたい人。シェフが日常で何を考えているかに興味がある人。</p>
+  <h3>公式説明</h3>
+  <p>東京・押上にあるレストラン「枯朽」のオーナーシェフ清藤と、オンライン料理教室「シェフレピ」を運営するefoo株式会社の山本が、料理の世界で日々感じた気づきや発見を、まかないを囲むようにゆるく語り合う番組です。現役シェフとフードテック起業家がゆるりと語る食×テクノロジートークをお楽しみください。</p>
+  <p><strong>ホスト</strong>: 清藤洸希（h.b.／枯朽オーナーシェフ） / 山本篤（efoo株式会社／シェフレピ運営）</p>
+  
+  <h3>リンク</h3>
+  <ul>
+    <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-146">このサイトの番組詳細ページ</a></li>
+    <li><a href="https://podcastexpo.jp/booth/pcwe-146/" rel="nofollow noopener">PCWE 公式ブースページ</a></li>
+    <li><a href="https://open.spotify.com/show/070tlKL98Q1bOEFTJnpPvR" rel="nofollow noopener">Spotify</a></li>
+    <li><a href="https://podcasts.apple.com/jp/podcast/%E3%81%BE%E3%81%8B%E3%81%AA%E3%81%84%E3%83%A9%E3%82%B8%E3%82%AA/id1843988127" rel="nofollow noopener">Apple Podcasts</a></li>
+    <li><a href="https://x.com/fuji_no_hana1" rel="nofollow noopener">X (Twitter)</a></li>
+    <li><a href="https://www.instagram.com/kokyu_kiyofuji/" rel="nofollow noopener">Instagram</a></li>
+  </ul>
+  
+</article>
+
+<article id="pcwe-147">
+  <h2>どう？ <span class="meta">(pcwe-147)</span></h2>
+  <p class="meta">正式名称: アイデア刺激法 〜どう？〜</p>
+  <ul class="meta-list">
+    <li><strong>ジャンル</strong>: ビジネス</li>
+    <li><strong>タグ</strong>: 笑える / 軽快 / 二人以上の掛け合い / ニッチ</li>
+    <li><strong>vibe</strong>: humorous</li>
+    <li><strong>出展</strong>: 日曜のみ / 10:00 - 18:00 / 無料エリア</li>
+  </ul>
+  <p><strong>キャッチコピー（独断と偏見）</strong>: 広告プランナー 2 人が「どう？」って言い合う。アイデアの筋トレが、笑いながらできる番組。</p>
+  <p><strong>サブキャッチ</strong>: クリエイティブ業界 2 人が、語尾に「どう？」を付けてアイデアを評価し合うゆるブレスト。</p>
+  <p><strong>ターゲットリスナー</strong>: クリエイター、企画職、コピーライター、広告プランナーなど、毎週アイデアを出す仕事の人。発想のクセを身につけたい人、笑いながら学びたい人。</p>
+  <h3>公式説明</h3>
+  <p>「どう？」は、クリエイティブ界隈の中堅二人が開発したアイデアを刺激する秘伝のテクニックで、語尾に「どう？」とつけてアイデアやネタを言いあい、いい＜かなりいい＜相当いいで評価しあう作品群です。押さえておきたいクリエイティブ事例や豊富な予備知識とともに、2012年から提案し合い貯め続けた10万以上の「どう？」を、ランダムな月毎にご紹介。毎週日曜AM7時更新。</p>
+  <p><strong>ホスト</strong>: 尾上鳥晃（広告プランナー） / 村田チュン平（広告プランナー）</p>
+  
+  <h3>リンク</h3>
+  <ul>
+    <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-147">このサイトの番組詳細ページ</a></li>
+    <li><a href="https://podcastexpo.jp/booth/pcwe-147/" rel="nofollow noopener">PCWE 公式ブースページ</a></li>
+    <li><a href="https://open.spotify.com/show/6fDVioZyLcGnNg3yzCl88H" rel="nofollow noopener">Spotify</a></li>
+  </ul>
+  
 </article>
 </main>
 

@@ -354,10 +354,32 @@ export const TentShapeSchema = z.enum(['single', 'quad', 'kitchen-booth']);
 export type TentShape = z.infer<typeof TentShapeSchema>;
 
 /**
+ * 番組以外のブース占有種別。
+ *
+ * - sponsor: スポンサー出展（Youtrust / TBSラジオ等、programs.json には登録しない）
+ * - kitchen-only: 飲食提供のみ（特定番組なし、テント 32 等）
+ * - external-program: programs.json 未登録の番組（情報取得後に正式登録される予定の暫定）
+ */
+export const BoothExternalKindSchema = z.enum([
+  'sponsor',
+  'kitchen-only',
+  'external-program',
+]);
+export type BoothExternalKind = z.infer<typeof BoothExternalKindSchema>;
+
+export const BoothExternalSchema = z.object({
+  kind: BoothExternalKindSchema,
+  name: z.string().min(1),
+  url: z.string().url().optional(),
+  note: z.string().optional(),
+});
+export type BoothExternal = z.infer<typeof BoothExternalSchema>;
+
+/**
  * 1 区画の番組割当。
  *
  * `sat` / `sun` は programs.json の id（pcwe-XXX）or null。
- * `satExternal` / `sunExternal` は programs.json 未登録の追加出展者を表す参照情報。
+ * `satExternal` / `sunExternal` は番組以外のブース占有（スポンサー / 飲食ブース等）。
  */
 export const BoothSlotSchema = z.object({
   position: z.string().min(1), // "1" or "14-A"
@@ -372,20 +394,8 @@ export const BoothSlotSchema = z.object({
     .regex(/^pcwe-\d{3}$/, 'sun は pcwe-XXX 形式')
     .nullable()
     .optional(),
-  satExternal: z
-    .object({
-      kind: z.literal('external'),
-      name: z.string().min(1),
-      note: z.string().optional(),
-    })
-    .optional(),
-  sunExternal: z
-    .object({
-      kind: z.literal('external'),
-      name: z.string().min(1),
-      note: z.string().optional(),
-    })
-    .optional(),
+  satExternal: BoothExternalSchema.optional(),
+  sunExternal: BoothExternalSchema.optional(),
 });
 export type BoothSlot = z.infer<typeof BoothSlotSchema>;
 

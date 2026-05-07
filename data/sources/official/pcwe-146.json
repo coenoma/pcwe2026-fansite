@@ -1,0 +1,31 @@
+{
+  "id": "pcwe-146",
+  "name": "まかないラジオ",
+  "thumbnail": "/thumbnails/146.jpeg",
+  "boothUrl": "https://podcastexpo.jp/booth/pcwe-146/",
+  "fetchedAt": "2026-05-07T07:30:00.000Z",
+  "official": {
+    "description": "東京・押上にあるレストラン「枯朽」のオーナーシェフ清藤と、オンライン料理教室「シェフレピ」を運営するefoo株式会社の山本が、料理の世界で日々感じた気づきや発見を、まかないを囲むようにゆるく語り合う番組です。現役シェフとフードテック起業家がゆるりと語る食×テクノロジートークをお楽しみください。",
+    "hosts": [
+      "清藤洸希（h.b.／枯朽オーナーシェフ）",
+      "山本篤（efoo株式会社／シェフレピ運営）"
+    ],
+    "merchandise": [],
+    "merchandiseDetails": []
+  },
+  "exhibition": {
+    "days": [
+      "sun"
+    ],
+    "hours": "10:00 - 18:00",
+    "area": "free",
+    "boothNumber": "146"
+  },
+  "links": {
+    "spotify": "https://open.spotify.com/show/070tlKL98Q1bOEFTJnpPvR",
+    "applePodcasts": "https://podcasts.apple.com/jp/podcast/%E3%81%BE%E3%81%8B%E3%81%AA%E3%81%84%E3%83%A9%E3%82%B8%E3%82%AA/id1843988127",
+    "listen": "https://listen.style/p/makanai-radio",
+    "x": "https://x.com/fuji_no_hana1",
+    "instagram": "https://www.instagram.com/kokyu_kiyofuji/"
+  }
+}

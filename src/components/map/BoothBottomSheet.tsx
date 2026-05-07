@@ -98,7 +98,7 @@ export function BoothBottomSheet({
         </div>
 
         <div className="flex items-start gap-3 px-5 pb-2 pt-2">
-          {/* サムネ */}
+          {/* サムネ / アイコン */}
           {program ? (
             <Image
               src={program.thumbnail}
@@ -110,15 +110,23 @@ export function BoothBottomSheet({
           ) : (
             <div
               aria-hidden="true"
-              className="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-2xl"
+              className="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-3xl"
             >
-              📍
+              {placement.externalKind === 'sponsor'
+                ? '🤝'
+                : placement.externalKind === 'kitchen-only'
+                  ? '🍳'
+                  : '📍'}
             </div>
           )}
 
           <div className="flex-1 min-w-0">
             <p className="text-xs font-bold text-primary-600">
-              ブース {placement.position}（{dayLabel}）
+              {placement.externalKind === 'sponsor'
+                ? `スポンサー出展（${dayLabel}）`
+                : placement.externalKind === 'kitchen-only'
+                  ? `キッチンブース（${dayLabel}）`
+                  : `ブース ${placement.position}（${dayLabel}）`}
             </p>
             <h2
               id="booth-sheet-title"
@@ -131,9 +139,9 @@ export function BoothBottomSheet({
                 {program.fanGuide.subCatch}
               </p>
             ) : null}
-            {isExternal ? (
+            {placement.externalNote ? (
               <p className="mt-1 text-xs text-neutral-500">
-                外部参照ブース（{placement.externalNote ?? '当サイトに番組詳細未掲載'}）
+                {placement.externalNote}
               </p>
             ) : null}
           </div>
@@ -260,17 +268,19 @@ export function BoothBottomSheet({
               番組詳細を見る
               <ExternalLink size={16} aria-hidden="true" />
             </Link>
-          ) : (
+          ) : placement.externalUrl ? (
             <a
-              href={`https://podcastexpo.jp/booth/`}
+              href={placement.externalUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-primary-600"
             >
-              公式サイトを見る
+              {placement.externalKind === 'sponsor'
+                ? `${placement.externalName} の公式サイトへ`
+                : '公式サイトを見る'}
               <ExternalLink size={16} aria-hidden="true" />
             </a>
-          )}
+          ) : null}
         </div>
       </div>
 
