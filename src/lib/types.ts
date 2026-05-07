@@ -438,6 +438,26 @@ export const BoothPositionsDataSchema = z.object({
     .optional(),
   /** 会場の輪郭 polygon（公式画像から自動抽出、SVG path で会場形状を独自描画する用）*/
   venuePolygon: z.array(z.tuple([z.number(), z.number()])).optional(),
+  /**
+   * 装飾的な建物（公式マップに描かれているが番組ブースではないもの。例: テント 9-10 間の小屋）。
+   * SVG で 3D 風（前面 + 上面 + 側面）に描画する用。
+   */
+  decorativeBuildings: z
+    .array(
+      z.object({
+        id: z.string(),
+        note: z.string().optional(),
+        frontRect: z.object({
+          x: z.number(),
+          y: z.number(),
+          width: z.number(),
+          height: z.number(),
+        }),
+        topPolygon: z.array(z.tuple([z.number(), z.number()])).optional(),
+        sidePolygon: z.array(z.tuple([z.number(), z.number()])).optional(),
+      }),
+    )
+    .optional(),
   sources: z
     .object({
       positionMapping: z.string().optional(),
