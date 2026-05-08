@@ -27,22 +27,18 @@
 
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
 import { groupMerchandiseDetails } from './MerchandiseGroupCard';
 import type { MerchandiseDetail } from '@/lib/types';
 
-/** card-main variant の折りたたみ時に見せる件数 */
-const CARD_MAIN_PREVIEW_COUNT = 3;
-/** card-main variant のリスト固定高さ（3 アイテム + gap 程度）
- *  - サムネ 36px + line-clamp 2行 ≒ 1 アイテム 38-44px
- *  - gap 6px × 2
- *  - 余白少々 → 132px に固定
- *  この高さは折りたたみ時 / 展開時の両方で同じ。展開時は内部スクロールにする
- *  ことで、親モーダル / カードの高さチラつきを防ぐ。
+/** card-main variant でスクロール扱いになる閾値件数 */
+const CARD_MAIN_SCROLL_THRESHOLD = 3;
+/** card-main variant のリスト固定高さ（3.5 件分 = 残り 0.5 件が見切れて「下にもある」感）
+ *  - 1 アイテム ≒ サムネ 36px + 余白 = 約 40px
+ *  - 3 アイテム + gap 6px × 2 + 半アイテム ≒ 140px
+ *  カード高さ自体はこの値で常に固定。中身が多い番組は内部スクロールで全件見える。
  */
-const CARD_MAIN_LIST_HEIGHT_PX = 132;
+const CARD_MAIN_LIST_HEIGHT_PX = 140;
 
 type Variant = 'list' | 'slot' | 'sheet-header' | 'card-main';
 
@@ -154,21 +150,23 @@ export function MerchandisePreview({ details, variant, className }: Props) {
 }
 
 /**
- * card-main variant の本体（useState で展開状態を持つため独立関数化）。
+ * card-main variant の本体。
  *
- * v1.9.6 改修: カード高さ固定 + 内部スクロールに変更。
- * 展開時にカードが縦に伸びると親モーダル全体の高さが変動して
- * 「目がチカチカする」ため、リスト領域は常に同じ高さ (132px) で固定し、
- * 展開時は overflow-y-auto で内部スクロール可能にする。
+ * v1.9.8 改修: 開閉ボタン廃止、常時スクロール UI に簡素化。
+ *
+ * - 4 件以上の番組: リスト高さ 140px（3.5 件分）で固定、内部スクロール常時有効
+ *   - 残り 0.5 件が見切れることで「下にもある」感を出す
+ *   - 下端の fade-out グラデが見切り部分のスクロールヒントを補強
+ *   - カスタムスクロールバー（primary-200 細スクロール）でサイトの雰囲気と整合
+ * - 3 件以下の番組: 高さ制限なし、全件そのまま表示
+ *
+ * カード高さは件数によらず一定で、親モーダルやリストレイアウトの高さチラつき
+ * （v1.9.6 で問題視された目チカチカ）を完全回避する。
  *
  * 親 (SlotCard / リストカード) が stretched button パターンで card 全体タップを
- * 拾うため、展開ボタン・スクロール領域は `relative z-20` + `pointer-events-auto`
- * + `stopPropagation` で独立クリック可能にする。
- *
- * アニメーション:
- * - ChevronDown を `rotate-180` で展開時に上向きに回転（300ms transition）
- * - fade-out グラデは展開時に opacity 0 で消える（300ms transition）
- * - スクロール領域の overflow は瞬時切替（ブラウザ標準）
+ * 拾うため、スクロール領域は `relative z-20` + `pointer-events-auto` で独立。
+ * リスト内 li タップ自体は stretched button へバブルさせて「ブース詳細を開く」
+ * 動作を自然に発火させる（onClickCapture stopPropagation はしない）。
  */
 function CardMainPreview({
   details,
@@ -177,12 +175,7 @@ function CardMainPreview({
   details: ReadonlyArray<MerchandiseDetail>;
   className?: string;
 }) {
-  const [expanded, setExpanded] = useState(false);
-  const hasMore = details.length > CARD_MAIN_PREVIEW_COUNT;
-  const hiddenCount = details.length - CARD_MAIN_PREVIEW_COUNT;
-  // 4 件以上の番組はリスト領域を 132px で固定（折りたたみ時 / 展開時とも同じ）
-  // 3 件以下の番組はそもそも overflow しないため maxHeight 制限なし
-  const listMaxHeight = hasMore ? `${CARD_MAIN_LIST_HEIGHT_PX}px` : undefined;
+  const isScrollable = details.length > CARD_MAIN_SCROLL_THRESHOLD;
 
   return (
     <div className={className ?? ''}>
@@ -191,25 +184,35 @@ function CardMainPreview({
       </p>
       <div
         className={
-          // 展開時はスクロール操作のため pointer-events-auto を有効化
-          // （親 article の pointer-events-none を上書き、stretched button より前面に）
-          hasMore && expanded
+          // スクロール扱いの番組はホイール / タッチ操作のため pointer-events-auto を有効化
+          isScrollable
             ? 'relative mt-1.5 z-20 pointer-events-auto'
             : 'relative mt-1.5'
         }
       >
         <ul
-          className="flex flex-col gap-1.5"
-          style={{
-            maxHeight: listMaxHeight,
-            overflowY: hasMore && expanded ? 'auto' : 'hidden',
-          }}
-          // 親要素の pointer-events-none を継承するが、wheel イベント受付のため
-          // 展開時は内側 ul もスクロール許可
-          onClickCapture={(e) => {
-            // 展開時の li クリックがバブルして stretched button を触らないように
-            if (expanded) e.stopPropagation();
-          }}
+          className={
+            isScrollable
+              ? // カスタムスクロールバー: 細幅 + primary 系の thumb でサイトの雰囲気と整合
+                'flex flex-col gap-1.5 overflow-y-auto pr-1 ' +
+                '[&::-webkit-scrollbar]:w-1 ' +
+                '[&::-webkit-scrollbar-track]:bg-transparent ' +
+                '[&::-webkit-scrollbar-thumb]:bg-primary-200 ' +
+                '[&::-webkit-scrollbar-thumb]:rounded-full ' +
+                '[&::-webkit-scrollbar-thumb:hover]:bg-primary-300'
+              : 'flex flex-col gap-1.5'
+          }
+          style={
+            isScrollable
+              ? {
+                  maxHeight: `${CARD_MAIN_LIST_HEIGHT_PX}px`,
+                  // Firefox 用のスクロールバースタイル指定
+                  scrollbarWidth: 'thin',
+                  scrollbarColor:
+                    'var(--color-primary-200) transparent',
+                }
+              : undefined
+          }
         >
           {details.map((item, i) => (
             <li key={i} className="flex items-start gap-2">
@@ -220,44 +223,14 @@ function CardMainPreview({
             </li>
           ))}
         </ul>
-        {/* 折りたたみ時、リスト下端に fade-out グラデで「下にもまだある」感を出す。
-            展開時は opacity 0 にすることでフェードアウト */}
-        {hasMore ? (
+        {/* 下端 fade-out グラデ: 「下にもある」感を視覚化（スクロール対象のときだけ） */}
+        {isScrollable ? (
           <div
             aria-hidden="true"
-            className={
-              expanded
-                ? 'pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white via-white/80 to-transparent opacity-0 transition-opacity duration-300'
-                : 'pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white via-white/80 to-transparent opacity-100 transition-opacity duration-300'
-            }
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white via-white/80 to-transparent"
           />
         ) : null}
       </div>
-
-      {/* もっと見る / 閉じるボタン（4 件以上の番組のみ） — 1 つの ChevronDown を回転させて状態表現 */}
-      {hasMore ? (
-        <button
-          type="button"
-          onClick={(e) => {
-            // stretched button（card 全体タップ）にバブルさせない
-            e.stopPropagation();
-            setExpanded((v) => !v);
-          }}
-          aria-expanded={expanded}
-          className="relative z-20 mt-2 flex w-full items-center justify-center gap-1 rounded-full bg-neutral-100 py-1.5 text-[11px] font-bold text-neutral-700 transition-colors hover:bg-neutral-200 pointer-events-auto"
-        >
-          <span>{expanded ? '閉じる' : `あと ${hiddenCount} 件を見る`}</span>
-          <ChevronDown
-            size={14}
-            aria-hidden="true"
-            className={
-              expanded
-                ? 'transition-transform duration-300 rotate-180'
-                : 'transition-transform duration-300'
-            }
-          />
-        </button>
-      ) : null}
     </div>
   );
 }
