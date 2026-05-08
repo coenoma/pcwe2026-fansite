@@ -137,11 +137,14 @@ export function MerchandiseGroupCard({ group, compact = false, tweets }: Props) 
               {item.name}
             </h3>
             {item.description !== undefined && item.description.length > 0 ? (
+              // whitespace-pre-line で JSON 内の \n / 空行を改行 / 段落区切りとして
+              // 反映する。長文の description は意味の塊で改行を入れて読みやすくする
+              // 運用方針（AGENTS.md でも案内）。
               <p
                 className={
                   compact
-                    ? 'mt-1 text-xs leading-relaxed text-neutral-700'
-                    : 'mt-1 text-sm leading-relaxed text-neutral-700'
+                    ? 'mt-1 whitespace-pre-line text-xs leading-relaxed text-neutral-700'
+                    : 'mt-1 whitespace-pre-line text-sm leading-relaxed text-neutral-700'
                 }
               >
                 {item.description}
