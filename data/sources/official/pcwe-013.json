@@ -15,41 +15,40 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "ブース 25-C 確定 + 全グッズ告知（5/9 土・現金のみ）",
-        "description": "5/9（土）ブース 25-C 出展。新作のピスパフェグッズ + 過去にカズマが作成した作字グッズを持参。支払いは現金のみ。",
-        "sourceUrl": "https://x.com/pisparfaitclub/status/2052610597930578170",
-        "sourceType": "x-post",
-        "additionalSources": [
-          {
-            "url": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
-            "type": "web",
-            "label": "Spotify エピソード「PODCAST EXPOで何するの？」（事前告知）"
-          }
-        ]
+        "name": "① ヘビーウェイターあくびステッカー",
+        "description": "看板犬「パナマ家のあくび」がピスパフェを聴いてるイメージで作成。リスナー呼称「ウェイター」にちなんだ PODCAST EXPO ピッタリの 1 枚。",
+        "sourceUrl": "https://x.com/pisparfaitclub/status/2052031826420695528",
+        "sourceType": "x-post"
       },
       {
-        "name": "あくびステッカー（2 種）",
-        "description": "番組看板犬「あくび」のステッカー、2 種類展開。",
-        "sourceUrl": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
-        "sourceType": "web"
+        "name": "② 寝そべり \"Chill\" あくびステッカー（偏光オーロラ加工）",
+        "description": "のんびり屋なチワワ「あくび」が部屋で寝そべって \"Chill\" してるイメージ。偏光オーロラ加工でキラキラ。番組名が一切入っていないので、世のかわいいもの好き必見。",
+        "sourceUrl": "https://x.com/pisparfaitclub/status/2052034636180836438",
+        "sourceType": "x-post"
       },
       {
-        "name": "あくび＆番組ロゴしおり（2 種）",
-        "description": "番組看板犬「あくび」と番組ロゴをデザインしたしおり、2 種類展開。",
-        "sourceUrl": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
-        "sourceType": "web"
+        "name": "③ \"読書のあく\" ブックマーカー（黄クリア）",
+        "description": "「読書の秋」と「あくび」を掛けたしおり。チワワの特徴 \"アップルヘッド\" が強調される横顔デザイン。黄色がかったクリアプラ素材、ロゴ・紐は番組と縁が深いオレンジ。",
+        "sourceUrl": "https://x.com/pisparfaitclub/status/2052223849350263216",
+        "sourceType": "x-post"
       },
       {
-        "name": "番組ロゴコースター",
-        "description": "番組ロゴデザインのコースター。",
-        "sourceUrl": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
-        "sourceType": "web"
+        "name": "④ カズマのホクロで一安心ブックマーカー（全面箔押し）",
+        "description": "番組アートワークを線画調に描き、全面箔押し加工でキラキラ。緑はピスタチオカラー。「カズマ（左）のホクロが取れるのでは？」という制作上の不安があったが問題ない仕上がり。",
+        "sourceUrl": "https://x.com/pisparfaitclub/status/2052228280296841321",
+        "sourceType": "x-post"
       },
       {
-        "name": "カズマ自作ステッカー（2 種）",
-        "description": "メンバーの「プラダを着たカズマ」が自作したステッカー、2 種類展開。",
-        "sourceUrl": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
-        "sourceType": "web"
+        "name": "⑤ スーベニアピスカフェコースター（コルク）",
+        "description": "番組アートワークを描いたコルク素材コースター。番組名にちなんだテーブル周りグッズで、お土産感覚で友達に配って欲しいアイテム。",
+        "sourceUrl": "https://x.com/pisparfaitclub/status/2052230329839268005",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "⑥ パフェ FRIDAY ステッカー（カズマデザイン新作）",
+        "description": "毎週火曜にタコスを食べる習慣 \"タコ・チューズデー\" にあやかって、「金曜日にピスパフェを聴こう！」「1 週間お疲れ様！パフェ食べよう！」という意味を込めたカラフルな 1 枚。",
+        "sourceUrl": "https://x.com/pisparfaitclub/status/2052593702879756755",
+        "sourceType": "x-post"
       }
     ],
     "merchandiseTags": [
