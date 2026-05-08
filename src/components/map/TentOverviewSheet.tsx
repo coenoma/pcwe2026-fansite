@@ -119,16 +119,51 @@ export function TentOverviewSheet({
         aria-labelledby="tent-overview-title"
         className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto flex max-h-[95vh] max-w-5xl flex-col overflow-hidden rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[95vh]"
       >
-        {/* sticky ヘッダー（drag handle + タイトル + 閉じる）*/}
-        <div className="shrink-0 bg-white">
-          <div className="flex justify-center pb-1 pt-3">
-            <span
-              aria-hidden="true"
-              className="block h-1.5 w-12 rounded-full bg-neutral-200"
-            />
-          </div>
+        {/* drag handle: タップ or 下スワイプ（60px 以上）で閉じる */}
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="シートを閉じる（つまみをタップ or 下にスワイプ）"
+          onPointerDown={(e) => {
+            const startY = e.clientY;
+            const target = e.currentTarget;
+            target.setPointerCapture(e.pointerId);
+            const onMove = (moveE: PointerEvent) => {
+              if (moveE.clientY - startY > 60) {
+                target.removeEventListener('pointermove', onMove);
+                target.removeEventListener('pointerup', onUp);
+                onClose();
+              }
+            };
+            const onUp = () => {
+              target.removeEventListener('pointermove', onMove);
+              target.removeEventListener('pointerup', onUp);
+            };
+            target.addEventListener('pointermove', onMove);
+            target.addEventListener('pointerup', onUp);
+          }}
+          className="shrink-0 flex w-full cursor-grab justify-center bg-white pt-3 active:cursor-grabbing focus-visible:outline-2 focus-visible:outline-primary-500"
+        >
+          <span
+            aria-hidden="true"
+            className="block h-1.5 w-12 rounded-full bg-neutral-300 transition-colors hover:bg-neutral-400"
+          />
+        </button>
 
-          <div className="flex items-start justify-between gap-3 px-5 pb-2 pt-1">
+        {/* バツボタン（モーダル右上に常時固定）*/}
+        <button
+          ref={closeButtonRef}
+          type="button"
+          aria-label="閉じる"
+          onClick={onClose}
+          className="absolute right-3 top-3 z-40 rounded-full bg-white/95 p-1.5 text-neutral-500 shadow-md backdrop-blur transition-colors hover:bg-white hover:text-neutral-900"
+        >
+          <X size={20} aria-hidden="true" />
+        </button>
+
+        {/* タイトル（drag handle と本文の間）*/}
+        <div className="shrink-0 bg-white">
+          <div className="flex items-start justify-between gap-3 px-5 pb-2 pt-2 pr-12">
             <div className="flex-1 min-w-0">
               <p className="text-[11px] font-bold text-primary-600">
                 テント {tentId}（{dayLabel}・{sortedSlots.length} 区画）
@@ -147,16 +182,6 @@ export function TentOverviewSheet({
                 </p>
               ) : null}
             </div>
-
-            <button
-              ref={closeButtonRef}
-              type="button"
-              aria-label="閉じる"
-              onClick={onClose}
-              className="rounded-full p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
-            >
-              <X size={20} aria-hidden="true" />
-            </button>
           </div>
         </div>
 

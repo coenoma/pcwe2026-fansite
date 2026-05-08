@@ -114,18 +114,52 @@ export function BoothBottomSheet({
         aria-labelledby="booth-sheet-title"
         className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto flex max-h-[80vh] max-w-5xl flex-col overflow-hidden rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[88vh]"
       >
-        {/* drag handle */}
-        <div className="sticky top-0 flex justify-center bg-white pt-3">
+        {/* drag handle: タップで閉じる + 下スワイプ（10px 以上）で閉じる */}
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="ボトムシートを閉じる（つまみをタップ or 下にスワイプ）"
+          onPointerDown={(e) => {
+            const startY = e.clientY;
+            const target = e.currentTarget;
+            target.setPointerCapture(e.pointerId);
+            const onMove = (moveE: PointerEvent) => {
+              if (moveE.clientY - startY > 60) {
+                target.removeEventListener('pointermove', onMove);
+                target.removeEventListener('pointerup', onUp);
+                onClose();
+              }
+            };
+            const onUp = () => {
+              target.removeEventListener('pointermove', onMove);
+              target.removeEventListener('pointerup', onUp);
+            };
+            target.addEventListener('pointermove', onMove);
+            target.addEventListener('pointerup', onUp);
+          }}
+          className="sticky top-0 z-30 flex w-full cursor-grab justify-center bg-white py-3 active:cursor-grabbing focus-visible:outline-2 focus-visible:outline-primary-500"
+        >
           <span
             aria-hidden="true"
-            className="block h-1.5 w-12 rounded-full bg-neutral-200"
+            className="block h-1.5 w-12 rounded-full bg-neutral-300 transition-colors hover:bg-neutral-400"
           />
-        </div>
+        </button>
+
+        {/* バツボタン（モーダル右上に常時固定、スクロールしても見える） */}
+        <button
+          ref={closeButtonRef}
+          type="button"
+          aria-label="ボトムシートを閉じる"
+          onClick={onClose}
+          className="absolute right-3 top-3 z-40 rounded-full bg-white/95 p-1.5 text-neutral-500 shadow-md backdrop-blur transition-colors hover:bg-white hover:text-neutral-900"
+        >
+          <X size={20} aria-hidden="true" />
+        </button>
 
         {/* スクロール領域 */}
         <div className="flex-1 overflow-y-auto pb-2">
           {/* ヘッダー */}
-          <div className="flex items-start gap-3 px-5 pt-2">
+          <div className="flex items-start gap-3 px-5 pt-2 pr-12">
             {program ? (
               <Image
                 src={program.thumbnail}
@@ -163,16 +197,6 @@ export function BoothBottomSheet({
                 </p>
               ) : null}
             </div>
-
-            <button
-              ref={closeButtonRef}
-              type="button"
-              aria-label="ボトムシートを閉じる"
-              onClick={onClose}
-              className="rounded-full p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
-            >
-              <X size={20} aria-hidden="true" />
-            </button>
           </div>
 
           {/* キャッチコピー */}
