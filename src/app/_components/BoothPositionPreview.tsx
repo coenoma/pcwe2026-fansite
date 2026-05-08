@@ -93,13 +93,16 @@ export function BoothPositionPreview({
   bigThumbY = Math.max(8, Math.min(bigThumbY, imgH - bigThumbSize - labelHeight - 8));
   const bigThumbCx = bigThumbX + bigThumbSize / 2;
   const bigThumbCy = bigThumbY + bigThumbSize / 2;
-  // 「ここ！」吹き出しの位置: focus 真上に大きめ
-  // 視認性最優先で focus の 2.5 倍幅 + 大型フォント
-  const hereLabelW = Math.round(Math.max(focusW * 2.5, 80));
-  const hereLabelH = Math.round(Math.max(focusH * 0.9, 36));
+  // 「ここ！」吹き出し: focus の 3 倍幅・1.2 倍高で巨大に + 三角ポインタが focus に
+  // めり込まないよう十分な距離をとる（パルス枠 8px + 余白 16px = 24px 離す）
+  const hereLabelW = Math.round(Math.max(focusW * 3, 96));
+  const hereLabelH = Math.round(Math.max(focusH * 1.2, 42));
   const hereLabelX = tentCx - hereLabelW / 2;
-  const hereLabelY = focusY - hereLabelH - 16;
-  const hereLabelFontSize = Math.round(hereLabelH * 0.6);
+  const hereTriangleH = Math.round(hereLabelH * 0.45);
+  // hereLabelY + hereLabelH + hereTriangleH + 余白 ≤ focusY - パルス枠 8px
+  // → hereLabelY = focusY - hereLabelH - hereTriangleH - 16
+  const hereLabelY = focusY - hereLabelH - hereTriangleH - 16;
+  const hereLabelFontSize = Math.round(hereLabelH * 0.65);
   // ブース番号バッジ（サムネ右上、ピル型）。「11-C」3 文字を綺麗に収める
   const badgeFontSize = Math.round(bigThumbSize * 0.16);
   const badgeH = Math.round(bigThumbSize * 0.28);
@@ -281,7 +284,7 @@ export function BoothPositionPreview({
             />
           </rect>
 
-          {/* 「ここ！」大きい吹き出し（focus 真上、focusW の 1.6 倍幅）*/}
+          {/* 「ここ！」巨大吹き出し（focus 真上、focusW の 3 倍幅）*/}
           <rect
             x={hereLabelX}
             y={hereLabelY}
@@ -290,9 +293,9 @@ export function BoothPositionPreview({
             rx={hereLabelH / 2}
             fill="var(--color-accent-cyan-500, #00b3d4)"
           />
-          {/* 三角ポインタ */}
+          {/* 三角ポインタ（吹き出し下端から focus 手前まで） */}
           <polygon
-            points={`${tentCx - hereLabelH / 3},${hereLabelY + hereLabelH} ${tentCx + hereLabelH / 3},${hereLabelY + hereLabelH} ${tentCx},${hereLabelY + hereLabelH + hereLabelH / 2.5}`}
+            points={`${tentCx - hereLabelH / 3},${hereLabelY + hereLabelH} ${tentCx + hereLabelH / 3},${hereLabelY + hereLabelH} ${tentCx},${hereLabelY + hereLabelH + hereTriangleH}`}
             fill="var(--color-accent-cyan-500, #00b3d4)"
           />
           <text
