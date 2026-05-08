@@ -266,6 +266,29 @@ export function BoothBottomSheet({
             </div>
           ) : null}
 
+          {/* v1.14: external（スポンサー / キッチン等）でも物販詳細があれば表示 */}
+          {placement.externalMerchandiseDetails &&
+          placement.externalMerchandiseDetails.length > 0 ? (
+            <section
+              aria-labelledby="booth-external-merch-heading"
+              className="mx-5 mt-4 border-t border-neutral-100 pt-4"
+            >
+              <h3
+                id="booth-external-merch-heading"
+                className="text-xs font-bold tracking-wide text-neutral-500"
+              >
+                🛍 ブース物販
+              </h3>
+              <div className="mt-3">
+                <MerchandiseList
+                  details={placement.externalMerchandiseDetails}
+                  layout="popup"
+                  tweets={tweets}
+                />
+              </div>
+            </section>
+          ) : null}
+
           {/* スポンサー専用説明 */}
           {isSponsor ? (
             <div className="mx-5 mt-4 rounded-xl bg-secondary-50 px-4 py-3">

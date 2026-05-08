@@ -11,6 +11,7 @@
 import boothPositionsJson from '../../data/booth-positions.json';
 import { BoothPositionsDataSchema } from './types';
 import type {
+  BoothExternal,
   BoothPositionsData,
   Day,
   Program,
@@ -44,6 +45,8 @@ export interface SlotPlacement {
   externalName?: string;
   externalUrl?: string;
   externalNote?: string;
+  /** v1.14: external でも物販詳細を持てる場合に保持 */
+  externalMerchandiseDetails?: BoothExternal['merchandiseDetails'];
 }
 
 export function getSlotPlacementsForDay(
@@ -75,6 +78,7 @@ export function getSlotPlacementsForDay(
           externalName: ext.name,
           externalUrl: ext.url,
           externalNote: ext.note,
+          externalMerchandiseDetails: ext.merchandiseDetails,
         });
       }
     }

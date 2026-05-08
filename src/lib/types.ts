@@ -372,6 +372,12 @@ export const BoothExternalSchema = z.object({
   name: z.string().min(1),
   url: z.string().url().optional(),
   note: z.string().optional(),
+  /**
+   * v1.14: external（スポンサー / キッチン / 外部番組）でも、ホスト本人や運営の
+   * 投稿で具体的な物販・体験情報がある場合に詳細を保持できるよう拡張。
+   * Program.official.merchandiseDetails と同じスキーマを再利用。
+   */
+  merchandiseDetails: z.array(MerchandiseDetailSchema).optional(),
 });
 export type BoothExternal = z.infer<typeof BoothExternalSchema>;
 
