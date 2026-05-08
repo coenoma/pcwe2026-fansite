@@ -12,14 +12,22 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（10・31 番組イベント開催！『ひるののうか』（みかん収穫体）",
-        "description": "PODCAST WEEKEND / PODCAST EXPO 2026（5月9日、東京・池尻 HOME/WORK VILLAGE）にて『八朔ジュース』を販売予定。「農産物以外は売れない」事情から八朔ジュースに絞ったとの言及。ホスト2名分の2種類のジュースを用意。価格はエピソード内で明示なし",
-        "sourceUrl": "https://listen.style/p/yorunonouka/8klseuwk",
-        "sourceType": "web"
+        "name": "八朔ジュース 2 種飲み比べ（5/9 土・180ml 小瓶あり）",
+        "description": "📅 5/9（土）出店。\n\nラインナップ:\n- 🍊 山本農園の普通八朔で絞った「普通八朔ジュース」\n- 🍊 いとうふぁ〜むのさつき八朔で絞った「さつき八朔ジュース」\n\n180ml 小瓶があるので飲み比べ推奨（味は全く違うとのこと）。",
+        "sourceUrl": "https://x.com/kobukirubiru/status/2052660016793124987",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/yorunonouka/8klseuwk",
+            "type": "web",
+            "label": "Listen エピソード（事前告知・「農産物以外は売れない」事情）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
-      "food-drink"
+      "food-drink",
+      "limited-new"
     ]
   },
   "exhibition": {

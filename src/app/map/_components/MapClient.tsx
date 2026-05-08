@@ -20,7 +20,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Image as ImageIcon, ShoppingBag } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import { VenueMap } from '@/components/map/VenueMap';
 import { BoothBottomSheet } from '@/components/map/BoothBottomSheet';
 import { DayToggle } from '@/components/map/DayToggle';
@@ -109,24 +109,8 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   // 「お手元の AI に聞く」モーダル
   const [aiModalOpen, setAiModalOpen] = useState(false);
-  // v1.13: マップで番組サムネ表示モード（localStorage で永続化）。
-  // 番号で探したい時 OFF、サムネで視覚的に探したい時 ON。
-  const [showThumbnails, setShowThumbnails] = useState(false);
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    setShowThumbnails(localStorage.getItem('pcwe2026-map-thumbnails') === '1');
-  }, []);
-  const handleToggleThumbnails = useCallback(() => {
-    setShowThumbnails((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem('pcwe2026-map-thumbnails', next ? '1' : '0');
-      } catch (error) {
-        console.warn('⚠️ サムネ表示設定の保存に失敗しました', error);
-      }
-      return next;
-    });
-  }, []);
+  // 番組アートワーク表示モードは VenueMap 内で state 管理（localStorage 永続化）。
+  // 「マップに対する設定」として、マップ右上の絶対配置トグルに UI を移設（v1.13.1）。
 
   // フィルタ + 検索 + お気に入りモードを適用
   const placementsFiltered = useMemo(() => {
@@ -483,28 +467,7 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
                 selectedDay={day}
                 onChange={handleDayChange}
               />
-              {/* v1.13: マップでサムネ表示の ON/OFF（localStorage 永続）。
-                  list ビューでは無効。 */}
-              {view === 'map' ? (
-                <button
-                  type="button"
-                  onClick={handleToggleThumbnails}
-                  aria-pressed={showThumbnails}
-                  aria-label={
-                    showThumbnails
-                      ? '番組サムネ表示中（OFF にする）'
-                      : '番組サムネを表示する'
-                  }
-                  className={
-                    showThumbnails
-                      ? 'inline-flex shrink-0 items-center gap-1 rounded-full bg-secondary-500 px-2.5 py-1 text-[11px] font-bold text-white shadow-sm transition-colors'
-                      : 'inline-flex shrink-0 items-center gap-1 rounded-full border border-secondary-200 bg-secondary-50 px-2.5 py-1 text-[11px] font-bold text-secondary-700 transition-colors hover:bg-secondary-100'
-                  }
-                >
-                  <ImageIcon size={12} aria-hidden="true" />
-                  <span>サムネ</span>
-                </button>
-              ) : null}
+              {/* 番組アートワーク表示トグルは VenueMap 内（マップ右上）に移設（v1.13.1）*/}
             </div>
           </div>
 
@@ -608,7 +571,6 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
               highlightedPositions={highlightedPositions}
               favoriteProgramIds={favoriteProgramIdSet}
               visitedPositions={visitedPositionSet}
-              showThumbnails={showThumbnails}
             />
           </div>
           <p className="mt-2 text-center text-xs leading-relaxed text-neutral-500">

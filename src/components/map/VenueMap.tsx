@@ -47,9 +47,6 @@ interface Props {
   favoriteProgramIds?: Set<string>;
   /** 「会えた」済みの position 集合（ピンに✅マーク）*/
   visitedPositions?: Set<string>;
-  /** v1.13: 番組サムネ表示モード（single tent + detail zoom slot に番組アートワーク
-   *  を SVG image で表示。quad テント全体表示・キッチン・スポンサーには適用しない）*/
-  showThumbnails?: boolean;
 }
 
 const FALLBACK_IMAGE_SIZE = { width: 932, height: 808 };
@@ -65,8 +62,31 @@ export function VenueMap({
   highlightedPositions,
   favoriteProgramIds,
   visitedPositions,
-  showThumbnails = false,
 }: Props) {
+  // v1.13.1: 番組アートワーク表示の ON/OFF をマップ内で完結管理。
+  // - デフォルト ON（番組サムネで視覚的に探すのが楽しい）
+  // - localStorage で永続化、明示 OFF を尊重
+  // - 右上にスイッチ UI（後述）で切替
+  const [showThumbnails, setShowThumbnails] = useState(true);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const stored = localStorage.getItem('pcwe2026-map-thumbnails');
+    if (stored !== null) {
+      // 明示的に保存されている場合のみ上書き（初回ユーザーは true 維持）
+      setShowThumbnails(stored === '1');
+    }
+  }, []);
+  const handleToggleThumbnails = () => {
+    setShowThumbnails((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('pcwe2026-map-thumbnails', next ? '1' : '0');
+      } catch (error) {
+        console.warn('⚠️ 番組アートワーク表示設定の保存に失敗しました', error);
+      }
+      return next;
+    });
+  };
   const imageSize = data.imageSize ?? FALLBACK_IMAGE_SIZE;
   const placementByPosition = new Map<string, SlotPlacement>();
   for (const p of placements) {
@@ -321,6 +341,41 @@ export function VenueMap({
                 <span>A・B・C・D 直接タップ可能</span>
               </div>
             ) : null}
+
+            {/* v1.13.1: 番組アートワーク表示トグル（マップ右上、スイッチ UI）。
+                マップに対する設定であることを位置で明示し、デフォルトを ON に。
+                押すたびに localStorage に永続化される。 */}
+            <button
+              type="button"
+              onClick={handleToggleThumbnails}
+              role="switch"
+              aria-checked={showThumbnails}
+              aria-label={
+                showThumbnails
+                  ? '番組アートワーク表示中（OFF にする）'
+                  : '番組アートワークを表示する'
+              }
+              className="pointer-events-auto absolute right-3 top-3 z-10 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-bold text-neutral-700 shadow-md backdrop-blur transition-colors hover:bg-white"
+            >
+              <span>番組アートワーク</span>
+              <span
+                aria-hidden="true"
+                className={
+                  showThumbnails
+                    ? 'relative inline-flex h-4 w-7 items-center rounded-full bg-secondary-500 transition-colors'
+                    : 'relative inline-flex h-4 w-7 items-center rounded-full bg-neutral-300 transition-colors'
+                }
+              >
+                <span
+                  className="absolute h-3 w-3 rounded-full bg-white shadow transition-transform"
+                  style={{
+                    transform: showThumbnails
+                      ? 'translateX(14px)'
+                      : 'translateX(2px)',
+                  }}
+                />
+              </span>
+            </button>
 
             {/* ズームコントロール（右下に固定）*/}
             <div className="pointer-events-auto absolute bottom-3 right-3 z-10 flex flex-col gap-1.5">
