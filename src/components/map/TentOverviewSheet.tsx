@@ -18,6 +18,9 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { MerchandisePreview } from '@/components/merchandise/MerchandisePreview';
+import { BoothStateBadges } from './BoothStateBadges';
+import { compactHours } from '@/lib/format';
+import { tagAxis, tagAxisClass } from '@/lib/tag-axis';
 import type { Day, Program, MerchandiseTag } from '@/lib/types';
 
 export interface TentSlotInfo {
@@ -28,6 +31,10 @@ export interface TentSlotInfo {
   externalName?: string;
   /** 現在のフィルタ条件にヒットしているか（フィルタなしなら true）*/
   matchesFilter?: boolean;
+  /** お気に入り登録中か（v1.9 状態バッジ表示用）*/
+  isFavorite?: boolean;
+  /** 「会えた」記録ありか（v1.9 状態バッジ表示用）*/
+  isVisited?: boolean;
 }
 
 interface Props {
@@ -111,73 +118,78 @@ export function TentOverviewSheet({
         role="dialog"
         aria-modal="true"
         aria-labelledby="tent-overview-title"
-        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto max-h-[88vh] max-w-5xl overflow-y-auto rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[92vh]"
+        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto flex max-h-[55vh] max-w-5xl flex-col overflow-hidden rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[60vh]"
       >
-        <div className="sticky top-0 flex justify-center bg-white pb-1 pt-3">
-          <span
-            aria-hidden="true"
-            className="block h-1.5 w-12 rounded-full bg-neutral-200"
-          />
-        </div>
-
-        <div className="flex items-start justify-between gap-3 px-5 pb-2 pt-2">
-          <div className="flex-1 min-w-0">
-            <p className="text-xs font-bold text-primary-600">
-              テント {tentId}（{dayLabel}・{sortedSlots.length} 区画）
-            </p>
-            <h2
-              id="tent-overview-title"
-              className="mt-1 text-lg font-bold leading-tight text-neutral-900"
-            >
-              {hasFilter
-                ? `条件にヒットしたブースだけ表示中 ✨`
-                : '気になるブースを選んでね'}
-            </h2>
-            <p className="mt-1 text-xs text-neutral-500">
-              {hasFilter
-                ? `${displaySlots.length} 件ヒット（${filteredOutCount} 件は条件外で非表示）`
-                : `A・B・C・D の ${sortedSlots.length} 区画から気になるブースをタップ`}
-            </p>
+        {/* sticky ヘッダー（drag handle + タイトル + 閉じる）*/}
+        <div className="shrink-0 bg-white">
+          <div className="flex justify-center pb-1 pt-3">
+            <span
+              aria-hidden="true"
+              className="block h-1.5 w-12 rounded-full bg-neutral-200"
+            />
           </div>
 
-          <button
-            ref={closeButtonRef}
-            type="button"
-            aria-label="閉じる"
-            onClick={onClose}
-            className="rounded-full p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
-          >
-            <X size={20} aria-hidden="true" />
-          </button>
+          <div className="flex items-start justify-between gap-3 px-5 pb-2 pt-1">
+            <div className="flex-1 min-w-0">
+              <p className="text-[11px] font-bold text-primary-600">
+                テント {tentId}（{dayLabel}・{sortedSlots.length} 区画）
+              </p>
+              <h2
+                id="tent-overview-title"
+                className="mt-0.5 text-sm font-bold leading-tight text-neutral-900"
+              >
+                {hasFilter
+                  ? `条件ヒット ${displaySlots.length} 件 ✨`
+                  : '気になるブースを選んでね'}
+              </h2>
+              {hasFilter ? (
+                <p className="mt-0.5 text-[10px] text-neutral-500">
+                  ({filteredOutCount} 件は条件外で非表示)
+                </p>
+              ) : null}
+            </div>
+
+            <button
+              ref={closeButtonRef}
+              type="button"
+              aria-label="閉じる"
+              onClick={onClose}
+              className="rounded-full p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+            >
+              <X size={20} aria-hidden="true" />
+            </button>
+          </div>
         </div>
 
-        {/* 区画グリッド: ヒット件数に応じて 1 列 or 2 列 */}
-        <div
-          className={
-            displaySlots.length === 1
-              ? 'mx-auto grid max-w-md grid-cols-1 gap-3 px-5 pb-4 pt-3'
-              : 'grid grid-cols-2 gap-3 px-5 pb-4 pt-3'
-          }
-        >
-          {displaySlots.map((slot) => (
-            <SlotCard
-              key={slot.position}
-              slot={slot}
-              onClick={() => onSelectSlot(slot.position)}
-            />
-          ))}
-          {/* フィルタ未適用 + 区画 4 未満の場合のプレースホルダー */}
-          {!hasFilter
-            ? Array.from({ length: 4 - sortedSlots.length }).map((_, i) => (
-                <div
-                  key={`empty-${i}`}
-                  aria-hidden="true"
-                  className="rounded-2xl border border-dashed border-neutral-200 bg-neutral-50 p-3 text-center"
-                >
-                  <p className="text-xs text-neutral-400">空き / 情報未取得</p>
-                </div>
-              ))
-            : null}
+        {/* スクロール可能エリア */}
+        <div className="flex-1 overflow-y-auto">
+          <div
+            className={
+              displaySlots.length === 1
+                ? 'mx-auto grid max-w-md grid-cols-1 gap-3 px-5 pb-4 pt-2'
+                : 'grid grid-cols-2 gap-3 px-5 pb-4 pt-2'
+            }
+          >
+            {displaySlots.map((slot) => (
+              <SlotCard
+                key={slot.position}
+                slot={slot}
+                onClick={() => onSelectSlot(slot.position)}
+              />
+            ))}
+            {/* フィルタ未適用 + 区画 4 未満の場合のプレースホルダー */}
+            {!hasFilter
+              ? Array.from({ length: 4 - sortedSlots.length }).map((_, i) => (
+                  <div
+                    key={`empty-${i}`}
+                    aria-hidden="true"
+                    className="rounded-2xl border border-dashed border-neutral-200 bg-neutral-50 p-3 text-center"
+                  >
+                    <p className="text-xs text-neutral-400">空き / 情報未取得</p>
+                  </div>
+                ))
+              : null}
+          </div>
         </div>
       </div>
 
@@ -206,6 +218,9 @@ function SlotCard({
   const isExternal = slot.externalKind !== undefined;
   const isKitchen = slot.externalKind === 'kitchen-only';
   const isSponsor = slot.externalKind === 'sponsor';
+  const hoursLabel = program ? compactHours(program.exhibition.hours) : null;
+  const fanTags = program?.fanGuide.tags ?? [];
+  const merchTags = program?.official.merchandiseTags ?? [];
 
   return (
     <button
@@ -213,36 +228,47 @@ function SlotCard({
       onClick={onClick}
       className="group flex flex-col rounded-2xl border border-neutral-200 bg-white p-3 text-left transition-all hover:border-primary-300 hover:shadow-md focus-visible:outline-2 focus-visible:outline-primary-500"
     >
-      <div className="flex items-center gap-2">
-        <span className="inline-flex h-7 min-w-7 items-center justify-center rounded-full bg-primary-500 px-2 text-xs font-bold text-white">
+      <div className="flex items-center gap-1.5">
+        <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-primary-500 px-1.5 text-[11px] font-bold text-white">
           {slot.position}
         </span>
+        {hoursLabel !== null ? (
+          <span className="text-[10px] text-neutral-500">{hoursLabel}</span>
+        ) : null}
         {program?.fanGuide.genre ? (
           <span className="truncate text-[10px] text-neutral-500">
-            {program.fanGuide.genre}
+            ・{program.fanGuide.genre}
           </span>
         ) : null}
       </div>
 
-      {/* サムネ + 番組名 + subCatch（横並び、サムネは 56x56） */}
+      {/* サムネ + 状態バッジ + 番組名 + subCatch */}
       <div className="mt-2 flex items-start gap-2.5">
-        {program ? (
-          <Image
-            src={program.thumbnail}
-            alt=""
-            width={56}
-            height={56}
-            className="h-14 w-14 shrink-0 rounded-lg object-cover"
-            aria-hidden="true"
+        <div className="relative shrink-0">
+          {program ? (
+            <Image
+              src={program.thumbnail}
+              alt=""
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-lg object-cover"
+              aria-hidden="true"
+            />
+          ) : (
+            <span
+              aria-hidden="true"
+              className="flex h-14 w-14 items-center justify-center rounded-lg bg-neutral-100 text-2xl"
+            >
+              {isSponsor ? '🤝' : isKitchen ? '🍳' : '📍'}
+            </span>
+          )}
+          <BoothStateBadges
+            isFavorite={slot.isFavorite ?? false}
+            isVisited={slot.isVisited ?? false}
+            size="sm"
+            className="absolute -right-1.5 -top-1.5"
           />
-        ) : (
-          <span
-            aria-hidden="true"
-            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-2xl"
-          >
-            {isSponsor ? '🤝' : isKitchen ? '🍳' : '📍'}
-          </span>
-        )}
+        </div>
         <div className="min-w-0 flex-1">
           <p className="line-clamp-2 text-xs font-bold leading-snug text-neutral-900">
             {program?.name ?? slot.externalName ?? '番組情報未登録'}
@@ -255,14 +281,45 @@ function SlotCard({
         </div>
       </div>
 
-      {/* グッズタグ（先頭 3 件） */}
-      {program?.official.merchandiseTags &&
-      program.official.merchandiseTags.length > 0 ? (
-        <p className="mt-2 flex flex-wrap gap-1">
-          {program.official.merchandiseTags.slice(0, 3).map((tag) => (
+      {/* catchphrase（amber 蛍光下線、line-clamp-2）*/}
+      {program?.fanGuide.catchphrase ? (
+        <p className="mt-2 line-clamp-2 text-[11px] leading-relaxed text-neutral-800">
+          <span
+            className="box-decoration-clone"
+            style={{
+              backgroundImage:
+                'linear-gradient(180deg, transparent 78%, rgba(252, 211, 77, 0.4) 78%, rgba(252, 211, 77, 0.4) 94%, transparent 94%)',
+              paddingInline: '0.1em',
+            }}
+          >
+            {program.fanGuide.catchphrase}
+          </span>
+        </p>
+      ) : null}
+
+      {/* fanGuide.tags（軸別カラー pill、上位 3 件）*/}
+      {fanTags.length > 0 ? (
+        <p className="mt-1.5 flex flex-wrap gap-1">
+          {fanTags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="inline-flex rounded-full bg-secondary-50 px-1.5 py-0.5 text-[9px] font-medium text-secondary-700"
+              className={`inline-flex rounded-full border px-1.5 py-0.5 text-[9px] font-medium ${tagAxisClass(
+                tagAxis(tag),
+              )}`}
+            >
+              {tag}
+            </span>
+          ))}
+        </p>
+      ) : null}
+
+      {/* グッズタグ（先頭 3 件）*/}
+      {merchTags.length > 0 ? (
+        <p className="mt-1 flex flex-wrap gap-1">
+          {merchTags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="inline-flex rounded-full bg-secondary-100 px-1.5 py-0.5 text-[9px] font-medium text-secondary-800"
             >
               {shortLabel(tag)}
             </span>
@@ -280,7 +337,7 @@ function SlotCard({
         />
       ) : null}
 
-      {/* spotlight（ファンガイドおすすめ、1 行） */}
+      {/* spotlight（ファンガイドおすすめ、1 行）*/}
       {program?.official.merchandiseSpotlight ? (
         <p className="mt-1.5 line-clamp-1 text-[10px] leading-snug text-primary-700">
           ✨ {program.official.merchandiseSpotlight}

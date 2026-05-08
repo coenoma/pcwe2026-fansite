@@ -206,6 +206,7 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
   // テント概要シート用：選択中テントの 4 区画情報
   // フィルタ・検索が効いている場合は **その条件にヒットした区画だけハイライト**、
   // それ以外は半透明扱いの情報を渡す（ユーザー FB: フィルタしたカテゴリの番組だけ強調）
+  // v1.9: お気に入り/会えた状態も併せて注入（SlotCard の状態バッジ表示用）
   const tentSlotsInfo: TentSlotInfo[] = useMemo(() => {
     if (selectedTentId === null) return [];
     const tent = boothPositions.tents.find((t) => t.id === selectedTentId);
@@ -215,16 +216,27 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
       const matchesFilter = highlightedPositions
         ? highlightedPositions.has(slot.position)
         : true;
+      const programId = pl?.programId;
       return {
         position: slot.position,
         slot: slot.slot,
-        program: pl?.programId ? programsById.get(pl.programId) : undefined,
+        program: programId ? programsById.get(programId) : undefined,
         externalKind: pl?.externalKind,
         externalName: pl?.externalName,
         matchesFilter,
+        isFavorite: programId !== undefined && favorites.includes(programId),
+        isVisited: slot.position in visited,
       };
     });
-  }, [selectedTentId, boothPositions, placementsAll, programsById, highlightedPositions]);
+  }, [
+    selectedTentId,
+    boothPositions,
+    placementsAll,
+    programsById,
+    highlightedPositions,
+    favorites,
+    visited,
+  ]);
 
   // ====== URL 同期 ======
   const updateUrl = useCallback(
@@ -522,6 +534,8 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
               placements={placementsFiltered}
               day={day}
               onSelect={handleSelectSlot}
+              favorites={favorites}
+              visited={visited}
             />
           </>
         )}
