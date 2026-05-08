@@ -38,8 +38,13 @@ export function MerchandisePreview({ details, variant, className }: Props) {
   if (details.length === 0) return null;
 
   const groups = groupMerchandiseDetails(details);
-  // 先頭グループの先頭アイテムを「代表」とする（運営の編集順を尊重）
-  const headItem = groups[0]!.items[0]!;
+  // 安全な代表アイテム取得: groupMerchandiseDetails の挙動上、details が空でなければ
+  // groups[0].items[0] は存在するが、型システムには伝わらないため明示的に early return する
+  // （non-null assertion を避けて型の整合を保つ AGENTS.md 方針）
+  const headGroup = groups[0];
+  if (headGroup === undefined) return null;
+  const headItem = headGroup.items[0];
+  if (headItem === undefined) return null;
   // バッジ用件数: 物販総件数 − 1（先頭 1 件は表示済み）
   const totalCount = details.length;
   const remainingCount = totalCount - 1;
@@ -151,7 +156,7 @@ function Thumbnail({
     <span
       aria-hidden="true"
       className="flex shrink-0 items-center justify-center rounded-md bg-neutral-100"
-      style={{ width: size, height: size, fontSize: size * 0.55 }}
+      style={{ width: size, height: size, fontSize: Math.round(size * 0.55) }}
     >
       🛍
     </span>
