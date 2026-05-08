@@ -34,7 +34,7 @@ a { color: #1a5fb4; }
   <h1>PCWE2026 全 145 番組 詳細データ（LLM 向け）</h1>
   <p>PODCAST EXPO 2026 内のマーケットイベント <strong>PODCAST WEEKEND 2026</strong>（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）出展 145 番組の詳細を 1 ページに集約した、LLM / AI クライアント向けの HTML データページです。</p>
   <p>人間向けファンガイドは <a href="https://pcwe2026-fansite.podmate.fm/">トップページ</a>。同じデータの他フォーマット: <a href="https://pcwe2026-fansite.podmate.fm/llms-full.txt">llms-full.txt</a> / <a href="https://pcwe2026-fansite.podmate.fm/api/programs.json">programs.json</a> / <a href="https://pcwe2026-fansite.podmate.fm/llms.txt">llms.txt（サイト地図）</a></p>
-  <p class="meta">最終ビルド: <time datetime="2026-05-07T23:58:52.154Z">2026-05-07T23:58:52.154Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
+  <p class="meta">最終ビルド: <time datetime="2026-05-08T00:27:12.329Z">2026-05-08T00:27:12.329Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
 </header>
 
 <nav class="toc">
@@ -1603,7 +1603,7 @@ DJやトラックメイカーの楽曲制作、イベント出演に関するウ
 ・東端佑典
 あくまでも理論的に馬券を当てることに拘るIT業界のビジネスマン。ロジカルだけでは的中できない競馬に没頭中。</p>
   
-  <p><strong>ブース物販</strong>: オリジナルステッカー / オリジナルおみくじ / オリジナルドリップパックコーヒー</p>
+  <p><strong>ブース物販</strong>: ウマくいく！おみくじ / 黄金旅程珈琲（ドリップパック） / オリジナルステッカー（限定音声付き / G1予想付き馬券型カード同梱版）</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-052">このサイトの番組詳細ページ</a></li>
@@ -2515,12 +2515,13 @@ https://forms.gle/pBpM7Zgs2BskExmJ7
   <h3>公式説明</h3>
   <p>作家のとくらじゅんと漫画家のニシハラハコがゆるっと喋るラジオ。毎週ベスト3を決めていきます。入眠にぴったりの声です。眠れない夜にぜひ。</p>
   
-  <p><strong>ブース物販</strong>: ステッカー / アクリルキーホルダー / 缶バッジ</p>
+  <p><strong>ブース物販</strong>: 合同誌「我々はSABETSUしている」（PCWE限定） / ステッカー / アクリルキーホルダー / 缶バッジ / 番組グッズ各種・本</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-083">このサイトの番組詳細ページ</a></li>
     <li><a href="https://podcastexpo.jp/booth/pcwe-083/" rel="nofollow noopener">PCWE 公式ブースページ</a></li>
     <li><a href="https://open.spotify.com/show/6rLMEpDAUbmvrLeb4rBx5b" rel="nofollow noopener">Spotify</a></li>
+    <li><a href="https://x.com/nishiharahaco" rel="nofollow noopener">X (Twitter)</a></li>
   </ul>
   <p><strong>番組ホストおすすめエピソード</strong>: <a href="https://open.spotify.com/episode/367wwOJ9quhIwqnuEWv61j?si=add8ae884b484794" rel="nofollow noopener">大人になって思うことベスト3</a></p>
 </article>
@@ -2900,6 +2901,7 @@ Observe, Think, Talk
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-096">このサイトの番組詳細ページ</a></li>
     <li><a href="https://podcastexpo.jp/booth/pcwe-096/" rel="nofollow noopener">PCWE 公式ブースページ</a></li>
     <li><a href="https://open.spotify.com/show/2wuDTCc51YGbjBsXKSpyCc" rel="nofollow noopener">Spotify</a></li>
+    <li><a href="https://x.com/NipporiZemi" rel="nofollow noopener">X (Twitter)</a></li>
   </ul>
   <p><strong>番組ホストおすすめエピソード</strong>: <a href="https://open.spotify.com/episode/0OAdk0Plef9vHrsa5aJJZS?si=62a5a6c1ac5b4044" rel="nofollow noopener">#51 お前ら大卒は俺ら高卒をバカにしてんだろと問題提議されました【補講】</a></p>
 </article>
@@ -3771,7 +3773,7 @@ BACKYARD TO CLOSETは、セレクトショップ SLOW&amp;STEADY を展開する
   <h3>公式説明</h3>
   <p>雑誌「暮らしのおへそ」（主婦と生活社刊）から生まれた番組です。「暮らしのおへそ」は、俳優、作家、料理家、陶芸家、デザイナーなど、さまざまな人の暮らしの中の習慣を「おへそ」と名付け、習慣から、その人の生き方暮らし方を紐解いていくライフスタイルマガジンです。小さな習慣ひとつかえることは、思っている以上に大きなもの。この番組では、自分だけのおへそ（＝習慣）を探してみたり、見つけてやってみたり、今までとは違うおへそを作ってみたり、そのプロセスを、リスナーさんと一緒に楽しむ番組です。パーソナリティ編集ディレクター・一田憲子と編集担当・木村愛のゆる～い雑談や、「おへそ」にまつわるリスナーさんからのお便り、雑誌の中の名言をとりあげる「おへその言葉」コーナーも。</p>
   
-  <p><strong>ブース物販</strong>: 雑誌 / ステッカー</p>
+  <p><strong>ブース物販</strong>: 書籍『暮らしのおへそ』 / オリジナルステッカー（無料配布） / イチダさんからの贈り物（？）</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-127">このサイトの番組詳細ページ</a></li>
@@ -3913,12 +3915,13 @@ BACKYARD TO CLOSETは、セレクトショップ SLOW&amp;STEADY を展開する
 心がちょっと軽くなる場所。
 それが、高揚館です。</p>
   
-  <p><strong>ブース物販</strong>: ZINE / ティッシュ / ステッカー / 似顔絵 / 占い / tシャツ</p>
+  <p><strong>ブース物販</strong>: ロボステッカー / 大人のエロZINE / 男性向けティッシュ / 先祖Tシャツ / 似顔絵 / 占い</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-132">このサイトの番組詳細ページ</a></li>
     <li><a href="https://podcastexpo.jp/booth/pcwe-132/" rel="nofollow noopener">PCWE 公式ブースページ</a></li>
     <li><a href="https://open.spotify.com/show/3aRbIg3jlFuB99VqOLgvd5" rel="nofollow noopener">Spotify</a></li>
+    <li><a href="https://x.com/shokuro_style" rel="nofollow noopener">X (Twitter)</a></li>
   </ul>
   <p><strong>番組ホストおすすめエピソード</strong>: <a href="https://open.spotify.com/episode/12WYPEGQ2Qu99McQmcn71T?si=61f_4S09QNGPbAzOG6cuNA&amp;pi=DlRF7YmBRPKnQ&amp;t=0" rel="nofollow noopener">【先祖が強すぎる】占われたら人生の答えが全部先祖だった</a></p>
 </article>
