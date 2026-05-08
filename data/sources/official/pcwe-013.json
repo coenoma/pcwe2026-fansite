@@ -15,35 +15,45 @@
     ],
     "merchandiseDetails": [
       {
+        "name": "ブース 25-C 確定 + 全グッズ告知（5/9 土・現金のみ）",
+        "description": "5/9（土）ブース 25-C 出展。新作のピスパフェグッズ + 過去にカズマが作成した作字グッズを持参。支払いは現金のみ。",
+        "sourceUrl": "https://x.com/pisparfaitclub/status/2052610597930578170",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
+            "type": "web",
+            "label": "Spotify エピソード「PODCAST EXPOで何するの？」（事前告知）"
+          }
+        ]
+      },
+      {
         "name": "あくびステッカー（2 種）",
-        "description": "番組看板犬「あくび」のステッカー、2 種類展開。Spotify エピソード「PODCAST EXPOで何するの？」にてホスト 3 人が販売ラインナップを解説。",
+        "description": "番組看板犬「あくび」のステッカー、2 種類展開。",
         "sourceUrl": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
         "sourceType": "web"
       },
       {
         "name": "あくび＆番組ロゴしおり（2 種）",
-        "description": "番組看板犬「あくび」と番組ロゴをデザインしたしおり、2 種類展開。Spotify エピソード「PODCAST EXPOで何するの？」にて告知。",
+        "description": "番組看板犬「あくび」と番組ロゴをデザインしたしおり、2 種類展開。",
         "sourceUrl": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
         "sourceType": "web"
       },
       {
         "name": "番組ロゴコースター",
-        "description": "番組ロゴデザインのコースター。Spotify エピソード「PODCAST EXPOで何するの？」にて告知。",
+        "description": "番組ロゴデザインのコースター。",
         "sourceUrl": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
         "sourceType": "web"
       },
       {
         "name": "カズマ自作ステッカー（2 種）",
-        "description": "メンバーの「プラダを着たカズマ」が自作したステッカー、2 種類展開。Spotify エピソード「PODCAST EXPOで何するの？」にて告知。",
-        "sourceUrl": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
-        "sourceType": "web"
-      },
-      {
-        "name": "現金オンリー（注意）",
-        "description": "支払いは**現金のみ**。電子決済は不可。Spotify エピソード「PODCAST EXPOで何するの？」にてホスト本人が念押し。",
+        "description": "メンバーの「プラダを着たカズマ」が自作したステッカー、2 種類展開。",
         "sourceUrl": "https://open.spotify.com/episode/7LLrtDVWPU5Wop7vTnYiQd",
         "sourceType": "web"
       }
+    ],
+    "merchandiseTags": [
+      "limited-new"
     ],
     "merchandiseSubTypes": [
       "goods-acrylic",
