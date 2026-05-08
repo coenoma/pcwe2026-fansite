@@ -6,6 +6,7 @@
  * - vibe → デフォルト color/font、override は fanGuide.themeColor / themeFont
  */
 
+import { Fragment } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Program } from '@/lib/types';
@@ -100,39 +101,34 @@ export function BoothHero({ program }: Props) {
 
             {/*
               キャッチコピー（themeColor 蛍光下線）
-              - catchphraseLines（任意）が指定されていれば、行ごとに改行
-              - **下線はテキストの実幅にだけ引く** ため、block で改行を作り、内側の
-                inline span に linear-gradient 背景を適用する 2 段ラップ構造
-                （block span を直接装飾するとコンテナ幅まで下線が伸びる不具合になる）
-              - 未指定なら catchphrase 1 行（自動折り返しありうる）に box-decoration-clone
-                で各行ぶん下線
+              - catchphraseLines（任意）が指定されていれば、<br /> で改行ヒントを与える
+              - **`text-wrap: pretty`** で「最後の 1-2 文字だけ次行に残る」不自然な
+                折り返しをブラウザが自動で回避（lg で grid-cols-2 になり容器幅が
+                半分になる場面で特に効果的）
+              - 1 つの inline span にまとめて box-decoration-clone を当てることで、
+                複数行（強制改行 + 自動折り返し両方）にまたがって蛍光下線が綺麗に引かれる
+              - 旧実装の `<span className="block">` を各行ごとに被せる方式だと、
+                各行内で text-wrap: pretty が効かず、不自然な行末残りが起きていた
             */}
-            <p className="mt-6 text-lg font-bold leading-relaxed text-neutral-800 sm:text-xl md:text-2xl">
-              {program.fanGuide.catchphraseLines !== undefined ? (
-                program.fanGuide.catchphraseLines.map((line, i) => (
-                  <span key={i} className="block">
-                    <span
-                      className="box-decoration-clone"
-                      style={{
-                        backgroundImage: `linear-gradient(180deg, transparent 78%, ${highlightUnderline} 78%, ${highlightUnderline} 94%, transparent 94%)`,
-                        paddingInline: '0.1em',
-                      }}
-                    >
+            <p className="mt-6 text-pretty text-lg font-bold leading-relaxed text-neutral-800 sm:text-xl md:text-2xl">
+              <span
+                className="box-decoration-clone"
+                style={{
+                  backgroundImage: `linear-gradient(180deg, transparent 78%, ${highlightUnderline} 78%, ${highlightUnderline} 94%, transparent 94%)`,
+                  paddingInline: '0.1em',
+                }}
+              >
+                {program.fanGuide.catchphraseLines !== undefined ? (
+                  program.fanGuide.catchphraseLines.map((line, i) => (
+                    <Fragment key={i}>
+                      {i > 0 ? <br /> : null}
                       {line}
-                    </span>
-                  </span>
-                ))
-              ) : (
-                <span
-                  className="box-decoration-clone"
-                  style={{
-                    backgroundImage: `linear-gradient(180deg, transparent 78%, ${highlightUnderline} 78%, ${highlightUnderline} 94%, transparent 94%)`,
-                    paddingInline: '0.1em',
-                  }}
-                >
-                  {program.fanGuide.catchphrase}
-                </span>
-              )}
+                    </Fragment>
+                  ))
+                ) : (
+                  program.fanGuide.catchphrase
+                )}
+              </span>
             </p>
 
             {/* サブキャッチ */}
