@@ -7,17 +7,26 @@
   "official": {
     "description": "高揚館（こうようかん）は、40代の男・父親・働く大人たちの「本音」と「モヤモヤ」を、雑談と人生相談でほどいていくトークチャンネルです。\n子育て、夫婦関係、仕事の悩み、生きづらさ、自己肯定感、スピリチュアルな考え方まで、答えを出さずに、一緒に考えることを大切にしています。\n深夜ラジオのような空気感で「ちゃんと生きなきゃ」から少し離れて、自分を許し、自由に生きるヒントを届けます。\n✔ 人生相談・本音トーク\n✔ 40代の生き方・男の悩み\n✔ 父親・子育て・家族\n✔ スピリチュアル思考・哲学的雑談\n心がちょっと軽くなる場所。\nそれが、高揚館です。",
     "merchandise": [
-      "ZINE",
-      "ティッシュ",
-      "ステッカー",
+      "ロボステッカー",
+      "大人のエロZINE",
+      "男性向けティッシュ",
+      "先祖Tシャツ",
       "似顔絵",
-      "占い",
-      "tシャツ"
+      "占い"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "ギュンアイテム 4 種（ロボステッカー / 大人のエロ ZINE / 男性向けティッシュ / 先祖 T シャツ）",
+        "description": "5/10（日）テント出展。X 投稿（2026-05-07、@shokuro_style）にて告知。ロボステッカー、大人のエロ ZINE、男性向けティッシュ、先祖 T シャツの 4 種。番組内で人気の「先祖」モチーフ T シャツも。5/8 21:00 から販売紹介 YouTube Live も実施予定。",
+        "sourceUrl": "https://x.com/shokuro_style/status/2052335030874394946",
+        "sourceType": "x-post"
+      }
     ],
     "merchandiseTags": [
       "experience",
       "rare-curious",
-      "zine-book"
+      "zine-book",
+      "limited-new"
     ],
     "merchandiseSubTypes": [
       "apparel",
@@ -33,7 +42,8 @@
     "boothNumber": "132"
   },
   "links": {
-    "spotify": "https://open.spotify.com/show/3aRbIg3jlFuB99VqOLgvd5"
+    "spotify": "https://open.spotify.com/show/3aRbIg3jlFuB99VqOLgvd5",
+    "x": "https://x.com/shokuro_style"
   },
   "recommendedEpisode": {
     "title": "【先祖が強すぎる】占われたら人生の答えが全部先祖だった",
