@@ -20,10 +20,17 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（番外編第79回「人はなぜ本を積むのか」）",
-        "description": "5月9日（土）のみ出展（HOME/WORK VILLAGE 世田谷区池尻2-4-5）。販売予定：冊子、グッズ。海外文学のオススメ本パーソナル提案、おすすめ本トーク企画",
-        "sourceUrl": "https://listen.style/p/radiocatwings/pmezzcly",
-        "sourceType": "web"
+        "name": "海外文学コンシェルジュ + 冊子・グッズ販売（5/9 土のみ）",
+        "description": "📅 5/9（土）のみ出店。\n\n文学フリマ東京では出来なかった「好みをヒアリングしてオススメの作品を紹介する **海外文学コンシェルジュ**」もブースで実施。冊子・グッズも販売予定。",
+        "sourceUrl": "https://x.com/radiocatwings/status/2052556014063673687",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/radiocatwings/pmezzcly",
+            "type": "web",
+            "label": "Listen エピソード番外編「人はなぜ本を積むのか」（事前告知）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [

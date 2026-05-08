@@ -18,15 +18,24 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 カポブラブース全解説エピソード",
-        "description": "5/9（土）・10（日）2 日間出展。Listen エピソード「Ep.90 発光ッッッ♡」（2026-04-24 公開）にて「カポブラは 2 日間一体何をするのか全解説！この回を聴けば PCWE カポブラブースが 120% 楽しめるかも！？」とホスト本人が告知。具体的な物販ラインナップは公式 boothpage に記載: おみくじ・撮影体験・ZINE・楽曲DLカード・ポストカード・アクスタ・ステッカー・アパレル等。",
-        "sourceUrl": "https://listen.style/p/pze2qlhk/sxztifkn",
-        "sourceType": "web"
+        "name": "PCWE2026 出展告知（5/9-10・カポブラおみくじ + LOY 撮影特典）",
+        "description": "📅 5/9（土）・5/10（日）2 日間出展。\n\nラインナップ:\n- メンバーが個人活動の延長で制作したアイテム\n- 新旧グッズ販売\n- 🎯 会場限定『カポブラおみくじ』（次に向かうブースを運試しで決める）\n- 📸 グッズ購入者限定特典: 特設ブースで LOY が写真撮影",
+        "sourceUrl": "https://x.com/radio_CPB/status/2052683969259622858",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/pze2qlhk/sxztifkn",
+            "type": "web",
+            "label": "Listen エピソード Ep.90 全解説（事前告知）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
       "experience",
-      "zine-book"
+      "zine-book",
+      "rare-curious",
+      "limited-new"
     ],
     "merchandiseSubTypes": [
       "paper-stationery"
