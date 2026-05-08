@@ -13,22 +13,21 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PODRAP ユニット『🔊BUZZY NIGHT🌃』デビュートラック「WE R BUZZY NIGHT」（最速頒布）",
-        "description": "5/9（土）出展。メンバー: 🤍眞白マッシュ・💚ヤマモトユウト・❤️ウシワカ。",
-        "sourceUrl": "https://x.com/mash_january25/status/2050168847173591184",
-        "sourceType": "x-post"
-      },
-      {
-        "name": "HYPLACE スタジオ コンピレーションアルバム + 友達の音楽 CD 頒布",
-        "description": "5/9（土曜）出展。HYPLACE スタジオが過去にリリースしたコンピレーションアルバムや、お友達の音楽 CD を頒布。",
-        "sourceUrl": "https://x.com/mash_january25/status/2048343629715087871",
-        "sourceType": "x-post"
-      },
-      {
-        "name": "ステッカー + 未発表企画",
-        "sourceUrl": "https://x.com/mash_january25/status/2048343629715087871",
-        "sourceType": "x-post"
+        "name": "PCWE2026 お品書き完全版（5/9 土・25-B）",
+        "description": "📍 5/9（土）ブース 25-B。\n\nラインナップ:\n- 🎫 目玉: バジナイ（PODRAP ユニット『BUZZY NIGHT』🤍眞白マッシュ・💚ヤマモトユウト・❤️ウシワカ）のサウンドカード\n- 💿 HYPLACE スタジオが過去にリリースしたコンピレーションアルバム\n- 💽 過去に出演したトラックメイカーたちの新作",
+        "sourceUrl": "https://x.com/mash_january25/status/2052227115232416121",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/mash_january25/status/2050168847173591184",
+            "type": "x-post",
+            "label": "PODRAP デビュートラック詳細告知"
+          }
+        ]
       }
+    ],
+    "merchandiseTags": [
+      "limited-new"
     ],
     "merchandiseSubTypes": [
       "audio-music",

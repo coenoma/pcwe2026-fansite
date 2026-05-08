@@ -14,15 +14,24 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "番組ステッカー（配布）",
-        "description": "5/9（土）Podcast Weekend で配布される番組ステッカー。サイズ含めて可愛いデザイン。ブースでは制作したオリジナルアニメーションも上映。",
-        "sourceUrl": "https://x.com/alliscalmallis/status/2051578839558660307",
-        "sourceType": "x-post"
+        "name": "PCWE2026 出展告知（5/9 土・池尻 HOME/WORK VILLAGE・入場無料）",
+        "description": "📅 5/9（土）10:00-18:00（最終入場 17:30）、池尻 HOME/WORK VILLAGE、入場無料。\n\nラインナップ:\n- 📕 ZINE『中央線日記』シリーズ販売\n- 🥠 中央線おみくじ\n- 🎁 番組ステッカー配布\n- 🎬 オリジナルアニメーション上映\n\nふらっと遊びに来てください🚃",
+        "sourceUrl": "https://x.com/alliscalmallis/status/2052697733736399355",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/alliscalmallis/status/2051578839558660307",
+            "type": "x-post",
+            "label": "事前ステッカー紹介投稿"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
       "experience",
-      "zine-book"
+      "zine-book",
+      "free-distribution",
+      "rare-curious"
     ],
     "merchandiseSubTypes": [
       "paper-stationery"
