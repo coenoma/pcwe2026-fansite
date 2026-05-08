@@ -19,10 +19,22 @@
         "sourceType": "official-booth"
       },
       {
-        "name": "「英語の悪口」エッセイ ZINE",
-        "description": "公式 boothpage 番組紹介に「以前の番組コンセプトだった「英語の悪口」をしたためたエッセイも販売します。是非お手に取ってみてください」と記載。",
-        "sourceUrl": "https://podcastexpo.jp/booth/pcwe-105/",
-        "sourceType": "official-booth"
+        "name": "「英語のここがダメ」薄い本（#呟ききれない話）",
+        "description": "X 投稿（2026-05-08、@Soichi_ii）にて「Podcast Weekendで頒布する薄い本できたー！ #英語のここがダメ #呟ききれない話」と完成告知。以前の番組コンセプトだった「英語の悪口」をしたためたエッセイ ZINE が完成形に。同日午後にブース用品の準備完了も告知され、5/10（日）の出展準備が整った。",
+        "sourceUrl": "https://x.com/Soichi_ii/status/2052569252281114895",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/Soichi_ii/status/2052614998636314670",
+            "type": "x-post",
+            "label": "ブース用品準備完了告知（2026-05-08）"
+          },
+          {
+            "url": "https://podcastexpo.jp/booth/pcwe-105/",
+            "type": "official-booth",
+            "label": "公式ブース紹介"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
