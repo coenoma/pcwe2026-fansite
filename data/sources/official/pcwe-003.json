@@ -7,20 +7,31 @@
   "official": {
     "description": "ミュージシャンのマコトコンドウと医者芸人でジャズ芸人の井たくまが、さまざまなカルチャーについてゆる〜くトークするポッドキャスト。\n最近はジャズの話をまったくしていないので、ジャズに興味がなくても楽しめる雑談番組です！",
     "merchandise": [
-      "井たくまがあなたの容姿を見てジャズ",
-      "ミュージシャンっぽい名前をお付けする「ジャズ戒名付け」",
+      "新作 Tシャツ",
       "ステッカー",
       "アクリルキーホルダー",
-      "クリアファイル",
-      "Tシャツ 等"
+      "タオル",
+      "井たくまのジャズ戒名付け",
+      "チェキ"
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展グッズ紹介生配信",
-        "description": "5/10 出展。番組 YouTube チャンネルで「【再】グッズ紹介をしたい生配信」として PCWE2026 出展グッズを紹介する動画を配信。具体的なラインナップは公式 boothpage に記載: 「井たくまがあなたの容姿を見てジャズミュージシャンっぽい名前をお付けする『ジャズ戒名付け』」「ステッカー」「アクリルキーホルダー」「クリアファイル」「Tシャツ 等」。動画本編で詳細を確認可能。",
-        "sourceUrl": "https://www.youtube.com/watch?v=UVS3Q4IHw7o",
-        "sourceType": "web"
+        "name": "PCWE2026 出展告知（5/10 日のみ・新作グッズ + ジャズ戒名付け）",
+        "description": "📅 5/10（日）のみ参加。📍 東京・世田谷「HOME/WORK VILLAGE」。\n\n🛍 出品内容:\n- 新作 Tシャツ\n- ステッカー\n- アクリルキーホルダー\n- タオル\n- 井たくまのジャズ戒名付け（あなたの容姿を見てジャズミュージシャンっぽい名前を付ける）\n- チェキ",
+        "sourceUrl": "https://x.com/subejazz/status/2052624333420507384",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://www.youtube.com/watch?v=UVS3Q4IHw7o",
+            "type": "web",
+            "label": "YouTube グッズ紹介生配信（事前告知）"
+          }
+        ]
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "limited-new"
     ],
     "merchandiseSubTypes": [
       "apparel",
