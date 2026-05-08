@@ -23,7 +23,7 @@
 'use client';
 
 import { Minus, Move, Plus, RotateCcw } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   TransformComponent,
   TransformWrapper,
@@ -83,6 +83,28 @@ export function VenueMap({
   // 現在のズーム scale（quad テントの個別タップ切替用）
   const [scale, setScale] = useState(1);
   const isDetailZoom = scale >= QUAD_DETAIL_SCALE_THRESHOLD;
+  // detail zoom ヒント: 初見ユーザーのみ表示。一度 detail zoom 状態を経験したら、
+  // localStorage に既読フラグを保存して以降は表示しない。
+  const [detailZoomHintSeen, setDetailZoomHintSeen] = useState(true);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    setDetailZoomHintSeen(
+      localStorage.getItem('pcwe2026-detail-zoom-hint-seen') === '1',
+    );
+  }, []);
+  useEffect(() => {
+    if (!isDetailZoom || detailZoomHintSeen) return;
+    // detail zoom に入って 4 秒後に「見た」とマーク（自動で消える + 二度と出ない）
+    const timer = window.setTimeout(() => {
+      setDetailZoomHintSeen(true);
+      try {
+        localStorage.setItem('pcwe2026-detail-zoom-hint-seen', '1');
+      } catch (error) {
+        console.warn('⚠️ detail zoom ヒント既読の保存に失敗しました', error);
+      }
+    }, 4_000);
+    return () => window.clearTimeout(timer);
+  }, [isDetailZoom, detailZoomHintSeen]);
 
   // マップを単独でズーム + パン可能にする（react-zoom-pan-pinch）
   // 親に aspect-ratio を当てて TransformWrapper が画面全体に拡張されないように制御
@@ -282,9 +304,14 @@ export function VenueMap({
               <span className="sm:hidden">ピンチで拡大</span>
             </div>
 
-            {/* 拡大時のテント別表示ヒント（quad テントの個別タップ可能化）*/}
-            {isDetailZoom ? (
-              <div className="pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full bg-accent-cyan-600/90 px-2.5 py-1 text-[10px] font-bold text-white shadow-md backdrop-blur">
+            {/* 拡大時のテント別表示ヒント（quad テントの個別タップ可能化）。
+                v1.12.1: 初見ユーザーのみ表示、一度 detail zoom 状態に入ったら
+                localStorage 既読フラグで以降は非表示。4 秒のフェード前提。 */}
+            {isDetailZoom && !detailZoomHintSeen ? (
+              <div
+                className="pointer-events-none absolute left-3 top-3 z-10 inline-flex items-center gap-1 rounded-full bg-accent-cyan-600/90 px-2.5 py-1 text-[10px] font-bold text-white shadow-md backdrop-blur transition-opacity duration-500 animate-[fadeIn_0.3s_ease-out]"
+                aria-hidden="true"
+              >
                 <span aria-hidden="true">🎯</span>
                 <span>A・B・C・D 直接タップ可能</span>
               </div>
