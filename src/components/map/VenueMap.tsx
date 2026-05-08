@@ -376,7 +376,12 @@ function TentClickArea({
       const anyHit = tent.slots.some((s) =>
         highlightedPositions.has(s.position),
       );
-      isFiltered = !anyHit;
+      // v1.11 修正: selectedPosition がテント内にいる場合はフィルタ条件外でも
+      // 半透明にしない（選択中シートとマップ表示の矛盾解消）。
+      const containsSelected = tent.slots.some(
+        (s) => s.position === selectedPosition,
+      );
+      isFiltered = !anyHit && !containsSelected;
     }
     const hasAnyContent = tent.slots.some((s) => {
       const pl = placementByPosition.get(s.position);
@@ -430,9 +435,12 @@ function TentClickArea({
               (placement.programId !== undefined ||
                 placement.externalName !== undefined);
             const slotIsSelected = selectedPosition === positionLabel;
+            // v1.11 修正: 選択中ピンはフィルタ条件外でも opacity を維持（半透明にしない）。
+            // フィルタ変更時に開きっぱなしのシートと地図表示の矛盾を解消。
             const slotIsFiltered =
               highlightedPositions !== undefined &&
-              !highlightedPositions.has(positionLabel);
+              !highlightedPositions.has(positionLabel) &&
+              !slotIsSelected;
             const slotIsFavorite =
               placement?.programId !== undefined &&
               (favoriteProgramIds?.has(placement.programId) ?? false);
@@ -504,10 +512,12 @@ function TentClickArea({
   const hasContent =
     placement !== undefined &&
     (placement.programId !== undefined || placement.externalName !== undefined);
+  const isSelected = selectedPosition === positionLabel;
+  // v1.11 修正: 選択中ピンはフィルタ無視で opacity 維持
   const isFiltered =
     highlightedPositions !== undefined &&
-    !highlightedPositions.has(positionLabel);
-  const isSelected = selectedPosition === positionLabel;
+    !highlightedPositions.has(positionLabel) &&
+    !isSelected;
 
   // kind 判定（色分け用）
   const kind: TentRectKind = isKitchen
