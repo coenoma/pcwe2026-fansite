@@ -122,7 +122,7 @@ export function MerchandisePreview({ details, variant, className }: Props) {
       </ul>
       {restCount > 0 ? (
         <p className="mt-2 text-[11px] text-neutral-500">
-          他 {restCount} 件は下の X 投稿で詳細 ↓
+          他 {restCount} 件は下のブース物販セクションで詳細 ↓
         </p>
       ) : null}
     </div>
