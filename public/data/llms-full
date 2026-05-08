@@ -34,7 +34,7 @@ a { color: #1a5fb4; }
   <h1>PCWE2026 全 145 番組 詳細データ（LLM 向け）</h1>
   <p>PODCAST EXPO 2026 内のマーケットイベント <strong>PODCAST WEEKEND 2026</strong>（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）出展 145 番組の詳細を 1 ページに集約した、LLM / AI クライアント向けの HTML データページです。</p>
   <p>人間向けファンガイドは <a href="https://pcwe2026-fansite.podmate.fm/">トップページ</a>。同じデータの他フォーマット: <a href="https://pcwe2026-fansite.podmate.fm/llms-full.txt">llms-full.txt</a> / <a href="https://pcwe2026-fansite.podmate.fm/api/programs.json">programs.json</a> / <a href="https://pcwe2026-fansite.podmate.fm/llms.txt">llms.txt（サイト地図）</a></p>
-  <p class="meta">最終ビルド: <time datetime="2026-05-08T00:27:12.329Z">2026-05-08T00:27:12.329Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
+  <p class="meta">最終ビルド: <time datetime="2026-05-08T01:07:44.199Z">2026-05-08T01:07:44.199Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
 </header>
 
 <nav class="toc">
@@ -880,7 +880,7 @@ SFカルチャーを愛し、インディーズ文芸で創作活動している
 読書や創作に親しんでいる人の心に届く番組を目指しながら、少しずつリスナーの輪を広げていけたら嬉しいです。
 雨の日に傘をさすように、あなたの読書や創作の時間にそっと寄り添えますように。毎週木曜日更新です。</p>
   
-  <p><strong>ブース物販</strong>: ZINE / ステッカー / しおり / ブックカバー</p>
+  <p><strong>ブース物販</strong>: 最新 SF ZINE / コピー本 / おすすめ SF フローチャート / 名刺・フライヤー（自己紹介代わり） / ステッカー / しおり / ブックカバー</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-026">このサイトの番組詳細ページ</a></li>
@@ -1759,7 +1759,7 @@ DIYやアクティブなことが好き。SNS中毒者。
 友達との会話感覚でゆるく聴けるけれど、プロの視点も役に立つ「ちょっと有益で社会派な雑談」をお届けします。
 一日の終わりのリラックスタイムや移動中のお供に、ぜひ私たちの輪に加わってみませんか？</p>
   
-  <p><strong>ブース物販</strong>: お悩み相談企画 / ステッカー / Tシャツ / ZINE</p>
+  <p><strong>ブース物販</strong>: お悩み相談企画 / ステッカー / Tシャツ / ミニZINE「やいやい的よげんの書」（2026 年下半期トレンド予測 / NEW） / オリジナルクリア小物ケース（NEW）</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-057">このサイトの番組詳細ページ</a></li>

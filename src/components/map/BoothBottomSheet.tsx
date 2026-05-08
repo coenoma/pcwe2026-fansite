@@ -23,6 +23,7 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { Check, ExternalLink, Star, X } from 'lucide-react';
 import { MerchandiseList } from '@/components/merchandise/MerchandiseList';
+import { MerchandisePreview } from '@/components/merchandise/MerchandisePreview';
 import type { Day, MerchandiseTag, Program } from '@/lib/types';
 import type { SlotPlacement } from '@/lib/booth-map';
 import type { TweetMap } from '@/lib/tweet-cache';
@@ -195,6 +196,18 @@ export function BoothBottomSheet({
                   {tagLabel(tag)}
                 </span>
               ))}
+            </div>
+          ) : null}
+
+          {/* 物販ハイライト（X 埋め込み詳細を開く前の意思決定支援。
+              上位 2 件の name + 残り件数を compact に表示） */}
+          {program?.official.merchandiseDetails &&
+          program.official.merchandiseDetails.length > 0 ? (
+            <div className="mx-5 mt-3 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3">
+              <MerchandisePreview
+                details={program.official.merchandiseDetails}
+                variant="sheet-header"
+              />
             </div>
           ) : null}
 

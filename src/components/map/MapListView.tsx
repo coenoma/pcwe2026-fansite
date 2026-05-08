@@ -8,6 +8,7 @@
 
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
+import { MerchandisePreview } from '@/components/merchandise/MerchandisePreview';
 import type { Day, MerchandiseTag, Program } from '@/lib/types';
 import { type SlotPlacement } from '@/lib/booth-map';
 
@@ -94,8 +95,16 @@ export function MapListView({ programs, placements, day, onSelect }: Props) {
                     ))}
                   </p>
                 ) : null}
+                {program?.official.merchandiseDetails &&
+                program.official.merchandiseDetails.length > 0 ? (
+                  <MerchandisePreview
+                    details={program.official.merchandiseDetails}
+                    variant="list"
+                    className="mt-2 border-t border-neutral-100 pt-2"
+                  />
+                ) : null}
                 {program?.official.merchandiseSpotlight ? (
-                  <p className="mt-1.5 line-clamp-2 text-[11px] leading-snug text-primary-700">
+                  <p className="mt-1.5 line-clamp-1 text-[11px] leading-snug text-primary-700">
                     ✨ {program.official.merchandiseSpotlight}
                   </p>
                 ) : null}

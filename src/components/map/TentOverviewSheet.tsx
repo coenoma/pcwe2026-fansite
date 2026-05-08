@@ -17,6 +17,7 @@
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
+import { MerchandisePreview } from '@/components/merchandise/MerchandisePreview';
 import type { Day, Program, MerchandiseTag } from '@/lib/types';
 
 export interface TentSlotInfo {
@@ -110,7 +111,7 @@ export function TentOverviewSheet({
         role="dialog"
         aria-modal="true"
         aria-labelledby="tent-overview-title"
-        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto max-h-[78vh] max-w-5xl overflow-y-auto rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[85vh]"
+        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto max-h-[88vh] max-w-5xl overflow-y-auto rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[92vh]"
       >
         <div className="sticky top-0 flex justify-center bg-white pb-1 pt-3">
           <span
@@ -223,34 +224,42 @@ function SlotCard({
         ) : null}
       </div>
 
-      <div className="mt-2 flex items-center gap-2">
+      {/* サムネ + 番組名 + subCatch（横並び、サムネは 56x56） */}
+      <div className="mt-2 flex items-start gap-2.5">
         {program ? (
           <Image
             src={program.thumbnail}
             alt=""
-            width={40}
-            height={40}
-            className="h-10 w-10 shrink-0 rounded-lg object-cover"
+            width={56}
+            height={56}
+            className="h-14 w-14 shrink-0 rounded-lg object-cover"
             aria-hidden="true"
           />
         ) : (
           <span
             aria-hidden="true"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-lg"
+            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-2xl"
           >
             {isSponsor ? '🤝' : isKitchen ? '🍳' : '📍'}
           </span>
         )}
-        <p className="line-clamp-2 min-w-0 flex-1 text-xs font-bold text-neutral-900">
-          {program?.name ?? slot.externalName ?? '番組情報未登録'}
-        </p>
+        <div className="min-w-0 flex-1">
+          <p className="line-clamp-2 text-xs font-bold leading-snug text-neutral-900">
+            {program?.name ?? slot.externalName ?? '番組情報未登録'}
+          </p>
+          {program?.fanGuide.subCatch ? (
+            <p className="mt-1 line-clamp-1 text-[10px] leading-snug text-neutral-500">
+              {program.fanGuide.subCatch}
+            </p>
+          ) : null}
+        </div>
       </div>
 
-      {/* グッズタグ（先頭 2 件のみ）*/}
+      {/* グッズタグ（先頭 3 件） */}
       {program?.official.merchandiseTags &&
       program.official.merchandiseTags.length > 0 ? (
         <p className="mt-2 flex flex-wrap gap-1">
-          {program.official.merchandiseTags.slice(0, 2).map((tag) => (
+          {program.official.merchandiseTags.slice(0, 3).map((tag) => (
             <span
               key={tag}
               className="inline-flex rounded-full bg-secondary-50 px-1.5 py-0.5 text-[9px] font-medium text-secondary-700"
@@ -258,6 +267,23 @@ function SlotCard({
               {shortLabel(tag)}
             </span>
           ))}
+        </p>
+      ) : null}
+
+      {/* 物販プレビュー: 代表物販 name + +N件 バッジ */}
+      {program?.official.merchandiseDetails &&
+      program.official.merchandiseDetails.length > 0 ? (
+        <MerchandisePreview
+          details={program.official.merchandiseDetails}
+          variant="slot"
+          className="mt-2 border-t border-neutral-100 pt-2"
+        />
+      ) : null}
+
+      {/* spotlight（ファンガイドおすすめ、1 行） */}
+      {program?.official.merchandiseSpotlight ? (
+        <p className="mt-1.5 line-clamp-1 text-[10px] leading-snug text-primary-700">
+          ✨ {program.official.merchandiseSpotlight}
         </p>
       ) : null}
 
