@@ -9,20 +9,32 @@
  * - list:         MapListView のリストカード用（サムネ 24px + name 1 行 + +N件バッジ）
  * - slot:         TentOverviewSheet の SlotCard 用（サムネ 28px + name 1 行 + +N件バッジ）
  * - sheet-header: BoothBottomSheet のヘッダー直下用（サムネ 32px + name 上位 2 件 + 残り件数テキスト）
- * - card-main:    v1.9.2 物販主役カード用（見出し + サムネ 36px + name 上位 2 件 + 残り件数）
+ * - card-main:    v1.9.2 物販主役カード用（見出し + サムネ 36px + 物販リスト）
  *                 → リストカード / SlotCard で物販を画面の主役として大きく出す
+ *                 v1.9.5 で 4 件以上の番組は 3 件 + fade-out + 「あと N 件を見る」展開
+ *                 ボタンに変更（カードがバカ長くなる問題と「省略表記の不自然」問題を両立解決）
  *
  * 設計思想:
  * - spotlight / catchphrase / subCatch などのコピーは扱わない（責務分離）。
  * - 物販に関する情報のみを compact に「ちょいだし」することに専念する。
  * - imagePath が無い物販は 🛍 アイコンでフォールバック表示（X 投稿出典では imagePath を持たないことが多いため、設計上の正常系）。
  *
+ * card-main variant が useState で展開状態を管理するため、このファイル全体を
+ * Client Component として扱う（呼び出し側はすでに全て 'use client'）。
+ *
  * 詳細設計: docs/plans/v1.8-merchandise-preview-on-discovery/README.md
  */
 
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { groupMerchandiseDetails } from './MerchandiseGroupCard';
 import type { MerchandiseDetail } from '@/lib/types';
+
+/** card-main variant の折りたたみ時に見せる件数 */
+const CARD_MAIN_PREVIEW_COUNT = 3;
 
 type Variant = 'list' | 'slot' | 'sheet-header' | 'card-main';
 
@@ -103,27 +115,11 @@ export function MerchandisePreview({ details, variant, className }: Props) {
   }
 
   if (variant === 'card-main') {
-    // v1.9.2 物販主役カード用: 見出し + 全件の name + サムネ 36px
-    // SlotCard / リストカードで物販を画面の主役として大きく出すための表示。
-    // 件数の多寡で「+N 件」省略していた版もあったが、スペースが余っている
-    // 状況で省略表記が出るのが不自然だったため全件表示に変更（v1.9.4）。
-    return (
-      <div className={className ?? ''}>
-        <p className="text-[10px] font-bold tracking-wide text-neutral-500">
-          🛍 ブース物販
-        </p>
-        <ul className="mt-1.5 flex flex-col gap-1.5">
-          {details.map((item, i) => (
-            <li key={i} className="flex items-start gap-2">
-              <Thumbnail imagePath={item.imagePath} size={36} />
-              <p className="line-clamp-2 min-w-0 flex-1 text-xs font-bold leading-snug text-neutral-800">
-                {item.name}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
+    // v1.9.2 / v1.9.5 物販主役カード用:
+    // - 4 件以上の番組: 3 件表示 + 末尾 fade-out + 「あと N 件を見る ↓」展開ボタン
+    // - 3 件以下の番組: 全件表示（fade-out / ボタン無し）
+    // 件数省略の不自然と、カードがバカ長くなる問題を両立解決する設計。
+    return <CardMainPreview details={details} className={className} />;
   }
 
   // variant === 'sheet-header'
@@ -145,6 +141,81 @@ export function MerchandisePreview({ details, variant, className }: Props) {
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+/**
+ * card-main variant の本体（useState で展開状態を持つため独立関数化）。
+ *
+ * 親 (SlotCard / リストカード) が stretched button パターンで card 全体タップを
+ * 拾うため、展開ボタンは `relative z-20` + `pointer-events-auto` + `stopPropagation`
+ * で独立クリック可能にする。
+ */
+function CardMainPreview({
+  details,
+  className,
+}: {
+  details: ReadonlyArray<MerchandiseDetail>;
+  className?: string;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const hasMore = details.length > CARD_MAIN_PREVIEW_COUNT;
+  const visibleItems =
+    expanded || !hasMore ? details : details.slice(0, CARD_MAIN_PREVIEW_COUNT);
+  const hiddenCount = details.length - CARD_MAIN_PREVIEW_COUNT;
+  const showFade = hasMore && !expanded;
+
+  return (
+    <div className={className ?? ''}>
+      <p className="text-[10px] font-bold tracking-wide text-neutral-500">
+        🛍 ブース物販
+      </p>
+      <div className="relative">
+        <ul className="mt-1.5 flex flex-col gap-1.5">
+          {visibleItems.map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <Thumbnail imagePath={item.imagePath} size={36} />
+              <p className="line-clamp-2 min-w-0 flex-1 text-xs font-bold leading-snug text-neutral-800">
+                {item.name}
+              </p>
+            </li>
+          ))}
+        </ul>
+        {/* 折りたたみ時、最終アイテム下端に fade-out グラデで「下にもまだある」感を出す */}
+        {showFade ? (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white via-white/80 to-transparent"
+          />
+        ) : null}
+      </div>
+
+      {/* もっと見る / 閉じるボタン（4 件以上の番組のみ）*/}
+      {hasMore ? (
+        <button
+          type="button"
+          onClick={(e) => {
+            // stretched button（card 全体タップ）にバブルさせない
+            e.stopPropagation();
+            setExpanded((v) => !v);
+          }}
+          aria-expanded={expanded}
+          className="relative z-20 mt-2 flex w-full items-center justify-center gap-1 rounded-full bg-neutral-100 py-1.5 text-[11px] font-bold text-neutral-700 transition-colors hover:bg-neutral-200 pointer-events-auto"
+        >
+          {expanded ? (
+            <>
+              <span>閉じる</span>
+              <ChevronUp size={14} aria-hidden="true" />
+            </>
+          ) : (
+            <>
+              <span>あと {hiddenCount} 件を見る</span>
+              <ChevronDown size={14} aria-hidden="true" />
+            </>
+          )}
+        </button>
+      ) : null}
     </div>
   );
 }
