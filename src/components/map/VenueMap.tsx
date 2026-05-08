@@ -740,50 +740,58 @@ function TentRect({
         />
       ) : null}
 
-      {/* お気に入りバッジ（右上、⭐️）*/}
-      {isFavorite ? (
-        <g aria-hidden="true">
-          <circle
-            cx={x + width - 6}
-            cy={y + 6}
-            r={9}
-            fill="#f59e0b"
-            stroke="#fff"
-            strokeWidth={1.5}
-          />
-          <text
-            x={x + width - 6}
-            y={y + 10}
-            fontSize={11}
-            textAnchor="middle"
-            fill="#fff"
-          >
-            ★
-          </text>
-        </g>
-      ) : null}
-
-      {/* 「会えた」バッジ（左下、✓）*/}
-      {isVisited ? (
-        <g aria-hidden="true">
-          <circle
-            cx={x + 6}
-            cy={y + height - 6}
-            r={9}
-            fill="var(--color-accent-cyan-500)"
-            stroke="#fff"
-            strokeWidth={1.5}
-          />
-          <text
-            x={x + 6}
-            y={y + height - 2}
-            fontSize={11}
-            textAnchor="middle"
-            fill="#fff"
-            fontWeight={900}
-          >
-            ✓
-          </text>
+      {/* 状態バッジ（お気に入り / 会えた）
+          - quad テント全体表示時（showQuadHints=true）は **非表示**:
+            「10C のチェック」が 10B/10D にも乗って見えて誤解を生むため、
+            個別 slot の状態は detail zoom（A/B/C/D 個別タップ）でのみ表示する。
+          - single テント / detail モードの 1 quad では従来どおり表示。
+          - サイズは小さめ・半透明気味にして主役のテント番号を邪魔しない。
+       */}
+      {!showQuadHints && (isFavorite || isVisited) ? (
+        <g aria-hidden="true" opacity={0.85}>
+          {isFavorite ? (
+            <>
+              <circle
+                cx={x + width - 7}
+                cy={y + 7}
+                r={6}
+                fill="#f59e0b"
+                stroke="#fff"
+                strokeWidth={1}
+              />
+              <text
+                x={x + width - 7}
+                y={y + 10}
+                fontSize={8}
+                textAnchor="middle"
+                fill="#fff"
+              >
+                ★
+              </text>
+            </>
+          ) : null}
+          {isVisited ? (
+            <>
+              <circle
+                cx={x + 7}
+                cy={y + height - 7}
+                r={6}
+                fill="var(--color-accent-cyan-500)"
+                stroke="#fff"
+                strokeWidth={1}
+              />
+              <text
+                x={x + 7}
+                y={y + height - 4}
+                fontSize={8}
+                textAnchor="middle"
+                fill="#fff"
+                fontWeight={900}
+              >
+                ✓
+              </text>
+            </>
+          ) : null}
         </g>
       ) : null}
     </g>
