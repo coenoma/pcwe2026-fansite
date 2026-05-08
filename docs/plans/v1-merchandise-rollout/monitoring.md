@@ -59,7 +59,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-120 | hitokoto Radio | https://x.com/hitokotoRadio | — | — | Listen.style ep cakqiayt および Apple Podcasts ep#90「告知！PODCAST WEEKEND 2026出展決定」（ID: 1000758009722）で出展は確実。物販ラインナップ・価格は当日告知待ち。当日近くの番組更新を再チェック推奨 | 2026-05-06 |
 | pcwe-016 | overture〜ミュージカル好きの語り部屋〜 | — | https://www.instagram.com/hyp_ran | — | ユーザー目視で言及なし確認（2026-05-06）。Spotify ep #91 は PCWE2024 の告知で PCWE2026 用ではない。Instagram / Spotify が active なため当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 
-| pcwe-026 | 雨の日には本をさして。 | https://x.com/amehonns2 | https://www.instagram.com/amehons2 | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 | pcwe-044 | ひうら芳麗の楽女なニュース | https://x.com/marikosatoru | https://www.instagram.com/ladyfangchang | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 | pcwe-045 | PodcastTimes｜ぽっどでの新人 | https://x.com/Podcast_TimesJP | https://www.instagram.com/podcasttimes_jp/ | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
 | pcwe-053 | 丘の上喫茶 | https://x.com/okanoue_kissa | https://www.instagram.com/okanoue_kissa/ | — | 5/6 菊池さん目視で言及なし確認（A1群探索）。当日近くの新規告知を再チェック推奨 | 2026-05-06 |
@@ -102,6 +101,8 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 ---
 
 ## 解決ログ
+
+- **2026-05-08**: pcwe-026 雨の日には本をさして。 → done 化。X 投稿 2 件で対応：(1) 2026-05-06 ブース位置 16-C 確定 + 準備中ラインナップ告知 / (2) 2026-05-07 フライヤー一部公開（裏面: おすすめエピソード回）
 
 - **2026-05-08**: pcwe-057 やいやいラジオ → done 化。X 投稿 https://x.com/yaiyai_radio/status/2052331846739034209 にてブース 27-C 確定 + 新作グッズ（ミニZINE「やいやい的よげんの書」/ オリジナルクリア小物ケース）告知
 
