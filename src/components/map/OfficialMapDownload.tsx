@@ -20,11 +20,11 @@ export function OfficialMapDownload() {
         id="official-map-heading"
         className="text-base font-bold text-neutral-900 sm:text-lg"
       >
-        📍 公式マップ画像（出典 / DL）
+        📍 公式マップ画像（出典 / 画像保存）
       </h2>
       <p className="mt-2 text-xs leading-relaxed text-neutral-600 sm:text-sm">
-        本マップは、PCWE2026 公式会場マップ画像をもとに、独自に描き直したものです。
-        公式画像はこちらからご覧いただけます。当日の電波が弱い場合のフォールバックとしても、
+        本マップは、PCWE2026 公式会場マップ画像をもとに独自に描き直したものです。
+        公式画像はこちらからご覧いただけます。会場で電波が弱いときの予備としても、
         スマートフォンに保存しておくと安心です。
       </p>
 
