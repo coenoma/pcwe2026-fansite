@@ -17,20 +17,17 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（番外編 Podcast Weekend 出店決定！）",
-        "description": "『2026年5月9日10日に開催されるPODCAST EXPO 2026のなかのマーケットイベントPodcast Weekend 2026への出店が決定しました』",
-        "sourceUrl": "https://listen.style/p/indoadoumei",
-        "sourceType": "web"
-      },
-      {
-        "name": "PCWE2026 出展告知（第127回 最近のこと&ファンブック）",
-        "description": "PCWE2026で販売予定のファンブックについて言及。事前購入意向の表明を呼びかけ。",
-        "sourceUrl": "https://listen.style/p/indoadoumei",
-        "sourceType": "web"
+        "name": "ブース 8-B お品書き：グッズより企画重視！3 分推しプレゼン他",
+        "description": "5/9（土）ブース 8-B にて出展。お品書き発表 (X 投稿、2026-05-06、@indoadoumei)。「グッズより企画重視！3 分推しプレゼン、是非気軽に参加してください〜！！」とホスト本人が告知。投稿の画像 3-4 枚目には公式ファンブックのサンプルあり。具体ラインナップ:\n■ 3 分推しプレゼン（ピンマイク収録）\n■ 推しぬい撮影会（アクスタ可）\n■ ブルボン最強決定戦（投票）\n■ シール交換\n■ オリジナルシール手帳\n■ ステッカー\n■ インドア同盟公式ファンブック",
+        "sourceUrl": "https://x.com/indoadoumei/status/2052039727331864734",
+        "sourceType": "x-post"
       }
     ],
     "merchandiseTags": [
-      "experience"
+      "experience",
+      "rare-curious",
+      "limited-new",
+      "zine-book"
     ],
     "merchandiseSubTypes": [
       "paper-stationery"
