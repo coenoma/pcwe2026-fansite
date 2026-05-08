@@ -20,7 +20,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Sparkles } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import { VenueMap } from '@/components/map/VenueMap';
 import { BoothBottomSheet } from '@/components/map/BoothBottomSheet';
 import { DayToggle } from '@/components/map/DayToggle';
@@ -29,7 +29,7 @@ import { MapFilterChips } from '@/components/map/MapFilterChips';
 import { MapSearchBar } from '@/components/map/MapSearchBar';
 import { MapListView } from '@/components/map/MapListView';
 import { ViewModeToggle, type ViewMode } from '@/components/map/ViewModeToggle';
-import { AIChatPromptModal } from '@/app/_components/AIChatPromptModal';
+import { AIBoothPromptModal } from '@/app/_components/AIBoothPromptModal';
 import {
   TentOverviewSheet,
   type TentSlotInfo,
@@ -449,15 +449,16 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
               <span>会場マップ</span>
             </h1>
             <div className="ml-auto flex items-center gap-1.5">
-              {/* お手元の AI に聞く（ChatGPT / Claude 等にコピペ用プロンプトを生成）*/}
+              {/* お手元の AI に「ブース・物販」を聞く（マップ画面専用、コピペ用プロンプトを生成）。
+                  トップの「番組レコメンド」とは用途が違うので別モーダル（AIBoothPromptModal）。 */}
               <button
                 type="button"
                 onClick={() => setAiModalOpen(true)}
-                aria-label="お手元の AI に聞いてみる（番組相談）"
+                aria-label="お手元の AI にブース・物販を聞いてみる"
                 className="inline-flex shrink-0 items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-700 transition-colors hover:bg-emerald-100 sm:text-xs"
               >
-                <Sparkles size={12} aria-hidden="true" />
-                <span>AI に聞く</span>
+                <ShoppingBag size={12} aria-hidden="true" />
+                <span>AI にブース相談</span>
               </button>
               <ViewModeToggle mode={view} onChange={handleViewChange} />
               <DayToggle
@@ -645,8 +646,8 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
         );
       })()}
 
-      {/* お手元の AI に聞くモーダル（マップ画面でも利用可能に） */}
-      <AIChatPromptModal
+      {/* お手元の AI にブース・物販を聞くモーダル（マップ画面専用、物販ベース相談）*/}
+      <AIBoothPromptModal
         isOpen={aiModalOpen}
         onClose={() => setAiModalOpen(false)}
       />
