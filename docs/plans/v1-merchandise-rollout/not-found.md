@@ -46,7 +46,6 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 
 | 番組 ID | 番組名 | X | Instagram | Website | 調査メモ | 最終調査日 |
 |---|---|---|---|---|---|---|
-| pcwe-132 | 高揚館 | — | — | — | links に x/instagram/website いずれもなし。公式ブースページ (https://podcastexpo.jp/booth/pcwe-132/) のみ参照可能 | 2026-05-05 |
 
 ---
 

@@ -7,9 +7,26 @@
   "official": {
     "description": "作家のとくらじゅんと漫画家のニシハラハコがゆるっと喋るラジオ。毎週ベスト3を決めていきます。入眠にぴったりの声です。眠れない夜にぜひ。",
     "merchandise": [
+      "合同誌「我々はSABETSUしている」（PCWE限定）",
       "ステッカー",
       "アクリルキーホルダー",
-      "缶バッジ"
+      "缶バッジ",
+      "番組グッズ各種・本"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "合同誌「我々はSABETSUしている」（PCWE2026 限定販売）+ グッズ・本",
+        "description": "出店者の note 告知（@nishiharahaco）にて、「私たちもブース出展をしてグッズや本を販売します。ここでしか手に入らない合同誌『我々はSABETSUしている』も販売予定」と告知。グッズ・本販売 + 限定合同誌の頒布。",
+        "sourceUrl": "https://note.com/nishiharahaco/n/n9ec5ebb95d03",
+        "sourceType": "note",
+        "sourceAuthor": "西原ハコ（@nishiharahaco）",
+        "sourceTitle": "ハコとくら PCWE2026 出展告知",
+        "accessedAt": "2026-05-08"
+      }
+    ],
+    "merchandiseTags": [
+      "limited-new",
+      "zine-book"
     ],
     "merchandiseSubTypes": [
       "goods-acrylic",
@@ -25,7 +42,8 @@
     "boothNumber": "083"
   },
   "links": {
-    "spotify": "https://open.spotify.com/show/6rLMEpDAUbmvrLeb4rBx5b"
+    "spotify": "https://open.spotify.com/show/6rLMEpDAUbmvrLeb4rBx5b",
+    "x": "https://x.com/nishiharahaco"
   },
   "recommendedEpisode": {
     "title": "大人になって思うことベスト3",
