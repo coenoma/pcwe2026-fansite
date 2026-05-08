@@ -59,12 +59,49 @@ export function BoothPositionPreview({
   // 該当番組のサムネ URL（pcwe-XXX → /thumbnails/XXX.jpeg）
   const thumbnailUrl = `/thumbnails/${program.id.replace('pcwe-', '')}.jpeg`;
   const dayLabel = day === 'sat' ? '5/9 土' : '5/10 日';
+  const programName = program.shortName ?? program.name;
 
-  // 「ここ！」吹き出しのアンカー位置（focus 上端から 28px 上）
-  const balloonCx = focusX + focusW / 2;
-  const balloonCy = focusY - 28;
+  // テントの中心座標 + 大型サムネ配置ロジック
+  // テントが画面左半分なら右に、右半分なら左に、上下端は上下を選んで配置
+  const tentCx = focusX + focusW / 2;
+  const tentCy = focusY + focusH / 2;
+  const isLeft = tentCx < imgW * 0.45;
+  const isRight = tentCx > imgW * 0.55;
+  const isTop = tentCy < imgH * 0.45;
+  // 大型サムネサイズ（元 SVG 座標系）。imgW/H が 932x808 なので 180 は約 19%
+  const bigThumbSize = Math.round(Math.min(imgW, imgH) * 0.22);
+  const labelHeight = Math.round(bigThumbSize * 0.22);
+  // 配置: 左にテントなら右側、右にテントなら左側、中央なら上下空きの広い方
+  let bigThumbX: number;
+  let bigThumbY: number;
+  const margin = 24;
+  if (isLeft) {
+    bigThumbX = focusX + focusW + margin + 18;
+    bigThumbY = tentCy - bigThumbSize / 2;
+  } else if (isRight) {
+    bigThumbX = focusX - bigThumbSize - margin - 18;
+    bigThumbY = tentCy - bigThumbSize / 2;
+  } else if (isTop) {
+    bigThumbX = tentCx - bigThumbSize / 2;
+    bigThumbY = focusY + focusH + margin + 30;
+  } else {
+    bigThumbX = tentCx - bigThumbSize / 2;
+    bigThumbY = focusY - bigThumbSize - margin - labelHeight - 30;
+  }
+  // 範囲外クランプ（ラベル分の余白も考慮）
+  bigThumbX = Math.max(8, Math.min(bigThumbX, imgW - bigThumbSize - 8));
+  bigThumbY = Math.max(8, Math.min(bigThumbY, imgH - bigThumbSize - labelHeight - 8));
+  const bigThumbCx = bigThumbX + bigThumbSize / 2;
+  const bigThumbCy = bigThumbY + bigThumbSize / 2;
+  // 「ここ！」吹き出しの位置: focus 真上に大きめ
+  const hereLabelW = Math.round(focusW * 1.6);
+  const hereLabelH = Math.round(Math.max(focusH * 0.55, 22));
+  const hereLabelX = tentCx - hereLabelW / 2;
+  const hereLabelY = focusY - hereLabelH - 12;
+  const hereLabelFontSize = Math.round(hereLabelH * 0.55);
 
   const focusClipId = `booth-preview-clip-${program.id}-${day}`;
+  const bigThumbClipId = `booth-preview-bigthumb-${program.id}-${day}`;
 
   // SVG → Canvas → PNG 化 → 新タブで開く
   const handleOpenAsImage = useCallback(async () => {
@@ -141,7 +178,16 @@ export function BoothPositionPreview({
               y={focusY}
               width={focusW}
               height={focusH}
-              rx={4}
+              rx={6}
+            />
+          </clipPath>
+          <clipPath id={bigThumbClipId}>
+            <rect
+              x={bigThumbX}
+              y={bigThumbY}
+              width={bigThumbSize}
+              height={bigThumbSize}
+              rx={12}
             />
           </clipPath>
         </defs>
@@ -159,7 +205,7 @@ export function BoothPositionPreview({
           />
         ) : null}
 
-        {/* 全テント（簡素・薄塗り）*/}
+        {/* 全テント（非該当: 薄塗り + テント番号、該当: primary オレンジで強調）*/}
         {tents.map((t) => {
           const isTarget = t.id === targetTentId;
           const fontSize = Math.min(t.w, t.h) * 0.5;
@@ -172,7 +218,7 @@ export function BoothPositionPreview({
                 height={t.h}
                 fill={
                   isTarget
-                    ? 'var(--color-primary-200, #fbcfc1)'
+                    ? 'var(--color-primary-500, #dc725a)'
                     : 'var(--color-neutral-200, #e5e5e5)'
                 }
                 rx={4}
@@ -180,13 +226,9 @@ export function BoothPositionPreview({
               <text
                 x={t.x + t.w / 2}
                 y={t.y + t.h / 2 + fontSize * 0.34}
-                fill={
-                  isTarget
-                    ? 'var(--color-primary-700, #cc4f2c)'
-                    : 'var(--color-neutral-500, #737373)'
-                }
+                fill={isTarget ? '#fff' : 'var(--color-neutral-500, #737373)'}
                 fontSize={fontSize}
-                fontWeight={800}
+                fontWeight={isTarget ? 900 : 800}
                 textAnchor="middle"
               >
                 {t.id}
@@ -195,18 +237,28 @@ export function BoothPositionPreview({
           );
         })}
 
-        {/* 該当 slot 強調: パルス波紋 + サムネ + ラベル */}
+        {/* 該当 slot 強調: 目立つ accent-cyan で塗り + パルス波紋 */}
         <g>
-          {/* 外側パルス */}
+          {/* 該当 slot 塗り（accent-cyan、目立つ）*/}
           <rect
-            x={focusX - 6}
-            y={focusY - 6}
-            width={focusW + 12}
-            height={focusH + 12}
-            rx={8}
+            x={focusX}
+            y={focusY}
+            width={focusW}
+            height={focusH}
+            fill="var(--color-accent-cyan-500, #00b3d4)"
+            rx={6}
+          />
+
+          {/* 外側パルス（太く、目立つ） */}
+          <rect
+            x={focusX - 8}
+            y={focusY - 8}
+            width={focusW + 16}
+            height={focusH + 16}
+            rx={10}
             fill="none"
             stroke="var(--color-accent-cyan-500, #00b3d4)"
-            strokeWidth={3}
+            strokeWidth={5}
           >
             <animate
               attributeName="stroke-opacity"
@@ -216,76 +268,116 @@ export function BoothPositionPreview({
             />
             <animate
               attributeName="stroke-width"
-              values="3;5;3"
+              values="5;9;5"
               dur="1.6s"
               repeatCount="indefinite"
             />
           </rect>
 
-          {/* サムネ画像（クリップ） */}
+          {/* 「ここ！」大きい吹き出し（focus 真上、focusW の 1.6 倍幅）*/}
           <rect
-            x={focusX}
-            y={focusY}
-            width={focusW}
-            height={focusH}
+            x={hereLabelX}
+            y={hereLabelY}
+            width={hereLabelW}
+            height={hereLabelH}
+            rx={hereLabelH / 2}
+            fill="var(--color-accent-cyan-500, #00b3d4)"
+          />
+          {/* 三角ポインタ */}
+          <polygon
+            points={`${tentCx - hereLabelH / 3},${hereLabelY + hereLabelH} ${tentCx + hereLabelH / 3},${hereLabelY + hereLabelH} ${tentCx},${hereLabelY + hereLabelH + hereLabelH / 2.5}`}
+            fill="var(--color-accent-cyan-500, #00b3d4)"
+          />
+          <text
+            x={tentCx}
+            y={hereLabelY + hereLabelH / 2 + hereLabelFontSize * 0.36}
             fill="#fff"
-            rx={4}
+            fontSize={hereLabelFontSize}
+            fontWeight={900}
+            textAnchor="middle"
+          >
+            ここ！
+          </text>
+        </g>
+
+        {/* マップ余白に大型サムネ + 番組名 + ブース番号 + テントへの接続線 */}
+        <g>
+          {/* 接続線（サムネ中心 → テント中心、破線で視線誘導）*/}
+          <line
+            x1={bigThumbCx}
+            y1={bigThumbCy}
+            x2={tentCx}
+            y2={tentCy}
+            stroke="var(--color-accent-cyan-500, #00b3d4)"
+            strokeWidth={2.5}
+            strokeDasharray="6 4"
+            opacity={0.7}
+          />
+
+          {/* サムネ枠（白背景＋ accent-cyan 縁）*/}
+          <rect
+            x={bigThumbX - 4}
+            y={bigThumbY - 4}
+            width={bigThumbSize + 8}
+            height={bigThumbSize + 8}
+            rx={14}
+            fill="#fff"
+            stroke="var(--color-accent-cyan-500, #00b3d4)"
+            strokeWidth={3}
           />
           <image
             href={thumbnailUrl}
-            x={focusX}
-            y={focusY}
-            width={focusW}
-            height={focusH}
+            x={bigThumbX}
+            y={bigThumbY}
+            width={bigThumbSize}
+            height={bigThumbSize}
             preserveAspectRatio="xMidYMid slice"
-            clipPath={`url(#${focusClipId})`}
+            clipPath={`url(#${bigThumbClipId})`}
           />
 
-          {/* 下端ラベル（半透明黒 + 白文字、position label） */}
-          <rect
-            x={focusX}
-            y={focusY + focusH - Math.max(12, focusH * 0.28)}
-            width={focusW}
-            height={Math.max(12, focusH * 0.28)}
-            fill="rgba(0,0,0,0.65)"
-            clipPath={`url(#${focusClipId})`}
-          />
-          <text
-            x={focusX + focusW / 2}
-            y={focusY + focusH - Math.max(4, focusH * 0.08)}
-            fill="#fff"
-            fontSize={Math.max(8, focusW * 0.22)}
-            fontWeight={800}
-            textAnchor="middle"
-          >
-            {positionLabel}
-          </text>
-
-          {/* 「ここ！」吹き出し */}
+          {/* ブース番号バッジ（サムネ右上、accent-cyan 円形）*/}
           <g>
-            <rect
-              x={balloonCx - 28}
-              y={balloonCy - 14}
-              width={56}
-              height={22}
-              rx={11}
+            <circle
+              cx={bigThumbX + bigThumbSize - 6}
+              cy={bigThumbY + 6}
+              r={Math.round(bigThumbSize * 0.18)}
               fill="var(--color-accent-cyan-500, #00b3d4)"
-            />
-            <polygon
-              points={`${balloonCx - 5},${balloonCy + 8} ${balloonCx + 5},${balloonCy + 8} ${balloonCx},${balloonCy + 14}`}
-              fill="var(--color-accent-cyan-500, #00b3d4)"
+              stroke="#fff"
+              strokeWidth={3}
             />
             <text
-              x={balloonCx}
-              y={balloonCy + 1}
+              x={bigThumbX + bigThumbSize - 6}
+              y={bigThumbY + 6 + Math.round(bigThumbSize * 0.18) * 0.34}
               fill="#fff"
-              fontSize={12}
+              fontSize={Math.round(bigThumbSize * 0.16)}
               fontWeight={900}
               textAnchor="middle"
             >
-              ここ！
+              {positionLabel}
             </text>
           </g>
+
+          {/* サムネ下のラベルバー（番組名 + ブース番号）*/}
+          <rect
+            x={bigThumbX - 4}
+            y={bigThumbY + bigThumbSize + 4}
+            width={bigThumbSize + 8}
+            height={labelHeight}
+            rx={6}
+            fill="var(--color-neutral-900, #171717)"
+          />
+          <text
+            x={bigThumbX + bigThumbSize / 2}
+            y={bigThumbY + bigThumbSize + 4 + labelHeight / 2 + labelHeight * 0.18}
+            fill="#fff"
+            fontSize={Math.round(labelHeight * 0.5)}
+            fontWeight={800}
+            textAnchor="middle"
+          >
+            {programName.length > 14
+              ? `${programName.slice(0, 13)}…`
+              : programName}
+          </text>
         </g>
       </svg>
 
