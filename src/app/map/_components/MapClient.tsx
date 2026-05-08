@@ -608,30 +608,42 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
         onClose={handleCloseTentSheet}
       />
 
-      {/* ボトムシート（個別ブース選択時）*/}
-      <BoothBottomSheet
-        placement={selectedPlacement}
-        program={selectedProgram}
-        day={day}
-        tweets={tweets}
-        onClose={handleCloseBottomSheet}
-        isFavorite={
-          selectedPlacement?.programId
-            ? favorites.includes(selectedPlacement.programId)
-            : false
-        }
-        isVisited={selectedPlacement ? selectedPlacement.position in visited : false}
-        onToggleFavorite={
-          selectedPlacement?.programId
-            ? () => handleToggleFavorite(selectedPlacement.programId as string)
-            : undefined
-        }
-        onToggleVisited={
-          selectedPlacement && !selectedPlacement.externalKind
-            ? () => handleToggleVisited(selectedPlacement.position)
-            : undefined
-        }
-      />
+      {/* ボトムシート（個別ブース選択時）。
+          v1.12 セルフレビュー: `as string` 型アサーション（AGENTS.md 違反）を排除し、
+          `selectedProgramId` ローカル変数で undefined ガード後にクロージャに閉じ込める。 */}
+      {(() => {
+        const selectedProgramId = selectedPlacement?.programId;
+        const isExternal = selectedPlacement?.externalKind !== undefined;
+        return (
+          <BoothBottomSheet
+            placement={selectedPlacement}
+            program={selectedProgram}
+            day={day}
+            tweets={tweets}
+            onClose={handleCloseBottomSheet}
+            isFavorite={
+              selectedProgramId !== undefined
+                ? favorites.includes(selectedProgramId)
+                : false
+            }
+            isVisited={
+              selectedPlacement !== null
+                ? selectedPlacement.position in visited
+                : false
+            }
+            onToggleFavorite={
+              selectedProgramId !== undefined
+                ? () => handleToggleFavorite(selectedProgramId)
+                : undefined
+            }
+            onToggleVisited={
+              selectedPlacement !== null && !isExternal
+                ? () => handleToggleVisited(selectedPlacement.position)
+                : undefined
+            }
+          />
+        );
+      })()}
 
       {/* お手元の AI に聞くモーダル（マップ画面でも利用可能に） */}
       <AIChatPromptModal
