@@ -31,10 +31,15 @@ export function InstagramEmbed({ url, compact = false, height }: Props) {
   if (shortcode === null) {
     return null;
   }
-  const embedUrl = `https://www.instagram.com/p/${shortcode}/embed/`;
-  // 標準的な Instagram 埋め込みは縦長のフィード型: 600px 程度がデフォルト、
-  // compact だと少し短くしてポップアップ内の縦圧迫を避ける
-  const iframeHeight = height ?? (compact ? 540 : 640);
+  // `/embed/captioned/` でキャプション本文（説明欄）を含む長尺レイアウトに。
+  // 標準の `/embed/` は画像のみで本文が出ず物足りないため、こちらを採用。
+  const embedUrl = `https://www.instagram.com/p/${shortcode}/embed/captioned/`;
+  // captioned は画像 + プロフィール + キャプション本文 + コメント数 で縦長になる。
+  // 投稿によって高さが大きく変わるため、十分な高さを確保しつつ iframe 内スクロール
+  // でフォールバック可能にする（ユーザー指示「キルする必要なしスクロールで OK」）。
+  // - 通常: 1100px（番組詳細ページの広い枠で全部見える想定）
+  // - compact（マップポップアップ）: 800px（モーダル全体の縦圧迫を抑え、足りない分は内部スクロール）
+  const iframeHeight = height ?? (compact ? 800 : 1100);
 
   return (
     <iframe
@@ -43,10 +48,9 @@ export function InstagramEmbed({ url, compact = false, height }: Props) {
       width="100%"
       height={iframeHeight}
       loading="lazy"
-      // 投稿内のスクロール（複数枚画像のページネーション）を許可
-      scrolling="no"
-      // 内部の余白を Instagram 側で制御するため、独自の枠は付けない
-      style={{ border: 0, overflow: 'hidden' }}
+      // 高さに収まらない場合は iframe 内でスクロール可能に
+      scrolling="auto"
+      style={{ border: 0 }}
       className="block w-full rounded-xl bg-white"
       allow="encrypted-media; clipboard-write"
     />
