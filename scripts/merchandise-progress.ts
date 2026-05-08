@@ -54,6 +54,11 @@ interface ClassifiedProgram {
   hasInstagram: boolean;
   hasWebsite: boolean;
   detailsCount: number;
+  /** merchandiseDetails のいずれかが X 投稿 / note を出典としているか
+   *  （X 埋め込みや note 引用がある状態 = 魅力が伝わりやすい）*/
+  hasRichSource: boolean;
+  /** rich source の種別ラベル（X / note 等を併記）*/
+  richSourceTypes: string[];
 }
 
 interface Summary {
@@ -79,6 +84,17 @@ function classify(
 
   for (const p of programs) {
     const md = p.official.merchandiseDetails ?? [];
+    // X 投稿 / note を出典としているかを判定
+    // （メイン sourceType または additionalSources のいずれかに含まれていれば rich とみなす）
+    const richTypes = new Set<string>();
+    for (const d of md) {
+      if (d.sourceType === 'x-post') richTypes.add('X');
+      if (d.sourceType === 'note') richTypes.add('note');
+      for (const s of d.additionalSources ?? []) {
+        if (s.type === 'x-post') richTypes.add('X');
+        if (s.type === 'note') richTypes.add('note');
+      }
+    }
     const cp: ClassifiedProgram = {
       id: p.id,
       name: p.name,
@@ -86,6 +102,8 @@ function classify(
       hasInstagram: p.links.instagram !== undefined,
       hasWebsite: p.links.website !== undefined,
       detailsCount: md.length,
+      hasRichSource: richTypes.size > 0,
+      richSourceTypes: [...richTypes].sort(),
     };
     if (md.length > 0) {
       done.push(cp);
@@ -161,17 +179,60 @@ function formatProgressMd(summary: Summary): string {
   lines.push(`| SNS なし（即 not-found 候補） | ${pNone} |`);
   lines.push('');
 
+  // done を「X / note 出典あり（rich）」と「web / Listen / 公式のみ」に分類
+  const doneRich = done.filter((p) => p.hasRichSource);
+  const doneBasic = done.filter((p) => !p.hasRichSource);
+
   lines.push('---');
   lines.push('');
   lines.push('## ✅ 完了（merchandiseDetails あり）');
   lines.push('');
-  if (done.length === 0) {
+  lines.push(
+    `合計 **${done.length} 件**。出典の質で 2 グループに分類:`,
+  );
+  lines.push('');
+  lines.push(
+    `- 🌟 **X / note 投稿出典あり**（埋め込みあり、魅力が伝わりやすい）: **${doneRich.length} 件**`,
+  );
+  lines.push(
+    `- 📋 **web / Listen / 公式のみ**（X / note 出典追加でアップデート余地あり）: **${doneBasic.length} 件**`,
+  );
+  lines.push('');
+
+  lines.push('### 🌟 X / note 投稿出典あり（魅力伝わる）');
+  lines.push('');
+  lines.push(
+    'X 埋め込みや note 引用が含まれているので、当日の出展者の声・写真がそのままサイトで見られる状態。',
+  );
+  lines.push('');
+  if (doneRich.length === 0) {
     lines.push('（まだありません）');
   } else {
-    lines.push('| ID | 番組名 | 件数 |');
-    lines.push('|---|---|---:|');
-    for (const p of done) {
-      lines.push(`| ${p.id} | ${p.name} | ${p.detailsCount} |`);
+    lines.push('| ID | 番組名 | 件数 | 出典種別 |');
+    lines.push('|---|---|---:|---|');
+    for (const p of doneRich) {
+      lines.push(
+        `| ${p.id} | ${p.name} | ${p.detailsCount} | ${p.richSourceTypes.join(' / ')} |`,
+      );
+    }
+  }
+  lines.push('');
+
+  lines.push('### 📋 web / Listen / 公式のみ（要再確認・X 出典追加でアップデート余地あり）');
+  lines.push('');
+  lines.push(
+    '現状は Listen エピソードや公式ブースページからの情報のみで埋めている番組。X や note の新告知投稿が出ていれば置き換え or 追加できる。**当日に向けて X タイムラインの定期チェックを推奨**。',
+  );
+  lines.push('');
+  if (doneBasic.length === 0) {
+    lines.push('（まだありません）');
+  } else {
+    lines.push('| ID | 番組名 | 件数 | SNS |');
+    lines.push('|---|---|---:|---|');
+    for (const p of doneBasic) {
+      lines.push(
+        `| ${p.id} | ${p.name} | ${p.detailsCount} | ${snsBadges(p)} |`,
+      );
     }
   }
   lines.push('');
