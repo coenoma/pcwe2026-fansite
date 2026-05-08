@@ -15,16 +15,17 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（Episode 175: PODCAST WEEKEND 2）",
-        "description": "5/10(日)出展。販売予定：ステッカー、耐水ラベル、コーヒーブレンド、フォトブック、古着、テーブルクロス（チャプター単位で6カテゴリ紹介）",
-        "sourceUrl": "https://listen.style/p/diningfm",
-        "sourceType": "web"
-      },
-      {
-        "name": "PCWE2026 出展告知（Episode 167: GINZA COFFEE FEST）",
-        "description": "PCWE2026出店告知とグッズ計画の議論",
-        "sourceUrl": "https://listen.style/p/diningfm",
-        "sourceType": "web"
+        "name": "当日販売グッズまとめ + 特別枠ギャルソン古着（未着用）",
+        "description": "X 投稿（2026-05-06、@diningfm）にて「当日販売するグッズも改めてまとめました」と最新お品書きを画像付きで告知。さらに「販売するグッズと一切関係ない特別枠のギャルソンの古着（未着用）もある意味目玉です！」と、夫 katsuma のギャルソン愛が炸裂したサプライズ商品も。Listen エピソード（Episode 175 / 167）でも事前告知あり。販売予定: うまいものエピソードフォトブック / 良い感じコーヒードリップバッグ / 毎日使いたいタッパーシール / オリジナルステッカー / 耐水ラベル / 古着 / テーブルクロス。",
+        "sourceUrl": "https://x.com/diningfm/status/2052072307997511712",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/diningfm",
+            "type": "web",
+            "label": "Listen エピソード（事前告知）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [

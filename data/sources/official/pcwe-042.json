@@ -13,22 +13,23 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "命綱ターミナルチェーン",
-        "description": "パラシュートのロープから作られた、いかようにも化ける紐。大中小の3サイズ展開。「大切なものを大切にする極意」「バラバラのガチャガチャを束ねる」というテーマで、キーホルダーやチャームを束ねるオリジナルグッズ。Listen エピソード「【番外編】PCWE2026の裏話。出れるわけないという諦めを超えて出店する話」（2026-05-02 公開）にて公開。",
-        "sourceUrl": "https://listen.style/p/akirameradio",
-        "sourceType": "web"
+        "name": "あきらめラジオお品書き（5/9 土・8-C・オール手作業ハンドメイド）",
+        "description": "X 投稿（2026-05-05、@guccicoaching）にて全お品書き公開。「あきらめラジオ完全に手づくりに振りました。ナビゲーター自身の諦めを超えて、グッズはオール手作業。ハンドメイドが好き、わたしが作るものは売れないという『諦め越え』です」とホスト本人が告知。配布シールもあり。命綱ターミナルチェーン（パラシュートのロープから作られた紐、大中小 3 サイズ）/ 真鍮のあきらめラジオチャーム / 諦め探しジャーナリング体験 などが中心。",
+        "sourceUrl": "https://x.com/guccicoaching/status/2051477193671541201",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/akirameradio",
+            "type": "web",
+            "label": "Listen 番外編エピソード"
+          }
+        ]
       },
       {
-        "name": "真鍮のあきらめラジオチャーム",
-        "description": "経年変化を楽しめる真鍮素材のオリジナルチャーム。命綱ターミナルチェーンと組み合わせて使える番組ロゴ入りチャーム。Listen エピソード「【番外編】PCWE2026の裏話。出れるわけないという諦めを超えて出店する話」（2026-05-02 公開）にて公開。",
-        "sourceUrl": "https://listen.style/p/akirameradio",
-        "sourceType": "web"
-      },
-      {
-        "name": "諦め探しジャーナリング体験",
-        "description": "ブース来場者限定の体験コンテンツ。「無自覚なステルス諦めを見つける」をテーマに、来場者と一緒に諦めを掘り下げるジャーナリング。Listen エピソード「【番外編】PCWE2026の裏話。出れるわけないという諦めを超えて出店する話」（2026-05-02 公開）にて告知。",
-        "sourceUrl": "https://listen.style/p/akirameradio",
-        "sourceType": "web"
+        "name": "ステッカーセット 200 円（22 セット限定・歴代 4 種 + 手書きキラキラ 2 種）",
+        "description": "X 投稿（2026-05-07、@guccicoaching）にて追加グッズ告知。「あきらめラジオ、2023年から歴代のステッカー4種類と手書きキラキラシール2種類を入れた『ステッカーセット200円』も22セット持っていきます」。5/9（土）8-C で販売。",
+        "sourceUrl": "https://x.com/guccicoaching/status/2052384003014250559",
+        "sourceType": "x-post"
       }
     ],
     "merchandiseTags": [

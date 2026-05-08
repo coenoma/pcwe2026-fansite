@@ -14,10 +14,17 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（オリジナルグッズ展開）",
-        "description": "Listen エピソード「創44号 没頭だけして生きてえ！」（2026-05-03 公開）のエンディングにて、ホスト本人が「この放送の次の週、5月9日5月10日 ポッドキャストエキスポのポッドキャストウィークエンドで我々グッズ出すので、この頃にはグッズのリストも詳細絶対出てる」と告知。公式ブースページ掲載のグッズはステッカー・雑誌・漫画・Tシャツの4種。",
-        "sourceUrl": "https://listen.style/p/oreomo",
-        "sourceType": "web"
+        "name": "俺思オリジナルグッズ + 雑誌（漫画家×装丁デザイナー渾身の準備）",
+        "description": "X 投稿（2026-05-06、@oreha_omowanai）にて「【告知】Podcast Weekend 2026に弊番組 #俺思 が出展します！この日のために2人で作った俺思オリジナルグッズや雑誌などが盛りだくさんです！」と画像付きで告知。漫画家・根本大と装丁デザイナー・あんぼあつしによる「2人で作った」オリジナル雑貨と雑誌が中心。公式ブースページ掲載のグッズはステッカー・雑誌・漫画・Tシャツの4種。",
+        "sourceUrl": "https://x.com/oreha_omowanai/status/2052029762768703827",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/oreomo",
+            "type": "web",
+            "label": "Listen エピソード（事前告知）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [

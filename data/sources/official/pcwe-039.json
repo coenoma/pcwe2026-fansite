@@ -15,10 +15,17 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（PODCAST EXPO 2026：国内最大級のポッドキャス）",
-        "description": "出展日: 5月9日(土)のみ（5月10日は出展なし）。物販: ラジ推しロゴTシャツ 4,000円、ステッカー1枚 300円・2枚セット 500円、チケットホルダー 1,500円、番組台本集 500円、缶バッジセット 800円、缶ミラー 600円、サウンドカード（WE ARE VAZEE KNIGHT）500円。特別企画として推しボード参加者にステッカープレゼント、マシロマッシュ氏・牛若氏とのポッドラッププロジェクト・コラボ楽曲。キャッシュレス決済対応",
-        "sourceUrl": "https://listen.style/p/radioshiyy/7nxv1vb5",
-        "sourceType": "web"
+        "name": "全グッズ・企画公開（5/9 土・キャッシュレス決済対応）",
+        "description": "X 投稿（2026-05-04、@yutomajiyuto）にて「◤全グッズ・企画公開◢ 5/9（土）に出店する #ラジ推し の全グッズ・企画を公開します！」と画像付きで全公開。「めちゃくちゃ準備したので是非いらしてください！池尻大橋でぼくと握手🤝」。物販: ラジ推しロゴTシャツ 4,000円 / ステッカー1枚 300円・2枚セット 500円 / チケットホルダー 1,500円 / 番組台本集 500円 / 缶バッジセット 800円 / 缶ミラー 600円 / サウンドカード（WE ARE VAZEE KNIGHT）500円。特別企画: 推しボード参加者にステッカープレゼント、マシロマッシュ氏・牛若氏とのポッドラッププロジェクト・コラボ楽曲。",
+        "sourceUrl": "https://x.com/yutomajiyuto/status/2051089452446191962",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/radioshiyy/7nxv1vb5",
+            "type": "web",
+            "label": "Listen エピソード（事前告知）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
