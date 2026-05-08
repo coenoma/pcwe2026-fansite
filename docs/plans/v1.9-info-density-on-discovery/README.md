@@ -378,3 +378,71 @@ export function BoothLinkIcons({ links, programName, size = 18, className }: Pro
 
 **作成日**: 2026-05-08
 **メンテナ**: Claude（コエノマ運用下）
+
+---
+
+## 📝 v1.9.1 補正（2026-05-08 ユーザー再指摘）
+
+### 設計誤解の修正
+
+**誤**: モーダル全体を 50vh 弱（半分弱）にする
+**正**: **1 SlotCard が 50vh 弱、4 番組（2x2）で画面いっぱい** にする
+
+### 補正後の高さ設計
+
+| 要素 | 当初実装（誤）| 補正後（正）|
+|---|---|---|
+| モーダル全体 | `max-h-[55vh] / lg:60vh` | `max-h-[95vh] / lg:95vh` |
+| 1 SlotCard | 自然伸縮（圧縮）| **min-h-[48vh]**（50vh 弱の縦長カード）|
+| グリッド | 2 列 = 1 段 + スクロール | 2 列 x 2 段 = 4 番組フル展開 |
+
+### SlotCard の縦長化に伴う情報追加
+
+50vh 弱（≒ 400px）の縦スペースを活かし、現状の縦圧縮表示 → **詳細ページに準じる情報量** へ拡張:
+
+| 表示要素 | 当初 v1.9 | 補正後 |
+|---|---|---|
+| サムネサイズ | 56x56 | **72x72** |
+| 番組名 | line-clamp-2 | **line-clamp-2 / 大きめフォント (text-sm)** |
+| subCatch | line-clamp-1 | **line-clamp-2** |
+| catchphrase | line-clamp-2（蛍光下線）| **line-clamp-3（蛍光下線、本文 text-xs）**|
+| fanGuide.tags | 上位 3 件 | **全件表示**（最大 5 件）|
+| merchandiseTags | 上位 3 件 | **全件表示**（最大 6 件）|
+| 物販プレビュー | 代表 1 件 + +N | **代表 1 件 + サムネ + +N**（v1.8 既存維持）|
+| spotlight | line-clamp-1 | **line-clamp-2**（amber/primary 強調） |
+| **追加候補** |  |  |
+| recommendedEpisode | 非表示 | **「🎧 このエピソード聴く」CTA** |
+| 営業時間 | inline 1 行 | inline 1 行（変更なし）|
+| 状態バッジ | サムネ右上 | サムネ右上（変更なし）|
+
+### 補正による進捗マトリクス追加
+
+| Phase | タスク | 状況 | 担当 | 備考 |
+|---|---|:---:|---|---|
+| **Phase 8: SlotCard 縦長化** | モーダル高さ 55vh → 95vh | ✅ | Claude | SP/lg 共通 |
+| | SlotCard min-h-[48vh] | ✅ | Claude | flex-col、CTA を mt-auto で底面に |
+| | SlotCard 外殻を stretched button パターンに | ✅ | Claude | recommendedEpisode を内側 a タグに置くため |
+| | サムネ 56 → 72px | ✅ | Claude | h-18 w-18 |
+| | catchphrase line-clamp-3 | ✅ | Claude | text-xs、amber 蛍光下線 |
+| | subCatch line-clamp-1 → line-clamp-2 | ✅ | Claude | |
+| | fanGuide.tags 全件 | ✅ | Claude | flex-wrap、text-[10px] |
+| | merchandiseTags 全件 | ✅ | Claude | flex-wrap |
+| | spotlight line-clamp-2 | ✅ | Claude | |
+| | recommendedEpisode CTA | ✅ | Claude | 「🎧 エピソードを試聴する」external link |
+| **Phase 9: 検証 + コミット** | type-check / lint / build | ✅ | Claude | pass |
+| | コミット → main マージ | ✅ | Claude | |
+
+### スクロール挙動
+
+- モーダル全体: 95vh の box（ほぼ全画面）
+- ヘッダー（drag handle + タイトル + 閉じる）: shrink-0 固定 ≒ 60px
+- グリッド領域: flex-1 overflow-y-auto
+- 4 番組フィット時: スクロール不要（2 段で収まる）
+- 1 番組ヒット時: max-w-md で中央 1 列、縦長 1 SlotCard
+
+### 受け入れ基準（補正版）
+
+- [ ] モーダル開いたとき画面ほぼいっぱい（背景マップは隅にちらり見える）
+- [ ] 4 番組ヒット時、2x2 で全番組が縦スクロールなしに見える（SlotCard 内のスクロールは内側ヒエラルキーで）
+- [ ] catchphrase が line-clamp-3 でホストの世界観が伝わる
+- [ ] recommendedEpisode CTA がブース未訪問でも音源で先に試聴できる動線になる

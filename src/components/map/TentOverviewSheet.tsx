@@ -118,7 +118,7 @@ export function TentOverviewSheet({
         role="dialog"
         aria-modal="true"
         aria-labelledby="tent-overview-title"
-        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto flex max-h-[55vh] max-w-5xl flex-col overflow-hidden rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[60vh]"
+        className="fixed inset-x-0 bottom-[calc(56px+env(safe-area-inset-bottom))] z-50 mx-auto flex max-h-[95vh] max-w-5xl flex-col overflow-hidden rounded-t-[24px] bg-white shadow-2xl animate-[slideUp_0.25s_ease-out] lg:bottom-0 lg:max-h-[95vh]"
       >
         {/* sticky ヘッダー（drag handle + タイトル + 閉じる）*/}
         <div className="shrink-0 bg-white">
@@ -221,135 +221,165 @@ function SlotCard({
   const hoursLabel = program ? compactHours(program.exhibition.hours) : null;
   const fanTags = program?.fanGuide.tags ?? [];
   const merchTags = program?.official.merchandiseTags ?? [];
+  const name = program?.name ?? slot.externalName ?? '番組情報未登録';
+  const recommendedEpisode = program?.recommendedEpisode;
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="group flex flex-col rounded-2xl border border-neutral-200 bg-white p-3 text-left transition-all hover:border-primary-300 hover:shadow-md focus-visible:outline-2 focus-visible:outline-primary-500"
-    >
-      <div className="flex items-center gap-1.5">
-        <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-primary-500 px-1.5 text-[11px] font-bold text-white">
-          {slot.position}
-        </span>
-        {hoursLabel !== null ? (
-          <span className="text-[10px] text-neutral-500">{hoursLabel}</span>
-        ) : null}
-        {program?.fanGuide.genre ? (
-          <span className="truncate text-[10px] text-neutral-500">
-            ・{program.fanGuide.genre}
-          </span>
-        ) : null}
-      </div>
+    <article className="group relative flex min-h-[48vh] flex-col rounded-2xl border border-neutral-200 bg-white transition-all hover:border-primary-300 hover:shadow-md">
+      {/* stretched button: カード全体タップで onClick（z-10）*/}
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label={`${name} のブース詳細を開く`}
+        className="absolute inset-0 z-10 rounded-2xl focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+      >
+        <span className="sr-only">ブース詳細を開く</span>
+      </button>
 
-      {/* サムネ + 状態バッジ + 番組名 + subCatch */}
-      <div className="mt-2 flex items-start gap-2.5">
-        <div className="relative shrink-0">
-          {program ? (
-            <Image
-              src={program.thumbnail}
-              alt=""
-              width={56}
-              height={56}
-              className="h-14 w-14 rounded-lg object-cover"
-              aria-hidden="true"
-            />
-          ) : (
-            <span
-              aria-hidden="true"
-              className="flex h-14 w-14 items-center justify-center rounded-lg bg-neutral-100 text-2xl"
-            >
-              {isSponsor ? '🤝' : isKitchen ? '🍳' : '📍'}
+      {/* 表示コンテンツ（pointer-events-none で stretched button にクリック透過）*/}
+      <div className="pointer-events-none flex flex-1 flex-col p-3">
+        <div className="flex items-center gap-1.5">
+          <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-primary-500 px-1.5 text-[11px] font-bold text-white">
+            {slot.position}
+          </span>
+          {hoursLabel !== null ? (
+            <span className="text-[10px] text-neutral-500">{hoursLabel}</span>
+          ) : null}
+          {program?.fanGuide.genre ? (
+            <span className="truncate text-[10px] text-neutral-500">
+              ・{program.fanGuide.genre}
             </span>
-          )}
-          <BoothStateBadges
-            isFavorite={slot.isFavorite ?? false}
-            isVisited={slot.isVisited ?? false}
-            size="sm"
-            className="absolute -right-1.5 -top-1.5"
-          />
-        </div>
-        <div className="min-w-0 flex-1">
-          <p className="line-clamp-2 text-xs font-bold leading-snug text-neutral-900">
-            {program?.name ?? slot.externalName ?? '番組情報未登録'}
-          </p>
-          {program?.fanGuide.subCatch ? (
-            <p className="mt-1 line-clamp-1 text-[10px] leading-snug text-neutral-500">
-              {program.fanGuide.subCatch}
-            </p>
           ) : null}
         </div>
+
+        {/* サムネ + 状態バッジ + 番組名 + subCatch */}
+        <div className="mt-2 flex items-start gap-3">
+          <div className="relative shrink-0">
+            {program ? (
+              <Image
+                src={program.thumbnail}
+                alt=""
+                width={72}
+                height={72}
+                className="h-18 w-18 rounded-lg object-cover"
+                style={{ width: 72, height: 72 }}
+                aria-hidden="true"
+              />
+            ) : (
+              <span
+                aria-hidden="true"
+                className="flex items-center justify-center rounded-lg bg-neutral-100 text-3xl"
+                style={{ width: 72, height: 72 }}
+              >
+                {isSponsor ? '🤝' : isKitchen ? '🍳' : '📍'}
+              </span>
+            )}
+            <BoothStateBadges
+              isFavorite={slot.isFavorite ?? false}
+              isVisited={slot.isVisited ?? false}
+              size="sm"
+              className="absolute -right-1.5 -top-1.5"
+            />
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="line-clamp-2 text-sm font-bold leading-snug text-neutral-900">
+              {name}
+            </p>
+            {program?.fanGuide.subCatch ? (
+              <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-neutral-600">
+                {program.fanGuide.subCatch}
+              </p>
+            ) : null}
+          </div>
+        </div>
+
+        {/* catchphrase（amber 蛍光下線、line-clamp-3）*/}
+        {program?.fanGuide.catchphrase ? (
+          <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-neutral-800">
+            <span
+              className="box-decoration-clone"
+              style={{
+                backgroundImage:
+                  'linear-gradient(180deg, transparent 78%, rgba(252, 211, 77, 0.4) 78%, rgba(252, 211, 77, 0.4) 94%, transparent 94%)',
+                paddingInline: '0.1em',
+              }}
+            >
+              {program.fanGuide.catchphrase}
+            </span>
+          </p>
+        ) : null}
+
+        {/* fanGuide.tags（軸別カラー pill、全件 flex-wrap）*/}
+        {fanTags.length > 0 ? (
+          <p className="mt-2 flex flex-wrap gap-1">
+            {fanTags.map((tag) => (
+              <span
+                key={tag}
+                className={`inline-flex rounded-full border px-1.5 py-0.5 text-[10px] font-medium ${tagAxisClass(
+                  tagAxis(tag),
+                )}`}
+              >
+                {tag}
+              </span>
+            ))}
+          </p>
+        ) : null}
+
+        {/* グッズタグ（全件 flex-wrap）*/}
+        {merchTags.length > 0 ? (
+          <p className="mt-1 flex flex-wrap gap-1">
+            {merchTags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex rounded-full bg-secondary-100 px-1.5 py-0.5 text-[10px] font-medium text-secondary-800"
+              >
+                {shortLabel(tag)}
+              </span>
+            ))}
+          </p>
+        ) : null}
+
+        {/* 物販プレビュー: 代表物販 name + +N件 バッジ */}
+        {program?.official.merchandiseDetails &&
+        program.official.merchandiseDetails.length > 0 ? (
+          <MerchandisePreview
+            details={program.official.merchandiseDetails}
+            variant="slot"
+            className="mt-2.5 border-t border-neutral-100 pt-2"
+          />
+        ) : null}
+
+        {/* spotlight（ファンガイドおすすめ、line-clamp-2）*/}
+        {program?.official.merchandiseSpotlight ? (
+          <p className="mt-1.5 line-clamp-2 text-[11px] leading-snug text-primary-700">
+            ✨ {program.official.merchandiseSpotlight}
+          </p>
+        ) : null}
+
+        {isExternal ? (
+          <p className="mt-1 text-[10px] text-neutral-500">
+            {isSponsor ? 'スポンサー' : isKitchen ? '飲食ブース' : '外部参照'}
+          </p>
+        ) : null}
       </div>
 
-      {/* catchphrase（amber 蛍光下線、line-clamp-2）*/}
-      {program?.fanGuide.catchphrase ? (
-        <p className="mt-2 line-clamp-2 text-[11px] leading-relaxed text-neutral-800">
-          <span
-            className="box-decoration-clone"
-            style={{
-              backgroundImage:
-                'linear-gradient(180deg, transparent 78%, rgba(252, 211, 77, 0.4) 78%, rgba(252, 211, 77, 0.4) 94%, transparent 94%)',
-              paddingInline: '0.1em',
-            }}
-          >
-            {program.fanGuide.catchphrase}
-          </span>
-        </p>
+      {/* recommendedEpisode CTA（z-20、独立クリック可）*/}
+      {recommendedEpisode !== undefined ? (
+        <a
+          href={recommendedEpisode.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${name} のおすすめエピソード「${recommendedEpisode.title}」を聴く`}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className="relative z-20 mx-3 mb-3 mt-auto flex items-center justify-center gap-1.5 rounded-xl bg-primary-50 px-3 py-2 text-[11px] font-bold text-primary-700 transition-colors hover:bg-primary-100 pointer-events-auto"
+        >
+          <span aria-hidden="true">🎧</span>
+          <span className="line-clamp-1">エピソードを試聴する</span>
+        </a>
       ) : null}
-
-      {/* fanGuide.tags（軸別カラー pill、上位 3 件）*/}
-      {fanTags.length > 0 ? (
-        <p className="mt-1.5 flex flex-wrap gap-1">
-          {fanTags.slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className={`inline-flex rounded-full border px-1.5 py-0.5 text-[9px] font-medium ${tagAxisClass(
-                tagAxis(tag),
-              )}`}
-            >
-              {tag}
-            </span>
-          ))}
-        </p>
-      ) : null}
-
-      {/* グッズタグ（先頭 3 件）*/}
-      {merchTags.length > 0 ? (
-        <p className="mt-1 flex flex-wrap gap-1">
-          {merchTags.slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className="inline-flex rounded-full bg-secondary-100 px-1.5 py-0.5 text-[9px] font-medium text-secondary-800"
-            >
-              {shortLabel(tag)}
-            </span>
-          ))}
-        </p>
-      ) : null}
-
-      {/* 物販プレビュー: 代表物販 name + +N件 バッジ */}
-      {program?.official.merchandiseDetails &&
-      program.official.merchandiseDetails.length > 0 ? (
-        <MerchandisePreview
-          details={program.official.merchandiseDetails}
-          variant="slot"
-          className="mt-2 border-t border-neutral-100 pt-2"
-        />
-      ) : null}
-
-      {/* spotlight（ファンガイドおすすめ、1 行）*/}
-      {program?.official.merchandiseSpotlight ? (
-        <p className="mt-1.5 line-clamp-1 text-[10px] leading-snug text-primary-700">
-          ✨ {program.official.merchandiseSpotlight}
-        </p>
-      ) : null}
-
-      {isExternal ? (
-        <p className="mt-1 text-[10px] text-neutral-500">
-          {isSponsor ? 'スポンサー' : isKitchen ? '飲食ブース' : '外部参照'}
-        </p>
-      ) : null}
-    </button>
+    </article>
   );
 }
 
