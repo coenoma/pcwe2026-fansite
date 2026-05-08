@@ -13,14 +13,27 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（#140 祝2周年！そしてお知らせも！）",
-        "description": "PODCAST WEEKEND 2026（2026年5月9日(土)・10日(日) 10:00〜19:00、ホームワークビレッジ 東京都世田谷区池尻大橋）に出展。出展物: 旅先シミュレーター（イベント体験型企画）、手書きマップ（神奈川県版／33市町村網羅、パーソナルコメント付き、裏面に神奈川県年表）。価格はエピソード内で明示なし",
-        "sourceUrl": "https://listen.style/p/dzrqxmig/j4uwrllf",
-        "sourceType": "web"
+        "name": "ブース 21-A 最終告知（両日休憩なし・旅先シミュレーター + 神奈川県全域マップ）",
+        "description": "X 投稿（2026-05-08、@ototabi_podcast）にて「いよいよ明日から #PCWE2026 です！我々は【21-A】です。両日とも基本的に休憩なしでブースにいる予定ですので遊びに来てください〜大好評の #旅先シミュレーター と新グッズ「神奈川県全域マップ」を持ってお待ちしております！」と最終告知。事前 5/3 投稿でも「手書きマップを真心込めて梱包」「装飾準備中」とホスト本人が準備の様子を投稿。手書きマップは神奈川県 33 市町村網羅、パーソナルコメント付き、裏面に神奈川県年表（Listen エピソード「#140 祝 2 周年」より）。",
+        "sourceUrl": "https://x.com/ototabi_podcast/status/2052551134443872702",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/ototabi_podcast/status/2050954116923555974",
+            "type": "x-post",
+            "label": "準備中の様子（2026-05-03、手書きマップ梱包）"
+          },
+          {
+            "url": "https://listen.style/p/dzrqxmig/j4uwrllf",
+            "type": "web",
+            "label": "Listen エピソード（#140 祝 2 周年・グッズ詳細）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
-      "experience"
+      "experience",
+      "limited-new"
     ]
   },
   "exhibition": {

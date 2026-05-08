@@ -18,26 +18,28 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（#157 About PCWE2026 of NE1PO（原）",
-        "description": "PCWE2026出店決定。当日かっぴーは不在。オリジナルTシャツ再販予定、その他オリジナルグッズ準備中（公式SNSで段階的告知）",
-        "sourceUrl": "https://listen.style/p/ne1po",
-        "sourceType": "web"
-      },
-      {
-        "name": "PCWE2026 出展告知（#156 最近初めて行ったア・ソ・コ）",
-        "description": "PCWE2026出店決定告知、Tシャツ再販予定",
-        "sourceUrl": "https://listen.style/p/ne1po",
-        "sourceType": "web"
-      },
-      {
-        "name": "グッズ袋詰め準備の様子（PCWE2026 出展直前）",
-        "description": "X 投稿（2026-04-29、@ne1po_step）にて「#PCWE2026 まであと10日！！グッズの袋詰めに追われる私たち。絶対買ってよね？！笑 #NE1PO」と出展準備中のリアルな様子をホストが投稿。Tシャツ・特性ステッカー・キーホルダー・ハンカチ・ポストカード等のグッズが多数準備されている確証となる出典。",
-        "sourceUrl": "https://x.com/ne1po_step/status/2049334060968001718",
-        "sourceType": "x-post"
+        "name": "🌈 NE1PO ブースでできること 5 つ（5/9 土・サンキューカード配布 + フリマ + 録音 + グッズ + 写真展示）",
+        "description": "X 投稿（2026-05-06、@ne1po_step）にて「🌈5/9（土）#NE1POブースでできること」として 5 つのブース体験を画像付きで総合告知：(1) 🐾 サンキューカード全員配布（限定動画リンク付）(2) 🐾 メンバー別私物フリマ (3) 🐾 ボイスメッセージ録音 (4) 🐾 オリジナルグッズ販売（新作あり）(5) 🐾 ブース内オフショット写真展示。Listen エピソード（#156 / #157）でも事前告知あり、4/29 にはホスト自身がグッズ袋詰めの準備の様子（Tシャツ・特性ステッカー・キーホルダー・ハンカチ・ポストカード等）も投稿。",
+        "sourceUrl": "https://x.com/ne1po_step/status/2051904855711924429",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/ne1po_step/status/2049334060968001718",
+            "type": "x-post",
+            "label": "グッズ袋詰めの準備（2026-04-29）"
+          },
+          {
+            "url": "https://listen.style/p/ne1po",
+            "type": "web",
+            "label": "Listen 事前告知エピソード（#156 / #157）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
-      "limited-new"
+      "limited-new",
+      "experience",
+      "free-distribution"
     ],
     "merchandiseSubTypes": [
       "apparel",
