@@ -28,6 +28,10 @@ import {
   TwitterEmbed,
   extractTweetId,
 } from '@/components/twitter-embed/TwitterEmbed';
+import {
+  InstagramEmbed,
+  extractInstagramShortcode,
+} from './InstagramEmbed';
 import type { TweetMap } from '@/lib/tweet-cache';
 import type {
   MerchandiseDetail,
@@ -52,16 +56,31 @@ interface Props {
 export function MerchandiseGroupCard({ group, compact = false, tweets }: Props) {
   const mainTweetId =
     group.sourceType === 'x-post' ? extractTweetId(group.sourceUrl) : null;
+  const mainInstagramShortcode =
+    group.sourceType === 'instagram-post'
+      ? extractInstagramShortcode(group.sourceUrl)
+      : null;
 
-  // 王道パターン: メイン出典が X 以外で、グループ先頭 item の additionalSources に
-  // x-post が含まれる場合は「X 概要 + 本出典詳細」の二段構成として大きく扱う。
+  // 王道パターン: メイン出典が X / Instagram 以外で、グループ先頭 item の additionalSources に
+  // x-post or instagram-post が含まれる場合は「埋め込み概要 + 本出典詳細」の二段構成として大きく扱う。
+  // X が優先（既存挙動維持）、無ければ Instagram。
   const headItem = group.items[0];
   const supplementaryTweetId = (() => {
-    if (mainTweetId !== null) return null;
+    if (mainTweetId !== null || mainInstagramShortcode !== null) return null;
     const xSource = headItem.additionalSources?.find(
       (s) => s.type === 'x-post',
     );
     return xSource !== undefined ? extractTweetId(xSource.url) : null;
+  })();
+  const supplementaryInstagramSource = (() => {
+    if (mainTweetId !== null || mainInstagramShortcode !== null) return null;
+    if (supplementaryTweetId !== null) return null;
+    const igSource = headItem.additionalSources?.find(
+      (s) => s.type === 'instagram-post',
+    );
+    if (igSource === undefined) return null;
+    const shortcode = extractInstagramShortcode(igSource.url);
+    return shortcode !== null ? { url: igSource.url } : null;
   })();
 
   // 表示用: お品書き画像はグループ先頭 item の imagePath を採用
@@ -154,8 +173,8 @@ export function MerchandiseGroupCard({ group, compact = false, tweets }: Props) 
           </div>
         ))}
 
-        {/* 日本式出典明記（メイン出典が X 以外で、出典メタが揃っている場合のみ） */}
-        {mainTweetId === null ? (
+        {/* 日本式出典明記（メイン出典が X / Instagram 埋め込み以外で、出典メタが揃っている場合のみ） */}
+        {mainTweetId === null && mainInstagramShortcode === null ? (
           <Citation item={headItem} sourceType={group.sourceType} compact={compact} />
         ) : null}
 
@@ -184,9 +203,25 @@ export function MerchandiseGroupCard({ group, compact = false, tweets }: Props) 
             )}
           </div>
         ) : null}
+
+        {/* 王道パターン: 補助 Instagram 投稿（X が優先のため、X が無いときだけ） */}
+        {supplementaryInstagramSource !== null ? (
+          <div className={compact ? 'mt-3' : 'mt-4'}>
+            <p
+              className={
+                compact
+                  ? 'mb-2 text-[10px] font-semibold tracking-wide text-neutral-500'
+                  : 'mb-2 text-xs font-semibold tracking-wide text-neutral-500'
+              }
+            >
+              📣 番組ホストの Instagram 投稿
+            </p>
+            <InstagramEmbed url={supplementaryInstagramSource.url} compact={compact} />
+          </div>
+        ) : null}
       </div>
 
-      {/* CTA: メイン出典が X なら埋め込み、それ以外はリンクボタン */}
+      {/* CTA: メイン出典が X / Instagram なら埋め込み、それ以外はリンクボタン */}
       {mainTweetId !== null ? (
         <div
           className={
@@ -204,6 +239,10 @@ export function MerchandiseGroupCard({ group, compact = false, tweets }: Props) 
           ) : (
             <TwitterEmbed tweetId={mainTweetId} />
           )}
+        </div>
+      ) : mainInstagramShortcode !== null ? (
+        <div className={compact ? 'border-t border-neutral-100 p-3' : 'border-t border-neutral-100 p-4 sm:p-5'}>
+          <InstagramEmbed url={group.sourceUrl} compact={compact} />
         </div>
       ) : (
         <a
