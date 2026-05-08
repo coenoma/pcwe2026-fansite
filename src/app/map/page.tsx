@@ -38,7 +38,8 @@ export default async function MapPage() {
   const boothPositions = getBoothPositions();
   // SSG ビルド時に X 投稿を一括 pre-fetch
   // → ランタイム fetch ゼロ、レート制限と "Tweet not found" の誤発火を回避
-  const tweets = await fetchTweetsForPrograms(programs);
+  // v1.14: external（スポンサー）の物販詳細 X 投稿も pre-fetch 対象に
+  const tweets = await fetchTweetsForPrograms(programs, boothPositions);
 
   return (
     <main className="min-h-screen bg-neutral-50">

@@ -15,7 +15,7 @@
 
 import { getTweet } from 'react-tweet/api';
 import type { Tweet } from 'react-tweet/api';
-import type { Program } from './types';
+import type { BoothPositionsData, MerchandiseDetail, Program } from './types';
 
 export type TweetMap = Record<string, Tweet | undefined>;
 
@@ -25,27 +25,46 @@ export function extractTweetIdFromUrl(url: string): string | null {
   return m?.[1] ?? null;
 }
 
+/** merchandiseDetails 配列から x-post の tweet ID を Set に追加するヘルパー */
+function collectTweetIds(
+  details: ReadonlyArray<MerchandiseDetail> | undefined,
+  ids: Set<string>,
+): void {
+  if (details === undefined) return;
+  for (const d of details) {
+    if (d.sourceType === 'x-post') {
+      const mainId = extractTweetIdFromUrl(d.sourceUrl);
+      if (mainId) ids.add(mainId);
+    }
+    for (const src of d.additionalSources ?? []) {
+      if (src.type === 'x-post') {
+        const subId = extractTweetIdFromUrl(src.url);
+        if (subId) ids.add(subId);
+      }
+    }
+  }
+}
+
 /**
- * 全番組の merchandiseDetails をスキャンして、すべての tweet ID を抽出 + 一括取得。
+ * 全番組の merchandiseDetails + booth-positions の external 物販詳細をスキャンして、
+ * すべての tweet ID を抽出 + 一括取得。
  * 取得失敗の tweet は undefined のまま map に入れる。
  */
 export async function fetchTweetsForPrograms(
   programs: ReadonlyArray<Program>,
+  boothPositions?: BoothPositionsData,
 ): Promise<TweetMap> {
   const ids = new Set<string>();
+  // 番組（programs.json）の物販詳細
   for (const p of programs) {
-    for (const d of p.official.merchandiseDetails ?? []) {
-      // メイン sourceUrl が x-post なら ID 抽出
-      if (d.sourceType === 'x-post') {
-        const mainId = extractTweetIdFromUrl(d.sourceUrl);
-        if (mainId) ids.add(mainId);
-      }
-      // 補助出典の x-post も
-      for (const src of d.additionalSources ?? []) {
-        if (src.type === 'x-post') {
-          const subId = extractTweetIdFromUrl(src.url);
-          if (subId) ids.add(subId);
-        }
+    collectTweetIds(p.official.merchandiseDetails, ids);
+  }
+  // v1.14: external（スポンサー / キッチン）の物販詳細も
+  if (boothPositions !== undefined) {
+    for (const tent of boothPositions.tents) {
+      for (const slot of tent.slots) {
+        collectTweetIds(slot.satExternal?.merchandiseDetails, ids);
+        collectTweetIds(slot.sunExternal?.merchandiseDetails, ids);
       }
     }
   }

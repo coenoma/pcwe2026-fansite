@@ -1225,7 +1225,15 @@
             "kind": "sponsor",
             "name": "TBSラジオ",
             "url": "https://www.tbsradio.jp/",
-            "note": "スポンサー出展（5/9 のみ）"
+            "note": "スポンサー出展（5/9 のみ）",
+            "merchandiseDetails": [
+              {
+                "name": "TBSラジオ ブース 31（5/9 土・無料・現金のみ）",
+                "description": "📍 5/9（土）ブース 31 = TBSラジオ。\n\nラインナップ:\n- 大吉ポッドキャスト\n- セイジドウラク\n- 文化系トークラジオ Life グッズ\n- #utamaru 高校演劇 ZINE 販売\n- 各種配布\n\n入場無料・支払い現金のみ。",
+                "sourceUrl": "https://x.com/nankuru_akabeko/status/2052701606328856832",
+                "sourceType": "x-post"
+              }
+            ]
           }
         }
       ],

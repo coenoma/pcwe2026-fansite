@@ -16,10 +16,17 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展準備中",
-        "description": "5/9（土）出展。具体的な物販ラインナップは公式 boothpage に記載: ステッカー（2-3種類）・ZINE・Tシャツ（制作出来たら）・占い・秘密供養。",
-        "sourceUrl": "https://x.com/tekito9899/status/2046505145765404721",
-        "sourceType": "x-post"
+        "name": "PCWE2026 当日告知（5/9 土・占い + 秘密供養）",
+        "description": "前乗り済、当日張り切って出展。占い + 相方による秘密供養。物販ラインナップは公式 boothpage 記載: ステッカー（2-3 種類）・ZINE・Tシャツ（制作出来たら）。",
+        "sourceUrl": "https://x.com/tekito9899/status/2052690001906036907",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/tekito9899/status/2046505145765404721",
+            "type": "x-post",
+            "label": "事前出展告知（4/19）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
