@@ -133,9 +133,8 @@ export function MerchandisePreview({ details, variant, className }: Props) {
   }
 
   // variant === 'sheet-header'
-  // 上位 2 件の name を箇条書き、3 件以上あれば「他 N 件は下のブース物販セクションで詳細 ↓」テキスト
+  // 上位 2 件の name を箇条書き（残り件数の説明テキストはユーザー判断で省略：下にブース物販セクションが続くため自明）
   const headlineItems = details.slice(0, 2);
-  const restCount = details.length - headlineItems.length;
 
   return (
     <div className={className ?? ''}>
@@ -152,11 +151,6 @@ export function MerchandisePreview({ details, variant, className }: Props) {
           </li>
         ))}
       </ul>
-      {restCount > 0 ? (
-        <p className="mt-2 text-[11px] text-neutral-500">
-          他 {restCount} 件は下のブース物販セクションで詳細 ↓
-        </p>
-      ) : null}
     </div>
   );
 }

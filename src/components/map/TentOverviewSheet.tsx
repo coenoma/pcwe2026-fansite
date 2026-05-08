@@ -222,13 +222,18 @@ function SlotCard({
   const merchDetails = program?.official.merchandiseDetails ?? [];
   const spotlight = program?.official.merchandiseSpotlight;
   const name = program?.name ?? slot.externalName ?? '番組情報未登録';
-  const recommendedEpisode = program?.recommendedEpisode;
   // 物販主役エリアが何か出るかどうか（タグ or 詳細 or spotlight のいずれか）
   const hasMerchSection =
     merchTags.length > 0 || merchDetails.length > 0 || spotlight !== undefined;
 
   return (
-    <article className="group relative flex min-h-[48vh] flex-col rounded-2xl border border-neutral-200 bg-white transition-all hover:border-primary-300 hover:shadow-md">
+    <article
+      className={
+        hasMerchSection
+          ? 'group relative flex min-h-[48vh] flex-col rounded-2xl border border-neutral-200 bg-white transition-all hover:border-primary-300 hover:shadow-md'
+          : 'group relative flex flex-col rounded-2xl border border-neutral-200 bg-white transition-all hover:border-primary-300 hover:shadow-md'
+      }
+    >
       {/* stretched button: カード全体タップで onClick（z-10）*/}
       <button
         type="button"
@@ -260,6 +265,7 @@ function SlotCard({
             isFavorite={slot.isFavorite ?? false}
             isVisited={slot.isVisited ?? false}
             size="sm"
+            direction="row"
             className="shrink-0"
           />
         </div>
@@ -330,22 +336,16 @@ function SlotCard({
         )}
       </div>
 
-      {/* 6. recommendedEpisode CTA（z-20、独立クリック可）*/}
-      {recommendedEpisode !== undefined ? (
-        <a
-          href={recommendedEpisode.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${name} のおすすめエピソード「${recommendedEpisode.title}」を聴く`}
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-          className="relative z-20 mx-3 mb-3 flex items-center justify-center gap-1.5 rounded-xl bg-primary-50 px-3 py-2 text-[11px] font-bold text-primary-700 transition-colors hover:bg-primary-100 pointer-events-auto"
-        >
-          <span aria-hidden="true">🎧</span>
-          <span className="line-clamp-1">エピソードを試聴する</span>
-        </a>
-      ) : null}
+      {/* 6. もっと見る hint（カード底面、stretched button にクリックを委譲）
+          - 視覚的アフォーダンスのみ（実際のクリックは外殻 button が処理）
+          - エピソード試聴 CTA は番組詳細ページの役目なのでここには置かない */}
+      <p
+        aria-hidden="true"
+        className="pointer-events-none mx-3 mb-3 flex items-center justify-end gap-1 text-[11px] font-bold text-primary-700"
+      >
+        <span>もっと見る</span>
+        <span>→</span>
+      </p>
     </article>
   );
 }

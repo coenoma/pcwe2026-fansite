@@ -116,6 +116,7 @@ export function MapListView({
                     isFavorite={isFavorite}
                     isVisited={isVisited}
                     size="sm"
+                    direction="row"
                     className="shrink-0"
                   />
                 </div>
