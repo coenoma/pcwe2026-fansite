@@ -47,6 +47,9 @@ interface Props {
   favoriteProgramIds?: Set<string>;
   /** 「会えた」済みの position 集合（ピンに✅マーク）*/
   visitedPositions?: Set<string>;
+  /** v1.13: 番組サムネ表示モード（single tent + detail zoom slot に番組アートワーク
+   *  を SVG image で表示。quad テント全体表示・キッチン・スポンサーには適用しない）*/
+  showThumbnails?: boolean;
 }
 
 const FALLBACK_IMAGE_SIZE = { width: 932, height: 808 };
@@ -62,6 +65,7 @@ export function VenueMap({
   highlightedPositions,
   favoriteProgramIds,
   visitedPositions,
+  showThumbnails = false,
 }: Props) {
   const imageSize = data.imageSize ?? FALLBACK_IMAGE_SIZE;
   const placementByPosition = new Map<string, SlotPlacement>();
@@ -285,6 +289,7 @@ export function VenueMap({
                     favoriteProgramIds={favoriteProgramIds}
                     visitedPositions={visitedPositions}
                     isDetailZoom={isDetailZoom}
+                    showThumbnails={showThumbnails}
                   />
                 ))}
               </svg>
@@ -373,6 +378,8 @@ interface TentClickAreaProps {
   visitedPositions?: Set<string>;
   /** scale が閾値以上なら quad テントは A/B/C/D を個別タップに切替 */
   isDetailZoom?: boolean;
+  /** v1.13: 各 slot 矩形を番組サムネで塗る */
+  showThumbnails?: boolean;
 }
 
 function TentClickArea({
@@ -386,6 +393,7 @@ function TentClickArea({
   favoriteProgramIds,
   visitedPositions,
   isDetailZoom = false,
+  showThumbnails = false,
 }: TentClickAreaProps) {
   if (!tent.polygon) return null;
   const [[x0, y0], [x1, y1]] = tent.polygon;
@@ -473,6 +481,13 @@ function TentClickArea({
               (favoriteProgramIds?.has(placement.programId) ?? false);
             const slotIsVisited =
               visitedPositions?.has(positionLabel) ?? false;
+            // 番組サムネ URL（pcwe-XXX → /thumbnails/XXX.jpeg）。program なし or
+            // external（スポンサー / キッチン）の場合は undefined のままにし、
+            // TentRect 側で既存の色塗り表示にフォールバック。
+            const slotThumbnailUrl =
+              placement?.programId !== undefined
+                ? `/thumbnails/${placement.programId.replace('pcwe-', '')}.jpeg`
+                : undefined;
 
             return (
               <TentRect
@@ -491,6 +506,8 @@ function TentClickArea({
                 hasContent={slotHasContent}
                 isFavorite={slotIsFavorite}
                 isVisited={slotIsVisited}
+                thumbnailUrl={slotThumbnailUrl}
+                showThumbnail={showThumbnails}
                 ariaLabel={`ブース ${positionLabel}${
                   placement?.programId ? '（タップで番組情報）' : ''
                 }`}
@@ -558,6 +575,11 @@ function TentClickArea({
     placement?.programId !== undefined &&
     (favoriteProgramIds?.has(placement.programId) ?? false);
   const isVisited = visitedPositions?.has(positionLabel) ?? false;
+  // single tent 用の番組サムネ URL（program がない / external なら undefined）
+  const singleThumbnailUrl =
+    placement?.programId !== undefined
+      ? `/thumbnails/${placement.programId.replace('pcwe-', '')}.jpeg`
+      : undefined;
 
   const ariaLabel = !hasContent
     ? `テント ${positionLabel}（情報なし）`
@@ -583,6 +605,8 @@ function TentClickArea({
         hasContent={hasContent}
         isFavorite={isFavorite}
         isVisited={isVisited}
+        thumbnailUrl={singleThumbnailUrl}
+        showThumbnail={showThumbnails}
         ariaLabel={ariaLabel}
         onClick={() => {
           if (hasContent && placement) onSelectSlot(placement);
@@ -630,6 +654,10 @@ interface TentRectProps {
   ariaLabel: string;
   /** 明示的に fontSize を上書きしたい時（個別タップモードで小さい区画でラベルを収めるため）*/
   fontSizeOverride?: number;
+  /** v1.13: 番組サムネ URL（ある時は SVG image で塗りつぶし、ラベルは下端タブ表示）*/
+  thumbnailUrl?: string;
+  /** v1.13: サムネ表示モード ON のとき thumbnailUrl が描画される。OFF or quad 全体表示なら従来通り */
+  showThumbnail?: boolean;
   onClick: () => void;
 }
 
@@ -649,6 +677,8 @@ function TentRect({
   isVisited = false,
   ariaLabel,
   fontSizeOverride,
+  thumbnailUrl,
+  showThumbnail = false,
   onClick,
 }: TentRectProps) {
   const cx = x + width / 2;
@@ -714,33 +744,48 @@ function TentRect({
         </rect>
       ) : null}
 
-      {/* テント本体（選択中でも枠は付けず、外側の波紋だけで強調）*/}
-      <rect
-        x={x}
-        y={y}
-        width={width}
-        height={height}
-        fill={fillColor}
-        rx={4}
-        className={
-          hasContent
-            ? 'transition-colors hover:[fill:var(--color-primary-600)]'
-            : ''
-        }
-      />
-
-      {/* テント番号 */}
-      <text
-        x={cx}
-        y={cy + fontSize * 0.34}
-        fill={labelColor}
-        fontSize={fontSize}
-        fontWeight={900}
-        textAnchor="middle"
-        aria-hidden="true"
-      >
-        {label}
-      </text>
+      {/* テント本体（選択中でも枠は付けず、外側の波紋だけで強調）。
+          v1.13: showThumbnail + thumbnailUrl + hasContent + !showQuadHints のとき、
+          色塗り → 番組サムネ画像表示に切り替える。ラベルは下端タブで保持。 */}
+      {showThumbnail && thumbnailUrl !== undefined && hasContent && !showQuadHints ? (
+        <ThumbnailRect
+          x={x}
+          y={y}
+          width={width}
+          height={height}
+          thumbnailUrl={thumbnailUrl}
+          label={label}
+          fontSize={fontSize}
+        />
+      ) : (
+        <>
+          <rect
+            x={x}
+            y={y}
+            width={width}
+            height={height}
+            fill={fillColor}
+            rx={4}
+            className={
+              hasContent
+                ? 'transition-colors hover:[fill:var(--color-primary-600)]'
+                : ''
+            }
+          />
+          {/* テント番号（中央） */}
+          <text
+            x={cx}
+            y={cy + fontSize * 0.34}
+            fill={labelColor}
+            fontSize={fontSize}
+            fontWeight={900}
+            textAnchor="middle"
+            aria-hidden="true"
+          >
+            {label}
+          </text>
+        </>
+      )}
 
       {/* quad テントの A/B/C/D ヒント（4 隅に小さく、公式配置に従う）*/}
       {showQuadHints ? (
@@ -831,6 +876,86 @@ function TentRect({
           ) : null}
         </g>
       ) : null}
+    </g>
+  );
+}
+
+/**
+ * v1.13: 番組サムネで矩形を塗りつつ、下端にラベルタブ（半透明黒 + 白文字）を
+ * 重ねるサブコンポーネント。clipPath で角丸内に画像を切り抜く。
+ */
+function ThumbnailRect({
+  x,
+  y,
+  width,
+  height,
+  thumbnailUrl,
+  label,
+  fontSize,
+}: {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  thumbnailUrl: string;
+  label: string;
+  fontSize: number;
+}) {
+  // SVG 内で一意な clipPath ID（座標ベース、整数化で衝突回避）
+  const clipId = `thumb-clip-${Math.round(x)}-${Math.round(y)}`;
+  // ラベルタブ高さ（fontSize の 1.4 倍程度）
+  const tabHeight = Math.max(11, Math.round(fontSize * 0.5));
+  const tabFontSize = Math.max(8, Math.round(fontSize * 0.36));
+
+  return (
+    <g>
+      <defs>
+        <clipPath id={clipId}>
+          <rect x={x} y={y} width={width} height={height} rx={4} />
+        </clipPath>
+      </defs>
+      {/* 背景の白 fill（画像読み込み中フォールバック）*/}
+      <rect
+        x={x}
+        y={y}
+        width={width}
+        height={height}
+        fill="#fff"
+        rx={4}
+        aria-hidden="true"
+      />
+      {/* 番組サムネ画像 */}
+      <image
+        href={thumbnailUrl}
+        x={x}
+        y={y}
+        width={width}
+        height={height}
+        preserveAspectRatio="xMidYMid slice"
+        clipPath={`url(#${clipId})`}
+        aria-hidden="true"
+      />
+      {/* 下端タブ（半透明黒）+ 白文字ラベル */}
+      <rect
+        x={x}
+        y={y + height - tabHeight}
+        width={width}
+        height={tabHeight}
+        fill="rgba(0,0,0,0.62)"
+        clipPath={`url(#${clipId})`}
+        aria-hidden="true"
+      />
+      <text
+        x={x + width / 2}
+        y={y + height - tabHeight / 2 + tabFontSize * 0.36}
+        fill="#fff"
+        fontSize={tabFontSize}
+        fontWeight={800}
+        textAnchor="middle"
+        aria-hidden="true"
+      >
+        {label}
+      </text>
     </g>
   );
 }

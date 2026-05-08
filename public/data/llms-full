@@ -34,7 +34,7 @@ a { color: #1a5fb4; }
   <h1>PCWE2026 全 145 番組 詳細データ（LLM 向け）</h1>
   <p>PODCAST EXPO 2026 内のマーケットイベント <strong>PODCAST WEEKEND 2026</strong>（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）出展 145 番組の詳細を 1 ページに集約した、LLM / AI クライアント向けの HTML データページです。</p>
   <p>人間向けファンガイドは <a href="https://pcwe2026-fansite.podmate.fm/">トップページ</a>。同じデータの他フォーマット: <a href="https://pcwe2026-fansite.podmate.fm/llms-full.txt">llms-full.txt</a> / <a href="https://pcwe2026-fansite.podmate.fm/api/programs.json">programs.json</a> / <a href="https://pcwe2026-fansite.podmate.fm/llms.txt">llms.txt（サイト地図）</a></p>
-  <p class="meta">最終ビルド: <time datetime="2026-05-08T07:12:48.437Z">2026-05-08T07:12:48.437Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
+  <p class="meta">最終ビルド: <time datetime="2026-05-08T12:02:50.211Z">2026-05-08T12:02:50.211Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
 </header>
 
 <nav class="toc">
@@ -1140,7 +1140,7 @@ DJやトラックメイカーの楽曲制作、イベント出演に関するウ
 やこ：育休中営業職。この2年間で経験した結婚・出産も38℃ラジオ内で公開。
 たかたさや：小学生男女の母。元営業職。整理収納アドバイザーとして独立し、働く様子を定期的に公開。</p>
   
-  <p><strong>ブース物販</strong>: オリジナル缶バッジ / 1円玉落とし / ボトルマーカー / キーホルダー / タオル</p>
+  <p><strong>ブース物販</strong>: オリジナル缶バッジ（事前注文 + 当日販売） / ボトルマーカー（限定） / ロッカーキー風キーホルダー（限定） / 1 円玉落とし企画</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-035">このサイトの番組詳細ページ</a></li>
@@ -1340,7 +1340,7 @@ DJやトラックメイカーの楽曲制作、イベント出演に関するウ
 「あきらめ」を入口に、何が起こるかわからないカオスな時代を、願いとともに生きる人たちへ。
 楽しく、面白く、ときにはシリアスに。今を生きる知恵を語り合います。</p>
   
-  <p><strong>ブース物販</strong>: ステッカー / ブックマーク / キーホルダー</p>
+  <p><strong>ブース物販</strong>: 命綱ターミナルチェーン（2,500 円） / 命綱キーホルダー（1,000 円） / 命綱キーホルダー mini（500 円） / ステッカーセット（200 円・6 枚入り） / あきらめおみくじ（無料体験） / 諦め探しジャーナリング（無料体験）</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-042">このサイトの番組詳細ページ</a></li>
@@ -3184,7 +3184,7 @@ Observe, Think, Talk
   <p>CALL4は司法を通じた社会課題の解決を目指す非営利のウェブプラットフォームです。公共訴訟は、身の回りで起きている“おかしなこと“をなくすために行われている裁判です。CALL4は社会制度やルールを司法の場で問う公共訴訟を支援しています。
 CALL4 Podcastは、その活動の一環としてCALL4が提供する、公共訴訟の原告の方や弁護士の「声」を届けるPodcastです。</p>
   
-  <p><strong>ブース物販</strong>: ①グッズ：zine / CALL4ステッカー / トートバッグ / Tシャツ等 ②サービス：公共訴訟を紹介するパネル展示 / カードゲーム</p>
+  <p><strong>ブース物販</strong>: ZINE / CALL4 ステッカー / トートバッグ / Tシャツ / 公共訴訟ゲーム（カードゲーム） / 公共訴訟を紹介するパネル展示</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-106">このサイトの番組詳細ページ</a></li>
