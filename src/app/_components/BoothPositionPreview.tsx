@@ -94,11 +94,18 @@ export function BoothPositionPreview({
   const bigThumbCx = bigThumbX + bigThumbSize / 2;
   const bigThumbCy = bigThumbY + bigThumbSize / 2;
   // 「ここ！」吹き出しの位置: focus 真上に大きめ
-  const hereLabelW = Math.round(focusW * 1.6);
-  const hereLabelH = Math.round(Math.max(focusH * 0.55, 22));
+  // 視認性最優先で focus の 2.5 倍幅 + 大型フォント
+  const hereLabelW = Math.round(Math.max(focusW * 2.5, 80));
+  const hereLabelH = Math.round(Math.max(focusH * 0.9, 36));
   const hereLabelX = tentCx - hereLabelW / 2;
-  const hereLabelY = focusY - hereLabelH - 12;
-  const hereLabelFontSize = Math.round(hereLabelH * 0.55);
+  const hereLabelY = focusY - hereLabelH - 16;
+  const hereLabelFontSize = Math.round(hereLabelH * 0.6);
+  // ブース番号バッジ（サムネ右上、ピル型）。「11-C」3 文字を綺麗に収める
+  const badgeFontSize = Math.round(bigThumbSize * 0.16);
+  const badgeH = Math.round(bigThumbSize * 0.28);
+  const badgeW = Math.round(badgeFontSize * Math.max(positionLabel.length * 0.85, 2.4) + 18);
+  const badgeX = bigThumbX + bigThumbSize - badgeW + 8;
+  const badgeY = bigThumbY - badgeH / 2;
 
   const focusClipId = `booth-preview-clip-${program.id}-${day}`;
   const bigThumbClipId = `booth-preview-bigthumb-${program.id}-${day}`;
@@ -335,21 +342,23 @@ export function BoothPositionPreview({
             clipPath={`url(#${bigThumbClipId})`}
           />
 
-          {/* ブース番号バッジ（サムネ右上、accent-cyan 円形）*/}
+          {/* ブース番号バッジ（サムネ右上、ピル型で複数文字対応）*/}
           <g>
-            <circle
-              cx={bigThumbX + bigThumbSize - 6}
-              cy={bigThumbY + 6}
-              r={Math.round(bigThumbSize * 0.18)}
+            <rect
+              x={badgeX}
+              y={badgeY}
+              width={badgeW}
+              height={badgeH}
+              rx={badgeH / 2}
               fill="var(--color-accent-cyan-500, #00b3d4)"
               stroke="#fff"
               strokeWidth={3}
             />
             <text
-              x={bigThumbX + bigThumbSize - 6}
-              y={bigThumbY + 6 + Math.round(bigThumbSize * 0.18) * 0.34}
+              x={badgeX + badgeW / 2}
+              y={badgeY + badgeH / 2 + badgeFontSize * 0.36}
               fill="#fff"
-              fontSize={Math.round(bigThumbSize * 0.16)}
+              fontSize={badgeFontSize}
               fontWeight={900}
               textAnchor="middle"
             >
