@@ -15,14 +15,22 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（#309【お知らせ】5/9（土）お待ちしています♪）",
-        "description": "Podcast Weekend 2026（2026年5月9日(土)、10:00〜18:00、HOME/WORK VILLAGE 東京都世田谷区池尻2-4-5）に出展。『日中バイリンガルへの道』は5月9日のみ参加。物販内容: 中国語がもっと楽しくなるグッズ販売、『你喜欢什么？』をテーマにした収録参加体験コーナー。具体的な商品名・価格は本文では明示なし",
-        "sourceUrl": "https://listen.style/p/pklcbeym",
-        "sourceType": "web"
+        "name": "ブース 23-D 出展（5/9 土・著書 + 中国語グッズ + 収録参加体験）",
+        "description": "📅 5/9（土）東京 PODCAST EXPO 出店、ブース **23-D**。\n\nラインナップ:\n- 📖 宇高よう著書『ステップ音読ではじめる 話す中国語トレーニング』（東方書店刊）\n- 🇨🇳 中国語がもっと楽しくなるグッズ（番組ブックレット / 対訳キーワード集 / 特製クリアファイル / オリジナルポストカード）\n- 🎙 『你喜欢什么？』をテーマにした収録参加体験コーナー",
+        "sourceUrl": "https://x.com/yoyo_jplife/status/2052329460180168731",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/pklcbeym",
+            "type": "web",
+            "label": "Listen エピソード #309（事前告知）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
-      "experience"
+      "experience",
+      "zine-book"
     ],
     "merchandiseSubTypes": [
       "goods-misc",
