@@ -44,7 +44,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [{ url: program.thumbnail, alt: program.name }],
     },
     twitter: {
-      card: 'summary_large_image',
+      // 番組サムネは 640x640 の正方形のため summary（小カード）を採用。
+      // summary_large_image は推奨 2:1 比率で、正方形画像だと X 実機側で
+      // 画像表示がスキップされる挙動があるため。
+      // サイト全体のトップ・OG（1200x630）は layout.tsx で summary_large_image を維持。
+      card: 'summary',
       title,
       description,
       images: [program.thumbnail],
