@@ -26,6 +26,12 @@ interface Props {
   isVisited: boolean;
   /** sm: 20px（リストカード用）/ md: 24px（SlotCard 用）*/
   size?: 'sm' | 'md';
+  /**
+   * バッジの並び方向。
+   * - 'col'（既定）: サムネ右上 overlay 用、縦並び
+   * - 'row': ヘッダー右上 inline 用、横並び（横方向にスペースがあるとき）
+   */
+  direction?: 'col' | 'row';
   /** 親側で absolute 等の配置クラスを渡す */
   className?: string;
 }
@@ -34,6 +40,7 @@ export function BoothStateBadges({
   isFavorite,
   isVisited,
   size = 'sm',
+  direction = 'col',
   className,
 }: Props) {
   // どちらも false なら DOM 自体を出さない（呼び出し側の条件分岐を不要に）
@@ -41,13 +48,14 @@ export function BoothStateBadges({
 
   const dim = size === 'sm' ? 20 : 24;
   const iconSize = size === 'sm' ? 11 : 14;
+  const directionClass = direction === 'row' ? 'flex-row' : 'flex-col';
 
   return (
     <div
       className={
         className !== undefined
-          ? `flex flex-col gap-1 ${className}`
-          : 'flex flex-col gap-1'
+          ? `flex ${directionClass} gap-1 ${className}`
+          : `flex ${directionClass} gap-1`
       }
     >
       {isFavorite ? (
