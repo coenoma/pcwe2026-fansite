@@ -7,13 +7,41 @@
   "official": {
     "description": "専門用語ばかりで難しそうな競馬。\n巷にある競馬番組や競馬情報は初心者の方には少し難易度が高いのではないでしょうか。\n競馬の魅力にとり憑かれてしまったIT企業経営者と、\n競馬歴20年以上のフィギュアクリエイターと、\n年間1000時間競馬に注ぐビジネスマンが、\nシンプルにそして面白く競馬の魅力や情報をお届け！\nウマ娘から競馬を好きになった皆さんにも聴いてほしい競馬ポッドキャスト♪\n【パーソナリティー紹介】\n・溝口勇樹\n理論だけでなくスピリチュアル要素も織り交ぜながら万馬券を狙い続けるIT企業経営者。その手腕は経営にも活きている！？\n・大和田 咲綺\n引退馬の支援を志すクリエイター。完全オーダーメイドの競走馬フィギュアを手掛ける。競馬歴は20年以上。\n・東端佑典\nあくまでも理論的に馬券を当てることに拘るIT業界のビジネスマン。ロジカルだけでは的中できない競馬に没頭中。",
     "merchandise": [
-      "オリジナルステッカー",
-      "オリジナルおみくじ",
-      "オリジナルドリップパックコーヒー"
+      "ウマくいく！おみくじ",
+      "黄金旅程珈琲（ドリップパック）",
+      "オリジナルステッカー（限定音声付き / G1予想付き馬券型カード同梱版）"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "黄金旅程珈琲（ドリップパック / ステイゴールド豆使用）",
+        "description": "1 パック 300 円 / 4 パック 1,000 円。「ポッドキャストを聴きながら、ゆったりと味わう」をコンセプトにした番組オリジナルブレンド。ステイゴールド豆を使用、オリジナルフィギュアモデルパッケージ。",
+        "sourceUrl": "https://note.com/keiba_podcast/n/ndcc9ff602a70",
+        "sourceType": "note",
+        "imagePath": "/images/sources/pcwe-052-keiba_podcast-okashinagaki.jpg",
+        "imageAlt": "シンプルKEIBA 黄金旅程珈琲のパッケージとコーヒー豆",
+        "imageCredit": "© シンプルKEIBA／note 記事より引用",
+        "accessedAt": "2026-05-08",
+        "sourceAuthor": "シンプルKEIBA",
+        "sourceTitle": "PCWE2026 出展商品ラインアップ"
+      },
+      {
+        "name": "ウマくいく！おみくじ",
+        "description": "100 円（フォロワーは無料）。運勢を占う番組オリジナルおみくじ。その場で番組をフォロー登録すると無料で引ける。",
+        "sourceUrl": "https://note.com/keiba_podcast/n/ndcc9ff602a70",
+        "sourceType": "note"
+      },
+      {
+        "name": "オリジナルステッカー（スタンダード / G1予想付き馬券型カード同梱版）",
+        "description": "スタンダード版: 300 円（限定音声付き）。G1予想付き馬券型カード同梱版: 500 円（NHK マイルカップ予想掲載）。",
+        "sourceUrl": "https://note.com/keiba_podcast/n/ndcc9ff602a70",
+        "sourceType": "note"
+      }
     ],
     "merchandiseTags": [
       "experience",
-      "food-drink"
+      "food-drink",
+      "limited-new",
+      "rare-curious"
     ],
     "merchandiseSubTypes": [
       "paper-stationery"
@@ -28,7 +56,8 @@
     "boothNumber": "052"
   },
   "links": {
-    "spotify": "https://open.spotify.com/show/2jZYIbF0ZLL7vgsR0RHUR7"
+    "spotify": "https://open.spotify.com/show/2jZYIbF0ZLL7vgsR0RHUR7",
+    "listen": "https://listen.style/p/zyjpnzcp"
   },
   "recommendedEpisode": {
     "title": "【脱・養分】絶対にやってはいけない馬券の買い方とは？ギャンブルを魂の勝負に昇華させるGoogleメソッド #161",
