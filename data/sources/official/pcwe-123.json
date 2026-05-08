@@ -17,6 +17,19 @@
     ],
     "merchandiseDetails": [
       {
+        "name": "ブース 2 ジャック総合告知（5/9 土・本と物語の実験場）",
+        "description": "📍 5/9（土）ブース 2 を丸ごとジャック。本と物語の実験場として:\n- 📚 推し本を交換で繋ぐ「ブックスワップ」\n- ✍️ 即興で物語を編む「Vibe Writing」\n\n入場無料。遊び場感覚でふらっと立ち寄り歓迎。",
+        "sourceUrl": "https://x.com/masato_serizawa/status/2052618553191530805",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/auhsy5rp/y3pujprj",
+            "type": "web",
+            "label": "Listen 番外編エピソード（事前告知）"
+          }
+        ]
+      },
+      {
         "name": "立ち読み & ブックスワップ",
         "description": "パーソナリティ（小川貴之・芹澤雅人）が選書した本を展示。来場者の持参本との交換が可能。Listen エピソード「番外編『告知！PODCAST WEEKENDでブックスワップとVibe Writingをやるので来て欲しい！』」（2026-05-02 公開）にてホスト本人が告知。",
         "sourceUrl": "https://listen.style/p/auhsy5rp/y3pujprj",
