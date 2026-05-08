@@ -180,6 +180,13 @@ export function BoothPositionPreview({
         className="block h-auto w-full"
         role="img"
         aria-hidden="true"
+        // SVG <text> はブラウザデフォルトで serif（明朝）が当たるので、
+        // 全 text 要素に sans-serif を継承させる。Canvas → PNG 変換でも維持される
+        // よう、Tailwind class ではなく style で直接指定。
+        style={{
+          fontFamily:
+            "system-ui, -apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif",
+        }}
       >
         <defs>
           <clipPath id={focusClipId}>
