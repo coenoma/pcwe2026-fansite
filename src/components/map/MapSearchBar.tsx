@@ -287,7 +287,7 @@ function externalLabel(kind: SlotPlacement['externalKind']): string {
     case 'kitchen-only':
       return 'キッチンブース';
     case 'external-program':
-      return '外部参照';
+      return 'ほかの出展';
     default:
       return '出展';
   }

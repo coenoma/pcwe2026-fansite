@@ -350,7 +350,7 @@ function SlotCard({
               </p>
               {isExternal ? (
                 <p className="mt-0.5 text-[10px] text-neutral-500">
-                  {isSponsor ? 'スポンサー出展' : isKitchen ? '飲食ブース' : '外部参照'}
+                  {isSponsor ? 'スポンサー出展' : isKitchen ? '飲食ブース' : 'ほかの出展'}
                 </p>
               ) : null}
             </div>
