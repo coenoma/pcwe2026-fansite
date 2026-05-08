@@ -446,3 +446,121 @@ export function BoothLinkIcons({ links, programName, size = 18, className }: Pro
 - [ ] 4 番組ヒット時、2x2 で全番組が縦スクロールなしに見える（SlotCard 内のスクロールは内側ヒエラルキーで）
 - [ ] catchphrase が line-clamp-3 でホストの世界観が伝わる
 - [ ] recommendedEpisode CTA がブース未訪問でも音源で先に試聴できる動線になる
+
+---
+
+## 📝 v1.9.2 補正（2026-05-08 ユーザー再指摘）
+
+### 設計思想の根本転換
+
+**ユーザー指摘**:
+> 「体験」とか「珍しい」とか、なにができるの？で検索してるのに、番組名どーん、サムネイルどーん、一言説明、がメインででるって違くない？
+
+**問題**: v1.9.1 までの SlotCard / リストカードは **「番組情報主役 + 物販情報補助」** の構造。
+ユーザーが merchandiseTags フィルタで絞り込んでいる **選別フェーズ** では、
+「何が買えるか / 何が体験できるか」が知りたいので、**物販情報を主役**にすべき。
+
+### 主役の入れ替え
+
+| 要素 | v1.9.1 までの位置 | v1.9.2 補正後 |
+|---|---|---|
+| 物販タグ（merchandiseTags）| 中段、small pill | **最上段、大きめ pill / 視認性最重視** |
+| 代表物販 name + サムネ | 中段、1 件のみ + +N | **メイン、上位 2 件 name + サムネを大きく** |
+| 物販ハイライト（spotlight）| 末尾、line-clamp-1 | **強調 box（amber/primary 背景）、line-clamp-2** |
+| 番組サムネ | 大（72px）| **補助（40-48px）** |
+| 番組名 | text-sm 主役 | **text-xs / 補助エリアに格下げ** |
+| catchphrase | 蛍光下線 line-clamp-3 | **line-clamp-2、補助エリア内** |
+| subCatch | line-clamp-2 | **line-clamp-1 補助** |
+| fanGuide.tags | 全件 | **上位 3 件、補助エリア内** |
+| 状態バッジ | サムネ右上 | **ヘッダー右上**（番組サムネを小さくするため位置移動）|
+
+### 新構造（4 番組モーダル SlotCard）
+
+```
+┌─────────────────────────────────────────┐
+│ [11-A] 10-18時 · その他          ⭐✓     │ ← ヘッダー（小）
+├─────────────────────────────────────────┤
+│ 🎟体験  ✨限定  📕ZINE  🎁無料           │ ← 物販タグ（メイン、大きめ）
+│                                         │
+│ 🛍 ブース物販                            │
+│ ・[画像] 命綱ターミナルチェーン          │ ← 上位 2 件、画像 32-40px
+│ ・[画像] 真鍮のあきらめラジオチャーム    │
+│ +1 件、下のリストで詳細                  │
+│                                         │
+│ ✨ ファンガイドおすすめ                  │ ← spotlight（強調 box）
+│ ハンドメイドの諦め越え                   │
+│   primary-50 背景                       │
+├─────────────────────────────────────────┤
+│ [サムネ 40px] あきらめラジオ            │ ← 番組情報（補助、コンパクト）
+│              「諦めを超えて、アートに    │
+│              生きる」（line-clamp-2）   │
+│              内省的 / じっくり / 一人語り│
+├─────────────────────────────────────────┤
+│ 🎧 エピソードを試聴する                  │ ← CTA
+└─────────────────────────────────────────┘
+```
+
+### 新構造（リストカード）
+
+```
+┌─────────────────────────────────────────┐
+│ ブース 042 · 10-18時 · 5/9 土   ⭐✓     │ ← ヘッダー
+├─────────────────────────────────────────┤
+│ 🎟体験  ✨限定                            │ ← 物販タグ（大）
+│                                         │
+│ 🛍 ブース物販                            │
+│ ・[画像] 命綱ターミナルチェーン          │ ← 上位 2 件
+│ ・[画像] ステッカーセット                │
+│ +1 件                                   │
+│                                         │
+│ ✨ ハンドメイドの諦め越え                │ ← spotlight（amber/primary）
+├─────────────────────────────────────────┤
+│ [サムネ 48px] あきらめラジオ            │ ← 番組（補助）
+│              内省的 / 一人語り           │
+├─────────────────────────────────────────┤
+│ [🎧][𝕏][📷]                              │ ← link footer
+└─────────────────────────────────────────┘
+```
+
+### 新規・改修コンポーネント
+
+#### `MerchandiseSpotlight.tsx`（新規、共通）
+- 上位 2 件の name + 物販画像 + +N件 を構造化表示
+- `MerchandisePreview variant="sheet-header"` を踏襲・強化
+- 4 番組モーダル / リストカード両方で使用
+
+#### `BoothInfoCompact.tsx`（新規、共通）
+- 番組サムネ（小）+ 番組名 + catchphrase / subCatch + fanGuide.tags
+- 補助エリアとして再利用可能
+
+#### 既存改修
+- `MapListView.tsx`: 構造を物販主役に再構築
+- `TentOverviewSheet.tsx`: SlotCard 構造を物販主役に再構築
+
+### 進捗マトリクス（v1.9.2）
+
+| Phase | タスク | 状況 | 担当 | 備考 |
+|---|---|:---:|---|---|
+| **Phase 10: 設計** | 設計書（本セクション）| ✅ | Claude | |
+| | セルフレビュー | ✅ | Claude | MerchandisePreview に新 variant 追加、BoothInfoCompact 新規方針 |
+| | ユーザー承認 | ✅ | コエノマ | 「完璧！」 |
+| **Phase 11: 共通コンポーネント** | `MerchandisePreview.tsx` に `card-main` variant 追加 | ✅ | Claude | 見出し + サムネ 36px + 上位 2 件 + +N件 |
+| | `BoothInfoCompact.tsx` 新規 | ✅ | Claude | サムネ + 番組名 + subCatch + catchphrase + fanGuide.tags |
+| **Phase 12: SlotCard 物販主役化** | 構造を 6 セクションに再分割 | ✅ | Claude | header / merchTags / merchHighlight / spotlight box / 番組補助 / CTA |
+| | merchandiseTags の視覚強化 | ✅ | Claude | px-2 py-0.5 text-xs font-bold（フィルタ検索の答え）|
+| | spotlight を amber/primary 背景の box に | ✅ | Claude | rounded-xl border bg-primary-50 |
+| | 番組情報を mt-auto で底面寄せ + 区切り線 | ✅ | Claude | 主役物販と視覚分離 |
+| **Phase 13: リストカード 物販主役化** | 同様の構造再分割 | ✅ | Claude | stretched button 維持 |
+| | 状態バッジをサムネ overlay → header 右上に | ✅ | Claude | サムネ縮小に伴う移動 |
+| **Phase 14: 検証** | type-check / lint / build | ✅ | Claude | pass、TentOverviewSheet の未使用 Image import を削除 |
+| | 4 観点セルフレビュー | ✅ | Claude | OK |
+| **Phase 15: デプロイ** | コミット → main マージ | ✅ | Claude | |
+
+### 受け入れ基準（v1.9.2）
+
+- [ ] フィルタ「体験」で絞ったとき、🎟体験 タグと体験内容（物販 name）が **画面上半分** に出る
+- [ ] 番組名・サムネ・catchphrase は **画面下半分**（補助）に
+- [ ] spotlight が amber / primary 背景で **目立つ box** として表示される
+- [ ] 物販詳細 ≥ 2 件の番組で、上位 2 件の name + サムネ画像が見える
+- [ ] 状態バッジ（⭐/✓）はヘッダー右上に移動
+- [ ] type-check / lint / build pass

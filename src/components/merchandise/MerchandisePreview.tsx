@@ -9,6 +9,8 @@
  * - list:         MapListView のリストカード用（サムネ 24px + name 1 行 + +N件バッジ）
  * - slot:         TentOverviewSheet の SlotCard 用（サムネ 28px + name 1 行 + +N件バッジ）
  * - sheet-header: BoothBottomSheet のヘッダー直下用（サムネ 32px + name 上位 2 件 + 残り件数テキスト）
+ * - card-main:    v1.9.2 物販主役カード用（見出し + サムネ 36px + name 上位 2 件 + 残り件数）
+ *                 → リストカード / SlotCard で物販を画面の主役として大きく出す
  *
  * 設計思想:
  * - spotlight / catchphrase / subCatch などのコピーは扱わない（責務分離）。
@@ -22,7 +24,7 @@ import Image from 'next/image';
 import { groupMerchandiseDetails } from './MerchandiseGroupCard';
 import type { MerchandiseDetail } from '@/lib/types';
 
-type Variant = 'list' | 'slot' | 'sheet-header';
+type Variant = 'list' | 'slot' | 'sheet-header' | 'card-main';
 
 interface Props {
   /** 物販詳細群（merchandiseDetails をそのまま渡す）*/
@@ -100,8 +102,38 @@ export function MerchandisePreview({ details, variant, className }: Props) {
     );
   }
 
+  if (variant === 'card-main') {
+    // v1.9.2 物販主役カード用: 見出し + 上位 2 件の name + サムネ 36px + 残り件数
+    // SlotCard / リストカードで物販を画面の主役として大きく出すための表示
+    const cardItems = details.slice(0, 2);
+    const cardRest = details.length - cardItems.length;
+
+    return (
+      <div className={className ?? ''}>
+        <p className="text-[10px] font-bold tracking-wide text-neutral-500">
+          🛍 ブース物販
+        </p>
+        <ul className="mt-1.5 flex flex-col gap-1.5">
+          {cardItems.map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <Thumbnail imagePath={item.imagePath} size={36} />
+              <p className="line-clamp-2 min-w-0 flex-1 text-xs font-bold leading-snug text-neutral-800">
+                {item.name}
+              </p>
+            </li>
+          ))}
+        </ul>
+        {cardRest > 0 ? (
+          <p className="mt-1.5 text-[10px] font-medium text-primary-700">
+            +{cardRest} 件
+          </p>
+        ) : null}
+      </div>
+    );
+  }
+
   // variant === 'sheet-header'
-  // 上位 2 件の name を箇条書き、3 件以上あれば「他 N 件は X 投稿で詳細 ↓」テキスト
+  // 上位 2 件の name を箇条書き、3 件以上あれば「他 N 件は下のブース物販セクションで詳細 ↓」テキスト
   const headlineItems = details.slice(0, 2);
   const restCount = details.length - headlineItems.length;
 

@@ -14,13 +14,12 @@
 
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { MerchandisePreview } from '@/components/merchandise/MerchandisePreview';
 import { BoothStateBadges } from './BoothStateBadges';
+import { BoothInfoCompact } from './BoothInfoCompact';
 import { compactHours } from '@/lib/format';
-import { tagAxis, tagAxisClass } from '@/lib/tag-axis';
 import type { Day, Program, MerchandiseTag } from '@/lib/types';
 
 export interface TentSlotInfo {
@@ -219,10 +218,14 @@ function SlotCard({
   const isKitchen = slot.externalKind === 'kitchen-only';
   const isSponsor = slot.externalKind === 'sponsor';
   const hoursLabel = program ? compactHours(program.exhibition.hours) : null;
-  const fanTags = program?.fanGuide.tags ?? [];
   const merchTags = program?.official.merchandiseTags ?? [];
+  const merchDetails = program?.official.merchandiseDetails ?? [];
+  const spotlight = program?.official.merchandiseSpotlight;
   const name = program?.name ?? slot.externalName ?? '番組情報未登録';
   const recommendedEpisode = program?.recommendedEpisode;
+  // 物販主役エリアが何か出るかどうか（タグ or 詳細 or spotlight のいずれか）
+  const hasMerchSection =
+    merchTags.length > 0 || merchDetails.length > 0 || spotlight !== undefined;
 
   return (
     <article className="group relative flex min-h-[48vh] flex-col rounded-2xl border border-neutral-200 bg-white transition-all hover:border-primary-300 hover:shadow-md">
@@ -237,101 +240,37 @@ function SlotCard({
       </button>
 
       {/* 表示コンテンツ（pointer-events-none で stretched button にクリック透過）*/}
-      <div className="pointer-events-none flex flex-1 flex-col p-3">
-        <div className="flex items-center gap-1.5">
-          <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-primary-500 px-1.5 text-[11px] font-bold text-white">
-            {slot.position}
-          </span>
-          {hoursLabel !== null ? (
-            <span className="text-[10px] text-neutral-500">{hoursLabel}</span>
-          ) : null}
-          {program?.fanGuide.genre ? (
-            <span className="truncate text-[10px] text-neutral-500">
-              ・{program.fanGuide.genre}
+      <div className="pointer-events-none flex flex-1 flex-col gap-2.5 p-3">
+        {/* 1. ヘッダー: ブース番号 + 営業時間 + ジャンル + 状態バッジ */}
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 min-w-0">
+            <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-primary-500 px-1.5 text-[11px] font-bold text-white">
+              {slot.position}
             </span>
-          ) : null}
-        </div>
-
-        {/* サムネ + 状態バッジ + 番組名 + subCatch */}
-        <div className="mt-2 flex items-start gap-3">
-          <div className="relative shrink-0">
-            {program ? (
-              <Image
-                src={program.thumbnail}
-                alt=""
-                width={72}
-                height={72}
-                className="h-18 w-18 rounded-lg object-cover"
-                style={{ width: 72, height: 72 }}
-                aria-hidden="true"
-              />
-            ) : (
-              <span
-                aria-hidden="true"
-                className="flex items-center justify-center rounded-lg bg-neutral-100 text-3xl"
-                style={{ width: 72, height: 72 }}
-              >
-                {isSponsor ? '🤝' : isKitchen ? '🍳' : '📍'}
+            {hoursLabel !== null ? (
+              <span className="text-[10px] text-neutral-500">{hoursLabel}</span>
+            ) : null}
+            {program?.fanGuide.genre ? (
+              <span className="truncate text-[10px] text-neutral-500">
+                ・{program.fanGuide.genre}
               </span>
-            )}
-            <BoothStateBadges
-              isFavorite={slot.isFavorite ?? false}
-              isVisited={slot.isVisited ?? false}
-              size="sm"
-              className="absolute -right-1.5 -top-1.5"
-            />
-          </div>
-          <div className="min-w-0 flex-1">
-            <p className="line-clamp-2 text-sm font-bold leading-snug text-neutral-900">
-              {name}
-            </p>
-            {program?.fanGuide.subCatch ? (
-              <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-neutral-600">
-                {program.fanGuide.subCatch}
-              </p>
             ) : null}
           </div>
+          <BoothStateBadges
+            isFavorite={slot.isFavorite ?? false}
+            isVisited={slot.isVisited ?? false}
+            size="sm"
+            className="shrink-0"
+          />
         </div>
 
-        {/* catchphrase（amber 蛍光下線、line-clamp-3）*/}
-        {program?.fanGuide.catchphrase ? (
-          <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-neutral-800">
-            <span
-              className="box-decoration-clone"
-              style={{
-                backgroundImage:
-                  'linear-gradient(180deg, transparent 78%, rgba(252, 211, 77, 0.4) 78%, rgba(252, 211, 77, 0.4) 94%, transparent 94%)',
-                paddingInline: '0.1em',
-              }}
-            >
-              {program.fanGuide.catchphrase}
-            </span>
-          </p>
-        ) : null}
-
-        {/* fanGuide.tags（軸別カラー pill、全件 flex-wrap）*/}
-        {fanTags.length > 0 ? (
-          <p className="mt-2 flex flex-wrap gap-1">
-            {fanTags.map((tag) => (
-              <span
-                key={tag}
-                className={`inline-flex rounded-full border px-1.5 py-0.5 text-[10px] font-medium ${tagAxisClass(
-                  tagAxis(tag),
-                )}`}
-              >
-                {tag}
-              </span>
-            ))}
-          </p>
-        ) : null}
-
-        {/* グッズタグ（全件 flex-wrap）*/}
+        {/* 2. 物販タグ（メイン・大）— フィルタ検索の答え */}
         {merchTags.length > 0 ? (
-          <p className="mt-1 flex flex-wrap gap-1">
+          <p className="flex flex-wrap gap-1.5">
             {merchTags.map((tag) => (
               <span
                 key={tag}
-                className="inline-flex rounded-full bg-secondary-100 px-1.5 py-0.5 text-[10px] font-medium text-secondary-800"
+                className="inline-flex rounded-full bg-secondary-100 px-2 py-0.5 text-xs font-bold text-secondary-800"
               >
                 {shortLabel(tag)}
               </span>
@@ -339,31 +278,59 @@ function SlotCard({
           </p>
         ) : null}
 
-        {/* 物販プレビュー: 代表物販 name + +N件 バッジ */}
-        {program?.official.merchandiseDetails &&
-        program.official.merchandiseDetails.length > 0 ? (
-          <MerchandisePreview
-            details={program.official.merchandiseDetails}
-            variant="slot"
-            className="mt-2.5 border-t border-neutral-100 pt-2"
+        {/* 3. 物販ハイライト（メイン）*/}
+        {merchDetails.length > 0 ? (
+          <MerchandisePreview details={merchDetails} variant="card-main" />
+        ) : null}
+
+        {/* 4. spotlight 強調 box（ファンガイドおすすめ）*/}
+        {spotlight !== undefined && spotlight.length > 0 ? (
+          <div className="rounded-xl border border-primary-100 bg-primary-50 px-3 py-2">
+            <p className="text-[10px] font-bold tracking-wide text-primary-700">
+              ✨ ファンガイドおすすめ
+            </p>
+            <p className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-neutral-800">
+              {spotlight}
+            </p>
+          </div>
+        ) : null}
+
+        {/* 5. 番組情報（補助）— mt-auto で底面寄せ、上に区切り線 */}
+        {program ? (
+          <BoothInfoCompact
+            program={program}
+            thumbnailSize={40}
+            catchphraseClamp={2}
+            className={
+              hasMerchSection
+                ? 'mt-auto border-t border-neutral-100 pt-2.5'
+                : 'mt-auto'
+            }
           />
-        ) : null}
-
-        {/* spotlight（ファンガイドおすすめ、line-clamp-2）*/}
-        {program?.official.merchandiseSpotlight ? (
-          <p className="mt-1.5 line-clamp-2 text-[11px] leading-snug text-primary-700">
-            ✨ {program.official.merchandiseSpotlight}
-          </p>
-        ) : null}
-
-        {isExternal ? (
-          <p className="mt-1 text-[10px] text-neutral-500">
-            {isSponsor ? 'スポンサー' : isKitchen ? '飲食ブース' : '外部参照'}
-          </p>
-        ) : null}
+        ) : (
+          // external 番組（programs.json 未登録）の場合は番組名だけ大きく
+          <div className="mt-auto flex items-center gap-2.5 border-t border-neutral-100 pt-2.5">
+            <span
+              aria-hidden="true"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-xl"
+            >
+              {isSponsor ? '🤝' : isKitchen ? '🍳' : '📍'}
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="line-clamp-1 text-xs font-bold text-neutral-900">
+                {name}
+              </p>
+              {isExternal ? (
+                <p className="mt-0.5 text-[10px] text-neutral-500">
+                  {isSponsor ? 'スポンサー出展' : isKitchen ? '飲食ブース' : '外部参照'}
+                </p>
+              ) : null}
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* recommendedEpisode CTA（z-20、独立クリック可）*/}
+      {/* 6. recommendedEpisode CTA（z-20、独立クリック可）*/}
       {recommendedEpisode !== undefined ? (
         <a
           href={recommendedEpisode.url}
@@ -373,7 +340,7 @@ function SlotCard({
           onClick={(e) => {
             e.stopPropagation();
           }}
-          className="relative z-20 mx-3 mb-3 mt-auto flex items-center justify-center gap-1.5 rounded-xl bg-primary-50 px-3 py-2 text-[11px] font-bold text-primary-700 transition-colors hover:bg-primary-100 pointer-events-auto"
+          className="relative z-20 mx-3 mb-3 flex items-center justify-center gap-1.5 rounded-xl bg-primary-50 px-3 py-2 text-[11px] font-bold text-primary-700 transition-colors hover:bg-primary-100 pointer-events-auto"
         >
           <span aria-hidden="true">🎧</span>
           <span className="line-clamp-1">エピソードを試聴する</span>
