@@ -7,19 +7,41 @@
   "official": {
     "description": "大人になってから知り合ったタイプの違う30代の女性2人(感情的なやこと論理的なたかたさや)が語る、元気な時にも疲れている時にも『ちょうどイイ』トーク番組。\n仕事・子育て・家族・お金・日常など、ぬるめのお風呂のようにゆったりとまったりと、時には体温が上がるくらいアツく語っています。\n毎週月曜と水曜に配信。since2022。\nやこ：育休中営業職。この2年間で経験した結婚・出産も38℃ラジオ内で公開。\nたかたさや：小学生男女の母。元営業職。整理収納アドバイザーとして独立し、働く様子を定期的に公開。",
     "merchandise": [
-      "オリジナル缶バッジ",
-      "1円玉落とし",
-      "ボトルマーカー",
-      "キーホルダー",
-      "タオル"
+      "オリジナル缶バッジ（事前注文 + 当日販売）",
+      "ボトルマーカー（限定）",
+      "ロッカーキー風キーホルダー（限定）",
+      "1 円玉落とし企画"
     ],
     "merchandiseDetails": [
       {
-        "name": "PCWE2026 出展告知（#280〜#282 等（Podcast Weekend 20）",
-        "description": "缶バッジ事前注文フォーム公開（出店者向け: forms.gle/ABD6Yxk68yqqxcRHA、一般来場者向け: forms.gle/QqjcfDyTRfjDJQH26）。複数の最新エピソード（4/27〜5/4公開）でPCWE2026への出店と缶バッジ販売を告知",
-        "sourceUrl": "https://listen.style/p/38do-radio",
-        "sourceType": "web"
+        "name": "ブース 15-B 確定 + 1 円玉落とし企画（5/9 土・聴く餃子の隣）",
+        "description": "5/9（土）ブース 15-B。甲冑姿の聴く餃子 @ch1cala のお隣で見つけやすい。当日は「ちょこっとお話しに来るだけ」「1 円玉落としに挑戦するだけ」「グッズを見に来るだけ」すべて歓迎。",
+        "sourceUrl": "https://x.com/38doRadio/status/2052380085219639402",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/38do-radio",
+            "type": "web",
+            "label": "Listen 事前告知エピソード（缶バッジ事前注文フォーム公開）"
+          }
+        ]
+      },
+      {
+        "name": "38℃ 限定ボトルマーカー（600 円・数量限定）",
+        "description": "自分の飲み物の目印にぴったり。温泉やサウナ施設でも使える、さっと付けられてさっと見分けられるアイテム。価格 600 円・数量限定（なくなり次第終了）。",
+        "sourceUrl": "https://x.com/38doRadio/status/2051208904298856923",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "38℃ ロッカーキー風キーホルダー（600 円・数量限定）",
+        "description": "入浴施設で使われるロッカーキーをイメージしたデザインのキーホルダー。価格 600 円・数量限定（なくなり次第終了）。",
+        "sourceUrl": "https://x.com/38doRadio/status/2051487066543002062",
+        "sourceType": "x-post"
       }
+    ],
+    "merchandiseTags": [
+      "experience",
+      "limited-new"
     ],
     "merchandiseSubTypes": [
       "apparel",
