@@ -98,9 +98,14 @@ Q4. 既に過去 PCWE 参加実績しかなく、PCWE2026 の探索余地がも�
 | pcwe-017 | 女性消防設備士の休憩室ラジオ | https://x.com/9Kshitsu_radio | — | — | 5/8 菊池さん発見: 公式 X (https://x.com/9Kshitsu_radio) 確認、ブース物販は言及なし。当日近くの新規告知を再チェック推奨 | 2026-05-08 |
 | pcwe-065 | そうめん屋ですが何か？ | https://x.com/soumenmegu | — | https://listen.style/p/edyjqcmx | 5/8 菊池さん発見: Listen + 公式 X 確認、ブース物販は公式情報以上は見つからず。当日近くの新規告知を再チェック推奨 | 2026-05-08 |
 
+| pcwe-096 | 日暮里ゼミナール | — | — | — | 5/8 菊池さん発見: 公式 X (@NipporiZemi)。ブース物販は公式情報以上は未発見、当日近く再チェック推奨 | 2026-05-08 |
+
 ---
 
 ## 解決ログ
+
+- **2026-05-08**: pcwe-083 ハコとくら → done 化。出店者note (@nishiharahaco) にて合同誌「我々はSABETSUしている」+ グッズ・本販売告知
+- **2026-05-08**: pcwe-127 暮らしのおへそラジオ → done 化。Listen エピソード (5g3lnnf9/ckqyds52) にて 5/9 午前中ブース登場、書籍販売+ステッカー無料配布告知
 
 - **2026-05-08**: pcwe-008 私的エクレアイズム → done 化。Spotify 告知エピソード https://open.spotify.com/episode/0lAtamQLe1TsDGHwGRq5dJ にてラジオドラマ出演体験（3 種類のドラマ・セリフ選択制）の詳細告知
 
