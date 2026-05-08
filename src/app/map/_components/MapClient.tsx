@@ -20,6 +20,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { Sparkles } from 'lucide-react';
 import { VenueMap } from '@/components/map/VenueMap';
 import { BoothBottomSheet } from '@/components/map/BoothBottomSheet';
 import { DayToggle } from '@/components/map/DayToggle';
@@ -28,6 +29,7 @@ import { MapFilterChips } from '@/components/map/MapFilterChips';
 import { MapSearchBar } from '@/components/map/MapSearchBar';
 import { MapListView } from '@/components/map/MapListView';
 import { ViewModeToggle, type ViewMode } from '@/components/map/ViewModeToggle';
+import { AIChatPromptModal } from '@/app/_components/AIChatPromptModal';
 import {
   TentOverviewSheet,
   type TentSlotInfo,
@@ -105,6 +107,8 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
 
   // 「お気に入りだけ」モード（特殊フィルタ）
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+  // 「お手元の AI に聞く」モーダル
+  const [aiModalOpen, setAiModalOpen] = useState(false);
 
   // フィルタ + 検索 + お気に入りモードを適用
   const placementsFiltered = useMemo(() => {
@@ -438,13 +442,23 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
       {/* ヘッダー（SP 最適化） */}
       <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-3 py-2.5 sm:px-6 sm:py-3">
-          {/* 1 段目: タイトル + ビュー切替 + 日付 */}
+          {/* 1 段目: タイトル + AI ボタン + ビュー切替 + 日付 */}
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h1 className="flex shrink-0 items-baseline gap-1.5 text-sm font-bold text-neutral-900 sm:text-base">
               <span aria-hidden="true">🗺</span>
               <span>会場マップ</span>
             </h1>
             <div className="ml-auto flex items-center gap-1.5">
+              {/* お手元の AI に聞く（ChatGPT / Claude 等にコピペ用プロンプトを生成）*/}
+              <button
+                type="button"
+                onClick={() => setAiModalOpen(true)}
+                aria-label="お手元の AI に聞いてみる（番組相談）"
+                className="inline-flex shrink-0 items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-700 transition-colors hover:bg-emerald-100 sm:text-xs"
+              >
+                <Sparkles size={12} aria-hidden="true" />
+                <span>AI に聞く</span>
+              </button>
               <ViewModeToggle mode={view} onChange={handleViewChange} />
               <DayToggle
                 selectedDay={day}
@@ -617,6 +631,12 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
             ? () => handleToggleVisited(selectedPlacement.position)
             : undefined
         }
+      />
+
+      {/* お手元の AI に聞くモーダル（マップ画面でも利用可能に） */}
+      <AIChatPromptModal
+        isOpen={aiModalOpen}
+        onClose={() => setAiModalOpen(false)}
       />
     </>
   );

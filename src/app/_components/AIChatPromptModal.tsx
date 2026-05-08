@@ -210,7 +210,10 @@ export function AIChatPromptModal({ isOpen, onClose }: Props) {
       ref={dialogRef}
       onClick={handleBackdropClick}
       aria-labelledby="ai-prompt-title"
-      className="m-0 max-h-[100dvh] w-full max-w-2xl rounded-none p-0 backdrop:bg-neutral-900/60 sm:my-auto sm:mx-auto sm:max-h-[90vh] sm:rounded-2xl"
+      // iOS Safari で <dialog> + showModal() の位置制御がブラウザ依存で効かず、
+      // m-0 だけだと画面外に配置されて見えない事案が発生。
+      // 明示的に fixed left-0 top-0 で SP 全画面、PC は translate で中央寄せ。
+      className="fixed left-0 top-0 m-0 h-[100dvh] max-h-[100dvh] w-full max-w-full rounded-none p-0 backdrop:bg-neutral-900/60 sm:left-1/2 sm:top-1/2 sm:h-auto sm:max-h-[90vh] sm:w-[calc(100%-2rem)] sm:max-w-2xl sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-2xl"
     >
       <div className="flex h-full max-h-[100dvh] flex-col bg-white sm:max-h-[90vh]">
         {/* ヘッダー */}
