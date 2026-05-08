@@ -273,14 +273,14 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
     (placement: SlotPlacement) => {
       setSelectedPosition(placement.position);
       setSelectedTentId(null);
-      const nextView: ViewMode = view === 'list' ? 'map' : view;
-      setView(nextView);
+      // v1.11 修正: view は変えない（リストならリスト中に、マップならマップ中に
+      // シートが乗る形）。閉じた時にも元の view に戻る自然な体験になる。
       updateUrl({
         day,
         pin: placement.position,
         cat: selectedCats,
         q: query,
-        view: nextView,
+        view,
       });
     },
     [day, selectedCats, query, view, updateUrl],
@@ -321,13 +321,39 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
 
   const handleDayChange = useCallback(
     (nextDay: Day) => {
+      // v1.11 修正: 同 position に同じ番組（or 同じ external 出展）が両日いる場合は
+      // selection を維持。両日通し出展のテントで日跨ぎの物販比較等の体験が成立する。
+      // テント概要シート（quad）は基本的に「テントの 4 区画見比べ」UI のため、
+      // 日付変更時は閉じる（4 区画の中身が日跨ぎで全部一致する保証はない）。
+      let keepPosition: string | null = null;
+      if (selectedPosition !== null) {
+        const cur = placementsAll.find((p) => p.position === selectedPosition);
+        const nextDayPlacements = getSlotPlacementsForDay(boothPositions, nextDay);
+        const next = nextDayPlacements.find((p) => p.position === selectedPosition);
+        if (cur !== undefined && next !== undefined) {
+          const samePid =
+            cur.programId !== undefined && next.programId === cur.programId;
+          const sameExt =
+            cur.externalKind !== undefined &&
+            next.externalKind === cur.externalKind &&
+            next.externalName === cur.externalName;
+          if (samePid || sameExt) keepPosition = selectedPosition;
+        }
+      }
       setDay(nextDay);
-      // 日付切替で選択クリア（その位置に別番組がいる可能性、混乱回避）
-      setSelectedPosition(null);
+      if (keepPosition === null) {
+        setSelectedPosition(null);
+      }
       setSelectedTentId(null);
-      updateUrl({ day: nextDay, pin: null, cat: selectedCats, q: query, view });
+      updateUrl({
+        day: nextDay,
+        pin: keepPosition,
+        cat: selectedCats,
+        q: query,
+        view,
+      });
     },
-    [selectedCats, query, view, updateUrl],
+    [boothPositions, placementsAll, selectedPosition, selectedCats, query, view, updateUrl],
   );
 
   const handleCatToggle = useCallback(
@@ -382,8 +408,14 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
       const next = toggleMapFavorite(favorites, id);
       setFavorites(next);
       saveMapFavorites(next);
+      // v1.11 修正: 「お気に入りだけ」モード ON の状態でお気に入り解除すると、
+      // 開いているシートが対象外になり整合が崩れるため、シートも閉じる。
+      if (showFavoritesOnly && !next.includes(id)) {
+        setSelectedPosition(null);
+        updateUrl({ day, pin: null, cat: selectedCats, q: query, view });
+      }
     },
-    [favorites],
+    [favorites, showFavoritesOnly, day, selectedCats, query, view, updateUrl],
   );
 
   const handleToggleVisited = useCallback(
@@ -466,6 +498,13 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
                 </button>
               ) : null}
             </div>
+            {/* v1.11 追加: お気に入りモード ON + フィルタチップ併用時の AND 結合を明示。
+                ユーザーが「フィルタが効いていないように見える」と誤解する事を防ぐ。 */}
+            {showFavoritesOnly && selectedCats.size > 0 ? (
+              <p className="mt-1 px-1 text-[10px] text-neutral-500">
+                ⭐️お気に入りの中から、選んだカテゴリで絞り込み中
+              </p>
+            ) : null}
           </div>
 
           {/* 4 段目: 「会えた」プログレスバー（5/9 or 5/10 の達成感）*/}
@@ -496,49 +535,49 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
         </div>
       </header>
 
-      {/* メインコンテンツ */}
+      {/* メインコンテンツ
+          v1.11 修正: マップ / リストを両方 DOM に保持し、view で hidden 切替する。
+          これにより VenueMap が unmount されず、ピンチズーム状態（scale）等が
+          view 往復で保持される。 */}
       <div className="mx-auto max-w-5xl px-3 py-3 sm:px-6 sm:py-4">
-        {view === 'map' ? (
-          <>
-            <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
-              <VenueMap
-                placements={placementsAll}
-                data={boothPositions}
-                day={day}
-                onSelectSlot={handleSelectSlot}
-                onSelectTent={handleSelectTent}
-                selectedPosition={selectedPosition ?? undefined}
-                selectedTentId={selectedTentId ?? undefined}
-                highlightedPositions={highlightedPositions}
-                favoriteProgramIds={favoriteProgramIdSet}
-                visitedPositions={visitedPositionSet}
-              />
-            </div>
-            <p className="mt-2 text-center text-xs leading-relaxed text-neutral-500">
-              {showFavoritesOnly
-                ? `⭐️ お気に入りだけ表示中（${highlightedPositions?.size ?? 0} ブース）`
-                : isFiltering
-                  ? `条件にぴったりの ${highlightedPositions?.size ?? 0} ブースが浮かび上がってるよ ✨`
-                  : '気になるブースをタップ ✨ ピンチで拡大もできるよ'}
-            </p>
-          </>
-        ) : (
-          <>
-            <p className="mb-3 text-xs text-neutral-500">
-              {isFiltering
-                ? `${placementsFiltered.filter((p) => p.programId || p.externalName).length} 件 / 全 ${placementsAll.filter((p) => p.programId || p.externalName).length} 件`
-                : `全 ${placementsAll.filter((p) => p.programId || p.externalName).length} 件`}
-            </p>
-            <MapListView
-              programs={programs}
-              placements={placementsFiltered}
+        <div className={view === 'map' ? '' : 'hidden'}>
+          <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+            <VenueMap
+              placements={placementsAll}
+              data={boothPositions}
               day={day}
-              onSelect={handleSelectSlot}
-              favorites={favorites}
-              visited={visited}
+              onSelectSlot={handleSelectSlot}
+              onSelectTent={handleSelectTent}
+              selectedPosition={selectedPosition ?? undefined}
+              selectedTentId={selectedTentId ?? undefined}
+              highlightedPositions={highlightedPositions}
+              favoriteProgramIds={favoriteProgramIdSet}
+              visitedPositions={visitedPositionSet}
             />
-          </>
-        )}
+          </div>
+          <p className="mt-2 text-center text-xs leading-relaxed text-neutral-500">
+            {showFavoritesOnly
+              ? `⭐️ お気に入りだけ表示中（${highlightedPositions?.size ?? 0} ブース）`
+              : isFiltering
+                ? `条件にぴったりの ${highlightedPositions?.size ?? 0} ブースが浮かび上がってるよ ✨`
+                : '気になるブースをタップ ✨ ピンチで拡大もできるよ'}
+          </p>
+        </div>
+        <div className={view === 'list' ? '' : 'hidden'}>
+          <p className="mb-3 text-xs text-neutral-500">
+            {isFiltering
+              ? `${placementsFiltered.filter((p) => p.programId || p.externalName).length} 件 / 全 ${placementsAll.filter((p) => p.programId || p.externalName).length} 件`
+              : `全 ${placementsAll.filter((p) => p.programId || p.externalName).length} 件`}
+          </p>
+          <MapListView
+            programs={programs}
+            placements={placementsFiltered}
+            day={day}
+            onSelect={handleSelectSlot}
+            favorites={favorites}
+            visited={visited}
+          />
+        </div>
       </div>
 
       {/* 公式画像 DL */}
