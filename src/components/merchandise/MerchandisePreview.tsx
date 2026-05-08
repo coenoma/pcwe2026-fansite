@@ -103,18 +103,17 @@ export function MerchandisePreview({ details, variant, className }: Props) {
   }
 
   if (variant === 'card-main') {
-    // v1.9.2 物販主役カード用: 見出し + 上位 2 件の name + サムネ 36px + 残り件数
-    // SlotCard / リストカードで物販を画面の主役として大きく出すための表示
-    const cardItems = details.slice(0, 2);
-    const cardRest = details.length - cardItems.length;
-
+    // v1.9.2 物販主役カード用: 見出し + 全件の name + サムネ 36px
+    // SlotCard / リストカードで物販を画面の主役として大きく出すための表示。
+    // 件数の多寡で「+N 件」省略していた版もあったが、スペースが余っている
+    // 状況で省略表記が出るのが不自然だったため全件表示に変更（v1.9.4）。
     return (
       <div className={className ?? ''}>
         <p className="text-[10px] font-bold tracking-wide text-neutral-500">
           🛍 ブース物販
         </p>
         <ul className="mt-1.5 flex flex-col gap-1.5">
-          {cardItems.map((item, i) => (
+          {details.map((item, i) => (
             <li key={i} className="flex items-start gap-2">
               <Thumbnail imagePath={item.imagePath} size={36} />
               <p className="line-clamp-2 min-w-0 flex-1 text-xs font-bold leading-snug text-neutral-800">
@@ -123,11 +122,6 @@ export function MerchandisePreview({ details, variant, className }: Props) {
             </li>
           ))}
         </ul>
-        {cardRest > 0 ? (
-          <p className="mt-1.5 text-[10px] font-medium text-primary-700">
-            +{cardRest} 件
-          </p>
-        ) : null}
       </div>
     );
   }
