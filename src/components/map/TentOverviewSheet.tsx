@@ -227,13 +227,7 @@ function SlotCard({
     merchTags.length > 0 || merchDetails.length > 0 || spotlight !== undefined;
 
   return (
-    <article
-      className={
-        hasMerchSection
-          ? 'group relative flex min-h-[48vh] flex-col rounded-2xl border border-neutral-200 bg-white transition-all hover:border-primary-300 hover:shadow-md'
-          : 'group relative flex flex-col rounded-2xl border border-neutral-200 bg-white transition-all hover:border-primary-300 hover:shadow-md'
-      }
-    >
+    <article className="group relative flex flex-col rounded-2xl border border-neutral-200 bg-white transition-all hover:border-primary-300 hover:shadow-md">
       {/* stretched button: カード全体タップで onClick（z-10）*/}
       <button
         type="button"
@@ -301,7 +295,10 @@ function SlotCard({
           </div>
         ) : null}
 
-        {/* 5. 番組情報（補助）— mt-auto で底面寄せ、上に区切り線 */}
+        {/* 5. 番組情報（補助）— 物販主役エリアの後に区切り線で続く（上詰め）
+            mt-auto は使わない: 物販情報量が少ないカードで縦空白が出るため。
+            grid-cols-2 のグリッドでは隣のセルとの高さは grid 側で揃うので、
+            個別カードは中身の高さに自然にフィットさせる方が見栄えがよい。 */}
         {program ? (
           <BoothInfoCompact
             program={program}
@@ -309,13 +306,13 @@ function SlotCard({
             catchphraseClamp={2}
             className={
               hasMerchSection
-                ? 'mt-auto border-t border-neutral-100 pt-2.5'
-                : 'mt-auto'
+                ? 'border-t border-neutral-100 pt-2.5'
+                : ''
             }
           />
         ) : (
           // external 番組（programs.json 未登録）の場合は番組名だけ大きく
-          <div className="mt-auto flex items-center gap-2.5 border-t border-neutral-100 pt-2.5">
+          <div className="flex items-center gap-2.5 border-t border-neutral-100 pt-2.5">
             <span
               aria-hidden="true"
               className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-xl"
