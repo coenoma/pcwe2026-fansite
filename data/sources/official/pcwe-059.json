@@ -20,20 +20,70 @@
     ],
     "merchandiseDetails": [
       {
-        "name": "ガチャガチャ（1 回 500 円）",
-        "description": "メイン企画。ラインナップは ライター / マグネット / 名言ステッカー / サムネステッカー / **大目玉「月耳マグカップ」** など。美大卒の auly のデザイン力をふんだんに使ったラインナップ。当たり多めの仕様で、現金が尽きるまでガチャ可能。Listen エピソード「#61 あすけんのお姉さんも仕事だから」（2026-05-04 公開）にて auly・イエーイ岩崎本人が告知。X 投稿（@auly_1022、2026-05-04）で画像チラ見せあり。",
-        "sourceUrl": "https://listen.style/p/tsukimimi/nugzthen",
-        "sourceType": "web"
+        "name": "月ミミガチャ（1 回 500 円・大当たりは月耳マグカップ）",
+        "description": "メイン企画。ラインナップは ライター / マグネット / 名言ステッカー / サムネステッカー / **大当たり「月耳マグカップ」** など。美大卒の auly のデザイン力をふんだんに使ったラインナップ。当たり多めの仕様で、現金が尽きるまでガチャ可能。Listen エピソード「#61 あすけんのお姉さんも仕事だから」（2026-05-04 公開）にて auly・イエーイ岩崎本人が告知。X 投稿（@tsukimimi_radio、2026-05-06）でブース 22-B、5/10 のみ出展も明記。",
+        "sourceUrl": "https://x.com/tsukimimi_radio/status/2051965950300389846",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/tsukimimi/nugzthen",
+            "type": "web",
+            "label": "Listen エピソード #61"
+          },
+          {
+            "url": "https://x.com/tsukimimi_radio/status/2051968279938543950",
+            "type": "x-post",
+            "label": "グッズ＆フライヤーチラ見せ"
+          }
+        ]
       },
       {
-        "name": "チェキ撮影",
-        "description": "フィルム 20 枚分用意。ホスト 2 人とサンドで撮影可（隣ブースの方にシャッター押してもらうスタイル）。Listen エピソード「#61 あすけんのお姉さんも仕事だから」（2026-05-04 公開）にてホスト本人が告知。",
-        "sourceUrl": "https://listen.style/p/tsukimimi/nugzthen",
-        "sourceType": "web"
+        "name": "岩崎作！ 月からミミミ だるま（1,000 円・新規グッズ）",
+        "description": "イエーイ岩崎による手作りだるま。「月からミミミだるま、できたーー！！可愛い…！！」と本人が X で告知（2026-05-05、@yeahiwasaki）。整列バージョンの写真もあり、種類豊富そう。",
+        "sourceUrl": "https://x.com/yeahiwasaki/status/2051482016554918399",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/yeahiwasaki/status/2051482155986092190",
+            "type": "x-post",
+            "label": "だるま整列 Ver."
+          },
+          {
+            "url": "https://x.com/tsukimimi_radio/status/2051965950300389846",
+            "type": "x-post",
+            "label": "番組告知（22-B、5/10 出展）"
+          }
+        ]
+      },
+      {
+        "name": "チェキ撮影（1 回 1,000 円）",
+        "description": "フィルム 20 枚分用意。ホスト 2 人とサンドで撮影可（隣ブースの方にシャッター押してもらうスタイル）。X 投稿（@tsukimimi_radio、2026-05-06）でも告知、Listen エピソード「#61」（2026-05-04 公開）にてもホスト本人が告知。",
+        "sourceUrl": "https://x.com/tsukimimi_radio/status/2051965950300389846",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://listen.style/p/tsukimimi/nugzthen",
+            "type": "web",
+            "label": "Listen エピソード #61"
+          }
+        ]
+      },
+      {
+        "name": "「月ミミ新聞」（無料配布）",
+        "description": "**価格無料**。番組オリジナル新聞を無料配布。X 投稿（@tsukimimi_radio、2026-05-06）にて「月ミミ新聞は無料配布なので、それを貰いに来るだけでももちろんオッケー！」と告知。",
+        "sourceUrl": "https://x.com/tsukimimi_radio/status/2051968279938543950",
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/tsukimimi_radio/status/2051965950300389846",
+            "type": "x-post",
+            "label": "ブース・グッズ詳細"
+          }
+        ]
       },
       {
         "name": "ホストに会える（無料）",
-        "description": "「直接コマクに届けるんで（耳でしか会えなかったけど）会えます」とホスト本人が告知。「いつも聞いてます」の一言を直接伝えられる機会。500 円持ってなくても気軽にブースへ立ち寄り可能。Listen エピソード「#61」（2026-05-04 公開）にて告知。5/10 のみ出展、池尻大橋・ホームワークビレッジ運動場エリア（雨天時に注意）。",
+        "description": "「直接コマクに届けるんで（耳でしか会えなかったけど）会えます」とホスト本人が告知。「いつも聞いてます」の一言を直接伝えられる機会。500 円持ってなくても気軽にブースへ立ち寄り可能。Listen エピソード「#61」（2026-05-04 公開）にて告知。5/10 のみ出展、ブース 22-B（池尻大橋・ホームワークビレッジ運動場エリア、雨天時に注意）。",
         "sourceUrl": "https://listen.style/p/tsukimimi/nugzthen",
         "sourceType": "web"
       }
