@@ -6,8 +6,9 @@
  * リスト UI として実装している。
  *
  * レイアウト仕様（件数別）:
- * - 1 件: 中央寄せ、`max-w-md`（≈ 28rem / 448px）
- *         → ワイド画面でも無理に広げず、1 枚物販の存在感を保つ
+ * - 1 件: 中央寄せ、`max-w-[600px]`
+ *         → X 埋め込み標準幅 ≈ 550px に description が読める余裕を加えた値。
+ *           1 列・2 列表示でもスカスカ感を回避しつつ、横長になりすぎない。
  * - 2 件: 中央寄せ、`max-w-3xl`、`md+` で 2 列
  *         → モバイルは縦並び、PC では並べて余白を活用
  * - 3 件以上: 既存の `md:2 / xl:3` レスポンシブグリッド（`max-w-6xl`）
@@ -53,10 +54,11 @@ export function MerchandiseList({ details, layout = 'grid', tweets }: Props) {
   const count = groups.length;
 
   if (count === 1) {
-    // 1 件: 中央寄せの単一カード（max-w-md ≈ 28rem ≈ 448px）
-    // ワイド画面でも 350px のスカスカ感を回避しつつ、3 列グリッドの 1 列分より大きく
+    // 1 件: 中央寄せの単一カード（max-w-[600px]）
+    // X 埋め込み標準幅 (≈ 550px) + description 余白で、1 列・2 列表示でも
+    // 余白問題を避けつつ、横長になりすぎないバランス
     return (
-      <div className="mx-auto max-w-md">
+      <div className="mx-auto max-w-[600px]">
         <MerchandiseGroupCard group={groups[0]} />
       </div>
     );
