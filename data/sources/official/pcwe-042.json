@@ -7,17 +7,35 @@
   "official": {
     "description": "「あきらめラジオ」は、諦めを超えて、アートに生きる人を応援するポッドキャストです。\n人生や仕事の大きな選択の裏には、誰にも言っていない「諦めたこと」や、一度手放した願いがあります。\n自覚している場合もあれば、「諦めたことなんてない」と思っている心の奥で、静かに眠っていることもあります。\n「あなたの諦めを聴かせてください」と問いかけると、少しずつ立ち上がってくる人生の物語。そこには、知られざる努力や葛藤、そして新たな道へとつながる種が隠れています。\nこの番組では、毎回お一人のゲストとともに、その奥にある「諦め」を紐解きながら、願いへと変わる瞬間を探っていきます。\n「あきらめ」を入口に、何が起こるかわからないカオスな時代を、願いとともに生きる人たちへ。\n楽しく、面白く、ときにはシリアスに。今を生きる知恵を語り合います。",
     "merchandise": [
-      "ステッカー",
-      "ブックマーク",
-      "キーホルダー"
+      "命綱ターミナルチェーン（2,500 円）",
+      "命綱キーホルダー（1,000 円）",
+      "命綱キーホルダー mini（500 円）",
+      "ステッカーセット（200 円・6 枚入り）",
+      "あきらめおみくじ（無料体験）",
+      "諦め探しジャーナリング（無料体験）"
     ],
     "merchandiseDetails": [
       {
-        "name": "あきらめラジオお品書き（5/9 土・8-C・オール手作業ハンドメイド）",
-        "description": "配布シールあり。",
-        "sourceUrl": "https://x.com/guccicoaching/status/2051477193671541201",
+        "name": "PCWE2026 お品書き完全版（5/9 土・8-C）",
+        "description": "📍 5/9（土）ブース 8-C。\n\nお品書き:\n- 💛 命綱ターミナルチェーン 2,500 円\n- 🧡 命綱キーホルダー 1,000 円\n- 💚 命綱キーホルダー mini 500 円\n- 🩵 ステッカーセット 200 円（6 枚入り）\n\n体験:\n- 🥠 あきらめおみくじ：無料\n- 💎 諦め探しジャーナリング：無料\n\n📍 開運に必要な「あきらめ」をお届け✨",
+        "sourceUrl": "https://x.com/guccicoaching/status/2052662137781379360",
         "sourceType": "x-post",
         "additionalSources": [
+          {
+            "url": "https://x.com/guccicoaching/status/2048694125302796352",
+            "type": "x-post",
+            "label": "命綱ターミナルチェーン製品コンセプト（2026-04-27、耐荷 500kg パラコード + 彫金チャーム）"
+          },
+          {
+            "url": "https://x.com/guccicoaching/status/2051477193671541201",
+            "type": "x-post",
+            "label": "オール手作業ハンドメイド告知（2026-05-05）"
+          },
+          {
+            "url": "https://x.com/akirameradio/status/2052384203942351097",
+            "type": "x-post",
+            "label": "番組公式アカウント続報（店番大募集）"
+          },
           {
             "url": "https://listen.style/p/akirameradio",
             "type": "web",
@@ -27,21 +45,16 @@
       },
       {
         "name": "ステッカーセット 200 円（22 セット限定・歴代 4 種 + 手書きキラキラ 2 種）",
-        "description": "5/9（土）8-C で販売。",
+        "description": "歴代 4 種 + 手書きキラキラ 2 種の 6 枚入り。22 セット限定（数量限定）。",
         "sourceUrl": "https://x.com/guccicoaching/status/2052384003014250559",
-        "sourceType": "x-post",
-        "additionalSources": [
-          {
-            "url": "https://x.com/akirameradio/status/2052384203942351097",
-            "type": "x-post",
-            "label": "番組公式アカウント続報（店番大募集・5/9 8-C）"
-          }
-        ]
+        "sourceType": "x-post"
       }
     ],
     "merchandiseTags": [
       "experience",
-      "limited-new"
+      "limited-new",
+      "free-distribution",
+      "rare-curious"
     ],
     "merchandiseSubTypes": [
       "goods-acrylic",
