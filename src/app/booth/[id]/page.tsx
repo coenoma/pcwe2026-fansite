@@ -7,6 +7,9 @@ import { BoothHero } from '@/app/_components/BoothHero';
 import { WaveDivider } from '@/app/_components/WaveDivider';
 import { FadeInOnScroll } from '@/app/_components/FadeInOnScroll';
 import { ProgramCard } from '@/app/_components/ProgramCard';
+import { BoothPositionPreview } from '@/app/_components/BoothPositionPreview';
+import { buildBoothPreviewData } from '@/lib/booth-position-preview';
+import { getBoothPositions } from '@/lib/booth-map';
 import { safeJsonLd } from '@/lib/safe-json-ld';
 import { MerchandiseSection } from './_components/MerchandiseSection';
 import { EVENT, SITE } from '@/lib/constants';
@@ -235,49 +238,101 @@ export default async function BoothPage({ params }: Props) {
               </p>
             </div>
 
-            {/* 物理位置: 会場マップへの動線（exhibition.position or positionBySatSun があれば）*/}
+            {/* 物理位置: 会場マップへの動線 + 静的マップ位置プレビュー（v1.15）*/}
             {(program.exhibition.position || program.exhibition.positionBySatSun) ? (
-              <div className="mt-6">
-                <h3 className="text-sm font-bold text-neutral-500">ブース位置</h3>
-                <div className="mt-2 flex flex-wrap items-center gap-2">
-                  {program.exhibition.position ? (
-                    <Link
-                      href={`/map?day=${program.exhibition.days[0] ?? 'sat'}&pin=${encodeURIComponent(program.exhibition.position.label)}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-all hover:bg-primary-100 hover:shadow-sm"
-                    >
-                      <span aria-hidden="true">🗺</span>
-                      <span>
-                        ブース {program.exhibition.position.label}
-                        {program.exhibition.days.length === 2 ? '（両日）' : ''}
-                      </span>
-                      <span aria-hidden="true">→</span>
-                    </Link>
-                  ) : null}
-                  {program.exhibition.positionBySatSun?.sat ? (
-                    <Link
-                      href={`/map?day=sat&pin=${encodeURIComponent(program.exhibition.positionBySatSun.sat.label)}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-all hover:bg-primary-100 hover:shadow-sm"
-                    >
-                      <span aria-hidden="true">🗺</span>
-                      <span>5/9 土 ブース {program.exhibition.positionBySatSun.sat.label}</span>
-                      <span aria-hidden="true">→</span>
-                    </Link>
-                  ) : null}
-                  {program.exhibition.positionBySatSun?.sun ? (
-                    <Link
-                      href={`/map?day=sun&pin=${encodeURIComponent(program.exhibition.positionBySatSun.sun.label)}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-all hover:bg-primary-100 hover:shadow-sm"
-                    >
-                      <span aria-hidden="true">🗺</span>
-                      <span>5/10 日 ブース {program.exhibition.positionBySatSun.sun.label}</span>
-                      <span aria-hidden="true">→</span>
-                    </Link>
-                  ) : null}
-                </div>
-                <p className="mt-2 text-xs text-neutral-500">
-                  会場マップでブース位置を確認できます。
-                </p>
-              </div>
+              (() => {
+                const boothPositions = getBoothPositions();
+                // position（単一）/ positionBySatSun（両日）の判別
+                const positions: Array<{ label: string; day: 'sat' | 'sun' }> = [];
+                if (program.exhibition.position !== undefined) {
+                  // 単一 position の場合、出展日それぞれに同じ position を表示
+                  for (const d of program.exhibition.days) {
+                    if (d === 'sat' || d === 'sun') {
+                      positions.push({
+                        label: program.exhibition.position.label,
+                        day: d,
+                      });
+                    }
+                  }
+                } else if (program.exhibition.positionBySatSun) {
+                  if (program.exhibition.positionBySatSun.sat) {
+                    positions.push({
+                      label: program.exhibition.positionBySatSun.sat.label,
+                      day: 'sat',
+                    });
+                  }
+                  if (program.exhibition.positionBySatSun.sun) {
+                    positions.push({
+                      label: program.exhibition.positionBySatSun.sun.label,
+                      day: 'sun',
+                    });
+                  }
+                }
+
+                return (
+                  <div className="mt-6">
+                    <h3 className="text-sm font-bold text-neutral-500">ブース位置</h3>
+
+                    {/* 静的マップ位置プレビュー（出展日ごと）*/}
+                    {positions.length > 0 ? (
+                      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                        {positions.map((pos) => {
+                          const preview = buildBoothPreviewData(pos.label, boothPositions);
+                          if (preview === null) return null;
+                          return (
+                            <BoothPositionPreview
+                              key={`${pos.day}-${pos.label}`}
+                              program={program}
+                              positionLabel={pos.label}
+                              day={pos.day}
+                              preview={preview}
+                            />
+                          );
+                        })}
+                      </div>
+                    ) : null}
+
+                    {/* 会場マップへの動線リンク */}
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                      {program.exhibition.position ? (
+                        <Link
+                          href={`/map?day=${program.exhibition.days[0] ?? 'sat'}&pin=${encodeURIComponent(program.exhibition.position.label)}`}
+                          className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-all hover:bg-primary-100 hover:shadow-sm"
+                        >
+                          <span aria-hidden="true">🗺</span>
+                          <span>
+                            会場マップで開く（ブース {program.exhibition.position.label}）
+                          </span>
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                      ) : null}
+                      {program.exhibition.positionBySatSun?.sat ? (
+                        <Link
+                          href={`/map?day=sat&pin=${encodeURIComponent(program.exhibition.positionBySatSun.sat.label)}`}
+                          className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-all hover:bg-primary-100 hover:shadow-sm"
+                        >
+                          <span aria-hidden="true">🗺</span>
+                          <span>5/9 土を会場マップで</span>
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                      ) : null}
+                      {program.exhibition.positionBySatSun?.sun ? (
+                        <Link
+                          href={`/map?day=sun&pin=${encodeURIComponent(program.exhibition.positionBySatSun.sun.label)}`}
+                          className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-bold text-primary-700 transition-all hover:bg-primary-100 hover:shadow-sm"
+                        >
+                          <span aria-hidden="true">🗺</span>
+                          <span>5/10 日を会場マップで</span>
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                      ) : null}
+                    </div>
+                    <p className="mt-2 text-xs text-neutral-500">
+                      上の画像は「画像で保存（SNS 用）」ボタンから新しいタブで開けます。リスナーさんへの当日案内に「📍このブースに居ます！」とそのまま使えます ✨
+                    </p>
+                  </div>
+                );
+              })()
             ) : null}
 
             <div className="mt-8 flex justify-center">

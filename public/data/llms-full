@@ -34,7 +34,7 @@ a { color: #1a5fb4; }
   <h1>PCWE2026 全 145 番組 詳細データ（LLM 向け）</h1>
   <p>PODCAST EXPO 2026 内のマーケットイベント <strong>PODCAST WEEKEND 2026</strong>（2026 年 5 月 9 日〜10 日 / 東京・池尻大橋 HOME/WORK VILLAGE）出展 145 番組の詳細を 1 ページに集約した、LLM / AI クライアント向けの HTML データページです。</p>
   <p>人間向けファンガイドは <a href="https://pcwe2026-fansite.podmate.fm/">トップページ</a>。同じデータの他フォーマット: <a href="https://pcwe2026-fansite.podmate.fm/llms-full.txt">llms-full.txt</a> / <a href="https://pcwe2026-fansite.podmate.fm/api/programs.json">programs.json</a> / <a href="https://pcwe2026-fansite.podmate.fm/llms.txt">llms.txt（サイト地図）</a></p>
-  <p class="meta">最終ビルド: <time datetime="2026-05-08T12:20:33.631Z">2026-05-08T12:20:33.631Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
+  <p class="meta">最終ビルド: <time datetime="2026-05-08T13:37:54.787Z">2026-05-08T13:37:54.787Z</time> / 制作: 合同会社コエノマ / Podmate.fm（非公式・ファンメイド）</p>
 </header>
 
 <nav class="toc">
@@ -262,7 +262,7 @@ a { color: #1a5fb4; }
   <p>ミュージシャンのマコトコンドウと医者芸人でジャズ芸人の井たくまが、さまざまなカルチャーについてゆる〜くトークするポッドキャスト。
 最近はジャズの話をまったくしていないので、ジャズに興味がなくても楽しめる雑談番組です！</p>
   
-  <p><strong>ブース物販</strong>: 井たくまがあなたの容姿を見てジャズ / ミュージシャンっぽい名前をお付けする「ジャズ戒名付け」 / ステッカー / アクリルキーホルダー / クリアファイル / Tシャツ 等</p>
+  <p><strong>ブース物販</strong>: 新作 Tシャツ / ステッカー / アクリルキーホルダー / タオル / 井たくまのジャズ戒名付け / チェキ</p>
   <h3>リンク</h3>
   <ul>
     <li><a href="https://pcwe2026-fansite.podmate.fm/booth/pcwe-003">このサイトの番組詳細ページ</a></li>
