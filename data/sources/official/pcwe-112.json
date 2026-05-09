@@ -7,7 +7,22 @@
   "official": {
     "description": "深呼吸できない女代表のKANOKO（姉）と深呼吸できる女代表のKIRIKO（妹）が、様々な方法で「休み方」を模索する姉妹ポッドキャスト番組です。日本中の深呼吸できる場所（＝HAA SPOT）に赴き、その体験をレポートしたり、最近のHAA時間についてゆる～く大分弁でお届けします。",
     "merchandise": [
-      "入浴剤"
+      "入浴剤",
+      "ハンドクリーム",
+      "ポーチ",
+      "KANOKO 初エッセイ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "深呼吸グッズ各種（入浴剤・ハンドクリーム・ポーチ・KANOKO 初エッセイ）",
+        "description": "5/9（土）配信 2 周年のめでたい日に出展。入浴剤、ハンドクリーム、ポーチ、そして姉 KANOKO の初エッセイ（！）など、深呼吸グッズも沢山。メインゲート近くの 16-D ブース。",
+        "sourceUrl": "https://x.com/shinjo_podcast/status/2052745813508637052",
+        "sourceType": "x-post"
+      }
+    ],
+    "merchandiseTags": [
+      "limited-new",
+      "zine-book"
     ],
     "merchandiseSubTypes": [
       "goods-misc"
