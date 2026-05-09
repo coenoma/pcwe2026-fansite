@@ -17,7 +17,13 @@
         "name": "エンタメ処方箋（イベント限定価格）",
         "description": "5/10（日）出店。注目アイテム。キャッシュバックCP との併用可能。",
         "sourceUrl": "https://x.com/okiarichan27/status/2051950185056731205",
-        "sourceType": "x-post"
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/okiarichan27/status/2053109749919748374",
+            "type": "x-post"
+          }
+        ]
       },
       {
         "name": "公開収録 & 出演者募集会",
