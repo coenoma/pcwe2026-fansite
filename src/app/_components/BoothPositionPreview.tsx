@@ -1,18 +1,18 @@
 /**
  * 番組詳細ページの「ブース位置」セクションに表示する、静的マップ SVG プレビュー。
  *
- * 機能:
- * 1. VenueMap.tsx の SVG レイアウト計算を簡素再利用（操作機能なし）
- * 2. 全テントを薄塗りで簡素表示、該当 slot のみ強調:
- *    - 番組サムネで塗り
- *    - パルスアニメーション（accent-cyan）
- *    - 「ここ！」吹き出し
- *    - quad テントは A/B/C/D 分割で該当 slot のみ
- * 3. 「📥 画像として開く」ボタンで Canvas → PNG → 新タブ表示
- *    - PC: 右クリックで「名前を付けて保存」
- *    - SP: 長押しで「画像を保存」
- *    - リスナーへの SNS 投稿などに即使えるよう、サムネ + 「ここ！」吹き出しが入った
- *      「ブース案内画像」を 1 タップで取得できる
+ * v2 仕様（リスナー案内画像としての使い勝手を優先）:
+ * 1. focus 枠 = テント全体（A/B/C/D の小区画ではない）。
+ *    - 白塗り + 青系角丸四角枠（パルス）
+ *    - テント番号をオレンジ大文字で強調 → どのテントが該当か一目で分かる
+ * 2. 大型サムネ + 番組名 + ブース番号バッジは SVG 左中央に固定配置。
+ *    - VenueMap の「PODCAST WEEKEND」ロゴ位置を参考に、テント群と被らない
+ *      安全圏（左端テント 1-7 の右隣、中央のひらけた領域）を使用。
+ *    - テント位置によって左右にぶれない一貫レイアウト → 量産画像でも統一感。
+ * 3. 点線でサムネ → focus テントを接続。「これがその番組」を視覚的に示す。
+ * 4. 「画像で保存」ボタン: Canvas → PNG → 新タブ表示
+ *    - PC: 右クリックで「名前を付けて保存」、SP: 長押しで「画像を保存」
+ *    - 量産用途では scripts/generate-booth-position-image.ts が SVG 自体を screenshot
  *
  * Client Component（useRef で svg を取得 + Canvas 変換のため）。
  * 描画データは親 Server Component から props で受け取り、bundle 増加を抑える。
@@ -29,8 +29,12 @@ interface Props {
   program: Program;
   /** position label（例: "11-C" / "1" / "32"）*/
   positionLabel: string;
-  /** 該当の出展日（土 or 日）*/
-  day: Day;
+  /**
+   * このブース位置で出る日のセット。両日同位置なら ['sat', 'sun']、
+   * 単日なら ['sat'] / ['sun']。両日異位置の番組はそれぞれ別 props で
+   * 2 つの BoothPositionPreview をレンダリングする想定（実データではゼロ件）。
+   */
+  days: Day[];
   /** 親 Server Component で計算済みの SVG レイアウトデータ */
   preview: PreviewSlotData;
 }
@@ -38,7 +42,7 @@ interface Props {
 export function BoothPositionPreview({
   program,
   positionLabel,
-  day,
+  days,
   preview,
 }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -58,60 +62,85 @@ export function BoothPositionPreview({
 
   // 該当番組のサムネ URL（pcwe-XXX → /thumbnails/XXX.jpeg）
   const thumbnailUrl = `/thumbnails/${program.id.replace('pcwe-', '')}.jpeg`;
-  const dayLabel = day === 'sat' ? '5/9 土' : '5/10 日';
+  // 両日同位置 → "両日"、単日 → "5/9 土" / "5/10 日"
+  const dayLabel =
+    days.length === 2
+      ? '両日'
+      : days[0] === 'sat'
+        ? '5/9 土'
+        : '5/10 日';
+  // data attribute / clip ID 用の day 識別子（"sat" / "sun" / "sat-sun"）
+  const dayId = days.join('-');
   const programName = program.shortName ?? program.name;
 
-  // テントの中心座標 + 大型サムネ配置ロジック
-  // テントが画面左半分なら右に、右半分なら左に、上下端は上下を選んで配置
-  const tentCx = focusX + focusW / 2;
-  const tentCy = focusY + focusH / 2;
-  const isLeft = tentCx < imgW * 0.45;
-  const isRight = tentCx > imgW * 0.55;
-  const isTop = tentCy < imgH * 0.45;
-  // 大型サムネサイズ（元 SVG 座標系）。imgW/H が 932x808 なので 180 は約 19%
-  const bigThumbSize = Math.round(Math.min(imgW, imgH) * 0.22);
+  // ─────────────────────────────────────────────────────────────
+  // サムネ + 番組名は SVG の中央左寄り（テント 1-7 と テント 10-15 の間の
+  // 中央列）に固定配置。テント位置（focus が右上 / 左下 / どこでも）に
+  // 依らない一貫レイアウト。
+  //
+  // 配置数値の根拠（imgW=932, imgH=808 前提、booth-positions.json 実測）:
+  //   - 左端テント 1-7 の右端: x=135
+  //   - 右側テント 10 の左端: x=368
+  //   - 利用可能幅: 233px、サムネ 200px なら左右余白 16〜17px ずつで均等
+  // ─────────────────────────────────────────────────────────────
+  const bigThumbSize = Math.round(imgW * 0.215); // ~200
+  const bigThumbX = Math.round(imgW * 0.163); // ~152（左端テント右端 +17px）
+  const bigThumbY = Math.round(imgH * 0.35); // ~283
   const labelHeight = Math.round(bigThumbSize * 0.22);
-  // 配置: 左にテントなら右側、右にテントなら左側、中央なら上下空きの広い方
-  let bigThumbX: number;
-  let bigThumbY: number;
-  const margin = 24;
-  if (isLeft) {
-    bigThumbX = focusX + focusW + margin + 18;
-    bigThumbY = tentCy - bigThumbSize / 2;
-  } else if (isRight) {
-    bigThumbX = focusX - bigThumbSize - margin - 18;
-    bigThumbY = tentCy - bigThumbSize / 2;
-  } else if (isTop) {
-    bigThumbX = tentCx - bigThumbSize / 2;
-    bigThumbY = focusY + focusH + margin + 30;
-  } else {
-    bigThumbX = tentCx - bigThumbSize / 2;
-    bigThumbY = focusY - bigThumbSize - margin - labelHeight - 30;
-  }
-  // 範囲外クランプ（ラベル分の余白も考慮）
-  bigThumbX = Math.max(8, Math.min(bigThumbX, imgW - bigThumbSize - 8));
-  bigThumbY = Math.max(8, Math.min(bigThumbY, imgH - bigThumbSize - labelHeight - 8));
   const bigThumbCx = bigThumbX + bigThumbSize / 2;
   const bigThumbCy = bigThumbY + bigThumbSize / 2;
-  // 「ここ！」吹き出し: focus の 3 倍幅・1.2 倍高で巨大に + 三角ポインタが focus に
-  // めり込まないよう十分な距離をとる（パルス枠 8px + 余白 16px = 24px 離す）
-  const hereLabelW = Math.round(Math.max(focusW * 3, 96));
-  const hereLabelH = Math.round(Math.max(focusH * 1.2, 42));
-  const hereLabelX = tentCx - hereLabelW / 2;
-  const hereTriangleH = Math.round(hereLabelH * 0.45);
-  // hereLabelY + hereLabelH + hereTriangleH + 余白 ≤ focusY - パルス枠 8px
-  // → hereLabelY = focusY - hereLabelH - hereTriangleH - 16
-  const hereLabelY = focusY - hereLabelH - hereTriangleH - 16;
-  const hereLabelFontSize = Math.round(hereLabelH * 0.65);
+
   // ブース番号バッジ（サムネ右上、ピル型）。「11-C」3 文字を綺麗に収める
   const badgeFontSize = Math.round(bigThumbSize * 0.16);
   const badgeH = Math.round(bigThumbSize * 0.28);
-  const badgeW = Math.round(badgeFontSize * Math.max(positionLabel.length * 0.85, 2.4) + 18);
+  const badgeW = Math.round(
+    badgeFontSize * Math.max(positionLabel.length * 0.85, 2.4) + 18,
+  );
   const badgeX = bigThumbX + bigThumbSize - badgeW + 8;
   const badgeY = bigThumbY - badgeH / 2;
 
-  const focusClipId = `booth-preview-clip-${program.id}-${day}`;
-  const bigThumbClipId = `booth-preview-bigthumb-${program.id}-${day}`;
+  // focus テントの中心（テント番号テキスト位置）
+  const focusCx = focusX + focusW / 2;
+  const focusCy = focusY + focusH / 2;
+  const focusFontSize = Math.round(Math.min(focusW, focusH) * 0.55);
+
+  // ─────────────────────────────────────────────────────────────
+  // 点線（サムネ → focus テント）の終端を、focus 外側のパルス枠の境界で止める。
+  // テント内部に線が突っ切らないよう、矩形と線分の交点を計算する。
+  // ─────────────────────────────────────────────────────────────
+  const PULSE_PAD = 8; // パルス枠と focus テントの隙間
+  const focusBoxMinX = focusX - PULSE_PAD;
+  const focusBoxMaxX = focusX + focusW + PULSE_PAD;
+  const focusBoxMinY = focusY - PULSE_PAD;
+  const focusBoxMaxY = focusY + focusH + PULSE_PAD;
+
+  const lineDx = focusCx - bigThumbCx;
+  const lineDy = focusCy - bigThumbCy;
+  // 線分パラメータ t（0=始点, 1=focus 中心）について、矩形境界に達する最小の正の t を求める
+  let lineT = 1.0;
+  const tryEdge = (t: number) => {
+    if (t > 0 && t < lineT) lineT = t;
+  };
+  if (lineDx !== 0) {
+    const tLeft = (focusBoxMinX - bigThumbCx) / lineDx;
+    const yAtLeft = bigThumbCy + tLeft * lineDy;
+    if (yAtLeft >= focusBoxMinY && yAtLeft <= focusBoxMaxY) tryEdge(tLeft);
+    const tRight = (focusBoxMaxX - bigThumbCx) / lineDx;
+    const yAtRight = bigThumbCy + tRight * lineDy;
+    if (yAtRight >= focusBoxMinY && yAtRight <= focusBoxMaxY) tryEdge(tRight);
+  }
+  if (lineDy !== 0) {
+    const tTop = (focusBoxMinY - bigThumbCy) / lineDy;
+    const xAtTop = bigThumbCx + tTop * lineDx;
+    if (xAtTop >= focusBoxMinX && xAtTop <= focusBoxMaxX) tryEdge(tTop);
+    const tBottom = (focusBoxMaxY - bigThumbCy) / lineDy;
+    const xAtBottom = bigThumbCx + tBottom * lineDx;
+    if (xAtBottom >= focusBoxMinX && xAtBottom <= focusBoxMaxX) tryEdge(tBottom);
+  }
+  const lineEndX = bigThumbCx + lineT * lineDx;
+  const lineEndY = bigThumbCy + lineT * lineDy;
+
+  const bigThumbClipId = `booth-preview-bigthumb-${program.id}-${dayId}`;
 
   // SVG → Canvas → PNG 化 → 新タブで開く
   const handleOpenAsImage = useCallback(async () => {
@@ -119,7 +148,6 @@ export function BoothPositionPreview({
     setIsProcessing(true);
     try {
       const svgEl = svgRef.current;
-      // SVG をシリアライズ（XML 宣言付き）
       const xml = new XMLSerializer().serializeToString(svgEl);
       const svgBlob = new Blob(
         ['<?xml version="1.0" encoding="UTF-8"?>\n', xml],
@@ -127,7 +155,6 @@ export function BoothPositionPreview({
       );
       const svgUrl = URL.createObjectURL(svgBlob);
 
-      // 高解像度（2x）で PNG 化
       const scale = 2;
       const canvas = document.createElement('canvas');
       canvas.width = imgW * scale;
@@ -135,7 +162,6 @@ export function BoothPositionPreview({
       const ctx = canvas.getContext('2d');
       if (ctx === null) throw new Error('2D context 取得失敗');
 
-      // 背景（透明だと SNS 投稿時に映えないので白背景）
       ctx.fillStyle = '#fff';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -157,9 +183,7 @@ export function BoothPositionPreview({
       if (pngBlob === null) throw new Error('PNG 変換失敗');
 
       const pngUrl = URL.createObjectURL(pngBlob);
-      // 新タブで開く（PC は右クリック保存、SP は長押し保存に対応）
       window.open(pngUrl, '_blank', 'noopener,noreferrer');
-      // 1 分後に URL を解放（タブで開いた直後の retain を保証）
       setTimeout(() => URL.revokeObjectURL(pngUrl), 60_000);
     } catch (error) {
       console.warn('⚠️ ブース位置プレビューの画像化に失敗しました', error);
@@ -173,8 +197,9 @@ export function BoothPositionPreview({
       className="relative w-full overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br from-secondary-50 to-amber-50"
       aria-label={`${program.name} のブース位置（${dayLabel} ${positionLabel}）`}
       // 量産スクリプト（scripts/generate-booth-position-image.ts）が SVG 要素を
-      // selector で特定するための識別子。両日出展時は figure が 2 つ並ぶため day で絞る。
-      data-booth-preview-day={day}
+      // selector で特定するための識別子。両日異位置で figure が 2 つ並ぶ場合は
+      // days セット（"sat" / "sun" / "sat-sun"）で絞る。
+      data-booth-preview-day={dayId}
       data-booth-preview-position={positionLabel}
     >
       <svg
@@ -193,15 +218,6 @@ export function BoothPositionPreview({
         }}
       >
         <defs>
-          <clipPath id={focusClipId}>
-            <rect
-              x={focusX}
-              y={focusY}
-              width={focusW}
-              height={focusH}
-              rx={6}
-            />
-          </clipPath>
           <clipPath id={bigThumbClipId}>
             <rect
               x={bigThumbX}
@@ -226,57 +242,76 @@ export function BoothPositionPreview({
           />
         ) : null}
 
-        {/* 全テント（非該当: 薄塗り + テント番号、該当: primary オレンジで強調）*/}
-        {tents.map((t) => {
-          const isTarget = t.id === targetTentId;
-          const fontSize = Math.min(t.w, t.h) * 0.5;
-          return (
-            <g key={t.id}>
-              <rect
-                x={t.x}
-                y={t.y}
-                width={t.w}
-                height={t.h}
-                fill={
-                  isTarget
-                    ? 'var(--color-primary-500, #dc725a)'
-                    : 'var(--color-neutral-200, #e5e5e5)'
-                }
-                rx={4}
-              />
-              <text
-                x={t.x + t.w / 2}
-                y={t.y + t.h / 2 + fontSize * 0.34}
-                fill={isTarget ? '#fff' : 'var(--color-neutral-500, #737373)'}
-                fontSize={fontSize}
-                fontWeight={isTarget ? 900 : 800}
-                textAnchor="middle"
-              >
-                {t.id}
-              </text>
-            </g>
-          );
-        })}
+        {/* MAIN GATE（マップの向き / 入口を示す表示。VenueMap と同じ位置）*/}
+        <text
+          x={285}
+          y={770}
+          fill="var(--color-neutral-600, #525252)"
+          fontSize={22}
+          fontWeight={800}
+          textAnchor="middle"
+        >
+          ↑ MAIN GATE
+        </text>
 
-        {/* 該当 slot 強調: 目立つ accent-cyan で塗り + パルス波紋 */}
+        {/* 全テント（focus テント以外、薄塗り + テント番号）*/}
+        {tents
+          .filter((t) => t.id !== targetTentId)
+          .map((t) => {
+            const fontSize = Math.min(t.w, t.h) * 0.5;
+            return (
+              <g key={t.id}>
+                <rect
+                  x={t.x}
+                  y={t.y}
+                  width={t.w}
+                  height={t.h}
+                  fill="var(--color-neutral-200, #e5e5e5)"
+                  rx={4}
+                />
+                <text
+                  x={t.x + t.w / 2}
+                  y={t.y + t.h / 2 + fontSize * 0.34}
+                  fill="var(--color-neutral-500, #737373)"
+                  fontSize={fontSize}
+                  fontWeight={800}
+                  textAnchor="middle"
+                >
+                  {t.id}
+                </text>
+              </g>
+            );
+          })}
+
+        {/* focus テント全体（オレンジ塗り + 白文字 + 外側に青パルス枠）*/}
         <g>
-          {/* 該当 slot 塗り（accent-cyan、目立つ）*/}
+          {/* テント本体: オレンジ塗り（他テントの薄塗りグレーから際立つ）*/}
           <rect
             x={focusX}
             y={focusY}
             width={focusW}
             height={focusH}
-            fill="var(--color-accent-cyan-500, #00b3d4)"
+            fill="var(--color-accent-orange-500, #f97316)"
             rx={6}
           />
-
-          {/* 外側パルス（太く、目立つ） */}
+          {/* テント番号（白文字で強調）*/}
+          <text
+            x={focusCx}
+            y={focusCy + focusFontSize * 0.34}
+            fill="#fff"
+            fontSize={focusFontSize}
+            fontWeight={900}
+            textAnchor="middle"
+          >
+            {targetTentId}
+          </text>
+          {/* 外側に青のパルス角丸枠（「ここだよ」の視線誘導）*/}
           <rect
-            x={focusX - 8}
-            y={focusY - 8}
-            width={focusW + 16}
-            height={focusH + 16}
-            rx={10}
+            x={focusX - PULSE_PAD}
+            y={focusY - PULSE_PAD}
+            width={focusW + PULSE_PAD * 2}
+            height={focusH + PULSE_PAD * 2}
+            rx={12}
             fill="none"
             stroke="var(--color-accent-cyan-500, #00b3d4)"
             strokeWidth={5}
@@ -294,41 +329,17 @@ export function BoothPositionPreview({
               repeatCount="indefinite"
             />
           </rect>
-
-          {/* 「ここ！」巨大吹き出し（focus 真上、focusW の 3 倍幅）*/}
-          <rect
-            x={hereLabelX}
-            y={hereLabelY}
-            width={hereLabelW}
-            height={hereLabelH}
-            rx={hereLabelH / 2}
-            fill="var(--color-accent-cyan-500, #00b3d4)"
-          />
-          {/* 三角ポインタ（吹き出し下端から focus 手前まで） */}
-          <polygon
-            points={`${tentCx - hereLabelH / 3},${hereLabelY + hereLabelH} ${tentCx + hereLabelH / 3},${hereLabelY + hereLabelH} ${tentCx},${hereLabelY + hereLabelH + hereTriangleH}`}
-            fill="var(--color-accent-cyan-500, #00b3d4)"
-          />
-          <text
-            x={tentCx}
-            y={hereLabelY + hereLabelH / 2 + hereLabelFontSize * 0.36}
-            fill="#fff"
-            fontSize={hereLabelFontSize}
-            fontWeight={900}
-            textAnchor="middle"
-          >
-            ここ！
-          </text>
         </g>
 
-        {/* マップ余白に大型サムネ + 番組名 + ブース番号 + テントへの接続線 */}
+        {/* マップ余白に大型サムネ + 番組名 + ブース番号バッジ + 接続線 */}
         <g>
-          {/* 接続線（サムネ中心 → テント中心、破線で視線誘導）*/}
+          {/* 接続線（サムネ中心 → focus テント外側のパルス枠、破線で視線誘導）
+              テント内部に線が突っ切らないよう、矩形交差で計算した境界点で止める */}
           <line
             x1={bigThumbCx}
             y1={bigThumbCy}
-            x2={tentCx}
-            y2={tentCy}
+            x2={lineEndX}
+            y2={lineEndY}
             stroke="var(--color-accent-cyan-500, #00b3d4)"
             strokeWidth={2.5}
             strokeDasharray="6 4"
@@ -380,7 +391,7 @@ export function BoothPositionPreview({
             </text>
           </g>
 
-          {/* サムネ下のラベルバー（番組名 + ブース番号）*/}
+          {/* サムネ下のラベルバー（番組名）*/}
           <rect
             x={bigThumbX - 4}
             y={bigThumbY + bigThumbSize + 4}
@@ -425,4 +436,3 @@ export function BoothPositionPreview({
     </figure>
   );
 }
-
