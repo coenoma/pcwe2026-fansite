@@ -148,7 +148,26 @@ export function BoothPositionPreview({
     setIsProcessing(true);
     try {
       const svgEl = svgRef.current;
-      const xml = new XMLSerializer().serializeToString(svgEl);
+
+      // SVG 内の <image href={thumbnailUrl} /> は外部画像参照のまま Canvas に
+      // drawImage すると、SVG → Image 変換のタイミング問題でサムネが欠落する。
+      // 事前に thumbnail を fetch → base64 化 → SVG 文字列内で URL を data URI に
+      // 置換することで、SVG 自体に画像を埋め込んで欠落を防ぐ。
+      const thumbRes = await fetch(thumbnailUrl);
+      const thumbBlob = await thumbRes.blob();
+      const thumbDataUrl = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          if (typeof reader.result === 'string') resolve(reader.result);
+          else reject(new Error('FileReader 結果が string でない'));
+        };
+        reader.onerror = () => reject(new Error('サムネの base64 化に失敗'));
+        reader.readAsDataURL(thumbBlob);
+      });
+
+      const rawXml = new XMLSerializer().serializeToString(svgEl);
+      // href / xlink:href 両方を考慮した置換（thumbnailUrl は番組ごとに一意）
+      const xml = rawXml.split(thumbnailUrl).join(thumbDataUrl);
       const svgBlob = new Blob(
         ['<?xml version="1.0" encoding="UTF-8"?>\n', xml],
         { type: 'image/svg+xml;charset=utf-8' },
@@ -190,7 +209,7 @@ export function BoothPositionPreview({
     } finally {
       setIsProcessing(false);
     }
-  }, [imgW, imgH]);
+  }, [imgW, imgH, thumbnailUrl]);
 
   return (
     <figure
