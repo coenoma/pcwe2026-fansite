@@ -57,7 +57,8 @@ interface Program {
 
 interface PositionTarget {
   label: string;
-  day: 'sat' | 'sun';
+  /** このブース位置で出る日のセット。両日同位置なら 2 要素、単日なら 1 要素 */
+  days: ('sat' | 'sun')[];
 }
 
 async function main(): Promise<void> {
@@ -142,11 +143,12 @@ async function main(): Promise<void> {
       // フォントレンダリング待ち（重要: 明朝→sans-serif の切替が反映されるまで）
       await new Promise((r) => setTimeout(r, FONT_RENDER_WAIT_MS));
 
-      for (const { label, day } of positions) {
-        const selector = `figure[data-booth-preview-day="${day}"][data-booth-preview-position="${label}"] svg`;
+      for (const { label, days } of positions) {
+        const dayId = days.join('-'); // "sat" / "sun" / "sat-sun"
+        const selector = `figure[data-booth-preview-day="${dayId}"][data-booth-preview-position="${label}"] svg`;
         const element = await page.$(selector);
         if (!element) {
-          console.error(`  ✗ ${program.id} ${day} ${label}: SVG 要素が見つからない`);
+          console.error(`  ✗ ${program.id} ${dayId} ${label}: SVG 要素が見つからない`);
           errCount++;
           continue;
         }
@@ -179,18 +181,22 @@ function collectPositions(program: Program): PositionTarget[] {
   const ex = program.exhibition;
   const ret: PositionTarget[] = [];
   if (ex.position) {
-    const day = ex.days[0]!;
-    ret.push({ label: ex.position.label, day });
+    // 単一 position: 出展日全部を同じ位置エントリにまとめる（両日同位置 OK）
+    const days = ex.days.filter(
+      (d): d is 'sat' | 'sun' => d === 'sat' || d === 'sun',
+    );
+    if (days.length > 0) {
+      ret.push({ label: ex.position.label, days });
+    }
   } else if (ex.positionBySatSun) {
     const sat = ex.positionBySatSun.sat;
     const sun = ex.positionBySatSun.sun;
-    if (sat && sun && sat.label !== sun.label) {
-      ret.push({ label: sat.label, day: 'sat' });
-      ret.push({ label: sun.label, day: 'sun' });
-    } else if (sat) {
-      ret.push({ label: sat.label, day: 'sat' });
-    } else if (sun) {
-      ret.push({ label: sun.label, day: 'sun' });
+    if (sat && sun && sat.label === sun.label) {
+      // 両日同位置（positionBySatSun に書かれてるが label 一致）→ 統合
+      ret.push({ label: sat.label, days: ['sat', 'sun'] });
+    } else {
+      if (sat) ret.push({ label: sat.label, days: ['sat'] });
+      if (sun) ret.push({ label: sun.label, days: ['sun'] });
     }
   }
   return ret;

@@ -242,30 +242,31 @@ export default async function BoothPage({ params }: Props) {
             {(program.exhibition.position || program.exhibition.positionBySatSun) ? (
               (() => {
                 const boothPositions = getBoothPositions();
-                // position（単一）/ positionBySatSun（両日）の判別
-                const positions: Array<{ label: string; day: 'sat' | 'sun' }> = [];
+                // position（単一）/ positionBySatSun（日別）を統合し、
+                // 「同じ位置で出る日のセット」単位で 1 つの BoothPositionPreview に
+                // まとめる。両日同位置なら 1 表示（"両日 11-C"）、両日異位置なら 2 表示。
+                // 実データでは両日異位置の番組はゼロ件。
+                const positions: Array<{ label: string; days: ('sat' | 'sun')[] }> = [];
                 if (program.exhibition.position !== undefined) {
-                  // 単一 position の場合、出展日それぞれに同じ position を表示
-                  for (const d of program.exhibition.days) {
-                    if (d === 'sat' || d === 'sun') {
-                      positions.push({
-                        label: program.exhibition.position.label,
-                        day: d,
-                      });
-                    }
+                  // 単一 position: 出展日全部を同じ位置エントリにまとめる
+                  const days = program.exhibition.days.filter(
+                    (d): d is 'sat' | 'sun' => d === 'sat' || d === 'sun',
+                  );
+                  if (days.length > 0) {
+                    positions.push({
+                      label: program.exhibition.position.label,
+                      days,
+                    });
                   }
                 } else if (program.exhibition.positionBySatSun) {
-                  if (program.exhibition.positionBySatSun.sat) {
-                    positions.push({
-                      label: program.exhibition.positionBySatSun.sat.label,
-                      day: 'sat',
-                    });
-                  }
-                  if (program.exhibition.positionBySatSun.sun) {
-                    positions.push({
-                      label: program.exhibition.positionBySatSun.sun.label,
-                      day: 'sun',
-                    });
+                  const sat = program.exhibition.positionBySatSun.sat;
+                  const sun = program.exhibition.positionBySatSun.sun;
+                  if (sat && sun && sat.label === sun.label) {
+                    // 両日同位置（positionBySatSun に書かれてるが label 一致）→ 統合
+                    positions.push({ label: sat.label, days: ['sat', 'sun'] });
+                  } else {
+                    if (sat) positions.push({ label: sat.label, days: ['sat'] });
+                    if (sun) positions.push({ label: sun.label, days: ['sun'] });
                   }
                 }
 
@@ -273,18 +274,24 @@ export default async function BoothPage({ params }: Props) {
                   <div className="mt-6">
                     <h3 className="text-sm font-bold text-neutral-500">ブース位置</h3>
 
-                    {/* 静的マップ位置プレビュー（出展日ごと）*/}
+                    {/* 静的マップ位置プレビュー（同位置で出る日のセット単位）*/}
                     {positions.length > 0 ? (
-                      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                      <div
+                        className={
+                          positions.length > 1
+                            ? 'mt-3 grid gap-3 sm:grid-cols-2'
+                            : 'mt-3'
+                        }
+                      >
                         {positions.map((pos) => {
                           const preview = buildBoothPreviewData(pos.label, boothPositions);
                           if (preview === null) return null;
                           return (
                             <BoothPositionPreview
-                              key={`${pos.day}-${pos.label}`}
+                              key={`${pos.days.join('-')}-${pos.label}`}
                               program={program}
                               positionLabel={pos.label}
-                              day={pos.day}
+                              days={pos.days}
                               preview={preview}
                             />
                           );
