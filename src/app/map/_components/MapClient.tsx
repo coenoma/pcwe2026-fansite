@@ -442,7 +442,7 @@ export function MapClient({ programs, boothPositions, tweets, eventDates }: Prop
   return (
     <>
       {/* ヘッダー（SP 最適化） */}
-      <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/95 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-neutral-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-3 py-2.5 sm:px-6 sm:py-3">
           {/* 1 段目: タイトル + AI ボタン + ビュー切替 + 日付 */}
           <div className="flex flex-wrap items-center justify-between gap-2">
