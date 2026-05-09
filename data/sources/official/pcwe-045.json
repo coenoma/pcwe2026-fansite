@@ -8,14 +8,24 @@
     "description": "番組をアップするだけで『AIが記事化』してくれるPodcastポータルサイト、「PodcastTimes」が、Podcastから新しいスター「ぽっどでの新人」を生み出すための番組です。ポッドキャスターや音声コンテンツ制作者のスキルアップ、モチベーションアップを目指し、音声関係者やクリエイター、パーソナリティをゲストに招き、音声コンテンツの魅力を語っていただいたり、番組制作・喋りのテクニックなどを紹介したりしていきます。",
     "merchandise": [
       "ステッカー無償配布",
-      "公開録音",
-      "体験コーナー"
+      "PodcastTimes アクキー",
+      "公開録音体験（3 分番組収録 → AI 記事化 → 即掲載）"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "公開録音体験 + アクキープレゼント",
+        "description": "両日 6 番テント。収録機材を持ち込み、どなたでも参加できる公開録音を実施。3 分の番組を収録 → 即アップ → AI が記事化 → PodcastTimes に即掲載という流れを体験できます。参加者にはアクキープレゼント。ポッドキャスターの宣伝来訪も歓迎。",
+        "sourceUrl": "https://x.com/Podcast_TimesJP/status/2052757951245631818",
+        "sourceType": "x-post"
+      }
     ],
     "merchandiseTags": [
-      "experience"
+      "experience",
+      "free-distribution"
     ],
     "merchandiseSubTypes": [
-      "paper-stationery"
+      "paper-stationery",
+      "goods-acrylic"
     ]
   },
   "exhibition": {

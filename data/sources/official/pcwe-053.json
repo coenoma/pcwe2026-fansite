@@ -11,11 +11,21 @@
       "ステッカー",
       "焼き菓子",
       "コーヒーパック",
-      "匿名お手紙の輪"
+      "匿名お手紙の輪",
+      "無料おみくじ"
+    ],
+    "merchandiseDetails": [
+      {
+        "name": "ZINE / ステッカー / お菓子 / コーヒー / 無料おみくじ",
+        "description": "5/10（日）出店、ブース 12-D。ZINE・ステッカー・お菓子・コーヒーを販売。無料で引けるおみくじも用意、ふらっと立ち寄り歓迎。",
+        "sourceUrl": "https://x.com/okanoue_kissa/status/2052736343055466637",
+        "sourceType": "x-post"
+      }
     ],
     "merchandiseTags": [
       "food-drink",
-      "zine-book"
+      "zine-book",
+      "free-distribution"
     ],
     "merchandiseSubTypes": [
       "paper-stationery"
