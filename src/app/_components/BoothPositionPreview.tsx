@@ -78,13 +78,15 @@ export function BoothPositionPreview({
   // 中央列）に固定配置。テント位置（focus が右上 / 左下 / どこでも）に
   // 依らない一貫レイアウト。
   //
-  // 配置数値の根拠（imgW=932, imgH=808 前提、booth-positions.json 実測）:
+  // 配置数値（imgW=932, imgH=808 前提、ユーザー指示で微調整済み）:
   //   - 左端テント 1-7 の右端: x=135
   //   - 右側テント 10 の左端: x=368
-  //   - 利用可能幅: 233px、サムネ 200px なら左右余白 16〜17px ずつで均等
+  //   - サムネ 200px 幅。完全中央寄せ（x=152）だと左寄りすぎたので、
+  //     0.6 テント幅（≈ 36px）右にズラして x=188 に配置。
+  //     左余白 53px / 右余白 -20px（テント 10 と 4px 重なるが視覚的に許容範囲）
   // ─────────────────────────────────────────────────────────────
   const bigThumbSize = Math.round(imgW * 0.215); // ~200
-  const bigThumbX = Math.round(imgW * 0.163); // ~152（左端テント右端 +17px）
+  const bigThumbX = Math.round(imgW * 0.202); // ~188（中央寄せ +0.6 テント幅）
   const bigThumbY = Math.round(imgH * 0.35); // ~283
   const labelHeight = Math.round(bigThumbSize * 0.22);
   const bigThumbCx = bigThumbX + bigThumbSize / 2;
