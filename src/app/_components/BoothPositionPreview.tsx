@@ -172,6 +172,10 @@ export function BoothPositionPreview({
     <figure
       className="relative w-full overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br from-secondary-50 to-amber-50"
       aria-label={`${program.name} のブース位置（${dayLabel} ${positionLabel}）`}
+      // 量産スクリプト（scripts/generate-booth-position-image.ts）が SVG 要素を
+      // selector で特定するための識別子。両日出展時は figure が 2 つ並ぶため day で絞る。
+      data-booth-preview-day={day}
+      data-booth-preview-position={positionLabel}
     >
       <svg
         ref={svgRef}

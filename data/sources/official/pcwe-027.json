@@ -7,32 +7,59 @@
   "official": {
     "description": "コラムニストの月岡ツキが、最近のできごとや考えていることについてボソボソ話していくポッドキャストです。『となりの芝生はソーブルー』のつっきー（DINKsの方）でもあります。書くことや出版にまつわる話を不定期で配信中！",
     "merchandise": [
-      "私家版エッセイ集",
-      "ステッカー",
-      "アクキー"
+      "傷つきながら泳いでく（エッセイ集）",
+      "大人バレエ（ずっと）入門記",
+      "産む気もないのに生理かよ！",
+      "となりの芝生はソーブルー アクキー",
+      "月面通信キラキラステッカー",
+      "となしば手作り折本"
     ],
     "merchandiseDetails": [
       {
-        "name": "月岡ツキ著書（4種）",
-        "description": "5/10(日) のみ出展（イベント自体は 5/9-10 の 2 日間）。混雑次第でサイン対応も可。",
-        "sourceUrl": "https://www.instagram.com/p/DXeHu3vn2xh/",
-        "sourceType": "instagram-post"
+        "name": "『傷つきながら泳いでく』（書籍・サイン対応可）",
+        "description": "¥1,760。「シゴデキ」を目指すも休職、地元と東京への愛と憎、結婚と産まない選択など、いま 30 代女性から圧倒的支持を集める書き手が送る、もがきながらサバイブする私たちへ贈るエッセイ集。5/10（日）24-B、混雑次第でサイン対応も可。",
+        "sourceUrl": "https://x.com/olunnun/status/2052762031217168885",
+        "sourceType": "x-post"
       },
       {
-        "name": "月面通信ステッカー",
-        "description": "番組オリジナルステッカー。",
-        "sourceUrl": "https://www.instagram.com/p/DXeHu3vn2xh/",
-        "sourceType": "instagram-post"
+        "name": "『大人バレエ（ずっと）入門記』",
+        "description": "¥1,200。29 歳でバレエを始めて、小学生より下手で落ち込んだりしつつも、コンクールに出たり、レッスンを受けにドイツまで飛んでいた…！そんな 3 年間を記録したエッセイ集。",
+        "sourceUrl": "https://x.com/olunnun/status/2052762031217168885",
+        "sourceType": "x-post"
       },
       {
-        "name": "となしばのアクリルキーホルダー",
-        "sourceUrl": "https://www.instagram.com/p/DXeHu3vn2xh/",
-        "sourceType": "instagram-post"
+        "name": "『産む気もないのに生理かよ！』",
+        "description": "¥1,760。子供を「産む」か「産まない」かは、私が決める ── 月岡さんの言葉は、きっと優しく照らしてくれる（三宅香帆 評）。",
+        "sourceUrl": "https://x.com/olunnun/status/2052762031217168885",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "となりの芝生はソーブルー アクキー",
+        "description": "¥700。番組『となりの芝生はソーブルー』のアクリルキーホルダー、複数カラー展開。",
+        "sourceUrl": "https://x.com/olunnun/status/2052762031217168885",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "月面通信キラキラステッカー",
+        "description": "¥500。番組オリジナルのキラキラステッカー。",
+        "sourceUrl": "https://x.com/olunnun/status/2052762031217168885",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "となしば手作り折本",
+        "description": "¥600。手作りの折本、限定品。",
+        "sourceUrl": "https://x.com/olunnun/status/2052762031217168885",
+        "sourceType": "x-post"
       }
+    ],
+    "merchandiseTags": [
+      "limited-new",
+      "zine-book"
     ],
     "merchandiseSubTypes": [
       "goods-acrylic",
-      "paper-stationery"
+      "paper-stationery",
+      "zine-book"
     ]
   },
   "exhibition": {
