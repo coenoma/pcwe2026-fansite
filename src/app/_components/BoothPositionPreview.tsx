@@ -71,7 +71,6 @@ export function BoothPositionPreview({
         : '5/10 日';
   // data attribute / clip ID 用の day 識別子（"sat" / "sun" / "sat-sun"）
   const dayId = days.join('-');
-  const programName = program.shortName ?? program.name;
 
   // ─────────────────────────────────────────────────────────────
   // サムネ + 番組名は SVG の中央左寄り（テント 1-7 と テント 10-15 の間の
@@ -88,7 +87,6 @@ export function BoothPositionPreview({
   const bigThumbSize = Math.round(imgW * 0.215); // ~200
   const bigThumbX = Math.round(imgW * 0.202); // ~188（中央寄せ +0.6 テント幅）
   const bigThumbY = Math.round(imgH * 0.35); // ~283
-  const labelHeight = Math.round(bigThumbSize * 0.22);
   const bigThumbCx = bigThumbX + bigThumbSize / 2;
   const bigThumbCy = bigThumbY + bigThumbSize / 2;
 
@@ -393,27 +391,7 @@ export function BoothPositionPreview({
             </text>
           </g>
 
-          {/* サムネ下のラベルバー（番組名）*/}
-          <rect
-            x={bigThumbX - 4}
-            y={bigThumbY + bigThumbSize + 4}
-            width={bigThumbSize + 8}
-            height={labelHeight}
-            rx={6}
-            fill="var(--color-neutral-900, #171717)"
-          />
-          <text
-            x={bigThumbX + bigThumbSize / 2}
-            y={bigThumbY + bigThumbSize + 4 + labelHeight / 2 + labelHeight * 0.18}
-            fill="#fff"
-            fontSize={Math.round(labelHeight * 0.5)}
-            fontWeight={800}
-            textAnchor="middle"
-          >
-            {programName.length > 14
-              ? `${programName.slice(0, 13)}…`
-              : programName}
-          </text>
+          {/* 番組名ラベルは省略（サムネ自体で番組が分かるため、視覚情報を絞る）*/}
         </g>
       </svg>
 
