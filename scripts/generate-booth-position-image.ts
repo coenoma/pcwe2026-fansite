@@ -38,7 +38,8 @@ const OUTPUT_DIR = 'public/booth-position-images';
 const VIEWPORT_WIDTH = 1200;
 const VIEWPORT_HEIGHT = 1400;
 const SCALE = 2;
-const FONT_RENDER_WAIT_MS = 1200;
+const FONT_RENDER_WAIT_MS = 2500; // SVG 内サムネ image のロード完了を確実に待つため
+const NAVIGATION_TIMEOUT_MS = 60000; // dev サーバー初回コンパイルで遅延する場合あり
 
 interface ProgramExhibition {
   days: ('sat' | 'sun')[];
@@ -52,7 +53,23 @@ interface ProgramExhibition {
 interface Program {
   id: string;
   name: string;
+  shortName?: string;
   exhibition: ProgramExhibition;
+}
+
+/**
+ * ファイル名生成: `{label}-{番組名}.png`
+ *
+ * 同じブース番号に土日で別番組が出展する場合に上書きされないよう、番組名を含める。
+ * 番組名は OS のファイル名禁止文字を除去し、最大 30 文字に切り詰める。
+ */
+function buildFilename(label: string, program: Program): string {
+  const name = program.shortName ?? program.name;
+  const safe = name
+    .replace(/[/\\:*?"<>|]/g, '-')
+    .replace(/\s+/g, '')
+    .slice(0, 30);
+  return `${label}-${safe}.png`;
 }
 
 interface PositionTarget {
@@ -137,10 +154,14 @@ async function main(): Promise<void> {
 
     try {
       const url = `${DEV_BASE}/booth/${program.id}`;
-      await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-      await page.waitForSelector('[data-booth-preview-day]', { timeout: 10000 });
+      await page.goto(url, {
+        waitUntil: 'networkidle2',
+        timeout: NAVIGATION_TIMEOUT_MS,
+      });
+      await page.waitForSelector('[data-booth-preview-day]', { timeout: 15000 });
 
-      // フォントレンダリング待ち（重要: 明朝→sans-serif の切替が反映されるまで）
+      // SVG 全体（特に <image href="/thumbnails/XXX.jpeg" /> のサムネ画像）の
+      // レンダリング完了を確実に待つ。短すぎると真っ白なスクショが生成される。
       await new Promise((r) => setTimeout(r, FONT_RENDER_WAIT_MS));
 
       for (const { label, days } of positions) {
@@ -153,7 +174,9 @@ async function main(): Promise<void> {
           continue;
         }
 
-        const filename = `${label}.png`;
+        // 番組ごとに 1 ファイル: `{label}-{番組名}.png`
+        // 同ブース番号で土日別番組が出展する場合の衝突を防ぐ
+        const filename = buildFilename(label, program);
         const outputPath = join(OUTPUT_DIR, filename);
         await element.screenshot({ path: outputPath, omitBackground: false });
         console.log(`  ✓ ${program.id} (${program.name}) → ${filename}`);
