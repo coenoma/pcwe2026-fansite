@@ -16,32 +16,31 @@
     "merchandiseDetails": [
       {
         "name": "新刊 ZINE「ねむれぬ夜にはラブレター ポッドキャスト2年生 これまでとこれから」",
-        "description": "1 周年記念で制作した自伝的 ZINE。価格は 500 円以内（1 コインぐらい）で調整中。第1〜5章構成で、ポッドキャストを始めたきっかけ・番組設計・収録と話し方・配信して見てきたこと・広がっていくこと、過去台本（第1〜4回）も収録。Listen エピソード「#30 ねむラブ一周年記念配信！」（2026-05-01 公開）にてホスト本人が告知。5/10 のみ出展、ブース 16-B。",
+        "description": "1 周年記念で制作した自伝的 ZINE。価格は 500 円以内（1 コインぐらい）で調整中。第 1〜5 章構成で、ポッドキャストを始めたきっかけ・番組設計・収録と話し方・配信して見てきたこと・広がっていくこと、過去台本（第 1〜4 回）も収録。5/10 のみ出展、ブース 16-B。",
         "sourceUrl": "https://listen.style/p/ameniwaarisa/snfmpsjj",
         "sourceType": "web",
         "additionalSources": [
           {
             "url": "https://x.com/ameniwaarisa/status/2053058221544546360",
-            "type": "x-post",
-            "label": "ホスト本人による追加告知"
+            "type": "x-post"
           }
         ]
       },
       {
         "name": "アリネコちゃん読書用トートバッグ",
-        "description": "番組キャラクター「ありねこちゃん」の読書用トートバッグ。Listen エピソード「#30 ねむラブ一周年記念配信！」（2026-05-01 公開）にてホスト本人が告知。",
+        "description": "番組キャラクター「ありねこちゃん」の読書用トートバッグ。",
         "sourceUrl": "https://listen.style/p/ameniwaarisa/snfmpsjj",
         "sourceType": "web"
       },
       {
         "name": "缶バッジ（新作）",
-        "description": "新作の缶バッジ。Listen エピソード「#30 ねむラブ一周年記念配信！」（2026-05-01 公開）にてホスト本人が告知。",
+        "description": "新作の缶バッジ。",
         "sourceUrl": "https://listen.style/p/ameniwaarisa/snfmpsjj",
         "sourceType": "web"
       },
       {
         "name": "番組フライヤー・ステッカー（無料配布）",
-        "description": "ブース 16-B でフライヤーとステッカーを無料配布。Listen エピソード「#30 ねむラブ一周年記念配信！」（2026-05-01 公開）にてホスト本人が告知。",
+        "description": "ブース 16-B でフライヤーとステッカーを無料配布。",
         "sourceUrl": "https://listen.style/p/ameniwaarisa/snfmpsjj",
         "sourceType": "web"
       }
