@@ -7,21 +7,42 @@
   "official": {
     "description": "中学生の頃から同じ教室で共に思春期を過ごして、現在は社会人、大学院生となった3人組が、いろんな映画について語りあったり、最近考えたことを雑談したりするトークラジオです！",
     "merchandise": [
-      "ステッカー",
-      "Googleドライブのリンク(qrコード)"
+      "オリジナルキャップ",
+      "オリジナルステッカー",
+      "オリジナルカードゲーム『シネフィルギャグマスターズ』",
+      "特別収録 雑談音源 視聴 QR コード"
     ],
     "merchandiseDetails": [
       {
-        "name": "番組オリジナルステッカー・Tシャツ・特別音源・「シネフィルギャグ」グッズ",
-        "description": "5/10（日）出店、池尻 HOME WORK VILLAGE、10:00-19:00。",
-        "sourceUrl": "https://x.com/Radio18s/status/2047689078796329298",
+        "name": "オリジナルキャップ（刺繍加工・数量限定）",
+        "description": "¥3,500。刺繍加工で数量限定。5/10（日）のみ販売、ブース 10-B（池尻 HOME/WORK VILLAGE）。",
+        "sourceUrl": "https://x.com/Radio18s/status/2052897009628311777",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "オリジナルステッカー（複数デザイン）",
+        "description": "各 ¥300、よりどり 2 枚で ¥500。5/10（日）のみ、ブース 10-B。",
+        "sourceUrl": "https://x.com/Radio18s/status/2052897009628311777",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "オリジナルカードゲーム『シネフィルギャグマスターズ』",
+        "description": "¥1,000。番組発のオリジナルカードゲーム。5/10（日）のみ、ブース 10-B。",
+        "sourceUrl": "https://x.com/Radio18s/status/2052897009628311777",
+        "sourceType": "x-post"
+      },
+      {
+        "name": "特別収録 雑談音源 視聴 QR コード（配布）",
+        "description": "「Rado18s：オリジンズ」と銘打った特別収録の雑談音源、視聴用 QR コードを配布予定。メンバー（角田・福山・米山）揃って手売り。5/10（日）、ブース 10-B。",
+        "sourceUrl": "https://x.com/Radio18s/status/2052897009628311777",
         "sourceType": "x-post"
       }
     ],
     "merchandiseSubTypes": [
       "apparel",
       "audio-music",
-      "paper-stationery"
+      "paper-stationery",
+      "goods-misc"
     ]
   },
   "exhibition": {
