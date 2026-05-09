@@ -14,9 +14,15 @@
     "merchandiseDetails": [
       {
         "name": "PCWE2026 出展告知（番組ページ（PODCAST WEEKEND 2026出店告知）",
-        "description": "PODCAST WEEKEND 2026に出店予定（劇団雌猫は2026年5月10日のみ参加、HOME/WORK VILLAGE）。番組ページに「いろんなグッズを売ります」との記載あり、具体的商品内容は明記されていない。",
+        "description": "PODCAST WEEKEND 2026 に出店予定（劇団雌猫は 2026 年 5 月 10 日のみ参加、HOME/WORK VILLAGE）。番組ページに「いろんなグッズを売ります」との記載あり、具体的商品内容は明記されていない。",
         "sourceUrl": "https://listen.style/p/gekidan-mesuneco",
-        "sourceType": "web"
+        "sourceType": "web",
+        "additionalSources": [
+          {
+            "url": "https://x.com/aku__you/status/2053012681217675602",
+            "type": "x-post"
+          }
+        ]
       }
     ],
     "merchandiseSubTypes": [
