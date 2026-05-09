@@ -16,7 +16,14 @@
         "name": "グッズ＋参加企画（お品書き付き）",
         "description": "5/9（土）出展。物販詳細は公式 boothpage に記載: ステッカー・書籍・しおり。",
         "sourceUrl": "https://x.com/nasutokai/status/2050009720992456800",
-        "sourceType": "x-post"
+        "sourceType": "x-post",
+        "additionalSources": [
+          {
+            "url": "https://x.com/nasutokai/status/2052753131097010245",
+            "type": "x-post",
+            "label": "再掲（本文の追加情報あり）"
+          }
+        ]
       }
     ],
     "merchandiseTags": [
